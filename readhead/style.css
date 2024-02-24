@@ -1,0 +1,455 @@
+@font-face {
+    font-family: 'arcadeclassic';
+    src: url('fonts/arcadeclassic-webfont.woff2') format('woff2'),
+        url('fonts/arcadeclassic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'karmatic arcade';
+    src: url('fonts/karmaticarcade-webfont.woff2') format('woff2'),
+        url('fonts/karmaticarcade-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'merchant copy';
+    src: url('fonts/merchantcopy-webfont.woff2') format('woff2'),
+        url('fonts/merchantcopy-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+body {
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+    background-color: black;
+    overflow: hidden;
+}
+
+hr {
+    border: none;
+    border-top: 2.4px dashed #9EC9D0;
+    width: 40%;
+    margin: 10px auto;
+}
+
+
+/*FONT FAMILIES*/
+
+html{
+    font-family: 'merchant copy', sans-serif;
+}
+
+.big, .bigger, .biggest, .nav, .big-footer, .name {
+    font-family: 'Suez One', serif;
+}
+
+/*COLOUR*/
+
+html, a{
+    color: #e048a3;
+}
+
+.blue {
+    color: #9EC9D0;
+}
+
+.black{
+    color: #262649;
+}
+
+a:hover, .white{
+    color: #D3DCDD;
+}
+
+
+/*FONT*/
+
+html{
+    font-size: 1.5Em;
+}
+
+
+a {
+    text-decoration: none;
+    transition: color .6s;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.big {
+    font-size: .8Em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.bigger {
+    font-size: 1.2Em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.biggest {
+    font-size: 2.5Em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.bold {
+    font-size: .6Em;
+    text-align: center;
+    margin-top: 0;
+}
+
+
+.bolder {
+    font-size: 1Em;
+    text-align: center;
+    margin-top: 0;
+}
+
+.name {
+    text-transform: uppercase;
+    font-size: 35px;
+}
+
+
+
+
+
+
+
+/*HEADER*/
+
+header {
+    height: 100px;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    z-index: 100;
+    background-color: black;
+    align-content: space-between;
+}
+
+.nav {
+    color: #e048a3;
+    font-size: 25px;
+    text-transform: lowercase;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color .6s;
+}
+
+.nav:hover {
+    background-color: #21213D;
+}
+
+.logo {
+    height: 40px;
+    filter: saturate(50%);
+    transition: saturate;
+    transition: 0.3s;
+}
+
+.logo:hover {
+    filter: saturate(100%);
+}
+
+
+
+
+
+
+
+
+
+/*FOOTER*/
+
+footer {
+    width: 100%;
+    height: 180px;
+    margin: 0 auto;
+    justify-content: center;
+    display: flex;
+    background-color: #151529;
+    align-items: center;
+    z-index: 100;
+}
+
+.big-footer {
+    font-size: 25px;
+    margin: 10px auto;
+}
+
+.nav-footer {
+    font-size: 20px;
+    text-transform: lowercase;
+    margin: auto;
+    margin-bottom: 5px;
+    transition: color .6s;
+    display: block;
+}
+
+.navbar-footer {
+    display: block;
+}
+
+.block-footer {
+    margin: auto;
+    width: 20%;
+}
+
+.logo-footer {
+    height: 70px;
+}
+
+/*BOXES*/
+
+.box {
+    width: 100%;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.bg-black {
+    background-color: black;
+}
+
+.banner {
+    height: 800px;
+}
+
+.spacer {
+    padding: 50px;
+    width: 100%;
+}
+
+.main {
+    background: black;
+    display: flex;
+    padding: 10px 0;
+}
+
+.main-bg {
+    padding: 1px;
+    display: flex;
+}
+
+.col {
+    font-size: 35px;
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 20px;
+    align-items: center;
+}
+
+#inner {
+    width: 80%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: 0;
+    padding: 50px 10%;
+}
+
+.hover {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-radius: 3%;
+}
+
+.hover:hover {
+    background: linear-gradient(black, #090912);
+}
+
+
+
+
+
+
+
+
+
+/*FLEX BOX*/
+
+.half {
+    display: flex;
+    align-items: stretch;
+
+}
+
+.half div {
+    margin: 10px auto;
+    width: 40%;
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*CLASSES*/
+
+#jump {
+    transition: transform .2s;
+}
+
+#jump:hover {
+    transform: translate(0px, -3px);
+}
+
+#charbox {
+    padding: 20px;
+    margin: 20px;
+}
+
+.char {
+    width: 80%;
+    border-radius: 100%;
+    border: solid 3px white;
+}
+
+.char-img {
+    width: 80%;
+    max-width: 250px;
+}
+
+.name {
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    background: #090912;
+    padding: 20px 0;
+}
+
+.material-symbols-outlined {
+    border-radius: 5px;
+    padding: 15px 10px;
+    margin: 10px;
+}
+
+.material-symbols-outlined:hover {
+    background: #21213D;
+}
+
+
+
+/*RESPOSSIVE*/
+
+@media only screen and (max-width: 745px) {
+
+    p,
+    li,
+    .nav-footer,
+    .nav,
+    .big-footer {
+        font-size: 14px;
+    }
+
+    .big {
+        font-size: 16px;
+    }
+
+    footer {
+        height: 130px;
+    }
+
+    .navbar {
+        margin: auto;
+    }
+
+    .nav {
+        margin-right: 10px;
+    }
+
+    .banner {
+        height: 300px;
+    }
+
+    .logo-full,
+    .logo-footer {
+        display: none;
+    }
+
+
+
+}
+
+@media only screen and (max-width: 1200px) {
+
+    p,
+    li,
+    .nav-footer,
+    .nav,
+    .big-footer {
+        font-size: 18px;
+    }
+
+    .big {
+        font-size: 20px;
+    }
+
+    footer {
+        height: 160px;
+    }
+
+    .nav {
+        margin-right: 10px;
+    }
+
+    .banner {
+        height: 750px;
+    }
+
+    .logo {
+        height: 30px;
+    }
+}
