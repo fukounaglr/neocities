@@ -52,6 +52,16 @@
             display: block;
         }
 
+        #stamps {
+            display: grid;
+            grid-template-columns: 20% 20% 20% 20% 20%;
+        }
+
+        #stamps img {
+            width: 100%;
+            display: grid;
+        }
+
     </style>
 </head>
 
@@ -67,10 +77,10 @@
 
                     <div id="info" class="tabcontent">
 
-                        <div style="background: url('/images/4fdf54c692db302472065fc0b8719bca.jpg');  background-size: cover; width: 540px; padding: 20; border: solid 5px #B60E3B; border-radius: 20px;">
-                            <iframe style="border: none; margin-bottom: 20;" src="https://ashhmillr.tumblr.com/" width="540px" height="400px;"></iframe>
+                        <div style="background: url('/images/4fdf54c692db302472065fc0b8719bca.jpg');  background-size: cover; width: 100%; padding: 20; border: solid 5px #B60E3B; border-radius: 20px;">
+                            <iframe style="border: none; margin-bottom: 20;" src="https://ashhmillr.tumblr.com/" width="100%" height="250px;"></iframe>
 
-                            <div>
+                            <div id="stamps">
                                 <img src="/stamps/stamp0.png">
                                 <img src="/stamps/mspain.png">
                                 <img src="/stamps/stamp48.png">
@@ -87,28 +97,40 @@
                             </div>
                         </div>
 
-                        <div id="info-box">
-                            <p class="big">WHAT SOFTWARE DO YOU USE?</p>
-                            <p><a href="https://www.clipstudio.net/" target="_blank">Clip Studio Paint EX</a> for arts and animations, sometimes doodle in MS paint,
-                                <a href="https://www.blackmagicdesign.com/products/davinciresolve" target="_blank">DaVinchi Resolve 18</a> for editing videos
-                            </p>
-                            <hr>
-                            <p class="big">WHAT TABLET DO YOU USE?</p>
-                            <p><a href="https://gaomon.net/en-ru/products/s620-pen-tablet" target="_blank">Gaomon S620</a>!!</p>
-                            <hr>
-                            <p class="big">can i use your art as pfp?</p>
-                            <p>You can use my fanarts as pfp!! just make sure to credit me.<br>as for OC arts, - no. </p>
-                            <hr>
-                            <p class="big">what brushes do you use?</p>
-                            <p>i switch between different brushes and settings, but <a href="https://cdn.discordapp.com/attachments/1103432431899512974/1199814476992614490/brushes.png" target="_blank">here are the ones i use the most</a></p>
+                        
+
+                        <div style="display: grid;">
+
+                            <img src="/images/toast%20cat.png" width="100%" style="position: relative; left: -30;">
+                            <img src="/images/77235636662c1aa4faf025f78a8fb7a4.jpg" width="100%">
+                            <img src="/images/92a238c02adf93a059d1b863564a43f0.jpg" width="100%">
+                            <img src="/images/3747c3e98c3d119f053a2fe51e255918.jpg" width="100%">
+                            <img src="/images/114b9aa363be0ef5bdb53e2ac822aa53.jpg" width="100%">
                         </div>
+                        
+                        <div>
+                            <div id="info-box">
+                                <p class="big">WHAT SOFTWARE DO YOU USE?</p>
+                                <p><a href="https://www.clipstudio.net/" target="_blank">Clip Studio Paint EX</a> for arts and animations, sometimes doodle in MS paint,
+                                    <a href="https://www.blackmagicdesign.com/products/davinciresolve" target="_blank">DaVinchi Resolve 18</a> for editing videos
+                                </p>
+                                <hr>
+                                <p class="big">WHAT TABLET DO YOU USE?</p>
+                                <p><a href="https://gaomon.net/en-ru/products/s620-pen-tablet" target="_blank">Gaomon S620</a>!!</p>
+                                <hr>
+                                <p class="big">can i use your art as pfp?</p>
+                                <p>You can use my fanarts as pfp!! just make sure to credit me.<br>as for OC arts, - no. </p>
+                                <hr>
+                                <p class="big">what brushes do you use?</p>
+                                <p>i switch between different brushes and settings, but <a href="https://psv4.userapi.com/c909328/u526590705/docs/d50/cc46c5f4774a/brushes.png" target="_blank">here are the ones i use the most</a></p>
+                            </div>
 
 
-                        <img src="/images/bluey.gif" style="position: absolute; top: 500; left: 1170; border: solid 5px #4BD7C8; border-radius: 20px;">
+                            <img src="/images/tumblr_pbms931IC71wclo4ko3_500.gif" width="100%">
 
-                        <img src="/images/tumblr_pbms931IC71wclo4ko3_500.gif" style="position: absolute; top: 460; left: 1170;">
+                            <img src="/images/bluey.gif" width="100%" style="border: solid 5px #4BD7C8; border-radius: 20px;">
 
-
+                        </div>
 
                         <a href="#commissions" title="commissions" class="tablinks" onclick="openTab(event, 'commissions')">
                             <div id="art-nav" class="art-nav-right">
@@ -122,15 +144,6 @@
                             </div>
                         </a>
 
-                        <div style="position: absolute; top: 70; left: 1030; display: grid;">
-
-                            <img src="/images/toast%20cat.png" width="200px;" style="position: relative; left: -30;">
-                            <img src="/images/77235636662c1aa4faf025f78a8fb7a4.jpg" width="130">
-                            <img src="/images/92a238c02adf93a059d1b863564a43f0.jpg" width="130">
-                            <img src="/images/3747c3e98c3d119f053a2fe51e255918.jpg" width="135">
-                            <img src="/images/114b9aa363be0ef5bdb53e2ac822aa53.jpg" width="130">
-                        </div>
-
 
                     </div>
 
@@ -140,7 +153,7 @@
 
 
                     <div id="commissions" class="tabcontent">
-                        <div style="position: absolute; top: 60; left: 500; height: 730px; width: 1150px;  overflow-y: scroll;">
+                        <div style=" height: 100%; width: 100%;  overflow-y: scroll;">
                             <img src="/images/comms0.png" width="100%">
                             <img src="/images/comms1.png" width="100%">
                             <img src="/images/comms2.png" width="100%">
@@ -183,23 +196,25 @@
                         <div class="gallery-container">
 
                             <div class="gallery">
-                                
-                                <img src="https://cdn.discordapp.com/attachments/1139593478343495742/1205599916395859968/heart_devious_alt.png?ex=65d8f56b&is=65c6806b&hm=3f984fb48f46ae8a20fd3df2eb46d0f7e668d7db119cfa5f7e4bf4adf4b663a6&" alt="heart before shooting the sun">
-                                
+
+                                <img src="https://64.media.tumblr.com/a9f011f8b7c39b2efddd090ce2ddc363/f729f76cd650ea7a-38/s1280x1920/2e6d1e61588c09c72018cb42f0e800e992349712.png" alt="jhariah pin-eye">
+
+                                <img src="https://64.media.tumblr.com/5ed1983ad9aae69f220608c0499d2d2e/53b3576d070ce018-10/s1280x1920/6f22e897f5c6be7c9509eecc1de6297d3305705c.png" alt="heart before shooting the sun">
+
                                 <img src="https://64.media.tumblr.com/d76bfc2c4b66f12fe199fa9e1bb2919d/b1376df85a94e197-13/s1280x1920/4b65f8e50ff5f65bbe0545003712bc996fde89df.png" alt="commission iriskaxp">
 
-                                <img src="https://64.media.tumblr.com/00bab0a06ca9134af6d753fd67c1a444/a59888ebffe93275-1e/s1280x1920/e9f065fafb972c9fad2c59dca97917da35255bed.png" alt="hmsw ref sheet">
+                                <img src="https://64.media.tumblr.com/ed2bd33df1f24f3d9451eca0d15d449a/a59888ebffe93275-b9/s2048x3072/26a5796f583bee8e81f8aaa47d29df00cebe32f8.pnj" alt="hmsw ref sheet">
 
                                 <img src="https://64.media.tumblr.com/04f6c5702f59f8487849270d6763124b/50791d64379661a4-ed/s1280x1920/99393de6c0cb1127a0e6ba63f19b09fcbfe82134.png" alt="heart mind goats">
 
 
-                                <img src="https://64.media.tumblr.com/2bb1d679ba668a38806cfe5acb60c33d/69bb094b5140d51b-1d/s640x960/7e2496a49268c61d1106ca0bd3823b7ac1323c2d.png" alt="coffee">
+                                <img src="https://64.media.tumblr.com/2bb1d679ba668a38806cfe5acb60c33d/69bb094b5140d51b-1d/s2048x3072/7aa3f659acec352caa39a29db2183372b0c2fefc.pnj" alt="coffee">
 
                                 <img src="https://64.media.tumblr.com/53531ef5a19e2339658bf5f1f69c8fbb/db23ab276dc223c1-53/s400x600/f7856c75c04e92c385b5d51f5dc433cea005118f.gif" alt="running dylhiw">
 
                                 <img src="https://64.media.tumblr.com/743e14e45a9fa0c00f5f939e89125b1f/db23ab276dc223c1-1c/s400x600/3715579e40b1ddb7cdcb5412e3086ea3eec51c79.gif" alt="walking dylhiw">
 
-                                <img src="https://64.media.tumblr.com/ffa321c72172ac2554b0a1aa405c9160/248b35b6b4854341-6a/s640x960/401c77e7fe84f040bed1218ed68e8bed3b940923.png" alt="hand me my trident">
+                                <img src="https://64.media.tumblr.com/ffa321c72172ac2554b0a1aa405c9160/248b35b6b4854341-6a/s2048x3072/96e69883d3fa724f47372a3763dc669ed2322cdc.pnj" alt="hand me my trident">
 
                                 <img src="https://64.media.tumblr.com/b2a1b4f963343b028f44048d6d01c24e/f7ac4acf9d0a3c16-be/s2048x3072/f5af1f728a7d111186561d1e32f99312fa461e02.png" alt="they thingk theyre plating in the band">
 
@@ -211,7 +226,7 @@
 
                                 <img src="https://64.media.tumblr.com/c09ff7ef232daaa26dfae3c3e41b04a9/62d618359366314e-06/s2048x3072/dec06a7eef8efb4fb40f6d2a87684ad1f0c5755e.png" alt="tummy ache survivor">
 
-                                <img src="https://64.media.tumblr.com/ae7e202c019a7872a763b7041c8a891b/5c230a9d1dd7f548-fc/s1280x1920/dbb044faee02e0c4ec8d415c9df7869a80aae318.png" alt="marketland"> 
+                                <img src="https://64.media.tumblr.com/ae7e202c019a7872a763b7041c8a891b/5c230a9d1dd7f548-fc/s1280x1920/dbb044faee02e0c4ec8d415c9df7869a80aae318.png" alt="marketland">
 
                                 <img src="https://64.media.tumblr.com/0d10bc24ad48bc8081992d13fd7d4d64/5c230a9d1dd7f548-3f/s1280x1920/5bbab8133e833906f75dbb13110abcff772279a3.png" alt="savages">
 
@@ -243,19 +258,17 @@
                                 <img src="https://64.media.tumblr.com/dc93792728a01320efdcab767f1a9d1c/0fe2dd3face9653d-26/s1280x1920/6bf163de5aa1bac2b90f3945a10765130470d6e7.png" alt="pathological facade">
 
 
-                                <img src="https://cdn.discordapp.com/attachments/1103432431899512974/1168602079376449546/formaline.png" alt="formaline">
-
-                                <img src="https://cdn.discordapp.com/attachments/1139593478343495742/1170337461499592704/RBB-14.gif" alt="rbb">
+                                <img src="https://64.media.tumblr.com/1bfa6ef9cc042e5a3deffd4dac011e1c/537b98db5cca517a-a2/s1280x1920/299679c47b0ece1c47db6469f9f1b147e0323d71.png" alt="formaline">
 
                                 <img src="https://64.media.tumblr.com/916b72c4b5b9d143718ac75146e3c46d/a88c90bd56712a5e-47/s1280x1920/7136d74b47d46a79758f8dea39a30470726c7dae.png" alt="rbb">
 
                                 <img src="https://64.media.tumblr.com/352a4965e65b8122b4cf15599ea76ecf/a4a4a52b58bff75c-6d/s1280x1920/7401078d8c4d8da012d8fa82cdeaf5622fe57d12.png" alt="modify">
 
-                                <img src="https://cdn.discordapp.com/attachments/1103432431899512974/1168602078344663101/readymade.png" alt="readymade">
-
                                 <img src="https://64.media.tumblr.com/85d2db3f3ebd39e6fec6336fc935d789/a0ad95a738bc2039-27/s2048x3072/32c8d2d4f97c753be08ca9f98fa8ae2f5bd9be6a.png" alt="crows p 1">
 
                                 <img src="https://64.media.tumblr.com/9205e1b3976cea0d9ded67d16254d291/b58e6a8711a59fba-46/s1280x1920/f24ff467046e221a0e85831e0bc85324dc8fc75f.png" alt="everybodys trying to kill me">
+
+                                <img src="https://64.media.tumblr.com/f45cfa87d6e643a0f1c2b6f1ad766bcd/b0bb90da1a11b4b2-8a/s1280x1920/47e61e7f07d0052c70152ac3652571e9f71191bb.png" alt="">
                             </div>
 
                             <div class="popup">

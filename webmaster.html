@@ -7,7 +7,7 @@
 
     <link rel="icon" type="image/png" href="ico.png">
     <link rel="stylesheet" href="style.css">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/interact.js/1.10.17/interact.min.js"></script>
 
     <style>
         body {
@@ -17,30 +17,35 @@
         }
 
         .links {
-            width: 20;
+            width: 15;
+            margin: 0;
         }
 
         #links-box {
-            margin-top: 10;
+            margin-top: 0;
+            font-size: 1Em
         }
 
         #slider2 {
-            width: 600px;
-            height: 150px;
+            width: 100%;
+            height: 100px;
             background-color: #ff438d;
             border: 5px solid black;
             overflow: hidden;
             place-items: center;
             display: grid;
-            position: absolute;
-            top: 620;
-            left: 40px;
             color: white;
+            margin: auto;
             padding-top: 10;
+            padding-bottom: 0;
+        }
+        
+        #slider2 img{
+            height: 100%
         }
 
         .slide-track {
-            width: 5000px;
+            width: 3000px;
             animation: scroll 40s linear infinite;
             display: flex;
             padding-left: 700px;
@@ -56,7 +61,7 @@
             }
 
             100% {
-                transform: translateX(-4900px)
+                transform: translateX(-3700px)
             }
         }
 
@@ -65,35 +70,13 @@
         }
 
         #aj {
-            width: 600px;
             position: absolute;
             top: 150px;
-            left: 700px;
+            left: 35%;
         }
 
         #aj img {
-            height: 650;
-        }
-
-        .aj1 {
-            width: 600px;
-            position: absolute;
-            top: 0px;
-        }
-
-        .aj2 {
-            width: 600px;
-            position: absolute;
-            top: 0px;
-            display: none;
-        }
-
-        #aj:hover .aj1 {
-            display: none;
-        }
-
-        #aj:hover .aj2 {
-            display: block;
+            height: 500;
         }
 
 
@@ -107,15 +90,18 @@
             position: absolute;
             padding: 10px;
             z-index: 10;
-            cursor: grab;
         }
 
         #blinkies img {
-            width: 200px;
+            width: 47%;
         }
 
         #badges img {
-            width: 130px;
+            width: 30%;
+        }
+        
+        #stamps img{
+            width: 23%;
         }
 
     </style>
@@ -124,30 +110,31 @@
 
 <body>
 
-    <div style="position: absolute; top: 560; left: 50; align-content: center;">
-        <img src="images/cardboardbox1.png" style=" position: absolute; width: 500; height: 250px; margin-top: 70">
+    <div style="position: absolute; top: 450; left: 2%; align-content: center;">
+        
+        <img src="images/cardboardbox1.png" style=" position: absolute; width: 350; top: 40; left: 70;">
 
 
-        <img src="images/goocifer.png" class="draggable" style="left: 20; top: -80; height: 330px">
+        <img src="images/goocifer.png" class="draggable" style="left: 20; top: -80; height: 300px">
 
-        <img src="images/cowraffe.png" width="120px" class="draggable" style="left: 200;">
+        <img src="images/cowraffe.png" width="100px" class="draggable" style="left: 200;">
 
-        <img src="images/sheep.png" width="200px" class="draggable" style="left: 100;">
+        <img src="images/sheep.png" width="150px" class="draggable" style="left: 100;">
 
-        <img src="images/stuard.png" width="150px" class="draggable" style="left: 200;">
+        <img src="images/stuard.png" width="100px" class="draggable" style="left: 200;">
 
-        <img src="images/coco.png" width="300px" class="draggable" style="left: 50;">
+        <img src="images/coco.png" width="200px" class="draggable" style="left: 50;">
 
-        <img src="images/evan.png" width="200px" class="draggable" style="left: 250;">
+        <img src="images/evan.png" width="150px" class="draggable" style="left: 250;">
 
-        <img src="images/crocodile.png" width="200px" class="draggable" style="left: 200;">
+        <img src="images/crocodile.png" width="150px" class="draggable" style="left: 200;">
 
 
     </div>
 
     <div id="wrapper-webmaster">
 
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3tq8FEudO8bOgONEMgpXkA?utm_source=generator" width="500px" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3tq8FEudO8bOgONEMgpXkA?utm_source=generator" width="" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
         <div id="webmaster-box">
             <div id="blinkies">
@@ -155,8 +142,6 @@
                 <img src="stamps/water.gif">
                 <img src="stamps/agenderpride.gif">
                 <img src="stamps/aroacepride.gif">
-                <img src="stamps/0114-tbh.gif">
-                <img src="stamps/0205-pluralsystem.gif">
             </div>
 
             <div id="badges">
@@ -184,7 +169,7 @@
 
             <hr>
 
-            <div>
+            <div id="stamps">
 
                 <img src="stamps/autistic_stamp_by_vyrmn_dg1lzsg-fullview.png">
                 <img src="stamps/adhd_stamp_by_vyrmn_dg1lzrw-fullview.png">
@@ -204,26 +189,26 @@
 
 
         <div id="webmaster-info">
-            <div style="width: 90%">
+            <div style="width: 95%; margin: auto;">
                 <p id="big-wm">Sasha Jash Neil</p>
                 <p><mark style="background-color: #fff000">nicknames:</mark> AJ, ash jash, ashhmillr, hydrogen/H, eggboy/egg</p>
 
-                <p><mark style="background-color: #ff438d;">age:</mark>17 jashillion years</p>
+                <p><mark style="background-color: #ff438d;">age:</mark> many much</p>
 
                 <p><mark style="background-color: #33A7FF;">country of origin:</mark> the backrooms</p>
 
-                <p><mark style="background-color: #b5e61d;">gender:</mark><a href="https://en.pronouns.page/@ashhmillr" target="_blank"><img src="/icons/icon pronouns.png" class="links" alt="Pronouns">yes</a></p>
+                <p><mark style="background-color: #b5e61d;">gender:</mark><a href="https://en.pronouns.page/@ashhmillr" target="_blank"><img src="/icons/icon pronouns.png" class="links" alt="Pronouns">no thanks</a></p>
 
                 <p><mark style="background-color: #c592e7;">facts:</mark></p>
-                <div style="height: 200px; overflow-y: auto;">
+                <div style="height: 100px; overflow-y: auto;">
                     <ol style="margin-top: 0; list-style: none">
+                        <li>- <a target="_blank" href="/basement/characters/egg">sona</a></li>
                         <li>- wants to play drums</li>
                         <li>- the "computer guy" in class</li>
                         <li>- stays up til literal morning</li>
                         <li>- likes maths & colour theory</li>
                         <li>- talks about Chonny Jash way too much</li>
                         <li>- "why are you so tall???" IDK</li>
-                        <p class="big"><a target="_blank" href="/basement/characters/egg">sona</a></p>
                     </ol>
                 </div>
 
@@ -232,9 +217,9 @@
                     <p>
                         <a href="https://ashhmillr.tumblr.com/" target="_blank"><img src="/icons/icon tumblr.png" class="links" alt="Tumblr">tumblr</a>
 
-                        <a href="https://youtube.com/@ashhmillr" target="_blank"><img src="/icons/icon youtube.png" class="links" alt="Youtube">youtube</a>
+                        <a href="https://youtube.com/@ashhmillr" target="_blank"><img src="/icons/icon youtube.png" class="links" alt="Youtube">main</a>
 
-                        <a href="https://www.youtube.com/@ashhposts" target="_blank"><img src="/icons/icon youtube2.png" class="links" alt="Youtube shitpost">youtube</a>
+                        <a href="https://www.youtube.com/@ashhposts" target="_blank"><img src="/icons/icon youtube2.png" class="links" alt="Youtube shitpost">shitpost</a>
                         <a href="https://spacehey.com/ashhmillr" target="_blank"><img src="/icons/icon%20spacehey.png" class="links" alt="spacehey">spacehey</a>
 
                         <br>
@@ -245,10 +230,12 @@
 
                         <a href="https://www.last.fm/user/ashhmillr" target="_blank"><img src="/icons/lastfm.png" class="links" alt="Pronouns">last.fm</a>
 
-                        <a href="https://discord.gg/k5J96KyPV3" target="_blank"><img src="/icons/icon discord.png" class="links" alt="Discord Server">discord server</a>
+                        <a href="https://discord.gg/k5J96KyPV3" target="_blank"><img src="/icons/icon discord.png" class="links" alt="Discord Server">server</a>
 
                         <br>
-                        <img src="/icons/icon discord.png" class="links" alt="Discord">discord: <u>@ashhmillr</u>; <a href="mailto:ashhmillr@gmail.com">email</a>
+                        <a href="https://twitter.com/ashhmillr" target="_blank"><img src="/icons/icon%20twitter.png" class="links" alt="twitter">twitter</a>
+                        <a href="https://boosty.to/ashhmillr" target="_blank"><img src="/icons/icon%20boosty.png" class="links" alt="boosty">boosty</a>
+                        <a href="mailto:ashhmillr@gmail.com"><img src="/icons/icon%20mail.png" class="links" alt="Email">email</a>
                     </p>
                 </div>
 
@@ -258,104 +245,105 @@
                     <div class="slide-track">
 
                         <div class="slide"><a href="https://www.youtube.com/watch?v=5B0tlmQn6qA&list=PL6k1Keqk6jeMWXdj3RpDfXxw0Qls6rLqa&pp=iAQB">
-                                <img src="stamps/stamp02.png" height="100px">
+                                <img src="stamps/stamp02.png">
                             </a></div>
 
                         <div class="slide"><a href="https://www.youtube.com/watch?v=78QgIdNdHLI&list=PL6k1Keqk6jeMexf92J9F-tUffOosAn_Db&pp=iAQB">
-                                <img src="stamps/stamp03.png" height="100px">
+                                <img src="stamps/stamp03.png">
                             </a></div>
 
                         <div class="slide"><a href="https://www.youtube.com/watch?v=wATkLt_QTuI&list=PL6k1Keqk6jeNlPa1PKNLO4NJ_PPm2ZJsE&pp=iAQB">
-                                <img src="stamps/stamp04.png" height="100px">
+                                <img src="stamps/stamp04.png">
                             </a></div>
 
                         <div class="slide"><a href="https://www.youtube.com/playlist?list=PL-GNgRVTwsGvSW4uC8DLGLCnvd28umwjq">
-                                <img src="stamps/stamp05.png" height="100px">
+                                <img src="stamps/stamp05.png">
                             </a></div>
 
                         <div class="slide"><a href="https://www.youtube.com/playlist?list=PLX-KY8nhnd1Lbh76AnE3c3tX36rieoxE1">
-                                <img src="stamps/stamp06.png" height="100px">
+                                <img src="stamps/stamp06.png">
                             </a></div>
 
                         <div class="slide"><a href="https://www.youtube.com/playlist?list=PLC80P4gsPr-bOm6NDLrbUYtcrbrj8z1dC">
-                                <img src="stamps/stamp07.png" height="100px">
+                                <img src="stamps/stamp07.png">
                             </a></div>
 
                         <div class="slide"><a href="https://www.youtube.com/playlist?list=PLBoQEROJNB99RMoFTE3G7GzXKL_-oqrso">
-                                <img src="stamps/stamp08.gif" height="100px">
+                                <img src="stamps/stamp08.gif">
                             </a></div>
 
                         <div class="slide"><a href="https://www.youtube.com/@Jhariah/">
-                                <img src="stamps/stamp09.png" height="100px">
+                                <img src="stamps/stamp09.png">
                             </a></div>
 
                         <div class="slide"><a href="https://www.youtube.com/watch?v=JvtKxofqjhA&list=PLNk2OQjYEkMYfU2gqD73Zms5uCh8nkz2k&pp=iAQB">
-                                <img src="stamps/stamp10.png" height="100px">
+                                <img src="stamps/stamp10.png">
                             </a></div>
 
                         <div class="slide"><a href="https://www.youtube.com/@ghostandpals/videos">
-                                <img src="stamps/stamp11.gif" height="100px">
+                                <img src="stamps/stamp11.gif">
                             </a></div>
 
                         <div class="slide"><a href="https://www.youtube.com/playlist?list=PLpVtuSR90S0zpijlSULKtj7xk6f8s_G5v">
-                                <img src="stamps/stamp12.png" height="100px">
+                                <img src="stamps/stamp12.png">
                             </a></div>
 
                         <div class="slide"><a href="https://www.youtube.com/channel/UCU5ZC6JENEIymH9oDxBarzw/videos">
-                                <img src="stamps/stamp13.png" height="100px">
+                                <img src="stamps/stamp13.png">
                             </a></div>
 
                         <div class="slide"><a href="https://www.youtube.com/@IDONTKNOWHOWBUTTHEYFOUNDME/videos">
-                                <img src="stamps/stamp15.png" height="100px">
+                                <img src="stamps/stamp15.png">
                             </a></div>
 
                         <div class="slide"><a href="https://www.theowlclub.net/">
-                                <img src="stamps/stamp20.gif" height="100px">
+                                <img src="stamps/stamp20.gif">
                             </a></div>
 
                         <div class="slide"><a href="https://www.wcostream.tv/anime/scott-pilgrim-takes-off">
-                                <img src="stamps/stamp21.gif" height="100px">
+                                <img src="stamps/stamp21.gif">
                             </a></div>
 
                         <div class="slide"><a href="https://www.wcoforever.tv/anime/adventure-time-fionna-and-cake">
-                                <img src="stamps/stamp22.gif" height="100px">
+                                <img src="stamps/stamp22.gif">
                             </a></div>
 
                         <div class="slide"><a href="https://www.wcostream.tv/anime/amphibia">
-                                <img src="stamps/stamp23.gif" height="100px">
+                                <img src="stamps/stamp23.gif">
                             </a></div>
 
                         <div class="slide"><a href="https://www.wcostream.org/anime/bee-and-puppycat">
-                                <img src="stamps/stamp24.gif" height="100px">
+                                <img src="stamps/stamp24.gif">
                             </a></div>
 
                         <div class="slide"><a href="https://www.wcostream.net/anime/bluey">
-                                <img src="stamps/stamp25.gif" height="100px">
+                                <img src="stamps/stamp25.gif">
                             </a></div>
 
                         <div class="slide"><a href="https://archive.org/details/over-the-garden-wall_202211">
-                                <img src="stamps/stamp26.gif" height="100px">
+                                <img src="stamps/stamp26.gif">
                             </a></div>
 
                         <div class="slide"><a href="https://melcoteam.itch.io/aconite-beta">
-                                <img src="stamps/stamp28.gif" height="100px">
+                                <img src="stamps/stamp28.gif">
                             </a></div>
 
                         <div class="slide"><a href="https://deltarune.com/">
-                                <img src="stamps/stamp29.png" height="100px">
+                                <img src="stamps/stamp29.png">
                             </a></div>
 
                         <div class="slide"><a href="https://www.youtube.com/watch?v=_CQ_ehoRfsE">
-                                <img src="stamps/stamp30.png" height="100px">
+                                <img src="stamps/stamp30.png">
                             </a></div>
 
                     </div>
                 </div>
+                
             </div>
 
 
 
-            <p class="bold white" style="position: absolute; top:630; left: 260;">interests</p>
+            <p class="bold white" style="position: absolute; bottom: 110; left: 35%">interests</p>
 
 
 
@@ -371,27 +359,24 @@
 -->
         </div>
 
-        <img src="images/autism.png" style="width: 120; position: absolute; top: 0; left: 700">
-        <p class="white" style="position: absolute; top: 40; left: 850">yippee!</p>
+        <img src="images/autism.png" style="width: 100; position: absolute; top: 20; left: 55%" class="draggable">
 
-        <img src="images/neapolitan-ice-cream-sandwich.gif" style="width: 200px; position: absolute; top: 250; left: 1600;">
-        <p style="position: absolute; top: 170; left: 1700">i LOVE ice cream sandwiches!!!</p>
+        <img src="images/neapolitan-ice-cream-sandwich.gif" style="width: 150px; position: absolute; top: 150; right: 20;" class="draggable">
+        <p style="position: absolute; top: 250; right: 20;">i LOVE ice cream sandwiches!!!</p>
 
-        <img src="images/trans-shark1.gif" style="position: absolute; top: 280; left: 1100;">
+        <img src="images/trans-shark1.gif" style="position: absolute; top: 200; left: 58%;" class="draggable">
 
-        <img src="images/breadclips.png" style="width: 200px; position: absolute; top: 200; left: 500;">
-        <p class="white" style="position: absolute; top: 400; left: 550">fun fact: i collect bread clips</p>
 
 
     </div>
 
 
 
-    <div style="position: absolute; top: 70px; left: 1000px; z-index: 10;" class="white">
+    <div style="position: absolute; top: 40px; left: 20%; z-index: 10;" class="white draggable">
         <img src="/images/bubble.png" width=300px>
         <div id="status" style="position: absolute; width: 300px; top: 10;">
             <div id="statuscafe-content" style="position: absolute; width: 80%;"></div>
-            <div id="statuscafe-username" style="position: absolute; top: -20px; left: 0px; width: 100%; color: white;"><a href="https://status.cafe/users/ashhmillr" target="_blank"></a></div>
+            <div id="statuscafe-username" style="position: absolute; top: -20px; left: 50px; width: 100%; color: white;"><a href="https://status.cafe/users/ashhmillr" target="_blank"></a></div>
             <script src="https://status.cafe/current-status.js?name=ashhmillr"></script>
         </div>
     </div>
@@ -404,7 +389,8 @@
     </a>
     <a href="/home"><img src="icons/home.png" width="30px" id="gohome"></a>
 
-    <script src="/main.js"></script>
+    
+    <script src="/js/drag.js"></script>
 
 </body>
 

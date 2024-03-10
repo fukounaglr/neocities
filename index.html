@@ -13,24 +13,33 @@
 
     <style>
         body {
-            background: url(https://i.pinimg.com/564x/fa/51/fd/fa51fdc7c7d60c14c41fab8b3f1f263f.jpg);
+            background: url(/images/966df1035f1fbc676b57ea96c0f06fd4.jpg);
+        }
+        
+        footer{
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background-color: black;
+            color: white;
+            padding: 5px;
         }
 
-        ol.bigger {
+        ol.big {
             text-align: left;
-            margin: 0 20% auto;
+            margin-left: 30%;
         }
 
         .w40 {
             width: 100%;
             margin: 0 auto;
             margin-top: -20px;
-            font-size: .8Em;
         }
 
         .grid {
             margin: 0 auto;
-            width: 80%;
+            width: 70%;
             display: grid;
             grid-template-columns: 50% 50%;
         }
@@ -41,16 +50,64 @@
             text-align: center;
             padding: 20px;
         }
-        
-        .webrings{
+
+        .webrings {
             display: flex;
             align-items: center;
         }
-        
-        .webrings div{
+
+        .webrings div {
             margin: auto;
         }
+
+        #enter {
+            text-decoration: none;
+            font-family: 'karmatic arcade';
+            width: 200px;
+            margin: 10px 50% auto;
+            margin-top: 100;
+            transform: translate(-50%, 0);
+            color: deeppink;
+            transition: .5s;
+        }
+
+        #enter #egg img {
+            display: none;
+            margin: 0 50% auto;
+            transform: translate(-50%, 0);
+        }
+
+        #enter #egg img:first-child {
+            display: block;
+        }
+        #enter #egg img:last-child{
+            position: absolute;
+            top: 0;
+        }
         
+        #enter #egg{
+            transition: .5s;
+        }
+        
+        #enter:hover{
+            color: royalblue;
+        }
+        #enter:hover #egg{
+            transform: rotate(10deg);
+        }
+
+        #enter:hover #egg img:last-child {
+            display: block;
+            animation: fadeEffect 1s;
+
+        }
+        
+        #eggg{
+            transition: .5s;
+        }
+        #eggg:hover{
+            transform: rotate(-10deg)
+        }
 
     </style>
 </head>
@@ -60,7 +117,7 @@
     <div id="wrapper">
 
         <div id="homent">
-            <p class="biggest" style="margin: 20px auto">Welcome to <span class="pink">ashhmillr</span>'s place!!</p>
+            <h1 style="margin: 20px auto">Welcome to <span class="pink">ashhmillr</span>'s place!!</h1>
 
             <div class="webrings">
                 <div id="autiring">
@@ -68,17 +125,17 @@
                     <script type="text/javascript" src="https://macaque.moe/autiring/onionring-widget.js"></script>
                 </div>
 
-                <diV><script src="https://nuthead.neocities.org/ring/ring.js"></script></diV>
+                <diV>
+                    <script src="https://nuthead.neocities.org/ring/ring.js"></script>
+                </diV>
             </div>
 
             <hr>
 
-            <p class="bigger">before entering you should consider the following:</p>
-
             <div class="grid">
                 <div class="w40">
                     <p class="bigger red">this website contains</p>
-                    <ol class="bigger 2">
+                    <ol class="big">
                         <li>minor flashing</li>
                         <li>a lot of images</li>
                         <li>bright colours</li>
@@ -86,36 +143,71 @@
                 </div>
                 <div class="w40">
                     <p class="bigger mid-blue">best viewed with</p>
-                    <ol class="bigger 2">
+                    <ol class="big">
                         <li>1920x1080 screen</li>
                         <li>javascript and iframe enabled</li>
-                        <li>chrome 0.75 scale</li>
                     </ol>
                 </div>
             </div>
-            <p>coded with <a href="https://brackets.io/">brackets</a> and tested in chrome. not optimised for mobile.
-                <br>
-                the site is still under construction!</p>
+            
+            <p style="font-size: 1.2Em">You are visitor # <span id="hitcount" class="red"></span>!<i>   - WHAT???</i></p>
+            <p style="font-size: 1.2Em">Welcome to my site!</p>
 
-            <hr>
 
-            <a href="/home" style="text-decoration: none; width: 100%;">
-                <img src="/images/adc22f43c5bcc721e32618325dfc1f53.jpg" width="200px" style="margin: 10 auto;">
-                <p class="bolder pink">enter</p>
+            <a href="/home">
+                <div id="enter">
+                    <div id="egg">
+                        <img src="/images/enteregg-normal.png" width="100px">
+                        <img src="/images/enteregg-cracked.png" width="100px">
+                    </div>
+                    <p>enter</p>
+                </div>
             </a>
+            
+            
+            
         </div>
 
 
         <a href="https://www.mabsland.com/Adoption.html" target="_blank">
 
-            <img src="/images/Censor_14b.gif" style="position: absolute; z-index: 10; top: 80%; left: 400px;">
+            <img src="/images/Censor_14b.gif" style="position: absolute; z-index: 10; top: 75%; left: 15%;">
 
         </a>
         
-        <a href='https://www.free-website-hit-counter.com' style="position: absolute; z-index: 10; top: 90%; left: 1400px; "><img src='https://www.free-website-hit-counter.com/c.php?d=9&id=163015&s=36' border='0' alt='Free Website Hit Counter' height="20px"></a>
-
+        <img src="/ico.png" style="position: absolute; z-index: 10; top: 70%; right: 15%; width: 150px;" id="eggg">
 
     </div>
+
+
+
+
+
+
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var site_data = JSON.parse(this.responseText);
+                var num_arr = site_data.info.views.toString().split("");
+                var num_str = "";
+                for (i = 0; i < num_arr.length; i++) {
+                    num_str += num_arr[i];
+                    if ((num_arr.length - 1 - i) % 3 == 0 && (num_arr.length - 1 - i) != 0) {
+                        num_str += ",";
+                    }
+                }
+                document.getElementById("hitcount").innerHTML = num_str;
+            }
+        };
+        xhttp.open("GET", "https://weirdscifi.ratiosemper.com/neocities.php?sitename=ashhmillr", true);
+        xhttp.send();
+
+    </script>
 </body>
+    
+    <footer>
+    coded with <a class="white" href="https://brackets.io/">brackets</a> and tested in chrome. not optimised for mobile. the site is still under construction!
+    </footer>
 
 </html>

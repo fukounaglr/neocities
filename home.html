@@ -12,30 +12,10 @@
     <meta name="google-site-verification" content="Fj7putUjL9oSK93SVSsOBnOcRPpAA03YbTVfHy26fqY" />
 
     <style>
-        #links {
-
-            position: absolute;
-            top: 280px;
-            left: 220px;
-        }
-
-
-        #links-box {
-            display: grid;
-            grid-template-columns: 45px 45px 45px;
-            margin: 0;
-        }
-
-        .links {
-            width: 30px;
-        }
-
-
-
         #slider {
             background: url(/images/0e34f20e800bd2ddbbc58ca455703cca.jpg);
         }
-        
+
         body {
             background-image: url(/images/bg-light.png);
         }
@@ -44,10 +24,247 @@
             background-image: url(/images/bg-dark.png);
         }
 
+        #sticky-note {
+            width: 135px;
+            height: 125px;
+            font-family: afanan;
+            text-transform: uppercase;
+            font-weight: 300;
+            font-size: .95Em;
+            letter-spacing: 1;
+            transition: .5s;
+            padding: 40px 20px;
+            background: url(/images/sticky%20note.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin-top: 100px;
+        }
+
+        #sticky-note:hover {
+            transform: rotate(3deg)
+        }
+
+        #sticky-note:hover p {
+            text-decoration: underline;
+            font-style: italic;
+            cursor: pointer;
+        }
+        
+        
+        
+        
+
+        #sside {
+            position: absolute;
+            width: 15%;
+            top: 20px;
+
+        }
+        
+        
+        
+        /*WELCOME*/
+        
+
+        #welcome-box {
+            background-color: darkblue;
+            border-radius: 30px;
+            width: 90%;
+            color: aliceblue;
+            margin-top: 20px;
+            margin-left: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            padding: 10;
+        }
+
+        #welcome-pic {
+            width: 50%;
+            padding: 0;
+        }
+
+        #welcome-pic img {
+            width: 100%;
+            height: 70%;
+            position: relative;
+            top: -10px;
+            object-fit: cover;
+        }
+
+        #welcome-pic a img {
+            width: auto;
+            height: auto;
+            margin: 5px auto;
+        }
+        
+        
+        
+        
+        
+
+
+        #sotd-home {
+            color: white;
+            width: 80%;
+            border: darkblue 5px solid;
+            margin: 20px;
+            padding: 10;
+            margin-top: 20;
+            background: blanchedalmond;
+        }
+
+
+        #sotd-home-text {
+            color: yellow;
+            padding: 5px;
+            font-size: 1.6Em;
+            position: relative;
+            top: 0;
+            left: 0;
+            background-color: red;
+        }
+
+        #updates-box {
+            width: 100%;
+            border: none;
+            background: url(images/pizza.jpg);
+            position: relative;
+            left: -30;
+            top: 0;
+            border: crimson 5px solid;
+        }
+
+        .updates-text {
+            font-family: 'karmatic arcade';
+            font-style: normal;
+            color: crimson;
+            font-size: 1Em;
+            margin: 10;
+            text-transform: uppercase;
+            text-align: center;
+
+        }
+
+
+
+        /*NAV*/
+
+
+        #navigation-home {
+            width: 200px;
+            font-size: .7Em;
+            position: absolute;
+            left: 78%;
+            padding-top: 2%;
+            height: 95%;
+            display: grid;
+            grid-auto-rows: auto;
+        }
+
+        .nav {
+            display: block;
+            color: #262649;
+            font-family: 'karmatic arcade';
+            font-style: normal;
+            font-size: 1Em;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            padding: 12px;
+            padding-top: 15px;
+            width: 200px;
+            height: 20px;
+            text-align: center;
+            align-content: center;
+            align-items: center;
+            background-color: white;
+            background: no-repeat url(/images/nav.png);
+            background-size: contain;
+            position: relative;
+            left: 0px;
+            text-decoration: none;
+            transition: .5s;
+        }
+
+        .nav:hover {
+            left: 10;
+            letter-spacing: 2;
+        }
+
+
+
+
+
+
+
+        #webrings {
+            width: 200px;
+            border: 3px #FF497B solid;
+            position: relative;
+            left: 15;
+        }
+
+        #webrings .big {
+            color: #FF497B;
+            margin: 5;
+        }
+
+
+        #button-box textarea {
+            width: 90px;
+            height: 40px;
+            overflow: hidden;
+            margin-top: 10px;
+            resize: none;
+        }
+
+        #button-box {
+            position: absolute;
+            width: 90px;
+            top: 600px;
+            left: 220px;
+            padding: 20px 10px;
+            background-color: #FF497B;
+            border-radius: 20px;
+            display: block;
+            align-items: center;
+            color: white;
+        }
+
+        #button-box a {
+            margin: 10px auto;
+        }
+
+        #log {
+            width: 100%;
+            height: 150px;
+            background: center url("/images/54bf20bfe65d8a397debb0b524003345.jpg");
+            color: white;
+            border: 5px solid white;
+            border-radius: 20px;
+            font-size: 1.6Em;
+            padding: 10px;
+        }
+
+
+
+        #sites-box {
+            position: relative;
+            top: 100;
+            width: 100%;
+            height: 200px;
+            background: center url("/images/b05ab12821cc342457495b33fe5abfbe.jpg");
+            color: white;
+            border: 5px solid white;
+            border-radius: 20px;
+            font-size: 1.6Em;
+        }
+
     </style>
 
 
 </head>
+    
+    
 
 
 <body>
@@ -55,195 +272,64 @@
 
         <div id="navigation-home">
             <a href="/blogging" class="nav"><mark style="background-color: #FCB8CA;">blogging</mark></a>
-            <a href="/webmaster" class="nav"><mark style="background-color: #FFD3C2;">webmaster</mark></a>
+            <a href="/shrines" class="nav"><mark style="background-color: #FFD3C2;">shrines</mark></a>
+            <a href="/webmaster" class="nav"><mark style="background-color: #FFFDCA;">webmaster</mark></a>
             <a href="/coolzone/collectables" class="nav"><mark style="background-color: #FFF6A4;">coolzone</mark></a>
             <a href="/art" class="nav"><mark style="background-color: #A4FFB9;">art</mark></a>
             <a href="/basement" class="nav" title="it's just OC's and projects lol"><mark style="background-color: #B0E5FF;">basement</mark></a>
-            <a href="/credits" class="nav"><mark style="background-color: #E8BAFE;">credits</mark></a>
+            <a href="/credits/" class="nav"><mark style="background-color: #E8BAFE;">credits</mark></a>
         </div>
 
 
-        <div id="home" class="flex-container">
+        <div id="home">
+            
+            
+            <img src="/stamps/compu1.png" height="50px" style="position: absolute; top: 20px; left: 50px;">
+            
+
+            <div style="background-color: red; height: 100%; width: 100%">
+                <p> </p>
 
 
+                <a href="https://ashhmillr.123guestbook.com/" target="_blank"><img src="stamps/signguest.gif" style="position: relative; top: 0px; left: 20px; z-index: 10;"></a>
 
-            <div class="flex-child">
 
-                <a href="https://ashhmillr.123guestbook.com/" target="_blank"><img src="stamps/signguest.gif" height="50px" style="position: relative; top: 0px; left: 20px; z-index: 10;"></a>
-
+                
+                <div style="position: absolute; top: 70px; left: 200px;" class="white">
+                    <img src="/images/bubble.png" width=230px>
+                    <div id="status">
+                        <a href="https://status.cafe/users/ashhmillr" target="_blank" style="color: white">
+                        <div id="statuscafe-content"></div>
+                        <div id="statuscafe-username" style="display: none"></div>
+                        <script src="https://status.cafe/current-status.js?name=ashhmillr"></script>
+                        </a>
+                    </div>
+                </div>
+                
+                
                 <div id="welcome-box">
-
                     <div class="flex-child" id="welcome-pic">
                         <img src="https://media1.tenor.com/m/EQrj0g1bsuoAAAAC/young-neil.gif" class="pic">
-                        <a href="https://neocities.org/site/ashhmillr"><img src="/stamps/neocities.png"></a>
+                        <a href="https://neocities.org/site/ashhmillr" target="_blank"><img src="/stamps/neocities.png"></a>
                     </div>
                     <div class="flex-child" id="welcome-text">
                         <p>Hi! I'm AJ!</p>
-                        <p>i make arts and memes about chonny jash and sometimes other stuff too</p>
-                        <p>Welcome to my site!</p>
+                        <p>i make arts and memes and other stuff</p>
 
 
                     </div>
-
-                </div>
-
-                <a href="/map">take the site map!</a>
-
-            </div>
-
-
-
-            <div class="flex-child">
-                <p class="big"><mark id="sotd-home-text">song of the week</mark></p>
-                <div id="sotd-home" style="background-color: #101505; border-color: #F22716;">
-
-                    <div id="sotd-home-left">
-                        <p></p>
-                        <p class="bold">Pin-eye - jhariah</p>
-                        <hr>
-                        <p>finally listened to this song!</p>
-            <p>love the song and MV as usual... instrumental is great and vocals are as well, and then there's this awesome MV!</p>
-            <p>(...)</p>
-
-                    </div>
-
-                    <div id="sotd-home-right">
-                        <iframe width="230px" height="120px" src="https://www.youtube.com/embed/uDCAOtqfgvs?si=c6at5yUYuFsnqrMJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        <p></p>
-
-                        <iframe style="border-radius:0" src="https://open.spotify.com/embed/track/1E3GhjaQttI7MXMT9oSgZU?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                        <p>19/feb/2024</p>
-                        <a href="/sotd">archive</a>
-                    </div>
-
-
-
-                </div>
-
-
-                <div id="updates-box">
-                    <a href="/updates" target="_blank" style="text-decoration: none; margin: 0;"><p class="updates-text">new stuff</p></a>
-                    <iframe style="height: 250px; width: 100%; border-width: 0;" src="/updates.html">
-                    </iframe>
-                </div>
-
-
-            </div>
-
-            <div style="position: relative; top: -40;">
-                <div style="position: relative; top: -20; left: 50;">
-                    <button onclick="myFunction()" class="dark-toggle"><p class="bigger">toggle dark mode</p></button>
-
-                </div>
-
-
-                <div id="chatbox">
-                    <p class="big" style="color: yellow; height: 40px;">CHAT - BE NICE!</p>
-                    <iframe src="https://www5.cbox.ws/box/?boxid=948666&boxtag=i7GruL" width="100%" height="450" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
-                </div>
-
-                <div id="webrings">
-                    <p class="big">webrings</p>
-
-                    <div id="transring">
-                        <script type="text/javascript" src="https://transring.neocities.org/onionring-variables.js"></script>
-                        <script type="text/javascript" src="https://transring.neocities.org/nb-widget.js"></script>
-                    </div>
-
-                    <div id="autiring">
-                        <script type="text/javascript" src="https://macaque.moe/autiring/onionring-variables.js"></script>
-                        <script type="text/javascript" src="https://macaque.moe/autiring/onionring-widget.js"></script>
-                    </div>
-                    
-                    <script src="https://nuthead.neocities.org/ring/ring.js"></script>
-
-                </div>
-            </div>
-
-            <div>
-                <img src="/images/music panda.png" style="position: absolute; top: 400; left: 730; width: 200px;">
-
-                <img src="/stamps/compu1.png" height="70px" style="position: absolute; top: 20px; left: 180px;">
-
-
-                <div style="position: absolute; top: 70px; left: 280px;" class="white">
-                    <img src="/images/bubble.png" width=230px>
-                    <div id="status">
-                        <div id="statuscafe-username"><a href="https://status.cafe/users/ashhmillr" target="_blank"></a></div>
-                        <div id="statuscafe-content"></div>
-                        <script src="https://status.cafe/current-status.js?name=ashhmillr"></script>
-                    </div>
                 </div>
 
 
 
+                <div style="overflow-y: none;  display: grid;  grid-template-areas: 'a b c' 'a d e'; grid-column-gap: 2px;  width: 90%; grid-template-rows: auto">
 
-
-                <div style="position: absolute; top: 420px; left: 20px; overflow-y: none;  display: grid;  grid-template-columns: 100px 85px 100px; grid-column-gap: 7px;  height: 260px;">
-
-                    <img src="/images/pizza%20for%20president.jpg" width=101px>
-                    <span>
-                        <img src="/images/explosion.jpg" width="85px">
-                        <img src="/images/hand.jpg" width="85px" style="margin-top: 5;">
-                    </span>
-                    <span>
-                        <img src="/images/mcnuggets.jpg" width="100px">
-                        <img src="/images/shock%20em%20dead.jpg" width="100px" style="margin-top: 8;">
-                    </span>
+                    <img src="/images/pizza%20for%20president.jpg" width=100% height="100%" style="grid-area: a">
+                    <img src="/images/explosion.jpg" width="100%" height="100%">
+                    <img src="/images/hand.jpg" width="100%" height="100%">
+                    <img src="/images/mcnuggets.jpg" width="100%" height="100%">
+                    <img src="/images/shock%20em%20dead.jpg" width="100%" height="100%">
                 </div>
-
-
-
-
-
-                <img src="/images/boom.png" width="200px" style="position: absolute; top: -50px; left: -30px;">
-
-                <img src="/images/sign1.png" width="140px" style="position: absolute; top: 595; left: 1140px;">
-
-                <img src="/images/sparckles.png" width="50px" style="position: absolute; top: 400px; left: 340px;">
-
-                <img src="/images/pancake%20cat.png" width="200px" style=" position: absolute; top: -50px; left: 750px;">
-
-
-
-
-
-
-                <div id="button-box">
-                    <p class="big" style="margin: auto;">link me on your site!<br> </p>
-<!--                    <a href="https://ashhmillr.neocities.org/aj-button.gif" target="_parent"><img src="/aj-button.gif"></a>-->
-                    <a href="https://ashhmillr.neocities.org/" target="_blank"><img src="https://i.imgur.com/xZ2dweq.gif"></a>
-                    <textarea><a href="https://ashhmillr.neocities.org/" target="_blank"><img src="https://i.imgur.com/xZ2dweq.gif"></a></textarea>
-                </div>
-
-
-
-
-
-                <img src="/images/asd%20rat.png" width="230px" style="position: absolute; top: 620px; left: -30px;">
-
-
-
-
-
-                <div id="slider">
-                    <div class="slide-track">
-                        <div class="slide"><img src="/stamps/stamp0.png" width="160px"></div>
-                        <div class="slide"><img src="/stamps/queer.gif"></div>
-                        <div class="slide"><img src="/stamps/neil.png"></div>
-                        <div class="slide"><img src="/stamps/stamp40.gif"></div>
-                        <div class="slide"><img src="/stamps/stamp41.gif"></div>
-                        <div class="slide"><img src="/stamps/stamp42.png"></div>
-                        <div class="slide"><img src="/stamps/stamp43.gif"></div>
-                        <div class="slide"><img src="/stamps/stamp44.png"></div>
-                        <div class="slide"><img src="/stamps/stamp45.png"></div>
-                        <div class="slide"><img src="/stamps/stamp46.gif"></div>
-                        <div class="slide"><img src="/stamps/stamp47.png"></div>
-                        <div class="slide"><img src="/stamps/stamp48.png"></div>
-                        <div class="slide"><img src="/stamps/stamp49.png"></div>
-                    </div>
-                </div>
-
 
 
             </div>
@@ -251,71 +337,50 @@
 
 
 
-
-            <div style="position: absolute; top: 50; left: -330;">
-
-                <div id="log">
-                    <a href="/log" target="_blank" style="text-decoration: none; margin: 0;"><p class="bold white" style="position: absolute; top: -40px; left: 40px;">update log</p></a>
-                    <iframe src="/log.html" style="height: 100%; width: 100%; border: none;"></iframe>
+            <div style="background-color: blue; height: 100%; width: 100%">
+                <p> </p>
+                
+                
+            <a href="/readhead/" target="_blank">
+                <div id="sticky-note">
+                    <p>LOOKING FOR SILLY BUNNY'S WORLD? (READHEAD)<br>CLICK HERE!</p>
                 </div>
-
-
-                <div id="sites-box">
-                    <p class="bold" style="position: absolute; top: -60;">cool sites to see!</p>
-                    <div style="overflow-y: scroll;  display: grid;  grid-template-columns: 100px 100px;  height: 100px;">
-                        
-                        <a href="https://chocolaterevel.neocities.org/" target="_blank"><img src="stamps/0kqXUCD.gif"></a>
-                        
-                        <a href="https://macaque.moe/" target="_blank"><img src="stamps/iZ0CnXD.png"></a>
-
-                        <a href="https://klomfel.neocities.org/" target="_blank"><img src="stamps/klomfelv1.png" width="88px"></a>
-
-                        <a href="https://grlrot.neocities.org/" target="_blank"><img src="stamps/grlbutton.gif"></a>
-
-                        <a href="https://sugarforbrains.neocities.org/" target="_blank"><img src="stamps/sugarNEW.gif"></a>
-
-                        <a href=https://dulcesilly.neocities.org/ target="_blank"><img src="stamps/buttonsilly.gif"></a>
-
-                        <a href="https://davemiller.neocities.org/" target="_blank"><img src="/stamps/davemiller_button.gif"></a>
-                        
-                        <a href="https://wrender.neocities.org/" target="_blank"><img src="/stamps/site%20button.gif"></a>
-                        
-                        <a href="https://iwasarob0t.neocities.org/"><img src="/stamps/iwasarob0tbutton.gif"></a>
-                        
-                        <a href="https://dashweb.neocities.org/" target="_blank"><img src="/stamps/dashbutton.gif"></a>
-                        
-                        <a href="https://possum1827.neocities.org/" target="_blank"><img src="/stamps/simonsfunzone.gif"></a>
-                        
-                        <a href="https://webcatz.neocities.org/" target="_blank"><img src="/stamps/webcatz.gif"></a>
-                        
-                        <a href="https://shinyexe.neocities.org/"  target="_blank"><img src="/stamps/shinyexe.gif"></a>
-                        
-                        <a target="_blank" href="https://aiston.scungled.gay/"><img src="/stamps/ashton.gif"></a>
-                    
-                        <a target="_blank" href="https://shadok.neocities.org/"><img src="/stamps/shadok.gif"></a>
-                        
-                        <a href="https://mordecaialba.com"><img src="/stamps/mordecaialba.png" width="100%" alt="A pixel art button of a brown rabbit with glasses that says 'Mordecai Alba' in green letters."> </a>
-                    </div>
-                </div>
-
-
-                <a href="/image-of-the-day">
-                    <span style="position: relative; top: 120; left: 30;">
-                        <img src="https://psv4.userapi.com/c909218/u526590705/docs/d42/d9094069ab75/meme.png" 
-                             width=250px height="250px" style="object-fit: contain;">
-                    </span>
-                </a>
+            </a>
+                
 
             </div>
+
+
+
+
+            <div style="background-color: gold; height: 100%; width: 100%">
+                <p> </p>
+
+            </div>
+
+
+
+            <div style="background-color: deeppink; height: 100%; width: 100%">
+                <p> </p>
+
+            </div>
+
+
+
+            
+            <!--
+
+            
+            
+-->
 
 
 
 
 
         </div>
-
     </div>
-    
+
     <script src="/js/dark-mode-toggle.js"></script>
 </body>
 
