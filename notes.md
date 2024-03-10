@@ -7,28 +7,50 @@
 
 # TO-DO
 
-fix the draggables
-put statuscafe on webmaster page
+<!--fix the draggables-->
+<!--put statuscafe on webmaster page-->
 <!--spacehey link on webmaster page-->
-get a gifypet!
+get a gifypet! (egg)
 <!--fix the links "home" instead of /index-->
-fix images in portfolio (raplace discord links with tumblr links)
-fix the brushes image link (add file to the site)
+<!--fix images in portfolio (raplace discord links with tumblr links)-->
+<!--fix the brushes image link (add file to the site)-->
+fix the images on image otd 
+fix the images on fanarts
+fix the images on memes
+fix the images on characters' pages
+fix the linking to index instead of index on RH page
+style the landing page
+
+# HOMEPAGE
+add more colours & bookmarks to the home page
+(would be cool if made it actually look like a book)
+de-clutter
+add to-do list
+make site buttons window bigger = add my button there too
+add toggle scrolling of stamps? or just get rid of them completely
+fix the zoom out thing
+
 
 
 # PAGES
 
 <!-- close view of images in gallery-->
 
-blog 
-(where to put it? ~~<-- instead of credits?~~) 
-instead of map < call it "newspaper"?
-    photos? ~~(stuff)~~ blog?
-    media sharing (put with blog?)
-    quotes?? ~~(stuff)~~ blog
+blog / newspapaer
+    photos?
+    media sharing
+    quotes??
     the actual like, blog
     sudoku
     crossword
+   
+   
+chonny jash shrine
+    info
+    links
+    music player
+    cccc
+    jashtralia
 
 
 characters pages
