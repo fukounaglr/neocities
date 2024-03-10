@@ -34,6 +34,15 @@
 
 
 
+* {
+    scrollbar-color: deeppink #21213D;
+    scrollbar-width: thin;
+
+}
+
+
+
+
 html {
     overflow: scroll;
     overflow-x: hidden;
@@ -60,15 +69,31 @@ hr {
 }
 
 
+
+
+
+
+
+
+
 /*FONT FAMILIES*/
 
 html{
     font-family: 'merchant copy', sans-serif;
 }
 
-.big, .bigger, .biggest, .nav, .big-footer, .name {
+.big, .bigger, .biggest, .nav, .big-footer, .name, .bold, .bolder {
     font-family: 'Suez One', serif;
 }
+
+
+
+
+
+
+
+
+
 
 /*COLOUR*/
 
@@ -80,6 +105,10 @@ html, a{
     color: #9EC9D0;
 }
 
+.red{
+    color: #CF0226;
+}
+
 .black{
     color: #262649;
 }
@@ -87,6 +116,15 @@ html, a{
 a:hover, .white{
     color: #D3DCDD;
 }
+
+
+
+
+
+
+
+
+
 
 
 /*FONT*/
@@ -112,19 +150,19 @@ a:hover {
 }
 
 .bigger {
-    font-size: 1.2Em;
+    font-size: 1Em;
     text-transform: uppercase;
     text-align: center;
 }
 
 .biggest {
-    font-size: 2.5Em;
+    font-size: 1.5Em;
     text-transform: uppercase;
     text-align: center;
 }
 
 .bold {
-    font-size: .6Em;
+    font-size: .8Em;
     text-align: center;
     margin-top: 0;
 }
@@ -140,6 +178,10 @@ a:hover {
     text-transform: uppercase;
     font-size: 35px;
 }
+
+
+
+
 
 
 
@@ -195,48 +237,31 @@ header {
 
 /*FOOTER*/
 
-footer {
-    width: 100%;
-    height: 180px;
-    margin: 0 auto;
-    justify-content: center;
-    display: flex;
-    background-color: #151529;
+footer{
+    padding: 20px;
+    color: aliceblue;
+    background-color: black;
+}
+
+footer .mid{
     align-items: center;
-    z-index: 100;
+    
 }
 
-.big-footer {
-    font-size: 25px;
-    margin: 10px auto;
-}
 
-.nav-footer {
-    font-size: 20px;
-    text-transform: lowercase;
-    margin: auto;
-    margin-bottom: 5px;
-    transition: color .6s;
-    display: block;
-}
 
-.navbar-footer {
-    display: block;
-}
 
-.block-footer {
-    margin: auto;
-    width: 20%;
-}
 
-.logo-footer {
-    height: 70px;
-}
+
+
+
+
+
 
 /*BOXES*/
 
 .box {
-    width: 100%;
+    width: 70%;
     margin: 0 auto;
     background-repeat: no-repeat;
     background-size: cover;
@@ -244,6 +269,7 @@ footer {
     justify-content: center;
     text-align: center;
     align-items: center;
+    padding: 20px;
 }
 
 .bg-white {
@@ -263,16 +289,6 @@ footer {
     width: 100%;
 }
 
-.main {
-    background: black;
-    display: flex;
-    padding: 10px 0;
-}
-
-.main-bg {
-    padding: 1px;
-    display: flex;
-}
 
 .col {
     font-size: 35px;
@@ -280,15 +296,6 @@ footer {
     padding: 20px;
     margin: 20px;
     align-items: center;
-}
-
-#inner {
-    width: 80%;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    margin: 0;
-    padding: 50px 10%;
 }
 
 .hover {
@@ -301,6 +308,13 @@ footer {
 .hover:hover {
     background: linear-gradient(black, #090912);
 }
+
+
+.inside{
+    width: 80%;
+    margin: auto;
+}
+
 
 
 
@@ -324,8 +338,91 @@ footer {
     height: 100%;
 }
 
+.box img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
 
 
+
+
+
+
+
+
+
+
+/*GALLERY*/
+
+.gallery-container {
+    height: 400px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    padding: 0 10px;
+}
+
+.gallery {
+    width: 95%;
+    overflow: hidden;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 200px;
+    grid-gap: 20px;
+    padding: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: auto;
+    margin-bottom: 50;
+    transition: .4s;
+    cursor: zoom-in;
+    border: 5px solid black;
+}
+
+.gallery img:hover {
+    filter: brightness(0.6);
+    border-color: white;
+
+}
+
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .8);
+    z-index: 100;
+}
+
+.popup img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+
+.popup span {
+    position: absolute;
+    top: 50;
+    right: 50;
+}
+
+.popup p {
+    position: absolute;
+    top: 100;
+    right: 50;
+}
 
 
 
@@ -379,6 +476,19 @@ footer {
 .material-symbols-outlined:hover {
     background: #21213D;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
