@@ -5,6 +5,7 @@
 - merchant copy
 
 
+
 # TO-DO
 
 <!--fix the draggables-->
@@ -14,21 +15,18 @@ get a gifypet! (egg)
 <!--fix the links "home" instead of /index-->
 <!--fix images in portfolio (raplace discord links with tumblr links)-->
 <!--fix the brushes image link (add file to the site)-->
-fix the images on image otd 
+<!--fix the images on image otd -->
 fix the images on fanarts
-fix the images on memes
+<!--fix the images on memes-->
 fix the images on characters' pages
-fix the linking to index instead of index on RH page
-style the landing page
+<!--fix the linking to index instead of index on RH page-->
+<!--style the landing page-->
 
 # HOMEPAGE
-add more colours & bookmarks to the home page
-(would be cool if made it actually look like a book)
-de-clutter
-add to-do list
-make site buttons window bigger = add my button there too
-add toggle scrolling of stamps? or just get rid of them completely
-fix the zoom out thing
+<!--add more colours & bookmarks to the home page-->
+<!--de-clutter-->
+<!--make site buttons window bigger = add my button there too-->
+<!--fix the zoom out thing-->
 
 
 
@@ -44,16 +42,20 @@ blog / newspapaer
     sudoku
     crossword
    
-   
+## shrines
+
 chonny jash shrine
     info
     links
     music player
     cccc
     jashtralia
+    
+balls
 
+peepy?
 
-characters pages
+## characters pages
 <!--    whole-->
 <!--        fix the images quality-->
 <!--        add images (screenshots/aestetic)-->

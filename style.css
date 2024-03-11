@@ -140,6 +140,7 @@ mark {
     font-size: 1.5Em;
     transition: .4s;
     text-decoration: none;
+    color: white;
 }
 
 #gohome {
@@ -243,7 +244,7 @@ h1, h2, h3, h4, h5, h6{
 .bigger {
     font-family: 'arcadeclassic';
     font-style: normal;
-    font-size: 1.7Em;
+    font-size: 1.2Em;
     text-transform: uppercase;
     text-align: center;
 }
@@ -251,7 +252,7 @@ h1, h2, h3, h4, h5, h6{
 .biggest {
     font-family: 'arcadeclassic';
     font-style: normal;
-    font-size: 2.5Em;
+    font-size: 1.5Em;
     text-transform: uppercase;
     text-align: center;
 }
@@ -419,13 +420,13 @@ a:hover{
 /*SONG*/
 
 #sotw-archive {
-    width: 500px;
-    height: 600px;
-    position: relative;
-    left: 1400px;
+    width: 450px;
+    height: 470px;
+    position: absolute;
+    right: 50px;
     margin-top: 100;
     display: block;
-    background-color: #2D2956;
+    background-color: #3C3772;
     border-radius: 20px;
     padding: 20px;
     overflow-y: scroll;
@@ -455,12 +456,12 @@ a:hover{
     padding: 20px;
     border-radius: 20px;
     width: 700px;
-    height: 600px;
+    height: 450px;
     position: absolute;
     top: 100;
     left: 100;
     color: white;
-    font-size: 1.3Em;
+    font-size: 1Em;
     border: 5px solid;
 }
 
