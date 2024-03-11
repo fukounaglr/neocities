@@ -33,6 +33,27 @@
 
 
 
+
+@font-face {
+    font-family: 'ashhmillr';
+    src: url('ashhmillr-regular-webfont.woff2') format('woff2'),
+         url('ashhmillr-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ashh';
+    src: url('ashh-regular-webfont.woff2') format('woff2'),
+         url('ashh-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
 * {
     scrollbar-color: deeppink white;
     scrollbar-width: thin;
@@ -292,7 +313,7 @@ a:hover{
 /*STATUSCAFE*/
 
 #statuscafe-content {
-    font-family: afanan;
+    font-family: 'ashh';
     text-transform: uppercase;
     font-weight: 300;
     letter-spacing: 1;
@@ -300,7 +321,7 @@ a:hover{
     position: absolute;
     top: 37;
     left: 30;
-    font-size: .5Em;
+    font-size: .4Em;
     width: 160px;
     height: 100px;
     align-content: center;
@@ -347,7 +368,7 @@ a:hover{
 #home {
     margin: auto;
     position: relative;
-    top: 20;
+    top: 0;
     padding: 80px 50px 20px 20px;
     border: solid 7px #02021C;
     border-radius: 20px;
@@ -383,21 +404,6 @@ a:hover{
     background-color: #E8F5F8;
     align-content: center;
     align-items: center;
-}
-
-
-
-
-#chatbox {
-    width: 300px;
-    margin: 20px;
-    font-weight: 500;
-    font-size: 1.4Em;
-    margin-top: 0;
-    background-color: #6DD1E5;
-    border: #02021C 5px solid;
-    background: right no-repeat url("/images/rainbow3.jpg");
-    background-size: cover;
 }
 
 
@@ -469,17 +475,14 @@ a:hover{
 
 
 #slider {
-    width: 180px;
-    height: 130px;
+    width: 150px;
+    height: 100px;
     background-color: #6DD1E5;
     background-size: contain;
     border: 5px solid dodgerblue;
     overflow: hidden;
     place-items: center;
     display: grid;
-    position: absolute;
-    top: 620px;
-    left: 710px;
 }
 
 .slide-track {
@@ -504,8 +507,9 @@ a:hover{
 }
 
 .slide {
-    width: 180px;
+    width: auto;
     display: flex;
+    margin-left: 20px;
 }
 
 
@@ -556,8 +560,8 @@ a:hover{
 }
 
 .blog-img {
-    height: 140px;
-    max-width: 300px;
+    height: 100px;
+    max-width: 90%;
     margin: auto;
     display: block;
 }
@@ -1072,14 +1076,15 @@ a:hover{
 #projects {
     background-color: #040A31;
     border: 5px solid #5B83D2;
-    width: 1700px;
-    height: 700px;
-    padding: 50;
-    margin-left: 100;
+    width: 80%;
+    height: 500px;
+    padding: 50px;
+    margin-left:50%;
+    transform: translate(-50%, 0);
     margin-top: 30;
     border-radius: 20px;
     display: grid;
-    grid-template-columns: 350px 100px 1270px;
+    grid-template-columns: 18% 7% 76%;
 }
 
 
@@ -1089,7 +1094,6 @@ a:hover{
     margin-bottom: -50px;
     width: 70%;
     background-color: black;
-    font-size: 1.2Em;
     padding: 50 0;
 }
 
