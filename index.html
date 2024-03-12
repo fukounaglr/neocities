@@ -16,7 +16,7 @@
             background: url(/images/966df1035f1fbc676b57ea96c0f06fd4.jpg);
         }
 
-        footer {
+        #footer {
             position: fixed;
             bottom: 0;
             width: 100%;
@@ -193,6 +193,9 @@
 
 
 
+    <div id="footer">
+        coded with <a class="white" href="https://brackets.io/">brackets</a> and tested in chrome. not optimised for mobile. the site is still under construction! Last updated: <snap id="lastupdate"></snap>
+    </div>
 
     <script>
         var xhttp = new XMLHttpRequest();
@@ -214,10 +217,26 @@
         xhttp.send();
 
     </script>
+<script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var site_data = JSON.parse(this.responseText);
+
+                var date_str = site_data.info.last_updated;
+        var date_obj = new Date(site_data.info.last_updated);
+document.getElementById("lastupdate").innerHTML = date_obj.toDateString();
+
+            }
+        };
+        xhttp.open("GET", "https://weirdscifi.ratiosemper.com/neocities.php?sitename=ashhmillr", true);
+        xhttp.send();
+
+    
+    </script>
+
+
 </body>
 
-<footer>
-    coded with <a class="white" href="https://brackets.io/">brackets</a> and tested in chrome. not optimised for mobile. the site is still under construction!
-</footer>
 
 </html>
