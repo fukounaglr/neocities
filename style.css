@@ -901,7 +901,7 @@ a:hover{
     border-radius: 20px;
 }
 
-#info.tabcontent{
+#info #info-inside{
     display: grid;
     grid-template-columns: 40% 10% 35%;
     grid-gap: 2.5%;
