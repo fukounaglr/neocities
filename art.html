@@ -19,7 +19,7 @@
 
         #goback {
             position: absolute;
-            top: 40;
+            top: 25;
             left: 50%;
             transform: translate(-50%, 0);
             font-family: 'karmatic arcade';
@@ -62,6 +62,10 @@
             width: 100%;
             display: grid;
         }
+        
+        .links{
+            width: 20;
+        }
 
     </style>
 </head>
@@ -71,7 +75,7 @@
     <div id="wrapper2">
 
 
-        <div style="position: relative; top: 30;">
+        <div style="position: relative; top: 10;">
 
             <div id="art-box">
                 <div id="art-inside">
@@ -155,33 +159,32 @@
 
 
                     <div id="commissions" class="tabcontent">
-                        <div style=" height: 100%; width: 100%;  overflow-y: scroll;">
+                        <div style=" height: 100%; width: 90%;  overflow-y: scroll;">
                             <img src="/images/comms0.png" width="100%">
                             <img src="/images/comms1.png" width="100%">
                             <img src="/images/comms2.png" width="100%">
                             <img src="/images/comms3.png" width="100%">
                             <img src="/images/comms4.png" width="100%">
                             <div>
-                                <span>
+                                <span> 
                                     <p class="bigger">contact me:</p>
-                                    <ol style="list-style: none" class="big">
-                                        <li>discord: ashhmillr</li>
-                                        <li>e-mail: ashhmillr@gmail.com</li>
-
-                                    </ol>
+                                    <div class="big">
+                                    <a href="mailto:ashhmillr@gmail.com"><img src="/icons/icon%20mail.png" class="links" alt="Email">email</a>
+                                    <a href="https://discordapp.com/users/984362752439107604/" target="_blank"><img src="/icons/icon discord.png" class="links" alt="Discord">discord</a>
+                                    </div>
                                 </span>
                             </div>
                         </div>
 
                         <a href="#portfolio" title="portfolio" class="tablinks" onclick="openTab(event, 'portfolio')">
                             <div id="art-nav" class="art-nav-right">
-                                <p style="margin-top: 350px;">&gt; </p>
+                                <p>&gt; </p>
                             </div>
                         </a>
 
                         <a href="#info" title="info" class="tablinks" onclick="openTab(event, 'info')">
                             <div id="art-nav" class="art-nav-left">
-                                <p style="margin-top: 350px;">&lt; </p>
+                                <p>&lt; </p>
                             </div>
                         </a>
 
@@ -195,9 +198,11 @@
 
 
                     <div id="portfolio" class="tabcontent">
-                        <div class="gallery-container">
+                        <div class="gallery-container"  style="margin-top: 50px;">
 
                             <div class="gallery">
+
+                                <img src="https://i.ibb.co/p0PMG6R/bros-drowninn.png" alt="bros drownin">
 
                                 <img src="https://64.media.tumblr.com/a9f011f8b7c39b2efddd090ce2ddc363/f729f76cd650ea7a-38/s1280x1920/2e6d1e61588c09c72018cb42f0e800e992349712.png" alt="jhariah pin-eye">
 
@@ -282,13 +287,13 @@
 
                         <a href="#info" title="info" class="tablinks" onclick="openTab(event, 'info')">
                             <div id="art-nav" class="art-nav-right">
-                                <p style="margin-top: 350px;">&gt; </p>
+                                <p>&gt; </p>
                             </div>
                         </a>
 
                         <a href="#commissions" title="commissions" class="tablinks" onclick="openTab(event, 'commissions')">
                             <div id="art-nav" class="art-nav-left">
-                                <p style="margin-top: 350px;">&lt; </p>
+                                <p>&lt; </p>
                             </div>
                         </a>
 
@@ -301,7 +306,7 @@
         </div>
 
         <div>
-            <a href="/home" id="goback">go back</a>
+            <a href="/home" id="goback" style="z-index: 2">go back</a>
 
         </div>
     </div>

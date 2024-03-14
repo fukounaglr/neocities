@@ -16,11 +16,14 @@ get a gifypet! (egg)
 <!--fix images in portfolio (raplace discord links with tumblr links)-->
 <!--fix the brushes image link (add file to the site)-->
 <!--fix the images on image otd -->
-fix the images on fanarts
+<!--fix the images on fanarts-->
 <!--fix the images on memes-->
 fix the images on characters' pages
+fix comms 
 <!--fix the linking to index instead of index on RH page-->
 <!--style the landing page-->
+<!--rescale ash dressup-->
+<!--rescale not found-->
 
 # HOMEPAGE
 <!--add more colours & bookmarks to the home page-->
