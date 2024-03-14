@@ -855,6 +855,7 @@ a:hover{
 #art-inside {
     width: 90%;
     padding: 40 120;
+    height: 90%;
 }
 
 #art-nav {
@@ -869,6 +870,10 @@ a:hover{
     color: #4BD7C8;
     position: absolute;
     top: 0;
+}
+
+#art-nav p{
+    margin-top: 300px;
 }
 
 #art-nav:hover {
@@ -886,12 +891,10 @@ a:hover{
 
 #info-box {
     display: block;
-    margin-bottom: 20;
     width: 100%;
     text-align: center;
     align-content: center;
     align-items: center;
-    padding-top: 10;
     background-color: #FFC8B9;
     color: #B60E3B;
     border: solid 5px #B60E3B;
@@ -900,7 +903,8 @@ a:hover{
 
 #info.tabcontent{
     display: grid;
-    grid-template-columns: 35% 20% 35%;
+    grid-template-columns: 40% 10% 35%;
+    grid-gap: 2.5%;
 }
 
 #info-box #big {
