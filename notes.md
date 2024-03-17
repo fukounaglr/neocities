@@ -19,7 +19,7 @@ get a gifypet! (egg)
 <!--fix the images on fanarts-->
 <!--fix the images on memes-->
 fix the images on characters' pages
-fix comms 
+<!--fix comms -->
 <!--fix the linking to index instead of index on RH page-->
 <!--style the landing page-->
 <!--rescale ash dressup-->
