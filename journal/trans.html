@@ -1,0 +1,217 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>journal</title>
+
+    <link rel="icon" type="image/png" href="/ico.png">
+    <link rel="stylesheet" href="/style.css">
+
+    <script src="/main.js"></script>
+
+    <style>
+        html {
+            scrollbar-color: #5DD4DC #104051;
+        }
+
+        body {
+            background: url(/images/deskmat.png);
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            padding-bottom: 50px;
+        }
+
+        #wrapper {
+            width: 90%;
+            height: auto;
+        }
+
+        .cred {
+            font-family: 'arcadeclassic';
+            font-size: 3Em;
+            top: 20px;
+            width: 100%;
+            cursor: pointer;
+            text-transform: uppercase;
+            text-align: center;
+            margin-left: 45%;
+        }
+
+        #goback {
+            color: white;
+        }
+
+        #goback:hover {
+            color: #5DD4DC;
+        }
+
+        #trans {
+            transition: .5s;
+            top: 100px;
+            left: 30%;
+            width: 150px;
+        }
+
+        #trans:hover {
+            transform: rotate(15deg);
+        }
+
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .image-container img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .overlay-text {
+            width: 100%;
+            height: 70%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: none;
+            color: mediumvioletred;
+            padding: 0px 0px;
+            font-size: .7Em;
+            text-align: center;
+        }
+
+        .overlay-text ol {
+            overflow-y: auto;
+            height: 80%;
+        }
+
+        #statuscafe {
+            display: flex;
+        }
+
+        #statuscafe-username {
+            font-size: .6Em;
+            color: seagreen;
+        }
+
+        #statuscafe-username a {
+            display: none;
+        }
+
+        #statuscafe-content {
+
+            color: deeppink;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <div id="wrapper">
+        <img src="/images/ek220-black.png" width="3%" style="position: fixed; top: 100; right: 50;">
+
+        <div class="journal-box">
+
+            <h1>
+                <span style="background-color: pink">T</span>
+                <span style="background-color: skyblue">R</span>
+                <span style="background-color: white">A</span>
+                <span style="background-color: skyblue">N</span>
+                <span style="background-color: pink">S</span>
+                !
+            </h1>
+
+            <h3>HI!! My name is: <span style="background-color: pink">A</span><span style="background-color: skyblue">J</span>!</h3>
+
+            <p style="width: 80%"><b>STANDS FOR</b>: <u>ash jash</u>, <span style="color: deeppink">ash</span> being being the short version of my name i've been going by online for couple of yeart (i think?), and <span style="color: dodgerblue">jash</span> being a reference to chonny jash, my special interest!<br>
+                i've actually tried finding the origin of this nickname few times, and this is what i found:</p>
+
+            <div class="two">
+                <img src="https://i.ibb.co/cwy3Br7/Screenshot-91.png" height="300px">
+                <span>
+                    <p style="width: 50%">as well as this amazing interpritation by dansan (true caller):</p>
+                    <img src="https://i.ibb.co/wrpwTZy/Screenshot-77.png" width="500px">
+                </span>
+            </div>
+
+            <h3>My nicknames!</h3>
+
+            <p></p>
+
+
+
+
+
+            <div style="position: absolute; top: 100px; right: 0;">
+                <img id="aj" src="/images/aj-journal.png" style="position: absolute; top: 0; right: -100" title="no!">
+                <span style="position: absolute; top: 35; right: -85; width: 140; text-align: center; font-size: .6Em;">
+                    i've dissociated from my body so much i don't know what's my gender anymore.
+                </span>
+            </div>
+
+
+
+            <script>
+                const imageTitles = [
+                    "don't touch please!",
+                    "no touching!",
+                    "put your hand away!",
+                    "hey!",
+                    "go away!",
+                    "too close!",
+                    "i'm not foud of tactile contact",
+                    "please stop"
+                ];
+
+                const randomImage = document.getElementById('aj');
+
+                randomImage.addEventListener('mouseover', () => {
+                    const randomIndex = Math.floor(Math.random() * imageTitles.length);
+                    randomImage.title = imageTitles[randomIndex];
+                });
+
+            </script>
+
+
+
+        </div>
+
+
+
+        <div id="journal-navigation">
+            <a href="/journal/">
+                <a href="/journal/index">
+                    <div class="journal-nav journal-current">journal</div>
+                </a>
+                <a href="/journal/sketchbook">
+                    <div class="journal-nav">sketchbook</div>
+                </a>
+                <a href="/journal/guestbook">
+                    <div class="journal-nav">guestbook</div>
+                </a>
+                <div class="journal-nav">photo album</div>
+                <div class="journal-nav">quotebook</div>
+            </a>
+
+        </div>
+
+
+
+
+        <a href="javascript:history.go(-1)">
+            <p id="goback">&#129044; go back</p>
+        </a>
+        <a href="/home"><img src="/icons/home.png" width="30px" id="gohome"></a>
+
+
+
+    </div>
+</body>
+
+</html>
