@@ -37,13 +37,16 @@ fix the images on characters' pages
 
 <!-- close view of images in gallery-->
 
-blog / newspapaer
+blog / newspapaer / journal??
     photos?
     media sharing
     quotes??
+    trans page
     the actual like, blog
-    sudoku
+<!--    sudoku-->
     crossword
+<!--    navlink add-->
+    make add for my site?
    
 ## shrines
 
@@ -74,7 +77,7 @@ peepy?
     red
     plush
 
-stuff
+# coolzone
     music (stuff)
     favs (av characters)
     music (playlists)
