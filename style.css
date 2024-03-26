@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'arcadeclassic';
-    src: url('fonts/arcadeclassic-webfont.woff2') format('woff2'),
-        url('fonts/arcadeclassic-webfont.woff') format('woff');
+    src: url('/fonts/arcadeclassic-webfont.woff2') format('woff2'),
+        url('/fonts/arcadeclassic-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -12,8 +12,8 @@
 
 @font-face {
     font-family: 'karmatic arcade';
-    src: url('fonts/karmaticarcade-webfont.woff2') format('woff2'),
-        url('fonts/karmaticarcade-webfont.woff') format('woff');
+    src: url('/fonts/karmaticarcade-webfont.woff2') format('woff2'),
+        url('/fonts/karmaticarcade-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -24,8 +24,8 @@
 
 @font-face {
     font-family: 'merchant copy';
-    src: url('fonts/merchantcopy-webfont.woff2') format('woff2'),
-        url('fonts/merchantcopy-webfont.woff') format('woff');
+    src: url('/fonts/merchantcopy-webfont.woff2') format('woff2'),
+        url('/fonts/merchantcopy-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -36,8 +36,8 @@
 
 @font-face {
     font-family: 'ashhmillr';
-    src: url('ashhmillr-regular-webfont.woff2') format('woff2'),
-         url('ashhmillr-regular-webfont.woff') format('woff');
+    src: url('/fonts/ashhmillr-regular-webfont.woff2') format('woff2'),
+         url('/fonts/ashhmillr-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -45,8 +45,18 @@
 
 @font-face {
     font-family: 'ashh';
-    src: url('ashh-regular-webfont.woff2') format('woff2'),
-         url('ashh-regular-webfont.woff') format('woff');
+    src: url('/fonts/ashh-regular-webfont.woff2') format('woff2'),
+         url('/fonts/ashh-regular-webfont.woff') format('woff'),
+         url('/fonts/shh-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'eggfont';
+    src: url('/fonts/ashhmillr_eggfont-webfont.woff2') format('woff2'),
+         url('/fonts/ashhmillr_eggfont-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -1261,11 +1271,12 @@ a:hover{
 
 .journal-box {
     background-color: white;
-    padding: 50px;
+    padding: 20 50px;
     margin-left: 25%;
     margin-top: 0px;
     margin-bottom: 30px;
-    font-family: 'ashhmillr';
+    font-family: 'eggfont';
+/*    text-transform: uppercase;*/
     background: white url(/images/dot-paper.png);
     background-position: center;
     border: 5px black solid;
@@ -1276,7 +1287,7 @@ div.two{
 }
 
 .journal-box h1, .journal-box h2, .journal-box h3, .journal-box h4, .journal-box h5, .journal-box h6{
-    font-family: 'ashhmillr';
+    font-family: 'eggfont';
 }
 
 
