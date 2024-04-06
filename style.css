@@ -147,7 +147,7 @@ mark {
     position: fixed;
     top: 10;
     left: 20;
-    font-size: 1.5Em;
+    font-size: 1.2Em;
     transition: .4s;
     text-decoration: none;
     color: white;
@@ -155,7 +155,7 @@ mark {
 
 #gohome {
     position: fixed;
-    top: 23;
+    top: 27;
     left: 180;
     color: white;
     transition: .4s;
@@ -821,7 +821,7 @@ a:hover{
 
 #art-inside {
     width: 90%;
-    padding: 40 120;
+    padding: 10 110;
     height: 90%;
 }
 
@@ -840,7 +840,7 @@ a:hover{
 }
 
 #art-nav p{
-    margin-top: 300px;
+    margin-top: 40%;
 }
 
 #art-nav:hover {

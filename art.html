@@ -7,8 +7,6 @@
 
     <link rel="icon" type="image/png" href="/ico.png">
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="https://fontcity.neocities.org/afanan.css?family=afanan">
-    <link rel="stylesheet" href="https://fontcity.neocities.org/vayentha.css?family=vayentha">
 
     <script src="/main.js"></script>
 
@@ -19,11 +17,11 @@
 
         #goback {
             position: absolute;
-            top: 25;
+            top: 10;
             left: 50%;
             transform: translate(-50%, 0);
             font-family: 'karmatic arcade';
-            font-size: 1Em;
+            font-size: .7Em;
             color: #4BD7C8;
         }
 
@@ -55,7 +53,7 @@
 
         #stamps {
             display: grid;
-            grid-template-columns: 20% 20% 20% 20% 20%;
+            grid-template-columns: auto auto auto auto;
         }
 
         #stamps img {
@@ -65,6 +63,10 @@
         
         .links{
             width: 20;
+        }
+        
+        .popup{
+            z-index: 10;
         }
 
     </style>
@@ -87,19 +89,18 @@
                                 <iframe style="border: none; margin-bottom: 20;" src="https://ashhmillr.tumblr.com/" width="100%" height="250px;"></iframe>
 
                                 <div id="stamps">
-                                    <img src="/stamps/stamp0.png">
                                     <img src="/stamps/mspain.png">
                                     <img src="/stamps/stamp48.png">
                                     <img src="/stamps/88.gif">
                                     <img src="/stamps/d87xmn8-ddf8b510-12c2-450b-97c6-bb4a257066b2.gif">
                                 </div>
 
-                                <div style="background-color: white; padding: 20 10; border-radius: 20px; margin-top: 20; text-align: center;">
+                                <div style="background-color: white; padding: 20 0; border-radius: 20px; margin-top: 20; text-align: center;">
                                     <p class="big">general info</p>
                                     <p style="color: #14ADB1">- no sexualizing of my art/characters</p>
                                     <p style="color: #14ADB1">- you can use my style, i don't care</p>
                                     <hr style="color: #14ADB1">
-                                    <p class="big"><mark style="background-color: #FFC8B9;">!do not repost/reupload my art!</mark></p>
+                                    <p class="big"><mark style="background-color: #FFC8B9;">do not repost/reupload my art</mark></p>
                                 </div>
                             </div>
 
@@ -108,6 +109,10 @@
                             <div style="display: grid; margin: auto; text-align: center;">
 
                                 <img src="/images/toast%20cat.png" width="100%" style="position: relative; left: -30;">
+                                
+<!--                                    <img src="/stamps/stamp0.png">-->
+                                    <img src="/stamps/stamp001.png">
+                                
                                 <img src="/images/77235636662c1aa4faf025f78a8fb7a4.jpg" width="100%">
                                 <img src="/images/92a238c02adf93a059d1b863564a43f0.jpg" width="100%">
                                 <img src="/images/3747c3e98c3d119f053a2fe51e255918.jpg" width="100%">
@@ -127,7 +132,7 @@
                                     <p>You can use my fanarts as pfp!! just make sure to credit me.</p>
                                     <hr>
                                     <p class="big">what brushes do you use?</p>
-                                    <p>i switch between different brushes and settings, but <a href="https://psv4.userapi.com/c909328/u526590705/docs/d50/cc46c5f4774a/brushes.png" target="_blank">here are some</a></p>
+                                    <p>i switch between different brushes and settings, but <a href="/brushes" target="_blank">here are some</a></p>
                                 </div>
 
 
@@ -159,7 +164,7 @@
 
 
                     <div id="commissions" class="tabcontent">
-                        <div style=" height: 100%; width: 90%;  overflow-y: scroll;">
+                        <div style=" height: 105%; width: 80%;  overflow-y: scroll; margin-left: 7%; margin-top: 20;">
                             <img src="/images/comms0.png" width="100%">
                             <img src="/images/comms1.png" width="100%">
                             <img src="/images/comms2.png" width="100%">
@@ -205,6 +210,10 @@
                                 
 <!--                                <img src="https://i.ibb.co/p0PMG6R/bros-drowninn.png" alt="bros drownin">-->
 
+                                
+                                <img src="https://i.ibb.co/kq43p45/R9PqsZU.png" alt="R9PqsZU" border="0">
+                                <img src="https://i.ibb.co/BsY7cM4/what-fi-you-wanted-to.png" alt="what-fi-you-wanted-to" border="0">
+                                <img src="https://i.ibb.co/YT72Ggp/shes-trans-and-has-a-fursona-fixed.png" alt="shes-trans-and-has-a-fursona-fixed" border="0">
                                 
                                 <div class="spoiler">
                                 <img src="https://i.ibb.co/zXqsV3x/wtf-are-they-ding.png" alt="girls night out">
@@ -287,7 +296,10 @@
                             </div>
 
                             <div class="popup">
-                                <span class="white">click anywhere to close</span>
+<!--                                <span class="white">click<br>anywhere<br>to close</span>-->
+                                
+                                <span id="" class="white" style="position: absolute; left: 50; top: 95%;">click anywhere to close</span>
+                                
                                 <img src="https://64.media.tumblr.com/b2a1b4f963343b028f44048d6d01c24e/f7ac4acf9d0a3c16-be/s2048x3072/f5af1f728a7d111186561d1e32f99312fa461e02.pnj">
                             </div>
 
