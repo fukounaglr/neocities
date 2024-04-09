@@ -13,17 +13,31 @@
         body {
             background-color: #06063b;
             background: url(/images/backrooms-original-photo.jpg);
+            background: url(/images/bedroom.png);
+            background-position: bottom;
             background-size: cover;
+            font-size: .8Em;
         }
 
         .links {
-            width: 15;
+            position: relative;
+            top: 0;
+            width: 30;
             margin: 0;
+            transition: .5s;
+        }
+        
+        .links:hover{
+            width: 35;
         }
 
         #links-box {
             margin-top: 0;
             font-size: 1Em
+        }
+        
+        #webmaster-box {
+            z-index: 10;
         }
 
         #slider2 {
@@ -61,18 +75,18 @@
             }
 
             100% {
-                transform: translateX(-3700px)
+                transform: translateX(-4000px)
             }
         }
 
         #goback:hover {
-            color: blue;
+            color: hotpink;
         }
 
         #aj {
             position: absolute;
             top: 150px;
-            left: 35%;
+            left: 38%;
         }
 
         #aj img {
@@ -107,9 +121,13 @@
 
 
         /*STATUSCAFE*/
+        
+        #status{
+                        font-family: 'eggfont';
+        }
 
         #statuscafe-content {
-            font-family: 'ashh';
+            font-family: 'eggfont';
             text-transform: uppercase;
             font-weight: 300;
             letter-spacing: 1;
@@ -130,22 +148,22 @@
             position: absolute;
             top: 80;
             left: -110;
-            color: mediumvioletred;
+/*            color: mediumvioletred;*/
             width: 160px;
             font-size: .9Em;
         }
 
         #statuscafe-username a {
-            font-family: 'arcadeclassic';
+/*            font-family: 'arcadeclassic';*/
             font-style: normal;
-            color: #262649;
+            color: hotpink;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 1Em;
         }
 
         #statuscafe-username a:hover {
-            color: blue;
+            color: skyblue;
             text-decoration: underline;
         }
 
@@ -157,7 +175,7 @@
 
     <div style="position: absolute; top: 450; left: 2%; align-content: center;">
 
-        <img src="images/cardboardbox1.png" style=" position: absolute; width: 350; top: 40; left: 70;">
+        <img src="images/cardboardbox2.png" style=" position: absolute; width: 350; top: 40; left: 70;">
 
 
         <img src="images/goocifer.png" class="draggable" style="left: 20; top: -80; height: 300px">
@@ -236,7 +254,9 @@
         <div id="webmaster-info">
             <div style="width: 95%; margin: auto;">
                 <p id="big-wm">Sasha Jash Neil</p>
-                <p><mark style="background-color: #fff000">nicknames:</mark> AJ, ash jash, ashhmillr, hydrogen/H, eggboy/egg</p>
+                
+                <div style="height: 55%; overflow-y: auto;">
+                <p><mark style="background-color: #fff000">AKA:</mark> AJ, ash jash, ashhmillr, egg, Marbles</p>
 
                 <p><mark style="background-color: #ff438d;">age:</mark> many much</p>
 
@@ -245,7 +265,6 @@
                 <p><mark style="background-color: #b5e61d;">gender:</mark><a href="https://en.pronouns.page/@ashhmillr" target="_blank"><img src="/icons/icon pronouns.png" class="links" alt="Pronouns">no thanks</a></p>
 
                 <p><mark style="background-color: #c592e7;">facts:</mark></p>
-                <div style="height: 100px; overflow-y: auto;">
                     <ol style="margin-top: 0; list-style: none">
                         <li>- <a target="_blank" href="/basement/characters/egg">sona</a></li>
                         <li>- wants to play drums</li>
@@ -256,9 +275,138 @@
                         <li>- "why are you so tall???" IDK</li>
                     </ol>
                 </div>
+                
+                
+
+                <div id="slider2">
+                    <div class="slide-track">
+
+                        <div class="slide"><a target="_blank" href="https://www.youtube.com/watch?v=5B0tlmQn6qA&list=PL6k1Keqk6jeMWXdj3RpDfXxw0Qls6rLqa&pp=iAQB">
+                                <img src="stamps/stamp02.png">
+                            </a></div>
+
+                        <div class="slide"><a target="_blank" href="https://www.youtube.com/watch?v=78QgIdNdHLI&list=PL6k1Keqk6jeMexf92J9F-tUffOosAn_Db&pp=iAQB">
+                                <img src="stamps/stamp03.png">
+                            </a></div>
+
+                        <div class="slide"><a target="_blank" href="https://www.youtube.com/watch?v=wATkLt_QTuI&list=PL6k1Keqk6jeNlPa1PKNLO4NJ_PPm2ZJsE&pp=iAQB">
+                                <img src="stamps/stamp04.png">
+                            </a></div>
+
+                        <div class="slide"><a target="_blank" href="https://glassbeach.band/">
+                                <img src="stamps/glass%20beach%20stamp.png">
+                            </a></div>
+
+                        <div class="slide"><a target="_blank" href="https://www.youtube.com/playlist?list=PL-GNgRVTwsGvSW4uC8DLGLCnvd28umwjq">
+                                <img src="stamps/stamp05.png">
+                            </a></div>
+
+                        <div class="slide"><a target="_blank" href="https://www.youtube.com/playlist?list=PLX-KY8nhnd1Lbh76AnE3c3tX36rieoxE1">
+                                <img src="stamps/stamp06.png">
+                            </a></div>
+
+                        <div class="slide"><a target="_blank" href="https://www.youtube.com/playlist?list=PLC80P4gsPr-bOm6NDLrbUYtcrbrj8z1dC">
+                                <img src="stamps/stamp07.png">
+                            </a></div>
+
+                        <div class="slide"><a target="_blank" href="https://www.youtube.com/playlist?list=PLBoQEROJNB99RMoFTE3G7GzXKL_-oqrso">
+                                <img src="stamps/stamp08.gif">
+                            </a></div>
+
+                        <div class="slide"><a target="_blank" href="https://www.youtube.com/@Jhariah/">
+                                <img src="stamps/stamp09.png">
+                            </a></div>
+
+                        <div class="slide"><a target="_blank" href="https://www.youtube.com/watch?v=JvtKxofqjhA&list=PLNk2OQjYEkMYfU2gqD73Zms5uCh8nkz2k&pp=iAQB">
+                                <img src="stamps/stamp10.png">
+                            </a></div>
+
+                        <div class="slide"><a target="_blank" href="https://www.youtube.com/@ghostandpals/videos">
+                                <img src="stamps/stamp11.gif">
+                            </a></div>
+
+                        <div class="slide"><a href="https://www.youtube.com/playlist?list=PLpVtuSR90S0zpijlSULKtj7xk6f8s_G5v">
+                                <img src="stamps/stamp12.png">
+                            </a></div>
+
+                        <div class="slide"><a target="_blank" href="https://www.youtube.com/channel/UCU5ZC6JENEIymH9oDxBarzw/videos">
+                                <img src="stamps/stamp13.png">
+                            </a></div>
+
+                        <div class="slide"><a target="_blank" href="https://www.youtube.com/@IDONTKNOWHOWBUTTHEYFOUNDME/videos">
+                                <img src="stamps/stamp15.png">
+                            </a></div>
+
+                        <div class="slide"><a target="_blank" href="https://www.theowlclub.net/">
+                                <img src="stamps/stamp20.gif">
+                            </a></div>
+
+                        <div class="slide"><a target="_blank" href="https://www.wcostream.tv/anime/scott-pilgrim-takes-off">
+                                <img src="stamps/stamp21.gif">
+                            </a></div>
+
+                        <div class="slide"><a target="_blank" href="https://www.wcoforever.tv/anime/adventure-time-fionna-and-cake">
+                                <img src="stamps/stamp22.gif">
+                            </a></div>
+
+                        <div class="slide"><a target="_blank" href="https://www.wcostream.tv/anime/amphibia">
+                                <img src="stamps/stamp23.gif">
+                            </a></div>
+
+                        <div class="slide"><a target="_blank" href="https://www.wcostream.org/anime/bee-and-puppycat">
+                                <img src="stamps/stamp24.gif">
+                            </a></div>
+
+                        <div class="slide"><a target="_blank" href="https://www.wcostream.net/anime/bluey">
+                                <img src="stamps/stamp25.gif">
+                            </a></div>
+
+                        <div class="slide"><a target="_blank" href="https://archive.org/details/over-the-garden-wall_202211">
+                                <img src="stamps/stamp26.gif">
+                            </a></div>
+
+                        <div class="slide"><a target="_blank" href="https://melcoteam.itch.io/aconite-beta">
+                                <img src="stamps/stamp28.gif">
+                            </a></div>
+
+                        <div class="slide"><a target="_blank" href="https://deltarune.com/">
+                                <img src="stamps/stamp29.png">
+                            </a></div>
+
+                        <div class="slide"><a target="_blank" href="https://www.youtube.com/watch?v=_CQ_ehoRfsE">
+                                <img src="stamps/stamp30.png">
+                            </a></div>
+
+                    </div>
+                </div>
+
 
                 <div id="links-box">
 
+                    <p>
+                        <a href="https://ashhmillr.tumblr.com/" target="_blank"><img src="/icons/icon tumblr.png" class="links" title="Tumblr"></a>
+
+                        <a href="https://youtube.com/@ashhmillr" target="_blank"><img src="/icons/icon youtube.png" class="links" title="Youtube (main)"></a>
+
+                        <a href="https://www.youtube.com/@ashhposts" target="_blank"><img src="/icons/icon youtube2.png" class="links" title="Youtube shitpost"></a>
+                        <a href="https://spacehey.com/ashhmillr" target="_blank"><img src="/icons/icon%20spacehey.png" class="links" title="spacehey"></a>
+
+
+                        <a href="https://www.pinterest.com/ashhmillr/" target="_blank"><img src="/icons/icon pinterest.png" class="links" title="Pinterest"></a>
+
+                        <a href="https://tenor.com/en-AU/users/ashjash" target="_blank"><img src="/icons/tenor.png" class="links" title="Pronouns"></a>
+
+                        <a href="https://www.last.fm/user/ashhmillr" target="_blank"><img src="/icons/lastfm.png" class="links" title="Pronouns"></a>
+
+                        <a href="https://discord.gg/k5J96KyPV3" target="_blank"><img src="/icons/icon discord.png" class="links" title="Discord Server"></a>
+
+                        <a href="https://twitter.com/ashhmillr" target="_blank"><img src="/icons/icon%20twitter.png" class="links" title="twitter"></a>
+                        <a href="https://github.com/ashhmillr" target="_blank"><img src="/icons/github.png" class="links" title="github"></a>
+                        <a href="https://boosty.to/ashhmillr" target="_blank"><img src="/icons/icon%20boosty.png" class="links" title="boosty"></a>
+                        <a href="mailto:ashhmillr@gmail.com"><img src="/icons/icon%20mail.png" class="links" title="Email"></a>
+                    </p>
+
+<!--
                     <p>
                         <a href="https://ashhmillr.tumblr.com/" target="_blank"><img src="/icons/icon tumblr.png" class="links" alt="Tumblr">tumblr</a>
 
@@ -283,126 +431,21 @@
                         <a href="https://boosty.to/ashhmillr" target="_blank"><img src="/icons/icon%20boosty.png" class="links" alt="boosty">boosty</a>
                         <a href="mailto:ashhmillr@gmail.com"><img src="/icons/icon%20mail.png" class="links" alt="Email">email</a>
                     </p>
+-->
                 </div>
 
-
-
-                <div id="slider2">
-                    <div class="slide-track">
-
-                        <div class="slide"><a href="https://www.youtube.com/watch?v=5B0tlmQn6qA&list=PL6k1Keqk6jeMWXdj3RpDfXxw0Qls6rLqa&pp=iAQB">
-                                <img src="stamps/stamp02.png">
-                            </a></div>
-
-                        <div class="slide"><a href="https://www.youtube.com/watch?v=78QgIdNdHLI&list=PL6k1Keqk6jeMexf92J9F-tUffOosAn_Db&pp=iAQB">
-                                <img src="stamps/stamp03.png">
-                            </a></div>
-
-                        <div class="slide"><a href="https://www.youtube.com/watch?v=wATkLt_QTuI&list=PL6k1Keqk6jeNlPa1PKNLO4NJ_PPm2ZJsE&pp=iAQB">
-                                <img src="stamps/stamp04.png">
-                            </a></div>
-
-                        <div class="slide"><a href="https://www.youtube.com/playlist?list=PL-GNgRVTwsGvSW4uC8DLGLCnvd28umwjq">
-                                <img src="stamps/stamp05.png">
-                            </a></div>
-
-                        <div class="slide"><a href="https://www.youtube.com/playlist?list=PLX-KY8nhnd1Lbh76AnE3c3tX36rieoxE1">
-                                <img src="stamps/stamp06.png">
-                            </a></div>
-
-                        <div class="slide"><a href="https://www.youtube.com/playlist?list=PLC80P4gsPr-bOm6NDLrbUYtcrbrj8z1dC">
-                                <img src="stamps/stamp07.png">
-                            </a></div>
-
-                        <div class="slide"><a href="https://www.youtube.com/playlist?list=PLBoQEROJNB99RMoFTE3G7GzXKL_-oqrso">
-                                <img src="stamps/stamp08.gif">
-                            </a></div>
-
-                        <div class="slide"><a href="https://www.youtube.com/@Jhariah/">
-                                <img src="stamps/stamp09.png">
-                            </a></div>
-
-                        <div class="slide"><a href="https://www.youtube.com/watch?v=JvtKxofqjhA&list=PLNk2OQjYEkMYfU2gqD73Zms5uCh8nkz2k&pp=iAQB">
-                                <img src="stamps/stamp10.png">
-                            </a></div>
-
-                        <div class="slide"><a href="https://www.youtube.com/@ghostandpals/videos">
-                                <img src="stamps/stamp11.gif">
-                            </a></div>
-
-                        <div class="slide"><a href="https://www.youtube.com/playlist?list=PLpVtuSR90S0zpijlSULKtj7xk6f8s_G5v">
-                                <img src="stamps/stamp12.png">
-                            </a></div>
-
-                        <div class="slide"><a href="https://www.youtube.com/channel/UCU5ZC6JENEIymH9oDxBarzw/videos">
-                                <img src="stamps/stamp13.png">
-                            </a></div>
-
-                        <div class="slide"><a href="https://www.youtube.com/@IDONTKNOWHOWBUTTHEYFOUNDME/videos">
-                                <img src="stamps/stamp15.png">
-                            </a></div>
-
-                        <div class="slide"><a href="https://www.theowlclub.net/">
-                                <img src="stamps/stamp20.gif">
-                            </a></div>
-
-                        <div class="slide"><a href="https://www.wcostream.tv/anime/scott-pilgrim-takes-off">
-                                <img src="stamps/stamp21.gif">
-                            </a></div>
-
-                        <div class="slide"><a href="https://www.wcoforever.tv/anime/adventure-time-fionna-and-cake">
-                                <img src="stamps/stamp22.gif">
-                            </a></div>
-
-                        <div class="slide"><a href="https://www.wcostream.tv/anime/amphibia">
-                                <img src="stamps/stamp23.gif">
-                            </a></div>
-
-                        <div class="slide"><a href="https://www.wcostream.org/anime/bee-and-puppycat">
-                                <img src="stamps/stamp24.gif">
-                            </a></div>
-
-                        <div class="slide"><a href="https://www.wcostream.net/anime/bluey">
-                                <img src="stamps/stamp25.gif">
-                            </a></div>
-
-                        <div class="slide"><a href="https://archive.org/details/over-the-garden-wall_202211">
-                                <img src="stamps/stamp26.gif">
-                            </a></div>
-
-                        <div class="slide"><a href="https://melcoteam.itch.io/aconite-beta">
-                                <img src="stamps/stamp28.gif">
-                            </a></div>
-
-                        <div class="slide"><a href="https://deltarune.com/">
-                                <img src="stamps/stamp29.png">
-                            </a></div>
-
-                        <div class="slide"><a href="https://www.youtube.com/watch?v=_CQ_ehoRfsE">
-                                <img src="stamps/stamp30.png">
-                            </a></div>
-
-                    </div>
-                </div>
 
             </div>
 
 
 
-            <p class="bold white" style="position: absolute; bottom: 110; left: 35%">interests</p>
 
 
 
         </div>
 
         <div id="aj">
-            <!--            <img src="/images/aj.png">-->
-            <img src="/images/egg.png">
-            <!--
-            
-                <img src="images/aj1.png" class="aj1"> 
-                <img src="images/aj2.png" class="aj2"> 
--->
+            <img src="/images/community.png">
         </div>
 
         <img src="images/autism.png" style="width: 100; position: absolute; top: 20; left: 55%" class="draggable">
@@ -411,6 +454,8 @@
         <p style="position: absolute; top: 250; right: 20;">i LOVE ice cream sandwiches!!!</p>
 
         <img src="images/trans-shark1.gif" style="position: absolute; top: 200; left: 58%;" class="draggable">
+        
+        <img src="images/6EdnAyU.png" style="width: 100;  position: absolute; top: 400; left: 30%;" class="draggable">
 
 
 
