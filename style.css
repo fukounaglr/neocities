@@ -88,6 +88,14 @@ ol{
 }
 
 
+
+        .draggable {
+            position: absolute;
+            padding: 10px;
+            z-index: 10;
+        }
+
+
 body {
     padding: 0;
     margin: 0 auto;
