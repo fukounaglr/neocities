@@ -295,11 +295,12 @@ h1, h2, h3, h4, h5, h6{
 p,
 li,
 a {
-    margin: 10;
+    margin: 10 0;
 }
 
 a {
     color: blue;
+    transition: 0.2s;
 }
 
 .dark-mode a{
@@ -451,18 +452,19 @@ a:hover{
 
 
 #slider {
-    width: 150px;
-    height: 100px;
-    background-color: #6DD1E5;
-    background-size: contain;
-    border: 5px solid dodgerblue;
+    width: 300px;
+    height: 150px;
+/*    background-color: #6DD1E5;*/
+/*    background-size: contain;*/
+/*    border: 5px solid dodgerblue;*/
     overflow: hidden;
     place-items: center;
     display: grid;
+    margin: auto;
 }
 
 .slide-track {
-    width: 2300px;
+    width: 1400px;
     animation: scroll 40s linear infinite;
     display: flex;
     padding-left: 200px;
@@ -478,14 +480,17 @@ a:hover{
     }
 
     100% {
-        transform: translateX(-3000px)
+        transform: translateX(-1800px)
     }
 }
 
 .slide {
-    width: auto;
+    width: 100%;
     display: flex;
-    margin-left: 20px;
+    margin-left: 10px;
+}
+.slide img{
+    width: 100%;
 }
 
 
