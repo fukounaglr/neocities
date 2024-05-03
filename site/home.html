@@ -7,7 +7,10 @@
 
     <link rel="icon" type="image/png" href="/ico.png">
     <link rel="stylesheet" href="/style.css">
-    <script src="https://unpkg.com/freezeframe/dist/freezeframe.min.js"></script>
+    <script defer src="https://unpkg.com/freezeframe/dist/freezeframe.min.js"></script>
+
+    <script defer src="/js/copy-textarea.js"></script>
+    <script defer src="/js/freezeframe.js"></script>
 
 
     <style>
@@ -15,10 +18,10 @@
             background-color: black;
             padding: 10;
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-columns: repeat(10, 1fr);
         }
-        
-        header img{
+
+        header img {
             width: 100%;
         }
 
@@ -53,24 +56,23 @@
         h4,
         h5,
         h6 {
-            margin: 10px 0px 10px 0px;
             color: white;
         }
-        
-        hr{
+
+        hr {
             border-color: darkcyan;
         }
 
 
-        #home-1 {
-            padding: 20px 50px;
+        #home {
+            padding: 1.5% 3%;
             position: relative;
             width: 100%;
             margin: auto;
             box-sizing: border-box;
             /*            background-color: white;*/
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1.2fr 1fr 1fr 1fr;
             /*            column-gap: 10px;*/
             /*            font-family: 'eggfont';*/
 
@@ -114,8 +116,15 @@
         }
 
 
+        #log {
+            background-image: url(/images/bg-lines.png);
+            height: 300px;
+        }
 
-        /*        */
+        #log h3 {
+            color: black;
+            margin: 15 auto;
+        }
 
 
         #webrings {
@@ -123,6 +132,7 @@
             position: relative;
             text-align: center;
             padding: 0 10px;
+            background: url(/images/3332befa1638b733d0fe5c4dd32ebc5a.gif);
         }
 
         #button-box textarea {
@@ -191,7 +201,16 @@
         #status {
             z-index: 10;
             position: relative;
-            margin: -80px 0px -100px 0px;
+            margin: -20px 0px -20px 0px;
+            width: 110%;
+            height: 0;
+        }
+
+        #status img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
         #statuscafe-content {
@@ -199,11 +218,12 @@
             letter-spacing: 1;
             font-style: normal;
             position: absolute;
-            top: 30;
-            left: 40;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             font-size: .7Em;
-            width: 300px;
-            height: 150px;
+            width: 100%;
+            height: auto;
             align-content: center;
             align-items: center;
             text-align: center;
@@ -217,7 +237,6 @@
             border: darkblue 5px solid;
             margin-bottom: 20px;
             padding: 10;
-            margin-top: 20;
             background: blanchedalmond;
             text-align: right;
         }
@@ -225,9 +244,7 @@
 
         #updates-box {
             border: none;
-            /*            background: url(images/pizza.jpg);*/
             position: relative;
-            /*            border: crimson 5px solid;*/
         }
 
         .sitess {
@@ -266,22 +283,93 @@
             color: white;
 
         }
-        
-        .collage{
+
+        .collage {
             overflow-y: none;
             display: grid;
             grid-template-columns: 2fr 1fr 1fr;
-            grid-template-areas: 'a b c' 'a d e';
+            grid-template-areas: 'a b c''a d e';
             grid-column-gap: 0px;
             width: 90%;
             height: 200px;
             grid-template-rows: 50% 50%;
             margin: 10px auto;
         }
-        .collage img{
+
+        .collage img {
             object-fit: cover;
             width: 100%;
             height: 100%;
+        }
+
+        .grid {
+            width: 100%;
+            display: grid;
+            margin:  auto;
+        }
+
+        .grid img {
+            width: 90%;
+            margin: auto;
+        }
+
+        .paw4 {
+            grid-template-columns: repeat(4, 1fr);
+
+        }
+
+        .paw3 {
+            grid-template-columns: repeat(3, 1fr);
+
+        }
+
+
+        /*RESPONSIVE*/
+
+        @media only screen and (max-width: 1000px) {
+            html {
+                font-size: 1Em;
+            }
+
+            #home {
+                grid-template-columns: 1fr 1fr;
+                padding: 0;
+            }
+
+            header {
+                grid-template-columns: repeat(5, 1fr);
+            }
+
+        }
+
+        @media only screen and (max-width: 670px) {
+            html {
+                font-size: 1Em;
+            }
+
+            #home {
+                grid-template-columns: 1fr;
+                padding: 0;
+            }
+
+            #status {
+                width: 100%;
+            }
+
+            header {
+                grid-template-columns: repeat(5, 1fr);
+            }
+
+        }
+        
+        a :is(h1, h2, h3, h4, h5, h6){
+            position: absolute;
+            transition: 1s;
+            left: 0;
+        }
+        
+        a:hover :is(h1, h2, h3, h4, h5, h6){
+            transform: scale(1.2) translate(12%, 0);
         }
 
     </style>
@@ -299,49 +387,57 @@
     <img src="/stamps/69e1a51811fe2885ed012dbc966b21cc7c36e399.gif">
     <img src="/stamps/ezgif-1-dbd933bbf4.gif">
     <img src="/stamps/tomanytabs.gif">
+    <img src="/stamps/0205-pluralsystem.gif">
 </header>
 
 
 <body>
 
 
-    <div id="home-1">
+    <div id="home">
 
 
 
         <!--1-->
         <div class="col">
 
-            <div style="margin: 10 auto">
-                <img src="/stamps/blows%20up%20your%20pancakes%20with%20mind%20chonny%20jash.gif">
+            <div class="paw4 grid">
                 <img src="/stamps/paws.png">
                 <img src="/stamps/browser013.gif">
-                <img src="/stamps/youre_telling_me.png">
+                <a href="https://ashhmillr.123guestbook.com/" target="_blank"><img src="stamps/signguest.gif"></a>
+                <a href="https://ashhmillr.neocities.org/stamps/neocities.png" target="_blank"><img src="/stamps/neocities.png"></a>
+
             </div>
 
 
 
 
+            <!--
             <div class="text bgdots">
                 <p>OP kitteh moed activaetd. Maek nd eksplore. NO LIMITS. NONE. Kat can fly, kat can hav INFINITE blokz, kat no hurt.</p>
                 <p><br></p>
             </div>
+-->
+
+            <img src="/images/OP%20kitteh%20moed.png" class="full">
+
+            <img src="/images/ce5b81ef209db41c6fc79d705cdc4c51.jpg" class="full">
 
             <div id="status">
-                <img src="/images/bubble.png" width=400px>
+                <img src="/images/bubble.png" width="100%">
 
                 <a href="https://status.cafe/users/ashhmillr" target="_blank" style="color: white">
                     <div id="statuscafe-content"></div>
                     <div id="statuscafe-username" style="display: none"></div>
-                    <script src="https://status.cafe/current-status.js?name=ashhmillr"></script>
+                    <script defer src="https://status.cafe/current-status.js?name=ashhmillr"></script>
                 </a>
             </div>
 
             <a style="position: relative" href="/webmaster.html">
                 <h2 style="position: absolute; bottom: 10px;">WEbmaster</h2>
-                <img src="/images/71af5fcaa7a658ce63dc393b8c49ff65.jpg" class="full">
+                <img src="/images/9220e81148435598d9c76718f80b9405.jpg" class="full">
             </a>
-            
+
             <a href="https://open.spotify.com/playlist/70IOaUbegXOJ6o5imHXrVO?si=d9fa1cb842dc460c" target="_blank">
                 <img src="/stamps/e186420e02abe887f69054737b7dc746.jpg" class="full">
             </a>
@@ -354,9 +450,9 @@
 -->
 
             <a href="/map">
-                <h4>take a site map!</h4>
+<!--                <h4>take a site map!</h4>-->
 
-                <img src="/images/2b0f68f0e9a3dc69a2998cae38d56b50.png" width="200px" style="margin-left: 20%;">
+                <img src="/images/2b0f68f0e9a3dc69a2998cae38d56b50.png" width="60%" style="margin-left: 20%;">
             </a>
 
         </div>
@@ -369,7 +465,7 @@
 
 
             <a href="/image-of-the-day" style="position: relative;">
-                <h3 style="position: absolute; bottom: 10; right: 0;">image of the day</h3>
+                <h3 style="position: absolute; bottom: 10; ">image of the day</h3>
                 <img src="https://i.ibb.co/txB97X1/IMG-20240418-111939.jpg" class="full">
             </a>
 
@@ -408,35 +504,16 @@
             </div>
 
 
-            <hr>
 
             <div id="log">
                 <h3>site updates</h3>
-                <div style="background-image: url(/images/bg-lines.png); height: 250px;">
-                    <iframe src="/log.html" style="height: 100%; width: 100%; border: none;"></iframe>
-
-                </div>
+                <iframe src="/log.html" style="height: 100%; width: 100%; border: none;"></iframe>
             </div>
 
-<!--
-            <div style="overflow-y: none;  display: grid;  grid-template-areas: 'a b c' 'a d e'; grid-column-gap: 0px;  width: 90%; grid-template-rows: auto; margin: 10px auto;">
+            <a href="/art.html" style="position: relative">
+                <h2 style="position: absolute; bottom: 0; color: darkcyan">art</h2>
+                <img src="/images/72010ff64164ae3e74ac426b30443947.gif" class="full"></a>
 
-                <img src="/images/pizza%20for%20president.jpg" width=100% height="100%" style="grid-area: a">
-                <img src="/images/explosion.jpg" width="100%" height="100%">
-                <img src="/images/hand.jpg" width="100%" height="100%">
-                <img src="/images/mcnuggets.jpg" width="100%" height="100%">
-                <img src="/images/shock%20em%20dead.jpg" width="100%" height="100%">
-            </div>
--->
-
-            <div class="collage">
-
-                <img src="/images/41c1774752472a0a673f44541e19f0f0.jpg" style="grid-area: a; ">
-                <img src="/images/74dc494da4f43b691a7f97386c33b2cd.jpg">
-                <img src="/images/55307bee3c80f0abc6988cfa34627ec0.jpg">
-                <img src="/images/9d206ababf6dfe504077b21747bbb5a1.jpg">
-                <img src="/images/d72266f179e62d65ba09e2c327fc5f45.jpg">
-            </div>
 
         </div>
 
@@ -447,9 +524,10 @@
         <div class="col">
 
 
-            <div class="sitess">
-                <a href="https://ashhmillr.123guestbook.com/" target="_blank"><img src="stamps/signguest.gif"></a>
-                <a href="https://ashhmillr.neocities.org/stamps/neocities.png" target="_blank"><img src="/stamps/neocities.png"></a>
+            <div class="grid paw3">
+
+                <img src="/stamps/blows%20up%20your%20pancakes%20with%20mind%20chonny%20jash.gif">
+                <img src="/stamps/youre_telling_me.png">
 
                 <button onclick="myFunction()" class="theme-toggle">
                     <p>theme</p>
@@ -458,8 +536,7 @@
 
 
 
-            <div id="webrings" class="bgdots">
-                <!--                <h3 class="black">webrings</h3>-->
+            <div id="webrings">
 
 
                 <div style="overflow-y: auto;">
@@ -483,9 +560,9 @@
                 </div>
             </div>
 
-            
-            
-            <div style="margin: 10 auto">
+
+
+            <div class="grid paw3" style="margin: 10 auto">
                 <img src="/stamps/glass%20beach%20stamp.png">
                 <img src="/stamps/wavestamp.gif">
                 <img src="/stamps/vaporeonstamp.gif">
@@ -500,12 +577,8 @@
                     <textarea id="textarea"><a href="https://ashhmillr.neocities.org/" target="_blank"><img src="https://i.ibb.co/7vMpXN3/aj-button.gif"></a></textarea>
                 </div>
 
-                <hr>
 
                 <h4>cool sites</h4>
-
-                <!--                <button id="play-gif">Play GIFs</button>-->
-                <!--                <button id="stop-gif">Stop GIFs</button>-->
 
                 <div class="sitess">
                     <a href="https://chocolaterevel.neocities.org/" target="_blank"><img src="stamps/0kqXUCD.gif" class="freezeframe"></a>
@@ -552,37 +625,21 @@
                     <a href="https://classicj.neocities.org/" target="_blank">classic j</a>
                 </div>
             </div>
-            <!--
 
-            <hr>
-            
-            <div id="slider">
-                    <div class="slide-track">
-                        <div class="slide"><img src="/stamps/stamp0.png"></div>
-                        <div class="slide"><img src="/stamps/stamp001.png"></div>
-                        <div class="slide"><img src="/stamps/queer.gif"></div>
-                        <div class="slide"><img src="/stamps/neil.png"></div>
-                        <div class="slide"><img src="/stamps/stamp40.gif"></div>
-                        <div class="slide"><img src="/stamps/stamp41.gif"></div>
-                        <div class="slide"><img src="/stamps/stamp42.png"></div>
-                        <div class="slide"><img src="/stamps/stamp43.gif"></div>
-                        <div class="slide"><img src="/stamps/stamp44.png"></div>
-                        <div class="slide"><img src="/stamps/stamp45.png"></div>
-                        <div class="slide"><img src="/stamps/stamp46.gif"></div>
-                        <div class="slide"><img src="/stamps/stamp47.png"></div>
-                        <div class="slide"><img src="/stamps/stamp48.png"></div>
-                        <div class="slide"><img src="/stamps/stamp49.png"></div>
-                    </div>
-                </div>
--->
+
+
+            <div class="collage">
+                <img src="/images/41c1774752472a0a673f44541e19f0f0.jpg" style="grid-area: a; ">
+                <img src="/images/74dc494da4f43b691a7f97386c33b2cd.jpg">
+                <img src="/images/55307bee3c80f0abc6988cfa34627ec0.jpg">
+                <img src="/images/9d206ababf6dfe504077b21747bbb5a1.jpg">
+                <img src="/images/d72266f179e62d65ba09e2c327fc5f45.jpg">
+            </div>
+
 
         </div>
 
     </div>
-
-
-    <script src="/js/copy-textarea.js"></script>
-    <script src="/js/freezeframe.js"></script>
 </body>
 
 <footer>

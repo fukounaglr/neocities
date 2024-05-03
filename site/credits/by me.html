@@ -7,6 +7,8 @@
 
     <link rel="icon" type="image/png" href="/ico.png">
     <link rel="stylesheet" href="/style.css">
+    
+    <script defer src="wherever/youre/storing/drag.js"></script>
 
 
     <style>
@@ -37,6 +39,10 @@
         #goback:hover {
             color: #FDD44E;
         }
+        
+        .cred-nav{
+            text-align: center;
+        }
 
     </style>
 </head>
@@ -50,32 +56,29 @@
         <a href="/credits/" class="white cred">credits!</a>
 
 
-        <div style="position: relative; top: 50;">
+        <div>
             <div class="credits-box">
                 <p>Here are the things i made, as well as used sources!</p>
                 <p>You can use these by uploading them on your server, credits appreciated!</p>
-            </div>
-
-            <div class="credits-box credits-sub-navigation">
-                <a class="credits-sub-nav tablinks" title="images" onclick="openTab(event, 'images')">images</a>
-                <a class="credits-sub-nav tablinks" title="gifs" onclick="openTab(event, 'gifs')">gifs</a>
-                <a class="credits-sub-nav tablinks" title="icons" onclick="openTab(event, 'icons')">icons</a>
-                <a class="credits-sub-nav tablinks" title="fonts" onclick="openTab(event, 'fonts')">fonts</a>
-
-            </div>
-            <div class="credits-box credits-sub-navigation">
-                <a class="credits-sub-nav tablinks" title="stamps" onclick="openTab(event, 'stamps')">stamps</a>
-                <a class="credits-sub-nav tablinks" title="blinkies" onclick="openTab(event, 'blinkies')">blinkies</a>
-<!--                <a class="credits-sub-nav tablinks" title="icons" onclick="openTab(event, 'icons')">icons</a>-->
-<!--                <a class="credits-sub-nav tablinks" title="fonts" onclick="openTab(event, 'fonts')">fonts</a>-->
-
-            </div>
-
-
-
-            <div id="blinkies" class="credits-box tabcontent">
-                <p class="biggest">stamps</p>
+                
                 <hr>
+                <div class="cred-nav">
+                    <a href="#blinkies">blinkies</a>
+                    <a href="#stamps">stamps</a>
+                    <a href="#gifs">gifs</a>
+                    <a href="#fonts">fonts</a>
+                    <a href="#images">images</a>
+                    <a href="#icons">icons</a>
+                </div>
+                <hr>
+            </div>
+
+            
+
+
+
+            <div id="blinkies" class="credits-box freezeframe">
+                <h2>blinkies</h2>
                 <div>
                         <img src="/stamps/blinkie-sandwiches.gif">
 
@@ -89,9 +92,8 @@
             
             </div>
 
-            <div id="stamps" class="credits-box tabcontent">
-                <p class="biggest">stamps</p>
-                <hr>
+            <div id="stamps" class="credits-box">
+                <h2>stamps</h2>
                 <div>
                     <img src="/stamps/stamp20.gif">
                     <img src="/stamps/stamp21.gif">
@@ -110,9 +112,8 @@
                 </div>
             </div>
 
-            <div id="gifs" class="credits-box tabcontent">
-                <p class="biggest">gifs</p>
-                <hr>
+            <div id="gifs" class="credits-box">
+                <h2>gifs</h2>
                 <p>made with <a href="https://www.3dgifmaker.com/Wobble">3d gif maker</a> and <a href="https://ezgif.com/">ezgif</a></p>
 
                 <div>
@@ -143,7 +144,7 @@
 
 
             <div id="fonts" class="credits-box tabcontent">
-                <p class="biggest">fonts</p>
+                <h2>fonts</h2>
                 <hr>
                 <p>this one is made using <a href="https://fontforge.org/" target="_blank">FontForge</a>, <a href="https://vectorink.io/app/" target="_blank">Vector Ink</a> and <a target="_blank" href="https://www.youtube.com/playlist?list=PLmZFJYVPjqEllk8RN40AVgnVZ1LvGzsui">This Tutorial</a></p>
                 <hr>
@@ -173,11 +174,8 @@
 
 
 
-            <div id="images" class="credits-box tabcontent">
-                <p id="biggest">images</p>
-                <hr>
-                <p>most of them are taken from pinterest or google images and have their bg removed</p>
-
+            <div id="images" class="credits-box">
+                <h2>images</h2>
                 <div>
                     <div id="credits-pic">
                         <p id="big">asd rat</p>
@@ -194,8 +192,9 @@
 
                     
             </div>
-            <!--images-->
 
+                
+                
             <div id="icons" class="credits-box tabcontent">
                 <p class="biggest">icons</p>
                 <hr>
@@ -301,7 +300,6 @@
                     <img src="/icons/icon%20mail.png" class="icon">
                 </div>
             </div>
-            <!--icons-->
 
         </div>
 
@@ -345,7 +343,7 @@
 
     </div>
 
-    <script src="/js/tabs.js"></script>
+    </div>
 </body>
 
 </html>

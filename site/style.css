@@ -37,7 +37,7 @@
 @font-face {
     font-family: 'ashhmillr';
     src: url('/fonts/ashhmillr-regular-webfont.woff2') format('woff2'),
-         url('/fonts/ashhmillr-regular-webfont.woff') format('woff');
+        url('/fonts/ashhmillr-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -46,8 +46,8 @@
 @font-face {
     font-family: 'ashh';
     src: url('/fonts/ashh-regular-webfont.woff2') format('woff2'),
-         url('/fonts/ashh-regular-webfont.woff') format('woff'),
-         url('/fonts/shh-Regular.otf') format('opentype');
+        url('/fonts/ashh-regular-webfont.woff') format('woff'),
+        url('/fonts/shh-Regular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 
@@ -56,7 +56,7 @@
 @font-face {
     font-family: 'eggfont';
     src: url('/fonts/ashhmillr_eggfont-webfont.woff2') format('woff2'),
-         url('/fonts/ashhmillr_eggfont-webfont.woff') format('woff');
+        url('/fonts/ashhmillr_eggfont-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -70,30 +70,31 @@
 
 }
 
-a{
+a {
     margin: 0;
 }
 
-ol{    
-    list-style: disc;  
+ol {
+    list-style: disc;
 }
 
 ::selection {
-  color: white;
-  background: deeppink;
+    color: white;
+    background: deeppink;
 }
+
 ::-moz-selection {
-  color: white;
-  background: deeppink;
+    color: white;
+    background: deeppink;
 }
 
 
 
-        .draggable {
-            position: absolute;
-            padding: 10px;
-            z-index: 10;
-        }
+.draggable {
+    position: absolute;
+    padding: 10px;
+    z-index: 10;
+}
 
 
 body {
@@ -109,13 +110,14 @@ body {
     color: white;
 }
 
-.dark-toggle{
+.dark-toggle {
     background-color: #5F3E90;
     border: #161227 solid 5px;
     color: white;
     cursor: pointer;
 }
-.dark-mode .dark-toggle{
+
+.dark-mode .dark-toggle {
     background-color: #1B9CD5;
     border: white solid 5px;
     color: #262649;
@@ -144,7 +146,7 @@ mark {
     padding: 1;
 }
 
-.dark-mode mark a{
+.dark-mode mark a {
     color: #262649;
 }
 
@@ -197,7 +199,7 @@ mark {
     color: deepskyblue;
 }
 
-.mid-blue{
+.mid-blue {
     color: royalblue;
 }
 
@@ -221,7 +223,7 @@ mark {
     color: #6DD1E5;
 }
 
-.pink{
+.pink {
     color: deeppink;
 }
 
@@ -243,12 +245,18 @@ html {
     font-size: 1.2Em;
 }
 
-h1, h2, h3, h4, h5, h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'arcadeclassic';
     font-style: normal;
     text-transform: uppercase;
     text-align: center;
     font-weight: 300;
+    margin: 10px 0px 10px 0px;
 }
 
 .big {
@@ -303,15 +311,15 @@ a {
     transition: 0.2s;
 }
 
-.dark-mode a{
+.dark-mode a {
     color: deeppink;
 }
 
-a:hover{
+a:hover {
     color: crimson;
 }
 
-.dark-mode a:hover{
+.dark-mode a:hover {
     color: deepskyblue;
 }
 
@@ -340,29 +348,6 @@ a:hover{
 
 
 /*BOXES*/
-
-
-#home {
-    margin: auto;
-    position: relative;
-    top: 0;
-    padding: 80px 50px 20px 20px;
-    border: solid 7px #02021C;
-    border-radius: 20px;
-    width: 60%;
-    height: 620;
-    margin: auto;
-    box-sizing: border-box;
-    background: right no-repeat url(/images/rainbox.png);
-    background-color: white;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-
-}
-
-.dark-mode #home, .dark-mode #site-map{
-    background-color: #533C9D;
-}
 
 
 
@@ -454,9 +439,9 @@ a:hover{
 #slider {
     width: 300px;
     height: 150px;
-/*    background-color: #6DD1E5;*/
-/*    background-size: contain;*/
-/*    border: 5px solid dodgerblue;*/
+    /*    background-color: #6DD1E5;*/
+    /*    background-size: contain;*/
+    /*    border: 5px solid dodgerblue;*/
     overflow: hidden;
     place-items: center;
     display: grid;
@@ -489,7 +474,8 @@ a:hover{
     display: flex;
     margin-left: 10px;
 }
-.slide img{
+
+.slide img {
     width: 100%;
 }
 
@@ -699,7 +685,8 @@ a:hover{
     text-decoration: none;
 }
 
-.credits-current, .credits-current:hover{
+.credits-current,
+.credits-current:hover {
     background-color: #FDD44E;
     color: #CE3618;
     border: solid 5px #EE5132;
@@ -759,7 +746,7 @@ a:hover{
 }
 
 
-.credits-sub-navigation{
+.credits-sub-navigation {
     display: flex;
     padding: 0;
     border: none;
@@ -852,7 +839,7 @@ a:hover{
     top: 0;
 }
 
-#art-nav p{
+#art-nav p {
     margin-top: 40%;
 }
 
@@ -881,7 +868,7 @@ a:hover{
     border-radius: 20px;
 }
 
-#info #info-inside{
+#info #info-inside {
     display: grid;
     grid-template-columns: 40% 10% 35%;
     grid-gap: 2.5%;
@@ -918,14 +905,14 @@ a:hover{
 }
 
 
-        #stuff-box {
-            overflow-y: auto;
-            padding: 0;
-            height: 85%;
-        }
+#stuff-box {
+    overflow-y: auto;
+    padding: 0;
+    height: 85%;
+}
 
-#stuff-box iframe{
-     width: 100%;
+#stuff-box iframe {
+    width: 100%;
     height: 100%;
     border: none;
 }
@@ -937,7 +924,7 @@ a:hover{
     margin-left: 15%;
 }
 
-.stuff-mine{
+.stuff-mine {
     border: 3px solid deeppink;
     padding: 20px;
     margin: 20px auto;
@@ -1048,7 +1035,7 @@ a:hover{
     object-fit: contain;
 }
 
-.tablinks{
+.tablinks {
     cursor: pointer;
 }
 
@@ -1064,7 +1051,7 @@ a:hover{
     width: 80%;
     height: 500px;
     padding: 50px;
-    margin-left:50%;
+    margin-left: 50%;
     transform: translate(-50%, 0);
     margin-top: 30;
     border-radius: 20px;
@@ -1137,28 +1124,30 @@ a:hover{
     border: 5px solid black;
 }
 
-.gallery div.spoiler{
+.gallery div.spoiler {
     position: relative;
 }
 
-.gallery div.spoiler img{
+.gallery div.spoiler img {
     filter: brightness(0);
     transition: .4s;
 }
-.gallery div.spoiler p{
+
+.gallery div.spoiler p {
     position: relative;
     top: -150px;
     color: white;
     transition: .4s;
 }
 
-.gallery div.spoiler:hover img{
+.gallery div.spoiler:hover img {
     filter: brightness(0.6);
 }
-.gallery div.spoiler:hover p{
+
+.gallery div.spoiler:hover p {
     color: transparent;
     display: none;
-    
+
 }
 
 .gallery img:hover {
@@ -1275,7 +1264,8 @@ a:hover{
     text-decoration: none;
 }
 
-.journal-current, .journal-current:hover{
+.journal-current,
+.journal-current:hover {
     background-color: #5DD4DC;
     color: #104051;
     border: solid 5px #104051;
@@ -1289,18 +1279,21 @@ a:hover{
     margin-top: 0px;
     margin-bottom: 30px;
     font-family: 'eggfont';
-/*    text-transform: uppercase;*/
+    /*    text-transform: uppercase;*/
     background: white url(/images/dot-paper.png);
     background-position: center;
     border: 5px black solid;
 }
 
-div.two{
+div.two {
     display: flex;
 }
 
-.journal-box h1, .journal-box h2, .journal-box h3, .journal-box h4, .journal-box h5, .journal-box h6{
+.journal-box h1,
+.journal-box h2,
+.journal-box h3,
+.journal-box h4,
+.journal-box h5,
+.journal-box h6 {
     font-family: 'eggfont';
 }
-
-
