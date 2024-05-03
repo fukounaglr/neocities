@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <link rel="icon" type="image/png" href="/ico.png">
+    <link rel="stylesheet" href="/style.css">
+
+    <style>
+        body {
+            background-image: url(/images/6d18bf7e48325927e5c892c708dc3467.jpg);
+            background-color: darkslategray;
+        }
+
+        #shrines {
+            width: 100%;
+            text-align: center;
+            padding-top: 200px;
+        }
+
+        #shrines div {
+            padding: 10;
+            background: rgba(100, 111, 136, .3);
+            margin: auto;
+            border-radius: 20px;
+            transition: 1s;
+            width: 210px;
+            border: 5px solid rgba(200, 200, 210, 0.8);
+        }
+
+        #shrines div:hover {
+            width: 260px;
+            padding: 20;
+            transform: translate(0, -20px)
+        }
+
+        #shrines div img {
+            width: 200px;
+            transition: 1s;
+        }
+
+        #shrines div:hover img {
+            transform: rotate(15deg);
+            width: 250px;
+        }
+
+    </style>
+
+
+</head>
+
+
+<body>
+    <div id="wrapper">
+
+        <div id="shrines">
+
+            <div><a href="/shrines/chonnyjash/">
+                    <img src="/shrines/images/jash-ico.png" width="200px">
+                    <p class="big white">chonny jash</p>
+
+                </a></div>
+
+        </div>
+
+
+        <a href="javascript:history.go(-1)">
+            <p id="goback">&#129044; go back</p>
+        </a>
+        <a href="/home"><img src="/icons/home.png" width="30px" id="gohome"></a>
+    </div>
+</body>
+
+</html>
