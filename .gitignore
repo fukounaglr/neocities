@@ -3,5 +3,4 @@
 *.wav
 test.html
 *.zip
-
-# help
+*-test.*
