@@ -11,24 +11,6 @@
     <script defer src="/js/drag.js"></script>
 
 
-    <script>
-        
-            var urls = [
-//                "/stamps/this%20user%201.jpg",
-                "/stamps/this%20user%2010.jpg",
-                "/stamps/this%20user%2011.jpg",
-                "/stamps/this%20user%202,jpg",
-            ];
-            
-         const Image = document.getElementById('ubx');
-
-            
-            document.addEventListener('load', () => {
-                    const randomIndex = Math.floor(Math.random() * urls.length);
-                    Image.src = urls[randomIndex];
-                });
-
-    </script>
 
     <style>
         body {
@@ -108,10 +90,11 @@
             position: absolute;
             top: 150px;
             left: 38%;
-        }
+            pointer-events: none;
 
-        #aj img {
-            height: 500;
+            & img {
+                height: 500;
+            }
         }
 
 
@@ -187,30 +170,98 @@
             background-color: black;
         }
 
+        #ubx {
+            width: 100%;
+            max-height: 70px;
+            object-fit: contain;
+            margin: 10 auto;
+        }
+
+
+        /*        player*/
+
+
+
+        #audio-player {
+            margin: 15px 30px;
+            width: 300px;
+
+            & #player-select {
+                all: unset;
+                font-family: 'eggfont';
+                text-transform: capitalize;
+                font-size: 1Em;
+                width: 100%;
+                text-overflow: ellipsis;
+                background: black;
+                border: none;
+                height: auto;
+                color: white;
+                padding: 5 15;
+            }
+
+            & button {
+                font-family: 'eggfont';
+                text-transform: capitalize;
+                font-size: 1Em;
+                border: none;
+                border-radius: 10px;
+                padding: 5px 15px;
+                margin: 10 auto;
+                background-color: palevioletred;
+                color: white;
+                cursor: pointer;
+                position: relative;
+                left: 30%;
+            }
+
+        }
+
+        #player-slider {
+            position: relative;
+            align-self: stretch;
+            flex: 1;
+            width: 80%;
+            margin: auto;
+
+            & div {
+                transform: translateY(-50%);
+                position: absolute;
+                left: 0;
+                top: 50%;
+                pointer-events: none;
+
+                &:first-of-type {
+                    background-color: cyan;
+                    height: 5px;
+                    right: 0
+                }
+            }
+        }
+
     </style>
 
 </head>
 
 <body>
 
-    <div style="position: absolute; top: 450; left: 2%; align-content: center;">
+    <div style="position: absolute; top: 450; left: 5%; align-content: center;">
 
-        <img src="images/cardboardbox2.png" style=" position: absolute; width: 350; top: 40; left: 70;">
+        <img src="images/cardboardbox2.png" style=" position: absolute; width: 350; top: 40; left: -50;">
 
 
-        <img src="images/goocifer.png" class="draggable" style="left: 20; top: -80; height: 300px">
 
-        <img src="images/cowraffe.png" width="100px" class="draggable" style="left: 200;">
+        <img src="images/cowraffe.png" width="100px" class="draggable">
 
-        <img src="images/sheep.png" width="150px" class="draggable" style="left: 100;">
+        <img src="images/sheep.png" width="150px" class="draggable">
 
-        <img src="images/stuard.png" width="100px" class="draggable" style="left: 200;">
+        <img src="images/stuard.png" width="100px" class="draggable">
 
-        <img src="images/coco.png" width="200px" class="draggable" style="left: 50;">
+        <img src="images/coco.png" width="200px" class="draggable">
 
-        <img src="images/evan.png" width="150px" class="draggable" style="left: 250;">
+        <img src="images/evan.png" width="150px" class="draggable">
 
-        <img src="images/crocodile.png" width="150px" class="draggable" style="left: 200;">
+        <img src="images/crocodile.png" width="150px" class="draggable">
 
 
     </div>
@@ -272,6 +323,20 @@
 
         </div>
 
+        <div id="audio-player">
+            <div id="player-select-wrapper">
+                <select id="player-select"></select>
+            </div>
+            <div id="player-body">
+                <button id="player-button">play</button>
+                <button id="skip-button">skip</button>
+                <div id="player-slider">
+                    <div aria-hidden="true"></div>
+                    <div aria-hidden="true"><img src="/images/stella%20octangula%20transparent.gif" width="20px"></div>
+                </div>
+
+            </div>
+        </div>
 
         <div id="webmaster-info">
             <div style="width: 95%; margin: auto;">
@@ -297,7 +362,7 @@
                     </ol>
                 </div>
 
-        <img src="/stamps/this%20user%201.jpg" width="300px" id="ubx" style="margin: 10 auto;">
+                <img src="/stamps/this%20user%201.jpg" id="ubx">
 
 
                 <div id="slider2">
@@ -404,16 +469,13 @@
 
 
                 <div id="links-box">
-
-                    <p>
-                        <a href="https://ashhmillr.tumblr.com/" target="_blank"><img src="/icons/icon tumblr.png" class="links" title="Tumblr"></a>
-                        <a href="https://youtube.com/@ashhmillr" target="_blank"><img src="/icons/icon youtube.png" class="links" title="Youtube (main)"></a>
-                        <a href="https://spacehey.com/ashhmillr" target="_blank"><img src="/icons/icon%20spacehey.png" class="links" title="spacehey"></a>
-                        <a href="https://www.pinterest.com/ashhmillr/" target="_blank"><img src="/icons/icon pinterest.png" class="links" title="Pinterest"></a>
-                        <a href="https://www.last.fm/user/ashhmillr" target="_blank"><img src="/icons/lastfm.png" class="links" title="Pronouns"></a>
-                        <a href="https://github.com/ashhmillr" target="_blank"><img src="/icons/github.png" class="links" title="github"></a>
-                    </p>
-
+                    <a href="https://ashhmillr.tumblr.com/" target="_blank"><img src="/icons/icon tumblr.png" class="links" title="Tumblr"></a>
+                    <a href="https://youtube.com/@ashhmillr" target="_blank"><img src="/icons/icon youtube.png" class="links" title="Youtube (main)"></a>
+                    <a href="https://spacehey.com/ashhmillr" target="_blank"><img src="/icons/icon%20spacehey.png" class="links" title="spacehey"></a>
+                    <a href="https://www.pinterest.com/ashhmillr/" target="_blank"><img src="/icons/icon pinterest.png" class="links" title="Pinterest"></a>
+                    <a href="https://www.last.fm/user/ashhmillr" target="_blank"><img src="/icons/lastfm.png" class="links" title="Pronouns"></a>
+                    <a href="https://github.com/ashhmillr" target="_blank"><img src="/icons/github.png" class="links" title="github"></a>
+                <a href="/links">more links</a>
                 </div>
 
 
@@ -427,17 +489,18 @@
         </div>
 
         <div id="aj">
-            <img src="/images/community.png">
+            <!--            <img src="/images/community.png">-->
+            <img src="/images/aj%20dies%20and%20goes%20to%20hell.png">
         </div>
 
-        <img src="images/autism.png" style="width: 100; position: absolute; top: 20; left: 55%" class="draggable">
+        <img src="images/autism.png" style="width: 100; position: absolute;  top: 100px; left: 30%; " class="draggable">
 
         <img src="images/neapolitan-ice-cream-sandwich.gif" style="width: 150px; position: absolute; top: 150; right: 20;" class="draggable">
         <p style="position: absolute; top: 250; right: 20;">i LOVE ice cream sandwiches!!!</p>
 
         <img src="images/trans-shark1.gif" style="position: absolute; top: 200; left: 58%;" class="draggable">
 
-        <img src="images/6EdnAyU.png" style="width: 100;  position: absolute; top: 400; left: 30%;" class="draggable">
+        <img src="images/6EdnAyU.png" style="width: 100;  position: absolute; top: 400; left: 25%;" class="draggable">
 
 
 
@@ -445,7 +508,7 @@
 
 
 
-    <div style="position: absolute; top: 40px; left: 20%; z-index: 10;" class="white draggable">
+    <div style="position: absolute; top: 20; left: 50%; z-index: 10;" class="white draggable">
         <img src="/images/bubble.png" width=300px>
         <div id="status" style="position: absolute; width: 300px; top: 10;">
             <div id="statuscafe-content" style="position: absolute; width: 80%;"></div>
@@ -463,6 +526,92 @@
     <a href="/home"><img src="icons/home.png" width="30px" id="gohome"></a>
 
 
+
+
+
+
+
+
+    <!--    -->
+
+    <script>
+        var urls = [
+            "this user 3",
+            "this user 4",
+            "this user 5",
+            "this user 6",
+            "this user 8",
+            "this user 9",
+            "this user 10",
+            "e186420e02abe887f69054737b7dc746",
+            "059ce8035286c41c612a0d946fc9cb18",
+            "6994a08a3e6c993db37381fe3815ec26",
+            "d5c2146ff6f577d2bf9735a6cdf0f4bb",
+            "099df5fce74927f3af292cba27c86f99",
+            "e9c16e368c5c37ef88f9dea24291321c",
+            "74fc0f882a12fe7add5b68b2d6bd8262",
+            "5bf7a8432ca5c81366e093090ef2f73d",
+            "8dc50053648983044349eb764c87117e",
+            "2d9392cf786cb3779637fa6ef17ce908",
+            "551f22778794324e18558c3ce73968bf",
+            "8d33e4839d4fdb9b11d69481c1c01d4b",
+            "8cd606a1ae863a06914dc0bbe33331a3",
+            "704b0134c8da082d42f4ffcf579a29b1",
+            "6b4dabbe5a0539f62f7d917d77f6aa7d",
+            "1a20302a0b386fb97b3fcb4864030340",
+            "99af1323dd5cf9afc8f7f0e2bc193df4",
+            "",
+        ];
+
+        const Image = document.getElementById('ubx');
+        
+
+        const randomIndex = Math.floor(Math.random() * urls.length);
+        Image.src = "/stamps/" + urls[randomIndex] + ".jpg";
+
+
+    </script>
+
+    <script src="/js/audio-player.js"></script>
+    <script>
+        const select = document.getElementById("player-select");
+        AudioPlayer.create([
+            "ES - crying",
+            "She Only Loves Me When I'm There - Chonny Jash",
+            "Knives are dangerous, kid, so cut the theatrics - Jhariah",
+            "Mayday - Chonny Jash",
+            "trust ceremony - jhariah",
+            "I MIGHT B3 SICK - femtanyl",
+            "Leopard - Jack Stauber",
+            "Falling Behind - Laufey",
+            "neon glow - glass beach",
+            "Another Try - The Happy Fits",
+            "control baby - jhariah",
+            "a devil's tricks. -  chonny jash",
+            "end the dance. - chonny jash",
+            "greener - chonny jash",
+            "KATAMARI - femtanyl"
+        ], {
+            playButton: document.getElementById("player-button"),
+            skipButton: document.getElementById("skip-button"),
+            insertIcons: false,
+            slider: document.getElementById("player-slider"),
+            sliderThumb: document.getElementById("player-slider").querySelector("div:last-of-type"),
+            shuffle: true,
+            //            fileGarden: "ZdmFgugxzVCR-8Bl",
+            fileGarden: "ZjOP8Ik9OUXT6YVm",
+            onended: () => select.value = AudioPlayer.idx
+        });
+        for (let i = 0; i < AudioPlayer.list.length; i++) {
+            let option = select.appendChild(document.createElement("option"));
+            option.label = AudioPlayer.list[i].title, option.value = i;
+        }
+        select.onchange = () => {
+            AudioPlayer.idx = Number(select.value) - 1;
+            AudioPlayer.next();
+        }
+
+    </script>
 
 </body>
 

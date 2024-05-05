@@ -8,9 +8,10 @@ to-do (site)
 	> silly
 	> arcade?
 > make shrines main page
-	stylaze like a pinboard? or a shelf
+	stylize like a pinboard? or a shelf
 > add more links to pages on homepage
 > change site map 
 	<details>
 > add a random "this user" on webmaster page?
+	- working on it
 > add a player on webmaster page instead of spotify playlist

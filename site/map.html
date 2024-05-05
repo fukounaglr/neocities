@@ -10,24 +10,14 @@
     <meta name="google-site-verification" content="Fj7putUjL9oSK93SVSsOBnOcRPpAA03YbTVfHy26fqY" />
 
     <style>
-        ol {
-            font-size: .95Em;
+        body{
+            background-color: black;
+            color: white;
+            padding-left: 30%;
         }
-
-        #wrapper {
-            top: 0;
+        a{
+            color: deeppink;
         }
-        
-        
-        body {
-            background-image: url(/images/bg-light.png);
-            color: #18C5D1;
-        }
-
-        .dark-mode {
-            background-image: url(/images/bg-dark.png);
-        }
-        
         
 
     </style>
@@ -38,7 +28,6 @@
 <body>
 
 
-        <div id="site-map">
 
             <div id="site-map-box">
                 <a href="javascript:history.go(-1)">
@@ -46,17 +35,17 @@
                 </a>
                 
                 <li><a href="/index">enter</a></li>
-                <li><mark style="background-color: #FCB8CA;"><a href="/home">home</a></mark></li>
+                <li><a href="/home">home</a></li>
                 <ol>
                     <li><a href="/sotd">song of the week</a></li>
                 </ol>
-                <li style="color: orange">site map (you're here!)</li>
+                <li>site map (you're here!)</li>
                 <li><a href="/info">info</a></li>
                 
                 <li><a href="/journal/">journal</a>
                     <ol>
 <!--                        <a href="/journal/trans"><li>trans</li></a>-->
-                        <a href="/journal/sketchbook"><li>sketchbook</li></a>
+                        <li><a href="/journal/sketchbook">sketchbook</a></li>
 <!--                        <a href="/journal/photoalbum"><li>photo album</li></a>-->
 <!--                        <a href="/journal/quotebook"><li>quotebook</li></a>-->
 <!--                        <a href="/journal/cookbook"><li>cookbook</li></a>-->
@@ -64,19 +53,12 @@
                     </ol>
                 </li>
                 
-                <li><mark style="background-color: #FFD3C2;"><a href="/webmaster">webmaster</a></mark></li>
+                <li><a href="/webmaster">webmaster</a></li>
 
-                <li><mark style="background-color: #FFF6A4;"><a href="/stuff">stuff</a></mark></li>
+                <li>coolzone</li>
                 <ol>
                     <li><a href="/coolzone/collectables">collectables</a>
-                        <ol class="stuff">
-                            <li>stamps</li>
-                            <li>blinkies</li>
-                            <li>buttons</li>
-                            <li>badges</li>
-                            <li>userboxes</li>
-                            <li>gifs</li>
-                        </ol>
+                        
                     </li>
 
 <!--                    <li>music</li>-->
@@ -84,26 +66,19 @@
 <!--                    <li>favs</li>-->
                 </ol>
 
-                <li><mark style="background-color: #A4FFB9;"><a href="/art">art</a></mark>
-                    <ol>
-                        <li>portfolio</li>
-                        <li>commissions</li>
-                    </ol>
-                </li>
+                <li><a href="/art">art</a></li>
 
 
 
-                <li><mark style="background-color: #B0E5FF;"><a href="/basement">basement</a></mark></li>
-                <ol>
-                    <li style="color: #262649">projects<ol>
+                    <li><a href="/basement/projects/">projects</a><ol>
                         <li><a href="/readhead/">readhead</a></li>
                             <li><a href="/basement/projects/dressup">dress up ash</a></li>
                         </ol>
                     </li>
 
-                    <li><span style="color: #262649">characters</span><ol>
+                    <li><a href="/basement/characters/">characters</a><ol>
 
-                            <li style="color: #262649">cccc</li>
+                            <li>cccc</li>
                             <ol class="chars">
 <!--                                <li><a href="/basement/characters/li">LI</a></li>-->
                                 <li><a href="/basement/characters/whole">whole</a></li>
@@ -112,31 +87,23 @@
                                 <li><a href="/basement/characters/mind">mind</a></li>
                             </ol>
 
-<!--
-                            <li>readhead</li>
-                            <ol>
-                                <li>ash</li>
-                                <li>dave</li>
-                            </ol>
--->
 
-                            <li style="color: #262649">others</li>
+                            <li>others</li>
                             <ol>
 <!--                                <li>red</li>-->
 <!--                                <li>plush</li>-->
-                                <a href="/basement/characters/egg.html"><li>egg</li></a>
+                                <li><a href="/basement/characters/egg.html">egg</a></li>
                             </ol>
                         </ol>
                     </li>
 
-                </ol>
 
-                <li><mark style="background-color: #E8BAFE;"><a href="/credits/">credits</a></mark>
+                <li><a href="/credits/">credits</a>
                     <ol>
                         <li><a href="/credits/by me">by me</a></li>
-<!--                        <li><a href="/credits/gifs">gifs</a></li>-->
-<!--                        <li><a href="/credits/images">images</a></li>-->
-<!--                        <li><a href="/credits/backgrounds">bgs</a></li>-->
+                        <li><a href="/credits/gifs">gifs</a></li>
+                        <li><a href="/credits/images">images</a></li>
+                        <li><a href="/credits/backgrounds">bgs</a></li>
                         <li><a href="/credits/fonts">fonts</a></li>
                         <li><a href="/credits/links">links</a></li>
                     </ol>
@@ -150,10 +117,7 @@
 
 
             
-                <div style="position: fixed; top: 50; left: 1000;">
-                    <button onclick="myFunction()" class="dark-toggle"><p class="bigger">toggle dark mode</p></button>
-
-                </div>
+               
 
 
             <div>
@@ -167,12 +131,10 @@
 
                     </div>
 
-        </div>
 
 
 
     <script src="/js/playsound.js"></script>
-    <script src="/js/dark-mode-toggle.js"></script>
 
 
 </body>

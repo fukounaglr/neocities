@@ -89,14 +89,17 @@
             height: 100%;
             margin: auto;
             background-color: #0ABBBB;
-        }
-
-        div.col div.text {
+            
+            & div.text {
             width: 90%;
             /*            background-size: auto;*/
             background-repeat: repeat;
             padding: 5%;
             margin: 10px auto;
+        }
+            img.full {
+            width: 100%;
+        }
         }
 
         div.bgdots {
@@ -111,19 +114,15 @@
             background-image: url(/images/bg-dots.jpg);
         }
 
-        .col img.full {
-            width: 100%;
-        }
 
 
         #log {
             background-image: url(/images/bg-lines.png);
             height: 300px;
-        }
-
-        #log h3 {
+            & h3 {
             color: black;
             margin: 15 auto;
+        }
         }
 
 
@@ -133,6 +132,10 @@
             text-align: center;
             padding: 0 10px;
             background: url(/images/3332befa1638b733d0fe5c4dd32ebc5a.gif);
+            & #autiring{
+                text-align: center;
+                margin: auto;
+            }
         }
 
         #button-box textarea {
@@ -153,31 +156,33 @@
             color: white;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-        }
 
-        #button-box a {
-            margin: auto;
-        }
 
-        #button-box button {
-            grid-area: 1/2/1/4;
-            width: 80%;
-            height: 100%;
-            margin: auto;
-            border-radius: 20px;
-            background-color: paleturquoise;
-            cursor: pointer;
-            border: none;
-            box-shadow: darkcyan 3px 3px;
-            position: relative;
-            transition: 0.4s;
-        }
+            & a {
+                margin: auto;
+            }
 
-        #button-box button:hover {
-            transform: translate(3px, 3px);
-            background-color: #8FDADA;
-            box-shadow: darkcyan 0px 0px;
+            & button {
+                font-family: 'arcadeclassic';
+                grid-area: 1/2/1/4;
+                width: 80%;
+                height: 100%;
+                margin: auto;
+                border-radius: 20px;
+                background-color: paleturquoise;
+                cursor: pointer;
+                border: none;
+                box-shadow: darkcyan 3px 3px;
+                position: relative;
+                transition: 0.4s;
 
+                &:hover {
+                    transform: translate(3px, 3px);
+                    background-color: #8FDADA;
+                    box-shadow: darkcyan 0px 0px;
+
+                }
+            }
         }
 
         #chatbox {
@@ -204,32 +209,32 @@
             margin: -20px 0px -20px 0px;
             width: 110%;
             height: 0;
-        }
 
-        #status img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+            & img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
 
-        #statuscafe-content {
-            font-family: 'eggfont';
-            letter-spacing: 1;
-            font-style: normal;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: .7Em;
-            width: 100%;
-            height: auto;
-            align-content: center;
-            align-items: center;
-            text-align: center;
-            text-wrap: normal;
-        }
 
+            & #statuscafe-content {
+                font-family: 'eggfont';
+                letter-spacing: 1;
+                font-style: normal;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: .8Em;
+                width: 80%;
+                height: auto;
+                align-content: center;
+                align-items: center;
+                text-align: center;
+                text-wrap: normal;
+            }
+        }
 
 
         #sotd-home {
@@ -250,25 +255,25 @@
         .sitess {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-        }
 
-        .sitess img {
-            width: 100%;
-        }
+            & img {
+                width: 100%;
+            }
 
-        .sitess a {
-            margin: 10px;
+            & a {
+                margin: 10px;
+            }
         }
 
         div.blink {
             grid-template-columns: 50% 50%;
             display: grid;
             margin: 10px auto;
-        }
 
-        div.blink img {
-            width: 95%;
-            margin: auto;
+            & img {
+                width: 95%;
+                margin: auto;
+            }
         }
 
         button.theme-toggle {
@@ -305,12 +310,12 @@
         .grid {
             width: 100%;
             display: grid;
-            margin:  auto;
-        }
-
-        .grid img {
-            width: 90%;
             margin: auto;
+
+            & img {
+                width: 90%;
+                margin: auto;
+            }
         }
 
         .paw4 {
@@ -361,14 +366,14 @@
             }
 
         }
-        
-        a :is(h1, h2, h3, h4, h5, h6){
+
+        a :is(h1, h2, h3, h4, h5, h6) {
             position: absolute;
             transition: 1s;
             left: 0;
         }
-        
-        a:hover :is(h1, h2, h3, h4, h5, h6){
+
+        a:hover :is(h1, h2, h3, h4, h5, h6) {
             transform: scale(1.2) translate(12%, 0);
         }
 
@@ -404,7 +409,7 @@
             <div class="paw4 grid">
                 <img src="/stamps/paws.png">
                 <img src="/stamps/browser013.gif">
-                <a href="https://ashhmillr.123guestbook.com/" target="_blank"><img src="stamps/signguest.gif"></a>
+                <img src="stamps/signguest.gif">
                 <a href="https://ashhmillr.neocities.org/stamps/neocities.png" target="_blank"><img src="/stamps/neocities.png"></a>
 
             </div>
@@ -450,7 +455,7 @@
 -->
 
             <a href="/map">
-<!--                <h4>take a site map!</h4>-->
+                <!--                <h4>take a site map!</h4>-->
 
                 <img src="/images/2b0f68f0e9a3dc69a2998cae38d56b50.png" width="60%" style="margin-left: 20%;">
             </a>
@@ -512,7 +517,8 @@
 
             <a href="/art.html" style="position: relative">
                 <h2 style="position: absolute; bottom: 0; color: darkcyan">art</h2>
-                <img src="/images/72010ff64164ae3e74ac426b30443947.gif" class="full"></a>
+                <img src="/images/72010ff64164ae3e74ac426b30443947.gif" class="full">
+            </a>
 
 
         </div>
