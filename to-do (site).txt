@@ -1,0 +1,16 @@
+to-do (site)
+
+> separate OCs and projects pages + make individual pages
+> add themes
+	> underwater (current)
+	> nature
+	> chonny jash ???
+	> silly
+	> arcade?
+> make shrines main page
+	stylaze like a pinboard? or a shelf
+> add more links to pages on homepage
+> change site map 
+	<details>
+> add a random "this user" on webmaster page?
+> add a player on webmaster page instead of spotify playlist

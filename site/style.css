@@ -644,24 +644,24 @@ a:hover {
     background-color: white;
     border: 5px solid black;
     padding: 50px;
-    margin-left: 25%;
-    margin-top: 20;
+/*    margin-left: 25%;*/
+/*    margin-top: 20;*/
     border-radius: 20px;
 }
 
 #credits-navigation {
     display: block;
-    position: fixed;
-    width: 20%;
-    left: 100;
-    top: 100;
+/*    position: fixed;*/
+    width: 100%;
+/*    left: 100;*/
+/*    top: 100;*/
 }
 
 .credits-nav {
     display: block;
     margin-bottom: 20;
     background-color: #CCF1FF;
-    width: 60%;
+    width: 80%;
     text-align: center;
     align-content: center;
     align-items: center;
@@ -694,7 +694,7 @@ a:hover {
 
 
 .pic {
-    height: 200;
+    height: 150;
     margin: auto;
     margin-top: 20;
 }

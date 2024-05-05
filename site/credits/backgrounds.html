@@ -8,35 +8,16 @@
     <link rel="icon" type="image/png" href="/ico.png">
     <link rel="stylesheet" href="/style.css">
 
-    <script src="/main.js"></script>
-
     <style>
         body {
             background: url(/images/3dgifmaker24912-ezgif.com-resize.gif);
             background-size: contain;
-        }
-
-        #wrapper {
-            width: 90%;
-            height: auto;
-        }
-
-        .credits-box {
-            /*            display: inline-block;*/
+            display: grid;
+            grid-template-columns: 20% 80%;
+            padding: 5% 100;
         }
 
 
-
-        .cred {
-            font-family: 'arcadeclassic';
-            font-size: 3Em;
-            top: 20px;
-            width: 100%;
-            cursor: pointer;
-            text-transform: uppercase;
-            text-align: center;
-            margin-left: 45%;
-        }
 
 
         #goback {
@@ -47,15 +28,18 @@
             color: #FDD44E;
         }
 
-        div.cred-bg {
-            width: 200px;
+        .cred-bg {
+            width: 100%;
             height: 200px;
             backface-visibility: visible;
+            object-fit: cover;
+            border: 2px black solid;
         }
-
-        div.cred-ng img {
-            width: 200px;
-            height: 200px;
+        
+        .grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-gap: 10px;
         }
 
     </style>
@@ -63,23 +47,6 @@
 
 
 <body>
-
-
-    <div id="wrapper">
-
-        <a href="/credits/" class="white cred">credits!</a>
-
-
-        <div style="position: relative; top: 50;">
-            <div class="credits-box">
-
-                <div class="cred-bg" onfocus="">
-                    <img src="/images/strawberries.jpg">
-                </div>
-
-            </div>
-
-        </div>
 
         <div id="credits-navigation">
             <a href="/credits/by me">
@@ -108,6 +75,40 @@
 
         </div>
 
+            <div class="credits-box">
+                
+                <p>(i'll add sources later)</p>
+
+                <div class="grid">
+                    <a target="_blank" href=""><img  class="cred-bg" src="/images/strawberries.jpg"></a>
+                    <a target="_blank" href=""><img  class="cred-bg" src="/images/9d206ababf6dfe504077b21747bbb5a1.jpg"></a>
+                    <a target="_blank" href=""><img  class="cred-bg" src="/images/d72266f179e62d65ba09e2c327fc5f45.jpg"></a>
+                    <a target="_blank" href=""><img  class="cred-bg" src="/images/f50195b3012ad6d7c29278e46355e04b.jpg"></a>
+                    <a target="_blank" href=""><img  class="cred-bg" src="/images/55307bee3c80f0abc6988cfa34627ec0.jpg"></a>
+                    <a target="_blank" href=""><img  class="cred-bg" src="/images/74dc494da4f43b691a7f97386c33b2cd.jpg"></a>
+                    <a target="_blank" href=""><img  class="cred-bg" src="/images/cc33e1e705e6bf39c306dabe48416c7d.jpg"></a>
+                    <a target="_blank" href=""><img  class="cred-bg" src="/images/desktopONE.jpg"></a>
+                    <a target="_blank" href=""><img  class="cred-bg" src="/images/e3c88649105b6f8b1aa39de1bd3be650.jpg"></a>
+                    <a target="_blank" href=""><img  class="cred-bg" src="/images/d4a54ae6b21eb75fbe5d6c0f0661256d.jpg"></a>
+                    <a target="_blank" href=""><img  class="cred-bg" src="/images/9550c491748e7c9e3e37fd307286502b.jpg"></a>
+                    <a target="_blank" href=""><img  class="cred-bg" src="/images/rainbow3.jpg"></a>
+                    <a target="_blank" href=""><img  class="cred-bg" src="/images/corkboardtile.jpg"></a>
+<!--                    <a target="_blank" href=""><img  class="cred-bg" src="/images/"></a>-->
+                    </div>
+                <hr>
+                <h3>modified</h3>
+                                <div class="grid">
+
+    <img  class="cred-bg" src="/images/3dgifmaker24912-ezgif.com-resize.gif">
+    <img  class="cred-bg" src="/images/9d206ababf6dfe504077b21747bbb5a12.jpg">
+    <img  class="cred-bg" src="/images/deskmat.png">
+    <img  class="cred-bg" src="/images/bg-lines.png">
+    <img  class="cred-bg" src="/images/bg-dots.jpg">
+    <img  class="cred-bg" src="/images/dot-paper.png">
+                </div>
+            </div>
+
+
 
 
 
@@ -118,15 +119,19 @@
 
 
 
-    </div>
-
 
     <script>
-        document.querySelectorAll('.cred-bg img').forEach(image => {
-            image.onfocus = () => {
-                document.querySelector('body').backgroundImage = image.getAttribute('src');
+
+        
+          var backgrounds = document.querySelectorAll('.cred-bg');
+          backgrounds.forEach((bg) => {
+            bg.addEventListener('mouseover', changeBackground);
+          });
+          function changeBackground() {
+            var imageURL = this.getAttribute('src');
+            document.body.style.backgroundImage = 'url(' + imageURL + ')';
             }
-        });
+          
 
     </script>
 </body>

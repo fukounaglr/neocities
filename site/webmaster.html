@@ -7,7 +7,28 @@
 
     <link rel="icon" type="image/png" href="ico.png">
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/interact.js/1.10.17/interact.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/interact.js/1.10.17/interact.min.js"></script>
+    <script defer src="/js/drag.js"></script>
+
+
+    <script>
+        
+            var urls = [
+//                "/stamps/this%20user%201.jpg",
+                "/stamps/this%20user%2010.jpg",
+                "/stamps/this%20user%2011.jpg",
+                "/stamps/this%20user%202,jpg",
+            ];
+            
+         const Image = document.getElementById('ubx');
+
+            
+            document.addEventListener('load', () => {
+                    const randomIndex = Math.floor(Math.random() * urls.length);
+                    Image.src = urls[randomIndex];
+                });
+
+    </script>
 
     <style>
         body {
@@ -26,8 +47,8 @@
             margin: 0;
             transition: .5s;
         }
-        
-        .links:hover{
+
+        .links:hover {
             width: 35;
         }
 
@@ -35,7 +56,7 @@
             margin-top: 0;
             font-size: 1Em
         }
-        
+
         #webmaster-box {
             z-index: 10;
         }
@@ -115,9 +136,9 @@
 
 
         /*STATUSCAFE*/
-        
-        #status{
-                        font-family: 'eggfont';
+
+        #status {
+            font-family: 'eggfont';
         }
 
         #statuscafe-content {
@@ -142,13 +163,13 @@
             position: absolute;
             top: 80;
             left: -110;
-/*            color: mediumvioletred;*/
+            /*            color: mediumvioletred;*/
             width: 160px;
             font-size: .9Em;
         }
 
         #statuscafe-username a {
-/*            font-family: 'arcadeclassic';*/
+            /*            font-family: 'arcadeclassic';*/
             font-style: normal;
             color: hotpink;
             text-decoration: none;
@@ -160,8 +181,9 @@
             color: skyblue;
             text-decoration: underline;
         }
-        
-        #gohome, #goback{
+
+        #gohome,
+        #goback {
             background-color: black;
         }
 
@@ -195,7 +217,7 @@
 
     <div id="wrapper-webmaster">
 
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3tq8FEudO8bOgONEMgpXkA?utm_source=generator" width="" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
 
         <div id="webmaster-box">
             <div id="blinkies">
@@ -254,29 +276,29 @@
         <div id="webmaster-info">
             <div style="width: 95%; margin: auto;">
                 <p id="big-wm">Sasha Jash Neil</p>
-                
-                <div style="height: 55%; overflow-y: auto;">
-                <p><mark style="background-color: #fff000">AKA:</mark> AJ, Marbles, ashhmillr, egg</p>
 
-                <p><mark style="background-color: #ff438d;">age:</mark> many much</p>
+                <div style="height: 50%; overflow-y: auto;">
+                    <p><mark style="background-color: #fff000">AKA:</mark> AJ, Marbles, ashhmillr, egg</p>
 
-                <p><mark style="background-color: #33A7FF;">country of origin:</mark> the backrooms</p>
+                    <p><mark style="background-color: #ff438d;">age:</mark> many much</p>
 
-                <p><mark style="background-color: #b5e61d;">gender:</mark><a href="https://en.pronouns.page/@ashhmillr" target="_blank">&#9896; unknown</a></p>
+                    <p><mark style="background-color: #33A7FF;">country of origin:</mark> the backrooms</p>
 
-                <p><mark style="background-color: #c592e7;">facts:</mark></p>
+                    <p><mark style="background-color: #b5e61d;">gender:</mark><a href="https://en.pronouns.page/@ashhmillr" target="_blank">&#9896; unknown</a></p>
+
+                    <p><mark style="background-color: #c592e7;">facts:</mark></p>
                     <ol style="margin-top: 0; list-style: none">
                         <li>- <a target="_blank" href="/basement/characters/egg">sona</a></li>
                         <li>- wants to play drums</li>
+                        <li>- dumb</li>
                         <li>- the "computer guy" in class</li>
-                        <li>- likes colour theory</li>
-                        <li>- talks about Chonny Jash way too much</li>
+                        <li>- colour theory</li>
                         <li>- "why are you so tall???"</li>
-                        <li>- gets scared easily</li>
                     </ol>
                 </div>
-                
-                
+
+        <img src="/stamps/this%20user%201.jpg" width="300px" id="ubx" style="margin: 10 auto;">
+
 
                 <div id="slider2">
                     <div class="slide-track">
@@ -414,7 +436,7 @@
         <p style="position: absolute; top: 250; right: 20;">i LOVE ice cream sandwiches!!!</p>
 
         <img src="images/trans-shark1.gif" style="position: absolute; top: 200; left: 58%;" class="draggable">
-        
+
         <img src="images/6EdnAyU.png" style="width: 100;  position: absolute; top: 400; left: 30%;" class="draggable">
 
 
@@ -441,7 +463,6 @@
     <a href="/home"><img src="icons/home.png" width="30px" id="gohome"></a>
 
 
-    <script src="/js/drag.js"></script>
 
 </body>
 
