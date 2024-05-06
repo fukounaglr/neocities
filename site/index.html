@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>enter: a ashhmillr's guide to depression</title>
+    <title>enter: ashhmillr's liminal space</title>
 
     <link rel="icon" type="image/png" href="/ico.png">
     <link rel="stylesheet" href="/style.css">
@@ -13,10 +13,17 @@
 
     <style>
         body {
-            background: url(/images/966df1035f1fbc676b57ea96c0f06fd4.jpg);
+            background: black;
+            color: white;
         }
 
-        #footer {
+        div.col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 100%;
+        }
+
+        footer {
             position: fixed;
             bottom: 0;
             width: 100%;
@@ -25,39 +32,14 @@
             color: white;
             padding: 5px;
         }
-
-        ol.big {
-            text-align: left;
-            margin-left: 30%;
-        }
-
-        .w40 {
-            width: 100%;
-            margin: 0 auto;
-            margin-top: -20px;
-        }
-
-        .grid {
-            margin: 0 auto;
-            width: 70%;
-            display: grid;
-            grid-template-columns: 50% 50%;
-        }
-
-        #homent {
-            align-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-        }
-
         .webrings {
             display: flex;
             align-items: center;
-        }
-
-        .webrings div {
+            position: absolute;
+            bottom: 20px;
+            & div {
             margin: auto;
+        }
         }
 
         #enter {
@@ -71,45 +53,30 @@
             transition: .5s;
         }
 
-        #enter #egg img {
-            display: none;
-            margin: 0 50% auto;
-            transform: translate(-50%, 0);
-        }
 
-        #enter #egg img:first-child {
-            display: block;
-        }
+        #sideimg {
+            width: 100%;
+            position: relative;
+            height: 100%;
+            background-image: url(/images/the-backrooms-backrooms.gif);
+            background-size: cover;
+            background-position: center;
 
-        #enter #egg img:last-child {
+        }
+        
+        .insides{
+            margin: auto 20%;
+        }
+        
+        #proceed{
+            color: white;
             position: absolute;
-            top: 0;
-        }
-
-        #enter #egg {
-            transition: .5s;
-        }
-
-        #enter:hover {
-            color: royalblue;
-        }
-
-        #enter:hover #egg {
-            transform: rotate(10deg);
-        }
-
-        #enter:hover #egg img:last-child {
-            display: block;
-            animation: fadeEffect 1s;
-
-        }
-
-        #eggg {
-            transition: .5s;
-        }
-
-        #eggg:hover {
-            transform: rotate(-10deg)
+            bottom: 130px;
+            left: 65%;
+            & :hover{
+                color: red;
+                font-style: italic;
+            }
         }
 
     </style>
@@ -117,87 +84,73 @@
 
 
 <body>
-    <div id="wrapper">
 
-        <div id="homent">
-            <h1 style="margin: 20px auto">Welcome to <span class="pink">ashhmillr</span>'s place!!</h1>
+    <div class="col">
+        <div id="sideimg">
+        </div>
+        
+        <div>
 
-            <div class="webrings">
-                <div id="autiring">
-                    <script type="text/javascript" src="https://macaque.moe/autiring/onionring-variables.js"></script>
-                    <script type="text/javascript" src="https://macaque.moe/autiring/onionring-widget.js"></script>
+            <h1>You woke up in a weird place.</h1>
+            <h2>will you proceed into the unknown?</h2>
+            <p style="font-size: 1.2Em; text-align: center;">Number of visitors: <span id="hitcount" class="red"></span></p>
 
-                </div>
-
-                <diV>
-                    <script src="https://nuthead.neocities.org/ring/ring.js"></script>
-                </diV>
-                
-                <script src="https://transring.neocities.org/ring.js" data-widget="nb"></script>
-                
-            </div>
-
-            <hr>
-
-            <div class="grid">
-                <div class="w40">
-                    <p class="bigger red">this website contains</p>
-                    <ol class="big">
-                        <li>minor flashing</li>
-                        <li>a lot of images</li>
-                        <li>bright colours</li>
+            <div class="insides">
+                <details>
+                    <summary>what lies ahead?</summary>
+                    <ol>
+                        <li>flashing images</li>
+                        <li>some bright colours</li>
+                        <li>possible swearing</li>
                     </ol>
-                </div>
-                <div class="w40">
-                    <p class="bigger mid-blue">best viewed with</p>
-                    <ol class="big">
+                </details>
+
+                <details>
+                    <summary>what is recommended to have?</summary>
+                    <ol>
                         <li>1920x1080 screen</li>
                         <li>javascript and iframe enabled</li>
                     </ol>
-                </div>
+                </details>
+
+                <a href="https://www.mabsland.com/Adoption.html" target="_blank">
+                    <img src="/images/Censor_14b.gif">
+                </a>
             </div>
 
-            <p style="font-size: 1.2Em">Number of visitors: <span id="hitcount" class="red"></span>!<i> - WHAT???</i></p>
-
-
-            <a href="/home">
-                <div id="enter">
-                    <div id="egg">
-                        <img src="/images/enteregg-normal.png" width="100px">
-                        <img src="/images/enteregg-cracked.png" width="100px">
-                    </div>
-                    <p>enter</p>
-                </div>
+            <a href="/home" id="proceed">
+                <h3>yes, i do wish to proceed</h3>
             </a>
+            
+        <div class="webrings">
+            <div id="autiring">
+                <script type="text/javascript" src="https://macaque.moe/autiring/onionring-variables.js"></script>
+                <script type="text/javascript" src="https://macaque.moe/autiring/onionring-widget.js"></script>
 
+            </div>
 
+            <diV>
+                <script src="https://nuthead.neocities.org/ring/ring.js"></script>
+            </diV>
+
+            <script src="https://transring.neocities.org/ring.js"></script>
 
         </div>
-
-
-        <a href="https://www.mabsland.com/Adoption.html" target="_blank">
-
-            <img src="/images/Censor_14b.gif" style="position: absolute; z-index: 10; top: 75%; left: 15%;">
-
-        </a>
-
-        <a href="/info"><img src="/ico.png" style="position: absolute; z-index: 10; top: 70%; right: 15%; width: 150px;" id="eggg"></a>
-
-    </div>
-
-
-
-
-
-    <div id="footer">
+        </div>
         
-        coded with <a class="white" href="https://brackets.io/">brackets</a> and tested in chrome. not optimised for mobile. the site is still under construction! Last updated: <snap id="lastupdate"></snap>
     </div>
+
+
 
     <script src="/js/last%20update%20views.js"></script>
 
 
 </body>
+
+
+<footer>
+    made with <a class="white" href="https://brackets.io/">brackets</a> and tested in chrome. not optimised for mobile. the site is still under construction! Last updated: <snap id="lastupdate"></snap>
+</footer>
 
 
 </html>
