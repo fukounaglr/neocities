@@ -10,42 +10,23 @@
 
     <style>
         body {
-            background-image: url(/images/6d18bf7e48325927e5c892c708dc3467.jpg);
+/*            background-image: url(/images/6d18bf7e48325927e5c892c708dc3467.jpg);*/
             background-color: darkslategray;
         }
 
         #shrines {
-            width: 100%;
+            position: absolute;
+            width: 80%;
+            height: calc(90vh - 200px);
             text-align: center;
             padding-top: 200px;
+            background-image: url(/images/corkboardtile.jpg);
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
         }
 
-        #shrines div {
-            padding: 10;
-            background: rgba(100, 111, 136, .3);
-            margin: auto;
-            border-radius: 20px;
-            transition: 1s;
-            width: 210px;
-            border: 5px solid rgba(200, 200, 210, 0.8);
-        }
-
-        #shrines div:hover {
-            width: 260px;
-            padding: 20;
-            transform: translate(0, -20px)
-        }
-
-        #shrines div img {
-            width: 200px;
-            transition: 1s;
-        }
-
-        #shrines div:hover img {
-            transform: rotate(15deg);
-            width: 250px;
-        }
-
+       
     </style>
 
 
@@ -53,8 +34,6 @@
 
 
 <body>
-    <div id="wrapper">
-
         <div id="shrines">
 
             <div><a href="/shrines/chonnyjash/">
@@ -66,11 +45,8 @@
         </div>
 
 
-        <a href="javascript:history.go(-1)">
-            <p id="goback">&#129044; go back</p>
-        </a>
-        <a href="/home"><img src="/icons/home.png" width="30px" id="gohome"></a>
-    </div>
+        
+        <a href="/home">go back</a>
 </body>
 
 </html>
