@@ -7,8 +7,15 @@ to-do (site)
 	> chonny jash ???
 	> silly
 	> arcade?
-> make shrines main page
+_ make shrines main page
 	stylize like a pinboard? or a shelf
+> make chonny jash shrine:
+	> main page (introduction?)
+	> what is chonny jash?
+	> albums
+	> separate for CCCC
+	> links
+	> director's commentaries
 > add more links to pages on homepage
 _ change site map
 _ add a random "this user" on webmaster page?
