@@ -7,19 +7,49 @@
 
     <link rel="icon" type="image/png" href="/ico.png">
     <link rel="stylesheet" href="/style.css">
+
     <meta name="google-site-verification" content="Fj7putUjL9oSK93SVSsOBnOcRPpAA03YbTVfHy26fqY" />
 
     <style>
-        body{
+        body {
             background-color: black;
             color: white;
             padding-left: 30%;
         }
-        a{
-            color: deeppink;
+
+        a {
+            color: var(--accent-colour);
         }
-        ol{
+
+        ol {
             margin: 20;
+        }
+
+
+
+        #site-map {
+            margin: 0;
+            position: relative;
+            left: 50px;
+            padding: 40px;
+            width: 50%;
+            font-size: 1.3Em;
+            background-color: white;
+        }
+
+        #site-map-box {
+            width: 400px;
+        }
+
+        #site-map a {
+            font-size: 1Em;
+            margin-left: 0;
+        }
+
+        #site-map li {
+            font-size: 1Em;
+            text-transform: uppercase;
+            list-style: none;
         }
 
     </style>
@@ -31,86 +61,88 @@
 
 
 
-            <div id="site-map-box">
-                <a href="javascript:history.go(-1)">
-                    <img src="/images/tableofcontent.gif">
-                </a>
-                
-                <li><a href="/index">enter</a></li>
-                <li><a href="/home">home</a></li>
-                <ol>
-                    <li><a href="/sotd">song of the week</a></li>
+    <div id="site-map-box">
+        <a href="javascript:history.go(-1)">
+            <img src="/images/tableofcontent.gif">
+        </a>
+
+        <li><a href="/index">enter</a></li>
+        <li><a href="/home">home</a></li>
+        <ol>
+            <li><a href="/sotd">song of the week</a></li>
+        </ol>
+        <li><a href="/links">links</a></li>
+        <li><a href="/info">info</a></li>
+
+        <li><a href="/journal/">journal</a>
+            <ol>
+                <!--                        <a href="/journal/trans"><li>trans</li></a>-->
+                <li><a href="/journal/sketchbook">sketchbook</a></li>
+                <!--                        <a href="/journal/photoalbum"><li>photo album</li></a>-->
+                <!--                        <a href="/journal/quotebook"><li>quotebook</li></a>-->
+                <!--                        <a href="/journal/cookbook"><li>cookbook</li></a>-->
+                <!--                        <a href="/journal/blog"><li>blog</li></a>-->
+            </ol>
+        </li>
+
+        <li><a href="/webmaster">webmaster</a></li>
+
+        <li>coolzone</li>
+        <ol>
+            <li><a href="/coolzone/collectables">collectables</a>
+
+            </li>
+
+            <!--                    <li>music</li>-->
+            <li><a href="/coolzone/memes">memes</a></li>
+            <!--                    <li>favs</li>-->
+        </ol>
+
+        <li><a href="/art">art</a></li>
+
+
+
+        <li><a href="/basement/projects/">projects</a>
+            <ol>
+                <li><a href="/readhead/">readhead</a></li>
+                <li><a href="/basement/projects/dressup">dress up ash</a></li>
+            </ol>
+        </li>
+
+        <li><a href="/basement/characters/">characters</a>
+            <ol>
+
+                <li>cccc</li>
+                <ol class="chars">
+                    <!--                                <li><a href="/basement/characters/li">LI</a></li>-->
+                    <li><a href="/basement/characters/whole">whole</a></li>
+                    <li><a href="/basement/characters/soul">soul</a></li>
+                    <li><a href="/basement/characters/heart">heart</a></li>
+                    <li><a href="/basement/characters/mind">mind</a></li>
                 </ol>
-                <li><a href="/links">links</a></li>
-                <li><a href="/info">info</a></li>
-                
-                <li><a href="/journal/">journal</a>
-                    <ol>
-<!--                        <a href="/journal/trans"><li>trans</li></a>-->
-                        <li><a href="/journal/sketchbook">sketchbook</a></li>
-<!--                        <a href="/journal/photoalbum"><li>photo album</li></a>-->
-<!--                        <a href="/journal/quotebook"><li>quotebook</li></a>-->
-<!--                        <a href="/journal/cookbook"><li>cookbook</li></a>-->
-<!--                        <a href="/journal/blog"><li>blog</li></a>-->
-                    </ol>
-                </li>
-                
-                <li><a href="/webmaster">webmaster</a></li>
 
-                <li>coolzone</li>
+
+                <li>others</li>
                 <ol>
-                    <li><a href="/coolzone/collectables">collectables</a>
-                        
-                    </li>
-
-<!--                    <li>music</li>-->
-                    <li><a href="/coolzone/memes">memes</a></li>
-<!--                    <li>favs</li>-->
+                    <!--                                <li>red</li>-->
+                    <!--                                <li>plush</li>-->
+                    <li><a href="/basement/characters/egg.html">egg</a></li>
                 </ol>
-
-                <li><a href="/art">art</a></li>
-
-
-
-                    <li><a href="/basement/projects/">projects</a><ol>
-                        <li><a href="/readhead/">readhead</a></li>
-                            <li><a href="/basement/projects/dressup">dress up ash</a></li>
-                        </ol>
-                    </li>
-
-                    <li><a href="/basement/characters/">characters</a><ol>
-
-                            <li>cccc</li>
-                            <ol class="chars">
-<!--                                <li><a href="/basement/characters/li">LI</a></li>-->
-                                <li><a href="/basement/characters/whole">whole</a></li>
-                                <li><a href="/basement/characters/soul">soul</a></li>
-                                <li><a href="/basement/characters/heart">heart</a></li>
-                                <li><a href="/basement/characters/mind">mind</a></li>
-                            </ol>
+            </ol>
+        </li>
 
 
-                            <li>others</li>
-                            <ol>
-<!--                                <li>red</li>-->
-<!--                                <li>plush</li>-->
-                                <li><a href="/basement/characters/egg.html">egg</a></li>
-                            </ol>
-                        </ol>
-                    </li>
-
-
-                <li><a href="/credits/">credits</a>
-                    <ol>
-                        <li><a href="/credits/by me">by me</a></li>
-                        <li><a href="/credits/gifs">gifs</a></li>
-                        <li><a href="/credits/images">images</a></li>
-                        <li><a href="/credits/backgrounds">bgs</a></li>
-                        <li><a href="/credits/fonts">fonts</a></li>
-                        <li><a href="/credits/links">links</a></li>
-                    </ol>
-                </li>
-            </div>
+        <li><a href="/credits/">credits</a>
+            <ol>
+                <li><a href="/credits/by me">by me</a></li>
+                <li><a href="/credits/gifs">gifs</a></li>
+                <li><a href="/credits/images">images</a></li>
+                <li><a href="/credits/backgrounds">bgs</a></li>
+                <li><a href="/credits/fonts">fonts</a></li>
+                <li><a href="/credits/links">links</a></li>
+            </ol>
+        </li>
+    </div>
 
 
 
@@ -118,25 +150,25 @@
 
 
 
-            
-               
 
 
-            <div>
+
+    <div>
 
 
-                <audio id="audio" src="https://64.media.tumblr.com/5cfdb5b4911fc813f8d2ecc9a59c706c/fed64cd68b42bd35-0a/7d861edb29cd262194f4361a5b988b98b18789b7.mp3"></audio>
+        <audio id="audio" src="https://64.media.tumblr.com/5cfdb5b4911fc813f8d2ecc9a59c706c/fed64cd68b42bd35-0a/7d861edb29cd262194f4361a5b988b98b18789b7.mp3"></audio>
 
-                <a href="" id="play">
-                    <img src="/images/Weezer_Blue_Album.jpg" width="200px" style="position: fixed; top: 400px; right: 100px">
-                </a>
+        <a href="" id="play">
+            <img src="/images/Weezer_Blue_Album.jpg" width="200px" style="position: fixed; top: 400px; right: 100px">
+        </a>
 
-                    </div>
+    </div>
 
 
 
 
     <script src="/js/playsound.js"></script>
+    <script src="/js/theme-switcher.js"></script>
 
 
 </body>

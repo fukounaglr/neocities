@@ -10,20 +10,24 @@
     <link rel="stylesheet" href="/style.css">
 
 
-    <script src="/main.js"></script>
-
     <style>
         body {
-            background-color: #164952;
-            background-image: url(/images/9d206ababf6dfe504077b21747bbb5a12.jpg);
+            --bg: url(/images/9d206ababf6dfe504077b21747bbb5a12.jpg);
+            background-color: black;
+            background-image: var(--bg);
             background-position: bottom;
+            &.green{
+                --bg: url(/images/601251.jpg)
+            }
         }
-        *{
+
+        * {
             color: white;
             text-align: center;
         }
-        #wrr{
-        position: absolute;
+
+        #wrr {
+            position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -36,14 +40,18 @@
 <body>
 
     <div id="wrr">
-        <h1><mark style="background-color: red">not found</mark></h1>
+        <h1><mark style="background-color: var(--accent-colour)">not found</mark></h1>
         <h3>the page is under construction<br> come back later!</h3>
         <a href="javascript:history.go(-1)" style="text-decoration: none; position: relative;">
-        <img src="/images/9620777e15653e5e37891888527b2b61.jpg" width="100%">
+            <img src="/images/9620777e15653e5e37891888527b2b61.jpg" width="100%" style="display: var(--underwater-display)">
+            <img src="/images/Pokemon-Grass-Deerling.avif" width="100%" style="display: var(--grass-display)">
             <p class="bolder" style="position: absolute; bottom: 10px; left: 50%; transform: translate(-50%, 0)">go back</p>
         </a>
 
     </div>
+    
+        <script src="/js/theme-switcher.js"></script>
+
 </body>
 
 </html>

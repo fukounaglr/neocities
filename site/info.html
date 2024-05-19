@@ -7,12 +7,14 @@
 
     <link rel="icon" type="image/png" href="/ico.png">
     <link rel="stylesheet" href="/style.css">
+    <script src="/js/theme-switcher.js"></script>
     
 
 
     <style>
         body {
-            background: url(/images/b0e786c4631cce5f9277d270dda83baf.jpg);
+            --bg: url(/images/b0e786c4631cce5f9277d270dda83baf.jpg);
+            background: var(--bg);
             background-size: contain;
         }
 
@@ -24,6 +26,10 @@
             grid-template-columns: 15% 15%;
             column-gap: 60%;
             height: 0;
+        }
+        
+        mark{
+            background: var(--primary-colour)
         }
 
         #goback {
@@ -42,11 +48,11 @@
         }
 
         a, #goback{
-            color: skyblue;
+            color: var(--primary-colour);
         }
 
         a:hover, #goback {
-            color: hotpink;
+            color: var(--accent-colour-hover);
         }
         .sub-nav {
             font-family: 'karmatic arcade';
@@ -55,7 +61,7 @@
         }
 
         summary {
-            color: hotpink;
+            color: var(--accent-colour);
             font-family: 'arcadeclassic';
             font-size: 1.1Em;
         }
@@ -87,7 +93,7 @@
             <details>
                 <summary>before you follow</summary>
                 <p>Sometimes I might be annoying, or make others uncomfortable
-                    <br>just please don't close eyes on that and <mark style="background-color: hotpink">let me know!</mark></p>
+                    <br>just please don't close eyes on that and <mark>let me know!</mark></p>
                 <p>Frequent mood changes + mental health issues (cptsd, depression and others) :p</p>
                 <p>Lack of social skills + very stupid and might not understand many things!</p>
                 <p>I don't understand relationships, so i need clarifications D:</p>
@@ -101,7 +107,7 @@
                 <p>I have <i>Generalized Anxiety Disorder</i> and might be paranoid sometimes.
                 <br>This Is Why i don't share pictures of myselfor any personal information, and even if I Do, I end up deleting them most of the time.
                 <br>i am free to choose what information i do and do not post about myself online.</p>
-                <p><mark style="background-color: skyblue">Please respect that!</mark></p>
+                <p><mark>Please respect that!</mark></p>
                 <h4>ok!</h4>
                 <p>feel free to message me anywhere! i like talking to people.</p>
                 <p>And also if you wanna infodump about something or recommend something, i will listen!</p>
@@ -110,7 +116,7 @@
                 
                 <h4>no!</h4>
                 <p>I do Not Care about jashshipping. I don't <i>mind</i> (huh) it, but I'm not the person to talk about it with.</p>
-                <p><mark style="background: hotpink">no NSFW!</mark></p>
+                <p><mark>no NSFW!</mark></p>
                 <p>Do not sexualize <i>me, my art, or my characters!</i></p>
                 <p>Don't bring up drama or discourse with me, unless given permission.</p>
             

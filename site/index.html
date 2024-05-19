@@ -16,7 +16,12 @@
             background: black;
             color: white;
             margin: 0;
+            
+            --bg: url(/images/the-backrooms-backrooms.gif);
         }
+        .green{
+                --bg: url(/images/36c0b03aedfcc5c22e6c48e7dbae755a.jpg);
+            }
 
         div.col {
             display: grid;
@@ -52,22 +57,26 @@
         }
         
         #lastupdate{
-            color: turquoise;
+            color: var(--primary-colour);
         }
         #hitcount{
-            color: mediumvioletred;
+            color: var(--accent-colour);
         }
 
-
+        .button{
+            border: none;
+            background-color: var(--primary-colour);
+            padding: 10px 10px;
+            border-radius: 10px;
+        }
 
         #sideimg {
             width: 100%;
             position: relative;
             height: 100%;
-            background-image: url(/images/the-backrooms-backrooms.gif);
+            background-image: var(--bg);
             background-size: cover;
             background-position: center;
-
         }
         
         .insides{
@@ -81,7 +90,7 @@
             left: 50%;
             transform: translate(-50%, 0);
             & :hover{
-                color: mediumvioletred;
+                color: var(--accent-colour);
                 font-style: italic;
             }
         }
@@ -104,12 +113,12 @@
 
             <div class="insides">
                 <details>
-                    <summary>what lies ahead?</summary>
+                    <summary>dangers ahead</summary>
                     <ol>
-                        <li>flashing images</li>
-                        <li>some bright colours</li>
+                        <li>some flashing images &amp; bright colours</li>
+                        <li>image heavy</li>
+                        <li>not mobile friendly (yet?)</li>
                         <li>possible swearing</li>
-                        <li>queer furries</li>
                     </ol>
                 </details>
 
@@ -121,9 +130,18 @@
                     </ol>
                 </details>
 
-                <a href="https://www.mabsland.com/Adoption.html" target="_blank">
+                
+                <div style="align-content: center">
+                <a href="https://www.mabsland.com/Adoption.html" target="_blank" style="text-decoration: none; vertical-align: middle;">
                     <img src="/images/Censor_14b.gif">
                 </a>
+                
+                <button id="toggle" class="button">current theme:<br>
+                    <span style="display: var(--underwater-display)">underwater</span>
+                    <span style="display: var(--green-display)">green</span>
+                </button>
+                    
+                    </div>
             </div>
 
             <a href="/home" id="proceed">
@@ -152,13 +170,14 @@
 
 
     <script src="/js/last%20update%20views.js"></script>
+    <script src="/js/theme-switcher.js"></script>
 
 
 </body>
 
 
 <footer>
-    made with <a class="white" href="https://brackets.io/">brackets</a> and tested in chrome. not optimised for mobile. the site is still under construction! Last updated: <snap id="lastupdate"></snap>
+    made with <a class="white" href="https://brackets.io/">brackets</a> and tested in chrome. the site is still under construction! Last updated: <snap id="lastupdate"></snap>
 </footer>
 
 

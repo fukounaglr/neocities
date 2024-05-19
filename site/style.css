@@ -64,14 +64,43 @@
 
 
 
+
+/*COLOURS*/
+body {
+    --primary-colour: mediumturquoise;
+    --accent-colour: palevioletred;
+    --accent-colour-hover: paleturquoise;
+    --dark-colour: darkcyan;
+    --colour: #111132;
+    --green-display: none;
+    --underwater-display: block;
+
+    &.green {
+        --primary-colour: DarkSeaGreen;
+        --accent-colour: SkyBlue;
+        --accent-colour-hover: #D9FECE;
+        --green-display: static;
+        --underwater-display: none;
+        --darkcolour: DarkGreen;
+    }
+    
+}
+
+
 * {
-    scrollbar-color: deeppink white;
+    scrollbar-color: var(--accent-colour) white;
     scrollbar-width: thin;
 
 }
 
 a {
     margin: 0;
+    color: var(--accent-colour);
+    transition: 0.4s;
+
+    &:hover {
+        color: var(--accent-colour-hover)
+    }
 }
 
 ol {
@@ -80,12 +109,12 @@ ol {
 
 ::selection {
     color: white;
-    background: deeppink;
+    background: var(--accent-colour);
 }
 
 ::-moz-selection {
     color: white;
-    background: deeppink;
+    background: var(--accent-colour);
 }
 
 
@@ -105,33 +134,11 @@ body {
     background-position: center;
 }
 
-.dark-mode {
-    background-color: #161227;
-    color: white;
-}
-
-.dark-toggle {
-    background-color: #5F3E90;
-    border: #161227 solid 5px;
-    color: white;
-    cursor: pointer;
-}
-
-.dark-mode .dark-toggle {
-    background-color: #1B9CD5;
-    border: white solid 5px;
-    color: #262649;
-}
-
 hr {
     border: none;
     border-top: 3px solid;
     width: 40%;
     margin: 10px auto;
-}
-
-.hr-dashed {
-    border-top: 3px dashed;
 }
 
 .vr {
@@ -145,11 +152,6 @@ hr {
 mark {
     padding: 1;
 }
-
-.dark-mode mark a {
-    color: #262649;
-}
-
 
 
 #goback {
@@ -187,61 +189,13 @@ mark {
 
 
 
-
-
-
-/*COLOUR*/
-.blue {
-    color: darkblue;
-}
-
-.light-blue {
-    color: deepskyblue;
-}
-
-.mid-blue {
-    color: royalblue;
-}
-
-.red {
-    color: #E64933;
-}
-
-.yellow {
-    color: #FFBE3C;
-}
-
-.white {
-    color: white;
-}
-
-.black {
-    color: #262649;
-}
-
-.cyan {
-    color: #6DD1E5;
-}
-
-.pink {
-    color: deeppink;
-}
-
-
-
-
-
-
-
-
-
 /*FONTS*/
 
 
 html {
     font-family: 'merchant copy';
     text-wrap: normal;
-    color: #111132;
+    color: var(--colour);
     font-size: 1.2Em;
 }
 
@@ -306,37 +260,12 @@ a {
     margin: 10 0;
 }
 
-a {
-    color: blue;
-    transition: 0.2s;
-}
-
-.dark-mode a {
-    color: deeppink;
-}
-
-a:hover {
-    color: crimson;
-}
-
-.dark-mode a:hover {
-    color: deepskyblue;
-}
-
 .black {
     font-size: 1Em;
     text-transform: uppercase;
     text-align: center;
     margin: 5px;
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -369,62 +298,6 @@ a:hover {
 }
 
 
-
-
-
-
-
-
-
-
-
-/*SONG*/
-
-#sotw-archive {
-    width: 450px;
-    height: 470px;
-    position: absolute;
-    right: 50px;
-    margin-top: 100;
-    display: block;
-    background-color: #3C3772;
-    border-radius: 20px;
-    padding: 20px;
-    overflow-y: scroll;
-    color: white;
-}
-
-.sotw-archive-box {
-    position: relative;
-    padding: 10;
-    border: 3px white solid;
-    border-radius: 20px;
-    color: white;
-    margin-bottom: 20;
-}
-
-.sotw-archive-box a {
-    color: white;
-    transition: .4s;
-}
-
-.sotw-archive-box a:hover {
-    color: #A7EAFF;
-}
-
-#sotw-current {
-    position: relative;
-    padding: 20px;
-    border-radius: 20px;
-    width: 700px;
-    height: 450px;
-    position: absolute;
-    top: 100;
-    left: 100;
-    color: white;
-    font-size: 1Em;
-    border: 5px solid;
-}
 
 
 
@@ -505,156 +378,23 @@ a:hover {
 
 
 
-
-
-
-/*BLOG*/
-
-.blog {
-    border-radius: 10px;
-    border: dashed 2px #E64933;
-    margin: auto;
-    margin-bottom: 20px;
-    padding-top: 20px;
-    background-color: rgba(255, 255, 255, 0.5);
-    transition: background-color .2s;
-    width: 90%;
-
-}
-
-.blog:hover {
-    background-color: white;
-}
-
-.blog-img {
-    height: 100px;
-    max-width: 90%;
-    margin: auto;
-    display: block;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*SITEMAP*/
-
-#site-map {
-    margin: 0;
-    position: relative;
-    left: 50px;
-    padding: 40px;
-    width: 50%;
-    font-size: 1.3Em;
-    background-color: white;
-}
-
-#site-map-box {
-    width: 400px;
-}
-
-#site-map a {
-    font-size: 1Em;
-    margin-left: 0;
-}
-
-#site-map li {
-    font-size: 1Em;
-    text-transform: uppercase;
-    list-style: none;
-}
-
-
-
-
-
-
-/*WEBMASTER*/
-#webmaster-info {
-    width: 30%;
-    height: 600px;
-    background-color: aliceblue;
-    border: 5px black solid;
-    border-radius: 20px;
-    position: absolute;
-    top: 30;
-    right: 10;
-    font-size: 1.2Em;
-    padding: 10px;
-    line-height: 1;
-}
-
-
-#webmaster-info mark {
-    padding: 5;
-    text-transform: uppercase;
-    font-weight: 600;
-}
-
-#big-wm {
-    font-family: 'arcadeclassic';
-    font-style: normal;
-    font-size: 1.6Em;
-    text-transform: uppercase;
-    text-align: center;
-}
-
-#wrapper-webmaster {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 96%;
-    height: 80%;
-    padding: 5% 2% 0% 2%;
-}
-
-
-#webmaster-box {
-    width: 25%;
-    height: 150;
-    padding: 15px;
-    background-color: #fff000;
-    border: 5px solid black;
-    margin-top: 20;
-    overflow-y: scroll;
-}
-
-
-
-
-
-
-
-
-
-
-
-
 /*CREDITS*/
 
 .credits-box {
     background-color: white;
     border: 5px solid black;
     padding: 50px;
-/*    margin-left: 25%;*/
-/*    margin-top: 20;*/
+    /*    margin-left: 25%;*/
+    /*    margin-top: 20;*/
     border-radius: 20px;
 }
 
 #credits-navigation {
     display: block;
-/*    position: fixed;*/
+    /*    position: fixed;*/
     width: 100%;
-/*    left: 100;*/
-/*    top: 100;*/
+    /*    left: 100;*/
+    /*    top: 100;*/
 }
 
 .credits-nav {

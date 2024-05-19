@@ -27,12 +27,12 @@
 
         header a,
         footer a {
-            color: palevioletred;
+            color: var(--accent-colour);
         }
 
         header a:hover,
         footer a:hover {
-            color: paleturquoise;
+            color:  var(--accent-colour-hover);
         }
 
         footer {
@@ -40,14 +40,23 @@
             background-color: black;
             padding: 10px;
             /*            width: 100%;*/
-            color: palevioletred
+            color:  var(--accent-colour);
         }
 
 
 
         body {
-            background-color: darkblue;
-            background-image: url(/images/f50195b3012ad6d7c29278e46355e04b.jpg);
+            --bg: url(/images/f50195b3012ad6d7c29278e46355e04b.jpg);
+            --webrings-bg: url(/images/3332befa1638b733d0fe5c4dd32ebc5a.gif);
+            --chat-bg: url(/images/m4q84l0811k81.jpg);
+            
+            background-color: black;
+            background-image: var(--bg);
+            &.green{
+                --bg: url(/images/0d17503f43d9142fddb2e37ca78ad827.jpg);
+                --webrings-bg: url(/images/6734b0c9b53211b35430606fffb385ad.gif);
+            --chat-bg: url(/images/d62e460b87b415f82d3cc0500d499768.jpg);
+            }
         }
 
         h1,
@@ -78,17 +87,13 @@
 
         }
 
-        .dark-mode #home {
-            background-color: #533C9D;
-        }
-
 
 
         div.col {
             width: 95%;
             height: 100%;
             margin: auto;
-            background-color: #0ABBBB;
+            background-color: var(--primary-colour);
             
             & div.text {
             width: 90%;
@@ -131,7 +136,7 @@
             position: relative;
             text-align: center;
             padding: 0 10px;
-            background: url(/images/3332befa1638b733d0fe5c4dd32ebc5a.gif);
+            background: var(--webrings-bg);
             & #autiring{
                 text-align: center;
                 margin: auto;
@@ -149,7 +154,7 @@
         #button-box {
             width: 90%;
             padding: 10px;
-            background-color: #FF497B;
+            background-color: var(--accent-colour);
             border-radius: 20px;
             display: block;
             align-items: center;
@@ -169,17 +174,16 @@
                 height: 100%;
                 margin: auto;
                 border-radius: 20px;
-                background-color: paleturquoise;
+                background-color: var(--accent-colour-hover);
                 cursor: pointer;
                 border: none;
-                box-shadow: darkcyan 3px 3px;
+                box-shadow: var(--dark-colour) 3px 3px;
                 position: relative;
                 transition: 0.4s;
 
-                &:hover {
+                &:active {
                     transform: translate(3px, 3px);
-                    background-color: #8FDADA;
-                    box-shadow: darkcyan 0px 0px;
+                    box-shadow: var(--dark-colour) 0px 0px;
 
                 }
             }
@@ -192,7 +196,7 @@
             font-size: 1Em;
             background-color: #6DD1E5;
             /*            border: #02021C 5px solid;*/
-            background: right no-repeat url("/images/rainbow3.jpg");
+            background: right no-repeat var(--chat-bg);
             background-size: cover;
         }
 
@@ -262,6 +266,9 @@
 
             & a {
                 margin: 10px;
+                &.no-button{
+                    background-color: black;
+                }
             }
         }
 
@@ -276,13 +283,13 @@
             }
         }
 
-        button.theme-toggle {
+        button.toggle {
             width: 90%;
             height: 80%;
             margin: auto;
             padding: 0;
             border: none;
-            background-color: palevioletred;
+            background-color: var(--accent-colour);
             border-radius: 20px;
             cursor: pointer;
             color: white;
@@ -426,7 +433,8 @@
 
             <img src="/images/OP%20kitteh%20moed.png" class="full">
 
-            <img src="/images/ce5b81ef209db41c6fc79d705cdc4c51.jpg" class="full">
+            <img src="/images/ce5b81ef209db41c6fc79d705cdc4c51.jpg" class="full" style="height: 300px; display: var(--underwater-display)">
+            <img src="/images/08613402c58bb09a46c2c42d22982351.jpg" class="full" style="height: 300px; display: var(--green-display)">
 
             <div id="status">
                 <img src="/images/bubble.png" width="100%">
@@ -516,8 +524,9 @@
             </div>
 
             <a href="/art.html" style="position: relative">
-                <h2 style="position: absolute; bottom: 0; color: darkcyan">art</h2>
-                <img src="/images/72010ff64164ae3e74ac426b30443947.gif" class="full">
+                <h2 style="position: absolute; bottom: 0; color: var(--accent-colour)">art</h2>
+                <img src="/images/72010ff64164ae3e74ac426b30443947.gif" class="full" style="display: var(--underwater-display)">
+                <img src="/images/pokemon-deerling-deerling%20(1).gif" class="full" style="display: var(--green-display)">
             </a>
 
 
@@ -535,7 +544,7 @@
                 <img src="/stamps/blows%20up%20your%20pancakes%20with%20mind%20chonny%20jash.gif">
                 <img src="/stamps/youre_telling_me.png">
 
-                <button onclick="myFunction()" class="theme-toggle">
+                <button id="toggle" class="toggle">
                     <p>theme</p>
                 </button>
             </div>
@@ -567,12 +576,19 @@
             </div>
 
 
-
+            <div style="display: var(--underwater-display)">
             <div class="grid paw3" style="margin: 10 auto">
                 <img src="/stamps/glass%20beach%20stamp.png">
                 <img src="/stamps/wavestamp.gif">
                 <img src="/stamps/vaporeonstamp.gif">
-            </div>
+            </div></div>
+
+            <div style="display: var(--green-display)">
+            <div class="grid paw3" style="margin: 10 auto">
+                <img src="/stamps/441.png">
+                <img src="/stamps/476.png">
+                <img src="/stamps/509.png">
+            </div></div>
 
             <div>
 
@@ -628,24 +644,35 @@
 
                     <a href="https://dimden.dev/"><img src="https://dimden.dev/images/88x31.gif" class="freezeframe"></a>
 
-                    <a href="https://classicj.neocities.org/" target="_blank">classic j</a>
+                    <a href="https://classicj.neocities.org/" target="_blank" class="no-button">classic j</a>
                 </div>
             </div>
 
 
-
+            <div style="display: var(--underwater-display)">
             <div class="collage">
                 <img src="/images/41c1774752472a0a673f44541e19f0f0.jpg" style="grid-area: a; ">
                 <img src="/images/74dc494da4f43b691a7f97386c33b2cd.jpg">
                 <img src="/images/55307bee3c80f0abc6988cfa34627ec0.jpg">
                 <img src="/images/9d206ababf6dfe504077b21747bbb5a1.jpg">
                 <img src="/images/d72266f179e62d65ba09e2c327fc5f45.jpg">
-            </div>
+            </div></div>
+
+            <div style="display: var(--green-display)">
+            <div class="collage">
+                <img src="/images/5f3de45771c354cf542430fd2bf9efd9.jpg" style="grid-area: a; ">
+                <img src="/images/2eebffdaf5fc9a218e16195877ad2b7a.jpg">
+                <img src="/images/0933d07cf48feb6f2216306aeededbd3.jpg">
+                <img src="/images/4bc092c722519b423b2395790bc028f4.jpg">
+                <img src="/images/bad426cb2f1ec8da6262397ee9fd7ec5.jpg">
+            </div></div>
 
 
         </div>
 
     </div>
+    
+    <script src="/js/theme-switcher.js"></script>
 </body>
 
 <footer>
