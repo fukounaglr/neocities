@@ -104,6 +104,7 @@
         }
             img.full {
             width: 100%;
+                object-fit: cover;
         }
         }
 
@@ -137,7 +138,7 @@
             text-align: center;
             padding: 0 10px;
             background: var(--webrings-bg);
-            & #autiring{
+            & #autiring table, transring{
                 text-align: center;
                 margin: auto;
             }
@@ -433,7 +434,7 @@
 
             <img src="/images/OP%20kitteh%20moed.png" class="full">
 
-            <img src="/images/ce5b81ef209db41c6fc79d705cdc4c51.jpg" class="full" style="height: 300px; display: var(--underwater-display)">
+            <img src="/images/46c0499471bc83b4efb08cd49d27b128.jpg" class="full" style="height: 300px; display: var(--underwater-display)">
             <img src="/images/08613402c58bb09a46c2c42d22982351.jpg" class="full" style="height: 300px; display: var(--green-display)">
 
             <div id="status">
@@ -563,14 +564,14 @@
                     </div>
 -->
                     <div id="autiring">
-                        <script type="text/javascript" src="https://macaque.moe/autiring/onionring-variables.js"></script>
-                        <script type="text/javascript" src="https://macaque.moe/autiring/onionring-widget.js"></script>
+                        <script defer type="text/javascript" src="https://macaque.moe/autiring/onionring-variables.js"></script>
+                        <script defer type="text/javascript" src="https://macaque.moe/autiring/onionring-widget.js"></script>
                     </div>
 
-                    <script src="https://nuthead.neocities.org/ring/ring.js"></script>
+                    <div><script defer src="https://nuthead.neocities.org/ring/ring.js"></script></div>
 
 
-                    <script src="https://transring.neocities.org/ring.js"></script>
+                    <script id="transring" defer src="https://transring.neocities.org/ring.js"></script>
 
                 </div>
             </div>
@@ -682,7 +683,7 @@
     <a href="/journal/">Journal</a>
     <a href="/shrines/">Shrines</a>
     <a href="/webmaster.html">Webmaster</a>
-    <a href="/coolzone/">Coolzone</a>
+    <a href="/coolzone/index.html">Coolzone</a>
     <a href="/art.html">Art</a>
     <a href="/basement/characters/index.html">OCs</a>
     <a href="/basement/projects/index.html">Projects</a>
