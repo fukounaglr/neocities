@@ -4,55 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>basement</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap" rel="stylesheet">
+
 
     <link rel="icon" type="image/png" href="/ico.png">
     <link rel="stylesheet" href="/style.css">
 
     <style>
         body {
-            background-image: url(/images/94d0e722251e9baf6d10bcd1600c13e9.jpg)
+            background-color: #111132;
+            background-image: var(--bg);
+            --bg: url(/images/maxresdefault.jpg);
+            &.green{
+/*                --bg: url();*/
+            }
+        }
+
+        #projects {
+/*            width: 100%;*/
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-gap: 50px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
         }
 
         .project {
             padding: 10;
             background-color: white;
-            border-radius: 20px;
-            width: 90%;
             margin: 20;
+            position: relative;
+
+            background-color: #040A31;
+/*            border: 5px solid #5B83D2;*/
+            width: 80%;
+/*            height: 50hv;*/
+            padding: 50px;
+/*            border-radius: 20px*/
+            transition: .4s;
+            top: 0;
+            box-shadow: 0px 0px black;
+            &:hover{
+                background-color: #5B83D2;
+                top: -30px;
+                box-shadow: 0px 30px black;
+            }
         }
 
         .project img {
             width: 100%;
-            height: 150px;
+            height: 200px;
             object-fit: cover;
-        }
-
-        .characters {
-            display: grid;
-            grid-template-columns: 170px 170px 170px 170px 170px;
-            text-align: center;
-            margin-bottom: 50;
-            margin-top: 20;
-        }
-
-        .character {
-            text-align: center;
-            background-color: white;
-            border-radius: 20px;
-            width: 150px;
-            height: 150px;
-            margin: 0 50 20 50;
-        }
-
-        .characters img {
-            width: 100px;
-            height: 100px;
-            object-fit: contain;
-            margin: auto;
         }
 
         a {
             margin: 0 auto;
+        }
+        
+        .bigger{
+            font-family: "Jaro", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 400;
+                font-style: normal;
+/*                color: white;*/
+                font-size: 1.5Em;
         }
 
     </style>
@@ -64,127 +84,28 @@
 <body>
     <div id="wrapper">
         <div id="projects">
-            <!--            <iframe frameborder="0" src="https://itch.io/embed-upload/9400849?color=fbfbf3" allowfullscreen="" width="1200" height="840"><a href="https://ashhmillr.itch.io/ash-dress-up">Play Ash Dress up on itch.io</a></iframe>-->
-            <div>
-                <p class="bigger white">projects</p>
-                <hr class="white">
+            <p class="bigger white">projects</p>
+<!--            <hr class="white">-->
+            <p>idk what bg to put here. do that later</p>
 
-                <a href="/basement/projects/dressup">
-                    <div class="project">
-                        <img src="/basement/images/dressup.png">
-                        <p class="big">ash Dressup</p>
-                    </div>
-                </a>
+            <a href="/basement/projects/dressup">
+                <div class="project">
+                    <img src="/basement/images/dressup.png">
+                    <p class="big">ash Dressup</p>
+                </div>
+            </a>
 
-                <a href="/readhead/index">
+            <a href="/readhead/index">
                 <div class="project">
                     <img src="/basement/images/readhead.png">
                     <p class="big">readhead</p>
                 </div>
-                </a>
-
-            </div>
-
-            <span class="vr"></span>
-
-
-            <div>
-                <p class="bigger white">characters</p>
-                <hr class="white">
-
-                <div style="height: 450px; overflow-y: scroll;">
-                    <p class="bolder white">CCCC</p>
-                    <div class="characters">
-
-                        <a href="/basement/characters/whole">
-                            <div class="character"><img src="/basement/images/icon-whole.png">
-                                <p class="big">whole</p>
-                            </div>
-                        </a>
-
-                        <a href="/basement/characters/soul">
-                            <div class="character"><img src="/basement/images/icon-soul.png">
-                                <p class="big">soul</p>
-                            </div>
-                        </a>
-
-                        <a href="/basement/characters/heart">
-                            <div class="character"><img src="/basement/images/icon-heart.png">
-                                <p class="big">heart</p>
-                            </div>
-                        </a>
-
-                        <a href="/basement/characters/mind">
-                            <div class="character"><img src="/basement/images/icon-mind.png">
-                                <p class="big">mind</p>
-                            </div>
-                        </a>
-
-                    </div>
-
-<!--
-                    <p class="bolder white">readhead</p>
-                    <div class="characters">
-
-                        <div class="character"><img src="/basement/images/icon-ash.png">
-                            <p class="big">ash</p>
-                        </div>
-
-                        <div class="character"><img src="/basement/images/icon-dave.png">
-                            <p class="big">dave</p>
-                        </div>
-
-                        <div class="character"><img src="/basement/images/icon-kris.png">
-                            <p class="big">kris</p>
-                        </div>
-
-                        <div class="character"><img src="/basement/images/icon-dee.png">
-                            <p class="big">dee</p>
-                        </div>
-
-                        <div class="character"><img src="/basement/images/icon-jack.png">
-                            <p class="big">jack</p>
-                        </div>
-
-                    </div>
--->
-
-                    <p class="bolder white">others</p>
-                    <div class="characters">
-
-<!--
-                        <div class="character"><img src="/basement/images/icon-red.png">
-                            <p class="big">red</p>
-                        </div>
-
-                        <div class="character"><img src="/basement/images/icon-plush.png">
-                            <p class="big">plush</p>
-                        </div>
--->
-
-                        <a href="/basement/characters/egg">
-                            <div class="character"><img src="/basement/images/icon-egg.png">
-                                <p class="big">egg</p>
-                            </div>
-                        </a>
-
-
-                    </div>
-
-
-
-
-                </div>
-            </div>
-
-
-
+            </a>
         </div>
 
-        <a href="javascript:history.go(-1)">
+        <a href="/icons/home.png">
             <p id="goback">&#129044; go back</p>
         </a>
-        <a href="/home"><img src="icons/home.png" width="30px" id="gohome"></a>
     </div>
 </body>
 
