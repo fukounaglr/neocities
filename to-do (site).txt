@@ -1,9 +1,9 @@
 to-do (site)
 
-> separate OCs and projects pages + make individual pages
+_ separate OCs and projects pages + make individual pages
 > add themes
-	> underwater (current)
-	> nature
+	_ underwater (current)
+	_. nature
 	> chonny jash ???
 	> silly
 	> arcade?
@@ -21,3 +21,7 @@ _ change site map
 _ add a random "this user" on webmaster page?
 	- working on it
 _ add a player on webmaster page instead of spotify playlist
+
+
+..
+.

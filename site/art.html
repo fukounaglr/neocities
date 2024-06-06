@@ -12,40 +12,22 @@
 
     <style>
         body {
-            background: url('/images/d8340012495ab1499b2062c130c8e124.jpg');
+            background: url('/images/45f206026169fe16529069da4ea30992.jpg');
+            display: grid;
+            grid-template-columns: 2fr 1fr 3fr;
         }
 
         #goback {
-            position: absolute;
+            position: relative;
             top: 10;
-            left: 50%;
-            transform: translate(-50%, 0);
             font-family: 'karmatic arcade';
             font-size: .7Em;
-            color: #4BD7C8;
-        }
-
-        #goback:hover {
-            color: #FFA89B;
-        }
-
-        .tabcontent {
-            display: none;
-            overflow: inherit;
-            animation: fadeEffect 1s;
-            /* Fading effect takes 1 second */
-        }
-
-        /* Go from zero to full opacity */
-        @keyframes fadeEffect {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
+            color: white;
+            & :hover{
+                color: var(--accent-colour);
             }
         }
+
 
         #info {
             display: block;
@@ -60,289 +42,210 @@
             width: 100%;
             display: grid;
         }
-        
-        .links{
+
+        .links {
             width: 20;
         }
-        
-        .popup{
+
+        .popup {
             z-index: 10;
+        }
+        
+        #left{
+            background-color:  var(--primary-colour);
+        }
+        
+        #right{
+            background-color: white;
+            padding: 50px;
+        }
+        
+        #middle{
+            text-align: center;
+            align-content: center;
+            align-items: center;
+            width: 80%;
+            margin: auto;
         }
 
     </style>
 </head>
 
 <body>
-    
 
-    <div id="wrapper2">
 
 
-        <div style="position: relative; top: 10;">
+    <div id="left">
+        <iframe style="border: none; margin-bottom: 20;" src="https://ashhmillr.tumblr.com/" width="100%" height="350px;"></iframe>
 
-            <div id="art-box">
-                <div id="art-inside">
-
-                    <div id="info" class="tabcontent">
-                        <div id="info-inside">
-
-                            <div style="background: url('/images/4fdf54c692db302472065fc0b8719bca.jpg');  background-size: cover; width: 90%; padding: 20; border: solid 5px #B60E3B; border-radius: 20px;">
-                                <iframe style="border: none; margin-bottom: 20;" src="https://ashhmillr.tumblr.com/" width="100%" height="250px;"></iframe>
-
-                                <div id="stamps">
-                                    <img src="/stamps/mspain.png">
-                                    <img src="/stamps/stamp48.png">
-                                    <img src="/stamps/88.gif">
-                                    <img src="/stamps/d87xmn8-ddf8b510-12c2-450b-97c6-bb4a257066b2.gif">
-                                </div>
-
-                                <div style="background-color: white; padding: 20 0; border-radius: 20px; margin-top: 20; text-align: center;">
-                                    <p class="big">general info</p>
-                                    <p style="color: #14ADB1">- no sexualizing of my art/characters</p>
-                                    <p style="color: #14ADB1">- you can use my style, i don't care</p>
-                                    <hr style="color: #14ADB1">
-                                    <p class="big"><mark style="background-color: #FFC8B9;">do not repost/reupload my art</mark></p>
-                                </div>
-                            </div>
-
-
-
-                            <div style="display: grid; margin: auto; text-align: center;">
-
-                                <img src="/images/toast%20cat.png" width="100%" style="position: relative; left: -30;">
-                                
-                                    <img src="/stamps/stamp0.png">
-<!--                                    <img src="/stamps/stamp001.png">-->
-                                
-                                <img src="/images/77235636662c1aa4faf025f78a8fb7a4.jpg" width="100%">
-                                <img src="/images/92a238c02adf93a059d1b863564a43f0.jpg" width="100%">
-                                <img src="/images/3747c3e98c3d119f053a2fe51e255918.jpg" width="100%">
-                                <img src="/images/114b9aa363be0ef5bdb53e2ac822aa53.jpg" width="100%">
-                            </div>
-
-                            <div>
-                                <div id="info-box">
-                                    <p class="big">WHAT SOFTWARE DO YOU USE?</p>
-                                    <p><a href="https://www.clipstudio.net/" target="_blank">Clip Studio Paint EX</a>, <a target="_blank" href="https://www.capcut.com/tools/desktop-video-editor">Capcut Desktop</a>
-                                    </p>
-                                    <hr>
-                                    <p class="big">WHAT TABLET DO YOU USE?</p>
-                                    <p><a href="https://gaomon.net/en-ru/products/s620-pen-tablet" target="_blank">Gaomon S620</a>!!</p>
-                                    <hr>
-                                    <p class="big">can i use your art as pfp?</p>
-                                    <p>You can use my fanarts (not OC's) as pfp!! just make sure to credit me.</p>
-                                    <hr>
-                                    <p class="big">what brushes do you use?</p>
-                                    <p>i switch between different brushes and settings, but <a href="/brushes" target="_blank">here are some</a></p>
-                                </div>
-
-
-                                <img src="/images/tumblr_pbms931IC71wclo4ko3_500.gif" width="100%">
-
-                                <img src="/images/bluey.gif" width="100%" style="border: solid 5px #4BD7C8; border-radius: 20px;">
-
-                            </div>
-
-                            <a href="#commissions" title="commissions" class="tablinks" onclick="openTab(event, 'commissions')">
-                                <div id="art-nav" class="art-nav-right">
-                                    <p>&gt; </p>
-                                </div>
-                            </a>
-
-                            <a href="#portfolio" title="portfolio" class="tablinks" onclick="openTab(event, 'portfolio')">
-                                <div id="art-nav" class="art-nav-left">
-                                    <p>&lt; </p>
-                                </div>
-                            </a>
-
-
-                        </div>
-                    </div>
-
-
-
-
-
-
-                    <div id="commissions" class="tabcontent">
-                        <div style=" height: 105%; width: 80%;  overflow-y: scroll; margin-left: 7%; margin-top: 20;">
-                            <img src="https://64.media.tumblr.com/a2275881a76dd9da6173a4d286d6fcfa/4650df637f968463-86/s1280x1920/f3b41a9ce6facc83e65898e92ae6ab6228425fdf.png" width="100%">
-<!--                            <img src="/images/comms-closed.png" width="100%">-->
-<!--                            <img src="/images/comms0.png" width="100%">-->
-<!--                            <img src="/images/comms1.png" width="100%">-->
-<!--                            <img src="/images/comms2.png" width="100%">-->
-<!--                            <img src="/images/comms3.png" width="100%">-->
-<!--                            <img src="/images/comms4.png" width="100%">-->
-                            <div>
-                                <span> 
-                                    <p class="bigger">contact me:</p>
-                                    <div class="big">
-<!--                                    <a href="mailto:ashhmillr@gmail.com"><img src="/icons/icon%20mail.png" class="links" alt="Email">email</a>-->
-                                    <a href="https://discordapp.com/users/984362752439107604/" target="_blank"><img src="/icons/icon discord.png" class="links" alt="Discord">discord</a>
-                                    </div>
-                                </span>
-                            </div>
-                        </div>
-
-                        <a href="#portfolio" title="portfolio" class="tablinks" onclick="openTab(event, 'portfolio')">
-                            <div id="art-nav" class="art-nav-right">
-                                <p>&gt; </p>
-                            </div>
-                        </a>
-
-                        <a href="#info" title="info" class="tablinks" onclick="openTab(event, 'info')">
-                            <div id="art-nav" class="art-nav-left">
-                                <p>&lt; </p>
-                            </div>
-                        </a>
-
-
-
-                    </div>
-
-
-
-
-
-
-                    <div id="portfolio" class="tabcontent">
-                        <div class="gallery-container"  style="margin-top: 50px;">
-
-                            <div class="gallery">
-
-                                
-                                <img src="https://i.ibb.co/3WssPc0/sonassss.png" alt="sonassss" border="0">
-<img src="https://i.ibb.co/k4c3Cq1/image.png" alt="image" border="0">
-<img src="https://i.ibb.co/xJmztFp/jhariah-again-what.png" alt="jhariah-again-what" border="0">
-<img src="https://i.ibb.co/42mT9Fr/the-mayo-incident.png" alt="the-mayo-incident" border="0">
-<img src="https://i.ibb.co/56hZFFR/me-circling-the-culdesac.png" alt="me-circling-the-culdesac" border="0">
-<img src="https://i.ibb.co/wCvZSVP/river.png" alt="river" border="0">
-<img src="https://i.ibb.co/pRXBz0t/Screenshot-2024-04-19-113802.png" alt="Screenshot-2024-04-19-113802" border="0">
-<img src="https://i.ibb.co/SPpYQB8/readhead-poster-redraw.png" alt="readhead-poster-redraw" border="0">
-                                
-
-                                
-                                
-                                
-<!--                                <img src="https://i.ibb.co/kq43p45/R9PqsZU.png" alt="R9PqsZU" border="0">-->
-<!--                                <img src="https://i.ibb.co/BsY7cM4/what-fi-you-wanted-to.png" alt="what-fi-you-wanted-to" border="0">-->
-                                <img src="https://i.ibb.co/YT72Ggp/shes-trans-and-has-a-fursona-fixed.png" alt="shes-trans-and-has-a-fursona-fixed" border="0">
-                                
-                             
-                                
-                                <img src="https://i.ibb.co/p0PMG6R/bros-drowninn.png" alt="bros drownin">
-                             
-                                <img src="https://i.ibb.co/RCLjLL9/idiot-wip4.gif" alt="you are an idiot">
-
-                                <img src="https://64.media.tumblr.com/a9f011f8b7c39b2efddd090ce2ddc363/f729f76cd650ea7a-38/s1280x1920/2e6d1e61588c09c72018cb42f0e800e992349712.png" alt="jhariah pin-eye">
-
-                                <img src="https://64.media.tumblr.com/5ed1983ad9aae69f220608c0499d2d2e/53b3576d070ce018-10/s1280x1920/6f22e897f5c6be7c9509eecc1de6297d3305705c.png" alt="heart before shooting the sun">
-
-                                <img src="https://64.media.tumblr.com/d76bfc2c4b66f12fe199fa9e1bb2919d/b1376df85a94e197-13/s1280x1920/4b65f8e50ff5f65bbe0545003712bc996fde89df.png" alt="commission iriskaxp">
-
-                                <img src="https://64.media.tumblr.com/ed2bd33df1f24f3d9451eca0d15d449a/a59888ebffe93275-b9/s2048x3072/26a5796f583bee8e81f8aaa47d29df00cebe32f8.pnj" alt="hmsw ref sheet">
-
-                                <img src="https://64.media.tumblr.com/04f6c5702f59f8487849270d6763124b/50791d64379661a4-ed/s1280x1920/99393de6c0cb1127a0e6ba63f19b09fcbfe82134.png" alt="heart mind goats">
-
-
-                                <img src="https://64.media.tumblr.com/2bb1d679ba668a38806cfe5acb60c33d/69bb094b5140d51b-1d/s2048x3072/7aa3f659acec352caa39a29db2183372b0c2fefc.pnj" alt="coffee">
-
-                                <img src="https://64.media.tumblr.com/53531ef5a19e2339658bf5f1f69c8fbb/db23ab276dc223c1-53/s400x600/f7856c75c04e92c385b5d51f5dc433cea005118f.gif" alt="running dylhiw">
-
-                                <img src="https://64.media.tumblr.com/743e14e45a9fa0c00f5f939e89125b1f/db23ab276dc223c1-1c/s400x600/3715579e40b1ddb7cdcb5412e3086ea3eec51c79.gif" alt="walking dylhiw">
-
-                                <img src="https://64.media.tumblr.com/ffa321c72172ac2554b0a1aa405c9160/248b35b6b4854341-6a/s2048x3072/96e69883d3fa724f47372a3763dc669ed2322cdc.pnj" alt="hand me my trident">
-
-                                <img src="https://64.media.tumblr.com/b2a1b4f963343b028f44048d6d01c24e/f7ac4acf9d0a3c16-be/s2048x3072/f5af1f728a7d111186561d1e32f99312fa461e02.png" alt="they thingk theyre plating in the band">
-
-                                <img src="https://64.media.tumblr.com/b589dc087e4dca4fc8a408842054c271/e736423152f2235d-59/s1280x1920/3d59f2d37f609745552b3adc8bda6fc0fe327408.png" alt="speak no evil">
-
-                                <img src="https://64.media.tumblr.com/7354bb7670bd98304a116d2037898fb0/e736423152f2235d-4b/s1280x1920/73c280de1ff1be2f2f1dc729fee1896d7cdd4bee.png" alt="hear no evil">
-
-                                <img src="https://64.media.tumblr.com/675177d36fe7a6c8896498ae3bec98e4/e736423152f2235d-c4/s1280x1920/3725e9d23f4fc40416562406779ec29f0949a042.png" alt="see no evil">
-
-                                <img src="https://64.media.tumblr.com/c09ff7ef232daaa26dfae3c3e41b04a9/62d618359366314e-06/s2048x3072/dec06a7eef8efb4fb40f6d2a87684ad1f0c5755e.png" alt="tummy ache survivor">
-
-                                <img src="https://64.media.tumblr.com/ae7e202c019a7872a763b7041c8a891b/5c230a9d1dd7f548-fc/s1280x1920/dbb044faee02e0c4ec8d415c9df7869a80aae318.png" alt="marketland">
-
-                                <img src="https://64.media.tumblr.com/0d10bc24ad48bc8081992d13fd7d4d64/5c230a9d1dd7f548-3f/s1280x1920/5bbab8133e833906f75dbb13110abcff772279a3.png" alt="savages">
-
-                                <img src="https://64.media.tumblr.com/9e9bf5088f19a05932a424cc469c82e2/1023665b305a3cd8-86/s640x960/3b360ddee03c1835ed55dabf30cecefc58bf141f.png" alt="btbbrbbbq">
-
-                                <img src="https://64.media.tumblr.com/4addbc4cf8d8f24ee7a27802809cc68e/a99282de1c78414c-3a/s2048x3072/adb1be004e27689eae183ebbfc54ee3e60e2a997.png" alt="ceremonial hat">
-
-                                <img src="https://64.media.tumblr.com/72639cfad7f378829e8b27d5cf58d903/a0e91598bc804b6e-af/s2048x3072/278880178e165d7f45a6f1e2ab7c8035a2d56deb.png" alt="rbb">
-
-                                <img src="https://64.media.tumblr.com/e32a567cf5d15cd0687ebafab2dd5e25/69a901030932163c-a4/s1280x1920/b34515d8d277e427f3740965eb07535d9d2229ed.png" alt="me when i eat my friends">
-
-
-                                <img src="https://64.media.tumblr.com/90220cc436db1bfb6c4ece37e343da8a/4f258bad5282869d-1c/s640x960/75030b480947d4ce8382321465bcdc79c34cb63b.gif" alt="internet yamero">
-
-
-                                <img src="https://64.media.tumblr.com/5d334fc26cbc16af7beaa0ebf8db14ca/37978203f620b6cf-05/s500x750/5e1524f74bc41d170f3d8e7c81c524f97fd30726.gif" alt="unpleasant gradient">
-
-                                <img src="https://64.media.tumblr.com/b47d61f98013c4e9c0340a6a5ab80366/a826293ace65d0e3-09/s1280x1920/84e58d2a4aad7db9d2f43eb78de7da12c0ddf3c2.png" alt="mind suys">
-
-                                <img src="https://64.media.tumblr.com/8b50a0a1d7aa8e4a54bbe71e4cb4090a/c83d7c0fe445c74c-30/s640x960/5f486dbc4d7b61ef8d3be9e5b9a1975be98eedb2.png" alt="two wuv">
-
-                                <img src="https://64.media.tumblr.com/1b9b23949f8bccf6da50eae34c81d233/19b0ed46cef1e7ad-2b/s2048x3072/c98237bf2fc6ea5b96ff473f75f78dd70dc602d8.png" alt="melody nosurname">
-
-                                <img src="https://64.media.tumblr.com/528738a008a861ebd3ef39ab7afb48f7/a0ad95a738bc2039-bc/s2048x3072/18a0f107772182866d58db8d63d00dbe8cb0ca23.png" alt="crows p 3">
-
-                                <img src="https://64.media.tumblr.com/dc93792728a01320efdcab767f1a9d1c/0fe2dd3face9653d-26/s1280x1920/6bf163de5aa1bac2b90f3945a10765130470d6e7.png" alt="pathological facade">
-
-
-                                <img src="https://64.media.tumblr.com/1bfa6ef9cc042e5a3deffd4dac011e1c/537b98db5cca517a-a2/s1280x1920/299679c47b0ece1c47db6469f9f1b147e0323d71.png" alt="formaline">
-
-                                <img src="https://64.media.tumblr.com/916b72c4b5b9d143718ac75146e3c46d/a88c90bd56712a5e-47/s1280x1920/7136d74b47d46a79758f8dea39a30470726c7dae.png" alt="rbb">
-                                
-                                <img src="https://64.media.tumblr.com/352a4965e65b8122b4cf15599ea76ecf/a4a4a52b58bff75c-6d/s1280x1920/7401078d8c4d8da012d8fa82cdeaf5622fe57d12.png" alt="modify">
-
-                                <img src="https://64.media.tumblr.com/85d2db3f3ebd39e6fec6336fc935d789/a0ad95a738bc2039-27/s2048x3072/32c8d2d4f97c753be08ca9f98fa8ae2f5bd9be6a.png" alt="crows p 1">
-
-                                <img src="https://64.media.tumblr.com/9205e1b3976cea0d9ded67d16254d291/b58e6a8711a59fba-46/s1280x1920/f24ff467046e221a0e85831e0bc85324dc8fc75f.png" alt="everybodys trying to kill me">
-
-                                <img src="https://64.media.tumblr.com/f45cfa87d6e643a0f1c2b6f1ad766bcd/b0bb90da1a11b4b2-8a/s1280x1920/47e61e7f07d0052c70152ac3652571e9f71191bb.png" alt="will wood">
-                            </div>
-
-                            <div class="popup">
-<!--                                <span class="white">click<br>anywhere<br>to close</span>-->
-                                
-                                <span id="" class="white" style="position: absolute; left: 50; top: 95%;">click anywhere to close</span>
-                                
-                                <img src="https://64.media.tumblr.com/b2a1b4f963343b028f44048d6d01c24e/f7ac4acf9d0a3c16-be/s2048x3072/f5af1f728a7d111186561d1e32f99312fa461e02.pnj">
-                            </div>
-
-                        </div>
-
-                        <a href="#info" title="info" class="tablinks" onclick="openTab(event, 'info')">
-                            <div id="art-nav" class="art-nav-right">
-                                <p>&gt; </p>
-                            </div>
-                        </a>
-
-                        <a href="#commissions" title="commissions" class="tablinks" onclick="openTab(event, 'commissions')">
-                            <div id="art-nav" class="art-nav-left">
-                                <p>&lt; </p>
-                            </div>
-                        </a>
-
-
-                    </div>
-
-                </div>
-            </div>
-
+        <div id="stamps">
+            <img src="/stamps/mspain.png">
+            <img src="/stamps/stamp48.png">
+            <img src="/stamps/88.gif">
+            <img src="/stamps/d87xmn8-ddf8b510-12c2-450b-97c6-bb4a257066b2.gif">
         </div>
 
-        <div>
-            <a href="/home" id="goback" style="z-index: 2">go back</a>
+        <div style="background-color: white; padding: 20 0; border-radius: 20px; margin-top: 20; text-align: center;">
+            <p class="big">general info</p>
+            <p style="color: #14ADB1">- no sexualizing of my art/characters</p>
+            <p style="color: #14ADB1">- you can use my style, i don't care</p>
+            <hr style="color: #14ADB1">
+            <p class="big"><mark style="background-color: #FFC8B9;">do not repost/reupload my art</mark></p>
+        </div>
+    </div>
+
+
+
+    <div id="middle">
+
+        <a href="/home" id="goback" style="z-index: 2">go back</a>
+
+        <img src="/images/toast%20cat.png" width="100%" style="position: relative; left: -30;">
+
+        <img src="/stamps/stamp0.png" width="50%">
+        <!--                                            <img src="/stamps/stamp001.png">-->
+        <img src="/images/869328090b7f0f79593f5c8328366389.jpg" style="display: var(--green-display)" width="100%">
+        <img src="/images/895ebecf840cac5facec140e41bd45d0 (1).jpg" style="display: var(--underwater-display)" width="100%">
+    </div>
+
+    <div id="right">
+            <div id="info-box">
+                <p class="big">WHAT SOFTWARE DO YOU USE?</p>
+                <p><a href="https://www.clipstudio.net/" target="_blank">Clip Studio Paint EX</a>, <a target="_blank" href="https://www.capcut.com/tools/desktop-video-editor">Capcut Desktop</a>
+                </p>
+                <hr>
+                <p class="big">WHAT TABLET DO YOU USE?</p>
+                <p><a href="https://gaomon.net/en-ru/products/s620-pen-tablet" target="_blank">Gaomon S620</a>!!</p>
+                <hr>
+                <p class="big">can i use your art as pfp?</p>
+                <p>You can use my fanarts (unless it's a someone's commission) as pfp!! just make sure to credit me.</p>
+            </div>
+
+
+            <img src="/images/tumblr_pbms931IC71wclo4ko3_500.gif" width="100%">
+
+            <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
+            <script type='text/javascript'>
+                kofiwidget2.init('Support Me on Ko-fi', 'var(--accent-colour)', 'ashhmillr');
+                kofiwidget2.draw();
+
+            </script>
+
+            <!--            <img src="/images/bluey.gif" width="100%" style="border: solid 5px #4BD7C8; border-radius: 20px;">-->
+
+
+
+
+
+        <div id="portfolio" style="display: none">
+            <div class="gallery-container" style="margin-top: 50px;">
+
+                <div class="gallery">
+
+
+                    <img src="https://i.ibb.co/3WssPc0/sonassss.png" alt="sonassss" border="0">
+                    <img src="https://i.ibb.co/k4c3Cq1/image.png" alt="image" border="0">
+                    <img src="https://i.ibb.co/xJmztFp/jhariah-again-what.png" alt="jhariah-again-what" border="0">
+                    <img src="https://i.ibb.co/42mT9Fr/the-mayo-incident.png" alt="the-mayo-incident" border="0">
+                    <img src="https://i.ibb.co/56hZFFR/me-circling-the-culdesac.png" alt="me-circling-the-culdesac" border="0">
+                    <img src="https://i.ibb.co/wCvZSVP/river.png" alt="river" border="0">
+                    <img src="https://i.ibb.co/pRXBz0t/Screenshot-2024-04-19-113802.png" alt="Screenshot-2024-04-19-113802" border="0">
+                    <img src="https://i.ibb.co/SPpYQB8/readhead-poster-redraw.png" alt="readhead-poster-redraw" border="0">
+
+                    <img src="https://i.ibb.co/YT72Ggp/shes-trans-and-has-a-fursona-fixed.png" alt="shes-trans-and-has-a-fursona-fixed" border="0">
+
+                    <img src="https://i.ibb.co/p0PMG6R/bros-drowninn.png" alt="bros drownin">
+
+                    <img src="https://i.ibb.co/RCLjLL9/idiot-wip4.gif" alt="you are an idiot">
+
+                    <img src="https://64.media.tumblr.com/a9f011f8b7c39b2efddd090ce2ddc363/f729f76cd650ea7a-38/s1280x1920/2e6d1e61588c09c72018cb42f0e800e992349712.png" alt="jhariah pin-eye">
+
+                    <img src="https://64.media.tumblr.com/5ed1983ad9aae69f220608c0499d2d2e/53b3576d070ce018-10/s1280x1920/6f22e897f5c6be7c9509eecc1de6297d3305705c.png" alt="heart before shooting the sun">
+
+                    <img src="https://64.media.tumblr.com/d76bfc2c4b66f12fe199fa9e1bb2919d/b1376df85a94e197-13/s1280x1920/4b65f8e50ff5f65bbe0545003712bc996fde89df.png" alt="commission iriskaxp">
+
+                    <img src="https://64.media.tumblr.com/ed2bd33df1f24f3d9451eca0d15d449a/a59888ebffe93275-b9/s2048x3072/26a5796f583bee8e81f8aaa47d29df00cebe32f8.pnj" alt="hmsw ref sheet">
+
+                    <img src="https://64.media.tumblr.com/04f6c5702f59f8487849270d6763124b/50791d64379661a4-ed/s1280x1920/99393de6c0cb1127a0e6ba63f19b09fcbfe82134.png" alt="heart mind goats">
+
+
+                    <img src="https://64.media.tumblr.com/2bb1d679ba668a38806cfe5acb60c33d/69bb094b5140d51b-1d/s2048x3072/7aa3f659acec352caa39a29db2183372b0c2fefc.pnj" alt="coffee">
+
+                    <img src="https://64.media.tumblr.com/53531ef5a19e2339658bf5f1f69c8fbb/db23ab276dc223c1-53/s400x600/f7856c75c04e92c385b5d51f5dc433cea005118f.gif" alt="running dylhiw">
+
+                    <img src="https://64.media.tumblr.com/743e14e45a9fa0c00f5f939e89125b1f/db23ab276dc223c1-1c/s400x600/3715579e40b1ddb7cdcb5412e3086ea3eec51c79.gif" alt="walking dylhiw">
+
+                    <img src="https://64.media.tumblr.com/ffa321c72172ac2554b0a1aa405c9160/248b35b6b4854341-6a/s2048x3072/96e69883d3fa724f47372a3763dc669ed2322cdc.pnj" alt="hand me my trident">
+
+                    <img src="https://64.media.tumblr.com/b2a1b4f963343b028f44048d6d01c24e/f7ac4acf9d0a3c16-be/s2048x3072/f5af1f728a7d111186561d1e32f99312fa461e02.png" alt="they thingk theyre plating in the band">
+
+                    <img src="https://64.media.tumblr.com/b589dc087e4dca4fc8a408842054c271/e736423152f2235d-59/s1280x1920/3d59f2d37f609745552b3adc8bda6fc0fe327408.png" alt="speak no evil">
+
+                    <img src="https://64.media.tumblr.com/7354bb7670bd98304a116d2037898fb0/e736423152f2235d-4b/s1280x1920/73c280de1ff1be2f2f1dc729fee1896d7cdd4bee.png" alt="hear no evil">
+
+                    <img src="https://64.media.tumblr.com/675177d36fe7a6c8896498ae3bec98e4/e736423152f2235d-c4/s1280x1920/3725e9d23f4fc40416562406779ec29f0949a042.png" alt="see no evil">
+
+                    <img src="https://64.media.tumblr.com/c09ff7ef232daaa26dfae3c3e41b04a9/62d618359366314e-06/s2048x3072/dec06a7eef8efb4fb40f6d2a87684ad1f0c5755e.png" alt="tummy ache survivor">
+
+                    <img src="https://64.media.tumblr.com/ae7e202c019a7872a763b7041c8a891b/5c230a9d1dd7f548-fc/s1280x1920/dbb044faee02e0c4ec8d415c9df7869a80aae318.png" alt="marketland">
+
+                    <img src="https://64.media.tumblr.com/0d10bc24ad48bc8081992d13fd7d4d64/5c230a9d1dd7f548-3f/s1280x1920/5bbab8133e833906f75dbb13110abcff772279a3.png" alt="savages">
+
+                    <img src="https://64.media.tumblr.com/9e9bf5088f19a05932a424cc469c82e2/1023665b305a3cd8-86/s640x960/3b360ddee03c1835ed55dabf30cecefc58bf141f.png" alt="btbbrbbbq">
+
+                    <img src="https://64.media.tumblr.com/4addbc4cf8d8f24ee7a27802809cc68e/a99282de1c78414c-3a/s2048x3072/adb1be004e27689eae183ebbfc54ee3e60e2a997.png" alt="ceremonial hat">
+
+                    <img src="https://64.media.tumblr.com/72639cfad7f378829e8b27d5cf58d903/a0e91598bc804b6e-af/s2048x3072/278880178e165d7f45a6f1e2ab7c8035a2d56deb.png" alt="rbb">
+
+                    <img src="https://64.media.tumblr.com/e32a567cf5d15cd0687ebafab2dd5e25/69a901030932163c-a4/s1280x1920/b34515d8d277e427f3740965eb07535d9d2229ed.png" alt="me when i eat my friends">
+
+
+                    <img src="https://64.media.tumblr.com/90220cc436db1bfb6c4ece37e343da8a/4f258bad5282869d-1c/s640x960/75030b480947d4ce8382321465bcdc79c34cb63b.gif" alt="internet yamero">
+
+
+                    <img src="https://64.media.tumblr.com/5d334fc26cbc16af7beaa0ebf8db14ca/37978203f620b6cf-05/s500x750/5e1524f74bc41d170f3d8e7c81c524f97fd30726.gif" alt="unpleasant gradient">
+
+                    <img src="https://64.media.tumblr.com/b47d61f98013c4e9c0340a6a5ab80366/a826293ace65d0e3-09/s1280x1920/84e58d2a4aad7db9d2f43eb78de7da12c0ddf3c2.png" alt="mind suys">
+
+                    <img src="https://64.media.tumblr.com/8b50a0a1d7aa8e4a54bbe71e4cb4090a/c83d7c0fe445c74c-30/s640x960/5f486dbc4d7b61ef8d3be9e5b9a1975be98eedb2.png" alt="two wuv">
+
+                    <img src="https://64.media.tumblr.com/1b9b23949f8bccf6da50eae34c81d233/19b0ed46cef1e7ad-2b/s2048x3072/c98237bf2fc6ea5b96ff473f75f78dd70dc602d8.png" alt="melody nosurname">
+
+                    <img src="https://64.media.tumblr.com/528738a008a861ebd3ef39ab7afb48f7/a0ad95a738bc2039-bc/s2048x3072/18a0f107772182866d58db8d63d00dbe8cb0ca23.png" alt="crows p 3">
+
+                    <img src="https://64.media.tumblr.com/dc93792728a01320efdcab767f1a9d1c/0fe2dd3face9653d-26/s1280x1920/6bf163de5aa1bac2b90f3945a10765130470d6e7.png" alt="pathological facade">
+
+
+                    <img src="https://64.media.tumblr.com/1bfa6ef9cc042e5a3deffd4dac011e1c/537b98db5cca517a-a2/s1280x1920/299679c47b0ece1c47db6469f9f1b147e0323d71.png" alt="formaline">
+
+                    <img src="https://64.media.tumblr.com/916b72c4b5b9d143718ac75146e3c46d/a88c90bd56712a5e-47/s1280x1920/7136d74b47d46a79758f8dea39a30470726c7dae.png" alt="rbb">
+
+                    <img src="https://64.media.tumblr.com/352a4965e65b8122b4cf15599ea76ecf/a4a4a52b58bff75c-6d/s1280x1920/7401078d8c4d8da012d8fa82cdeaf5622fe57d12.png" alt="modify">
+
+                    <img src="https://64.media.tumblr.com/85d2db3f3ebd39e6fec6336fc935d789/a0ad95a738bc2039-27/s2048x3072/32c8d2d4f97c753be08ca9f98fa8ae2f5bd9be6a.png" alt="crows p 1">
+
+                    <img src="https://64.media.tumblr.com/9205e1b3976cea0d9ded67d16254d291/b58e6a8711a59fba-46/s1280x1920/f24ff467046e221a0e85831e0bc85324dc8fc75f.png" alt="everybodys trying to kill me">
+
+                    <img src="https://64.media.tumblr.com/f45cfa87d6e643a0f1c2b6f1ad766bcd/b0bb90da1a11b4b2-8a/s1280x1920/47e61e7f07d0052c70152ac3652571e9f71191bb.png" alt="will wood">
+                </div>
+
+                <div class="popup">
+                    <span class="white">click<br>anywhere<br>to close</span>
+
+                    <span id="" class="white" style="position: absolute; left: 50; top: 95%;">click anywhere to close</span>
+
+                    <img src="https://64.media.tumblr.com/b2a1b4f963343b028f44048d6d01c24e/f7ac4acf9d0a3c16-be/s2048x3072/f5af1f728a7d111186561d1e32f99312fa461e02.pnj">
+                </div>
+
+            </div>
+
+
 
         </div>
     </div>
 
-    <script src="/js/lightbox.js"></script>
-<!--        <script src="/js/theme-switcher.js"></script>-->
+        <script src="/js/lightbox.js"></script>
+            <script src="/js/theme-switcher.js"></script>
 
 </body>
 
