@@ -108,10 +108,12 @@
             width: 100px;
             right: 5%;
             top: 30%;
+            z-index: 10;
             /*            transform: translate(-50%, 0);*/
 
             & img {
                 width: 100%;
+                cursor: pointer;
 
 
                 &:hover {
@@ -126,17 +128,19 @@
 
 <body>
 
+    <div id="clunk">
+        <a href="https://www.tumblr.com/birdbutbetter/752831217880203264/clunk-pride-emojisstickers?source=share" target="_blank">
+            <img src="https://i.ibb.co/f181ZZg/bigender-clunk.png" id="clunk-img">
+        </a>
+
+        <span id="clunk-talk"></span>
+    </div>
+
     <div class="col">
         <div id="sideimg">
         </div>
 
-        <div id="clunk">
-            <a href="https://www.tumblr.com/birdbutbetter/752831217880203264/clunk-pride-emojisstickers?source=share" target="_blank">
-                <img src="https://i.ibb.co/f181ZZg/bigender-clunk.png" id="clunk-img">
-            </a>
 
-            <span id="clunk-talk"></span>
-        </div>
 
 
         <div class="collumn">
@@ -210,15 +214,12 @@
     <script type="text/javascript">
         const imageTitles = [
             "clunk!",
-            "[ :]",
+            "[:]",
             "chonny jash!",
             "happy pride!",
-            "bigender pride!"
+            "bigender pride!",
+            "trans rights!"
         ];
-
-        let lineIndex = 0;
-        let textIndex = 0;
-        let typingSpeed = 100;
 
         const Image = document.getElementById('clunk-img');
         const talk = document.getElementById('clunk-talk');
