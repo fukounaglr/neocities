@@ -8,20 +8,45 @@
     <link rel="icon" type="image/png" href="/ico.png">
     <link rel="stylesheet" href="/style.css">
 
-    <script src="/main.js"></script>
-
     <style type="text/css">
         body {
-            background: url(/images/1c475f9aa8a7cb656f045b522ac7598b.jpg);
+            --bg: url(/images/wavesbg.gif);
+            background-image: var(--bg);
             background-size: contain;
+            &.green{
+                --bg: url(/images/greenbg.gif);
+            }
         }
 
-        #goback:hover {
-            color: blue;
+        #goback {
+            position: relative;
+            top: 0;
+            left: 0;
+            margin-left: 20px;
         }
 
-        a {
-            margin: 0;
+
+        li {
+            padding: 20 10;
+            background-color: white;
+            width: 30%;
+            margin: 5 auto;
+            list-style-position: inside;
+            transition: 0.4s;
+            color: var(--accent-colour);
+
+            & a {
+                color: var(--accent-colour);
+            }
+
+            &:hover {
+                padding: 30 10;
+                color: var(--accent-colour-hover);
+
+                & a {
+                    color: var(--accent-colour-hover);
+                }
+            }
         }
 
     </style>
@@ -33,54 +58,26 @@
 
 
 <body>
-    <div id="wrapper">
+    <a href="/home">
+        <p id="goback">&#129044; go back</p>
+    </a>
+    
+    <h1 style="color: white">coolzone</h1>
 
-        <div id="stuff-navigation">
-            <a href="/coolzone/collectables/index" target="tab" class="tablinks stuff-nav-current bigger">collectables</a>
-            <a href="/coolzone/music" class="stuff-nav bigger">music</a>
-            <a href="/coolzone/memes" class="stuff-nav bigger">memes</a>
-            <a href="/coolzone/favs" class="stuff-nav bigger">favs</a>
-            <a href="/coolzone/music" class="stuff-nav bigger">music</a>
-        </div>
-
-
-        <div id="stuff-box">
-                
-            <iframe src="/coolzone/collectables/index.html" name="tab" title="tab"></iframe>
-
-
-        </div>
-
-
-
-
-
-        <ul id="tabs" class="bold" style="list-style: none">
-
-            <li><a href="/coolzone/collectables/stamps" target="tab" class="tablinks"><mark>stamps</mark> <img src="/icons/circle-blue.png"></a></li>
-
-            <li><a href="/coolzone/collectables/blinkies" target="tab" class="tablinks"><mark>blinkies</mark> <img src="/icons/circle-red.png"></a></li>
-
-            <li><a href="/coolzone/collectables/buttons" target="tab" class="tablinks"><mark>buttons</mark> <img src="/icons/circle-green.png"></a></li>
-
-            <li><a href="/coolzone/collectables/badges" target="tab" class="tablinks"><mark>badges</mark> <img src="/icons/circle-purple.png"></a></li>
-
-            <li><a href="/coolzone/collectables/userboxes" target="tab" class="tablinks"><mark>userboxes</mark> <img src="/icons/circle-pink.png"></a></li>
-
-            <li><a href="/coolzone/collectables/pixels" target="tab" class="tablinks"><mark>pixels</mark> <img src="/icons/circle-blue.png"></a></li>
-
-            <li><a href="/coolzone/collectables/gifs" target="tab" class="tablinks"><mark>gifs</mark> <img src="/icons/circle-yellow.png"></a></li>
-        </ul>
-
-
-
-        <a href="javascript:history.go(-1)">
-            <p id="goback">&#129044; go back</p>
+    <ol>
+        <a href="/coolzone/collectables.html">
+            <li>collectables</li>
         </a>
-        <a href="/home"><img src="/icons/home.png" width="30px" id="gohome"></a>
-    </div>
+        <a href="/coolzone/fanarts.html"><li>fanarts</li></a>
+        <a href="/coolzone/memes.html"><li>memes</li></a>
+    </ol>
+    
+    <img src="/images/208db600da550f7a71fc72125bfcd3e2.jpg" style="position: relative; left: 50%; transform: translate(-50%, 0)">
 
-    <script src="/js/lightbox.js"></script>
+
+
+
+    <script src="/js/theme-switcher.js"></script>
 
 </body>
 

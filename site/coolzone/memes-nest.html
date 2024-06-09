@@ -6,16 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ashhmillr's stuff</title>
 
-    <link rel="icon" type="image/png" href="ico.png">
+    <link rel="icon" type="image/png" href="/ico.png">
     <link rel="stylesheet" href="/style.css">
     <style>
         body {
-            background-image: url(/images/squiggles.jpg);
+            background: transparent;
+            text-align: center;
         }
 
         #mem img {
-            height: 150px;
+            max-height: 150px;
+            max-width: 300px;
             cursor: pointer;
+            object-fit: contain;
         }
 
         .popup img {
@@ -27,13 +30,15 @@
         }
 
         #mem img.mine {
-            border: solid 5px blue;
+            padding: 5px;
+            background-color: var(--accent-colour);
             height: 140px;
 
         }
 
         #mem a img {
-            border: solid 5px red;
+            padding: 5px;
+            background-color: var(--accent-colour-hover);
             height: 140px;
         }
 
@@ -162,6 +167,8 @@
 
 
     <script src="/js/lightbox.js"></script>
+        <script src="/js/theme-switcher.js"></script>
+
 
 </body>
 

@@ -11,8 +11,15 @@
 
     <style type="text/css">
         body {
-            background: url(/images/1c475f9aa8a7cb656f045b522ac7598b.jpg);
-            background-size: contain;
+            padding: 40px;
+            
+            --bg: url(/images/4a7cc5c87b8dc5f9a9813f25de55f3f5.jpg);
+            
+/*            background-color: black;*/
+            background-image: var(--bg);
+            &.green{
+                --bg: url(/images/41f5f1e24d5f2e160e08548efd0f88e0.jpg);
+            }
         }
 
         .fanarts {
@@ -25,12 +32,8 @@
         }
         
 
-        #goback:hover {
-            color: blue;
-        }
-        
         #stuff-box iframe{
-            height: 78%;
+            height: 100%;
             width: 100%;
             margin: auto;
         }
@@ -46,22 +49,13 @@
 <body>
     <div id="wrapper" >
 
-       <div id="stuff-navigation">
-            <a href="/coolzone/collectables" class="stuff-nav bigger">collectables</a>
-            <a href="/coolzone/music" class="stuff-nav bigger">music</a>
-            <a href="/coolzone/memes" class="stuff-nav-current bigger">memes</a>
-            <a href="/coolzone/favs" class="stuff-nav bigger">favs</a>
-            <a href="/coolzone/music" class="stuff-nav bigger">music</a>
-        </div>
+<h1 style="color: white">memes</h1>
 
-
-
-
+                <p style="color: white; text-align: center"><mark style="background-color: var(--accent-colour);">mine/screenshots</mark>, <mark style="background-color: var(--accent-colour-hover);">linked sources</mark>, others are from pinterest or discord</p>
 
             <div id="stuff-box">
                
-                <h4 class="white">this is where i collect my favourite memes and just funny images (as well as the ones made by me ^^)</h4>
-                <p class="white">i marked mine <mark style="background-color: blue;">blue</mark> and screenshots from random videos <mark style="background-color: red;">red</mark> bcs i love marking okay! others are either from pinterest or discord yeah</p>
+                
                 <iframe src="/coolzone/memes-nest.html" width="100%" height="60%"></iframe>
 
             </div>
@@ -70,11 +64,12 @@
 
 
 
-        <a href="javascript:history.go(-1)">
+        <a href="/coolzone/index.html">
             <p id="goback">&#129044; go back</p>
         </a>
-        <a href="/home"><img src="/icons/home.png" width="30px" id="gohome"></a>
     </div>
+    
+    <script src="/js/theme-switcher.js"></script>
 
 </body>
 
