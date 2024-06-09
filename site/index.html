@@ -16,19 +16,21 @@
             background: black;
             color: white;
             margin: 0;
-            
+
             --bg: url(/images/the-backrooms-backrooms.gif);
         }
-        .green{
-                --bg: url(/images/36c0b03aedfcc5c22e6c48e7dbae755a.jpg);
-            }
+
+        .green {
+            --bg: url(/images/36c0b03aedfcc5c22e6c48e7dbae755a.jpg);
+        }
 
         div.col {
             display: grid;
             grid-template-columns: 1fr 1fr;
             height: 100vh;
             position: relative;
-            & .collumn{
+
+            & .collumn {
                 position: relative;
                 height: 100vh;
             }
@@ -43,6 +45,7 @@
             color: white;
             padding: 5px;
         }
+
         .webrings {
             display: flex;
             align-items: center;
@@ -51,19 +54,21 @@
             bottom: 30px;
             left: 50%;
             transform: translate(-50%, 0);
+
             & div {
-            margin: auto;
+                margin: auto;
+            }
         }
-        }
-        
-        #lastupdate{
+
+        #lastupdate {
             color: var(--primary-colour);
         }
-        #hitcount{
+
+        #hitcount {
             color: var(--accent-colour);
         }
 
-        .button{
+        .button {
             border: none;
             background-color: var(--primary-colour);
             padding: 10px 10px;
@@ -78,20 +83,40 @@
             background-size: cover;
             background-position: center;
         }
-        
-        .insides{
+
+        .insides {
             margin: auto 20%;
         }
-        
-        #proceed{
+
+        #proceed {
             color: white;
             position: absolute;
             bottom: 120px;
             left: 50%;
             transform: translate(-50%, 0);
-            & :hover{
+
+            & :hover {
                 color: var(--accent-colour);
                 font-style: italic;
+            }
+        }
+
+
+
+        #clunk {
+            position: absolute;
+            width: 100px;
+            right: 5%;
+            top: 30%;
+            /*            transform: translate(-50%, 0);*/
+
+            & img {
+                width: 100%;
+
+
+                &:hover {
+                    transform: rotate(-10deg);
+                }
             }
         }
 
@@ -104,7 +129,16 @@
     <div class="col">
         <div id="sideimg">
         </div>
-        
+
+        <div id="clunk">
+            <a href="https://www.tumblr.com/birdbutbetter/752831217880203264/clunk-pride-emojisstickers?source=share" target="_blank">
+                <img src="https://i.ibb.co/f181ZZg/bigender-clunk.png" id="clunk-img">
+            </a>
+
+            <span id="clunk-talk"></span>
+        </div>
+
+
         <div class="collumn">
 
             <h1>You woke up in a weird place.</h1>
@@ -130,41 +164,41 @@
                     </ol>
                 </details>
 
-                
+
                 <div style="align-content: center">
-                <a href="https://www.mabsland.com/Adoption.html" target="_blank" style="text-decoration: none; vertical-align: middle;">
-                    <img src="/images/Censor_14b.gif">
-                </a>
-                
-                <button id="toggle" class="button">current theme:<br>
-                    <span style="display: var(--underwater-display)">underwater</span>
-                    <span style="display: var(--green-display)">green</span>
-                </button>
-                    
-                    </div>
+                    <a href="https://www.mabsland.com/Adoption.html" target="_blank" style="text-decoration: none; vertical-align: middle;">
+                        <img src="/images/Censor_14b.gif">
+                    </a>
+
+                    <button id="toggle" class="button">current theme:<br>
+                        <span style="display: var(--underwater-display)">underwater</span>
+                        <span style="display: var(--green-display)">green</span>
+                    </button>
+
+                </div>
             </div>
 
             <a href="/home" id="proceed">
                 <h3>yes, i do wish to proceed</h3>
             </a>
-            
-        <div class="webrings">
-            <div id="autiring">
-                <script type="text/javascript" src="https://macaque.moe/autiring/onionring-variables.js"></script>
-                <script type="text/javascript" src="https://macaque.moe/autiring/onionring-widget.js"></script>
+
+            <div class="webrings">
+                <div id="autiring">
+                    <script type="text/javascript" src="https://macaque.moe/autiring/onionring-variables.js"></script>
+                    <script type="text/javascript" src="https://macaque.moe/autiring/onionring-widget.js"></script>
+
+                </div>
+
+                <diV>
+                    <script src="https://nuthead.neocities.org/ring/ring.js"></script>
+                </diV>
+
+                <script src="https://transring.neocities.org/ring.js"></script>
+
 
             </div>
-
-            <diV>
-                <script src="https://nuthead.neocities.org/ring/ring.js"></script>
-            </diV>
-
-            <script src="https://transring.neocities.org/ring.js"></script>
-
-            
         </div>
-        </div>
-        
+
     </div>
 
 
@@ -172,6 +206,33 @@
     <script src="/js/last%20update%20views.js"></script>
     <script src="/js/theme-switcher.js"></script>
 
+
+    <script type="text/javascript">
+        const imageTitles = [
+            "clunk!",
+            "[ :]",
+            "chonny jash!",
+            "happy pride!",
+            "bigender pride!"
+        ];
+
+        let lineIndex = 0;
+        let textIndex = 0;
+        let typingSpeed = 100;
+
+        const Image = document.getElementById('clunk-img');
+        const talk = document.getElementById('clunk-talk');
+
+        Image.addEventListener('mouseover', () => {
+            const randomIndex = Math.floor(Math.random() * imageTitles.length);
+            talk.textContent = imageTitles[randomIndex];
+        });
+
+        Image.addEventListener('mouseout', () => {
+            talk.textContent = "";
+        });
+
+    </script>
 
 </body>
 
