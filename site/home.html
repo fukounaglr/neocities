@@ -14,6 +14,28 @@
 
 
     <style>
+        :root {
+            --bg: url(/images/f50195b3012ad6d7c29278e46355e04b.jpg);
+            --webrings-bg: url(/images/3332befa1638b733d0fe5c4dd32ebc5a.gif);
+            --chat-bg: url(/images/m4q84l0811k81.jpg);
+        }
+
+        :root[theme=green] {
+            --bg: url(/images/0d17503f43d9142fddb2e37ca78ad827.jpg);
+            --webrings-bg: url(/images/6734b0c9b53211b35430606fffb385ad.gif);
+            --chat-bg: url(/images/d62e460b87b415f82d3cc0500d499768.jpg);
+        }
+
+        #themeSwitcher {
+            all: unset;
+            background-color: var(--accent-colour);
+            color: black;
+            border: none;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px;
+        }
+
         header {
             background-color: black;
             padding: 10;
@@ -32,7 +54,7 @@
 
         header a:hover,
         footer a:hover {
-            color:  var(--accent-colour-hover);
+            color: var(--accent-colour-hover);
         }
 
         footer {
@@ -40,23 +62,14 @@
             background-color: black;
             padding: 10px 40px;
             /*            width: 100%;*/
-            color:  var(--accent-colour);
+            color: var(--accent-colour);
         }
 
 
 
         body {
-            --bg: url(/images/f50195b3012ad6d7c29278e46355e04b.jpg);
-            --webrings-bg: url(/images/3332befa1638b733d0fe5c4dd32ebc5a.gif);
-            --chat-bg: url(/images/m4q84l0811k81.jpg);
-            
             background-color: black;
             background-image: var(--bg);
-            &.green{
-                --bg: url(/images/0d17503f43d9142fddb2e37ca78ad827.jpg);
-                --webrings-bg: url(/images/6734b0c9b53211b35430606fffb385ad.gif);
-            --chat-bg: url(/images/d62e460b87b415f82d3cc0500d499768.jpg);
-            }
         }
 
         h1,
@@ -94,18 +107,19 @@
             height: 100%;
             margin: auto;
             background-color: var(--primary-colour);
-            
+
             & div.text {
-            width: 90%;
-            /*            background-size: auto;*/
-            background-repeat: repeat;
-            padding: 5%;
-            margin: 10px auto;
-        }
+                width: 90%;
+                /*            background-size: auto;*/
+                background-repeat: repeat;
+                padding: 5%;
+                margin: 10px auto;
+            }
+
             img.full {
-            width: 100%;
+                width: 100%;
                 object-fit: cover;
-        }
+            }
         }
 
         div.bgdots {
@@ -125,10 +139,11 @@
         #log {
             background-image: url(/images/bg-lines.png);
             height: 300px;
+
             & h3 {
-            color: black;
-            margin: 15 auto;
-        }
+                color: black;
+                margin: 15 auto;
+            }
         }
 
 
@@ -138,7 +153,9 @@
             text-align: center;
             padding: 0 10px;
             background: var(--webrings-bg);
-            & #autiring table, transring{
+
+            & #autiring table,
+            transring {
                 text-align: center;
                 margin: auto;
             }
@@ -267,7 +284,8 @@
 
             & a {
                 margin: 10px;
-                &.no-button{
+
+                &.no-button {
                     background-color: black;
                 }
             }
@@ -416,7 +434,8 @@
 
             <div class="paw4 grid">
                 <img src="/stamps/paws.png">
-                <img src="/stamps/browser013.gif">
+                <!--                <img src="/stamps/browser013.gif">-->
+                <img src="/stamps/youre_telling_me.png">
                 <img src="stamps/signguest.gif">
                 <a href="https://ashhmillr.neocities.org/stamps/neocities.png" target="_blank"><img src="/stamps/neocities.png"></a>
 
@@ -464,8 +483,6 @@
 -->
 
             <a href="/map">
-                <!--                <h4>take a site map!</h4>-->
-
                 <img src="/images/2b0f68f0e9a3dc69a2998cae38d56b50.png" width="60%" style="margin-left: 20%;">
             </a>
 
@@ -543,11 +560,13 @@
             <div class="grid paw3">
 
                 <img src="/stamps/blows%20up%20your%20pancakes%20with%20mind%20chonny%20jash.gif">
-                <img src="/stamps/youre_telling_me.png">
 
-                <button id="toggle" class="toggle">
-                    <p>theme</p>
-                </button>
+                <img src="/stamps/actbutton.png">
+
+                <select id="themeSwitcher" onchange="changeTheme()">
+                    <option value="underwater">underwater</option>
+                    <option value="green">green</option>
+                </select>
             </div>
 
 
@@ -568,7 +587,9 @@
                         <script defer type="text/javascript" src="https://macaque.moe/autiring/onionring-widget.js"></script>
                     </div>
 
-                    <div><script defer src="https://nuthead.neocities.org/ring/ring.js"></script></div>
+                    <div>
+                        <script defer src="https://nuthead.neocities.org/ring/ring.js"></script>
+                    </div>
 
 
                     <script id="transring" defer src="https://transring.neocities.org/ring.js"></script>
@@ -578,18 +599,20 @@
 
 
             <div style="display: var(--underwater-display)">
-            <div class="grid paw3" style="margin: 10 auto">
-                <img src="/stamps/glass%20beach%20stamp.png">
-                <img src="/stamps/wavestamp.gif">
-                <img src="/stamps/vaporeonstamp.gif">
-            </div></div>
+                <div class="grid paw3" style="margin: 10 auto">
+                    <img src="/stamps/glass%20beach%20stamp.png">
+                    <img src="/stamps/wavestamp.gif">
+                    <img src="/stamps/vaporeonstamp.gif">
+                </div>
+            </div>
 
             <div style="display: var(--green-display)">
-            <div class="grid paw3" style="margin: 10 auto">
-                <img src="/stamps/441.png">
-                <img src="/stamps/476.png">
-                <img src="/stamps/509.png">
-            </div></div>
+                <div class="grid paw3" style="margin: 10 auto">
+                    <img src="/stamps/441.png">
+                    <img src="/stamps/476.png">
+                    <img src="/stamps/509.png">
+                </div>
+            </div>
 
             <div>
 
@@ -604,6 +627,10 @@
                 <h4>cool sites</h4>
 
                 <div class="sitess">
+
+                    <a href="https://leyy.neocities.org/"><img src="https://leyy.neocities.org/leyy.png"></a>
+                    <a href="https://nukocities.neocities.org/"><img src="https://nukocities.neocities.org/img/nukocities.gif"></a>
+
                     <a href="https://chocolaterevel.neocities.org/" target="_blank"><img src="stamps/0kqXUCD.gif" class="freezeframe"></a>
 
                     <a href=https://dulcesilly.neocities.org/ target="_blank"><img src="stamps/buttonsilly.gif" class="freezeframe"></a>
@@ -651,28 +678,30 @@
 
 
             <div style="display: var(--underwater-display)">
-            <div class="collage">
-                <img src="/images/41c1774752472a0a673f44541e19f0f0.jpg" style="grid-area: a; ">
-                <img src="/images/74dc494da4f43b691a7f97386c33b2cd.jpg">
-                <img src="/images/55307bee3c80f0abc6988cfa34627ec0.jpg">
-                <img src="/images/9d206ababf6dfe504077b21747bbb5a1.jpg">
-                <img src="/images/d72266f179e62d65ba09e2c327fc5f45.jpg">
-            </div></div>
+                <div class="collage">
+                    <img src="/images/41c1774752472a0a673f44541e19f0f0.jpg" style="grid-area: a; ">
+                    <img src="/images/74dc494da4f43b691a7f97386c33b2cd.jpg">
+                    <img src="/images/55307bee3c80f0abc6988cfa34627ec0.jpg">
+                    <img src="/images/9d206ababf6dfe504077b21747bbb5a1.jpg">
+                    <img src="/images/d72266f179e62d65ba09e2c327fc5f45.jpg">
+                </div>
+            </div>
 
             <div style="display: var(--green-display)">
-            <div class="collage">
-                <img src="/images/5f3de45771c354cf542430fd2bf9efd9.jpg" style="grid-area: a; ">
-                <img src="/images/2eebffdaf5fc9a218e16195877ad2b7a.jpg">
-                <img src="/images/0933d07cf48feb6f2216306aeededbd3.jpg">
-                <img src="/images/4bc092c722519b423b2395790bc028f4.jpg">
-                <img src="/images/bad426cb2f1ec8da6262397ee9fd7ec5.jpg">
-            </div></div>
+                <div class="collage">
+                    <img src="/images/5f3de45771c354cf542430fd2bf9efd9.jpg" style="grid-area: a; ">
+                    <img src="/images/2eebffdaf5fc9a218e16195877ad2b7a.jpg">
+                    <img src="/images/0933d07cf48feb6f2216306aeededbd3.jpg">
+                    <img src="/images/4bc092c722519b423b2395790bc028f4.jpg">
+                    <img src="/images/bad426cb2f1ec8da6262397ee9fd7ec5.jpg">
+                </div>
+            </div>
 
 
         </div>
 
     </div>
-    
+
     <script src="/js/theme-switcher.js"></script>
 </body>
 

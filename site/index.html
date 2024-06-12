@@ -12,16 +12,28 @@
 
 
     <style>
+        #themeSwitcher {
+            background-color: var(--primary-colour);
+            color: black;
+            border: none;
+            border-color: var(--accent-colour);
+            padding: 10px 10px;
+            border-radius: 10px;
+        }
+
+        :root{
+            --bg: url(https://ashhmillr.neocities.org/images/the-backrooms-backrooms.gif)
+        }
+
+        :root[theme=green] {
+            --bg: url(https://ashhmillr.neocities.org/images/36c0b03aedfcc5c22e6c48e7dbae755a.jpg)
+        }
+
+
         body {
             background: black;
             color: white;
             margin: 0;
-
-            --bg: url(/images/the-backrooms-backrooms.gif);
-        }
-
-        .green {
-            --bg: url(/images/36c0b03aedfcc5c22e6c48e7dbae755a.jpg);
         }
 
         div.col {
@@ -66,13 +78,6 @@
 
         #hitcount {
             color: var(--accent-colour);
-        }
-
-        .button {
-            border: none;
-            background-color: var(--primary-colour);
-            padding: 10px 10px;
-            border-radius: 10px;
         }
 
         #sideimg {
@@ -174,10 +179,10 @@
                         <img src="/images/Censor_14b.gif">
                     </a>
 
-                    <button id="toggle" class="button">current theme:<br>
-                        <span style="display: var(--underwater-display)">underwater</span>
-                        <span style="display: var(--green-display)">green</span>
-                    </button>
+                    <select id="themeSwitcher" onchange="changeTheme()">
+                        <option value="underwater">underwater</option>
+                        <option value="green">green</option>
+                    </select>
 
                 </div>
             </div>
@@ -239,7 +244,7 @@
 
 
 <footer>
-    made with <a class="white" href="https://brackets.io/">brackets</a> and tested in chrome. the site is still under construction! Last updated: <snap id="lastupdate"></snap>
+    made with <a class="white" href="https://brackets.io/">brackets</a>. the site is always under construction! Last updated: <snap id="lastupdate"></snap>
 </footer>
 
 

@@ -66,25 +66,26 @@
 
 
 /*COLOURS*/
-body {
-    --primary-colour: mediumturquoise;
-    --accent-colour: palevioletred;
-    --accent-colour-hover: paleturquoise;
-    --dark-colour: darkcyan;
-    --colour: #111132;
-    --green-display: none;
-    --underwater-display: block;
-    --icon: "/ico-water.png";
+:root{
+  --primary-colour: mediumturquoise;
+  --accent-colour: palevioletred;
+  --accent-colour-hover: paleturquoise;
+  --dark-colour: darkcyan;
+  --colour: #111132;
+  --green-display: none;
+  --underwater-display: block;
+    scrollbar-color: var(--accent-colour) white;
+    scrollbar-width: thin;
+}
 
-    &.green {
-        --primary-colour: DarkSeaGreen;
-        --accent-colour: SkyBlue;
-        --accent-colour-hover: #D9FECE;
-        --green-display: static;
-        --underwater-display: none;
-        --darkcolour: DarkGreen;
-    }
-
+:root[theme=green] {
+  --primary-colour: DarkSeaGreen;
+  --accent-colour: SkyBlue;
+  --accent-colour-hover: #D9FECE;
+  --colour: #111132;
+  --green-display: static;
+  --underwater-display: none;
+  --darkcolour: DarkGreen;
 }
 
 
