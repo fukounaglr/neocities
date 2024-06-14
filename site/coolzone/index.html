@@ -9,13 +9,16 @@
     <link rel="stylesheet" href="/style.css">
 
     <style type="text/css">
-        body {
+        
+        :root{
             --bg: url(/images/wavesbg.gif);
+        }
+        :root[theme=green]{
+            --bg: url(/images/greenbg.gif);
+        }
+        body {
             background-image: var(--bg);
             background-size: contain;
-            &.green{
-                --bg: url(/images/greenbg.gif);
-            }
         }
 
         #goback {

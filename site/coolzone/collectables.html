@@ -9,16 +9,18 @@
     <link rel="stylesheet" href="/style.css">
 
     <style type="text/css">
+        
+        :root{
+            --bg: url(/images/4a7cc5c87b8dc5f9a9813f25de55f3f5.jpg);
+        }
+        :root[theme=green]{
+            --bg: url(/images/41f5f1e24d5f2e160e08548efd0f88e0.jpg);
+        }
+        
         body {
             padding: 40px;
-            
-            --bg: url(/images/4a7cc5c87b8dc5f9a9813f25de55f3f5.jpg);
-            
 /*            background-color: black;*/
             background-image: var(--bg);
-            &.green{
-                --bg: url(/images/41f5f1e24d5f2e160e08548efd0f88e0.jpg);
-            }
         }
 
         #goback:hover {

@@ -1,0 +1,120 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=.8, user-scalable=no">
+    <title>ash dressup game</title>
+
+    <link rel="icon" type="image/png" href="/ico.png">
+    <link rel="stylesheet" href="/style.css">
+
+    <style>
+        body {
+            background-image: url(/basement/images/femtaanyl-trans.gif);
+        }
+
+        header {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 30% 30%;
+            background-color: white;
+            grid-gap: 30%;
+/*            align-content: space-between;*/
+        }
+
+        main {
+            width: 60%;
+            background-color: white;
+            margin: 20px auto;
+        }
+        
+        details{
+            display: grid;
+            margin: 10px auto;
+            & summary{
+                all: unset;
+                display: block;
+                padding: 10 5;
+                background-color: var(--accent-colour);
+                border-radius: 20px;
+                cursor: pointer;
+                width: 50%;
+                text-align: center;
+                transition: .4s;
+                &:hover{
+                    background-color: var(--accent-colour-hover);
+                }
+            }
+            
+            & a{
+                margin-left: 50px;
+                display: list-item;
+            list-style: circle;
+            }
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+
+    <a id="goback" href="/basement/projects/index.html">go back</a>
+                <h1>papercraft</h1>
+
+    
+    <header>
+        <div>
+            <img src="/basement/images/femtaanyl-trans.gif" style="width: 100%">
+        </div>
+
+        <div>
+            <h2>Femtanyl - p3t</h2>
+            <p>this is a papercraft/model i made!! yayy i haven't made a tutorial yet so you'll have to wait or do it yourself.</p>
+            <audio src="https://file.garden/ZjOP8Ik9OUXT6YVm/femtanyl%20-%20P3T.mp3" controls></audio>
+            <details>
+            <summary>download</summary>
+                <a href="/basement/images/femtanyl_p3t_papercraft_page_1.png" download target="_blank">page 1</a>
+                <a href="/basement/images/femtanyl_p3t_papercraft_page_2.png" download target="_blank">page 2</a>
+            </details>
+        </div>
+    </header>
+
+    <main>
+
+        here will be a tutorial on how 2put this thing together
+    </main>
+
+
+    <script src="/js/audio-player.js"></script>
+    <script>
+    
+        const select = document.getElementById("player-select");
+        AudioPlayer.create([
+            "femtanyl - P3T.mp3"
+        ], {
+            playButton: document.getElementById("player-button"),
+            skipButton: document.getElementById("skip-button"),
+            insertIcons: false,
+            slider: document.getElementById("player-slider"),
+            sliderThumb: document.getElementById("player-slider").querySelector("div:last-of-type"),
+            shuffle: true,
+            //            fileGarden: "ZdmFgugxzVCR-8Bl",
+            fileGarden: "ZjOP8Ik9OUXT6YVm",
+            onended: () => select.value = AudioPlayer.idx
+        });
+        for (let i = 0; i < AudioPlayer.list.length; i++) {
+            let option = select.appendChild(document.createElement("option"));
+            option.label = AudioPlayer.list[i].title, option.value = i;
+        }
+        select.onchange = () => {
+            AudioPlayer.idx = Number(select.value) - 1;
+            AudioPlayer.next();
+        }
+
+    
+    </script>
+</body>
+
+</html>
