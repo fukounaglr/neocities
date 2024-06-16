@@ -689,7 +689,7 @@ a {
     padding: 50;
 
     & img {
-        width: 50%;
+        width: 100%;
         height: 100%;
         object-fit: contain;
         object-position: bottom;
@@ -920,18 +920,25 @@ div.two {
 
 
 .gallery-pin {
-    max-width: 1200px;
-    margin: 0 auto;
-    column-count: 4;
-    vertical-align: middle;
+/*    max-width: 1200px;*/
+/*    margin: 0 auto;*/
+/*    column-count: 4;*/
+/*    vertical-align: middle;*/
     /*    font-family: arial;*/
+    display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-auto-rows: 20px;
+/*  grid-gap: 10px;*/
 
 
     & .gallery-item {
-        break-inside: avoid;
         margin-bottom: 16px;
         background: rgba(255, 255, 255, 0.9);
         border-radius: 14px;
+        grid-row-end: span 10;
+        -webkit-column-break-inside: avoid;
+    break-inside: avoid;
+    page-break-inside: avoid;
 
         & figure {
             margin: 0;
@@ -963,6 +970,7 @@ div.two {
             cursor: pointer;
             transition: .4s;
             object-fit: cover;
+            
 
             &:hover {
                 transform: scale(1.2);
