@@ -36,19 +36,30 @@
             margin: 10px;
             cursor: pointer;
             transition: .4s;
-            &:hover{
+
+            &:hover {
                 background-color: var(--accent-colour-hover);
             }
-            &option{
+
+            &option {
                 padding: 5px 0;
             }
         }
 
         header {
             background-color: black;
-            padding: 10;
-            display: grid;
-            grid-template-columns: repeat(10, 1fr);
+/*            padding: 10 10 0 10;*/
+
+            & div {
+                display: grid;
+                grid-template-columns: repeat(10, 1fr);
+            }
+            
+            & p{
+                margin: 0;
+            }
+
+            color: white;
         }
 
         header img {
@@ -147,12 +158,12 @@
         #log {
             background-image: url(/images/bg-lines.png);
             background-repeat: repeat;
-/*            height: 300px;*/
+            /*            height: 300px;*/
             padding: 0;
 
             & h3 {
                 color: black;
-/*                margin: 15 auto;*/
+                /*                margin: 15 auto;*/
             }
         }
 
@@ -410,17 +421,41 @@
         }
 
         a:hover :is(h1, h2, h3, h4, h5, h6) {
-            transform: scale(1.2) translate(12%, 0);
+            /*            transform: scale(1.2) translate(12%, 0);*/
         }
-        
-        .link{
+
+        .link {
             position: relative;
             height: auto;
-            
-            & h1, h2, h3, h4, h5, h6{
+            overflow: hidden;
+            width: 100%;
+            display: block;
+            transition: .5s;
+
+            &img {
+                object-fit: cover;
+                width: 100%;
+                transform: scale(100%);
+                filter: brightness(100%);
+                transition: .5s;
+            }
+
+            &:hover img {
+                transform: scale(130%);
+                filter: brightness(120%);
+                transition: .5s;
+            }
+
+            & h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
                 position: absolute;
+                color: var(--colour);
                 z-index: 10;
-                bottom: 10px;
+                bottom: -10px;
                 left: 0;
             }
         }
@@ -431,16 +466,19 @@
 
 
 <header>
-    <img src="/stamps/sylveon.gif">
-    <img src="/stamps/kriswtf.gif">
-    <img src="/stamps/imemyself.gif">
-    <img src="/stamps/tumblr_48aac0193b7a3159c6f2481127fe8f3c_4f239854_250.webp" class="blink">
-    <img src="/stamps/trans%20glass%20beach%20blinkie.gif">
-    <img src="/stamps/autism-chonnyjash.gif">
-    <img src="/stamps/69e1a51811fe2885ed012dbc966b21cc7c36e399.gif">
-    <img src="/stamps/ezgif-1-dbd933bbf4.gif">
-    <img src="/stamps/tomanytabs.gif">
-    <img src="/stamps/0205-pluralsystem.gif">
+    <div>
+        <img src="/stamps/sylveon.gif">
+        <img src="/stamps/kriswtf.gif">
+        <img src="/stamps/imemyself.gif">
+        <img src="/stamps/tumblr_48aac0193b7a3159c6f2481127fe8f3c_4f239854_250.webp" class="blink">
+        <img src="/stamps/trans%20glass%20beach%20blinkie.gif">
+        <img src="/stamps/autism-chonnyjash.gif">
+        <img src="/stamps/69e1a51811fe2885ed012dbc966b21cc7c36e399.gif">
+        <img src="/stamps/ezgif-1-dbd933bbf4.gif">
+        <img src="/stamps/tomanytabs.gif">
+        <img src="/stamps/0205-pluralsystem.gif">
+    </div>
+    <p>not very frequent updates due to mental health issues + irl stuff! you can find more links at the bottom of the page + new site button! please change it if you link to this site</p>
 </header>
 
 
@@ -473,8 +511,7 @@
             </div>
 -->
 
-<!--            <img src="/images/OP%20kitteh%20moed.png" class="full">-->
-            <p>not very active due to mental health issues!<br>more links at the bottom of the page</p>
+            <!--            <img src="/images/OP%20kitteh%20moed.png" class="full">-->
 
             <img src="/images/46c0499471bc83b4efb08cd49d27b128.jpg" class="full" style="height: 300px; display: var(--underwater-display)">
             <img src="/images/08613402c58bb09a46c2c42d22982351.jpg" class="full" style="height: 300px; display: var(--green-display)">
@@ -489,9 +526,9 @@
                 </a>
             </div>
 
-            <a style="position: relative" href="/webmaster.html">
-                <h2 style="position: absolute; bottom: 10px;">WEbmaster</h2>
-                <img src="/images/9220e81148435598d9c76718f80b9405.jpg" class="full">
+            <a href="/webmaster.html" class="link">
+                <img src="/images/more%20than%20you%20lt.jpg" class="full">
+                <h2>WEbmaster</h2>
             </a>
 
             <a href="https://open.spotify.com/playlist/70IOaUbegXOJ6o5imHXrVO?si=d9fa1cb842dc460c" target="_blank">
@@ -509,6 +546,11 @@
                 <img src="/images/2b0f68f0e9a3dc69a2998cae38d56b50.png" width="60%" style="margin-left: 20%;">
             </a>
 
+            <a href="/coolzone/index.html" class="link">
+                <img src="/images/alcohol.png" class="full">
+                <h2 style="color: var(--accent-colour)">coolzone</h2>
+            </a>
+
         </div>
 
 
@@ -522,11 +564,12 @@
             </a>
 
             <a href="/image-of-the-day" class="link">
-                <h3 style="color: var(--dark-colour)">image of the day</h3>
+                <h3>image of the day</h3>
                 <img src="https://i.ibb.co/bWTJTMM/club-penguin-dance.gif" class="full">
             </a>
 
 
+            <img src="/images/1710027029117.jpg" class="full">
 
             <div id="sotd-home" style="background-color: #417E9F; border-color: #950505;">
                 <h3 style="margin: 0 0 10 0">song of the week</h3>
@@ -568,12 +611,17 @@
             </div>
 
             <a href="/art.html" class="link" style="display: var(--underwater-display)">
-                    <img src="/images/72010ff64164ae3e74ac426b30443947.gif" class="full">
-                    <h2 style=" color: var(--accent-colour)">art</h2>
+                <img src="/images/72010ff64164ae3e74ac426b30443947.gif" class="full">
+                <h2>art</h2>
             </a>
             <a href="/art.html" class="link" style="display: var(--green-display)">
-                    <img src="/images/pokemon-deerling-deerling%20(1).gif" class="full">
-                    <h2 style=" color: var(--accent-colour)">art</h2>
+                <img src="/images/pokemon-deerling-deerling%20(1).gif" class="full">
+                <h2>art</h2>
+            </a>
+
+            <a href="/basement/characters/index.html" class="link">
+                <img src="/images/tumblr_2e7a9f75e051d68e4e519e59721bdfb3_a54379d6_640.png" class="full">
+                <h2>characters</h2>
             </a>
 
 
@@ -643,6 +691,8 @@
                 </div>
             </div>
 
+
+
             <div>
 
                 <h4>link us on your site</h4>
@@ -660,9 +710,9 @@
 
                     <a href="https://themightyloser.nekoweb.org/" target="_blank"><img src="/stamps/jelliagain.png"></a>
                     <a target="_blank" href="https://troy-sucks.neocities.org/"><img src="https://troy-sucks.neocities.org/images/troysuckwiggly.gif" />
-                        
-                        
-                        
+
+
+
                         <a href="https://swiftyshq.neocities.org/"><img src="https://swiftyshq.neocities.org/img/res/aff/threadbare.gif" alt="Swifty's HQ!" /></a>
                         <a href="https://virtualobserver.moe/"><img src="https://virtualobserver.moe/images/sitebutton.png"></a>
                         <a href="https://leyy.neocities.org/"><img src="https://leyy.neocities.org/leyy.png"></a>
@@ -739,8 +789,8 @@
 
     </div>
     </div>
-    
-    
+
+
     <script src="/js/theme-switcher.js"></script>
 </body>
 
