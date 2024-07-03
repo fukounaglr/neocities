@@ -73,6 +73,7 @@ AudioPlayer.next = function () {this.dispatchEvent(new Event("ended"))}
 AudioPlayer.create = function (list, opts) {
 	this.idx = -1;
 	this.list = list;
+//    const bubble = ;
 	
 	this.addEventListener("ended", () => {
 		this.idx = (this.idx + 1) % this.list.length;
@@ -97,15 +98,24 @@ AudioPlayer.create = function (list, opts) {
 
 			this.addEventListener("play", () => {
 				this.playButton.ariaLabel = "pause";
+//                document.getElementById("player-bubble").className = "spin";
 				this.playButton.innerHTML = this.loadIcon;
 				this.addEventListener("timeupdate", () => this.playButton.innerHTML = this.pauseIcon, {once: true});
 			});
 			this.addEventListener("pause", () => {
 				this.playButton.ariaLabel = "play";
 				this.playButton.innerHTML = this.playIcon;
+//                document.getElementById("player-bubble").className = "paused";
 			});
 
 		}
+        
+        this.addEventListener("play", () => {
+                document.getElementById("player-bubble").className = "spin";
+			});
+			this.addEventListener("pause", () => {
+                document.getElementById("player-bubble").className = "paused";
+			});
 	}
 
 	// skip button

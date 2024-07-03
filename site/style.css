@@ -76,6 +76,7 @@
   --underwater-display: block;
     scrollbar-color: var(--accent-colour) white;
     scrollbar-width: thin;
+    image-rendering: pixelated;
 }
 
 :root[theme=green] {
