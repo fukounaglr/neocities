@@ -10,19 +10,19 @@
 
 
     <style type="text/css">
-        
-        :root{
+        :root {
             --bg: url(/images/4a7cc5c87b8dc5f9a9813f25de55f3f5.jpg);
         }
-        :root[theme=green]{
+
+        :root[theme=green] {
             --bg: url(/images/41f5f1e24d5f2e160e08548efd0f88e0.jpg);
         }
-        
+
         body {
             padding: 40px;
             background-image: var(--bg);
-            &.green{
-            }
+
+            &.green {}
         }
 
         . stuff {
@@ -49,6 +49,10 @@
             height: auto;
         }
 
+        .gallery-pin {
+            overflow-y: hidden;
+        }
+
     </style>
 
 </head>
@@ -60,9 +64,9 @@
 <body>
 
     <h1 style="color: white">fanarts</h1>
-    
+
     <p style="color: white; width: 100%; text-align: center;">arts of me and my characters made by other people! credited if possible</p>
-    
+
     <div class="gallery-container">
         <div class="gallery-pin">
 
@@ -176,8 +180,9 @@
                 <figure>
                     <img src="https://i.ibb.co/QQfCZVP/IMG-4503.jpg" alt="drawing" />
                     <figcaption><a target="_blank" href="https://www.youtube.com/@Mr.Googlesadoptedson/community">by @Mr.Googlesadoptedson</a></figcaption>
+                    <p>[gift] art of egg</p>
                 </figure>
-                <p>[gift] art of egg</p>
+
             </div>
 
             <div class="gallery-item">
@@ -270,7 +275,7 @@
 
 
         <div class="popup">
-            <span class="white">click anywhere to close</span>
+<!--            <span class="white">click anywhere to close</span>-->
             <img src="" style="max-height: 80%">
         </div>
     </div>

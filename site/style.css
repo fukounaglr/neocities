@@ -7,9 +7,6 @@
 
 }
 
-
-
-
 @font-face {
     font-family: 'karmatic arcade';
     src: url('/fonts/karmaticarcade-webfont.woff2') format('woff2'),
@@ -18,9 +15,6 @@
     font-style: normal;
 
 }
-
-
-
 
 @font-face {
     font-family: 'merchant copy';
@@ -62,31 +56,52 @@
 
 }
 
+/* latin-ext */
+@font-face {
+    font-family: 'Syne Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/synemono/v15/K2FzfZNHj_FHBmRbFvHDK6qlPys.woff2) format('woff2');
+    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Syne Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/synemono/v15/K2FzfZNHj_FHBmRbFvHDJaql.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
 
 
 
 /*COLOURS*/
-:root{
-  --primary-colour: mediumturquoise;
-  --accent-colour: palevioletred;
-  --accent-colour-hover: paleturquoise;
-  --dark-colour: darkcyan;
-  --colour: #111132;
-  --green-display: none;
-  --underwater-display: block;
+:root {
+    --primary-colour: mediumturquoise;
+    --accent-colour: palevioletred;
+    --accent-colour-hover: paleturquoise;
+    --dark-colour: darkcyan;
+    --colour: #111132;
+    --green-display: none;
+    --underwater-display: block;
     scrollbar-color: var(--accent-colour) white;
     scrollbar-width: thin;
     image-rendering: pixelated;
 }
 
 :root[theme=green] {
-  --primary-colour: DarkSeaGreen;
-  --accent-colour: SkyBlue;
-  --accent-colour-hover: #D9FECE;
-  --colour: #111132;
-  --green-display: static;
-  --underwater-display: none;
-  --darkcolour: DarkGreen;
+    --primary-colour: DarkSeaGreen;
+    --accent-colour: SkyBlue;
+    --accent-colour-hover: #D9FECE;
+    --colour: #111132;
+    --green-display: block;
+    --underwater-display: none;
+    --darkcolour: DarkGreen;
 }
 
 
@@ -166,7 +181,8 @@ mark {
     transition: .4s;
     text-decoration: none;
     color: var(--accent-colour);
-    &:hover{
+
+    &:hover {
         color: var(--accent-colour-hover);
     }
 }
@@ -199,7 +215,10 @@ mark {
 
 
 html {
-    font-family: 'merchant copy';
+    /*    font-family: 'merchant copy';*/
+    font-family: "Syne Mono", serif;
+    font-weight: 400;
+    font-style: normal;
     text-wrap: normal;
     color: var(--colour);
     font-size: 1.2Em;
@@ -217,30 +236,6 @@ h6 {
     text-align: center;
     font-weight: 300;
     margin: 10px 0px 10px 0px;
-}
-
-.big {
-    font-family: 'arcadeclassic';
-    font-style: normal;
-    font-size: 1Em;
-    text-transform: uppercase;
-    text-align: center;
-}
-
-.bigger {
-    font-family: 'arcadeclassic';
-    font-style: normal;
-    font-size: 1.2Em;
-    text-transform: uppercase;
-    text-align: center;
-}
-
-.biggest {
-    font-family: 'arcadeclassic';
-    font-style: normal;
-    font-size: 1.5Em;
-    text-transform: uppercase;
-    text-align: center;
 }
 
 .bold {
@@ -585,7 +580,7 @@ a {
 }
 
 .stuff-mine {
-/*    border: 3px solid deeppink;*/
+    /*    border: 3px solid deeppink;*/
     padding: 20px;
     margin: 20px auto;
 }
@@ -626,9 +621,9 @@ a {
     & a {
         text-decoration: none;
         margin: 10px;
-        
-        &:hover{
-            & mark{
+
+        &:hover {
+            & mark {
                 background-color: var(--accent-colour);
             }
         }
@@ -715,6 +710,7 @@ a {
     height: 500;
     overflow-y: scroll;
     scrollbar-width: thin;
+    
 }
 
 .gallery {
@@ -786,6 +782,7 @@ a {
     height: 100%;
     background-color: rgba(0, 0, 0, .8);
     z-index: 100;
+        cursor: zoom-out;
 }
 
 .popup img {
@@ -803,21 +800,6 @@ a {
     top: 50;
     right: 100;
     color: white;
-}
-
-#portfolio .gallery {
-    width: 90%;
-    overflow-x: hidden;
-    display: block;
-    text-align: center;
-    text-align: center;
-    display: grid;
-    padding-left: 30;
-}
-
-#portfolio .gallery-container {
-    width: 90%;
-    overflow-y: scroll;
 }
 
 #pppp .gallery-container {
@@ -921,25 +903,17 @@ div.two {
 
 
 .gallery-pin {
-/*    max-width: 1200px;*/
-/*    margin: 0 auto;*/
-/*    column-count: 4;*/
-/*    vertical-align: middle;*/
-    /*    font-family: arial;*/
-    display: grid;
-  grid-template-columns: repeat(4, auto);
-  grid-auto-rows: 20px;
-/*  grid-gap: 10px;*/
+    column-count: 4;
+  column-gap: 10px;
+    overflow: hidden;
+    margin: auto;
 
 
     & .gallery-item {
-        margin-bottom: 16px;
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 14px;
         grid-row-end: span 10;
-        -webkit-column-break-inside: avoid;
-    break-inside: avoid;
-    page-break-inside: avoid;
+        background-color: white;
+        border-radius: 14px;
+        margin-bottom: 10px;
 
         & figure {
             margin: 0;
@@ -947,6 +921,7 @@ div.two {
             width: 1fr;
             border-radius: 14px;
             overflow: hidden;
+            margin-bottom: 5px;
 
         }
 
@@ -971,7 +946,9 @@ div.two {
             cursor: pointer;
             transition: .4s;
             object-fit: cover;
-            
+                    cursor: zoom-in;
+
+
 
             &:hover {
                 transform: scale(1.2);
@@ -984,6 +961,7 @@ div.two {
         }
     }
 
+/*
     @media screen and (max-width: 500px) {
         .gallery-pin {
             column-count: 1;
@@ -1001,3 +979,4 @@ div.two {
             column-count: 3;
         }
     }
+*/
