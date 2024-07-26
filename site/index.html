@@ -13,7 +13,7 @@
 
     <style>
         #themeSwitcher {
-            background-color: var(--primary-colour);
+            background-color: var(--accent-colour);
             color: black;
             border: none;
             border-color: var(--accent-colour);
@@ -22,11 +22,11 @@
         }
 
         :root{
-            --bg: url(https://ashhmillr.neocities.org/images/the-backrooms-backrooms.gif)
+/*            --bg: url(https://ashhmillr.neocities.org/images/the-backrooms-backrooms.gif)*/
         }
 
         :root[theme=green] {
-            --bg: url(https://ashhmillr.neocities.org/images/36c0b03aedfcc5c22e6c48e7dbae755a.jpg)
+/*            --bg: url(https://ashhmillr.neocities.org/images/36c0b03aedfcc5c22e6c48e7dbae755a.jpg)*/
         }
 
 
@@ -73,7 +73,7 @@
         }
 
         #lastupdate {
-            color: var(--primary-colour);
+            color: var(--accent-colour);
         }
 
         #hitcount {
@@ -168,13 +168,7 @@
     </div>
     </div>
 
-    <div id="clunk">
-        <a href="https://www.tumblr.com/birdbutbetter/752831217880203264/clunk-pride-emojisstickers?source=share" target="_blank">
-            <img src="https://i.ibb.co/f181ZZg/bigender-clunk.png" id="clunk-img">
-        </a>
-
-        <span id="clunk-talk"></span>
-    </div>
+    
 
     <div class="col">
         <div id="sideimg">
@@ -196,7 +190,7 @@
                         <li>some flashing images &amp; bright colours</li>
                         <li>image heavy</li>
                         <li>not mobile friendly (yet?)</li>
-                        <li>possible swearing</li>
+                        <li>possible swearing + disturbing content</li>
                     </ol>
                 </details>
 
@@ -215,6 +209,7 @@
                     </a>
 
                     <select id="themeSwitcher" onchange="changeTheme()">
+                        <option value="hell">hell</option>
                         <option value="underwater">underwater</option>
                         <option value="green">green</option>
                     </select>
@@ -222,7 +217,7 @@
                 </div>
             </div>
 
-            <a href="/home" id="proceed">
+            <a href="/home.html" id="proceed">
                 <h3>yes, i do wish to proceed</h3>
             </a>
 
@@ -250,31 +245,8 @@
     <script src="/js/last%20update%20views.js"></script>
     <script src="/js/theme-switcher.js"></script>
 
-
-    <script type="text/javascript">
-        const imageTitles = [
-            "clunk!",
-            "[:]",
-            "chonny jash!",
-            "happy pride!",
-            "bigender pride!",
-            "trans rights!"
-        ];
-
-        const Image = document.getElementById('clunk-img');
-        const talk = document.getElementById('clunk-talk');
-
-        Image.addEventListener('mouseover', () => {
-            const randomIndex = Math.floor(Math.random() * imageTitles.length);
-            talk.textContent = imageTitles[randomIndex];
-        });
-
-        Image.addEventListener('mouseout', () => {
-            talk.textContent = "";
-        });
-
-    </script>
     
+<!--    phone splash script-->
     <script type="text/javascript">
         const enter = document.getElementById('phone-enter');
         const splash = document.getElementById('phone-splash');

@@ -14,15 +14,13 @@
 
 
     <style>
-        :root {
-            --bg: url(/images/f50195b3012ad6d7c29278e46355e04b.jpg);
+        :root[theme=underwater] {
             --bg: url(/images/d72266f179e62d65ba09e2c327fc5f45-snes.png);
             --webrings-bg: url(/images/3332befa1638b733d0fe5c4dd32ebc5a-snes.png);
             --chat-bg: url(/images/m4q84l0811k81.jpg);
         }
 
         :root[theme=green] {
-            --bg: url(/images/0d17503f43d9142fddb2e37ca78ad827.jpg);
             --bg: url(/images/0d17503f43d9142fddb2e37ca78ad827-snes.png);
             --webrings-bg: url(/images/greenbg-snes.png);
             --chat-bg: url(/images/d62e460b87b415f82d3cc0500d499768.jpg);
@@ -52,7 +50,7 @@
             background-color: black;
 /*            padding: 10 10 0 10;*/
 
-            & div {
+            & div.header {
                 display: grid;
                 grid-template-columns: repeat(8, 1fr);
             }
@@ -390,7 +388,7 @@
                 padding: 0;
             }
 
-            header div{
+            header div.header{
                 grid-template-columns: repeat(5, 1fr);
             }
 
@@ -410,7 +408,7 @@
                 width: 100%;
             }
 
-            header div{
+            header div.header{
                 grid-template-columns: repeat(5, 1fr);
             }
 
@@ -433,6 +431,7 @@
             width: 100%;
             display: block;
             transition: .5s;
+            cursor: pointer;
 
             &img {
                 object-fit: cover;
@@ -468,18 +467,43 @@
 
 
 <header>
-    <div>
+    <div  style="display: var(--hell-display)">
+        <div class="header">
+        <img src="/stamps/DA2ACD89-BF3E-423B-8C6F-AA9FB05E4035.gif">
+        <img src="/stamps/0039-staticrainbow.gif">
+        <img src="/stamps/tumblr_48aac0193b7a3159c6f2481127fe8f3c_4f239854_250.webp" class="blink">
+        <img src="/stamps/tumblr_3fd1f9aee7246d63a83dcd17dc7b6288_96c9394c_250.webp">
+        <img src="/stamps/bigshot.gif">
+        <img src="/stamps/cursed%20cat%20alastor%20blinnkie.gif">
+        <img src="/stamps/tumblr_18f9a36ecdc131af57984cdcd0f52bda_a7ff261c_250.gif">
+        <img src="/stamps/tumblr_afd8d2626508a9336b92b7e960e0ce25_8bcdcdeb_250.gif">
+    </div></div>
+    
+    <div  style="display: var(--underwater-display)">
+        <div class="header">
         <img src="/stamps/sylveon.gif">
         <img src="/stamps/kriswtf.gif">
         <img src="/stamps/imemyself.gif">
-        <img src="/stamps/tumblr_48aac0193b7a3159c6f2481127fe8f3c_4f239854_250.webp" class="blink">
-<!--        <img src="/stamps/trans%20glass%20beach%20blinkie.gif">-->
+        <img src="/stamps/water.gif" class="blink">
+        <img src="/stamps/gleach_slipunderthedoor.gif">
         <img src="/stamps/you%20wouldnt%20download%20a%20pronoun.gif">
         <img src="/stamps/ezgif-1-dbd933bbf4.gif">
         <img src="/stamps/tomanytabs.gif">
-        <img src="/stamps/0205-pluralsystem.gif">
-    </div>
-    <p>not very frequent updates due to mental health issues + irl stuff! you can find more links at the bottom of the page + new site button! please change it if you link to this site</p>
+    </div></div>
+    
+    <div  style="display: var(--green-display)">
+        <div class="header">
+        <img src="/stamps/neversleeps.gif">
+        <img src="/stamps/i%20am%20(not)%20a%20ronot.png">
+        <img src="/stamps/0138-greenglow.gif">
+        <img src="/stamps/BornToDie.gif" class="blink">
+        <img src="/stamps/ena.gif">
+        <img src="/stamps/tumblr_c263529e50ad3e685c592f1e35391763_5c6557d9_250.gif">
+        <img src="/stamps/tumblr_62b602f4f4759ee0d8a91490d86764fa_35e25497_250.webp">
+        <img src="/stamps/dBtukjGveyosfQHvXiGS.gif">
+    </div></div>
+    
+    <p>not very frequent updates! you can find more links at the bottom of the page!</p>
 </header>
 
 
@@ -516,6 +540,7 @@
 
             <img src="/images/46c0499471bc83b4efb08cd49d27b128.jpg" class="full" style="height: 300px; display: var(--underwater-display)">
             <img src="/images/08613402c58bb09a46c2c42d22982351.jpg" class="full" style="height: 300px; display: var(--green-display)">
+            <img src="/images/girlypop.png" class="full" style="height: 300px; display: var(--hell-display)">
 
             <div id="status">
                 <img src="/images/bubble.png" width="100%">
@@ -549,8 +574,8 @@
             </a>
 
             <a href="/coolzone/index.html" class="link">
-                <img src="/images/alcohol.png" class="full">
-                <h2 style="color: var(--accent-colour)">coolzone</h2>
+                <img src="/shrines/images/coolzone.png" class="full">
+                <h2>coolzone</h2>
             </a>
 
         </div>
@@ -567,20 +592,20 @@
 
             <a href="/image-of-the-day" class="link">
                 <h3>image of the day</h3>
-                <img src="https://i.ibb.co/bWTJTMM/club-penguin-dance.gif" class="full">
+                <img src="/images/7e4cf1097cdacf22b2b739c2f6010f9d.jpg" class="full">
             </a>
 
 
             <img src="/images/1710027029117.jpg" class="full">
 
-            <div id="sotd-home" style="background-color: #0c1e24; border-color: #349ba6;">
-                <h3 style="margin: 0 0 10 0">song of the week</h3>
+            <div id="sotd-home" style="background-color: yellow; border-color: black; color: red;">
+                <h3 style="margin: 0 0 10 0">song of the <s>week</s></h3>
 
-                <p class="bold">slip under the door - glass beach</p>
-                <iframe width="100%" height="170px" src="https://www.youtube.com/embed/uykRfCBDdsc?si=xpvrAKlJSMsVQx_S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <p class="bold">Butcher vanity - vane</p>
+                <iframe width="100%" height="170px" src="https://www.youtube.com/embed/vjBFftpQxxM?si=ngtkdMvysNqsPBBS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 <p></p>
                 <span>
-                    3/jul/2024
+                   26/jul/2024
                 </span>
                 <a href="/sotd" style="color: paleturquoise; text-align: end;">archive</a>
 
@@ -612,17 +637,13 @@
                 <iframe src="/log.html" style="height: 300px; width: 100%; border: none;"></iframe>
             </div>
 
-            <a href="/art.html" class="link" style="display: var(--underwater-display)">
-                <img src="/images/72010ff64164ae3e74ac426b30443947.gif" class="full">
-                <h2>art</h2>
-            </a>
-            <a href="/art.html" class="link" style="display: var(--green-display)">
-                <img src="/images/pokemon-deerling-deerling%20(1).gif" class="full">
+            <a href="/art.html" class="link">
+                <img src="/shrines/images/art.png" class="full">
                 <h2>art</h2>
             </a>
 
             <a href="/basement/characters/index.html" class="link">
-                <img src="/images/tumblr_2e7a9f75e051d68e4e519e59721bdfb3_a54379d6_640.png" class="full">
+                <img src="/images/194485e528a6db2c139bc6223bb10fba.jpg" class="full">
                 <h2>characters</h2>
             </a>
 
@@ -643,6 +664,7 @@
                 <img src="/stamps/actbutton.png">
 
                 <select id="themeSwitcher" onchange="changeTheme()">
+                    <option value="hell">hell</option>
                     <option value="underwater">underwater</option>
                     <option value="green">green</option>
                 </select>
@@ -690,6 +712,14 @@
                     <img src="/stamps/441.png">
                     <img src="/stamps/476.png">
                     <img src="/stamps/509.png">
+                </div>
+            </div>
+
+            <div style="display: var(--hell-display)">
+                <div class="grid paw3" style="margin: 10 auto">
+                    <img src="/stamps/tumblr_66b9a67019cc84a9a7c7055bd83dfee6_0ad99749_100.png">
+                    <img src="/stamps/438.gif">
+                    <img src="/stamps/tumblr_24ccbad79db3b51cc9ee2594f27a7943_451b076b_100.gif">
                 </div>
             </div>
 

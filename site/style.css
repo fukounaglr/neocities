@@ -82,26 +82,49 @@
 
 /*COLOURS*/
 :root {
-    --primary-colour: mediumturquoise;
-    --accent-colour: palevioletred;
-    --accent-colour-hover: paleturquoise;
-    --dark-colour: darkcyan;
-    --colour: #111132;
+    --colour: #181818;
     --green-display: none;
-    --underwater-display: block;
+    --hell-display: block;
+    --underwater-display: none;
     scrollbar-color: var(--accent-colour) white;
     scrollbar-width: thin;
     image-rendering: pixelated;
 }
 
+:root[theme=underwater] {
+    --primary-colour: mediumturquoise;
+    --accent-colour: palevioletred;
+    --accent-colour-hover: paleturquoise;
+    --dark-colour: #015a69;
+    --colour: #181818;
+    --green-display: none;
+    --hell-display: none;
+    --underwater-display: block;
+    --bg: url(/images/d72266f179e62d65ba09e2c327fc5f45-snes.png);
+}
+
 :root[theme=green] {
+    --colour: #181818;
     --primary-colour: DarkSeaGreen;
     --accent-colour: SkyBlue;
     --accent-colour-hover: #D9FECE;
-    --colour: #111132;
     --green-display: block;
+    --hell-display: none;
     --underwater-display: none;
-    --darkcolour: DarkGreen;
+    --dark-colour: DarkGreen;
+    --bg: url(/images/0d17503f43d9142fddb2e37ca78ad827-snes.png);
+}
+
+:root{
+    --primary-colour: black;
+    --colour: darkred;
+    --accent-colour: red;
+    --accent-colour-hover: darkred;
+    --hell-display: block;
+    --green-display: none;
+    --underwater-display: none;
+    --dark-colour: #2d0000;
+    --bg: url(/images/3008694715696d73c9ea8fdd663337e8-snes.png);
 }
 
 
@@ -155,6 +178,7 @@ body {
 hr {
     border: none;
     border-top: 3px solid;
+    border-color: var(--accent-colour);
     width: 40%;
     margin: 10px auto;
 }
@@ -710,7 +734,7 @@ a {
     height: 500;
     overflow-y: scroll;
     scrollbar-width: thin;
-    
+
 }
 
 .gallery {
@@ -782,7 +806,7 @@ a {
     height: 100%;
     background-color: rgba(0, 0, 0, .8);
     z-index: 100;
-        cursor: zoom-out;
+    cursor: zoom-out;
 }
 
 .popup img {
@@ -904,7 +928,7 @@ div.two {
 
 .gallery-pin {
     column-count: 4;
-  column-gap: 10px;
+    column-gap: 10px;
     overflow: hidden;
     margin: auto;
 
@@ -946,7 +970,7 @@ div.two {
             cursor: pointer;
             transition: .4s;
             object-fit: cover;
-                    cursor: zoom-in;
+            cursor: zoom-in;
 
 
 
@@ -961,7 +985,7 @@ div.two {
         }
     }
 
-/*
+    /*
     @media screen and (max-width: 500px) {
         .gallery-pin {
             column-count: 1;
