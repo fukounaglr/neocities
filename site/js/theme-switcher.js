@@ -1,11 +1,10 @@
-// Themes: underwater, green, hell
-
+// const Themes = ["underwater", "green"];
 
 document.body.className = localStorage.getItem("theme");
 
-
-  function changeTheme() {
-        var theme = document.getElementById('themeSwitcher').value;
-        document.documentElement.setAttribute('theme', theme);
-        localStorage.setItem('theme', theme);
+    function changeTheme() {
+        var selectedTheme = document.getElementById('themeSwitcher').value;
+        document.documentElement.setAttribute('theme', selectedTheme);
+        localStorage.setItem('selectedTheme', selectedTheme);
     }
+
