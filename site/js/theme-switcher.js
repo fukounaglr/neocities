@@ -1,7 +1,7 @@
 // Themes: underwater, green, hell
 
 
-document.body.className = localStorage.getItem("theme");
+document.body.className = localStorage.getItem("selectedTheme");
 
 
   function changeTheme() {
