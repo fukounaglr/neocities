@@ -1,6 +1,6 @@
 // const Themes = ["underwater", "green"];
 
-document.body.className = localStorage.getItem("theme");
+document.documentElement.setAttribute('theme', localStorage.getItem("selectedTheme"));
 
     function changeTheme() {
         var selectedTheme = document.getElementById('themeSwitcher').value;
