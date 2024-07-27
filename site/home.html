@@ -11,6 +11,8 @@
 
     <script defer src="/js/copy-textarea.js"></script>
     <script defer src="/js/freezeframe.js"></script>
+    <script src="/js/theme-switcher.js"></script>
+
 
 
     <style>
@@ -48,14 +50,14 @@
 
         header {
             background-color: black;
-/*            padding: 10 10 0 10;*/
+            /*            padding: 10 10 0 10;*/
 
             & div.header {
                 display: grid;
                 grid-template-columns: repeat(8, 1fr);
             }
-            
-            & p{
+
+            & p {
                 margin: 0;
             }
 
@@ -388,7 +390,7 @@
                 padding: 0;
             }
 
-            header div.header{
+            header div.header {
                 grid-template-columns: repeat(5, 1fr);
             }
 
@@ -408,7 +410,7 @@
                 width: 100%;
             }
 
-            header div.header{
+            header div.header {
                 grid-template-columns: repeat(5, 1fr);
             }
 
@@ -467,42 +469,45 @@
 
 
 <header>
-    <div  style="display: var(--hell-display)">
+    <div style="display: var(--hell-display)">
         <div class="header">
-        <img src="/stamps/DA2ACD89-BF3E-423B-8C6F-AA9FB05E4035.gif">
-        <img src="/stamps/0039-staticrainbow.gif">
-        <img src="/stamps/tumblr_48aac0193b7a3159c6f2481127fe8f3c_4f239854_250.webp" class="blink">
-        <img src="/stamps/tumblr_3fd1f9aee7246d63a83dcd17dc7b6288_96c9394c_250.webp">
-        <img src="/stamps/bigshot.gif">
-        <img src="/stamps/cursed%20cat%20alastor%20blinnkie.gif">
-        <img src="/stamps/tumblr_18f9a36ecdc131af57984cdcd0f52bda_a7ff261c_250.gif">
-        <img src="/stamps/tumblr_afd8d2626508a9336b92b7e960e0ce25_8bcdcdeb_250.gif">
-    </div></div>
-    
-    <div  style="display: var(--underwater-display)">
+            <img src="/stamps/DA2ACD89-BF3E-423B-8C6F-AA9FB05E4035.gif">
+            <img src="/stamps/0039-staticrainbow.gif">
+            <img src="/stamps/tumblr_48aac0193b7a3159c6f2481127fe8f3c_4f239854_250.webp" class="blink">
+            <img src="/stamps/tumblr_3fd1f9aee7246d63a83dcd17dc7b6288_96c9394c_250.webp">
+            <img src="/stamps/bigshot.gif">
+            <img src="/stamps/cursed%20cat%20alastor%20blinnkie.gif">
+            <img src="/stamps/tumblr_18f9a36ecdc131af57984cdcd0f52bda_a7ff261c_250.gif">
+            <img src="/stamps/tumblr_afd8d2626508a9336b92b7e960e0ce25_8bcdcdeb_250.gif">
+        </div>
+    </div>
+
+    <div style="display: var(--underwater-display)">
         <div class="header">
-        <img src="/stamps/sylveon.gif">
-        <img src="/stamps/kriswtf.gif">
-        <img src="/stamps/imemyself.gif">
-        <img src="/stamps/water.gif" class="blink">
-        <img src="/stamps/gleach_slipunderthedoor.gif">
-        <img src="/stamps/you%20wouldnt%20download%20a%20pronoun.gif">
-        <img src="/stamps/ezgif-1-dbd933bbf4.gif">
-        <img src="/stamps/tomanytabs.gif">
-    </div></div>
-    
-    <div  style="display: var(--green-display)">
+            <img src="/stamps/sylveon.gif">
+            <img src="/stamps/kriswtf.gif">
+            <img src="/stamps/imemyself.gif">
+            <img src="/stamps/water.gif" class="blink">
+            <img src="/stamps/gleach_slipunderthedoor.gif">
+            <img src="/stamps/you%20wouldnt%20download%20a%20pronoun.gif">
+            <img src="/stamps/ezgif-1-dbd933bbf4.gif">
+            <img src="/stamps/tomanytabs.gif">
+        </div>
+    </div>
+
+    <div style="display: var(--green-display)">
         <div class="header">
-        <img src="/stamps/neversleeps.gif">
-        <img src="/stamps/i%20am%20(not)%20a%20ronot.png">
-        <img src="/stamps/0138-greenglow.gif">
-        <img src="/stamps/BornToDie.gif" class="blink">
-        <img src="/stamps/ena.gif">
-        <img src="/stamps/tumblr_c263529e50ad3e685c592f1e35391763_5c6557d9_250.gif">
-        <img src="/stamps/tumblr_62b602f4f4759ee0d8a91490d86764fa_35e25497_250.webp">
-        <img src="/stamps/dBtukjGveyosfQHvXiGS.gif">
-    </div></div>
-    
+            <img src="/stamps/neversleeps.gif">
+            <img src="/stamps/i%20am%20(not)%20a%20ronot.png">
+            <img src="/stamps/0138-greenglow.gif">
+            <img src="/stamps/BornToDie.gif" class="blink">
+            <img src="/stamps/ena.gif">
+            <img src="/stamps/tumblr_c263529e50ad3e685c592f1e35391763_5c6557d9_250.gif">
+            <img src="/stamps/tumblr_62b602f4f4759ee0d8a91490d86764fa_35e25497_250.webp">
+            <img src="/stamps/dBtukjGveyosfQHvXiGS.gif">
+        </div>
+    </div>
+
     <p>not very frequent updates! you can find more links at the bottom of the page!</p>
 </header>
 
@@ -553,7 +558,7 @@
             </div>
 
             <a href="/webmaster.html" class="link">
-<!--                <img src="/images/more%20than%20you%20lt.jpg" class="full">-->
+                <!--                <img src="/images/more%20than%20you%20lt.jpg" class="full">-->
                 <img src="/images/more%20than%20you%20lt-snes.png" class="full">
                 <h2>WEbmaster</h2>
             </a>
@@ -605,7 +610,7 @@
                 <iframe width="100%" height="170px" src="https://www.youtube.com/embed/vjBFftpQxxM?si=ngtkdMvysNqsPBBS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 <p></p>
                 <span>
-                   26/jul/2024
+                    26/jul/2024
                 </span>
                 <a href="/sotd" style="color: paleturquoise; text-align: end;">archive</a>
 
@@ -823,7 +828,6 @@
     </div>
 
 
-    <script src="/js/theme-switcher.js"></script>
 </body>
 
 <footer>
