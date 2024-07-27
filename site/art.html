@@ -12,7 +12,7 @@
 
     <style>
         body {
-            background: url('/images/45f206026169fe16529069da4ea30992.jpg');
+            background: var(--bg);
             display: grid;
             grid-template-columns: 2fr 1fr 3fr;
             height: 100%;
@@ -21,13 +21,23 @@
         #goback {
             position: relative;
             left: 0;
+            top: 0;
             font-family: 'karmatic arcade';
-            font-size: .7Em;
+            font-size: 1Em;
             color: white;
 
             & :hover {
                 color: var(--accent-colour);
             }
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: var(--accent-colour)
         }
 
 
@@ -36,6 +46,7 @@
         }
 
         #stamps {
+            height: 15%;
             display: grid;
             grid-template-columns: auto auto auto auto;
         }
@@ -54,13 +65,11 @@
         }
 
         #left {
-            background-color: var(--primary-colour);
-            height: 100%;
-            /*            padding: 5px;*/
+            height: 100vh;
         }
 
         #right {
-            background-color: white;
+            background-color: var(--primary-colour);
             margin: 0;
             padding: 50px;
         }
@@ -75,6 +84,8 @@
 
         .tabcontent {
             display: none;
+            height: inherit;
+            padding: 0;
         }
 
         #info-1 {
@@ -104,6 +115,59 @@
             }
         }
 
+        .gallery-pin {
+            column-count: 3;
+        }
+
+        @media only screen and (max-width: 1000px) {
+
+            .gallery-pin {
+                column-count: 2;
+            }
+
+
+
+        }
+
+        @media only screen and (max-width: 670px) {
+            html {
+                /*                font-size: 1.4Em;*/
+            }
+
+            body {
+                display: grid;
+                grid-template-columns: 100%;
+                height: 100%;
+            }
+
+            #right {
+                width: calc(100%-20px);
+                max-height: 1200px;
+                margin: auto;
+                padding: 10px;
+            }
+
+            #left {
+                height: 500px;
+                /*                padding: 0 0 100px 0;*/
+                width: 100%;
+                margin: auto;
+            }
+
+            #nav {
+                display: grid;
+
+                & button {
+                    margin: 10px;
+                    margin-bottom: 0;
+                }
+            }
+
+            .gallery-pin {
+                column-count: 1;
+            }
+        }
+
     </style>
 </head>
 
@@ -128,7 +192,9 @@
 
         <a href="/home" id="goback" style="z-index: 2">go back</a>
 
-        <img src="/images/toast%20cat.png" width="100%">
+        <img src="/stamps/cursed%20cat%20alastor.gif" style="display: var(--hell-display); margin: 20px auto;" width="100%">
+        <img src="/stamps/Spr_3f_003.png" style="display: var(--green-display); margin: 20px auto;" width="100%">
+        <img src="/stamps/gleach_allen_pixel.gif" style="display: var(--underwater-display); margin: 20px auto;" width="100%">
 
         <img src="/stamps/stamp0.png" width="50%">
         <!--                                            <img src="/stamps/stamp001.png">-->
@@ -143,7 +209,9 @@
             <button title="comms" class="tablinks" onclick="openTab(event, 'info-2')">> comms</button>
             <button title="portfolio" class="tablinks" onclick="openTab(event, 'portfolio')">> portfolio</button>
         </div>
-        <img src="/images/tumblr_pbms931IC71wclo4ko3_500.gif">
+        <img src="/images/tumblr_pbms931IC71wclo4ko3_500.gif" style="display: var(--green-display)" width="100%">
+        <img src="/stamps/tumblr_0ee4f0ab6f6f04dbc7c421f9ed319e2f_013fcfca_500.webp" style="display: var(--underwater-display)" width="100%">
+        <img src="/stamps/tumblr_4d20bff2457fe1020646d8a54e7a8776_a3573c9b_540.gif" style="display: var(--hell-display)" width="100%">
 
 
         <div class="tabcontent" id="info-1">
@@ -164,16 +232,17 @@
         <div class="tabcontent" id="info-2">
             <h2>commissions</h2>
             <p>You name the price, but minimal is 10$</p>
-            <p>what i can do:</p>
+            <h3>what i can do:</h3>
             <ol>
-                <li>pfp (standart - 1000px square)</li>
-                <li>simple render &amp; bg / full render &amp; bg</li>
-                <li>pixel art</li>
+                <li>pfp (standart/pixel/animated)</li>
+                <li>simple render &amp; simple bg / full render &amp; bg</li>
+                <li>pixel art (can make sprites as well)</li>
+                <li>ref sheets / turnaround</li>
             </ol>
-            <p>rules:</p>
+            <h3>rules:</h3>
             <ol>
-                <li>up to 6 characters</li>
-                <li>payment after sketch</li>
+                <li>up to 6 characters on 1 piece (can be raised)</li>
+                <li>payment after sketch (<a href="https://boosty.to/ashhmillr" target="_blank">boosty</a>)</li>
                 <li>no commercial use</li>
                 <li>no NSFW</li>
                 <li>please give references and/or ideas ;_;</li>
@@ -188,9 +257,45 @@
 
 
         <div id="portfolio" class="tabcontent">
-            <div class="gallery-container" style="margin-top: 50px; height: 450px;">
+            <div class="gallery-container" style="margin-top: 50px; height: 65vh;">
 
-                <div class="gallery-pin" style="column-count: 3">
+                <div class="gallery-pin">
+
+                    <!--                    <div class="gallery-item"><figure></figure></div>-->
+                    <!--                    <div class="gallery-item"><figure></figure></div>-->
+                    <div class="gallery-item">
+                        <figure><img src="https://i.ibb.co/QPYMPdF/moth-redes.png" alt="moth-redes" border="0"></figure>
+                    </div>
+
+                    <div class="gallery-item">
+                        <figure>
+                            <img src="https://i.ibb.co/1qMcB2W/alastor-dinner.png" alt="alastor-dinner" border="0">
+                        </figure>
+                    </div>
+
+                    <div class="gallery-item">
+                        <figure>
+                            <img src="https://i.ibb.co/1Mff8Nm/phony.png" alt="phony" border="0">
+                        </figure>
+                    </div>
+
+                    <div class="gallery-item">
+                        <figure>
+                            <img src="https://i.ibb.co/9HKm6G9/change.png" alt="change" border="0">
+                        </figure>
+                    </div>
+
+                    <div class="gallery-item">
+                        <figure>
+                            <img src="https://i.ibb.co/4gSw3Cy/AF-almonds.png" alt="AF-almonds" border="0">
+                        </figure>
+                    </div>
+
+                    <div class="gallery-item">
+                        <figure>
+                            <img src="https://i.ibb.co/JdbcdXv/AF-blue-Medyum.png" alt="AF-blue-Medyum" border="0">
+                        </figure>
+                    </div>
 
                     <div class="gallery-item">
                         <figure>
@@ -225,12 +330,6 @@
                     <div class="gallery-item">
                         <figure>
                             <img src="https://i.ibb.co/Msnj1Yx/image.png" alt="image" border="0">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://i.ibb.co/zRVn3ZZ/strawberry-ashcake.png" alt="strawberry-ashcake" border="0">
                         </figure>
                     </div>
 
@@ -278,43 +377,7 @@
 
                     <div class="gallery-item">
                         <figure>
-                            <img src="https://i.ibb.co/k4c3Cq1/image.png" alt="image" border="0">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://i.ibb.co/xJmztFp/jhariah-again-what.png" alt="jhariah-again-what" border="0">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://i.ibb.co/42mT9Fr/the-mayo-incident.png" alt="the-mayo-incident" border="0">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://i.ibb.co/56hZFFR/me-circling-the-culdesac.png" alt="me-circling-the-culdesac" border="0">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://i.ibb.co/pRXBz0t/Screenshot-2024-04-19-113802.png" alt="Screenshot-2024-04-19-113802" border="0">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
                             <img src="https://i.ibb.co/YT72Ggp/shes-trans-and-has-a-fursona-fixed.png" alt="shes-trans-and-has-a-fursona-fixed" border="0">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://i.ibb.co/p0PMG6R/bros-drowninn.png" alt="bros drownin">
                         </figure>
                     </div>
 
@@ -327,18 +390,6 @@
                     <div class="gallery-item">
                         <figure>
                             <img src="https://64.media.tumblr.com/5ed1983ad9aae69f220608c0499d2d2e/53b3576d070ce018-10/s1280x1920/6f22e897f5c6be7c9509eecc1de6297d3305705c.png" alt="heart before shooting the sun">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://64.media.tumblr.com/d76bfc2c4b66f12fe199fa9e1bb2919d/b1376df85a94e197-13/s1280x1920/4b65f8e50ff5f65bbe0545003712bc996fde89df.png" alt="commission iriskaxp">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://64.media.tumblr.com/2bb1d679ba668a38806cfe5acb60c33d/69bb094b5140d51b-1d/s2048x3072/7aa3f659acec352caa39a29db2183372b0c2fefc.pnj" alt="coffee">
                         </figure>
                     </div>
 
