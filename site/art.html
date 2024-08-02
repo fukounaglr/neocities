@@ -20,12 +20,16 @@
         }
 
         #goback {
+            all: unset;
             position: relative;
             left: 0;
             top: 0;
+            margin: 0px;
+            text-align: center;
             font-family: 'karmatic arcade';
             font-size: 1Em;
-            color: white;
+            color: var(--accent-colour);
+            transform: translate(-50%, 0);
 
             & :hover {
                 color: var(--accent-colour);
@@ -177,8 +181,8 @@
 
 
     <div id="left">
-        <iframe style="border: none; margin: 20 0;" src="https://ashhmillr.tumblr.com/" width="100%" height="80%;"></iframe>
-
+<!--        <iframe style="border: none; margin: 20 0;" src="https://ashhmillr.tumblr.com/" width="100%" height="80%;"></iframe>-->
+        <a data-pin-do="embedBoard" data-pin-board-width="600px" data-pin-scale-height="600px" data-pin-scale-width="160" href="https://www.pinterest.com.au/ashhmillr/my-art/"></a>
         <div id="stamps">
             <img src="/stamps/mspain.png">
             <img src="/stamps/stamp48.png">
@@ -191,253 +195,51 @@
 
     <div id="middle">
 
-        <a href="/home" id="goback" style="z-index: 2">go back</a>
 
         <img src="/stamps/cursed%20cat%20alastor.gif" style="display: var(--hell-display); margin: 20px auto;" width="100%">
         <img src="/stamps/Spr_3f_003.png" style="display: var(--green-display); margin: 20px auto;" width="100%">
         <img src="/stamps/gleach_allen_pixel.gif" style="display: var(--underwater-display); margin: 20px auto;" width="100%">
 
-        <img src="/stamps/stamp0.png" width="50%">
+<!--        <img src="/stamps/stamp0.png" width="50%">-->
         <!--                                            <img src="/stamps/stamp001.png">-->
         <p></p>
-        <img src="/images/869328090b7f0f79593f5c8328366389.jpg" style="display: var(--green-display)" width="100%">
-        <img src="/images/895ebecf840cac5facec140e41bd45d0.jpg" style="display: var(--underwater-display)" width="100%">
+                        <a href="/home" id="goback">go back</a>
+
     </div>
 
     <div id="right">
-        <div id="nav">
-            <button onclick="openTab(event, 'info-1')">> info</button>
-            <button title="comms" class="tablinks" onclick="openTab(event, 'info-2')">> comms</button>
-            <button title="portfolio" class="tablinks" onclick="openTab(event, 'portfolio')">> portfolio</button>
-        </div>
+        
+
+        
         <img src="/images/tumblr_pbms931IC71wclo4ko3_500.gif" style="display: var(--green-display)" width="100%">
         <img src="/stamps/tumblr_0ee4f0ab6f6f04dbc7c421f9ed319e2f_013fcfca_500.webp" style="display: var(--underwater-display)" width="100%">
         <img src="/stamps/tumblr_4d20bff2457fe1020646d8a54e7a8776_a3573c9b_540.gif" style="display: var(--hell-display)" width="100%">
 
 
-        <div class="tabcontent" id="info-1">
-            <h3>WHAT SOFTWARE DO YOU USE?</h3>
-            <p><a href="https://www.clipstudio.net/" target="_blank">Clip Studio Paint EX</a>, <a target="_blank" href="https://www.capcut.com/tools/desktop-video-editor">Capcut Desktop</a>
-            </p>
-            <hr>
-            <h3>WHAT TABLET DO YOU USE?</h3>
-            <p><a href="https://gaomon.net/en-ru/products/s620-pen-tablet" target="_blank">Gaomon S620</a>!!</p>
-            <hr>
-            <h3>can i use your art as pfp?</h3>
-            <p>You can use my fanarts (unless it's a someone's commission) as pfp!! just make sure to credit me. (and please don't misspell my name!) like this:</p>
-            <blockquote>PFP by: ashhmillr</blockquote>
-        </div>
+        <h3>WHAT SOFTWARE DO YOU USE?</h3>
+        <p><a href="https://www.clipstudio.net/" target="_blank">Clip Studio Paint EX</a>, <a target="_blank" href="https://www.capcut.com/tools/desktop-video-editor">Capcut Desktop</a>
+        </p>
+        <hr>
+        <h3>WHAT TABLET DO YOU USE?</h3>
+        <p><a href="https://gaomon.net/en-ru/products/s620-pen-tablet" target="_blank">Gaomon S620</a>!!</p>
+        <hr>
+        <h3>can i use your art as pfp?</h3>
+        <p>Yes! just make sure to credit me. (and please don't misspell my name!) like this:</p>
+        <blockquote>PFP by ashhmillr</blockquote>
+        <h3>Can i repost your art?</h3>
+        <p>No.</p>
+        <h3>Can I do dubs of your comics?</h3>
+        <p>Yes! Just credit me somewhere.</p>
+        <h3>Can I commission you?</h3>
+        <p>Yes! <a href="https://ashhmillr.straw.page/commissions" target="_blank">Here is my commission info</a>. Thought i do not have a pricing yet.</p>
 
 
 
-        <div class="tabcontent" id="info-2">
-            <h2>commissions</h2>
-            <p>You name the price, but minimal is 10$</p>
-            <h3>what i can do:</h3>
-            <ol>
-                <li>pfp (standart/pixel/animated)</li>
-                <li>simple render &amp; simple bg / full render &amp; bg</li>
-                <li>pixel art (can make sprites as well)</li>
-                <li>ref sheets / turnaround</li>
-            </ol>
-            <h3>rules:</h3>
-            <ol>
-                <li>up to 6 characters on 1 piece (can be raised)</li>
-                <li>payment after sketch (<a href="https://boosty.to/ashhmillr" target="_blank">boosty</a>)</li>
-                <li>no commercial use</li>
-                <li>no NSFW</li>
-                <li>please give references and/or ideas ;_;</li>
-            </ol>
-        </div>
-
-
-
-
-
-
-
-
-        <div id="portfolio" class="tabcontent">
-            <div class="gallery-container" style="margin-top: 50px; height: 65vh;">
-
-                <div class="gallery-pin">
-
-                    <!--                    <div class="gallery-item"><figure></figure></div>-->
-                    <!--                    <div class="gallery-item"><figure></figure></div>-->
-                    <div class="gallery-item">
-                        <figure><img src="https://i.ibb.co/QPYMPdF/moth-redes.png" alt="moth-redes" border="0"></figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://i.ibb.co/1qMcB2W/alastor-dinner.png" alt="alastor-dinner" border="0">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://i.ibb.co/1Mff8Nm/phony.png" alt="phony" border="0">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://i.ibb.co/9HKm6G9/change.png" alt="change" border="0">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://i.ibb.co/4gSw3Cy/AF-almonds.png" alt="AF-almonds" border="0">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://i.ibb.co/JdbcdXv/AF-blue-Medyum.png" alt="AF-blue-Medyum" border="0">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://i.ibb.co/CbyYrY7/AF-puppyboii.png" alt="AF-puppyboii" border="0">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://i.ibb.co/V3pg7p0/AF-Rinn-Cake.png" alt="AF-Rinn-Cake" border="0">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://i.ibb.co/3TPW9PR/dizzy.png" alt="dizzy" border="0">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://i.ibb.co/zHDNT3f/purepure.png" alt="purepure" border="0">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://i.ibb.co/yq0rYL3/mesmarizer.png" alt="mesmarizer" border="0">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://i.ibb.co/Msnj1Yx/image.png" alt="image" border="0">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://i.ibb.co/pf6v5Vp/detransition.png" alt="detransition" border="0">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://i.ibb.co/zQt6Y3R/AF-bg-ssoybeans.png" alt="AF-bg-ssoybeans" border="0">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://i.ibb.co/DYJJmKZ/stickersd.png" alt="stickersd" border="0">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://i.ibb.co/LC384dC/two-fingers-at-his-chin.png" alt="two-fingers-at-his-chin" border="0">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://i.ibb.co/WsxX9GF/IMG-20240614-171708.jpg" alt="IMG-20240614-171708" border="0">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://i.ibb.co/Wn9PGfL/femtanyl.png" alt="femtanyl" border="0">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://i.ibb.co/3WssPc0/sonassss.png" alt="sonassss" border="0">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://i.ibb.co/YT72Ggp/shes-trans-and-has-a-fursona-fixed.png" alt="shes-trans-and-has-a-fursona-fixed" border="0">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://64.media.tumblr.com/a9f011f8b7c39b2efddd090ce2ddc363/f729f76cd650ea7a-38/s1280x1920/2e6d1e61588c09c72018cb42f0e800e992349712.png" alt="jhariah pin-eye">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://64.media.tumblr.com/5ed1983ad9aae69f220608c0499d2d2e/53b3576d070ce018-10/s1280x1920/6f22e897f5c6be7c9509eecc1de6297d3305705c.png" alt="heart before shooting the sun">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://64.media.tumblr.com/ffa321c72172ac2554b0a1aa405c9160/248b35b6b4854341-6a/s2048x3072/96e69883d3fa724f47372a3763dc669ed2322cdc.pnj" alt="hand me my trident">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://64.media.tumblr.com/b2a1b4f963343b028f44048d6d01c24e/f7ac4acf9d0a3c16-be/s2048x3072/f5af1f728a7d111186561d1e32f99312fa461e02.png" alt="they thingk theyre plating in the band">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://64.media.tumblr.com/ae7e202c019a7872a763b7041c8a891b/5c230a9d1dd7f548-fc/s1280x1920/dbb044faee02e0c4ec8d415c9df7869a80aae318.png" alt="marketland">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://64.media.tumblr.com/0d10bc24ad48bc8081992d13fd7d4d64/5c230a9d1dd7f548-3f/s1280x1920/5bbab8133e833906f75dbb13110abcff772279a3.png" alt="savages">
-                        </figure>
-                    </div>
-
-                    <div class="gallery-item">
-                        <figure>
-                            <img src="https://64.media.tumblr.com/4addbc4cf8d8f24ee7a27802809cc68e/a99282de1c78414c-3a/s2048x3072/adb1be004e27689eae183ebbfc54ee3e60e2a997.png" alt="ceremonial hat">
-                        </figure>
-                    </div>
-                </div>
-
-                <div class="popup">
-                    <img src="" style="max-height: 100%">
-                </div>
-
-            </div>
-
-
-
-        </div>
     </div>
 
     <script src="/js/lightbox.js"></script>
     <script src="/js/theme-switcher.js"></script>
+    <script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
 
 </body>
 
