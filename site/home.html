@@ -459,7 +459,39 @@
                 z-index: 10;
                 bottom: -10px;
                 left: 0;
+                background-color: var(--primary-colour);
+                padding: 5 10;
             }
+        }
+
+        div.two-navlink {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /*            grid-template-rows: auto auto;*/
+            grid-gap: 10px;
+            width: 100%;
+            margin: 20px auto;
+
+            & .navlink {
+                background-color: var(--accent-colour);
+                color: var(--colour);
+                width: calc(100% - 20px);
+                text-decoration: none;
+                margin: auto;
+                padding: 10px 0;
+
+                & h2 {
+                    /*                    padding: 5 10;*/
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    margin: auto;
+                }
+            }
+                & .navlink:hover{
+                    background-color: var(--accent-colour-hover);
+                }
+        
         }
 
     </style>
@@ -562,7 +594,7 @@
                 <h2>WEbmaster</h2>
             </a>
 
-            
+
 
 
             <!--
@@ -575,10 +607,7 @@
                 <img src="/images/2b0f68f0e9a3dc69a2998cae38d56b50.png" width="60%" style="margin-left: 20%;">
             </a>
 
-            <a href="/coolzone/index.html" class="link">
-                <img src="/shrines/images/coolzone.png" class="full">
-                <h2>coolzone</h2>
-            </a>
+            
 
         </div>
 
@@ -588,7 +617,7 @@
         <!--2-->
         <div class="col">
 
-            
+
 
             <a href="/image-of-the-day" class="link">
                 <h3>image of the day</h3>
@@ -629,23 +658,29 @@
                 <h2 style="margin: auto;">CHAT - BE NICE!</h2>
                 <iframe src="https://www5.cbox.ws/box/?boxid=948666&boxtag=i7GruL" width="100%" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
             </div>
+            
+            <h1>where to go?</h1>
+            <div class="two-navlink">
+                <a href="/coolzone/index.html" class="navlink">
+                    <h2>coolzone</h2>
+                </a>
+                <a href="/art.html" class="navlink">
+                    <h2>art</h2>
+                </a>
+                <a href="/basement/characters/index.html" class="navlink">
+                    <h2>OCs</h2>
+                </a>
+                <a href="/basement/projects/index.html" class="navlink">
+                    <h2>projects</h2>
+                </a>
+
+            </div>
 
 
             <div id="log">
                 <h3>site updates</h3>
                 <iframe src="/log.html" style="height: 300px; width: 100%; border: none;"></iframe>
             </div>
-
-            <a href="/art.html" class="link">
-                <img src="/shrines/images/art.png" class="full">
-                <h2>art</h2>
-            </a>
-
-            <a href="/basement/characters/index.html" class="link">
-                <img src="/images/194485e528a6db2c139bc6223bb10fba.jpg" class="full">
-                <h2>characters</h2>
-            </a>
-
 
         </div>
 
@@ -820,8 +855,8 @@
 
     </div>
     </div>
-    
-        <script src="/js/theme-switcher.js"></script>
+
+    <script src="/js/theme-switcher.js"></script>
 
 
 </body>

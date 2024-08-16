@@ -28,24 +28,7 @@
 
 
 
-@font-face {
-    font-family: 'ashhmillr';
-    src: url('/fonts/ashhmillr-regular-webfont.woff2') format('woff2'),
-        url('/fonts/ashhmillr-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
 
-}
-
-@font-face {
-    font-family: 'ashh';
-    src: url('/fonts/ashh-regular-webfont.woff2') format('woff2'),
-        url('/fonts/ashh-regular-webfont.woff') format('woff'),
-        url('/fonts/shh-Regular.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-
-}
 
 @font-face {
     font-family: 'eggfont';
