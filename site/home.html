@@ -27,7 +27,7 @@
             --chat-bg: url(/images/d62e460b87b415f82d3cc0500d499768.jpg);
         }
 
-        
+
 
         #themeSwitcher {
             all: unset;
@@ -60,6 +60,7 @@
 
             & p {
                 margin: 0;
+                padding: 10px;
             }
 
             color: white;
@@ -82,7 +83,7 @@
         footer {
             /*            height: 100px;*/
             background-color: black;
-            padding: 10px 40px;
+            padding: 20px 40px;
             /*            width: 100%;*/
             color: var(--accent-colour);
         }
@@ -256,11 +257,12 @@
             width: 110%;
             height: 0;
 
-            & img {
+            & #bubble {
                 position: absolute;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
+                width: 100%;
             }
 
 
@@ -459,10 +461,18 @@
                 position: absolute;
                 color: var(--colour);
                 z-index: 10;
-                bottom: -10px;
-                left: 0;
+                left: -20px;
                 background-color: var(--primary-colour);
-                padding: 5 10;
+                border-radius: 10px;
+            }
+            
+            & .bottom{
+                                padding: 5px 50px 10px 50px;
+                bottom: -20px;
+            }
+            & .top{
+                                top: -20px;
+                padding: 10px 50px 5px 50px;
             }
         }
 
@@ -556,33 +566,33 @@
         <!--1-->
         <div class="col">
 
-            <div class="paw4 grid">
-                <img src="/stamps/paws.png">
-                <!--                <img src="/stamps/browser013.gif">-->
-                <img src="/stamps/youre_telling_me.png">
-                <img src="stamps/signguest.gif">
+            <div class="paw3 grid">
+                <img src="/stamps/browser013.gif">
+                <!--                <img src="stamps/signguest.gif">-->
+                
+                <select id="themeSwitcher" onchange="changeTheme()">
+                    <option value="hell">hell</option>
+                    <option value="underwater">underwater</option>
+                    <option value="green">green</option>
+                </select>
+                
                 <a href="https://neocities.org/site/ashhmillr" target="_blank"><img src="/stamps/neocities.png"></a>
 
             </div>
 
+            <a href="/image-of-the-day" class="link iotd">
+                <h2 class="top">image of the day</h2>
+                <img src="/images/7e4cf1097cdacf22b2b739c2f6010f9d.jpg" class="full">
+            </a>
 
 
-
-            <!--
-            <div class="text bgdots">
-                <p>OP kitteh moed activaetd. Maek nd eksplore. NO LIMITS. NONE. Kat can fly, kat can hav INFINITE blokz, kat no hurt.</p>
-                <p><br></p>
-            </div>
--->
-
-            <!--            <img src="/images/OP%20kitteh%20moed.png" class="full">-->
-
-            <img src="/images/46c0499471bc83b4efb08cd49d27b128.jpg" class="full" style="height: 300px; display: var(--underwater-display)">
-            <img src="/images/08613402c58bb09a46c2c42d22982351.jpg" class="full" style="height: 300px; display: var(--green-display)">
-            <img src="/images/girlypop.png" class="full" style="height: 300px; display: var(--hell-display)">
 
             <div id="status">
-                <img src="/images/bubble.png" width="100%">
+                <div id="bubble">
+                    <img src="/images/bubble%20hell.png" width="100%" style="display: var(--hell-display")>
+                    <img src="/images/bubble%20green.png" width="100%" style="display: var(--green-display)">
+                    <img src="/images/bubble%20underwater.png" width="100%" style="display: var(--underwater-display)">
+                </div>
 
                 <a href="https://status.cafe/users/ashhmillr" target="_blank" style="color: white">
                     <div id="statuscafe-content"></div>
@@ -593,8 +603,8 @@
 
             <a href="/webmaster.html" class="link">
                 <!--                <img src="/images/more%20than%20you%20lt.jpg" class="full">-->
-                <img src="/images/more%20than%20you%20lt-snes.png" class="full">
-                <h2>WEbmaster</h2>
+                <img src="/images/IMG_20240810_183943_1.jpg" class="full">
+                <h2 class="bottom">WEbmaster</h2>
             </a>
 
 
@@ -606,9 +616,7 @@
             </a>
 -->
 
-            <a href="/map">
-                <img src="/images/2b0f68f0e9a3dc69a2998cae38d56b50.png" width="60%">
-            </a>
+           
 
 
 
@@ -619,16 +627,33 @@
 
         <!--2-->
         <div class="col">
+            
 
+            <div style="display: var(--underwater-display)">
+                <div class="grid paw3" style="margin: 10 auto">
+                    <img src="/stamps/glass%20beach%20stamp.png">
+                    <img src="/stamps/wavestamp.gif">
+                    <img src="/stamps/vaporeonstamp.gif">
+                </div>
+            </div>
 
+            <div style="display: var(--green-display)">
+                <div class="grid paw3" style="margin: 10 auto">
+                    <img src="/stamps/441.png">
+                    <img src="/stamps/476.png">
+                    <img src="/stamps/509.png">
+                </div>
+            </div>
 
-            <a href="/image-of-the-day" class="link">
-                <h3>image of the day</h3>
-                <img src="/images/7e4cf1097cdacf22b2b739c2f6010f9d.jpg" class="full">
-            </a>
-
-
-            <img src="/images/1710027029117.jpg" class="full">
+            <div style="display: var(--hell-display)">
+                <div class="grid paw3" style="margin: 10 auto">
+                    <img src="/stamps/tumblr_66b9a67019cc84a9a7c7055bd83dfee6_0ad99749_100.png">
+                    <img src="/stamps/438.gif">
+                    <img src="/stamps/tumblr_24ccbad79db3b51cc9ee2594f27a7943_451b076b_100.gif">
+                </div>
+            </div>
+            
+            
 
             <div id="sotd-home" style="background-color:  coral; border-color: #9F4030; color: darkred;">
                 <h3 style="margin: 0 0 10 0">song of the <s>week</s></h3>
@@ -641,27 +666,8 @@
                 </span>
                 <a href="/sotd" style=" text-align: end;">archive</a>
 
-
-
             </div>
-
-            <h3>new stuff</h3>
-            <div id="updates-box">
-                <iframe style="height: 240px; width: 100%; border-width: 0;" src="/updates.html">
-                </iframe>
-            </div>
-        </div>
-
-
-
-        <!--3-->
-        <div class="col">
-
-            <div id="chatbox">
-                <h2 style="margin: auto;">CHAT - BE NICE!</h2>
-                <iframe src="https://www5.cbox.ws/box/?boxid=948666&boxtag=i7GruL" width="100%" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
-            </div>
-
+            
             <h1>where to go?</h1>
             <div class="two-navlink">
                 <a href="/coolzone/index.html" class="navlink">
@@ -678,12 +684,57 @@
                 </a>
 
             </div>
+            
+             <a href="/map" style="width: 100%">
+                <img src="/images/2b0f68f0e9a3dc69a2998cae38d56b50.png" width="60%" style="margin: 0 50%; transform: translate(-50%, 0)">
+            </a>
 
+            <h3>new stuff</h3>
+            <div id="updates-box">
+                <iframe style="height: 240px; width: 100%; border-width: 0;" src="/updates.html">
+                </iframe>
+            </div>
+        </div>
+
+
+
+        <!--3-->
+        <div class="col">
+
+                        <img src="/images/1710027029117.jpg" class="full">
+
+            <div id="chatbox">
+                <h2 style="margin: auto;">CHAT - BE NICE!</h2>
+                <iframe src="https://www5.cbox.ws/box/?boxid=948666&boxtag=i7GruL" width="100%" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+            </div>
+
+
+            <div style="display: var(--underwater-display)">
+                <div class="collage">
+                    <img src="/images/41c1774752472a0a673f44541e19f0f0.jpg" style="grid-area: a; ">
+                    <img src="/images/74dc494da4f43b691a7f97386c33b2cd.jpg">
+                    <img src="/images/55307bee3c80f0abc6988cfa34627ec0.jpg">
+                    <img src="/images/9d206ababf6dfe504077b21747bbb5a1.jpg">
+                    <img src="/images/d72266f179e62d65ba09e2c327fc5f45.jpg">
+                </div>
+            </div>
+
+            <div style="display: var(--green-display)">
+                <div class="collage">
+                    <img src="/images/5f3de45771c354cf542430fd2bf9efd9.jpg" style="grid-area: a; ">
+                    <img src="/images/2eebffdaf5fc9a218e16195877ad2b7a.jpg">
+                    <img src="/images/0933d07cf48feb6f2216306aeededbd3.jpg">
+                    <img src="/images/4bc092c722519b423b2395790bc028f4.jpg">
+                    <img src="/images/bad426cb2f1ec8da6262397ee9fd7ec5.jpg">
+                </div>
+            </div>
 
             <div id="log">
                 <h3>site updates</h3>
-                <iframe src="/log.html" style="height: 300px; width: 100%; border: none;"></iframe>
+                <iframe src="/log.html" style="height: 250px; width: 100%; border: none;"></iframe>
             </div>
+            
+            
 
         </div>
 
@@ -696,15 +747,11 @@
 
             <div class="grid paw3">
 
-                <img src="/stamps/blows%20up%20your%20pancakes%20with%20mind%20chonny%20jash.gif">
-
+                <img src="/stamps/paws.png">
                 <img src="/stamps/actbutton.png">
+                <img src="/stamps/youre_telling_me.png">
 
-                <select id="themeSwitcher" onchange="changeTheme()">
-                    <option value="hell">hell</option>
-                    <option value="underwater">underwater</option>
-                    <option value="green">green</option>
-                </select>
+                
             </div>
 
 
@@ -735,30 +782,6 @@
                 </div>
             </div>
 
-
-            <div style="display: var(--underwater-display)">
-                <div class="grid paw3" style="margin: 10 auto">
-                    <img src="/stamps/glass%20beach%20stamp.png">
-                    <img src="/stamps/wavestamp.gif">
-                    <img src="/stamps/vaporeonstamp.gif">
-                </div>
-            </div>
-
-            <div style="display: var(--green-display)">
-                <div class="grid paw3" style="margin: 10 auto">
-                    <img src="/stamps/441.png">
-                    <img src="/stamps/476.png">
-                    <img src="/stamps/509.png">
-                </div>
-            </div>
-
-            <div style="display: var(--hell-display)">
-                <div class="grid paw3" style="margin: 10 auto">
-                    <img src="/stamps/tumblr_66b9a67019cc84a9a7c7055bd83dfee6_0ad99749_100.png">
-                    <img src="/stamps/438.gif">
-                    <img src="/stamps/tumblr_24ccbad79db3b51cc9ee2594f27a7943_451b076b_100.gif">
-                </div>
-            </div>
 
 
 
@@ -833,30 +856,9 @@
             </div>
 
 
-            <div style="display: var(--underwater-display)">
-                <div class="collage">
-                    <img src="/images/41c1774752472a0a673f44541e19f0f0.jpg" style="grid-area: a; ">
-                    <img src="/images/74dc494da4f43b691a7f97386c33b2cd.jpg">
-                    <img src="/images/55307bee3c80f0abc6988cfa34627ec0.jpg">
-                    <img src="/images/9d206ababf6dfe504077b21747bbb5a1.jpg">
-                    <img src="/images/d72266f179e62d65ba09e2c327fc5f45.jpg">
-                </div>
-            </div>
-
-            <div style="display: var(--green-display)">
-                <div class="collage">
-                    <img src="/images/5f3de45771c354cf542430fd2bf9efd9.jpg" style="grid-area: a; ">
-                    <img src="/images/2eebffdaf5fc9a218e16195877ad2b7a.jpg">
-                    <img src="/images/0933d07cf48feb6f2216306aeededbd3.jpg">
-                    <img src="/images/4bc092c722519b423b2395790bc028f4.jpg">
-                    <img src="/images/bad426cb2f1ec8da6262397ee9fd7ec5.jpg">
-                </div>
-            </div>
-
 
         </div>
 
-    </div>
     </div>
 
     <script src="/js/theme-switcher.js"></script>
