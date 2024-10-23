@@ -323,6 +323,15 @@ div.spoiler {
     }
 }
 
+
+
+.confetti{
+	position: absolute;
+	width: 5px;
+	height: 5px;
+	border-radius: 100%;
+}
+
 /*
     @media screen and (max-width: 500px) {
         .gallery-pin {

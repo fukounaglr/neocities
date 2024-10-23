@@ -91,10 +91,12 @@
         #left:hover {
             & h1 {
                 display: none;
+                pointer-events: none;
             }
 
             & h2 {
                 display: block;
+                pointer-events: none;
             }
         }
 
@@ -160,6 +162,14 @@
 
 
         }
+        
+        #confetti-area{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
     </style>
 </head>
 
@@ -168,6 +178,7 @@
     <div id="left">
         <h1>不<br>幸<br>な</h1>
         <h2>F<br>U<br>K<br>O</h2>
+        <div id="confetti-area"></div>
     </div>
 
     <div id="right">
@@ -261,6 +272,10 @@
                 Marquee.innerHTML = elements[randomIndex];
             }
         </script>
+    
+    <!--<div id="confetti-area"></div>-->
+    
+    <script src="/js/confetti.js"></script>
 </body>
 
 </html>
