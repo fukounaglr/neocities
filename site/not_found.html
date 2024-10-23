@@ -12,20 +12,31 @@
     <style>
         body {
             background-color: black;
-            background-image: var(--bg);
+            background-image: url(/images/mangle-bg.png);
             background-position: bottom;
+            background-size: contain;
+            align-content: center;
+            background-repeat: no-repeat;
+            height: 100vh;
         }
 
         * {
             color: white;
             text-align: center;
         }
-
-        #wrr {
+        
+        a{
+            width: 180px;
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            top: 0;
+            left: 300px;
+            
+            & img{
+            transition: 0.5s;
+            }
+        }
+        a:hover img{
+            filter: brightness(60%);
         }
 
     </style>
@@ -34,17 +45,9 @@
 
 <body>
 
-    <div id="wrr">
-        <h1><mark style="background-color: var(--accent-colour)">not found</mark></h1>
-        <p>the page you're lookign for doesn't exist or is under construction<br> come back later!</p>
-        <a href="javascript:history.go(-1)" style="text-decoration: none; position: relative;">
-            <p class="bolder">go back</p>
+    <a href="/room.html">
+        <img src="/images/mangle.png" width="100%">
         </a>
-
-    </div>
-    
-        <script src="/js/theme-switcher.js"></script>
-
 </body>
 
 </html>

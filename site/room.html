@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>fuko's room</title>
+
+    <link rel="icon" type="image/png" href="/ico.png" />
+    <link rel="stylesheet" href="/style.css" />
+
+    <script src="/js/theme-switcher.js"></script>
+    <style>
+        body {
+            width: 100cw;
+            height: 100vh;
+            overflow: hidden;
+            background-color: black
+        }
+        
+        a{
+            cursor: pointer;
+        }
+
+        :root[theme=green] {
+            --theme-filter: hue-rotate(120deg) brightness(100%) contrast(100%) sepia(40%)  saturate(80%);
+        }
+
+        :root[theme=hell] {
+            --theme-filter: hue-rotate(-20deg) brightness(80%) contrast(200%) sepia(20%) saturate(200%);
+        }
+
+        :root[theme=underwater] {
+            --theme-filter: hue-rotate(180deg) brightness(80%) contrast(90%) saturate(170%);
+        }
+
+        #room {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(4);
+
+            & img {
+                position: fixed;
+                filter: var(--theme-filter);
+            }
+
+            & a {
+                position: absolute;
+                cursor: help;
+
+                & img:last-of-type {
+                    display: none;
+                }
+            }
+
+            & a:hover {
+                & img:last-of-type {
+                    display: block;
+                }
+
+                & img:first-of-type {
+                    display: none;
+                }
+            }
+        }
+
+        #left {
+            float: left;
+            width: 25%;
+            color: white;
+            text-align: center;
+            align-content: center;
+            height: 100%;
+
+            & h1 {
+                font-size: 10Em;
+                line-height: 100%;
+                color: transparent;
+                -webkit-text-stroke: medium white;
+            }
+
+            & h2 {
+                display: none;
+                line-height: 100%;
+                font-size: 8EM;
+                pointer-events: none;
+                color: var(--accent-colour);
+            }
+        }
+
+        #left:hover {
+            & h1 {
+                display: none;
+            }
+
+            & h2 {
+                display: block;
+            }
+        }
+
+
+        #right {
+            float: right;
+            width: 25%;
+            color: white;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        #player-button {
+            all: unset;
+            cursor: pointer;
+            margin: 0 auto;
+            margin-top: 30px;
+            height: auto;
+            background-color: var(--primary-colour);
+            padding: 10px;
+            border-radius: 10px;
+            color: var(--colour);
+        }
+
+        #themeSwitcher {
+            all: unset;
+            /*background-color: var(--primary-colour);*/
+            border: none;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px;
+            cursor: pointer;
+            transition: 0.4s;
+            color: var(--accent-colour);
+
+            &option {
+                padding: 5px 0;
+                background-color: var(--colour)
+            }
+        }
+
+        #theme {
+            width: 100%;
+            /*height: 200px;*/
+            /*display: flex;*/
+        }
+
+        #theme::after {
+            content: "";
+            z-index: -1;
+
+            display: block;
+            background-image: var(--bg);
+
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 200px;
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="left">
+        <h1>不<br>幸<br>な</h1>
+        <h2>F<br>U<br>K<br>O</h2>
+    </div>
+
+    <div id="right">
+        <div>
+            <div id="theme">
+                <span>theme:</span>
+                <select id="themeSwitcher" onchange="changeTheme()">
+                    <option value="cats">cats</option>
+                    <option value="hell">hell</option>
+                    <option value="underwater">underwater</option>
+                    <option value="green">green</option>
+                </select>
+            </div>
+            <marquee id="marquee"></marquee>
+
+
+
+            <details>
+                <summary>open chat?</summary>
+
+                <iframe title="chatbox" src="https://www5.cbox.ws/box/?boxid=948666&boxtag=i7GruL" width="95%" height="300px" allow="autoplay" style="border: none; margin: 3%"></iframe>
+            </details>
+        </div>
+
+        <p style="text-align: center; font-size: 0.8Em; "><a href="mailto:fukounaglr@proton.me">email</a> • <a href="https://neocities.org/site/fukounaglr" target="_blank">neocities</a> • <a href="site-map.html">site map</a></p>
+
+
+    </div>
+
+    <div id="room">
+        <img src="/images/room/floor.png" style="position: relative !important;">
+
+        <img src="images/room/couch.png" style="top: 35px; right: -1px;">
+        <img src="images/room/carpet.png" style="bottom: 35px; left: 10px;">
+        <img src="images/room/chair.png" style="top: 40px; left: 15px;">
+
+        <a href="/graphics.html">
+            <img src="images/room/photos.png" style="top: 10px; right: 33px;">
+            <img src="images/room/photos2.png" style="top: 10px; right: 33px;">
+        </a>
+
+        <a href="/webmaster.html">
+            <img src="images/room/webm.png" style="top: 45px; right: 20px;">
+            <img src="images/room/webm2.png" style="top: 45px; right: 20px;">
+        </a>
+
+        <a href="/journal.html">
+            <img src="images/room/journal.png" style="bottom: 50px; left: 15px;">
+            <img src="images/room/journal2.png" style="bottom: 50px; left: 15px;">
+        </a>
+
+        <a href="/song-of-the-week.html">
+            <img src="images/room/headphones.png" style="bottom: 40px; left: 45px;">
+            <img src="images/room/headphones2.png" style="bottom: 40px; left: 45px;">
+        </a>
+
+        <a href="/sites.html">
+            <img src="images/room/laptop.png" style="top: 20px; left: 17px;">
+            <img src="images/room/laptop2.png" style="top: 20px; left: 17px;">
+        </a>
+
+        <img src="/images/room/walls.png" style="top: -24px; left: -24px; pointer-events: none;">
+
+        <a href="/index.html">
+            <img src="images/room/exit.png" style="bottom: -18px; left: 24px;">
+            <img src="images/room/exit2.png" style="bottom: -18px; left: 24px">
+        </a>
+    </div>
+
+
+
+    
+        <script>
+            const elements = [
+                "Dimly lit, the room emits a hollow, muffled sound. It houses a single sorry soul, no other to be found",
+                "inside a room, there is a laptop. inside the laptop, there is a site. inside the site, there is a world. inside the world, there is a girl. a girl who is the world itself. hello, world. how are you?",
+                "Water-damaged off-white ceilings, crumbling crown molding, faded paint and threadbare linens and there's no place I'd rather sleep",
+                "These four walls extend beyond my sight and breathe new life into me",
+                "I’ve found my home inside these walls, the world is my own. I write the rules alone in here. I sit atop a throne",
+                "I get this feeling that I’m not the first and not the last to find solace in this empty room",
+                "These decaying walls were all that kept me sane",
+                "In my little space     nothing changes.        I don't like this place.        I wanna escape this"
+            ];
+
+            const Marquee = document.getElementById("marquee");
+            const randomIndex = Math.floor(Math.random() * elements.length);
+            Marquee.innerHTML = elements[randomIndex];
+
+            function randomMarquee() {
+                const randomIndex = Math.floor(Math.random() * elements.length);
+                Marquee.innerHTML = elements[randomIndex];
+            }
+        </script>
+</body>
+
+</html>

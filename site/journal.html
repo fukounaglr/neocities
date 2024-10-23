@@ -1,0 +1,416 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>journal</title>
+
+    <link rel="icon" type="image/png" href="/ico.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/interact.js/1.10.17/interact.min.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+
+    <style>
+        html {
+            scrollbar-color: #5dd4dc #104051;
+        }
+
+        body {
+            background: url(/images/1282395453.jpg);
+            background-size: auto 100%;
+            background-attachment: fixed;
+            background-position: center;
+            padding-bottom: 50px;
+            overflow: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0;
+            padding: 0;
+        }
+
+        .left,
+        .right {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .left {
+            grid-area: 1/1 / span 1 / span 1;
+        }
+
+        .right {
+            grid-area: 1/2 / span 1 / span 2;
+        }
+
+        main {
+            position: relative;
+            width: calc(60% - 100px);
+            height: calc(100vh - 100px);
+            position: absolute;
+            left: 15%;
+            background: url(/images/journal.png);
+            background-size: 100% auto;
+            padding: 50px;
+
+            & .page {
+                width: 100%;
+                height: 100%;
+                display: none;
+                grid-template-columns: 47% 40%;
+                grid-gap: 3%;
+            }
+        }
+
+        .cat-sticker {
+            width: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #nav {
+            position: absolute;
+            top: 20%;
+            left: -15%;
+            width: 25%;
+            z-index: -10;
+
+            & a {
+                align-items: center;
+                justify-content: center;
+                margin: 5;
+                align-self: center;
+                align-content: center;
+                height: auto;
+                cursor: pointer;
+                position: relative;
+                height: 90px;
+                width: 230px;
+                text-decoration: none;
+
+                & .name {
+                    display: flex;
+                    font-family: staypuft;
+                    font-size: 1em;
+                    color: black;
+                    pointer-events: none;
+                    z-index: 100;
+                    line-height: 100%;
+                    height: 100%;
+                    width: 100%;
+                    background-size: cover;
+                    padding: 10;
+                }
+            }
+
+            & a:hover {
+                /*transform: translate(-0, 5%);*/
+
+
+
+                & .name {
+                    display: flex;
+                    filter: brightness(100);
+                }
+            }
+
+            & .current {
+                z-index: 10;
+            }
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings:
+                "FILL"0,
+                "wght"400,
+                "GRAD"0,
+                "opsz"24;
+        }
+
+        #home {
+            display: grid;
+        }
+
+        #blog {
+            & .feed-title {
+                display: none;
+            }
+
+            & .feed-item-title {
+                font-size: 1.5em;
+            }
+        }
+
+        #quotes {
+            & sub {
+                color: var(--accent-colour);
+            }
+
+            & p {
+                margin-bottom: 20px;
+            }
+        }
+
+        #blog .left {
+            display: grid;
+            grid-template-rows: 20vh 30vh 35vh;
+        }
+
+        #memes {
+            /*display: flex;*/
+            text-align: center;
+            overflow: auto;
+            height: 100%;
+
+            & img {
+                max-width: 100px;
+                max-height: 100px;
+                margin: auto;
+            }
+        }
+        
+        #rpgbox{
+            background-color: black;
+            width: 22%;
+            position: absolute;
+            right: 30px;
+            top: 40px;
+            display: grid;
+            grid-template-columns: 20% 80%;
+            padding: 10px;
+            border: solid white 4px;
+            color: white;
+            border-radius: 10px;
+            cursor: help;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <img src="/images/newspapers.png" width="100%" style="
+                position: absolute;
+                top: 50%;
+                left: -5%;
+                transform: translate(0, -50%);
+                z-index: -100;
+                pointer-events: none;
+            " />
+    <main>
+        <div id="nav">
+            <a onclick="switchPage('home')">
+                <div class="name" style="background-image: url(/images/bookmark-sticker-3.png);">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="50px" fill="#000">
+                        <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z" />
+                    </svg>
+                    <p>home</p>
+                </div>
+            </a>
+
+            <a onclick="switchPage('blog')">
+                <div class="name" style="background-image: url(/images/bookmark-sticker-5.png);">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="50px" fill="#000">
+                        <path d="M240-400h480v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM880-80 720-240H160q-33 0-56.5-23.5T80-320v-480q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v720ZM160-320h594l46 45v-525H160v480Zm0 0v-480 480Z" />
+                    </svg>
+                    <p>blog</p>
+                </div>
+            </a>
+
+            <a onclick="switchPage('quotes')">
+                <div class="name" style="background-image: url(/images/bookmark-sticker-2.png);">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="50px" fill="#000">
+                        <path d="M240-400h480v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM880-80 720-240H160q-33 0-56.5-23.5T80-320v-480q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v720ZM160-320h594l46 45v-525H160v480Zm0 0v-480 480Z" />
+                    </svg>
+                    <p>quotes</p>
+                </div>
+            </a>
+
+            <a href="/room.html">
+                <div class="name" style="background-image: url(/images/bookmark-sticker-1.png);">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="50px" fill="#000">
+                        <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z" />
+                    </svg>
+                    <p>exit</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="page" id="home">
+            <div class="left">
+                <img src="/images/sticker%20note.png" width="80%" style="position: relative; top: -5%; left: 10%; pointer-events: none" />
+                <div style="position: absolute; width: 50%; top: 3%; left: 30%; pointer-events: none">
+                    <h3>Hello!</h3>
+                    <h5>Welcome to my journal!</h5>
+                    <p>click bookmarks</p>
+                </div>
+
+                <div style="float: right">
+                    <iframe title="sudoku" src="//widget.websudoku.com/?level=1" width="250" height="260" scrolling="no" frameborder="0"></iframe>
+                </div>
+
+                <img src="/images/knife.gif" width="30%" style="position: absolute; left: 5%; top: 50%; pointer-events: none" />
+                <img src="/images/knife.gif" width="30%" style="position: absolute; left: 5%; top: 60%; pointer-events: none" />
+                <img src="/images/knife.gif" width="30%" style="position: absolute; left: 5%; top: 70%; pointer-events: none" />
+                <img src="/images/cat-sticker-2.png" class="cat-sticker" style="left: -10%; top: 75%; pointer-events: none" />
+            </div>
+
+            <div class="right">
+                <div style="float: right">
+                    <script type="text/javascript">
+                        boatload_puzzles_format = "CompactPortrait";
+                    </script>
+                    <p>
+                        Loading <a href="https://www.boatloadpuzzles.com/playcrossword"> crossword puzzle</a>. One
+                        moment please.
+                    </p>
+                    <script type="text/javascript" src="//www.boatloadpuzzles.com/Crossword.js"></script>
+                </div>
+                <img src="/images/6EdnAyU.png" width="40%" />
+                <img src="/images/%D0%BA%D0%BE%D1%82%D0%B8%D0%BA-playing-guitar.gif" width="30%">
+                <img src="/images/blunt.gif" width="40%">
+
+                <img src="/images/cute-camera.png" width="100%;" style="position: absolute; left: 0; bottom: -20%; pointer-events: none" />
+            </div>
+        </div>
+
+        <div class="page" id="blog">
+            <div class="left" style="text-align: center;">
+
+                <h3 style="text-align: right">BloG</h3>
+
+                <div id="memes">
+                    <img src="https://i.pinimg.com/control/474x/f1/0e/1c/f10e1cee9eaacc3fc06e3ea0c5f8aa40.jpg">
+                    <img src="https://i.pinimg.com/474x/54/61/4f/54614faf78cc785ce9bb87f9bfcfa161.jpg">
+                    <img src="https://i.pinimg.com/474x/4f/fc/e9/4ffce95511c02156612a59531e7b5521.jpg">
+                    <img src="https://i.pinimg.com/control/474x/a4/64/12/a464122f1cc5f421f455c955199f2c85.jpg">
+                    <img src="https://i.pinimg.com/control/474x/be/7f/c9/be7fc92ecdf46f22bfb95c1d893aa6ea.jpg">
+                    <img src="https://i.pinimg.com/control/564x/32/f0/71/32f0716b13a45910537d9f4c7a418ce7.jpg">
+                    <img src="https://i.pinimg.com/564x/57/1c/25/571c25b628ed0c4829a9d7ddcbb314ba.jpg">
+                    <img src="https://i.pinimg.com/736x/94/c4/31/94c431f9e43aecb032de911b72c572a9.jpg">
+                    <img src="https://i.redd.it/scmyfpp76wg81.jpg">
+                    <img src="https://i.pinimg.com/736x/b8/9b/da/b89bda5126114be0d42768ed02d27057.jpg">
+                    <img src="https://i.pinimg.com/736x/66/b2/1f/66b21fdb2ca8e06696e1b784b1657070.jpg">
+                    <img src="https://i.pinimg.com/control/564x/d6/4a/ed/d64aed1ff122cb5ff55a289e26c1ac7e.jpg">
+                    <img src="https://i.pinimg.com/736x/ff/70/5b/ff705bd1bc2f50bdf92d90b66f592d52.jpg">
+                    <img src="https://i.pinimg.com/564x/98/13/f5/9813f542d10ea5c60a0aa10de06b9760.jpg">
+                    <img src="https://i.pinimg.com/control/564x/3d/33/15/3d3315a5e2d713e199e96b1f8315cf5f.jpg">
+                    <img src="https://i.pinimg.com/control/564x/b8/86/ae/b886ae2edfdc26ef09ee33b1132f0fa6.jpg">
+                    <img src="https://i.pinimg.com/736x/61/40/99/6140994163e7dd150ec25098b2ca4d41.jpg">
+                    <img src="https://i.pinimg.com/control/564x/99/d5/39/99d539857ab129ac45ea894745a756f3.jpg">
+                    <img src="https://i.pinimg.com/564x/3b/65/06/3b650609aa7d2b9ac2c684961aeaf9d1.jpg">
+                    <img src="https://i.pinimg.com/564x/32/37/d4/3237d48f54926d37270e4b10cd384992.jpg">
+                    <img src="https://i.pinimg.com/control/564x/05/0e/41/050e41338ea1cd04d44f88e5fc47b732.jpg">
+                </div>
+                <img src="/images/cat-moment.gif" width="100%" height="100%" style="object-fit: contain">
+                <marquee>OP kitteh moed activaetd. Maek nd eksplore. NO LIMITS. NONE. Kat can fly, kat can hav INFINITE blokcz, kat no hurt.</marquee>
+                <img src="/images/cat-sticker-3.png" class="cat-sticker" style="left: 0%; top: -5%; pointer-events: none" />
+                
+            </div>
+            <div class="right" style="height: 100%; overflow: auto;">
+                <script src="//rss.bloople.net/?url=https%3A%2F%2Frss.spacehey.com%2Fblog_user%3Fid%3D2050165&showtitle=false&type=js"></script>
+
+
+            </div>
+        </div>
+
+        <div class="page" id="quotes">
+            <div class="left">
+                <h1 style="writing-mode: vertical-lr; text-orientation: upright; text-align-last: end; color: darkred; line-height: 100%; float: left">QUOTE <br> book</h1>
+                <p style="margin-top: 40%">Just some quotes i like and/or find funny</p>
+                <img src="/images/cat-sticker-4.png" class="cat-sticker" style="left: 40%; top: -5%; pointer-events: none" />
+                <img src="/images/cool.png" width="200px" style="position: absolute; bottom: 20%">
+                <img src="/images/yoshi.gif" width="200px" style="position: absolute; bottom: -10%; right: 10% ">
+            </div>
+            <div class="right" style="overflow: auto;">
+                <hr>
+                <p>her eyes were the sickly green of the sky before a tornado, and to his horror he discovered she could throw cows around just as easily</p>
+                <p>when I imagine myself I am always leaving I couldn't draw my own face if god asked</p>
+                <p>turns out that i'm just as easy to fool as the common deer. i am destiened to be hunted down and made into a little cutlets of venison bacon.<br><sub>- kwite</sub></p>
+                <p>such a ruthless world... such a cruel world... such a world... shouldn't exist at all!</p>
+                <p>quick! pretend like we weren't having a therapy session!<br><sub>- Caine, ADC episode 3</sub></p>
+                <p>here in parkour civilization no one jumps for the beef; it's too risky<br><sub>- Evbo, parkour civilization</sub></p>
+                <p>orchids are green, but nobody cares. waxed slightly withered cut copper stairs.<br><sub>- some reddit post</sub></p>
+                <p>moooom the dog ate all proof of my mental disorders and spiraling habits</p>
+                <p>you are not mentally stable enough to go to a grocery store by yourself nevermind a relationship</p>
+                <p>They're not found family, they tripped into a hole and started huddling together for warmth</p>
+                <p>don't try to know or interpret me in any way</p>
+                <p>летать на костылях непросто, но он научился <br><sub>[Flying on crutches is not easy, but he learned]</sub></p>
+                <p>please take care of your mental health. i didn't once and i got three lore arcs out of it</p>
+                <p>undignified, i diegress, remove his kneecups</p>
+                <p>I may be a whore, but at least I have manners, unlike you</p>
+                <p>is autism your favorite season? autism is my favorite season.</p>
+                <p>I am not racist, sexist or homophobic, i hate everyone equally</p>
+                <p>we're all just animals walking around the rock</p>
+                <p>we have sex; then pearl harbor; then more sex</p>
+                <p>the only limit is your imagination, but your imagination is limited</p>
+                <p>If you don't remember anything <i>too</i> bad, the system is probably doing its job.</p>
+                <p>A room that's warm, and nice, and filled with little ideas for games.</p>
+                <p>but for legal reasons let's go with the crack</p>
+                <p>guys i'm so sorry i was toxic that won't happen again *turns into a biblically accurate angel*</p>
+                <p>probably alludes to the sexual action of "giving head". this shows how the singer would do anything for their love interest</p>
+                <p>my hate club is so small that i am the one who has to do the hating</p>
+                <p>Ah... so you have gotten the estonia dream... one of us</p>
+                <p>It looks intimidating. What if there's a death wish... ? His face is still so calm.</p>
+                <p>call me back when you finish with the flashback</p>
+                <p>a true sign that you befriended a system: ocassionally you see a message that just says \</p>
+                <p>I'm one top hat away from becoming a triangle<br><sub>- Matpat, GTLive</sub></p>
+                <p>love is a chemically induced hypnosis the human body uses to trick people into not eating each other just for long enough to procreate<br><sub>- bill cipher book</sub></p>
+                <p>they call them phychiatrist but it's just a fancy word for a drug dealer<br><sub>- kwite</sub></p>
+                <img src="/images/1%20doller.png" width="100px" style="position: fixed; right: 25%; bottom: 100px">
+            </div>
+        </div>
+    </main>
+    
+    <img src="/images/fuko%203d.png" width="20%;" style="position: absolute; right: 20px; bottom: 20px"> 
+    <div id="rpgbox" onclick="talk()">
+        <img src="/images/fuko%20speech%20icon%20og.png" width="100%;">
+    <p id="rpg">* I can talk. Click on the box. (WIP)</p>
+    </div>
+
+    <script>
+        var currentPage = "home";
+
+        function switchPage(a) {
+            document.getElementById(currentPage).style.display = "none";
+            currentPage = a;
+            document.getElementById(a).style.display = "grid";
+        }
+    </script>
+    
+    
+        <script>
+            const elements = [
+                "This vessel, this vessel is a lie, a shapeshifting beast, a lesson in fluidity.",
+                "[supposed dead man asks for a smoke]",
+                "A human, whose original parts have had to be replaced.",
+                "Life is unfair, kill yourself or get over it.",
+                "Just because you know my name doesn't mean you know me.",
+                "What kind of god would allow this to happen?",
+                "This is my body. This is my software.",
+                "Being mentally ill is like being on hard drugs, but with no fun.",
+                "When I imagine myself, I am always leaving. I couldn't draw my own face if god asked.",
+                "Hell is other people.",
+                "Glass WHAT? They can't say that! Oh, it's blass BEACH. I thought it was glass BITCH",
+                "No I just like the idea of being a girl",
+                "All cats are fueled by autism in their own unique ways"
+            ];
+
+            const box = document.getElementById("rpg");
+
+            function talk() {
+                const randomIndex = Math.floor(Math.random() * elements.length);
+                box.innerHTML = "* " + elements[randomIndex];
+            }
+        </script>
+</body>
+
+</html>

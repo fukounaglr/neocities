@@ -1,882 +1,447 @@
-<html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>home</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
+        <link rel="icon" type="image/png" href="/ico.png" />
+        <link rel="stylesheet" href="/style.css" />
 
-    <link rel="icon" type="image/png" href="/ico.png">
-    <link rel="stylesheet" href="/style.css">
-    <script defer src="https://unpkg.com/freezeframe/dist/freezeframe.min.js"></script>
+        <script src="/js/theme-switcher.js"></script>
 
-    <script defer src="/js/copy-textarea.js"></script>
-    <script src="/js/theme-switcher.js"></script>
-
-
-
-    <style>
-        :root[theme=underwater] {
-            --bg: url(/images/d72266f179e62d65ba09e2c327fc5f45-snes.png);
-            --webrings-bg: url(/images/3332befa1638b733d0fe5c4dd32ebc5a-snes.png);
-            --chat-bg: url(/images/m4q84l0811k81.jpg);
-        }
-
-        :root[theme=green] {
-            --bg: url(/images/0d17503f43d9142fddb2e37ca78ad827-snes.png);
-            --webrings-bg: url(/images/greenbg-snes.png);
-            --chat-bg: url(/images/d62e460b87b415f82d3cc0500d499768.jpg);
-        }
-
-
-
-        #themeSwitcher {
-            all: unset;
-            background-color: var(--accent-colour);
-            color: black;
-            border: none;
-            padding: 10px;
-            border-radius: 10px;
-            margin: 10px;
-            cursor: pointer;
-            transition: .4s;
-
-            &:hover {
-                background-color: var(--accent-colour-hover);
-            }
-
-            &option {
-                padding: 5px 0;
-            }
-        }
-
-        header {
-            background-color: black;
-            /*            padding: 10 10 0 10;*/
-
-            & div.header {
-                display: grid;
-                grid-template-columns: repeat(8, 1fr);
-            }
-
-            & p {
-                margin: 0;
-                padding: 10px;
-            }
-
-            color: white;
-        }
-
-        header img {
-            width: 100%;
-        }
-
-        header a,
-        footer a {
-            color: var(--accent-colour);
-        }
-
-        header a:hover,
-        footer a:hover {
-            color: var(--accent-colour-hover);
-        }
-
-        footer {
-            /*            height: 100px;*/
-            background-color: black;
-            padding: 20px 40px;
-            /*            width: 100%;*/
-            color: var(--accent-colour);
-        }
-
-
-
-        body {
-            background-color: black;
-            background-image: var(--bg);
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            color: white;
-        }
-
-        hr {
-            border-color: darkcyan;
-        }
-
-
-        #home {
-            padding: 1.5% 3%;
-            position: relative;
-            width: 100%;
-            margin: auto;
-            box-sizing: border-box;
-            /*            background-color: white;*/
-            display: grid;
-            grid-template-columns: 1.2fr 1fr 1fr 1fr;
-            /*            column-gap: 10px;*/
-            /*            font-family: 'eggfont';*/
-
-        }
-
-
-
-        div.col {
-            width: 95%;
-            height: 100%;
-            margin: auto;
-            background-color: var(--primary-colour);
-
-            & div.text {
-                width: 90%;
-                /*            background-size: auto;*/
-                background-repeat: repeat;
-                padding: 5%;
-                margin: 10px auto;
-            }
-
-            img.full {
-                width: 100%;
-                object-fit: cover;
-            }
-        }
-
-        div.bgdots {
-            background-image: url(/images/bg-dots.jpg);
-        }
-
-        div.bglines {
-            background-image: url(/images/bg-lines.png);
-        }
-
-        div.bgdots {
-            background-image: url(/images/bg-dots.jpg);
-        }
-
-
-
-        #log {
-            background-image: url(/images/bg-lines.png);
-            background-repeat: repeat;
-            /*            height: 300px;*/
-            padding: 0;
-
-            & h3 {
-                color: black;
-                /*                margin: 15 auto;*/
-            }
-        }
-
-
-        #webrings {
-            border: 3px #FF497B solid;
-            position: relative;
-            text-align: center;
-            padding: 0 10px;
-            background: var(--webrings-bg);
-
-            & #autiring table,
-            transring {
-                text-align: center;
-                margin: auto;
-            }
-        }
-
-        #button-box textarea {
-            width: 90px;
-            height: 30px;
-            overflow: hidden;
-            resize: none;
-            display: none;
-        }
-
-        #button-box {
-            width: 90%;
-            padding: 10px;
-            background-color: var(--accent-colour);
-            border-radius: 20px;
-            display: block;
-            align-items: center;
-            color: white;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-
-
-            & a {
-                margin: auto;
-            }
-
-            & button {
-                font-family: 'arcadeclassic';
-                grid-area: 1/2/1/4;
-                width: 80%;
-                height: 100%;
-                margin: auto;
-                border-radius: 20px;
-                background-color: var(--accent-colour-hover);
-                cursor: pointer;
+        <style>
+            #themeSwitcher {
+                all: unset;
+                background-color: var(--primary-colour);
                 border: none;
-                box-shadow: var(--dark-colour) 3px 3px;
-                position: relative;
+                padding: 10px;
+                border-radius: 10px;
+                margin: 10px;
+                cursor: pointer;
                 transition: 0.4s;
 
-                &:active {
-                    transform: translate(3px, 3px);
-                    box-shadow: var(--dark-colour) 0px 0px;
+                &:hover {
+                    background-color: var(--accent-colour);
+                }
 
+                &option {
+                    padding: 5px 0;
                 }
             }
-        }
 
-        #chatbox {
-            width: 100%;
-            margin: auto;
-            font-weight: 500;
-            font-size: 1Em;
-            background-color: #6DD1E5;
-            /*            border: #02021C 5px solid;*/
-            background: right no-repeat var(--chat-bg);
-            background-size: cover;
-        }
-
-
-
-
-        /*STATUSCAFE*/
-
-
-
-        #status {
-            z-index: 10;
-            position: relative;
-            margin: -20px 0px -20px 0px;
-            width: 110%;
-            height: 0;
-
-            & #bubble {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 100%;
-            }
-
-
-            & #statuscafe-content {
-                font-family: 'eggfont';
-                letter-spacing: 1;
-                font-style: normal;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                font-size: 1Em;
-                width: 80%;
-                height: auto;
+            header {
+                background-color: black;
+                height: 5%;
                 align-content: center;
-                align-items: center;
-                text-align: center;
-                text-wrap: normal;
+
+                & div.header {
+                    display: grid;
+                    grid-template-columns: repeat(7, 1fr);
+                }
+
+                & p {
+                    margin: 0;
+                    padding: 10px;
+                }
+
+                color: white;
             }
-        }
 
-
-        #sotd-home {
-            color: white;
-            border: darkblue 5px solid;
-            margin-bottom: 20px;
-            padding: 10;
-            background: blanchedalmond;
-            text-align: right;
-        }
-
-
-        #updates-box {
-            border: none;
-            position: relative;
-        }
-
-        .sitess {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-
-            & img {
+            header img {
                 width: 100%;
             }
 
-            & a {
-                margin: 10px;
-
-                &.no-button {
-                    background-color: black;
+            footer {
+                height: 100%;
+                background-color: black;
+                align-content: center;
+                color: var(--accent-colour);
+                & img{
+                    height: 100%;
+                    margin: 0;
                 }
             }
-        }
 
-        div.blink {
-            grid-template-columns: 50% 50%;
-            display: grid;
-            margin: 10px auto;
-
-            & img {
-                width: 95%;
-                margin: auto;
-            }
-        }
-
-        button.toggle {
-            width: 90%;
-            height: 80%;
-            margin: auto;
-            padding: 0;
-            border: none;
-            background-color: var(--accent-colour);
-            border-radius: 20px;
-            cursor: pointer;
-            color: white;
-
-        }
-
-        .collage {
-            overflow-y: none;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            grid-template-areas: 'a b c''a d e';
-            grid-column-gap: 0px;
-            width: 90%;
-            height: 200px;
-            grid-template-rows: 50% 50%;
-            margin: 10px auto;
-        }
-
-        .collage img {
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-        }
-
-        .grid {
-            width: 100%;
-            display: grid;
-            margin: auto;
-
-            & img {
-                width: 90%;
-                margin: auto;
-            }
-        }
-
-        .paw4 {
-            grid-template-columns: repeat(4, 1fr);
-
-        }
-
-        .paw3 {
-            grid-template-columns: repeat(3, 1fr);
-
-        }
-
-
-        /*RESPONSIVE*/
-
-        @media only screen and (max-width: 1000px) {
-            html {
-                font-size: 1.4Em;
+            body {
+                background-color: black;
+                background-image: var(--bg);
+                height: 100vh;
+                overflow: hidden;
             }
 
-            #home {
-                grid-template-columns: 1fr 1fr;
-                padding: 0;
-            }
-
-            header div.header {
-                grid-template-columns: repeat(4, 1fr);
-            }
-
-        }
-
-        @media only screen and (max-width: 670px) {
-            html {
-                font-size: 1.4Em;
-            }
-
-            #home {
-                grid-template-columns: 1fr;
-                padding: 0;
-            }
-
-            #status {
-                width: 100%;
-            }
-
-            header div.header {
-                grid-template-columns: repeat(4, 1fr);
-            }
-
-        }
-
-        a :is(h1, h2, h3, h4, h5, h6) {
-            position: absolute;
-            transition: 1s;
-            left: 0;
-        }
-
-        a:hover :is(h1, h2, h3, h4, h5, h6) {
-            /*            transform: scale(1.2) translate(12%, 0);*/
-        }
-
-        .link {
-            position: relative;
-            height: auto;
-            overflow: hidden;
-            width: 100%;
-            display: block;
-            transition: .5s;
-            cursor: pointer;
-
-            &img {
-                object-fit: cover;
-                width: 100%;
-                transform: scale(100%);
-                filter: brightness(100%);
-                transition: .5s;
-            }
-
-            &:hover img {
-                transform: scale(130%);
-                filter: brightness(120%);
-                transition: .5s;
-            }
-
-            & h1,
+            h1,
             h2,
             h3,
             h4,
             h5,
             h6 {
-                position: absolute;
-                color: var(--colour);
-                z-index: 10;
-                left: -20px;
-                background-color: var(--primary-colour);
-                border-radius: 10px;
+                color: white;
             }
-            
-            & .bottom{
-                                padding: 5px 50px 10px 50px;
-                bottom: -20px;
-            }
-            & .top{
-                                top: -20px;
-                padding: 10px 50px 5px 50px;
-            }
-        }
 
-        div.two-navlink {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            /*            grid-template-rows: auto auto;*/
-            grid-gap: 10px;
-            width: 100%;
-            margin: 20px auto;
-
-            & .navlink {
-                background-color: var(--accent-colour);
-                color: var(--colour);
-                width: calc(100% - 20px);
-                text-decoration: none;
+            #home {
+                position: relative;
+                width: 100%;
+                height: 90%;
                 margin: auto;
-                padding: 10px 0;
+                box-sizing: border-box;
+                display: grid;
+                grid-template-columns: 1.2fr 1fr 1fr 1fr;
+            }
 
-                & h2 {
-                    /*                    padding: 5 10;*/
-                    position: relative;
-                    top: 0;
-                    left: 0;
+            div.col {
+                width: 100%;
+                height: 100%;
+                margin: auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                & div.text {
+                    width: 90%;
+                    background-repeat: repeat;
+                    padding: 5%;
+                    margin: 10px auto;
+                }
+
+                img.full {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            #chatbox {
+                width: 100%;
+                margin: auto;
+                font-weight: 500;
+                font-size: 1em;
+                background-color: var(--primary-colour);
+                height: 100%;
+
+                & h5 {
+                    color: var(--colour);
+                }
+            }
+
+
+            #status {
+                z-index: 10;
+                position: relative;
+                width: 100%;
+                height: 100%;
+                align-content: center;
+                align-items: center;
+                text-align: center;
+                background-color: var(--accent-colour);
+            }
+
+            .grid {
+                width: 100%;
+                display: grid;
+                margin: auto;
+
+                & img {
+                    width: 90%;
                     margin: auto;
                 }
             }
 
-            & .navlink:hover {
-                background-color: var(--accent-colour-hover);
+            .paw3 {
+                grid-template-columns: repeat(3, 1fr);
             }
 
-        }
+            a :is(h1, h2, h3, h4, h5, h6) {
+                position: absolute;
+                transition: 1s;
+                left: 0;
+            }
 
-    </style>
+            a:hover :is(h1, h2, h3, h4, h5, h6) {
+                /*            transform: scale(1.2) translate(12%, 0);*/
+            }
 
-</head>
+            .link {
+                position: relative;
+                height: auto;
+                overflow: hidden;
+                width: 100%;
+                display: block;
+                transition: 0.5s;
+                cursor: pointer;
 
+                &img {
+                    object-fit: cover;
+                    width: 100%;
+                    transform: scale(100%);
+                    filter: brightness(100%);
+                    transition: 0.5s;
+                }
 
-<header>
-    <div style="display: var(--hell-display)">
-        <div class="header">
-            <img src="/stamps/DA2ACD89-BF3E-423B-8C6F-AA9FB05E4035.gif">
-            <img src="/stamps/0039-staticrainbow.gif">
-            <img src="/stamps/tumblr_48aac0193b7a3159c6f2481127fe8f3c_4f239854_250.webp" class="blink">
-            <img src="/stamps/tumblr_3fd1f9aee7246d63a83dcd17dc7b6288_96c9394c_250.webp">
-            <img src="/stamps/bigshot.gif">
-            <img src="/stamps/cursed%20cat%20alastor%20blinnkie.gif">
-            <img src="/stamps/tumblr_18f9a36ecdc131af57984cdcd0f52bda_a7ff261c_250.gif">
-            <img src="/stamps/tumblr_afd8d2626508a9336b92b7e960e0ce25_8bcdcdeb_250.gif">
-        </div>
-    </div>
+                &:hover img {
+                    transform: scale(130%);
+                    filter: brightness(120%);
+                    transition: 0.5s;
+                }
 
-    <div style="display: var(--underwater-display)">
-        <div class="header">
-            <img src="/stamps/sylveon.gif">
-            <img src="/stamps/kriswtf.gif">
-            <img src="/stamps/imemyself.gif">
-            <img src="/stamps/water.gif" class="blink">
-            <img src="/stamps/gleach_slipunderthedoor.gif">
-            <img src="/stamps/you%20wouldnt%20download%20a%20pronoun.gif">
-            <img src="/stamps/ezgif-1-dbd933bbf4.gif">
-            <img src="/stamps/tomanytabs.gif">
-        </div>
-    </div>
+                & h1,
+                h2,
+                h3,
+                h4,
+                h5,
+                h6 {
+                    position: absolute;
+                    color: var(--colour);
+                    z-index: 10;
+                    left: -20px;
+                    background-color: var(--primary-colour);
+                    border-radius: 10px;
+                }
 
-    <div style="display: var(--green-display)">
-        <div class="header">
-            <img src="/stamps/neversleeps.gif">
-            <img src="/stamps/i%20am%20(not)%20a%20ronot.png">
-            <img src="/stamps/0138-greenglow.gif">
-            <img src="/stamps/BornToDie.gif" class="blink">
-            <img src="/stamps/ena.gif">
-            <img src="/stamps/tumblr_c263529e50ad3e685c592f1e35391763_5c6557d9_250.gif">
-            <img src="/stamps/tumblr_62b602f4f4759ee0d8a91490d86764fa_35e25497_250.webp">
-            <img src="/stamps/dBtukjGveyosfQHvXiGS.gif">
-        </div>
-    </div>
+                & .bottom {
+                    padding: 5px 50px 10px 50px;
+                    bottom: -20px;
+                }
+                & .top {
+                    top: -20px;
+                    padding: 10px 50px 5px 50px;
+                }
+            }
 
-    <p>not very frequent updates! you can find more links at the bottom of the page!</p>
-</header>
+            .str {
+                -webkit-text-stroke: 3px var(--accent-colour);
+            }
 
+            div.two-navlink {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 10px;
+                width: 100%;
+                margin: 20px auto;
 
-<body>
+                & .navlink {
+                    background-color: var(--accent-colour);
+                    color: var(--colour);
+                    width: calc(100% - 20px);
+                    text-decoration: none;
+                    margin: auto;
+                    padding: 10px 0;
+                    text-align: center;
+                    color: white;
+                    font-family: staypuft;
+                    font-size: 1.2em;
+                    cursor: pointer;
+                }
 
+                & .navlink:hover {
+                    background-color: var(--accent-colour-hover);
+                }
+            }
+            #player-button {
+                all: unset;
+                cursor: pointer;
+                margin: 0 auto;
+                margin-top: 30px;
+                height: auto;
+                background-color: var(--primary-colour);
+                padding: 10px;
+                border-radius: 10px;
+                color: var(--colour);
+            }
+        </style>
+    </head>
 
-    <div id="home">
-
-
-
-        <!--1-->
-        <div class="col">
-
-            <div class="paw3 grid">
-                <img src="/stamps/browser013.gif">
-                <!--                <img src="stamps/signguest.gif">-->
-                
-                <select id="themeSwitcher" onchange="changeTheme()">
-                    <option value="hell">hell</option>
-                    <option value="underwater">underwater</option>
-                    <option value="green">green</option>
-                </select>
-                
-                <a href="https://neocities.org/site/ashhmillr" target="_blank"><img src="/stamps/neocities.png"></a>
-
-            </div>
-
-            <a href="/image-of-the-day" class="link iotd">
-                <h2 class="top">image of the day</h2>
-                <img src="/images/7e4cf1097cdacf22b2b739c2f6010f9d.jpg" class="full">
-            </a>
-
-
-
-            <div id="status">
-                <div id="bubble">
-                    <img src="/images/bubble%20hell.png" width="100%" style="display: var(--hell-display")>
-                    <img src="/images/bubble%20green.png" width="100%" style="display: var(--green-display)">
-                    <img src="/images/bubble%20underwater.png" width="100%" style="display: var(--underwater-display)">
-                </div>
-
-                <a href="https://status.cafe/users/ashhmillr" target="_blank" style="color: white">
-                    <div id="statuscafe-content"></div>
-                    <div id="statuscafe-username" style="display: none"></div>
-                    <script defer src="https://status.cafe/current-status.js?name=ashhmillr"></script>
-                </a>
-            </div>
-
-            <a href="/webmaster.html" class="link">
-                <!--                <img src="/images/more%20than%20you%20lt.jpg" class="full">-->
-                <img src="/images/IMG_20240810_183943_1.jpg" class="full">
-                <h2 class="bottom">WEbmaster</h2>
-            </a>
-
-
-
-
-            <!--
-            <a href="/readhead/" target="_blank">
-                <img src="/images/readhead%20poster%20redraw.png" class="full">
-            </a>
--->
-
-           
-
-
-
-        </div>
-
-
-
-
-        <!--2-->
-        <div class="col">
-            
-
-            <div style="display: var(--underwater-display)">
-                <div class="grid paw3" style="margin: 10 auto">
-                    <img src="/stamps/glass%20beach%20stamp.png">
-                    <img src="/stamps/wavestamp.gif">
-                    <img src="/stamps/vaporeonstamp.gif">
-                </div>
-            </div>
-
-            <div style="display: var(--green-display)">
-                <div class="grid paw3" style="margin: 10 auto">
-                    <img src="/stamps/441.png">
-                    <img src="/stamps/476.png">
-                    <img src="/stamps/509.png">
-                </div>
-            </div>
-
+    <body>
+        <header>
             <div style="display: var(--hell-display)">
-                <div class="grid paw3" style="margin: 10 auto">
-                    <img src="/stamps/tumblr_66b9a67019cc84a9a7c7055bd83dfee6_0ad99749_100.png">
-                    <img src="/stamps/438.gif">
-                    <img src="/stamps/tumblr_24ccbad79db3b51cc9ee2594f27a7943_451b076b_100.gif">
+                <div class="header">
+                    <img src="/graphics/blinkies/DA2ACD89-BF3E-423B-8C6F-AA9FB05E4035.gif" />
+                    <img src="/graphics/blinkies/tumblr_48aac0193b7a3159c6f2481127fe8f3c_4f239854_250.webp" />
+                    <img src="/graphics/blinkies/tumblr_3fd1f9aee7246d63a83dcd17dc7b6288_96c9394c_250.webp" />
+                    <img src="/graphics/blinkies/bigshot.gif" />
+                    <img src="/graphics/blinkies/cursed%20cat%20alastor%20blinnkie.gif" />
+                    <img src="/graphics/blinkies/tumblr_18f9a36ecdc131af57984cdcd0f52bda_a7ff261c_250.gif" />
+                    <img src="/graphics/blinkies/tumblr_afd8d2626508a9336b92b7e960e0ce25_8bcdcdeb_250.gif" />
                 </div>
             </div>
-            
-            
-
-            <div id="sotd-home" style="background-color:  coral; border-color: #9F4030; color: darkred;">
-                <h3 style="margin: 0 0 10 0">song of the <s>week</s></h3>
-
-                <p class="bold"></p>
-                <iframe width="100%" height="170px" src="https://www.youtube.com/embed/jN0aELsVQFA?si=E8ljB1o3ew9ijamm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                <p></p>
-                <span>
-                    20/aug/2024
-                </span>
-                <a href="/sotd" style=" text-align: end;">archive</a>
-
-            </div>
-            
-            <h1>where to go?</h1>
-            <div class="two-navlink">
-                <a href="/coolzone/index.html" class="navlink">
-                    <h2>coolzone</h2>
-                </a>
-                <a href="/art.html" class="navlink">
-                    <h2>art</h2>
-                </a>
-                <a href="/basement/characters/index.html" class="navlink">
-                    <h2>OCs</h2>
-                </a>
-                <a href="/basement/projects/index.html" class="navlink">
-                    <h2>projects</h2>
-                </a>
-
-            </div>
-            
-             <a href="/map" style="width: 100%">
-                <img src="/images/2b0f68f0e9a3dc69a2998cae38d56b50.png" width="60%" style="margin: 0 50%; transform: translate(-50%, 0)">
-            </a>
-
-            <h3>new stuff</h3>
-            <div id="updates-box">
-                <iframe style="height: 240px; width: 100%; border-width: 0;" src="/updates.html">
-                </iframe>
-            </div>
-        </div>
-
-
-
-        <!--3-->
-        <div class="col">
-
-                        <img src="/images/1710027029117.jpg" class="full">
-
-            <div id="chatbox">
-                <h2 style="margin: auto;">CHAT - BE NICE!</h2>
-                <iframe src="https://www5.cbox.ws/box/?boxid=948666&boxtag=i7GruL" width="100%" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
-            </div>
-
 
             <div style="display: var(--underwater-display)">
-                <div class="collage">
-                    <img src="/images/41c1774752472a0a673f44541e19f0f0.jpg" style="grid-area: a; ">
-                    <img src="/images/74dc494da4f43b691a7f97386c33b2cd.jpg">
-                    <img src="/images/55307bee3c80f0abc6988cfa34627ec0.jpg">
-                    <img src="/images/9d206ababf6dfe504077b21747bbb5a1.jpg">
-                    <img src="/images/d72266f179e62d65ba09e2c327fc5f45.jpg">
+                <div class="header">
+                    <img src="/graphics/blinkies/sylveon.gif" />
+                    <img src="/graphics/blinkies/kriswtf.gif" />
+                    <img src="/graphics/blinkies/imemyself.gif" />
+                    <img src="/graphics/blinkies/water.gif" />
+                    <img src="/graphics/blinkies/gleach_slipunderthedoor.gif" />
+                    <img src="/graphics/blinkies/you%20wouldnt%20download%20a%20pronoun.gif" />
+                    <img src="/graphics/blinkies/tomanytabs.gif" />
                 </div>
             </div>
 
             <div style="display: var(--green-display)">
-                <div class="collage">
-                    <img src="/images/5f3de45771c354cf542430fd2bf9efd9.jpg" style="grid-area: a; ">
-                    <img src="/images/2eebffdaf5fc9a218e16195877ad2b7a.jpg">
-                    <img src="/images/0933d07cf48feb6f2216306aeededbd3.jpg">
-                    <img src="/images/4bc092c722519b423b2395790bc028f4.jpg">
-                    <img src="/images/bad426cb2f1ec8da6262397ee9fd7ec5.jpg">
+                <div class="header">
+                    <img src="/graphics/blinkies/neversleeps.gif" />
+                    <img src="/graphics/blinkies/i%20am%20(not)%20a%20ronot.png" />
+                    <img src="/graphics/blinkies/0138-greenglow.gif" />
+                    <img src="/graphics/blinkies/BornToDie.gif" />
+                    <img src="/graphics/blinkies/ena.gif" />
+                    <img src="/graphics/blinkies/tumblr_62b602f4f4759ee0d8a91490d86764fa_35e25497_250.webp" />
+                    <img src="/graphics/blinkies/dBtukjGveyosfQHvXiGS.gif" />
                 </div>
             </div>
 
-            <div id="log">
-                <h3>site updates</h3>
-                <iframe src="/log.html" style="height: 250px; width: 100%; border: none;"></iframe>
+            <div style="display: var(--cats-display)">
+                <div class="header">
+                    <img src="/graphics/blinkies/tumblr_96ad2cd9855e2fd464b654ed6dadf9d2_996a2d7a_250.gif" />
+                    <img src="/graphics/blinkies/tumblr_067e9e8537f9f037288435f9905a9c4d_b700999d_250.gif" />
+                    <img src="/graphics/blinkies/0275-stressed.gif" />
+                    <img src="/graphics/blinkies/95fa12b0.gif" />
+                    <img src="/graphics/blinkies/blinkie-sandwiches.gif" />
+                    <img src="/graphics/blinkies/feeling-fruity.gif" />
+                    <img src="/graphics/blinkies/mspainttoolblinkie.gif" />
+                </div>
             </div>
-            
-            
+        </header>
 
-        </div>
-
-
-
-
-        <!--4-->
-        <div class="col">
-
-
-            <div class="grid paw3">
-
-                <img src="/stamps/paws.png">
-                <img src="/stamps/actbutton.png">
-                <img src="/stamps/youre_telling_me.png">
-
-                
+        <div id="home">
+            <!--1-->
+            <div class="col">
+                <h3 style="text-align: end" class="str">SONG OF THE WEEK</h3>
+                <h3 style="text-align: end" class="str">WEB<br />MASTER</h3>
             </div>
+            <!--2-->
+            <div class="col" style="position: relative; display: grid; grid-template-rows: 45% 10% 45%; height: 90vh">
+                <a href="/song-of-the-week.html" style="margin: 0">
+                    <img
+                        src="/images/7a05624279667e86e1c30fa246c7c42a.jpg"
+                        class="full"
+                        style="height: 100%; object-fit: cover" />
+                </a>
 
+                <div id="status">
+                                <marquee>inside a room, there is a laptop. inside the laptop, there is a site. inside the site, there is a world. inside the world, there is a girl. a girl who is the world itself. hello, world. how are you?</marquee>
+                </div>
 
-
-            <div id="webrings">
-
-
-                <div style="overflow-y: auto;">
-
-                    <!--
-                    <div id='ncring'>
-                        <script type="text/javascript" src="https://neocreatives.neocities.org/onionring-variables.js"></script>
-                        <script type="text/javascript" src="https://neocreatives.neocities.org/onionring-widget.js"></script>
-                    </div>
--->
-                    <div id="autiring">
-                        <script defer type="text/javascript" src="https://macaque.moe/autiring/onionring-variables.js"></script>
-                        <script defer type="text/javascript" src="https://macaque.moe/autiring/onionring-widget.js"></script>
-                    </div>
+                <a href="/webmaster.html" style="margin: 0">
+                    <img
+                        src="/images/fe8ecf9fe4e4c4852e4a4f2946c7eafc.jpg"
+                        class="full"
+                        style="height: 100%; object-fit: cover" />
+                </a>
+            </div>
+            <!--3-->
+            <div class="col" style="align-content: center;">
+                <div id="chatbox">
+                    <h5>leave a message?</h5>
+                    <iframe
+                        title="chatbox"
+                        src="https://www5.cbox.ws/box/?boxid=948666&boxtag=i7GruL"
+                        width="95%"
+                        height="67%"
+                        allow="autoplay"
+                        style="border: none; margin: 3%"></iframe>
 
                     <div>
-                        <script defer src="https://nuthead.neocities.org/ring/ring.js"></script>
+                        <div style="display: var(--underwater-display)">
+                            <div class="grid paw3" style="margin: 10 auto">
+                                <img src="/graphics/stamps/glass%20beach%20stamp.png" />
+                                <img src="/graphics/stamps/wavestamp.gif" />
+                                <img src="/graphics/stamps/vaporeonstamp.gif" />
+                            </div>
+                        </div>
+
+                        <div style="display: var(--green-display)">
+                            <div class="grid paw3" style="margin: 10 auto">
+                                <img src="/graphics/stamps/441.png" />
+                                <img src="/graphics/stamps/476.png" />
+                                <img src="/graphics/stamps/509.png" />
+                            </div>
+                        </div>
+
+                        <div style="display: var(--hell-display)">
+                            <div class="grid paw3" style="margin: 10 auto">
+                                <img src="/graphics/stamps/tumblr_66b9a67019cc84a9a7c7055bd83dfee6_0ad99749_100.png" />
+                                <img src="/graphics/stamps/438.gif" />
+                                <img src="/graphics/stamps/tumblr_24ccbad79db3b51cc9ee2594f27a7943_451b076b_100.gif" />
+                            </div>
+                        </div>
+
+                        <div style="display: var(--cats-display)">
+                            <div class="grid paw3" style="margin: 10 auto">
+                                <img src="/graphics/stamps/tumblr_68bb9e71ec030bfeb579002c6761aa36_9f052121_100.webp" />
+                                <img src="/graphics/stamps/006.jpg" />
+                                <img src="/graphics/stamps/cool.gif" />
+                            </div>
+                        </div>
+                        <p style="text-align: center; font-size: 0.8Em"><a href="mailto:fukounaglr@proton.me">email us</a> •  <a href="https://neocities.org/site/fukounaglr" target="_blank">neocities</a></p>
                     </div>
-
-
-                    <script id="transring" defer src="https://transring.neocities.org/ring.js"></script>
-
                 </div>
             </div>
 
+        <footer style="grid-area: 2/1/span 1/ span 3">
+            <img src="/graphics/buttons/css.png" />
+            <img src="/graphics/buttons/paws.png" />
+            <img src="/graphics/buttons/antinft.png" />
+            <img src="/graphics/buttons/antinazi.gif" />
+            <img src="/graphics/buttons/computer.gif" />
+            <img src="/graphics/buttons/mobileunfriendly.png" />
+            <img src="/graphics/buttons/neocities_button.gif" />
+            <img src="/graphics/buttons/transrights.gif" />
+            <img src="/graphics/buttons/piracy.gif" />
+            <img src="/graphics/buttons/neocities.png" />
+            <img src="/graphics/buttons/stamp%20antiTT.jpg" />
+        </footer>
+            
+            
+            <!--4-->
+            <div class="col" style="justify-content: normal; background-color: black; position: relative; overflow: hidden; grid-area: 1/4/span 2/ span 1">
+                <button id="player-button" onclick="play()">bg music: <span id="bgmstat">off</span></button>
+                <audio
+                    title="Overworld"
+                    id="audio"
+                    src="https://file.garden/ZjOP8Ik9OUXT6YVm/Overworld.mp3"
+                    loop="true"
+                    autostart="false">
+                    bg music
+                </audio>
 
-
-
-            <div>
-
-                <h4>link us on your site</h4>
-                <div id="button-box">
-                    <img src="https://i.ibb.co/2vqyKFc/button-marbles.gif">
-                    <button onclick="copy()">Copy Code</button>
-                    <textarea id="textarea"><a href="https://ashhmillr.neocities.org/" target="_blank"><img src="https://i.ibb.co/2vqyKFc/button-marbles.gif"></a></textarea>
+                <h4>where to go?</h4>
+                <div class="two-navlink">
+                    <a href="/graphics.html" class="navlink"> graphics </a>
+                    <a href="/sites.html" class="navlink"> cool sites </a>
+                    <a href="/site-map.html" class="navlink">site map</a>
+                    <a href="/journal.html" class="navlink"> journal </a>
                 </div>
 
-
-                <h4>cool sites</h4>
-
-                <div class="sitess">
-
-
-                    <a href="https://themightyloser.nekoweb.org/" target="_blank"><img src="/stamps/jelliagain.png"></a>
-                    <a target="_blank" href="https://troy-sucks.neocities.org/"><img src="https://troy-sucks.neocities.org/images/troysuckwiggly.gif" />
-
-
-
-                        <a href="https://swiftyshq.neocities.org/"><img src="https://swiftyshq.neocities.org/img/res/aff/threadbare.gif" alt="Swifty's HQ!" /></a>
-                        <a href="https://virtualobserver.moe/"><img src="https://virtualobserver.moe/images/sitebutton.png"></a>
-                        <a href="https://leyy.neocities.org/"><img src="https://leyy.neocities.org/leyy.png"></a>
-                        <a href="https://nukocities.neocities.org/"><img src="https://nukocities.neocities.org/img/nukocities.gif"></a>
-
-                        <a href="https://chocolaterevel.neocities.org/" target="_blank"><img src="stamps/0kqXUCD.gif" class="freezeframe"></a>
-
-                        <a href=https://dulcesilly.neocities.org/ target="_blank"><img src="stamps/buttonsilly.gif" class="freezeframe"></a>
-
-                        <a href="https://wrender.neocities.org/" target="_blank"><img src="/stamps/site%20button.gif" class="freezeframe"></a>
-
-                        <a href="https://shinyexe.neocities.org/" target="_blank"><img src="/stamps/shinyexe.gif" class="freezeframe"></a>
-
-
-                        <a href="https://macaque.moe/" target="_blank"><img src="stamps/iZ0CnXD.png"></a>
-
-                        <a href="https://klomfel.neocities.org/" target="_blank"><img src="stamps/klomfelv1.png" width="88px"></a>
-
-                        <a href="https://grlrot.neocities.org/" target="_blank"><img src="stamps/grlbutton.gif" class="freezeframe"></a>
-
-                        <a href="https://sugarforbrains.neocities.org/" target="_blank"><img src="stamps/sugarNEW.gif" class="freezeframe"></a>
-
-                        <a href="https://davemiller.neocities.org/" target="_blank"><img src="/stamps/davemiller_button.gif" class="freezeframe"></a>
-
-                        <a href="https://iwasarob0t.neocities.org/"><img src="/stamps/iwasarob0tbutton.gif" class="freezeframe"></a>
-
-                        <a href="https://dashweb.neocities.org/" target="_blank"><img src="/stamps/dashbutton.gif" class="freezeframe"></a>
-
-                        <a href="https://possum1827.neocities.org/" target="_blank"><img src="/stamps/simonsfunzone.gif" class="freezeframe"></a>
-
-                        <a href="https://webcatz.neocities.org/" target="_blank"><img src="/stamps/webcatz.gif" class="freezeframe"></a>
-
-                        <a target="_blank" href="https://aiston.scungled.gay/"><img src="/stamps/ashton.gif" class="freezeframe"></a>
-
-                        <a target="_blank" href="https://shadok.neocities.org/"><img src="/stamps/shadok.gif" class="freezeframe"></a>
-
-                        <a href="https://mordecaialba.com"><img src="/stamps/mordecaialba.png" width="100%" alt="A pixel art button of a brown rabbit with glasses that says 'Mordecai Alba' in green letters."> </a>
-
-                        <a href="https://odditycommoddity.neocities.org/" target="_blank"><img src="/stamps/odditycommoddity.gif" class="freezeframe"></a>
-
-                        <a href="https://octosquigglez.neocities.org" target="_blank"><img src="/stamps/octosquigglez.gif" class="freezeframe"></a>
-
-                        <a href="https://revived.neocities.org" target="_blank"><img src="/stamps/revivded.png"></a>
-
-                        <a href="https://dimden.dev/"><img src="https://dimden.dev/images/88x31.gif" class="freezeframe"></a>
-
-                        <a href="https://classicj.neocities.org/" target="_blank" class="no-button">classic j</a>
+                <div style="text-align: center; display: flex; margin: 0 auto;">
+                    <h6>change theme:</h6>
+                    <select id="themeSwitcher" onchange="changeTheme()">
+                        <option value="">choose</option>
+                        <option value="cats">cats</option>
+                        <option value="hell">hell</option>
+                        <option value="underwater">underwater</option>
+                        <option value="green">green</option>
+                    </select>
                 </div>
+                
+                <img src="/images/fuck.png" width="50%" style="position: absolute; bottom: 15%; right: 0; ">
+                <img src="/images/cat%20yell.png" width="50%" style="position: absolute; bottom: 0; left: 2%; ">
             </div>
-
-
-
         </div>
 
-    </div>
 
-    <script src="/js/theme-switcher.js"></script>
+        <script>
+            function play() {
+                var audio = document.getElementById("audio");
+                var stat = document.getElementById("bgmstat");
+                if (audio.paused) {
+                    audio.play();
+                    stat.innerHTML = "on";
+                } else {
+                    audio.pause();
+                    stat.innerHTML = "off";
+                }
+            }
+        </script>
 
-
-</body>
-
-<footer>
-    <a href="/index.html">&lt;3</a>
-    <a href="/map.html">Site Map</a>
-    <a href="/links.html">Links</a>
-    <a href="/journal/">Journal</a>
-    <a href="/webmaster.html">Webmaster</a>
-    <a href="/coolzone/index.html">Coolzone</a>
-    <a href="/art.html">Art</a>
-    <a href="/basement/characters/index.html">OCs</a>
-    <a href="/basement/projects/index.html">Projects</a>
-    <a href="/credits/">Credits</a>
-</footer>
-
+        <script src="/js/theme-switcher.js"></script>
+    </body>
 </html>

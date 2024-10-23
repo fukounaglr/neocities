@@ -1,0 +1,139 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=0.1, user-scalable=no" />
+        <title>site map</title>
+
+        <link rel="icon" type="image/png" href="/ico.png" />
+        <link rel="stylesheet" href="/style.css" />
+
+        <style>
+            
+            :root{
+                --fav: url(/graphics/pixels/heart.gif)
+            }
+            :root[theme=hell]{
+                --fav: url(/graphics/pixels/ribbon.gif)
+            }
+            :root[theme=underwater]{
+                --fav: url(/graphics/pixels/vapo2.gif)
+            }
+            :root[theme=green]{
+                --fav: url(/graphics/pixels/bun.gif)
+            }
+            body {
+                background-color: black;
+                background: var(--bg);
+                background-size: cover;
+                display: grid;
+                height: 100vh;
+                grid-template-columns: 1fr 2fr;
+                overflow: hidden;
+                color: var(--primary-colour);
+            }
+
+            ol {
+                font-size: 1em;
+                height: 100%;
+                list-style: none;
+                align-content: center;
+                background-color: var(--colour);
+            }
+            
+            li a::before{
+                content: var(--fav);
+                height: 100%;
+                filter: opacity(0);
+                margin-right: 5px;
+            }
+            li a:hover::before{
+                filter: opacity(100)
+            }
+
+            #donot {
+                position: absolute;
+                bottom: 10px;
+                left: 20px;
+            }
+
+            h1 {
+                position: absolute;
+                font-size: 20em;
+                line-height: 80%;
+                text-transform: uppercase;
+                margin: 0;
+                color: transparent;
+                pointer-events: none;
+            }
+            #a {
+                color: var(--colour);
+                top: 0;
+                left: 0;
+            }
+            #b {
+               -webkit-text-stroke: 3px  var(--accent-colour);
+                top: 5px;
+                left: -5px;
+            }
+            #c {
+                -webkit-text-stroke: 3px var(--primary-colour);
+                top: 10px;
+                left: -10px;
+            }
+            
+            #themeSwitcher{
+                all: unset;
+            }
+        </style>
+    </head>
+
+    <body>
+        <ol>
+            <li><a href="index.html">index</a></li>
+            <li><a href="/room.html">room</a></li>
+            <li><a href="/home.html">home</a></li>
+            <li><a href="/song-of-the-week.html">song of the week</a></li>
+            <li><a href="webmaster.html">webmaster</a></li>
+            <li><a href="/journal/index.html">journal</a></li>
+            <li><a href="/sites.html">cool sites</a></li>
+            <li><a href="graphics.html">graphics</a></li>
+            <li><a href="update-log.html">updates log</a></li>
+        </ol>
+
+        <div style="width: 100%; height: 100%; position: relative">
+            <section style="height: 100%; position: absolute; top: 4%; left: -5%;">
+                <h1 id="a" class="img" data-speed="1">Site map!</h1>
+                <h1 id="b" class="img" data-speed="5">Site map!</h1>
+                <h1 id="c" class="img" data-speed="10">Site map!</h1>
+            </section>
+        </div>
+
+        <div id="donot">
+            <div id="theme">
+                <span>theme:</span>
+                <select id="themeSwitcher" onchange="changeTheme()">
+                    <option value="cats">cats</option>
+                    <option value="hell">hell</option>
+                    <option value="underwater">underwater</option>
+                    <option value="green">green</option>
+                </select>
+            </div>
+            <audio
+                id="audio"
+                src="https://64.media.tumblr.com/5cfdb5b4911fc813f8d2ecc9a59c706c/fed64cd68b42bd35-0a/7d861edb29cd262194f4361a5b988b98b18789b7.mp3"></audio>
+            <a href="" id="play"> do not click here! </a>
+        </div>
+        
+        <h4 style="position: absolute; top: 0; left: 20px">where to?</h4>
+
+        <script>
+            document.getElementById("play").addEventListener("click", function (e) {
+                e.preventDefault();
+                document.getElementById("audio").play();
+                 document.getElementById("play").innerHTML = 'warned you.';
+            });
+        </script>
+        <script src="/js/parallax.js"></script>
+        <script src="/js/theme-switcher.js"></script>
+    </body>
+</html>

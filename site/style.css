@@ -1,67 +1,29 @@
 @font-face {
-    font-family: 'arcadeclassic';
-    src: url('/fonts/arcadeclassic-webfont.woff2') format('woff2'),
-        url('/fonts/arcadeclassic-webfont.woff') format('woff');
+    font-family: "syne mono";
+    src:
+        url("/fonts/synemono-regular-webfont.woff2") format("woff2"),
+        url("/fonts/synemono-regular-webfont.woff") format("woff");
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
-    font-family: 'karmatic arcade';
-    src: url('/fonts/karmaticarcade-webfont.woff2') format('woff2'),
-        url('/fonts/karmaticarcade-webfont.woff') format('woff');
+    font-family: "staypuft";
+    src:
+        url("/fonts/staypuft-webfont.woff2") format("woff2"),
+        url("/fonts/staypuft-webfont.woff") format("woff");
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
-    font-family: 'merchant copy';
-    src: url('/fonts/merchantcopy-webfont.woff2') format('woff2'),
-        url('/fonts/merchantcopy-webfont.woff') format('woff');
+    font-family: "pomrumkiwi";
+    src:
+        url("/fonts/PopRumKiwi-Telop.woff2") format("woff2"),
+        url("/fonts/PopRumKiwi-Telop.woff") format("woff");
     font-weight: normal;
     font-style: normal;
-
 }
-
-
-
-
-
-
-@font-face {
-    font-family: 'eggfont';
-    src: url('/fonts/ashhmillr_eggfont-webfont.woff2') format('woff2'),
-        url('/fonts/ashhmillr_eggfont-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-/* latin-ext */
-@font-face {
-    font-family: 'Syne Mono';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/synemono/v15/K2FzfZNHj_FHBmRbFvHDK6qlPys.woff2) format('woff2');
-    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-
-/* latin */
-@font-face {
-    font-family: 'Syne Mono';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/synemono/v15/K2FzfZNHj_FHBmRbFvHDJaql.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-
-
-
 
 /*COLOURS*/
 :root {
@@ -74,61 +36,76 @@
     image-rendering: pixelated;
 }
 
-:root[theme=underwater] {
+:root[theme="underwater"] {
     --primary-colour: mediumturquoise;
-    --accent-colour: palevioletred;
+    --accent-colour: #db3c70;
     --accent-colour-hover: paleturquoise;
-    --dark-colour: #015a69;
     --colour: #181818;
     --green-display: none;
     --hell-display: none;
+    --cats-display: none;
     --underwater-display: block;
-    --bg: url(/images/d72266f179e62d65ba09e2c327fc5f45-snes.png);
+    --bg: url(/images/underwater-snes.png);
 }
 
-:root[theme=green] {
+:root[theme="green"] {
     --colour: #181818;
     --primary-colour: DarkSeaGreen;
-    --accent-colour: SkyBlue;
-    --accent-colour-hover: #D9FECE;
+    --accent-colour: #1c6a8a;
+    --accent-colour-hover: DarkSeaGreen;
     --green-display: block;
     --hell-display: none;
+    --cats-display: none;
     --underwater-display: none;
-    --dark-colour: DarkGreen;
-    --bg: url(/images/0d17503f43d9142fddb2e37ca78ad827-snes.png);
+    --bg: url(/images/green-snes.png);
 }
 
-:root{
-    --primary-colour: black;
-    --colour: darkred;
+:root[theme="hell"] {
+    --primary-colour: #640808;
+    --colour: black;
     --accent-colour: red;
     --accent-colour-hover: darkred;
     --hell-display: block;
+    --cats-display: none;
     --green-display: none;
     --underwater-display: none;
-    --dark-colour: #2d0000;
-    --bg: url(/images/3008694715696d73c9ea8fdd663337e8-snes.png);
+    --bg: url(/images/hell-snes.png);
 }
 
+:root {
+    --primary-colour: #c6bda5;
+    --colour: #312121;
+    --accent-colour: #ce5229;
+    --accent-colour-hover: darkred;
+    --cats-display: block;
+    --hell-display: none;
+    --green-display: none;
+    --underwater-display: none;
+    --bg: url(/images/cats-snes.png);
+}
 
 * {
     scrollbar-color: var(--accent-colour) white;
     scrollbar-width: thin;
-
 }
 
 a {
     margin: 0;
     color: var(--accent-colour);
     transition: 0.4s;
+    cursor: pointer;
 
     &:hover {
-        color: var(--accent-colour-hover)
+        color: var(--accent-colour-hover);
     }
 }
 
 ol {
     list-style: disc;
+}
+
+iframe {
+    border: none;
 }
 
 ::selection {
@@ -141,27 +118,25 @@ ol {
     background: var(--accent-colour);
 }
 
-
-
 .draggable {
     position: absolute;
     padding: 10px;
     z-index: 10;
 }
 
-
 body {
     padding: 0;
     margin: 0 auto;
     text-align: left;
-    background: #1B9CD5;
+    background: var(--primary-colour);
     background-position: center;
+    background-size: cover;
 }
 
 hr {
     border: none;
     border-top: 3px solid;
-    border-color: var(--accent-colour);
+    border-color: var(--colour);
     width: 40%;
     margin: 10px auto;
 }
@@ -173,62 +148,19 @@ hr {
     margin: auto;
 }
 
-
 mark {
     padding: 1;
 }
 
-
-#goback {
-    font-family: 'arcadeclassic';
-    position: fixed;
-    top: 10;
-    left: 20;
-    font-size: 1.2Em;
-    transition: .4s;
-    text-decoration: none;
-    color: var(--accent-colour);
-
-    &:hover {
-        color: var(--accent-colour-hover);
-    }
-}
-
-#gohome {
-    position: fixed;
-    top: 27;
-    left: 180;
-    color: white;
-    transition: .4s;
-}
-
-
-#wrapper {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 90%;
-    padding-top: 2%;
-}
-
-
-
-
-
-
-
 /*FONTS*/
 
-
 html {
-    /*    font-family: 'merchant copy';*/
-    font-family: "Syne Mono", serif;
+    font-family: "syne mono", serif;
     font-weight: 400;
     font-style: normal;
     text-wrap: normal;
     color: var(--colour);
-    font-size: 1.2Em;
+    font-size: 120%;
 }
 
 h1,
@@ -237,29 +169,35 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'arcadeclassic';
+    font-family: "staypuft", "pomrumkiwi";
     font-style: normal;
-    text-transform: uppercase;
     text-align: center;
     font-weight: 300;
-    margin: 10px 0px 10px 0px;
+    margin: 10px 0 10px 0;
 }
 
-.bold {
-    font-family: 'karmatic arcade';
-    font-style: normal;
-    font-size: .6Em;
-    text-align: center;
-    margin-top: 0;
+h6 {
+    font-size: 120%;
 }
 
+h5 {
+    font-size: 200%;
+}
 
-.bolder {
-    font-family: 'karmatic arcade';
-    font-style: normal;
-    font-size: 1Em;
-    text-align: center;
-    margin-top: 0;
+h4 {
+    font-size: 300%;
+}
+
+h3 {
+    font-size: 400%;
+}
+
+h2 {
+    font-size: 500%;
+}
+
+h1 {
+    font-size: 600%;
 }
 
 p,
@@ -268,517 +206,38 @@ a {
     margin: 10 0;
 }
 
-.black {
-    font-size: 1Em;
-    text-transform: uppercase;
-    text-align: center;
-    margin: 5px;
-}
-
-
-
-
-
-
-
-
-
-
 /*BOXES*/
 
 
-
-#homent {
-    margin: 0 50% auto;
+div.spoiler {
     position: relative;
-    transform: translate(-50%, 0);
-    padding: 40px;
-    padding-top: 80px;
-    padding-bottom: 20;
-    border: solid 7px #02021C;
-    border-radius: 20px;
-    width: 80%;
-    height: 100%;
-    box-sizing: border-box;
-    background-color: #E8F5F8;
-    align-content: center;
-    align-items: center;
-}
-
-
-
-
-
-
-
-
-/*SLIDER*/
-
-
-
-
-#slider {
-    width: 300px;
-    height: 150px;
-    /*    background-color: #6DD1E5;*/
-    /*    background-size: contain;*/
-    /*    border: 5px solid dodgerblue;*/
-    overflow: hidden;
-    place-items: center;
-    display: grid;
-    margin: auto;
-}
-
-.slide-track {
-    width: 1400px;
-    animation: scroll 40s linear infinite;
-    display: flex;
-    padding-left: 200px;
-}
-
-.slide-track:hover {
-    animation-play-state: paused;
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-1800px)
-    }
-}
-
-.slide {
-    width: 100%;
-    display: flex;
-    margin-left: 10px;
-}
-
-.slide img {
-    width: 100%;
-}
-
-
-
-
-
-
-
-
-
-
-/*FLEX BOX*/
-
-.flex-container {
-    display: flex;
-}
-
-.flex-child {
-    margin: 0 auto;
-}
-
-
-
-
-
-
-
-
-/*CREDITS*/
-
-.credits-box {
-    background-color: white;
-    border: 5px solid black;
-    padding: 50px;
-    /*    margin-left: 25%;*/
-    /*    margin-top: 20;*/
-    border-radius: 20px;
-}
-
-#credits-navigation {
-    display: block;
-    /*    position: fixed;*/
-    width: 100%;
-    /*    left: 100;*/
-    /*    top: 100;*/
-}
-
-.credits-nav {
-    display: block;
-    margin-bottom: 20;
-    background-color: #CCF1FF;
-    width: 80%;
-    text-align: center;
-    align-content: center;
-    align-items: center;
-    padding: 10;
-    font-family: 'karmatic arcade';
-    color: deepskyblue;
-    border: solid 5px deepskyblue;
-    border-radius: 20px;
-    transition: .6s;
-    font-size: .9Em;
-}
-
-.credits-nav:hover {
-    background-color: white;
-    border-color: dodgerblue;
-    color: dodgerblue;
-    letter-spacing: 2;
-}
-
-#credits-navigation a {
-    text-decoration: none;
-}
-
-.credits-current,
-.credits-current:hover {
-    background-color: #FDD44E;
-    color: #CE3618;
-    border: solid 5px #EE5132;
-}
-
-
-.pic {
-    height: 150;
-    margin: auto;
-    margin-top: 20;
-}
-
-#credits-pic {
-    display: inline-grid;
-    margin: 20;
-    align-content: space-between;
-    background-color: white;
-    border: 2px deepskyblue dashed;
-    padding: 20;
-    max-width: 350;
-}
-
-#credits-icons {
-    display: inline-grid;
-    margin: 10;
-    align-content: space-between;
-    background-color: #FDD44E;
-    border: 2px deepskyblue dashed;
-    padding: 20;
-    max-width: 350;
-}
-
-.icon {
-    height: 100;
-    margin: auto;
-    margin-top: 20;
-}
-
-#myBtn {
-    position: fixed;
-    bottom: 20;
-    left: 7%;
-    width: 150;
-    font-size: 1.2Em;
-    border-radius: 20px;
-    border: 5px solid darkorange;
-    color: darkorange;
-    background-color: antiquewhite;
-    transition: .4s;
-    font-family: 'merchant copy';
-}
-
-#myBtn:hover {
-    background-color: #FDD44E;
-    border-color: #EE5132;
-    color: #EE5132;
-}
-
-
-.credits-sub-navigation {
-    display: flex;
-    padding: 0;
-    border: none;
-    background-color: transparent;
-}
-
-.credits-sub-nav {
-    background-color: white;
-    width: 60%;
-    text-align: center;
-    align-content: center;
-    align-items: center;
-    padding: 10;
-    font-family: 'karmatic arcade';
-    color: deepskyblue;
-    border: solid 5px black;
-    border-radius: 20px;
-    transition: .6s;
-    font-size: .9Em;
-    margin: 0 10 auto;
-    text-decoration: none;
-}
-
-.credits-sub-nav:hover {
-    background-color: #FFDEEF;
-    border-color: deeppink;
-    color: deeppink;
-    letter-spacing: 2;
-}
-
-
-
-
-
-/* 
-                    <div id="credits-stamp">
-                        <p><a href=""></a> <a href="">art</a></p>
-                        <img src="stamps/stamp0">
-                    </div>  
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*STUFF*/
-
-#stuff-box {
-    background-color: var(--primary-colour);
-    border: 7px solid;
-    border-color: var(--accent-colour);
-    border-radius: 20px;
-    padding: 40;
-    margin: 20 auto;
-    height: 60vh;
-    width: 80%;
-}
-
-#stuff-box iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-#stuff-navigation {
-    display: flex;
-    width: 80%;
-    margin: 20 auto;
-    margin-left: 15%;
-}
-
-.stuff-mine {
-    /*    border: 3px solid deeppink;*/
-    padding: 20px;
-    margin: 20px auto;
-}
-
-
-
-
-
-
-
-
-
-
-#tabs {
-    display: inline-block;
-    text-align: center;
-    position: relative;
-    margin: auto;
-    width: 100%;
-    font-size: .6Em;
-    align-items: center;
-    list-style: none;
 
     & img {
-        height: 30px;
-        position: relative;
-        top: 50%;
-        transform: translate(0, 50%);
-    }
+        filter: brightness(0);
+        transition: 0.4s;
 
-    & mark {
-        background-color: black;
-        color: white;
-        padding: 10 5;
-        margin: 0;
-    }
-
-    & a {
-        text-decoration: none;
-        margin: 10px;
-
-        &:hover {
-            & mark {
-                background-color: var(--accent-colour);
-            }
+        & p {
+            position: relative;
+            top: -150px;
+            color: white;
+            transition: 0.4s;
         }
     }
 }
 
+.gallery div.spoiler:hover {
 
-
-
-
-
-
-.tabcontent {
-    display: none;
-    overflow: inherit;
-    animation: fadeEffect 1s;
-    /* Fading effect takes 1 second */
-}
-
-/* Go from zero to full opacity */
-@keyframes fadeEffect {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-.tabcontent img {
-    object-fit: contain;
-}
-
-.tablinks {
-    cursor: pointer;
-}
-
-
-
-
-
-/*PROJECTS*/
-
-
-
-#character-box {
-    margin: 0 auto;
-    margin-top: -50px;
-    margin-bottom: -50px;
-    width: 70%;
-    background-color: black;
-    padding: 50 0;
-}
-
-#char {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 50;
+    filter: brightness(0.6);
 
     & img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        object-position: bottom;
-        margin: auto;
+        filter: brightness(0.6);
+    }
+
+    & p {
+        color: transparent;
+        display: none;
     }
 }
-
-#char:last-child {
-    padding: 50;
-}
-
-.color-box {
-    width: 30px;
-    height: 30px;
-    background-color: white;
-    border-radius: 50px;
-}
-
-
-
-.gallery-container {
-    height: 500;
-    overflow-y: scroll;
-    scrollbar-width: thin;
-
-}
-
-.gallery {
-    width: 90%;
-    overflow: hidden;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-auto-rows: 150px;
-    grid-gap: 20px;
-    padding: 50px;
-}
-
-
-
-.ccc {
-    grid-auto-rows: 300px
-}
-
-.gallery img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    margin: auto;
-    margin-bottom: 50;
-    transition: .4s;
-    cursor: zoom-in;
-    border: 5px solid black;
-}
-
-.gallery div.spoiler {
-    position: relative;
-}
-
-.gallery div.spoiler img {
-    filter: brightness(0);
-    transition: .4s;
-}
-
-.gallery div.spoiler p {
-    position: relative;
-    top: -150px;
-    color: white;
-    transition: .4s;
-}
-
-.gallery div.spoiler:hover img {
-    filter: brightness(0.6);
-}
-
-.gallery div.spoiler:hover p {
-    color: transparent;
-    display: none;
-
-}
-
-.gallery img:hover {
-    filter: brightness(0.6);
-
-}
-
 
 .popup {
     display: none;
@@ -787,7 +246,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, .8);
+    background-color: rgba(0, 0, 0, 0.8);
     z-index: 100;
     cursor: zoom-out;
 }
@@ -809,112 +268,11 @@ a {
     color: white;
 }
 
-#pppp .gallery-container {
-    height: auto;
-    overflow: hidden;
-}
-
-#pppp .gallery {
-    height: auto;
-    overflow: hidden;
-    padding: 20;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto;
-}
-
-#pppp img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    margin: 0;
-    transition: .4s;
-    cursor: zoom-in;
-    border: 5px solid black;
-}
-
-
-
-
-
-
-/*JOUNAL*/
-#journal-navigation {
-    display: block;
-    position: fixed;
-    width: 20%;
-    left: 100;
-    top: 100;
-}
-
-.journal-nav {
-    display: block;
-    margin-bottom: 20;
-    background-color: #104051;
-    width: 60%;
-    text-align: center;
-    align-content: center;
-    align-items: center;
-    padding: 10;
-    font-family: 'arcadeclassic';
-    color: #7096A1;
-    border: solid 5px #7096A1;
-    border-radius: 20px;
-    transition: .6s;
-    font-size: .9Em;
-}
-
-.journal-nav:hover {
-    background-color: #5DD4DC;
-    border-color: white;
-    color: white;
-    letter-spacing: 2;
-}
-
-#journal-navigation a {
-    text-decoration: none;
-}
-
-.journal-current,
-.journal-current:hover {
-    background-color: #5DD4DC;
-    color: #104051;
-    border: solid 5px #104051;
-}
-
-
-.journal-box {
-    background-color: white;
-    padding: 20 50px;
-    margin-left: 25%;
-    margin-top: 0px;
-    margin-bottom: 30px;
-    font-family: 'eggfont';
-    /*    text-transform: uppercase;*/
-    background: white url(/images/dot-paper.png);
-    background-position: center;
-    border: 5px black solid;
-}
-
-div.two {
-    display: flex;
-}
-
-.journal-box h1,
-.journal-box h2,
-.journal-box h3,
-.journal-box h4,
-.journal-box h5,
-.journal-box h6 {
-    font-family: 'eggfont';
-}
-
-
 .gallery-pin {
     column-count: 4;
     column-gap: 10px;
     overflow: hidden;
     margin: auto;
-
 
     & .gallery-item {
         grid-row-end: span 10;
@@ -929,7 +287,6 @@ div.two {
             border-radius: 14px;
             overflow: hidden;
             margin-bottom: 5px;
-
         }
 
         & figcaption {
@@ -939,7 +296,7 @@ div.two {
             background: rgba(0, 0, 0, 0.5);
             width: 100%;
             box-sizing: border-box;
-            bottom: 0px;
+            bottom: 0;
             color: #fff;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -950,12 +307,9 @@ div.two {
         & img {
             width: 100%;
             height: 100%;
-            cursor: pointer;
-            transition: .4s;
+            transition: 0.4s;
             object-fit: cover;
             cursor: zoom-in;
-
-
 
             &:hover {
                 transform: scale(1.2);
@@ -967,8 +321,9 @@ div.two {
             padding: 8px;
         }
     }
+}
 
-    /*
+/*
     @media screen and (max-width: 500px) {
         .gallery-pin {
             column-count: 1;

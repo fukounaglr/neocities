@@ -1,30 +1,232 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>update pending...</title>
 
-        <link rel="icon" type="image/png" href="/ico.png" />
-        <link rel="stylesheet" href="/style.css" />
-        
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>enter; fuko's world</title>
 
-        <style>
-            body {
-                background-color: black;
-                color: white;
-                width: 100vw;
-                height: 100vh;
-                overflow: hidden;
-                align-content: space-around;
-                text-align: center;
+    <link rel="icon" type="image/png" href="/ico.png" />
+    <link rel="stylesheet" href="/style.css" />
+
+
+    <style>
+        body {
+            background: url(/images/fire-snes.png);
+            width: 100vw;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            align-content: center;
+        }
+
+        #info {
+            width: 50vw;
+            /*height: 60vh;*/
+            background-color: var(--primary-colour);
+            align-content: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            border-radius: 10%;
+            border: 5px solid;
+            border-color: var(--colour);
+            padding: 10px 20px;
+
+            & h6 {
+                color: var(--accent-colour);
+                line-height: 100%;
+                margin: 0;
             }
-        </style>
-    </head>
+        }
 
-    <body>
-        <p>update pending... come back in</p>
-        <iframe style="pointer-events: auto; border: medium; margin: 0px; padding: 0px; overflow: hidden; width: 100%; height: 70%; inset: 0px;" title="TickCounter countdown widget" src="//www.tickcounter.com/widget/countdown/5884552" scrolling="no"></iframe>
-        <p>days</p>
-    </body>
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background-color: black;
+            color: white;
+            padding: 5px;
+        }
+
+        .webrings {
+            display: grid;
+            grid-template-columns: auto auto;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            /*
+                bottom: 30px;
+                left: 50%;
+                transform: translate(-50%, 0);
+                */
+
+            & div {
+                margin: auto;
+            }
+        }
+
+        #hitcount {
+            color: var(--accent-colour);
+        }
+
+        #phone-splash {
+            z-index: 100;
+            position: absolute;
+            background-color: black;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            text-align: center;
+            vertical-align: middle;
+            color: white;
+            display: none;
+
+            & div {
+                position: relative;
+                align-content: center;
+                height: 100%
+            }
+
+            & h1 {
+                color: var(--accent-colour);
+            }
+
+            #phone-enter {
+                cursor: pointer;
+            }
+        }
+
+        @media only screen and (max-width: 800px) {
+            #phone-splash {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="phone-splash">
+        <div>
+            <h4>WARNING! PHONE DETECTED!</h4>
+            <p>this site is not mobile friendly! please consider switching to PC or a PC mode!!</p>
+            <a id="phone-enter"> enter anyway</a>
+        </div>
+    </div>
+
+    <div id="info">
+        <div style="grid-area: 1/1/span 1/ span 2; text-align: center;">
+            <h5>WELCOME TO FUKO'S WORLD!!!</h5>
+            <a href="/update-log.html" style="text-decoration: none;"> Last updated: <span id="lastupdate"></span> !!!BIG UPDATE!!!</a>
+
+            <hr>
+
+        </div>
+        <div style="text-align: right">
+            <h6>Webrings</h6>
+<div style="font-size: 0.6Em">
+            <div id="autiring">
+                <script type="text/javascript" src="https://macaque.moe/autiring/onionring-variables.js"></script>
+                <script type="text/javascript" src="https://macaque.moe/autiring/onionring-widget.js"></script>
+
+            </div>
+
+            <div>
+                <script src="https://nuthead.neocities.org/ring/ring.js"></script>
+            </div>
+
+            <script src="https://transring.neocities.org/ring.js" data-widget="cloud"></script>
+
+            <script src="https://snewberry.neocities.org/catfolk/webstring.js"></script>
+</div>
+            <hr>
+            <p>Visitors: <span id="hitcount"></span></p>
+        </div>
+
+        <div>
+            <h6>Heads up!</h6>
+            <ol>
+                <li>some flashing gifs</li>
+                <li>not mobile friendly</li>
+                <li>
+                    <details>
+                        <summary>TWs</summary>
+                        suicidal ideation, possible disturbing content, drugs
+                    </details>
+                </li>
+            </ol>
+            <h6>Best viewed with:</h6>
+            <ol>
+                <li>1920x1080 screen</li>
+                <li>javascript, iframe &amp; animations enabled</li>
+            </ol>
+        </div>
+        <div style="grid-area: 3/1/span 1/ span 2; ">
+            <a href="/room.html">
+                <h4>ENTER?</h4>
+            </a>
+            <a href="/home.html">
+                <p style="text-align: center; font-size: 0.6Em">or go to the normal homepage?</p>
+            </a>
+        </div>
+        <img src="/images/cat%20guitar.png" width="150px" style="position: absolute; bottom: 0; left: -80px;">
+    </div>
+
+    <a href="https://www.mabsland.com/Adoption.html"><img src="/images/Censor_14b.gif" style="position: absolute; top: 30%; right: 20%;"></a>
+
+
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var site_data = JSON.parse(this.responseText);
+                var num_arr = site_data.info.views.toString().split("");
+                var num_str = "";
+                for (i = 0; i < num_arr.length; i++) {
+                    num_str += num_arr[i];
+                    if ((num_arr.length - 1 - i) % 3 == 0 && (num_arr.length - 1 - i) != 0) {
+                        num_str += ",";
+                    }
+                }
+                document.getElementById("hitcount").innerHTML = num_str;
+            }
+        };
+        xhttp.open("GET", "https://weirdscifi.ratiosemper.com/neocities.php?sitename=fukounaglr", true);
+        xhttp.send();
+
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var site_data = JSON.parse(this.responseText);
+
+                var date_str = site_data.info.last_updated;
+                var date_obj = new Date(site_data.info.last_updated);
+                document.getElementById("lastupdate").innerHTML = date_obj.toDateString();
+
+            }
+        };
+        xhttp.open("GET", "https://weirdscifi.ratiosemper.com/neocities.php?sitename=fukounaglr", true);
+        xhttp.send();
+    </script>
+    <script src="/js/parallax.js">
+        <!--    phone splash script
+        -->
+    <script type="text/javascript">
+        const enter = document.getElementById("phone-enter");
+        const splash = document.getElementById("phone-splash");
+
+        enter.addEventListener("click", () => {
+            splash.style.display = "none";
+        });
+    </script>
+
+
+</body>
+
 </html>
