@@ -40,28 +40,54 @@
             color: var(--colour);
         }
 
-        #col1 h1 {
-            -webkit-text-stroke: 3px var(--colour);
-            color: var(--accent-colour);
-            margin-top: 40px;
-        }
+        #col1 {
+            & h1 {
+                -webkit-text-stroke: 3px var(--colour);
+                color: var(--accent-colour);
+                margin-top: 40px;
+                writing-mode: tb-rl;
+            }
 
-        #col1 a {
-            color: var(--colour);
-            background-color: var(--accent-colour);
-            cursor: pointer;
-            padding: 10px;
-            text-align: center;
-            font-family: staypuft;
-        }
+            & a {
+                color: var(--colour);
+                background-color: var(--accent-colour);
+                cursor: pointer;
+                padding: 10px;
+                text-align: center;
+                font-family: staypuft;
+            }
 
-        #col1 a:hover {
-            background-color: var(--accent-colour-hover);
+            & a:hover {
+                background-color: var(--accent-colour-hover);
+            }
         }
 
         #sites a {
             text-decoration: none;
             margin: none;
+        }
+
+        @media screen and (max-width: 700px) {
+            body {
+                display: block;
+            }
+
+            #col1{
+                display: grid;
+                grid-template-columns: auto auto;
+                
+                & h1{
+                    writing-mode: horizontal-tb;
+                    font-size: 4Em;
+                    line-height: 100%;
+                    margin-top: 0;
+                }
+            }
+            
+            .infobox{
+                margin-bottom: 20px;
+                height: auto;
+            }
         }
     </style>
 </head>
@@ -70,7 +96,7 @@
 <body>
     <div id="col1" style="grid-area: 1/1/span 2/ span 1; align-content: center;">
         <a href="/room.html">GO BACK</a>
-        <h1 style="writing-mode: tb-rl;">cool sites!</h1>
+        <h1 style="">cool sites!</h1>
     </div>
 
     <div class="infobox" id="sites" style="grid-area: 1/2/span 1/span 2">

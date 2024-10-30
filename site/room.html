@@ -16,13 +16,13 @@
             overflow: hidden;
             background-color: black
         }
-        
-        a{
+
+        a {
             cursor: pointer;
         }
 
         :root[theme=green] {
-            --theme-filter: hue-rotate(120deg) brightness(100%) contrast(100%) sepia(40%)  saturate(80%);
+            --theme-filter: hue-rotate(120deg) brightness(100%) contrast(100%) sepia(40%) saturate(80%);
         }
 
         :root[theme=hell] {
@@ -70,6 +70,8 @@
             color: white;
             text-align: center;
             align-content: center;
+            text-orientation: upright;
+            writing-mode: vertical-lr;
             height: 100%;
 
             & h1 {
@@ -162,13 +164,59 @@
 
 
         }
-        
-        #confetti-area{
+
+        #confetti-area {
             width: 100%;
             height: 100%;
             position: absolute;
             left: 0;
             top: 0;
+        }
+
+        @media screen and (max-width: 1000px) {
+            #room {
+                transform: translate(-50%, 0)scale(3);
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            #room {
+                transform: translate(-50%, 0)scale(2.5);
+                top: 400px;
+                position: absolute;
+            }
+
+            body {
+                display: block;
+                overflow-y: auto;
+            }
+
+            #left,
+            #right {
+                float: none;
+                width: 100%;
+                height: auto;
+
+            }
+                & h1,
+                h2 {
+                    font-size: 8Em;
+                }
+
+            #left {
+                writing-mode: horizontal-tb;
+                margin-bottom: 600px;
+            }
+        }
+
+
+        @media screen and (max-width: 500px) {
+            #room {
+                transform: translate(-50%, 0)scale(2);
+            }
+            h1, h2 {
+                    font-size: 6Em;
+                }
         }
     </style>
 </head>
@@ -176,8 +224,8 @@
 <body>
 
     <div id="left">
-        <h1>不<br>幸<br>な</h1>
-        <h2>F<br>U<br>K<br>O</h2>
+        <h1>不幸な</h1>
+        <h2>FUKO</h2>
         <div id="confetti-area"></div>
     </div>
 
@@ -250,31 +298,31 @@
 
 
 
-    
-        <script>
-            const elements = [
-                "Dimly lit, the room emits a hollow, muffled sound. It houses a single sorry soul, no other to be found",
-                "inside a room, there is a laptop. inside the laptop, there is a site. inside the site, there is a world. inside the world, there is a girl. a girl who is the world itself. hello, world. how are you?",
-                "Water-damaged off-white ceilings, crumbling crown molding, faded paint and threadbare linens and there's no place I'd rather sleep",
-                "These four walls extend beyond my sight and breathe new life into me",
-                "I’ve found my home inside these walls, the world is my own. I write the rules alone in here. I sit atop a throne",
-                "I get this feeling that I’m not the first and not the last to find solace in this empty room",
-                "These decaying walls were all that kept me sane",
-                "In my little space     nothing changes.        I don't like this place.        I wanna escape this"
-            ];
 
-            const Marquee = document.getElementById("marquee");
+    <script>
+        const elements = [
+            "Dimly lit, the room emits a hollow, muffled sound. It houses a single sorry soul, no other to be found",
+            "inside a room, there is a laptop. inside the laptop, there is a site. inside the site, there is a world. inside the world, there is a girl. a girl who is the world itself. hello, world. how are you?",
+            "Water-damaged off-white ceilings, crumbling crown molding, faded paint and threadbare linens and there's no place I'd rather sleep",
+            "These four walls extend beyond my sight and breathe new life into me",
+            "I’ve found my home inside these walls, the world is my own. I write the rules alone in here. I sit atop a throne",
+            "I get this feeling that I’m not the first and not the last to find solace in this empty room",
+            "These decaying walls were all that kept me sane",
+            "In my little space     nothing changes.        I don't like this place.        I wanna escape this"
+        ];
+
+        const Marquee = document.getElementById("marquee");
+        const randomIndex = Math.floor(Math.random() * elements.length);
+        Marquee.innerHTML = elements[randomIndex];
+
+        function randomMarquee() {
             const randomIndex = Math.floor(Math.random() * elements.length);
             Marquee.innerHTML = elements[randomIndex];
+        }
+    </script>
 
-            function randomMarquee() {
-                const randomIndex = Math.floor(Math.random() * elements.length);
-                Marquee.innerHTML = elements[randomIndex];
-            }
-        </script>
-    
     <!--<div id="confetti-area"></div>-->
-    
+
     <script src="/js/confetti.js"></script>
 </body>
 

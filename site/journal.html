@@ -58,6 +58,7 @@
             position: absolute;
             left: 15%;
             background: url(/images/journal.png);
+            background-repeat: no-repeat;
             background-size: 100% auto;
             padding: 50px;
 
@@ -177,8 +178,8 @@
                 margin: auto;
             }
         }
-        
-        #rpgbox{
+
+        #rpgbox {
             background-color: black;
             width: 22%;
             position: absolute;
@@ -192,19 +193,72 @@
             border-radius: 10px;
             cursor: help;
         }
-        
+
+        #newspaper {
+            position: absolute;
+            top: 50%;
+            left: -5%;
+            transform: translate(0, -50%);
+            z-index: -100;
+            pointer-events: none;
+        }
+
+        #fuko {
+
+            & img {
+                width: 20%;
+                position: absolute;
+                right: 20px;
+                bottom: 20px;
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            #newspaper {
+                height: 100%;
+                left: -30%;
+            }
+
+            #fuko {
+                position: relative;
+
+                & img {
+                    position: relative;
+                    width: 70%;
+                    margin: 30%
+                }
+            }
+
+            body {
+                overflow-y: auto;
+            }
+
+            #rpgbox {
+                position: relative;
+                width: 100%;
+                top: 0;
+                left: 0;
+            }
+
+            main {
+                width: 90vw;
+                position: relative;
+                display: block;
+            }
+
+            .page {
+                position: relative;
+            }
+
+            #nav {
+                display: flex;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <img src="/images/newspapers.png" width="100%" style="
-                position: absolute;
-                top: 50%;
-                left: -5%;
-                transform: translate(0, -50%);
-                z-index: -100;
-                pointer-events: none;
-            " />
+    <img src="/images/newspapers.png" id="newspaper" />
     <main>
         <div id="nav">
             <a onclick="switchPage('home')">
@@ -313,7 +367,7 @@
                 <img src="/images/cat-moment.gif" width="100%" height="100%" style="object-fit: contain">
                 <marquee>OP kitteh moed activaetd. Maek nd eksplore. NO LIMITS. NONE. Kat can fly, kat can hav INFINITE blokcz, kat no hurt.</marquee>
                 <img src="/images/cat-sticker-3.png" class="cat-sticker" style="left: 0%; top: -5%; pointer-events: none" />
-                
+
             </div>
             <div class="right" style="height: 100%; overflow: auto;">
                 <script src="//rss.bloople.net/?url=https%3A%2F%2Frss.spacehey.com%2Fblog_user%3Fid%3D2050165&showtitle=false&type=js"></script>
@@ -332,6 +386,15 @@
             </div>
             <div class="right" style="overflow: auto;">
                 <hr>
+                <p></p>
+                <p>every month is a spooky month if you have anxiety</p>
+                <p>what can be funnier than 24? - 25.</p>
+                <p>cargo? yeah i hope it does</p>
+                <p>that concludes our research purposes, i will now kill myself</p>
+                <p>i gave up on trying to be okay and now im doing many drugs</p>
+                <p>i'm definitely a slightly different mix of guys than i was in the last filming session<br><sub>- <a href="https://youtu.be/CfZO8t-yJ3U?si=RB6y6L989LQQuwBg">this vid</a></sub></p>
+                <p>programmer socks and comic sans seperate the casuals from the masters</p>
+                <p>Don't commit su1c1de that shi kills people</p>
                 <p>her eyes were the sickly green of the sky before a tornado, and to his horror he discovered she could throw cows around just as easily</p>
                 <p>when I imagine myself I am always leaving I couldn't draw my own face if god asked</p>
                 <p>turns out that i'm just as easy to fool as the common deer. i am destiened to be hunted down and made into a little cutlets of venison bacon.<br><sub>- kwite</sub></p>
@@ -369,11 +432,13 @@
             </div>
         </div>
     </main>
-    
-    <img src="/images/fuko%203d.png" width="20%;" style="position: absolute; right: 20px; bottom: 20px"> 
-    <div id="rpgbox" onclick="talk()">
-        <img src="/images/fuko%20speech%20icon%20og.png" width="100%;">
-    <p id="rpg">* I can talk. Click on the box. (WIP)</p>
+
+    <div id="fuko">
+        <img src="/images/fuko%203d.png">
+        <div id="rpgbox" onclick="talk()">
+            <img src="/images/fuko%20speech%20icon%20og.png" width="100%;">
+            <p id="rpg">* I can talk. Click on the box. (WIP)</p>
+        </div>
     </div>
 
     <script>
@@ -385,32 +450,28 @@
             document.getElementById(a).style.display = "grid";
         }
     </script>
-    
-    
-        <script>
-            const elements = [
-                "This vessel, this vessel is a lie, a shapeshifting beast, a lesson in fluidity.",
-                "[supposed dead man asks for a smoke]",
-                "A human, whose original parts have had to be replaced.",
-                "Life is unfair, kill yourself or get over it.",
-                "Just because you know my name doesn't mean you know me.",
-                "What kind of god would allow this to happen?",
-                "This is my body. This is my software.",
-                "Being mentally ill is like being on hard drugs, but with no fun.",
-                "When I imagine myself, I am always leaving. I couldn't draw my own face if god asked.",
-                "Hell is other people.",
-                "Glass WHAT? They can't say that! Oh, it's blass BEACH. I thought it was glass BITCH",
-                "No I just like the idea of being a girl",
-                "All cats are fueled by autism in their own unique ways"
-            ];
 
-            const box = document.getElementById("rpg");
 
-            function talk() {
-                const randomIndex = Math.floor(Math.random() * elements.length);
-                box.innerHTML = "* " + elements[randomIndex];
-            }
-        </script>
+    <script>
+        const elements = [
+            "God is dead and been replaced by trans people",
+            "Being mentally ill is like being on hard drugs, but with no fun.",
+            "Hell is other people.",
+            "Glass WHAT? They can't say that! Oh, it's glass BEACH-",
+            "No I just like the idea of being a girl",
+            "All cats are fueled by autism in their own unique ways",
+            "I’m not even sure what my gender is, it’s only here for comedic value",
+            "who'd wanna be human anyway?",
+            "i wanna go anonymous to identify"
+        ];
+
+        const box = document.getElementById("rpg");
+
+        function talk() {
+            const randomIndex = Math.floor(Math.random() * elements.length);
+            box.innerHTML = "* " + elements[randomIndex];
+        }
+    </script>
 </body>
 
 </html>

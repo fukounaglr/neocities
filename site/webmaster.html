@@ -150,12 +150,91 @@
                 font-family: StayPuft;
                 position: absolute;
                 bottom: 10%;
-                right: 5%;
+                left: 60%;
                 & img {
                     width: 100%;
                 }
             }
+            
+            #boutme{
+                grid-area: 1/2 / span 2/2;
+                background: url(/images/web-page-bg.png);
+                background-size: 100% 100%;
+                background-position: top;
+                padding: 0 35px;
+                width: calc(100% - 70px);
+                height: calc(100vh - 70px - 70px);
+            }
+            #boutme::before{
+                content: "";
+                height: 40px;
+                background-image: url(/images/web-page-bef.png);
+                width: calc(100% + 70px);
+                display: block;
+                background-size: 100% 100%;
+                position: relative;
+                left: -35px;
+            }
+            #boutme::after{
+                content: "";
+                height: 30px;
+                background-image: url(/images/web-page-af.png);
+                width: calc(100% + 70px);
+                display: block;
+                background-size: 100% 100%;
+                position: relative;
+                left: -35px;
+            }
+            
+            #info{
+                width: 100%;
+                height: 75%;
+                overflow: auto;
+            }
+            
+            h1{
+                 position: absolute;
+                    width: 100%;
+                    top: 0;
+                    left: 0;
+                    font-size: 14em;
+                    text-align: justify;
+                    line-height: 80%;
+                    -webkit-text-stroke: 3px white;
+                    color: transparent;
+            }
+            
+            #butterfly{
+                position: absolute;
+                top: 22%;
+                left: 30%;
+                width: 200px;
+            }
+            
+             @media screen and (max-width: 700px) {
+                 body{
+                     display: block;
+                     overflow: auto;
+                 }
+                 
+                 #boutme{
+                     height: auto;
+                 }
+                 
+                 h1{
+                     font-size: 10Em;
+                 }
+                 #info{
+                     height: auto;
+                 }
+                 #audio-player{
+                     position: relative;
+                     height: auto;
+                 }
+    }
         </style>
+        
+        
     </head>
 
     <body>
@@ -165,44 +244,26 @@
                 class="full"
                 src="/images/936a8d015a21228a71a6656d00099ffe.jpg"
                 style="object-position: bottom; height: 60%" />
-            <h1
-                style="
-                    position: absolute;
-                    width: 100%;
-                    top: 0;
-                    left: 0;
-                    font-size: 14em;
-                    text-align: justify;
-                    line-height: 80%;
-                    -webkit-text-stroke: 3px white;
-                    color: transparent;
-                ">
+            <h1>
                 WEB<br />MAS<br />TER
             </h1>
         </div>
 
         <div
             class="col"
-            style="
-                grid-area: 1/2 / span 2/2;
-                background: url(/images/74625a5a7530c9ce5183163572087bcc.jpg);
-                background-size: 100%;
-                background-position: center;
-                padding: 35px;
-                width: calc(100% - 70px);
-                height: calc(100vh - 70px);
-            ">
+            id="boutme">
             <marquee>"hello my name is fuko but you can call me a slur.   i'm stupid, sadistic &amp; suicidal"</marquee>
 
-            <div style="width: 100%; height: 75%; overflow: auto">
+            <div id="info">
                 <h6>CURRENT STATUS? <img src="/graphics/pixels/cat30.gif" /></h6>
                 <p>
-                    watching: my sanity slowly evaporating<br />
-                    playing: nothin<br />
-                    workin on: college...<br />
-                    mood: might be manic again (help me)
+                    <i>watching:</i> madoka magica<br />
+                    <i>playing:</i> nothin<br />
+                    <i>workin on:</i> college... [lie]<br />
+                    <i>mood:</i> im a corpse puppeted by caffeine and music
                 </p>
                 <h6>ME? <img src="/graphics/pixels/nukoAbandonnedCat.gif" /></h6>
+                <p>you can call me fukouna or fuko</p>
                 <p>
                     I am [redacted] years old. i go by any pronouns, but most people use they/them.</p>
                 <p>
@@ -225,7 +286,7 @@
 
                 <h6>MUSIC? <img src="/graphics/pixels/cat32.gif" /></h6>
                 <p>
-                    I like glass beach, jhariah, femtanyl, STOMACH BOOK, Self
+                    I like glass beach, jhariah, femtanyl, STOMACH BOOK, Self, will wood
                 </p>
                 <p>
                     some music i like can be played on this page, in the player below! there's also a
@@ -273,7 +334,6 @@
                 style="object-position: bottom; height: 100%" />
             <div style="position: absolute; width: 105%; top: 20%; right: 0">
                 <img src="/images/torn%20paper.png" style="position: absolute; width: 100%" />
-                const randomIndex = Math.floor(Math.random() * elements.length);
                 <div id="marquee-box" title="lyric randomizes every time you load the page or click here" onclick="randomMarquee()">
                     <marquee id="marquee">random lyric</marquee>
                 </div>
@@ -281,17 +341,18 @@
             <img
                 class="full"
                 src="/images/e0633016551772802f31eb60e5c0d819.jpg"
-                style="height: 40%; position: absolute; top: 0" />
+                style="height: 40%; position: absolute; top: 0; right: 0;" />
+            
+        <div id="countdown" title="when this reaches 0, something scary happens">...</div>
         </div>
 
-        <img src="/images/butterfly.png" style="position: absolute; top: 22%; left: 30%; width: 12%" />
+        <img src="/images/butterfly.png" id="butterfly" />
         <a
             href="/home.html"
             style="font-size: 2em; font-family: Staypuft; color: white; position: absolute; left: 10px; bottom: 0">
             &lt;- go back</a
         >
 
-        <div id="countdown" title="when this reaches 0, something scary happens">...</div>
 
         <script src="/js/audio-player.js"></script>
         <script>
@@ -413,7 +474,10 @@
                 "Me and my past must rift apart, but I’ll always keep this on my arm",
                 "my instinct tells me i smell like fresh meat and i gotta be ready to defend myself if i need to,           although i've never been in a fight;           i'm weak and you're right,      i'm sorry i didn't believe you",
                 "Did you actually realize 'I' was never truly here to begin with? ",
-                "The screams of a tiny girl are of no concern to the whole wide world, no matter how loud"
+                "The screams of a tiny girl are of no concern to the whole wide world, no matter how loud",
+                "well, this decease is defined by its treatment; you people make me sick!",
+                "too weird to love, too scared to die, too alien to take you home",
+                "so if you love me, let me go, my love, so i can be no one"
             ];
 
             const Marquee = document.getElementById("marquee");
