@@ -75,6 +75,7 @@
             color: var(--accent-colour);
         }
 
+        
         #phone-splash {
             z-index: 100;
             position: absolute;
@@ -99,6 +100,8 @@
 
             #phone-enter {
                 cursor: pointer;
+                color: var(--accent-colour);
+                text-decoration: underline;
             }
         }
 
@@ -124,7 +127,7 @@
         <div>
             <h4>WARNING! PHONE DETECTED!</h4>
             <p>not all pages are mobile friendly! please consider switching to PC or a PC mode for best viewing!!</p>
-            <a id="phone-enter"> enter anyway</a>
+            <span id="phone-enter"  onclick="hide()"> enter anyway</span>
         </div>
     </div>
 
@@ -223,16 +226,14 @@
         xhttp.open("GET", "https://weirdscifi.ratiosemper.com/neocities.php?sitename=fukounaglr", true);
         xhttp.send();
     </script>
-    <script src="/js/parallax.js">
-        <!--    phone splash script
-        -->
     <script type="text/javascript">
+        
         const enter = document.getElementById("phone-enter");
         const splash = document.getElementById("phone-splash");
 
-        enter.addEventListener("click", () => {
+        function hide() {
             splash.style.display = "none";
-        });
+        }
     </script>
 
 
