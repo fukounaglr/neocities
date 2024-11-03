@@ -66,27 +66,32 @@
 
         #left {
             float: left;
-            width: 25%;
+            width: 20%;
             color: white;
-            text-align: center;
+            text-align: justify;
             align-content: center;
             text-orientation: upright;
             writing-mode: vertical-lr;
             height: 100%;
+            position: relative;
 
             & h1 {
                 font-size: 10Em;
-                line-height: 100%;
                 color: transparent;
                 -webkit-text-stroke: medium white;
+                position: absolute;
+                top: 10%;
+                left: 20%;
             }
 
             & h2 {
                 display: none;
-                line-height: 100%;
                 font-size: 8EM;
                 pointer-events: none;
                 color: var(--accent-colour);
+                position: absolute;
+                top: 7%;
+                left: 25%;
             }
         }
 
@@ -172,6 +177,10 @@
             left: 0;
             top: 0;
         }
+        
+        #phonetitle{
+            display: none
+        }
 
         @media screen and (max-width: 1000px) {
             #room {
@@ -182,7 +191,7 @@
         @media screen and (max-width: 700px) {
             #room {
                 transform: translate(-50%, 0)scale(2.5);
-                top: 400px;
+                top: 300px;
                 position: absolute;
             }
 
@@ -191,38 +200,40 @@
                 overflow-y: auto;
             }
 
-            #left,
             #right {
                 float: none;
+                display: block;
                 width: 100%;
                 height: auto;
-
+                margin-top: 500px;
             }
-                & h1,
-                h2 {
-                    font-size: 8Em;
-                }
 
             #left {
-                writing-mode: horizontal-tb;
-                margin-bottom: 600px;
+               display: none;
+            }
+            
+            #phonetitle{
+                display: block;
+                color: var(--accent-colour);
+                margin-top: 30px;
             }
         }
+        
 
 
         @media screen and (max-width: 500px) {
             #room {
                 transform: translate(-50%, 0)scale(2);
             }
-            h1, h2 {
-                    font-size: 6Em;
-                }
+           
         }
     </style>
 </head>
 
 <body>
 
+        <h3 id="phonetitle">不幸な</h3>
+    
     <div id="left">
         <h1>不幸な</h1>
         <h2>FUKO</h2>
@@ -237,6 +248,7 @@
                     <option value="cats">cats</option>
                     <option value="hell">hell</option>
                     <option value="underwater">underwater</option>
+                    <!--<option value="neon">neon</option>-->
                     <option value="green">green</option>
                 </select>
             </div>

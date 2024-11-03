@@ -28,6 +28,8 @@
 /*COLOURS*/
 :root {
     --colour: #181818;
+    --accent-colour: blue;
+    --accent-colour-hover: paleturquoise;
     --green-display: none;
     --hell-display: block;
     --underwater-display: none;
@@ -46,6 +48,7 @@
     --cats-display: none;
     --underwater-display: block;
     --bg: url(/images/underwater-snes.png);
+    --fav: url(/graphics/pixels/vapo2.gif);
 }
 
 :root[theme="green"] {
@@ -58,6 +61,7 @@
     --cats-display: none;
     --underwater-display: none;
     --bg: url(/images/green-snes.png);
+    --fav: url(/graphics/pixels/bun.gif);
 }
 
 :root[theme="hell"] {
@@ -70,6 +74,7 @@
     --green-display: none;
     --underwater-display: none;
     --bg: url(/images/hell-snes.png);
+    --fav: url(/graphics/pixels/ribbon.gif);
 }
 
 :root {
@@ -82,7 +87,23 @@
     --green-display: none;
     --underwater-display: none;
     --bg: url(/images/cats-snes.png);
+    --fav: url(/graphics/pixels/heart.gif);
 }
+
+:root[theme="neon"] {
+    --primary-colour: #E8FF7D;
+    --colour: #EB05BD;
+    --accent-colour: #5DE1CA;
+    --accent-colour-hover: #63E4CE;
+    --neon-display: block;
+    --cats-display: none;
+    --hell-display: none;
+    --green-display: none;
+    --underwater-display: none;
+    --bg: url(/images/neon-snes.png);
+    --fav: url(/graphics/pixels/heart.gif);
+}
+
 
 * {
     scrollbar-color: var(--accent-colour) white;
@@ -325,11 +346,11 @@ div.spoiler {
 
 
 
-.confetti{
-	position: absolute;
-	width: 5px;
-	height: 5px;
-	border-radius: 100%;
+.confetti {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
 }
 
 /*

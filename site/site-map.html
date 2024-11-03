@@ -9,18 +9,7 @@
 
         <style>
             
-            :root{
-                --fav: url(/graphics/pixels/heart.gif)
-            }
-            :root[theme=hell]{
-                --fav: url(/graphics/pixels/ribbon.gif)
-            }
-            :root[theme=underwater]{
-                --fav: url(/graphics/pixels/vapo2.gif)
-            }
-            :root[theme=green]{
-                --fav: url(/graphics/pixels/bun.gif)
-            }
+           
             body {
                 background-color: black;
                 background: var(--bg);
@@ -135,6 +124,7 @@
                 <select id="themeSwitcher" onchange="changeTheme()">
                     <option value="cats">cats</option>
                     <option value="hell">hell</option>
+                    <!--<option value="neon">neon</option>-->
                     <option value="underwater">underwater</option>
                     <option value="green">green</option>
                 </select>
