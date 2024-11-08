@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>IGNORE THIS PAGE</title>
+    <style>
+        html {
+            font-family: comic sans ms;
+        }
+
+        body {
+            height: 100vh;
+            margin: 0;
+            align-content: center;
+            padding: 0;
+            background: linear-gradient(white, deepskyblue)
+        }
+
+        #wrapper {
+            width: 70vw;
+            margin: auto;
+            height: 80vh;
+        }
+
+        iframe {
+            width: 100%;
+            margin: auto;
+            aspect-ratio: 4/3;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 40% 60%;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            align-content: space-between;
+        }
+
+        nav a {
+            display: block;
+            padding: 30px 0;
+            margin: 15px;
+            background: orangered;
+            color: white;
+            border-radius: 20px;
+            /*transition: 0.4s;*/
+            text-align: center;
+            /*aspect-ratio: 3/1;*/
+            width: 400px;
+
+            &:hover {
+                background: linear-gradient(orange, orangered);
+            }
+        }
+
+        h3 {
+            margin: auto;
+            text-transform: capitalize;
+        }
+        h1{
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <h1>выберите задание из предложеных ниже:</h1>
+        <div class="grid">
+            <nav>
+                <a href="https://learningapps.org/watch?v=p2jf6sy7a24" target="task">
+                    <h3>задание #1</h3><br>хронологический порядок
+                </a>
+                <a href="https://learningapps.org/watch?v=pffnd9b9a24" target="task">
+                    <h3>задание #2</h3><br>соотнесение пар
+                </a>
+                <a href="https://learningapps.org/watch?v=pc2isqp1v24" target="task">
+                    <h3>задание #3</h3><br>географическое расположение
+                </a>
+            </nav>
+            <iframe src="" name="task">выберите задание!!</iframe>
+        </div>
+    </div>
+
+<a href="/room.html"><img src="/images/hey.gif" style="position: absolute; bottom: 0; left: 50px"></a>
+</body>
+
+</html>
