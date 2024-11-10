@@ -12,27 +12,23 @@
 
     <style>
         body {
-            background: url(/images/fire-snes.png);
+            background: url(/images/stars-snes.png);
             width: 100vw;
             height: 100vh;
-            background-size: cover;
+            /*background-size: cover;*/
             background-position: center;
-            overflow: hidden;
+            overflow-x: hidden;
             align-content: center;
         }
 
         #info {
             width: 50vw;
-            /*height: 60vh;*/
             background-color: var(--primary-colour);
             align-content: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            position: relative;
+            margin: auto;
             display: grid;
             grid-template-columns: 1fr 1.5fr;
-            border-radius: 10%;
             border: 5px solid;
             border-color: var(--colour);
             padding: 10px 20px;
@@ -42,6 +38,41 @@
                 line-height: 100%;
                 margin: 0;
             }
+        }
+
+        #title {
+            grid-area: 1/1/span 1/ span 2;
+            text-align: center;
+        }
+
+        #entering {
+            /*grid-area: 3/1/span 1/ span 2;*/
+        }
+
+        #updd {
+
+            /*text-decoration: none;*/
+            &::before {
+                filter: opacity(100);
+            }
+        }
+        
+        #censor{
+            position: absolute;
+            top: 0;
+            right: -150px;
+        }
+        
+        #warns{
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: min-content;
+        }
+
+        .bowder {
+            border: 3px dotted var(--colour);
+            margin: 10px;
+            padding: 5px;
         }
 
         footer {
@@ -75,10 +106,10 @@
             color: var(--accent-colour);
         }
 
-        
+
         #phone-splash {
             z-index: 100;
-            position: absolute;
+            position: fixed;
             background-color: black;
             width: 100%;
             height: 100%;
@@ -109,14 +140,33 @@
             #phone-splash {
                 display: block;
             }
-            #info{
+
+            #info {
                 display: block;
                 margin: 100px auto;
                 width: 80%;
             }
-            body{
+
+            body {
                 overflow-y: auto;
                 padding: 100px 0;
+            }
+            
+            #censor{
+                top: -120px;
+                left: 10px;
+            }
+            
+            .bowder{
+                margin: 2px
+            }
+            iframe{
+                width: 100%;
+                margin-top: 20px;
+            }
+            
+            #warns{
+                display: block;
             }
         }
     </style>
@@ -127,20 +177,30 @@
         <div>
             <h4>WARNING! PHONE DETECTED!</h4>
             <p>not all pages are mobile friendly! please consider switching to PC or a PC mode for best viewing!!</p>
-            <span id="phone-enter"  onclick="hide()"> enter anyway</span>
+            <span id="phone-enter" onclick="hide()"> enter anyway</span>
         </div>
     </div>
 
-    <div id="info">
-        <div style="grid-area: 1/1/span 1/ span 2; text-align: center;">
-            <h5>WELCOME TO FUKO'S WORLD!!!</h5>
-            <a href="/update-log.html" style="text-decoration: none;"> Last updated: <span id="lastupdate"></span></a>
 
+    <img src="/images/fuko%203d.png" width="30%" style="float: right">
+
+    <div id="info">
+
+
+        <div id="title">
+            <h5>WELCOME TO FUKO'S WORLD!!!</h5>
+            <a href="/update-log.html" id="updd"> Last updated: <span id="lastupdate"></span></a>
+            <img src="/graphics/pixels/charm.gif">
+            <img src="/graphics/pixels/knife.gif">
+            <img src="/graphics/pixels/leaf.gif">
+            <span>Visitors: <span id="hitcount"></span></span>
             <hr>
 
         </div>
-        <div style="text-align: right">
-            <h6>Webrings</h6>
+        <div style="text-align: right" class="bowder">
+            <h6>
+            <img src="/graphics/pixels/bandaid.gif">
+                Webrings</h6>
             <div style="font-size: 0.6Em">
                 <div id="autiring">
                     <script type="text/javascript" src="https://macaque.moe/autiring/onionring-variables.js"></script>
@@ -155,41 +215,67 @@
                 <script src="https://transring.neocities.org/ring.js" data-widget="cloud"></script>
 
                 <script src="https://snewberry.neocities.org/catfolk/webstring.js"></script>
+
+                <div>
+                    <map name="noaitxtwidget">
+                        <area href="https://baccyflap.com/noai" target="_blank" shape="rect" coords="28,0,219,30" alt="no ai webring" title="no ai webring">
+                        <area href="https://baccyflap.com/noai/?prv&s=fkn" target="_top" shape="rect" coords="0,0,27,30" alt="previous" title="previous">
+                        <area href="https://baccyflap.com/noai/?rnd" target="_top" shape="rect" coords="221,6,235,25" alt="random" title="random">
+                        <area href="https://baccyflap.com/noai/?nxt&s=fkn" target="_top" shape="rect" coords="239,0,263,30" alt="next" title="next">
+                    </map>
+                    <img usemap="#noaitxtwidget" src="https://baccyflap.com/noai/txtwidget-light.gif" alt="a white rectangular box with a dashed outline with the words 'the no ai webring' in the centre, with a parenthetical question mark next to it and two arrows pointing left and right to either side">
+                </div>
+
             </div>
-            <hr>
-            <p>Visitors: <span id="hitcount"></span></p>
         </div>
 
-        <div>
-            <h6>Heads up!</h6>
-            <ol>
-                <li>some flashing gifs</li>
-                <li>not mobile friendly</li>
-                <li>
-                    <details>
-                        <summary>TWs</summary>
-                        suicidal ideation, possible disturbing content, drugs
-                    </details>
-                </li>
-            </ol>
-            <h6>Best viewed with:</h6>
-            <ol>
-                <li>1920x1080 screen</li>
-                <li>javascript, iframe &amp; animations enabled</li>
-            </ol>
+        <div id="warns">
+            <div class="bowder">
+                <h6>
+                    <img src="/graphics/pixels/warning.gif">
+                    Heads up!
+                </h6>
+
+                <ol>
+                    <li>some flashing gifs</li>
+                    <li>not fully optimized for mobile</li>
+                    <li>
+                        <details>
+                            <summary>TWs</summary>
+                            suicidal ideation, possible disturbing content idc
+                        </details>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="bowder">
+                <h6>
+                    <img src="/graphics/pixels/melody.gif">
+                    Best viewed with:
+                </h6>
+                <ol>
+                    <li>1920x1080 screen</li>
+                    <li>javascript, iframe &amp; animations enabled
+                        <br>
+                    </li>
+                </ol>
+            </div>
         </div>
-        <div style="grid-area: 3/1/span 1/ span 2; ">
+
+
+        <div id="entering">
             <a href="/room.html">
                 <h4>ENTER?</h4>
             </a>
-            <a href="/home.html">
-                <p style="text-align: center; font-size: 0.6Em">or go to the normal homepage?</p>
-            </a>
+            <p style="text-align: center;"><a href="/home.html" style="text-align: center; font-size: 0.6Em">or go to the normal homepage?</a></p>
         </div>
-        <img src="/images/cat%20guitar.png" width="150px" style="position: absolute; bottom: 0; left: -80px;">
+        
+            <iframe src="/update-log.html" title="update log" style="border: outset 6px var(--accent-colour); grid-area: 3/1/span 1/ span 1"></iframe>
+        
+        
+        
+                        <a href="https://www.mabsland.com/Adoption.html" id="censor"><img src="/images/Censor_14b.gif"></a>
     </div>
-
-    <a href="https://www.mabsland.com/Adoption.html"><img src="/images/Censor_14b.gif" style="position: absolute; top: 30%; right: 20%;"></a>
 
 
     <script>
@@ -227,7 +313,6 @@
         xhttp.send();
     </script>
     <script type="text/javascript">
-        
         const enter = document.getElementById("phone-enter");
         const splash = document.getElementById("phone-splash");
 
