@@ -49,6 +49,7 @@
     --underwater-display: block;
     --bg: url(/images/underwater-snes.png);
     --fav: url(/graphics/pixels/vapo2.gif);
+            --theme-filter: hue-rotate(180deg) brightness(80%) contrast(90%) saturate(170%);
 }
 
 :root[theme="green"] {
@@ -62,12 +63,13 @@
     --underwater-display: none;
     --bg: url(/images/green-snes.png);
     --fav: url(/graphics/pixels/bun.gif);
+            --theme-filter: hue-rotate(120deg) brightness(100%) contrast(100%) sepia(40%) saturate(80%);
 }
 
 :root[theme="hell"] {
-    --primary-colour: #640808;
+    --primary-colour: #D3D2CE;
     --colour: black;
-    --accent-colour: red;
+    --accent-colour: #c70d0d;
     --accent-colour-hover: darkred;
     --hell-display: block;
     --cats-display: none;
@@ -75,18 +77,19 @@
     --underwater-display: none;
     --bg: url(/images/hell-snes.png);
     --fav: url(/graphics/pixels/ribbon.gif);
+            --theme-filter: hue-rotate(-20deg) brightness(80%) contrast(200%) sepia(20%) saturate(200%);
 }
 
 :root {
     --primary-colour: #c6bda5;
-    --colour: #312121;
+    --colour: #201818;
     --accent-colour: #ce5229;
     --accent-colour-hover: darkred;
     --cats-display: block;
     --hell-display: none;
     --green-display: none;
     --underwater-display: none;
-    --bg: url(/images/cats-snes.png);
+    --bg: url(/images/stars-snes.png);
     --fav: url(/graphics/pixels/heart.gif);
 }
 
@@ -101,7 +104,8 @@
     --green-display: none;
     --underwater-display: none;
     --bg: url(/images/neon-snes.png);
-    --fav: url(/graphics/pixels/heart.gif);
+    --fav: url(/graphics/pixels/neon%20stars.gif);
+            --theme-filter: hue-rotate(260deg) brightness(90%) contrast(200%) saturate(170%);
 }
 
 
@@ -119,6 +123,19 @@ a {
     &:hover {
         color: var(--accent-colour-hover);
     }
+}
+
+a::before{
+                content: var(--fav);
+                height: 100%;
+                filter: opacity(0);
+                margin-right: 5px;
+            }
+ a:hover::before{
+                filter: opacity(100)
+            }
+a:has(h1, h2, h3, h4, h5, img, div)::before{
+    content: "";
 }
 
 ol {

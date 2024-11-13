@@ -36,52 +36,74 @@
             background-color: var(--accent-colour);
             color: var(--colour);
         }
+
+        #teto {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media only screen and (max-width: 800px) {
+            body {
+                display: block;
+                overflow-y: auto;
+            }
+
+            #teto {
+                height: auto;
+            }
+
+            #sotw-current {
+                height: auto;
+
+            }
+        }
     </style>
 </head>
 
 <body>
-    <img src="/images/teto-vocaloid.gif" style="width: 100%; height: 100%; object-fit: cover;">
-        <a href="/room.html" style="color: inherit; position: absolute; left: 10px">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--colour)">
-                <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z" />
-            </svg>
-            go back</a>
-    
+    <img src="/images/teto-vocaloid.gif" id="teto">
+    <a href="/room.html" style="color: inherit; position: absolute; left: 10px">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--colour)">
+            <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z" />
+        </svg>
+        go back</a>
+
     <div id="sotw-current">
         <h3>song of the week</h3>
         <hr />
 
         <div style="display: grid; grid-template-columns: 45% 50%; grid-gap: 5%">
             <div>
-                <iframe width="100%" height="200" src="https://open.spotify.com/embed/track/7HAVGwDTWkTiLqgkKITrR7?utm_source=generator" title="spotify player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="100%" height="200" title="spotify player" src="https://open.spotify.com/embed/track/1BuCEYUiLcIEbG9PBeCtHi?utm_source=generator" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
-            <iframe title=" youtube player" style="border-radius: 12px" src="https://www.youtube.com/embed/BmiJ7SDWg_c?si=gaWSEX8uxlEiRFt8" width="100%" height="200px" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe title=" youtube player" style="border-radius: 12px" src="https://www.youtube.com/embed/9cn5LcNgy6Y?si=ZHFXm49XvuMPaMq1" width="100%" height="200px" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
 
         <div style="display: flexbox">
-            <h6>These 4 Walls - Jhariah</h6>
+            <h6>BAMBI - STOMACH BOOK ft. zombAe</h6>
             <!--title-->
-            <span style="font-family: StayPuft; font-size: xx-large">20/oct/2024</span>
+            <span style="font-family: StayPuft; font-size: xx-large">10/nov/2024</span>
             <!--date-->
-            <a href="https://www.youtube.com/watch?v=BmiJ7SDWg_c" target="_blank"><img src="/images/youtube-icon.png" width="40" alt="youtube link" /></a>
-            <a href="https://open.spotify.com/track/7HAVGwDTWkTiLqgkKITrR7?si=8fac704944b5496a"><img src="/images/spotify-icon.png" width="40" alt="spotify link" /></a>
+            <a href="https://www.youtube.com/watch?v=9cn5LcNgy6Y" target="_blank"><img src="/images/youtube-icon.png" width="40" alt="youtube link" /></a>
+            <a href="https://open.spotify.com/track/1BuCEYUiLcIEbG9PBeCtHi?si=266bb1a5801248a7"><img src="/images/spotify-icon.png" width="40" alt="spotify link" /></a>
 
         </div>
         <div style="overflow: auto; height: 200px">
-            <p>feels</p>
-        <blockquote>
-            Dimly lit, the room emits<br>
-            A hollow, muffled sound<br>
-            It houses a single sorry soul<br>
-            No other to be found<br>
-            Water-damaged off-white ceilings<br>
-            Crumbling crown molding<br>
-            Faded paint and threadbare linens and<br>
-            There's no place I'd rather sleep
-        </blockquote>
-</div>
+            <p>i love stomach book. also the fact that both her and femtanyl collabed w zombAe makes me think that one day they will collab as well...</p>
+            <blockquote>
+                I'm in a nightmare, please don't wake me up
+            </blockquote>
+            <blockquote>
+                What a merry way to rot!
+            </blockquote>
+            <blockquote>
+                Why you so afraid of dying?<br>
+                I thought you're already dead
+            </blockquote>
+        </div>
     </div>
-    
+
 
     <!--ARCHIVE STARTS HERE-->
 
@@ -99,6 +121,27 @@
 
                 </div>
                 -->
+
+
+            <div class="sotw-archive-box">
+                <p>20/oct/2024 • These 4 Walls - Jhariah</p>
+                <iframe title="player" style="border-radius: 0" src="https://open.spotify.com/embed/track/7HAVGwDTWkTiLqgkKITrR7?utm_source=generator" width="100%" height="152px" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <a href="https://www.youtube.com/watch?v=BmiJ7SDWg_c" target="_blank"><img src="/images/youtube-icon.png" width="40" alt="youtube link" /></a>
+                <a href="https://open.spotify.com/track/7HAVGwDTWkTiLqgkKITrR7?si=8fac704944b5496a"><img src="/images/spotify-icon.png" width="40" alt="spotify link" /></a>
+                <hr />
+
+                <p>feels</p>
+                <blockquote>
+                    Dimly lit, the room emits<br>
+                    A hollow, muffled sound<br>
+                    It houses a single sorry soul<br>
+                    No other to be found<br>
+                    Water-damaged off-white ceilings<br>
+                    Crumbling crown molding<br>
+                    Faded paint and threadbare linens and<br>
+                    There's no place I'd rather sleep
+                </blockquote>
+            </div>
 
             <div class="sotw-archive-box">
                 <p>16/oct/2024 • 5Alive - Self</p>
@@ -147,7 +190,7 @@
 
         </div>
     </div>
-    
+
 </body>
 
 </html>

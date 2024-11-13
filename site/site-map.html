@@ -13,7 +13,7 @@
             body {
                 background-color: black;
                 background: var(--bg);
-                background-size: cover;
+                /*background-size: cover;*/
                 display: grid;
                 height: 100vh;
                 grid-template-columns: 1fr 2fr;
@@ -38,6 +38,10 @@
             }
             li a:hover::before{
                 filter: opacity(100)
+            }
+            
+            li a{
+                cursor: pointer;
             }
 
             #donot {
@@ -73,6 +77,8 @@
             
             #themeSwitcher{
                 all: unset;
+                background-color: var(--accent-colour);
+                text-align: center
             }
             
             #title{
@@ -122,9 +128,9 @@
             <div id="theme">
                 <span>theme:</span>
                 <select id="themeSwitcher" onchange="changeTheme()">
-                    <option value="cats">cats</option>
+                    <option value="">choose</option>
                     <option value="hell">hell</option>
-                    <!--<option value="neon">neon</option>-->
+                    <option value="neon">neon</option>
                     <option value="underwater">underwater</option>
                     <option value="green">green</option>
                 </select>

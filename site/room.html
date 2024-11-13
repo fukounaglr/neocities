@@ -21,27 +21,16 @@
             cursor: pointer;
         }
 
-        :root[theme=green] {
-            --theme-filter: hue-rotate(120deg) brightness(100%) contrast(100%) sepia(40%) saturate(80%);
-        }
-
-        :root[theme=hell] {
-            --theme-filter: hue-rotate(-20deg) brightness(80%) contrast(200%) sepia(20%) saturate(200%);
-        }
-
-        :root[theme=underwater] {
-            --theme-filter: hue-rotate(180deg) brightness(80%) contrast(90%) saturate(170%);
-        }
 
         #room {
             position: absolute;
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%) scale(4);
+                filter: var(--theme-filter);
 
             & img {
                 position: fixed;
-                filter: var(--theme-filter);
             }
 
             & a {
@@ -56,6 +45,7 @@
             & a:hover {
                 & img:last-of-type {
                     display: block;
+                    filter: brightness(120%)
                 }
 
                 & img:first-of-type {
@@ -245,10 +235,10 @@
             <div id="theme">
                 <span>theme:</span>
                 <select id="themeSwitcher" onchange="changeTheme()">
-                    <option value="cats">cats</option>
+                    <option value="">choose</option>
                     <option value="hell">hell</option>
                     <option value="underwater">underwater</option>
-                    <!--<option value="neon">neon</option>-->
+                    <option value="neon">neon</option>
                     <option value="green">green</option>
                 </select>
             </div>

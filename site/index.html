@@ -12,7 +12,7 @@
 
     <style>
         body {
-            background: url(/images/stars-snes.png);
+            background: var(--bg);
             width: 100vw;
             height: 100vh;
             /*background-size: cover;*/
@@ -71,7 +71,7 @@
 
         .bowder {
             border: 3px dotted var(--colour);
-            margin: 10px;
+            margin: 3px;
             padding: 5px;
         }
 
@@ -135,6 +135,23 @@
                 text-decoration: underline;
             }
         }
+        
+        #themeSwitcher {
+            all: unset;
+            background-color: var(--primary-colour);
+            border: none;
+            padding: 10px;
+            border-radius: 0;
+            margin: 0;
+            cursor: pointer;
+            transition: 0.4s;
+            color: var(--accent-colour);
+
+            &option {
+                padding: 5px 0;
+                background-color: var(--colour)
+            }
+        }
 
         @media only screen and (max-width: 800px) {
             #phone-splash {
@@ -182,7 +199,7 @@
     </div>
 
 
-    <img src="/images/fuko%203d.png" width="30%" style="float: right">
+    <img src="/images/fuko%203d.png" width="30%" style="float: right; filter: var(--theme-filter);">
 
     <div id="info">
 
@@ -242,7 +259,7 @@
                     <li>
                         <details>
                             <summary>TWs</summary>
-                            suicidal ideation, possible disturbing content idc
+                            suicidal ideation, possible disturbing content, TYPOS
                         </details>
                     </li>
                 </ol>
@@ -263,18 +280,33 @@
         </div>
 
 
+        
+            <div style="text-align: center; align-content: center; border: outset 6px var(--accent-colour)">
+                <img src="/graphics/blinkies/fukouna.gif" width="90%">
+        <div id="theme">
+                <span>theme:</span>
+                <select id="themeSwitcher" onchange="changeTheme()">
+                    <option value="">choose</option>
+                    <option value="hell">hell</option>
+                    <option value="underwater">underwater</option>
+                    <option value="neon">neon</option>
+                    <option value="green">green</option>
+                </select>
+            </div>
+        </div>
+        
+        
         <div id="entering">
             <a href="/room.html">
                 <h4>ENTER?</h4>
             </a>
-            <p style="text-align: center;"><a href="/home.html" style="text-align: center; font-size: 0.6Em">or go to the normal homepage?</a></p>
         </div>
-        
-            <iframe src="/update-log.html" title="update log" style="border: outset 6px var(--accent-colour); grid-area: 3/1/span 1/ span 1"></iframe>
         
         
         
                         <a href="https://www.mabsland.com/Adoption.html" id="censor"><img src="/images/Censor_14b.gif"></a>
+        
+            
     </div>
 
 
@@ -321,6 +353,7 @@
         }
     </script>
 
+    <script src="/js/theme-switcher.js"></script>
 
 </body>
 
