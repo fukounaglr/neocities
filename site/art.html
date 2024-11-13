@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>art</title>
+    <link rel="icon" type="image/png" href="ico.png">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        #gallery {
+            grid-area: 3/1/4/3;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            text-align: center;
+
+            & img {
+                width: 100%;
+                margin: auto;
+            }
+        }
+        
+            body{
+                height: 100vh;
+                overflow: hidden;
+            }
+
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            height: 100vh;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        #terms {
+            background-color: var(--colour);
+            color: var(--primary-colour);
+            padding: 10px 0;
+            height: 100vh;
+            align-content: center;
+
+            & h6 {
+                color: var(--accent-colour);
+                text-decoration: underline wavy;
+            }
+        }
+
+        ul {
+            list-style-image: var(--fav);
+        }
+
+        table {
+            width: 90%;
+            margin: auto;
+
+            & td {
+                border: 3px dotted var(--accent-colour);
+            }
+
+            & tr:first-child {
+                background-color: var(--accent-colour);
+                border: none;
+            }
+        }
+
+        #comms {
+            display: grid;
+            grid-template-columns: 60% 40%;
+            align-items: center;
+            margin: 0;
+            height: 100vh;
+            padding: 0;
+        }
+
+        #prices {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background-color: var(--accent-colour);
+            text-align: center;
+            padding-top: 10px;
+
+            & img {
+                width: 90%;
+                aspect-ratio: 1/1;
+                object-fit: cover;
+                background-color: var(--primary-colour);
+            }
+        }
+
+        #info {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow-y: auto;
+            height: 100%;
+
+            & a::before {
+                display: none;
+            }
+
+            & a div {
+                background-image: var(--bg);
+                width: calc(100% - 10px);
+                margin: 0;
+                padding: 5px;
+            }
+        }
+
+        #terms,
+        #prices{
+            height: 100%;
+            overflow: auto;
+        }
+
+        @media only screen and (max-width: 800px) {
+            main {
+                display: block;
+                overflow: auto;
+            }
+
+            table {
+                width: 60%
+            }
+
+            #comms {
+                display: block;
+            }
+
+            #prices,
+            #terms,
+            #info {
+                height: auto;
+                overflow: hidden;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <div id="terms">
+            <h5>terms of use</h5>
+
+            <h6>you can</h6>
+            <ul>
+                <li>get inspiration from my art and/or style</li>
+                <li>use my art as pfp/reupload (credit optional)</li>
+            </ul>
+
+            <h6>you can't</h6>
+            <ul>
+                <li>claim my art as your own</li>
+                <li>use my art for commercial purposes</li>
+            </ul>
+
+            <hr style="border-color: var(--accent-colour)">
+            <h5>tools i use</h5>
+            <ul>
+                <li>tablet: Gaomon S620</li>
+                <li>drawing program: Clip Studio Paint ver. 2</li>
+                <li>brushes:
+                    <ul style="list-style: circle">
+                        <li>🖤TOMBOW🖤 - 2003696</li>
+                        <li>레구리구리 - 2100015</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div id="comms">
+            <div id="info">
+                <a href="/room.html">
+                    <div>
+                        <img src="/graphics/pixels/cat65.gif"> go back
+                    </div>
+                </a>
+
+                <h3>commission info</h3>
+                <h6><img src="/graphics/pixels/yippee-yippee-creature.gif"> status: open!</h6>
+                <ul>
+                    <li>payment ONLY through boosty</li>
+                    <li>payment after sketch</li>
+                    <li>communication through discord</li>
+                    <li>describe the commission &amp; character(s)</li>
+                    <li>give as much references as possible</li>
+                    <li>contact me if you have any more questions</li>
+                </ul>
+
+
+                <table>
+                    <tr>
+                        <td>i can do</td>
+                        <td>i won't do</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li>humanoid (humans, furry and other), cartoon animals</li>
+                                <li>light/mild gore</li>
+                                <li>original/fan characters, fanart</li>
+                                <li>PFP, ref sheet, turnaround</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>NSFW</li>
+                                <li>hateful speechimagery</li>
+                                <li>background (soz)</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+
+                <p style="text-align: center"><span>contact me or donate!</span> <a href="https://discordapp.com/users/984362752439107604/" target="_blank">discord</a> <a href="https://boosty.to/ashhmillr/donate" target="_blank">boosty</a></p>
+                
+                <a>
+                    <div>
+                       <p></p>
+                    </div>
+                </a>
+            </div>
+
+            <div id="prices">
+                <div>
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/dichotomies.png" alt="fullbody art example; character belongs to @dichotomies">
+                    <h6>FB - 20USD</h6>
+                </div>
+                <div>
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/all%20hail%20cannibalism.png" alt="halfbody art example">
+                    <h6>HB - 16USD</h6>
+                </div>
+                <div>
+                    <img src="" alt="headshot art example (placeholder)">
+                    <h6>HS/PFP - 12USD</h6>
+                </div>
+                <div>
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/mars%20silly.png" alt="chibi art example">
+                    <h6>CHIBI - 15USD</h6>
+                </div>
+                <div id="gallery">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/41is0n.png" alt="example art; character belongs to @41is0n">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/mars%20magica" alt="example art; lineless">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/fuko%20turnaround.png" alt="example art; turnaround">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/Screenshot%202024-11-12%20020636.png" alt="example art; sketch">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/Screenshot%202024-11-12%20020655.png" alt="example art; skecth">
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+
+    <script>
+        const images = [
+            "https://file.garden/ZjOP8Ik9OUXT6YVm/art/all%20hail%20cannibalism.png",
+            "https://file.garden/ZjOP8Ik9OUXT6YVm/art/girlfailure.png",
+            "https://file.garden/ZjOP8Ik9OUXT6YVm/art/Screenshot%202024-10-24%20180825.png",
+            "https://file.garden/ZjOP8Ik9OUXT6YVm/art/41is0n.png",
+            "https://file.garden/ZjOP8Ik9OUXT6YVm/art/distortionist.png",
+            "https://file.garden/ZjOP8Ik9OUXT6YVm/art/ausiecat.png",
+            "https://file.garden/ZjOP8Ik9OUXT6YVm/art/mars%20silly.png"
+        ]
+        var page = 0;
+    </script>
+</body>
+
+</html>

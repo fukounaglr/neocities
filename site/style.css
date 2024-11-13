@@ -138,7 +138,7 @@ a:has(h1, h2, h3, h4, h5, img, div)::before{
     content: "";
 }
 
-ol {
+ul {
     list-style: disc;
 }
 
