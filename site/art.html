@@ -8,33 +8,47 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
+        .tab {
+            display: none;
+        }
+
         #gallery {
-            grid-area: 3/1/4/3;
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            /*display: grid;*/
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 5px;
             text-align: center;
+            padding: 10px;
+            background-color: var(--colour);
 
             & img {
                 width: 100%;
+                aspect-ratio: 1/1;
+                object-fit: cover;
                 margin: auto;
             }
         }
-        
-            body{
-                height: 100vh;
-                overflow: hidden;
-            }
+
+        body {
+            height: 100vh;
+            /*overflow: hidden;*/
+            background-image: var(--bg);
+            background-size: auto;
+            background-attachment: fixed;
+        }
 
 
         main {
-            display: grid;
-            grid-template-columns: 1fr 3fr;
-            height: 100vh;
+            /*display: grid;*/
+            /*grid-template-columns: 1fr 3fr;*/
+            /*height: 100vh;*/
             align-items: center;
-            overflow: hidden;
+            width: 50%;
+            margin: auto;
+            background-color: var(--primary-colour);
+            /*overflow: hidden;*/
         }
 
-        #terms {
+        #info {
             background-color: var(--colour);
             color: var(--primary-colour);
             padding: 10px 0;
@@ -52,7 +66,7 @@
         }
 
         table {
-            width: 90%;
+            /*width: 90%;*/
             margin: auto;
 
             & td {
@@ -65,21 +79,13 @@
             }
         }
 
-        #comms {
-            display: grid;
-            grid-template-columns: 60% 40%;
-            align-items: center;
-            margin: 0;
-            height: 100vh;
-            padding: 0;
-        }
-
         #prices {
-            display: grid;
+            /*display: grid;*/
             grid-template-columns: 1fr 1fr;
             background-color: var(--accent-colour);
             text-align: center;
             padding-top: 10px;
+            border: double 6px var(--primary-colour);
 
             & img {
                 width: 90%;
@@ -89,60 +95,107 @@
             }
         }
 
-        #info {
+        #comms {
             padding: 0;
-            display: flex;
+            /*display: flex;*/
             flex-direction: column;
             justify-content: space-between;
             overflow-y: auto;
             height: 100%;
+            align-items: center;
+            margin: 0;
+            height: 100vh;
+            padding: 0;
+            background-color: var(--primary-colour);
+            border: double 6px var(--colour);
+        }
+
+        header,
+        footer {
+            /*background-image: var(--bg);*/
+            background-color: var(--colour);
+            width: calc(100% - 10px);
+            margin: 0;
+            padding: 5px;
+            color: var(--primary-colour);
 
             & a::before {
                 display: none;
             }
 
-            & a div {
-                background-image: var(--bg);
-                width: calc(100% - 10px);
-                margin: 0;
-                padding: 5px;
+            & a,
+            span {
+                background-color: var(--colour);
             }
         }
 
-        #terms,
-        #prices{
+        #info,
+        #prices {
             height: 100%;
             overflow: auto;
+        }
+
+        nav {
+            margin: 10px;
+            & a::before{
+                content: "";
+            }
+        }
+
+        #mars {
+            width: 300px;
+            max-width: 100%;
+            margin: auto;
+            /*float: left;*/
+            display: block;
+        }
+        
+        #m-nav::before{
+            content: url(/graphics/pixels/kit.gif);
+            filter: opacity(100);
         }
 
         @media only screen and (max-width: 800px) {
             main {
                 display: block;
                 overflow: auto;
+                height: auto;
+                width: 100%;
             }
 
             table {
-                width: 60%
-            }
-
-            #comms {
-                display: block;
+                /*width: 50%;*/
             }
 
             #prices,
-            #terms,
+            #comms,
             #info {
                 height: auto;
-                overflow: hidden;
+                width: auto;
+                /*overflow: hidden;*/
             }
+
         }
     </style>
 </head>
 
 <body>
-
     <main>
-        <div id="terms">
+        <header><a href="/room.html">
+                <img src="/graphics/pixels/cat65.gif"> go back
+            </a></header>
+        <nav>
+            <a href="#" onclick="switchPage('mars')" id="m-nav"></a>
+            <a href="#" onclick="switchPage('info')">info</a>
+            <a href="#" onclick="switchPage('comms')">comms</a>
+            <a href="#" onclick="switchPage('prices')">prices</a>
+            <a href="#" onclick="switchPage('gallery')">gallery</a>
+        </nav>
+
+        
+    <img src="/images/mars.png" id="mars" class="tab">
+        
+        <div id="info" class="tab">
             <h5>terms of use</h5>
 
             <h6>you can</h6>
@@ -171,101 +224,106 @@
             </ul>
         </div>
 
-        <div id="comms">
-            <div id="info">
-                <a href="/room.html">
-                    <div>
-                        <img src="/graphics/pixels/cat65.gif"> go back
-                    </div>
-                </a>
-
-                <h3>commission info</h3>
-                <h6><img src="/graphics/pixels/yippee-yippee-creature.gif"> status: open!</h6>
-                <ul>
-                    <li>payment ONLY through boosty</li>
-                    <li>payment after sketch</li>
-                    <li>communication through discord</li>
-                    <li>describe the commission &amp; character(s)</li>
-                    <li>give as much references as possible</li>
-                    <li>contact me if you have any more questions</li>
-                </ul>
+        <div class="tab" id="comms">
 
 
-                <table>
-                    <tr>
-                        <td>i can do</td>
-                        <td>i won't do</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <ul>
-                                <li>humanoid (humans, furry and other), cartoon animals</li>
-                                <li>light/mild gore</li>
-                                <li>original/fan characters, fanart</li>
-                                <li>PFP, ref sheet, turnaround</li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul>
-                                <li>NSFW</li>
-                                <li>hateful speechimagery</li>
-                                <li>background (soz)</li>
-                            </ul>
-                        </td>
-                    </tr>
-                </table>
+            <h3>commission info</h3>
+            <h6><img src="/graphics/pixels/yippee-yippee-creature.gif"> status: open!</h6>
+            <ul>
+                <li>payment ONLY through boosty</li>
+                <li>payment after sketch</li>
+                <li>communication through discord</li>
+                <li>describe the commission &amp; character(s)</li>
+                <li>give references (no "do whatever you want" please)</li>
+                <li>no deadline but WIPs will be given!</li>
+                <li>contact me if you have any more questions</li>
+            </ul>
 
-                <p style="text-align: center"><span>contact me or donate!</span> <a href="https://discordapp.com/users/984362752439107604/" target="_blank">discord</a> <a href="https://boosty.to/ashhmillr/donate" target="_blank">boosty</a></p>
-                
-                <a>
-                    <div>
-                       <p></p>
-                    </div>
-                </a>
-            </div>
 
-            <div id="prices">
-                <div>
-                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/dichotomies.png" alt="fullbody art example; character belongs to @dichotomies">
-                    <h6>FB - 20USD</h6>
-                </div>
-                <div>
-                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/all%20hail%20cannibalism.png" alt="halfbody art example">
-                    <h6>HB - 16USD</h6>
-                </div>
-                <div>
-                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/saffronfire.png" alt="headshot art example; character belongs to @saffronfire">
-                    <h6>HS/PFP - 12USD</h6>
-                </div>
-                <div>
-                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/mars%20silly.png" alt="chibi art example">
-                    <h6>CHIBI - 15USD</h6>
-                </div>
-                <div id="gallery">
-                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/41is0n.png" alt="example art; character belongs to @41is0n">
-                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/mars%20magica" alt="example art; lineless">
-                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/fuko%20turnaround.png" alt="example art; turnaround">
-                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/Screenshot%202024-11-12%20020636.png" alt="example art; sketch">
-                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/Screenshot%202024-11-12%20020655.png" alt="example art; skecth">
-                </div>
-            </div>
+            <table>
+                <tr>
+                    <td>i can do</td>
+                    <td>i won't do</td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>humanoid (humans, furry and other)</li>
+                            <li>cartoon animals</li>
+                            <li>light/mild gore</li>
+                            <li>original/fan characters, fanart</li>
+                            <li>PFP, ref sheet, turnaround</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>NSFW</li>
+                            <li>hateful speech/imagery</li>
+                            <li>background (soz)</li>
+                            <li>comships</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
         </div>
 
+        <div class="tab" id="prices">
+            <div>
+                <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/dichotomies.png" alt="fullbody art example; character belongs to @dichotomies" loading="lazy">
+                <h6>FB - 20USD</h6>
+            </div>
+            <div>
+                <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/all%20hail%20cannibalism.png" alt="halfbody art example" loading="lazy">
+                <h6>HB - 16USD</h6>
+            </div>
+            <div>
+                <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/saffronfire.png" alt="headshot art example; character belongs to @saffronfire" loading="lazy">
+                <h6>HS/PFP - 12USD</h6>
+            </div>
+            <div>
+                <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/mars%20silly.png" alt="chibi art example" loading="lazy">
+                <h6>CHIBI - 15USD</h6>
+            </div>
+
+        </div>
+
+        <div id="gallery" class="tab">
+            <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/saffronfire.png" alt="example art;" loading="lazy">
+            <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/41is0n.png" alt="example art; character belongs to @41is0n" loading="lazy">
+            <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/mars%20magica" alt="example art; lineless" loading="lazy">
+            <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/fuko%20turnaround.png" alt="example art; turnaround" loading="lazy">
+            <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/Screenshot%202024-11-12%20020636.png" alt="example art; sketch" loading="lazy">
+            <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/dichotomies.png" alt="example art; sketch" loading="lazy">
+            <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/all%20hail%20cannibalism.png" alt="example art;" loading="lazy">
+            <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/folie%20a%20deux" alt="example art;" loading="lazy">
+            <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/distortionist.png" alt="example art;" loading="lazy">
+        </div>
+
+        <p style="text-align: center"><span>contact me or donate!</span> <a href="https://discordapp.com/users/984362752439107604/" target="_blank">discord</a> <a href="https://boosty.to/ashhmillr/donate" target="_blank">boosty</a> <a target="_blank" href="https://bsky.app/profile/fukounaglr.bsky.social">Bluesky</a></p>
+        <footer style="text-align: center;">
+            <img src="/graphics/buttons/antinft.png">
+            <span> <map name="noaimini5">
+                    <area href="https://baccyflap.com/noai" shape="rect" coords="25,16,61,29" target="_blank" alt="no ai webring" title="no ai webring">
+                    <area href="https://baccyflap.com/noai/?prv&s=fkn" target="_top" shape="rect" coords="2,2,19,17" alt="previous" title="previous">
+                    <area href="https://baccyflap.com/noai/?rnd" target="_top" shape="rect" coords="66,22,70,28" alt="random" title="random">
+                    <area href="https://baccyflap.com/noai/?nxt&s=fkn" target="_top" shape="rect" coords="69,2,85,17" alt="next" title="next">
+                </map>
+                <img usemap="#noaimini5" src="https://baccyflap.com/noai/miniwidget5.gif" alt="the top of a fuzzy, black sphere with two arrows rising from it, one curving to the left, one to the right. across the bulk of the sphere it reads NO AI / WEBRING in squiggly, uneven letters and next to those words is a small question mark"> </span>
+            <img src="/graphics/buttons/stamp%20antiTT.jpg">
+            <img src="/graphics/buttons/accessibility_button.png">
+
+        </footer>
     </main>
 
 
-
     <script>
-        const images = [
-            "https://file.garden/ZjOP8Ik9OUXT6YVm/art/all%20hail%20cannibalism.png",
-            "https://file.garden/ZjOP8Ik9OUXT6YVm/art/girlfailure.png",
-            "https://file.garden/ZjOP8Ik9OUXT6YVm/art/Screenshot%202024-10-24%20180825.png",
-            "https://file.garden/ZjOP8Ik9OUXT6YVm/art/41is0n.png",
-            "https://file.garden/ZjOP8Ik9OUXT6YVm/art/distortionist.png",
-            "https://file.garden/ZjOP8Ik9OUXT6YVm/art/ausiecat.png",
-            "https://file.garden/ZjOP8Ik9OUXT6YVm/art/mars%20silly.png"
-        ]
-        var page = 0;
+        var currentPage = "mars";
+
+        function switchPage(a) {
+            document.getElementById(currentPage).style.display = "none";
+            currentPage = a;
+            document.getElementById(a).style.display = "grid";
+        }
     </script>
 </body>
 
