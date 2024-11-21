@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>the end</title>
+        
+
+    <link rel="icon" type="image/png" href="/ico.png" />
+    <link rel="stylesheet" href="/style.css" />
+        
+        <style>
+            body{
+                background-image: url(/images/theend.jpg);
+                background-size: 100% 100%;
+                height: 100vh;
+                background-position: center;
+            }
+        </style>
+    </head>
+    <body>
+    <p>whoops. i lied. there is no escape.</p>
+    <p>try refreshing the page.</p>
+        
+        <script>
+        const elements = [
+            "ballpit",
+            "bridge",
+            "clouds",
+            "flooded",
+            "fog",
+            "hotel",
+            "partyroom",
+            "playground",
+            "playground2",
+            "playroom",
+            "rectangle",
+            "sea",
+            "skywall",
+            "store",
+            "theend",
+            "town",
+            "town2",
+            "tv"
+        ]
+        const randomIndex = Math.floor(Math.random() * elements.length);
+            document.body.style.backgroundImage = "url(/images/backrooms/" + elements[randomIndex] + ".jpg)";
+        </script>
+    </body>
+</html>

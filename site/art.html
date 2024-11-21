@@ -52,7 +52,7 @@
             background-color: var(--colour);
             color: var(--primary-colour);
             padding: 10px 0;
-            height: 100vh;
+            /*height: 100vh;*/
             align-content: center;
 
             & h6 {
@@ -104,10 +104,21 @@
             height: 100%;
             align-items: center;
             margin: 0;
-            height: 100vh;
+            /*height: 100vh;*/
             padding: 0;
             background-color: var(--primary-colour);
             border: double 6px var(--colour);
+        }
+        
+        .work{
+            border: double 5px var(--accent-colour);
+            width: 90%;
+            margin: 10px auto;
+            padding: 10px;
+            
+            & h6{
+                text-align: left;
+            }
         }
 
         header,
@@ -137,7 +148,8 @@
 
         nav {
             margin: 10px;
-            & a::before{
+
+            & a::before {
                 content: "";
             }
         }
@@ -149,8 +161,8 @@
             /*float: left;*/
             display: block;
         }
-        
-        #m-nav::before{
+
+        #m-nav::before {
             content: url(/graphics/pixels/kit.gif);
             filter: opacity(100);
         }
@@ -186,16 +198,18 @@
             </a></header>
         <nav>
             <a href="#" onclick="switchPage('mars')" id="m-nav"></a>
-            <a href="#" onclick="switchPage('info')">info</a>
-            <a href="#" onclick="switchPage('comms')">comms</a>
-            <a href="#" onclick="switchPage('prices')">prices</a>
-            <a href="#" onclick="switchPage('gallery')">gallery</a>
+            <a href="#tos" onclick="switchPage('tos')">ToS</a>
+            <a href="#tools" onclick="switchPage('tools')">tools</a>
+            <a href="#comms" onclick="switchPage('comms')">comms</a>
+            <a href="#prices" onclick="switchPage('prices')">prices</a>
+            <a href="#gallery" onclick="switchPage('gallery')">gallery</a>
+            <a href="#wips" onclick="switchPage('wips')">wips</a>
         </nav>
 
-        
-    <img src="/images/mars.png" id="mars" class="tab">
-        
-        <div id="info" class="tab">
+
+        <img src="/images/mars.png" id="mars" class="tab">
+
+        <div id="tos" class="tab">
             <h5>terms of use</h5>
 
             <h6>you can</h6>
@@ -207,10 +221,12 @@
             <h6>you can't</h6>
             <ul>
                 <li>claim my art as your own</li>
-                <li>use my art for commercial purposes</li>
+                <li>use my art for AI &amp; NFT</li>
+                <li>use my art for commercial purposes without my consent</li>
             </ul>
+        </div>
 
-            <hr style="border-color: var(--accent-colour)">
+        <div id="tools" class="tab">
             <h5>tools i use</h5>
             <ul>
                 <li>tablet: Gaomon S620</li>
@@ -221,22 +237,25 @@
                         <li>레구리구리 - 2100015</li>
                     </ul>
                 </li>
+                <li>workspace: 2131086</li>
             </ul>
         </div>
 
         <div class="tab" id="comms">
-
-
             <h3>commission info</h3>
             <h6><img src="/graphics/pixels/yippee-yippee-creature.gif"> status: open!</h6>
             <ul>
-                <li>payment ONLY through boosty</li>
-                <li>payment after sketch</li>
                 <li>communication through discord</li>
                 <li>describe the commission &amp; character(s)</li>
                 <li>give references (no "do whatever you want" please)</li>
                 <li>no deadline but WIPs will be given!</li>
                 <li>contact me if you have any more questions</li>
+            </ul>
+            <h6>payment</h6>
+            <ul>
+                <li>payment ONLY through boosty</li>
+                <li>payment upfront</li>
+                <li>no refunds</li>
             </ul>
 
 
@@ -248,19 +267,22 @@
                 <tr>
                     <td>
                         <ul>
-                            <li>humanoid (humans, furry and other)</li>
-                            <li>cartoon animals</li>
-                            <li>light/mild gore</li>
+                            <li>humanoid (humans, furry)</li>
+                            <li>cartoon animals, ponies</li>
+                            <li>light-mild gore</li>
                             <li>original/fan characters, fanart</li>
-                            <li>PFP, ref sheet, turnaround</li>
+                            <li>ship art</li>
+                            <li>PFP, ref sheet, turnaround + more</li>
                         </ul>
                     </td>
                     <td>
                         <ul>
                             <li>NSFW</li>
-                            <li>hateful speech/imagery</li>
-                            <li>background (soz)</li>
-                            <li>comships</li>
+                            <li>fetish art</li>
+                            <li>hateful speech</li>
+                            <li>backgrounds</li>
+                            <li>proship</li>
+                            <li>NFT</li>
                         </ul>
                     </td>
                 </tr>
@@ -288,15 +310,38 @@
         </div>
 
         <div id="gallery" class="tab">
-            <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/saffronfire.png" alt="example art;" loading="lazy">
-            <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/41is0n.png" alt="example art; character belongs to @41is0n" loading="lazy">
-            <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/mars%20magica" alt="example art; lineless" loading="lazy">
-            <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/fuko%20turnaround.png" alt="example art; turnaround" loading="lazy">
-            <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/Screenshot%202024-11-12%20020636.png" alt="example art; sketch" loading="lazy">
-            <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/dichotomies.png" alt="example art; sketch" loading="lazy">
-            <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/all%20hail%20cannibalism.png" alt="example art;" loading="lazy">
-            <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/folie%20a%20deux" alt="example art;" loading="lazy">
-            <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/distortionist.png" alt="example art;" loading="lazy">
+            <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/epicskar13.png">
+                <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/epicskar13.png" alt="example art; character belongs to @epicskar13" loading="lazy">
+            </a>
+            <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/saffronfire.png">
+                <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/saffronfire.png" alt="example art; character belongs to @saffronfire" loading="lazy"></a>
+            <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/41is0n.png">
+                <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/41is0n.png" alt="example art; character belongs to @41is0n" loading="lazy"></a>
+            <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/mars%20magica">
+                <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/mars%20magica" alt="example art; lineless" loading="lazy"></a>
+            <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/fuko%20turnaround.png">
+                <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/fuko%20turnaround.png" alt="example art; turnaround" loading="lazy"></a>
+            <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/Screenshot%202024-11-12%20020636.png">
+                <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/Screenshot%202024-11-12%20020636.png" alt="example art; sketch" loading="lazy"></a>
+            <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/dichotomies.png">
+                <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/dichotomies.png" alt="example art; character belongs to @dichotomies" loading="lazy"></a>
+            <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/all%20hail%20cannibalism.png">
+                <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/all%20hail%20cannibalism.png" alt="example art;" loading="lazy"></a>
+        </div>
+
+        <div id="wips" class="tab">
+            <h4>Works in progress</h4>
+            
+            <div class="work">
+                <h6>request • phobalicphobia</h6>
+                <p>status: sketch</p>
+            </div>
+            
+            <div class="work">
+                <h6>request • .blueset</h6>
+                <p>status: sketch</p>
+            </div>
+            
         </div>
 
         <p style="text-align: center"><span>contact me or donate!</span> <a href="https://discordapp.com/users/984362752439107604/" target="_blank">discord</a> <a href="https://boosty.to/ashhmillr/donate" target="_blank">boosty</a> <a target="_blank" href="https://bsky.app/profile/fukounaglr.bsky.social">Bluesky</a></p>

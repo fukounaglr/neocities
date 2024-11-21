@@ -135,6 +135,11 @@
                 text-decoration: underline;
             }
         }
+        #webring{
+            align-content: center;
+            & a::before{
+            content: "";
+            }}
         
         #themeSwitcher {
             all: unset;
@@ -214,7 +219,7 @@
             <hr>
 
         </div>
-        <div style="text-align: right" class="bowder">
+        <div class="bowder" id="webrings">
             <h6>
             <img src="/graphics/pixels/bandaid.gif">
                 Webrings</h6>

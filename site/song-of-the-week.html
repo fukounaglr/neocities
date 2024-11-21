@@ -35,9 +35,10 @@
             font-size: 1em;
             background-color: var(--accent-colour);
             color: var(--colour);
+            display: none
         }
 
-        #teto {
+        .sideimg {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -62,34 +63,46 @@
 </head>
 
 <body>
-    <img src="/images/teto-vocaloid.gif" id="teto">
+    <img src="/images/teto-vocaloid.gif" class="sideimg">
     <a href="/room.html" style="color: inherit; position: absolute; left: 10px">
         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--colour)">
             <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z" />
         </svg>
         go back</a>
 
-    <div id="sotw-current">
-        <h3>song of the week</h3>
-        <hr />
+    
 
-        <div style="display: grid; grid-template-columns: 45% 50%; grid-gap: 5%">
-            <div>
-                <iframe width="100%" height="200" title="spotify player" src="https://open.spotify.com/embed/track/1BuCEYUiLcIEbG9PBeCtHi?utm_source=generator" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <iframe title=" youtube player" style="border-radius: 12px" src="https://www.youtube.com/embed/9cn5LcNgy6Y?si=ZHFXm49XvuMPaMq1" width="100%" height="200px" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </div>
+    <div>
+        <div style="width: 100%; height: 100vh; overflow-y: scroll">
 
-        <div style="display: flexbox">
-            <h6>BAMBI - STOMACH BOOK ft. zombAe</h6>
-            <!--title-->
-            <span style="font-family: StayPuft; font-size: xx-large">10/nov/2024</span>
-            <!--date-->
-            <a href="https://www.youtube.com/watch?v=9cn5LcNgy6Y" target="_blank"><img src="/images/youtube-icon.png" width="40" alt="youtube link" /></a>
-            <a href="https://open.spotify.com/track/1BuCEYUiLcIEbG9PBeCtHi?si=266bb1a5801248a7"><img src="/images/spotify-icon.png" width="40" alt="spotify link" /></a>
+        <h4>song of the week</h4>
+            <!--
+                <div class="sotw-archive-box">
+                    <p>DATE • TITLE</p>
+                    <iframe title="player" style="border-radius: 0" src="SPSRC" width="100%" height="152px" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <a href="YTLINK" target="_blank"><img src="/images/youtube-icon.png" width="40" alt="youtube link" /></a>
+                    <a href="SPLINK"><img src="/images/spotify-icon.png" width="40" alt="spotify link" /></a>
+                    <hr />
 
-        </div>
-        <div style="overflow: auto; height: 200px">
+                </div>
+                -->
+            
+                <div class="sotw-archive-box">
+                    <p>21/nov/2024 • Selfstarter A. E. - Telethone ft. Jhariah</p>
+                    <iframe title="player" style="border-radius: 0" src="https://open.spotify.com/embed/track/5wooEVrPSBaIxknl2YzeTi?utm_source=generator" width="100%" height="152px" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <a href="https://youtu.be/gmJwdUA3nbo?si=jZWhNiKgsaMv66Wg" target="_blank"><img src="/images/youtube-icon.png" width="40" alt="youtube link" /></a>
+                    <a href="https://open.spotify.com/track/5wooEVrPSBaIxknl2YzeTi?si=8037ddf8d8f045ed"><img src="/images/spotify-icon.png" width="40" alt="spotify link" /></a>
+                    <hr />
+                    <p>awesome song. made me feel like it's spring which is good i love spring</p>
+                </div>
+            
+                <div class="sotw-archive-box">
+                    <p>10/nov/2024 • BAMBI - STOMACH BOOK ft. zombAe</p>
+                    <iframe title="player" style="border-radius: 0" src="https://open.spotify.com/embed/track/1BuCEYUiLcIEbG9PBeCtHi?utm_source=generator" width="100%" height="152px" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <a href="https://www.youtube.com/watch?v=9cn5LcNgy6Y" target="_blank"><img src="/images/youtube-icon.png" width="40" alt="youtube link" /></a>
+                    <a href="https://open.spotify.com/track/1BuCEYUiLcIEbG9PBeCtHi?si=266bb1a5801248a7"><img src="/images/spotify-icon.png" width="40" alt="spotify link" /></a>
+                    <hr />
+
             <p>i love stomach book. also the fact that both her and femtanyl collabed w zombAe makes me think that one day they will collab as well...</p>
             <blockquote>
                 I'm in a nightmare, please don't wake me up
@@ -101,26 +114,7 @@
                 Why you so afraid of dying?<br>
                 I thought you're already dead
             </blockquote>
-        </div>
-    </div>
-
-
-    <!--ARCHIVE STARTS HERE-->
-
-    <div>
-        <h4>previous songs</h4>
-        <div style="width: 100%; height: 80vh; overflow-y: scroll">
-
-            <!--
-                <div class="sotw-archive-box">
-                    <p>DATE • TITLE</p>
-                    <iframe title="player" style="border-radius: 0" src="SPSRC" width="100%" height="152px" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                    <a href="YTLINK" target="_blank"><img src="/images/youtube-icon.png" width="40" alt="youtube link" /></a>
-                    <a href="SPLINK"><img src="/images/spotify-icon.png" width="40" alt="spotify link" /></a>
-                    <hr />
-
                 </div>
-                -->
 
 
             <div class="sotw-archive-box">
@@ -190,6 +184,9 @@
 
         </div>
     </div>
+    
+    <img class="sideimg" src="/images/femtanyl.gif">
+    <a href="/dance.html" style="position: absolute; bottom: 0px; right: 10px; width: 30%"><h5>join the dance party!</h5></a>
 
 </body>
 
