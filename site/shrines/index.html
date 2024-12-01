@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>shrines</title>
+
+    <link rel="icon" type="image/png" href="/ico.png" />
+    <link rel="stylesheet" href="/style.css" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(#090725, darkblue);
+            display: flex;
+        }
+        header{
+            display: block;
+            color: aliceblue;
+            font-family: "Sour Gummy";
+            font-size: 5Em;
+            margin-left: 50px;
+            position: absolute;
+            
+            & a{
+                font-size: 0.3Em;
+                color: lightblue;
+            }
+        }
+        footer{
+            display: block;
+            color: aliceblue;
+            font-family: "Sour Gummy";
+            font-size: 1Em;
+            margin-left: 20px;
+            position: absolute;
+            bottom: 10px;
+        }
+        section{
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+        #stars{
+            width: 120%;
+            height: 120%;
+            background-image: url(/shrines/images/stars-bg.png);
+            position: absolute;
+            top: -20%;
+            left: -20%;
+            /*transform: translate(-50%, -50%)*/
+        }
+
+        .nav-link {
+            margin: auto;
+
+            & img {
+                width: 400px;
+                margin: auto;
+                transition: 0.5s;
+                filter: brightness(1);
+                pointer-events: fill;
+            }
+        }
+
+        .nav-link:hover img {
+            width: 450px;
+            filter: brightness(120);
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div id="stars" data-speed="1" class="img"></div>
+    </section>
+    <header>Shrines <a href="/room.html">(go back?)</a></header>
+    <a class="nav-link" href="/shrines/sky-cotl/index.html">
+        <center><img src="/shrines/images/Sky_Logo.png" alt="'sky: children of the light' logo" title="sky cotl"></center>
+    </a>
+    
+    <img src="/images/pikaconstruction.gif" style="position: absolute; bottom: 0;">
+    <script src="/js/parallax.js"></script>
+</body>
+
+</html>
