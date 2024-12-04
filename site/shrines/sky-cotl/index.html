@@ -20,10 +20,10 @@
             font-family: "Sour Gummy";
             position: relative;
         }
-        
-        blockquote{
+
+        blockquote {
             margin-left: 50px;
-                background: linear-gradient(to right, darkblue, darkblue 10%, transparent 75%);
+            background: linear-gradient(to right, darkblue, darkblue 10%, transparent 75%);
             color: lightblue;
         }
 
@@ -32,8 +32,9 @@
             --accent-colour: lightblue;
             --accent-colour-hover: lightblue;
             --primary--colour: #090725;
-            --fav: url(/)
+            --fav: url(/graphics/pixels/sparkles.gif)
         }
+        
 
         header {
             width: 100%;
@@ -140,7 +141,7 @@
         }
 
         .res-link:hover {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
 
             & img {
                 width: 220px;
@@ -157,6 +158,24 @@
             width: 300px;
             float: inline-start;
             margin: 15px;
+        }
+
+        li {
+            list-style: circle;
+        }
+
+        li.done {
+            list-style: disc;
+            text-decoration: line-through;
+            color: var(--accent-colour)
+        }
+        
+        .over-img{
+            filter: opacity(1);
+            transition: 1s;
+        }
+        .over-img:hover{
+            filter: opacity(0);
         }
     </style>
 </head>
@@ -177,10 +196,26 @@
             <p><b>Sky: Children of the light (COTL)</b> is a social MMO from creators of Journey. It's a cozy, open-world game, where you explore the kingdom of Sky, collect light and candles, solve puzzles, help spirits and make friends.</p>
             <blockquote>Welsome home, child.<br>Regain your child-like sense of wonder in this social adventure game.</blockquote>
             <p>Your main item is your wing (cape) - it gives you the ability to fly. You level up you wing by finding Winged Light and getting Wing Buffs from spirits. The more level your wing is, the more flaps you can make. Stars on the cape indicate your level. For example, my cape on this image has 8 stars, which means my cape is lvl 8!</p>
-            <p></p>
+            
+            <div style="display: grid; grid-template-columns: 50% 50%; width: 100%">
+            <img src="/graphics/dividers/glitter.gif" width="100%">
+            <img src="/graphics/dividers/glitter.gif" width="100%">
+                </div>
+            <img src="/shrines/images/sky-ss-2.jpg" class="side-img" style="float: inline-end">
+            <h5>My progress</h5>
+            <p>I am currently completing all the spirits/guides and collecting winged lights. I am mostly done with them, here's ones remaining:</p>
+            <ul>
+                <li class="done">treehouse quest</li>
+                <li>Wastelend graveyard WL &amp;spirits</li>
+                <li>Isle Trial of Fire WL</li>
+                <li>Rose guide</li>
+                <li>Eden WL</li>
+            </ul>
+            <p>I think these are all! If you'd like to help me, DM me on discord at fukounaglr. I would also love daily quests buddies!</p>
         </div>
+
         <div class="col">
-            <h4>Resources</h4>
+            <h5>Resources</h5>
             <p>Sites I use to help with quests</p>
             <center>
                 <a class="res-link" href="https://sky-children-of-the-light.fandom.com/wiki/Sky:_Children_of_the_Light_Wiki" target="_blank">
@@ -205,21 +240,22 @@
                 </a>
             </center>
         </div>
-        
-        
+
+
     </main>
-    
-    
+
+
     <footer>
+        <p>TIP: hover on the images to temporeraly hide them.</p>
+        <img src="/graphics/pixels/sparkle.gif" style="margin: 0 10px">
         <a href="/shrines/index.html">Go back</a>
     </footer>
 
 
-    <img src="/shrines/images/hope.png" height="300px" style="position: fixed; bottom: 0; right: 10px;" title="Hope!!!">
-    <img src="/shrines/images/stance.png" height="270px" style="position: fixed; bottom: -30px; left: 10px;">
-    
-    
-    <!--<img src="/images/pikaconstruction.gif" style="position: fixed; bottom: 0;">-->
+    <img src="/shrines/images/hope.png" height="300px" style="position: fixed; bottom: 0; right: 10px;" title="Hope!!!" class="over-img">
+    <img src="/shrines/images/stance.png" height="270px" style="position: fixed; bottom: -30px; left: 10px;" class="over-img">
+
+
 
     <script src="/js/parallax.js"></script>
 </body>
