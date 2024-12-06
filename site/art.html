@@ -12,8 +12,8 @@
             display: none;
         }
 
-        #gallery {
-            /*display: grid;*/
+        #gallery-grid {
+            display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-gap: 5px;
             text-align: center;
@@ -148,10 +148,22 @@
 
         nav {
             margin: 10px;
+            border-image: linear-gradient(to right, var(--colour), var(--accent-colour)) 1;
+            border-bottom-style: dotted;
+            border-width: 6px;
+            padding-bottom: 10px;
 
             & a::before {
                 content: "";
             }
+        }
+
+        #links {
+            border-image: linear-gradient(to left, var(--colour), var(--accent-colour)) 1;
+            border-top-style: dotted;
+            border-width: 6px;
+            text-align: center;
+            padding-top: 10px;
         }
 
         #mars {
@@ -210,7 +222,7 @@
         <img src="/images/mars.png" id="mars" class="tab">
 
         <div id="tos" class="tab">
-            <h5>terms of use</h5>
+            <h4>terms of use</h4>
 
             <h6>you can</h6>
             <ul>
@@ -227,7 +239,7 @@
         </div>
 
         <div id="tools" class="tab">
-            <h5>tools i use</h5>
+            <h4>tools i use</h4>
             <ul>
                 <li>tablet: Gaomon S620</li>
                 <li>drawing program: Clip Studio Paint ver. 2</li>
@@ -235,14 +247,21 @@
                     <ul style="list-style: circle">
                         <li>🖤TOMBOW🖤 - 2003696</li>
                         <li>레구리구리 - 2100015</li>
+                        <li>✨💌 careful, cupid! 🎀✨ - 1991252</li>
                     </ul>
                 </li>
                 <li>workspace: 2131086</li>
+                <li>other:
+                    <ul style="list-style: circle">
+                        <li>vector layers</li>
+                        <li>[cubic] bezier curve</li>
+                    </ul>
+                </li>
             </ul>
         </div>
 
         <div class="tab" id="comms">
-            <h3>commission info</h3>
+            <h4>commission info</h4>
             <h6><img src="/graphics/pixels/yippee-yippee-creature.gif"> status: open!</h6>
             <ul>
                 <li>communication through discord</li>
@@ -290,7 +309,8 @@
         </div>
 
         <div class="tab" id="prices">
-            <p style="grid-area: 1/1/span 1/span 2">(a subject to change)</p>
+            <h4 style="grid-area: 1/1/span 1/span 2">pricing</h4>
+            <p style="grid-area: 2/1/span 1/span 2">(a subject to change)</p>
             <div>
                 <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/dichotomies.png" alt="fullbody art example; character belongs to @dichotomies" loading="lazy">
                 <h6>FB - 20USD</h6>
@@ -311,23 +331,40 @@
         </div>
 
         <div id="gallery" class="tab">
-            <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/epicskar13.png">
-                <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/epicskar13.png" alt="example art; character belongs to @epicskar13" loading="lazy">
+            <h4>Gallery</h4>
+            <div id="gallery-grid">
+                <!--
+            <a href="">
+                <img src="" alt="example art;" loading="lazy">
             </a>
-            <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/saffronfire.png">
-                <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/saffronfire.png" alt="example art; character belongs to @saffronfire" loading="lazy"></a>
-            <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/41is0n.png">
-                <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/41is0n.png" alt="example art; character belongs to @41is0n" loading="lazy"></a>
-            <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/mars%20magica">
-                <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/mars%20magica" alt="example art; lineless" loading="lazy"></a>
-            <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/fuko%20turnaround.png">
-                <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/fuko%20turnaround.png" alt="example art; turnaround" loading="lazy"></a>
-            <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/Screenshot%202024-11-12%20020636.png">
-                <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/Screenshot%202024-11-12%20020636.png" alt="example art; sketch" loading="lazy"></a>
-            <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/dichotomies.png">
-                <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/dichotomies.png" alt="example art; character belongs to @dichotomies" loading="lazy"></a>
-            <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/all%20hail%20cannibalism.png">
-                <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/all%20hail%20cannibalism.png" alt="example art;" loading="lazy"></a>
+            -->
+                <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/mangyy.png">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/mangyy.png" alt="example art;" loading="lazy">
+                </a>
+                <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/blahaj.png">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/blahaj.png" alt="example art;" loading="lazy">
+                </a>
+                <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/phobalicphobia.png">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/phobalicphobia.png" alt="example art; character belongs to @phobalicphobia" loading="lazy">
+                </a>
+                <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/epicskar13.png">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/epicskar13.png" alt="example art; character belongs to @epicskar13" loading="lazy">
+                </a>
+                <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/saffronfire.png">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/saffronfire.png" alt="example art; character belongs to @saffronfire" loading="lazy"></a>
+                <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/41is0n.png">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/41is0n.png" alt="example art; character belongs to @41is0n" loading="lazy"></a>
+                <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/mars%20magica">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/mars%20magica" alt="example art; lineless" loading="lazy"></a>
+                <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/fuko%20turnaround.png">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/fuko%20turnaround.png" alt="example art; turnaround" loading="lazy"></a>
+                <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/Screenshot%202024-11-12%20020636.png">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/Screenshot%202024-11-12%20020636.png" alt="example art; sketch" loading="lazy"></a>
+                <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/dichotomies.png">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/dichotomies.png" alt="example art; character belongs to @dichotomies" loading="lazy"></a>
+                <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/all%20hail%20cannibalism.png">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/all%20hail%20cannibalism.png" alt="example art;" loading="lazy"></a>
+            </div>
         </div>
 
         <div id="wips" class="tab">
@@ -338,8 +375,8 @@
                 <p>just some requests from cjfs for practice &amp; getting more example art</p>
                 <h6>status:</h6>
                 <ul>
-                    <li><b>finished:</b> 7</li>
-                    <li><b>in progress:</b> 1</li>
+                    <li><b>finished:</b> 8</li>
+                    <li><b>in progress:</b> 0</li>
                     <li><b>not started:</b> 2</li>
                 </ul>
             </div>
@@ -350,24 +387,14 @@
                 <h6>status:</h6>
                 <ul>
                     <li><b>finished:</b> 0</li>
-                    <li><b>in progress:</b> 0</li>
-                    <li><b>not started:</b> 4</li>
-                </ul>
-            </div>
-
-            <div class="work">
-                <h5>personal work</h5>
-                <p>art for myself</p>
-                <h6>status:</h6>
-                <ul>
-                    <li><b>in progress:</b> 3</li>
-                    <li><b>not started:</b> 1</li>
+                    <li><b>in progress:</b> 2</li>
+                    <li><b>not started:</b> 2</li>
                 </ul>
             </div>
 
         </div>
 
-        <p style="text-align: center"><a href="https://discordapp.com/users/984362752439107604/" target="_blank">Discord</a> <a href="https://boosty.to/ashhmillr/donate" target="_blank">Boosty</a> <a target="_blank" href="https://bsky.app/profile/fukounaglr.bsky.social">Bluesky</a> <a href="https://artfight.net/~fukouna">Artfight</a></p>
+        <p id="links"><a href="https://discordapp.com/users/984362752439107604/" target="_blank">Discord</a> <a href="https://boosty.to/ashhmillr/donate" target="_blank">Boosty</a> <a target="_blank" href="https://bsky.app/profile/fukounaglr.bsky.social">Bluesky</a> <a href="https://artfight.net/~fukouna">Artfight</a></p>
         <footer style="text-align: center;">
             <img src="/graphics/buttons/antinft.png">
             <span> <map name="noaimini5">
@@ -386,13 +413,16 @@
     <script>
         var currentPage = "mars";
 
+        if (window.location.hash) {
+            var hash = window.location.hash.substring(1);
+            switchPage(hash);
+        }
+
         function switchPage(a) {
             document.getElementById(currentPage).style.display = "none";
             currentPage = a;
             document.getElementById(a).style.display = "grid";
         }
-        
-        
     </script>
 </body>
 
