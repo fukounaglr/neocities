@@ -268,13 +268,14 @@
                 <li>describe the commission &amp; character(s)</li>
                 <li>give references (no "do whatever you want" please)</li>
                 <li>no deadline but WIPs will be given!</li>
-                <li>contact me if you have any more questions</li>
+                <li>if you need the art done by certain date, inform me beforehand</li>
             </ul>
             <h6>payment</h6>
             <ul>
                 <li>payment ONLY through boosty</li>
                 <li>payment upfront</li>
-                <li>no refunds</li>
+                <li>no refunds after i start the art</li>
+                <li>you can tip me!</li>
             </ul>
 
 
@@ -306,6 +307,7 @@
                     </td>
                 </tr>
             </table>
+                <p>feel free to contact me [bsky or discord] if you have any more questions!!</p>
         </div>
 
         <div class="tab" id="prices">
@@ -412,8 +414,16 @@
 
     <script>
         var currentPage = "mars";
+        const pages = [
+            "tools",
+            "comms",
+            "tos",
+            "gallery",
+            "wips",
+            "prices"
+        ]
 
-        if (window.location.hash) {
+        if (window.location.hash && pages.includes(window.location.hash.substring(1)) ) {
             var hash = window.location.hash.substring(1);
             switchPage(hash);
         }

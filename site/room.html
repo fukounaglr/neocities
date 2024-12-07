@@ -7,57 +7,126 @@
 
     <link rel="icon" type="image/png" href="/ico.png" />
     <link rel="stylesheet" href="/style.css" />
+    
 
-    <script src="/js/theme-switcher.js"></script>
     <style>
         body {
             width: 100cw;
             height: 100vh;
             overflow: hidden;
-            background-color: black
+            background-color: black;
+            display: grid;
+            grid-template-columns: 20% 60% 20%;
         }
 
         a {
             cursor: pointer;
         }
 
+        main {
+            display: grid;
+            grid-template-rows: 93% 7%;
+            position: relative;
+            margin: 50px 0;
+            border: double 10px var(--primary-colour);
+        }
 
-        #room {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%) scale(4);
-                filter: var(--theme-filter);
-
-            & img {
-                position: fixed;
-            }
+        #desktop {
+            display: grid;
+            background-image: var(--bg);
+            grid-gap: 10px;
+            background-size: 100% 100%;
+            grid-template-columns: repeat(10, 1fr);
 
             & a {
-                position: absolute;
-                cursor: help;
+                all: unset;
+                width: 100%;
+                display: grid;
+                cursor: pointer;
+                aspect-ratio: 1/1;
+                color: white;
+                font-size: x-small;
+                text-align: center;
+                margin: 10px;
+                padding: 2px;
 
-                & img:last-of-type {
-                    display: none;
+                & span {
+                    pointer-events: none;
+                    margin-top: 5px;
+                }
+
+                & img {
+                    width: 100%;
+                    aspect-ratio: 1/1;
+                    object-fit: contain;
+                    filter: var(--theme-filter);
                 }
             }
 
             & a:hover {
-                & img:last-of-type {
-                    display: block;
-                    filter: brightness(120%)
-                }
+                background-color: rgba(255, 255, 255, 0.1);
+                color: white;
+            }
+        }
 
-                & img:first-of-type {
-                    display: none;
+        #taskbar {
+            background-color: var(--primary-colour);
+            color: var(--colour);
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            bottom: 0;
+            left: 0;
+            align-content: center;
+            padding: 0 10px;
+
+            & img {
+                height: 30px;
+                margin: 5px 0;
+            }
+
+            & a {
+                all: unset;
+                cursor: pointer;
+                margin: auto 0;
+                padding: 0;
+            }
+
+            & a::before {
+                all: unset;
+            }
+        }
+
+        #notepad {
+            font-size: 0.8Em;
+            position: absolute;
+            width: 300px;
+            bottom: 30%;
+            right: 40px;
+            background-color: var(--accent-colour);
+            border: solid 3px var(--colour);
+            padding: 5px;
+
+            & #notepad-title {
+                display: flex;
+                justify-content: space-between;
+                margin: auto;
+            }
+
+            & #notepad-content {
+                background-color: white;
+                padding: 10px;
+                margin: auto;
+                font-size: 0.8Em;
+                & p{
+                    margin: 5px auto;
                 }
             }
         }
 
         #left {
-            float: left;
-            width: 20%;
-            color: white;
+            width: 100%;
+            color: var(--accent-colour);
             text-align: justify;
             align-content: center;
             text-orientation: upright;
@@ -68,10 +137,8 @@
             & h1 {
                 font-size: 10Em;
                 color: transparent;
-                -webkit-text-stroke: medium white;
-                position: absolute;
-                top: 10%;
-                left: 20%;
+                -webkit-text-stroke: medium var(--accent-colour);
+                ;
             }
 
             & h2 {
@@ -79,9 +146,6 @@
                 font-size: 8EM;
                 pointer-events: none;
                 color: var(--accent-colour);
-                position: absolute;
-                top: 7%;
-                left: 25%;
             }
         }
 
@@ -99,32 +163,19 @@
 
 
         #right {
-            float: right;
-            width: 25%;
+            width: calc(100% - 20px);
             color: white;
             text-align: center;
             height: 100%;
+            padding: 10px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: space-around;
             position: relative;
-        }
-
-        #player-button {
-            all: unset;
-            cursor: pointer;
-            margin: 0 auto;
-            margin-top: 30px;
-            height: auto;
-            background-color: var(--primary-colour);
-            padding: 10px;
-            border-radius: 10px;
-            color: var(--colour);
         }
 
         #themeSwitcher {
             all: unset;
-            /*background-color: var(--primary-colour);*/
             border: none;
             padding: 10px;
             border-radius: 10px;
@@ -141,8 +192,6 @@
 
         #theme {
             width: 100%;
-            /*height: 200px;*/
-            /*display: flex;*/
         }
 
         #theme::after {
@@ -150,12 +199,12 @@
             z-index: -1;
 
             display: block;
-            background-image: var(--bg);
+            background-image: var(--fav);
 
-            background-size: cover;
+            background-size: contain;
             background-position: center;
             width: 100%;
-            height: 200px;
+            height: 50px;
 
 
         }
@@ -167,135 +216,226 @@
             left: 0;
             top: 0;
         }
-        
-        #phonetitle{
-            display: none
+
+
+        #exit {
+            width: 144px;
+            height: 24px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(top, transparent, white);
+            z-index: 10;
         }
 
-        @media screen and (max-width: 1000px) {
-            #room {
-                transform: translate(-50%, 0)scale(3);
+        #player {
+            position: absolute;
+            bottom: 10%;
+            left: 10px;
+        }
+
+
+
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
             }
         }
 
-        @media screen and (max-width: 700px) {
-            #room {
-                transform: translate(-50%, 0)scale(2.5);
-                top: 300px;
-                position: absolute;
+        #audio-player {
+            position: relative;
+            position: absolute;
+            background-color: var(--accent-colour);
+            border-radius: 50px;
+            bottom: 10%;
+            left: 100px;
+            width: 300px;
+            align-content: center;
+            text-align: left;
+            z-index: 10;
+            display: flex;
+            align-content: center;
+            font-size: 0.8Em;
+            border: double 6px var(--colour);
+
+            & .paused {
+                animation-play-state: paused;
             }
 
-            body {
-                display: block;
-                overflow-y: auto;
+            & .spin {
+                animation-play-state: running;
             }
 
-            #right {
-                float: none;
-                display: block;
-                width: 100%;
+            & #player-bubble {
+                padding: 5px;
+                width: 80px;
+                aspect-ratio: 1/1;
+                top: 0;
+                z-index: 0;
+                animation-name: spin;
+                animation-duration: 60s;
+                animation-iteration-count: infinite;
+            }
+
+            & #player-select-wrapper {
+                width: 90%;
+                overflow: hidden;
+                position: relative;
+            }
+
+
+
+            & #player-select {
+                all: unset;
+                font-family: "syne mono";
+                font-size: 0.8em;
+                text-overflow: clip;
+                border: none;
                 height: auto;
-                margin-top: 500px;
+                color: black;
+                padding: 5 15;
+                user-select: none;
             }
 
-            #left {
-               display: none;
-            }
-            
-            #phonetitle{
-                display: block;
-                color: var(--accent-colour);
-                margin-top: 30px;
+            & button {
+                border: none;
+                border-radius: 10px;
+                padding: 5px;
+                margin: 10 auto;
+                background-color: transparent;
+                color: var(--colour);
+                cursor: pointer;
+                position: relative;
             }
         }
-        
+
+        #player-slider {
+            position: relative;
+            align-self: stretch;
+            flex: 1;
+            width: 80%;
+            margin-bottom: 15px;
+
+            & div {
+                transform: translateY(-50%);
+                position: absolute;
+                left: 0;
+                top: 50%;
+                pointer-events: none;
+
+                &:first-of-type {
+                    background-color: var(--primary-colour);
+                    height: 5px;
+                    right: 0;
+                }
+
+                &:last-of-type {
+                    content: var(--fav);
+                }
+            }
+        }
+
 
 
         @media screen and (max-width: 500px) {
             #room {
                 transform: translate(-50%, 0)scale(2);
             }
-           
+
         }
     </style>
 </head>
 
 <body>
-
-        <h3 id="phonetitle">不幸な</h3>
-    
     <div id="left">
         <h1>不幸な</h1>
         <h2>FUKO</h2>
         <div id="confetti-area"></div>
     </div>
 
+    <main>
+        <div id="desktop">
+            <a href="/map.html" title="site map"><img src="/images/1%20doller.png"><span>Site map</span></a>
+            <a href="/webmaster.html" title="webmaster"><img src="/images/catdead.png"><span>Who Am I</span></a>
+            <a href="/song-of-the-week.html" title="song of the day"><img src="/images/music.png"><span>Music</span></a>
+            <a href="/shrines/index.html" title="shrines"><img src="/images/naturomaki.png"><span>Shrines</span></a>
+            <a href="/art.html" title="art"><img src="/images/notebook.png"><span>Art</span></a>
+            <a href="/sites.html" title="cool sites"><img src="/images/tamagochi.png"><span>Cool sites</span></a>
+            <a href="/graphics.html" title="graphics"><img src="/images/butterfly.png"><span>Graphics</span></a>
+        </div>
+
+        <div id="player" title="join the party?"><a href="/dance.html"><img src="/images/miku-yay.gif" width="80px"></a></div>
+        <div id="audio-player">
+            <img id="player-bubble" src="/images/disk.png" class="paused" />
+
+            <div style="margin-left: 10px">
+                <div id="player-body">
+                    <h6 style="text-align: left">
+                        <button id="player-button"></button>
+                        <button id="skip-button"></button>
+                        Now playing:
+                    </h6>
+                    <div id="player-slider">
+                        <div aria-hidden="true"></div>
+                        <div aria-hidden="true"></div>
+                    </div>
+
+                    <div id="player-select-wrapper">
+                        <marquee><select id="player-select"></select></marquee>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="position: absolute; bottom: 10%; right: 10px;">
+        <img style="width: 100px; height: 100px;" src="/images/new.jpg">
+        <img style="width: 100px; height: 100px;" src="/images/stupid.jpg">
+        <img style="width: 100px; height: 100px;" src="/images/sleep.jpg">
+        <img style="width: 100px; height: 100px;" src="/images/trans.png">
+            </div>
+
+        <div id="notepad">
+            <p id="notepad-title"><span>Notepad</span><span>- x</span></p>
+            <div id="notepad-content">
+                <p>Sure they can walk and talk, most people can, but typically, what connects people is their memories, experiences, and other ties. Without those, who are they, besides another ragdoll you pass on the streets?</p>
+                </div>
+        </div>
+
+        <div id="taskbar">
+            <a href="/index.html"><img src="/ico.png" title="Exit?"></a>
+            <span>
+                <a href="https://neocities.org/site/fukounaglr" target="_blank"><img src="/graphics/buttons/neocities_button.gif" title="neocities page"></a>
+                <img src="/graphics/buttons/piracy.gif">
+                <img src="/graphics/buttons/transrights.gif">
+                <img src="/graphics/buttons/youre_telling_me.png">
+                <img src="/graphics/buttons/paws.png">
+                <img src="/graphics/buttons/kris_where_tf_are_we.png">
+            </span>
+            <p style="margin: auto 0;" id="time"></p>
+        </div>
+    </main>
     <div id="right">
         <div>
             <div id="theme">
                 <span>theme:</span>
                 <select id="themeSwitcher" onchange="changeTheme()">
-                    <option value="">choose</option>
+                    <option value="">default</option>
                     <option value="hell">hell</option>
                     <option value="underwater">underwater</option>
                     <option value="neon">neon</option>
                     <option value="green">green</option>
                 </select>
             </div>
-            <marquee id="marquee"></marquee>
 
-
-
-            <details>
-                <summary>open chat?</summary>
-
-                <iframe title="chatbox" src="https://www5.cbox.ws/box/?boxid=948666&boxtag=i7GruL" width="95%" height="300px" allow="autoplay" style="border: none; margin: 3%"></iframe>
-            </details>
+            <iframe title="chatbox" src="https://www5.cbox.ws/box/?boxid=948666&boxtag=i7GruL" width="95%" height="300px" allow="autoplay" style="border: none; margin: 3%; background-color: var(--primary-colour)"></iframe>
+            <img src="/graphics/blinkies/helloworld.gif" width="100%">
+            <marquee id="marquee" style="color: var(--accent-colour)"></marquee>
         </div>
-
-        <p style="text-align: center; font-size: 0.8Em; "><a href="mailto:fukounaglr@proton.me">email</a> • <a href="https://neocities.org/site/fukounaglr" target="_blank">neocities</a> • <a href="site-map.html">site map</a></p>
-
-
-    </div>
-
-    <div id="room">
-        <img src="/images/room/floor.png" style="position: relative !important;">
-
-        <img src="images/room/couch.png" style="top: 35px; right: -1px;">
-        <img src="images/room/carpet.png" style="bottom: 35px; left: 10px;">
-        <img src="images/room/chair.png" style="top: 40px; left: 15px;">
-
-        <a href="/graphics.html">
-            <img src="images/room/photos.png" style="top: 10px; right: 33px;">
-            <img src="images/room/photos2.png" style="top: 10px; right: 33px;">
-        </a>
-
-        <a href="/webmaster.html">
-            <img src="images/room/webm.png" style="top: 45px; right: 20px;">
-            <img src="images/room/webm2.png" style="top: 45px; right: 20px;">
-        </a>
-
-        <a href="/art.html">
-            <img src="images/room/journal.png" style="bottom: 50px; left: 15px;">
-            <img src="images/room/journal2.png" style="bottom: 50px; left: 15px;">
-        </a>
-
-        <a href="/song-of-the-week.html">
-            <img src="images/room/headphones.png" style="bottom: 40px; left: 45px;">
-            <img src="images/room/headphones2.png" style="bottom: 40px; left: 45px;">
-        </a>
-
-        <a href="/sites.html">
-            <img src="images/room/laptop.png" style="top: 20px; left: 17px;">
-            <img src="images/room/laptop2.png" style="top: 20px; left: 17px;">
-        </a>
-
-        <img src="/images/room/walls.png" style="top: -24px; left: -24px; pointer-events: none;">
-
-        <a href="/index.html">
-            <img src="images/room/exit.png" style="bottom: -18px; left: 24px;">
-            <img src="images/room/exit2.png" style="bottom: -18px; left: 24px">
-        </a>
     </div>
 
 
@@ -304,7 +444,6 @@
     <script>
         const elements = [
             "Dimly lit, the room emits a hollow, muffled sound. It houses a single sorry soul, no other to be found",
-            "inside a room, there is a laptop. inside the laptop, there is a site. inside the site, there is a world. inside the world, there is a girl. a girl who is the world itself. hello, world. how are you?",
             "Water-damaged off-white ceilings, crumbling crown molding, faded paint and threadbare linens and there's no place I'd rather sleep",
             "These four walls extend beyond my sight and breathe new life into me",
             "I’ve found my home inside these walls, the world is my own. I write the rules alone in here. I sit atop a throne",
@@ -323,9 +462,92 @@
         }
     </script>
 
-    <!--<div id="confetti-area"></div>-->
+    <script>
+        function getDateTime() {
+            var now = new Date();
+            var year = now.getFullYear();
+            var month = now.getMonth() + 1;
+            var day = now.getDate();
+            var hour = now.getHours();
+            var minute = now.getMinutes();
+            var second = now.getSeconds();
+            if (month.toString().length == 1) {
+                month = '0' + month;
+            }
+            if (day.toString().length == 1) {
+                day = '0' + day;
+            }
+            if (hour.toString().length == 1) {
+                hour = '0' + hour;
+            }
+            if (minute.toString().length == 1) {
+                minute = '0' + minute;
+            }
+            if (second.toString().length == 1) {
+                second = '0' + second;
+            }
+            var dateTime = year + '/' + month + '/' + day + ' ' + hour + ':' + minute + ':' + second;
+            return dateTime;
+        }
+
+        setInterval(function() {
+            currentTime = getDateTime();
+            document.getElementById("time").innerHTML = currentTime;
+        }, 1000);
+    </script>
+
+
+    <script src="/js/audio-player.js"></script>
+    <script>
+        const select = document.getElementById("player-select");
+        AudioPlayer.create(
+            [
+                "STOMACH BOOK - FUKOUNA GIRL",
+                "STOMACH BOOK - Circuit Bent",
+                "glass beach - running",
+                "glass beach - cul-de-sac",
+                "glass beach - 1015",
+                "glass beach - slip under the door",
+                "glass beach - bone skull",
+                "Whomst? - Forget Me",
+                "Jhariah - ENTER: A BEGINNER'S GUIDE TO FAKING YOUR DEATH",
+                "Jhariah - RUSSIAN DOLL",
+                "Jhariah - Not So Bad",
+                "Jhariah - Needed a Change of Pace",
+                "Jhariah - SPLIT! (Live From The Bad Luck Tour)",
+                "Jhariah - PRESSURE BOMB 3!!",
+                "doefriends - how to feel alive",
+                "femtanyl - GIRL HELL 1999",
+                "femtanyl - P3T",
+                "4lung - I Love You So Much Stay The Fuck Away From Me",
+                "Ghost and Pals - The Things I Deserve",
+                "Chonny Jash - To Toe Dead Lines",
+                "Will Wood - I Me Myself (2018 live in studio demo)"
+            ], {
+                playButton: document.getElementById("player-button"),
+                skipButton: document.getElementById("skip-button"),
+                insertIcons: true,
+                slider: document.getElementById("player-slider"),
+                sliderThumb: document.getElementById("player-slider").querySelector("div:last-of-type"),
+                shuffle: true,
+                fileGarden: "ZjOP8Ik9OUXT6YVm",
+                onended: () => (select.value = AudioPlayer.idx)
+            }
+        );
+        for (let i = 0; i < AudioPlayer.list.length; i++) {
+            let option = select.appendChild(document.createElement("option"));
+            (option.label = AudioPlayer.list[i].title), (option.value = i);
+        }
+        select.onchange = () => {
+            AudioPlayer.idx = Number(select.value) - 1;
+            AudioPlayer.next();
+        };
+    </script>
+
+    <script src="/js/views-update.js"> </script>
 
     <script src="/js/confetti.js"></script>
+    <script src="/js/theme-switcher.js"></script>
 </body>
 
 </html>
