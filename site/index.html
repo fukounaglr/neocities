@@ -45,25 +45,23 @@
             text-align: center;
         }
 
-        #entering {
-            /*grid-area: 3/1/span 1/ span 2;*/
-        }
 
         #updd {
 
-            /*text-decoration: none;*/
             &::before {
                 filter: opacity(100);
             }
         }
-        
-        #censor{
+
+        #censor {
             position: absolute;
             top: 0;
             right: -150px;
+            height: 100%;
+            z-index: 10
         }
-        
-        #warns{
+
+        #warns {
             display: grid;
             grid-template-columns: 50% 50%;
             grid-template-rows: min-content;
@@ -89,13 +87,11 @@
             display: grid;
             grid-template-columns: auto auto;
             align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             position: absolute;
             width: 100%;
-            /*
-                bottom: 30px;
-                left: 50%;
-                transform: translate(-50%, 0);
-                */
 
             & div {
                 margin: auto;
@@ -125,7 +121,7 @@
                 height: 100%
             }
 
-            & h1 {
+            & h6 {
                 color: var(--accent-colour);
             }
 
@@ -135,12 +131,15 @@
                 text-decoration: underline;
             }
         }
-        #webrings{
+
+        #webrings {
             align-content: center;
-            & a::before{
-            content: "";
-            }}
-        
+
+            & a::before {
+                content: "";
+            }
+        }
+
         #themeSwitcher {
             all: unset;
             background-color: var(--primary-colour);
@@ -158,6 +157,22 @@
             }
         }
 
+        #fuko3d {
+            float: right;
+            filter: var(--theme-filter);
+            pointer-events: none;
+            width: 30%;
+        }
+
+        #theme-grid {
+            text-align: center;
+            align-content: center;
+            border: outset 6px var(--accent-colour);
+            display: grid;
+            grid-template-columns: 50% 50%;
+            padding: 5px;
+        }
+
         @media only screen and (max-width: 600px) {
             #phone-splash {
                 display: block;
@@ -165,29 +180,43 @@
 
             #info {
                 display: block;
-                margin: 100px auto;
-                width: 80%;
+                margin: auto;
+                width: 90%;
+                padding: 0;
             }
 
             body {
                 overflow-y: auto;
+                height: auto;
                 padding: 100px 0;
             }
-            
-            #censor{
-                top: -120px;
-                left: 10px;
+
+            #censor {
+                position: relative;
+                margin: auto;
             }
-            
-            .bowder{
+
+            .bowder {
                 margin: 2px
             }
-            iframe{
+
+            iframe {
                 width: 100%;
                 margin-top: 20px;
             }
-            
-            #warns{
+
+            #warns {
+                display: block;
+            }
+
+            #fuko3d {
+                float: none;
+                top: 0;
+                width: 90%;
+                margin: 20px auto;
+            }
+
+            #theme-grid {
                 display: block;
             }
         }
@@ -197,18 +226,16 @@
 <body>
     <div id="phone-splash">
         <div>
-            <h4>WARNING! PHONE DETECTED!</h4>
+            <h6>WARNING! PHONE DETECTED!</h6>
             <p>not all pages are mobile friendly! please consider switching to PC or a PC mode for best viewing!!</p>
             <span id="phone-enter" onclick="hide()"> enter anyway</span>
         </div>
     </div>
 
 
-    <img src="/images/fuko%203d.png" width="30%" style="float: right; filter: var(--theme-filter); pointer-events: none;">
+    <img src="/images/fuko%203d.png" id="fuko3d">
 
     <div id="info">
-
-
         <div id="title">
             <h5>WELCOME TO FUKO'S WORLD!!!</h5>
             <a href="/update-log.html" id="updd"> Last updated: <span id="lastupdate"></span></a>
@@ -221,10 +248,11 @@
         </div>
         <div class="bowder" id="webrings">
             <h6>
-            <img src="/graphics/pixels/bandaid.gif">
-                Webrings</h6>
+                <img src="/graphics/pixels/bandaid.gif">
+                Webrings
+            </h6>
             <div style="font-size: 0.6Em; text-align: center;">
-                <div id="autiring">
+                <div id="autiring" style="margin: auto; text-align: center;">
                     <script type="text/javascript" src="https://macaque.moe/autiring/onionring-variables.js"></script>
                     <script type="text/javascript" src="https://macaque.moe/autiring/onionring-widget.js"></script>
 
@@ -247,7 +275,7 @@
                     </map>
                     <img usemap="#noaitxtwidget" src="https://baccyflap.com/noai/txtwidget-light.gif" alt="a white rectangular box with a dashed outline with the words 'the no ai webring' in the centre, with a parenthetical question mark next to it and two arrows pointing left and right to either side">
                 </div>
-                
+
                 <a href="https://fanimated.net/mylittlepony/" target="_blank"><img src="/graphics/sites/mlpring.gif"></a>
 
             </div>
@@ -260,60 +288,60 @@
                     Heads up!
                 </h6>
 
-                <ol>
+                <ul>
                     <li>some flashing gifs</li>
                     <li>not fully optimized for mobile</li>
                     <li>
                         <details>
                             <summary>TWs</summary>
-                            suicidal ideation, possible disturbing content, TYPOS
+                            suicidal ideation, possible disturbing content???
                         </details>
                     </li>
-                </ol>
+                </ul>
             </div>
-            
+
             <div class="bowder">
                 <h6>
                     <img src="/graphics/pixels/melody.gif">
                     Best viewed with:
                 </h6>
-                <ol>
+                <ul>
                     <li>1920x1080 screen</li>
-                    <li>javascript, iframe &amp; animations enabled
-                        <br>
-                    </li>
-                </ol>
+                    <li>javascript, iframe &amp; animations enabled</li>
+                </ul>
+            </div>
+
+            <div style="grid-area: auto/auto/span 1/span 2">
+                <div id="theme-grid">
+                    <img src="/graphics/blinkies/stomachbook-fukouna-ultimate.gif" style="margin: auto; width: 90%">
+                    <div id="theme">
+                        <span>theme:</span>
+                        <select id="themeSwitcher" onchange="changeTheme()">
+                            <option value="">default</option>
+                            <option value="hell">hell</option>
+                            <option value="underwater">underwater</option>
+                            <option value="neon">neon</option>
+                            <option value="green">green</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div id="entering">
+                    <a href="/room.html">
+                        <h4>ENTER?</h4>
+                    </a>
+                </div>
             </div>
         </div>
 
 
-        
-            <div style="text-align: center; align-content: center; border: outset 6px var(--accent-colour)">
-                <img src="/graphics/blinkies/fukouna.gif" width="90%">
-        <div id="theme">
-                <span>theme:</span>
-                <select id="themeSwitcher" onchange="changeTheme()">
-                    <option value="">choose</option>
-                    <option value="hell">hell</option>
-                    <option value="underwater">underwater</option>
-                    <option value="neon">neon</option>
-                    <option value="green">green</option>
-                </select>
-            </div>
-        </div>
-        
-        
-        <div id="entering">
-            <a href="/room.html">
-                <h4>ENTER?</h4>
-            </a>
-        </div>
-        
-        
-        
-                        <a href="https://www.mabsland.com/Adoption.html" id="censor"><img src="/images/Censor_14b.gif" style="pointer-events: none;"></a>
-        
-            
+
+
+
+        <a href="https://www.mabsland.com/Adoption.html" id="censor"><img src="/images/Censor_14b.gif"></a>
+
+
     </div>
 
 

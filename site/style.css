@@ -194,11 +194,11 @@ mark {
 
 html {
     font-family: "syne mono", serif;
-    font-weight: 400;
+    font-weight: 100;
     font-style: normal;
     text-wrap: normal;
     color: var(--colour);
-    font-size: 120%;
+    font-size: 1em;
 }
 
 h1,

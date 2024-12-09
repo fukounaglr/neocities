@@ -30,7 +30,6 @@
 
         body {
             height: 100vh;
-            /*overflow: hidden;*/
             background-image: var(--bg);
             background-size: auto;
             background-attachment: fixed;
@@ -38,21 +37,16 @@
 
 
         main {
-            /*display: grid;*/
-            /*grid-template-columns: 1fr 3fr;*/
-            /*height: 100vh;*/
             align-items: center;
             width: 50%;
             margin: auto;
             background-color: var(--primary-colour);
-            /*overflow: hidden;*/
         }
 
         #info {
             background-color: var(--colour);
             color: var(--primary-colour);
             padding: 10px 0;
-            /*height: 100vh;*/
             align-content: center;
 
             & h6 {
@@ -66,7 +60,6 @@
         }
 
         table {
-            /*width: 90%;*/
             margin: auto;
 
             & td {
@@ -80,7 +73,6 @@
         }
 
         #prices {
-            /*display: grid;*/
             grid-template-columns: 1fr 1fr;
             background-color: var(--accent-colour);
             text-align: center;
@@ -97,14 +89,12 @@
 
         #comms {
             padding: 0;
-            /*display: flex;*/
             flex-direction: column;
             justify-content: space-between;
             overflow-y: auto;
             height: 100%;
             align-items: center;
             margin: 0;
-            /*height: 100vh;*/
             padding: 0;
             background-color: var(--primary-colour);
             border: double 6px var(--colour);
@@ -123,7 +113,6 @@
 
         header,
         footer {
-            /*background-image: var(--bg);*/
             background-color: var(--colour);
             width: calc(100% - 10px);
             margin: 0;
@@ -170,7 +159,6 @@
             width: 300px;
             max-width: 100%;
             margin: auto;
-            /*float: left;*/
             display: block;
         }
 
@@ -187,16 +175,13 @@
                 width: 100%;
             }
 
-            table {
-                /*width: 50%;*/
-            }
+            table {}
 
             #prices,
             #comms,
             #info {
                 height: auto;
                 width: auto;
-                /*overflow: hidden;*/
             }
 
         }
@@ -307,26 +292,26 @@
                     </td>
                 </tr>
             </table>
-                <p>feel free to contact me [bsky or discord] if you have any more questions!!</p>
+            <p>feel free to contact me [bsky or discord] if you have any more questions!!</p>
         </div>
 
         <div class="tab" id="prices">
             <h4 style="grid-area: 1/1/span 1/span 2">pricing</h4>
             <p style="grid-area: 2/1/span 1/span 2">(a subject to change)</p>
             <div>
-                <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/dichotomies.png" alt="fullbody art example; character belongs to @dichotomies" loading="lazy">
+                <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/dichotomies.png" title="fullbody art example; character belongs to @dichotomies" loading="lazy">
                 <h6>FB - 20USD</h6>
             </div>
             <div>
-                <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/all%20hail%20cannibalism.png" alt="halfbody art example" loading="lazy">
+                <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/all%20hail%20cannibalism.png" title="halfbody art example" loading="lazy">
                 <h6>HB - 16USD</h6>
             </div>
             <div>
-                <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/saffronfire.png" alt="headshot art example; character belongs to @saffronfire" loading="lazy">
+                <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/saffronfire.png" title="headshot art example; character belongs to @saffronfire" loading="lazy">
                 <h6>HS/PFP - 12USD</h6>
             </div>
             <div>
-                <img src="/images/mars.png" alt="chibi art example" loading="lazy">
+                <img src="/images/mars.png" title="chibi art example" loading="lazy">
                 <h6>CHIBI - 15USD</h6>
             </div>
 
@@ -335,37 +320,41 @@
         <div id="gallery" class="tab">
             <h4>Gallery</h4>
             <div id="gallery-grid">
+
                 <!--
-            <a href="">
-                <img src="" alt="example art;" loading="lazy">
-            </a>
+                <a href="">
+                    <img src="" title="example art;" loading="lazy">
+                </a>
             -->
+                <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/and%20im%20gone.png">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/and%20im%20gone.png" title="example art;" loading="lazy">
+                </a>
                 <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/mangyy.png">
-                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/mangyy.png" alt="example art;" loading="lazy">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/mangyy.png" title="example art;" loading="lazy">
                 </a>
                 <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/blahaj.png">
-                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/blahaj.png" alt="example art;" loading="lazy">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/blahaj.png" title="example art;" loading="lazy">
                 </a>
                 <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/phobalicphobia.png">
-                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/phobalicphobia.png" alt="example art; character belongs to @phobalicphobia" loading="lazy">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/phobalicphobia.png" title="example art; character belongs to @phobalicphobia" loading="lazy">
                 </a>
                 <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/epicskar13.png">
-                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/epicskar13.png" alt="example art; character belongs to @epicskar13" loading="lazy">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/epicskar13.png" title="example art; character belongs to @epicskar13" loading="lazy">
                 </a>
                 <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/saffronfire.png">
-                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/saffronfire.png" alt="example art; character belongs to @saffronfire" loading="lazy"></a>
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/saffronfire.png" title="example art; character belongs to @saffronfire" loading="lazy"></a>
                 <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/41is0n.png">
-                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/41is0n.png" alt="example art; character belongs to @41is0n" loading="lazy"></a>
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/41is0n.png" title="example art; character belongs to @41is0n" loading="lazy"></a>
                 <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/mars%20magica">
-                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/mars%20magica" alt="example art; lineless" loading="lazy"></a>
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/mars%20magica" title="example art; lineless" loading="lazy"></a>
                 <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/fuko%20turnaround.png">
-                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/fuko%20turnaround.png" alt="example art; turnaround" loading="lazy"></a>
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/fuko%20turnaround.png" title="example art; turnaround" loading="lazy"></a>
                 <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/Screenshot%202024-11-12%20020636.png">
-                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/Screenshot%202024-11-12%20020636.png" alt="example art; sketch" loading="lazy"></a>
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/Screenshot%202024-11-12%20020636.png" title="example art; sketch" loading="lazy"></a>
                 <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/dichotomies.png">
-                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/dichotomies.png" alt="example art; character belongs to @dichotomies" loading="lazy"></a>
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/dichotomies.png" title="example art; character belongs to @dichotomies" loading="lazy"></a>
                 <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/all%20hail%20cannibalism.png">
-                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/all%20hail%20cannibalism.png" alt="example art;" loading="lazy"></a>
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/all%20hail%20cannibalism.png" title="example art;" loading="lazy"></a>
             </div>
         </div>
 
@@ -391,6 +380,15 @@
                     <li><b>finished:</b> 0</li>
                     <li><b>in progress:</b> 2</li>
                     <li><b>not started:</b> 2</li>
+                </ul>
+            </div>
+
+            <div class="work">
+                <h5>secret santa</h5>
+                <p>particiapating in secret santa in TTI server</p>
+                <h6>status:</h6>
+                <ul>
+                    <li><b>not started</b> </li>
                 </ul>
             </div>
 
@@ -423,7 +421,7 @@
             "prices"
         ]
 
-        if (window.location.hash && pages.includes(window.location.hash.substring(1)) ) {
+        if (window.location.hash && pages.includes(window.location.hash.substring(1))) {
             var hash = window.location.hash.substring(1);
             switchPage(hash);
         }
@@ -434,6 +432,7 @@
             document.getElementById(a).style.display = "grid";
         }
     </script>
+    <script src="/js/theme-switcher.js"></script>
 </body>
 
 </html>
