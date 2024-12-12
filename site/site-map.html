@@ -1,157 +1,174 @@
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=0.1, user-scalable=no" />
-        <title>site map</title>
 
-        <link rel="icon" type="image/png" href="/ico.png" />
-        <link rel="stylesheet" href="/style.css" />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.1, user-scalable=no" />
+    <title>site map</title>
 
-        <style>
-            
-           
+    <link rel="icon" type="image/png" href="/ico.png" />
+    <link rel="stylesheet" href="/style.css" />
+
+    <style>
+        body {
+            background-color: black;
+            background: var(--bg);
+            /*background-size: cover;*/
+            display: grid;
+            height: 100vh;
+            grid-template-columns: 1fr 2fr;
+            overflow: hidden;
+            color: var(--primary-colour);
+        }
+
+        ol {
+            font-size: 1em;
+            height: 100%;
+            list-style: none;
+            align-content: center;
+            background-color: var(--colour);
+            margin: 0;
+        }
+
+        li a::before {
+            content: var(--fav);
+            height: 100%;
+            filter: opacity(0);
+            margin-right: 5px;
+        }
+
+        li a:hover::before {
+            filter: opacity(100)
+        }
+
+        li a {
+            cursor: pointer;
+        }
+
+        #donot {
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+        }
+
+        h1 {
+            position: absolute;
+            font-size: 20em;
+            line-height: 80%;
+            text-transform: uppercase;
+            margin: 0;
+            color: transparent;
+            pointer-events: none;
+        }
+
+        #a {
+            color: var(--colour);
+            top: 0;
+            left: 0;
+        }
+
+        #b {
+            -webkit-text-stroke: 3px var(--accent-colour);
+            top: 5px;
+            left: -5px;
+        }
+
+        #c {
+            -webkit-text-stroke: 3px var(--primary-colour);
+            top: 10px;
+            left: -10px;
+        }
+
+        #themeSwitcher {
+            all: unset;
+            background-color: var(--accent-colour);
+            text-align: center
+        }
+
+        #title {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        @media only screen and (max-width: 700px) {
             body {
-                background-color: black;
-                background: var(--bg);
-                /*background-size: cover;*/
-                display: grid;
-                height: 100vh;
-                grid-template-columns: 1fr 2fr;
-                overflow: hidden;
-                color: var(--primary-colour);
+                display: block;
+                min-height: 100vh;
+                overflow: auto;
+            }
+
+            #title {
+                display: none;
             }
 
             ol {
-                font-size: 1em;
-                height: 100%;
-                list-style: none;
-                align-content: center;
-                background-color: var(--colour);
-                margin: 0;
+                width: 70%;
             }
-            
-            li a::before{
-                content: var(--fav);
-                height: 100%;
-                filter: opacity(0);
-                margin-right: 5px;
-            }
-            li a:hover::before{
-                filter: opacity(100)
-            }
-            
-            li a{
-                cursor: pointer;
-            }
+        }
+    </style>
+</head>
 
-            #donot {
-                position: absolute;
-                bottom: 10px;
-                left: 20px;
-            }
+<body>
+    <ol>
+        <li><a href="/index.html">index</a></li>
+        <li><a href="/room.html">room</a></li>
+        <li><a href="/song-of-the-week.html">song of the week</a></li>
+        <li><a href="/webmaster.html">webmaster</a></li>
+        <li><a href="/blog.html">blog</a></li>
+        <li><a href="/journal.html">journal</a></li>
+        <li><a href="/shrines/index.html">shrines</a></li>
+        <li><a href="/art">art / comms</a></li>
+        <li><a href="/sites.html">cool sites</a></li>
+        <li><a href="/graphics.html">graphics</a></li>
+        <li>
+            <details>
+                <summary>misc</summary>
+                <ul style="list-style: none;">
+                    <li><a href="/dance.html">dance party</a></li>
+                    <li><a href="/end.html">backrooms</a></li>
+                    <li><a href="/update-log.html">updates log</a></li>
+                    <li><a href="/archive.html">archive</a></li>
+                </ul>
+            </details>
+        </li>
+    </ol>
 
-            h1 {
-                position: absolute;
-                font-size: 20em;
-                line-height: 80%;
-                text-transform: uppercase;
-                margin: 0;
-                color: transparent;
-                pointer-events: none;
-            }
-            #a {
-                color: var(--colour);
-                top: 0;
-                left: 0;
-            }
-            #b {
-               -webkit-text-stroke: 3px  var(--accent-colour);
-                top: 5px;
-                left: -5px;
-            }
-            #c {
-                -webkit-text-stroke: 3px var(--primary-colour);
-                top: 10px;
-                left: -10px;
-            }
-            
-            #themeSwitcher{
-                all: unset;
-                background-color: var(--accent-colour);
-                text-align: center
-            }
-            
-            #title{
-                width: 100%;
-                height: 100%;
-                position: relative;
-            }
-            
-             @media screen and (max-width: 700px) {
-                 body{
-                     display: block;
-                     min-height: 100vh;
-                     overflow: auto;
-                 }
-                 #title{
-                     display: none;
-                 }
-                 ol{
-                     width: 70%;
-                 }
-    }
-        </style>
-    </head>
 
-    <body>
-        <ol>
-            <li><a href="index.html">index</a></li>
-            <li><a href="/room.html">room</a></li>
-            <li><a href="/song-of-the-week.html">song of the week</a></li>
-            <li><a href="webmaster.html">webmaster</a></li>
-            <!--<li><a href="/journal.html">journal [WIP]</a></li>-->
-            <li><a href="/shrines/index.html">shrines</a></li>
-            <li><a href="/art">art / comms</a></li>
-            <li><a href="/sites.html">cool sites</a></li>
-            <li><a href="graphics.html">graphics</a></li>
-            <li><a href="update-log.html">updates log</a></li>
-        </ol>
 
-        <div id="title">
-            <section style="height: 100%; position: absolute; top: 4%; left: -5%;">
-                <h1 id="a" class="img" data-speed="1">Site map!</h1>
-                <h1 id="b" class="img" data-speed="5">Site map!</h1>
-                <h1 id="c" class="img" data-speed="10">Site map!</h1>
-            </section>
+    <div id="title">
+        <section style="height: 100%; position: absolute; top: 4%; left: -5%;">
+            <h1 id="a" class="img" data-speed="1">Site map!</h1>
+            <h1 id="b" class="img" data-speed="5">Site map!</h1>
+            <h1 id="c" class="img" data-speed="10">Site map!</h1>
+        </section>
+    </div>
+
+    <div id="donot">
+        <div id="theme">
+            <span>theme:</span>
+            <select id="themeSwitcher" onchange="changeTheme()">
+                <option value="">choose</option>
+                <option value="hell">hell</option>
+                <option value="neon">neon</option>
+                <option value="underwater">underwater</option>
+                <option value="green">green</option>
+            </select>
         </div>
+        <audio id="audio" src="https://64.media.tumblr.com/5cfdb5b4911fc813f8d2ecc9a59c706c/fed64cd68b42bd35-0a/7d861edb29cd262194f4361a5b988b98b18789b7.mp3"></audio>
+        <a href="" id="play"> do not click here! </a>
+    </div>
 
-        <div id="donot">
-            <div id="theme">
-                <span>theme:</span>
-                <select id="themeSwitcher" onchange="changeTheme()">
-                    <option value="">choose</option>
-                    <option value="hell">hell</option>
-                    <option value="neon">neon</option>
-                    <option value="underwater">underwater</option>
-                    <option value="green">green</option>
-                </select>
-            </div>
-            <audio
-                id="audio"
-                src="https://64.media.tumblr.com/5cfdb5b4911fc813f8d2ecc9a59c706c/fed64cd68b42bd35-0a/7d861edb29cd262194f4361a5b988b98b18789b7.mp3"></audio>
-            <a href="" id="play"> do not click here! </a>
-        </div>
-        
-        <h4 style="position: absolute; top: 0; left: 20px">where to?</h4>
+    <h4 style="position: absolute; top: 0; left: 20px">where to?</h4>
 
-        <script>
-            document.getElementById("play").addEventListener("click", function (e) {
-                e.preventDefault();
-                document.getElementById("audio").play();
-                 document.getElementById("play").innerHTML = 'warned you.';
-            });
-        </script>
-        <script src="/js/parallax.js"></script>
-        <script src="/js/theme-switcher.js"></script>
-    </body>
+    <script>
+        document.getElementById("play").addEventListener("click", function(e) {
+            e.preventDefault();
+            document.getElementById("audio").play();
+            document.getElementById("play").innerHTML = 'warned you.';
+        });
+    </script>
+    <script src="/js/parallax.js"></script>
+    <script src="/js/theme-switcher.js"></script>
+</body>
+
 </html>
