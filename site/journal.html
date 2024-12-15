@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>journal</title>
 
     <link rel="icon" type="image/png" href="/ico.png" />
@@ -96,6 +97,10 @@
             right: 0;
             bottom: 20px;
             width: 400px;
+            
+            & span{
+                text-decoration: underline;
+            }
 
             & #threed {
                 width: 200px;
@@ -217,9 +222,17 @@
         <div class="page" id="pics">
             <h5>pics</h5>
             <!--<img loading="lazy" src="">-->
-            <img loading="lazy" src="https://files.catbox.moe/vsjy29.png">
-            <img loading="lazy" src="https://files.catbox.moe/3oavm7.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/kp9kis.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/78/93/b3/7893b3bb3acd3683eb378f7063f148bd.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/a0/20/7d/a0207dc6622c22a25abbc5f26cfb27b6.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/47/fa/2d/47fa2d24343edbd477ec27aa70ac50c0.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/44/fe/d2/44fed2e9dbdd3f3176480a955d18ca13.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/04/33/f6/0433f68238fa448b00bd31816b765e94.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/1d/65/c7/1d65c70981d8a189eb54c4575bdee8fb.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/e7/37/ec/e737ecab01a64440a8f46d8384bc5c9d.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/71/04/ae/7104ae0c33ed79089a1b1b1815a2a05b.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/19/4b/83/194b83599230d0fe0687d65fd5e71f57.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/b8/a6/9f/b8a69fd5b356b34a324db54513ad41be.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/df/06/ce/df06ce6c127876c946d49fea81ea8492.jpg">
             <img loading="lazy" src="https://i.pinimg.com/736x/aa/db/ef/aadbefe305ec10b3f275cc0cffc9d043.jpg">
             <img loading="lazy" src="https://i.pinimg.com/736x/13/0c/5e/130c5efd2c8f9f5c598563a4f40de65d.jpg">
             <img loading="lazy" src="https://i.pinimg.com/736x/b3/dd/ba/b3ddba0b588e36989ebaf8572000ce85.jpg">
@@ -292,6 +305,12 @@
         <div class="page" id="mood">
             <h5>mood</h5>
             <!--<img loading="lazy" src="">-->
+            <img loading="lazy" src="https://i.pinimg.com/736x/c4/63/b0/c463b0a79a220f3372d3555e02687b82.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/58/87/78/588778b5d2a982b773f7130356d5dcbd.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/79/80/20/79802026cc6f2b61ff68ad5e4925342e.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/3c/0c/32/3c0c32e62f2c16418fe4de6aef9b9b21.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/b4/68/16/b468168b83081ec42a1b4a050a9d5c7d.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/71/de/78/71de788d455eb6f8e6fd46ac982fe1c4.jpg">
             <img loading="lazy" src="https://i.pinimg.com/736x/8a/11/76/8a11763ba757cb173921c70a5b419a47.jpg">
             <img loading="lazy" src="https://i.pinimg.com/736x/8a/11/76/8a11763ba757cb173921c70a5b419a47.jpg">
             <img loading="lazy" src="https://i.pinimg.com/736x/40/e7/c7/40e7c73cf2e456beab76ff722748d636.jpg">
@@ -374,7 +393,7 @@
             <p>don't try to know or interpret me in any way</p>
             <p>Flying on crutches is not easy, but he learned</p>
             <p>please take care of your mental health. i didn't once and i got three lore arcs out of it</p>
-            <p>undignified, i diegress, remove his kneecups</p>
+            <p>undignified, i digress. remove his kneecaps</p>
             <p>I may be a whore, but at least I have manners, unlike you</p>
             <p>is autism your favorite season? autism is my favorite season.</p>
             <p>I am not racist, sexist or homophobic, i hate everyone equally</p>
@@ -410,7 +429,6 @@
             <div>
                 <span onclick="speech(talk)">talk</span>
                 <span onclick="speech(about)">about</span>
-                <hr>
                 <p id="rpgtext">* I can talk. Click on the options above.</p>
             </div>
         </div>
@@ -442,7 +460,8 @@
             "my hate club is so small that i am the one who has to do the all hating",
             "call me back when you finish with the flashback",
             "Mad as a hatter with a dagger!!!",
-            "please excuse our current appearance, i realize that it's quite a mess"
+            "please excuse our current appearance, i realize that it's quite a mess",
+            "Genesis 6:6 'The Lord regretted that he had made human beings on the earth, and his heart was deeply troubled.'"
         ];
         const about = [
             "hi! i'm fuko una and i am this site's mascot",
@@ -456,7 +475,7 @@
 
         function speech(a) {
             const randomIndex = Math.floor(Math.random() * a.length);
-            box.innerHTML = a[randomIndex];
+            box.innerHTML = "* " + a[randomIndex];
         }
     </script>
     
