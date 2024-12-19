@@ -101,7 +101,7 @@
         #notepad {
             font-size: 0.8Em;
             position: absolute;
-            width: 310px;
+            width: 320px;
             bottom: 30%;
             right: 40px;
             background-color: var(--accent-colour);
@@ -138,11 +138,11 @@
                 font-size: 10Em;
                 color: transparent;
                 -webkit-text-stroke: medium var(--accent-colour);
-                ;
+                display: none;
             }
 
             & h2 {
-                display: none;
+                display: block;
                 font-size: 8EM;
                 pointer-events: none;
                 color: var(--accent-colour);
@@ -150,12 +150,12 @@
         }
 
         #left:hover {
-            & h1 {
+            & h2 {
                 display: none;
                 pointer-events: none;
             }
 
-            & h2 {
+            & h1 {
                 display: block;
                 pointer-events: none;
             }
@@ -370,8 +370,8 @@
 
 <body>
     <div id="left">
-        <h1>不幸な</h1>
         <h2>FUKO</h2>
+        <h1>UNA</h1>
         <div id="confetti-area"></div>
     </div>
 
