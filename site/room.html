@@ -3,12 +3,12 @@
 
 <head>
     <meta charset="UTF-8" />
-     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fuko's room</title>
 
     <link rel="icon" type="image/png" href="/ico.png" />
     <link rel="stylesheet" href="/style.css" />
-    
+
 
     <style>
         body {
@@ -118,7 +118,8 @@
                 background-color: white;
                 padding: 10px;
                 margin: auto;
-                & p{
+
+                & p {
                     margin: 5px auto;
                 }
             }
@@ -137,7 +138,7 @@
             & h1 {
                 font-size: 10Em;
                 color: transparent;
-                -webkit-text-stroke: medium var(--accent-colour);
+                -webkit-text-stroke: medium var(--primary-colour);
                 display: none;
             }
 
@@ -170,7 +171,7 @@
             padding: 10px;
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
+            justify-content: center;
             position: relative;
         }
 
@@ -343,26 +344,35 @@
 
 
         @media only screen and (max-width: 700px) {
-            body{
+            body {
                 display: block;
                 overflow: auto;
             }
-            #left{
+
+            #left {
                 writing-mode: horizontal-tb;
                 font-size: xx-small;
             }
-            #desktop{
+
+            #desktop {
                 grid-template-columns: repeat(4, 1fr);
                 padding-bottom: 400px;
                 padding-top: 20px;
-                
-                & a{
+
+                & a {
                     width: 80%;
                     margin: auto;
                 }
             }
-            #notepad{
+
+            #notepad {
                 bottom: 300px;
+            }
+            #audio-player{
+                left: 10px;
+            }
+            #notepad{
+                left: 10px;
             }
         }
     </style>
@@ -412,17 +422,17 @@
         </div>
 
         <div style="position: absolute; bottom: 10%; right: 10px;">
-        <img style="width: 100px; height: 100px;" src="/images/new.jpg">
-        <img style="width: 100px; height: 100px;" src="/images/stupid.jpg">
-        <img style="width: 100px; height: 100px;" src="https://i.pinimg.com/736x/85/2b/d2/852bd259441868ff003df0f1d68030ad.jpg">
-        <img style="width: 100px; height: 100px;" src="/images/trans.png">
-            </div>
+            <img style="width: 100px; height: 100px;" src="/images/new.jpg">
+            <img style="width: 100px; height: 100px;" src="/images/stupid.jpg">
+            <img style="width: 100px; height: 100px;" src="https://i.pinimg.com/736x/85/2b/d2/852bd259441868ff003df0f1d68030ad.jpg">
+            <img style="width: 100px; height: 100px;" src="/images/trans.png">
+        </div>
 
         <div id="notepad">
             <p id="notepad-title"><span>Notepad</span><span>- x</span></p>
             <div id="notepad-content">
                 <p>Sure they can walk and talk, most people can, but typically, what connects people is their memories, experiences, and other ties. Without those, who are they, besides another ragdoll you pass on the streets?</p>
-                </div>
+            </div>
         </div>
 
         <div id="taskbar">
@@ -447,22 +457,22 @@
             <p style="margin: auto 0; text-align: end;" id="time"></p>
         </div>
     </main>
-    
-    <div id="right">
-            <div id="theme">
-                <span>theme:</span>
-                <select id="themeSwitcher" onchange="changeTheme()">
-                    <option value="">default</option>
-                    <option value="hell">hell</option>
-                    <option value="underwater">underwater</option>
-                    <option value="neon">neon</option>
-                    <option value="green">green</option>
-                </select>
-            </div>
 
-            <iframe title="chatbox" src="https://www5.cbox.ws/box/?boxid=948666&boxtag=i7GruL" width="95%" height="300px" allow="autoplay" style="border: none; margin: 3%; background-color: var(--primary-colour); display: none"></iframe>
-            <img src="/graphics/blinkies/helloworld.gif" width="100%">
-            <marquee id="marquee" style="color: var(--accent-colour)"></marquee>
+    <div id="right">
+        <div id="theme">
+            <span>theme:</span>
+            <select id="themeSwitcher" onchange="changeTheme()">
+                <option value="">default</option>
+                <option value="hell">hell</option>
+                <option value="underwater">underwater</option>
+                <option value="neon">neon</option>
+                <option value="green">green</option>
+            </select>
+        </div>
+
+        <img src="/images/my%20space.png">
+        <img src="/graphics/blinkies/helloworld.gif" width="100%">
+        <marquee id="marquee" style="color: var(--accent-colour)"></marquee>
     </div>
 
 
