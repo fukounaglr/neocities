@@ -37,18 +37,20 @@
             background-image: var(--bg);
             grid-gap: 10px;
             background-size: 100% 100%;
-            grid-template-columns: repeat(10, 1fr);
+            grid-template-columns: repeat(9, 1fr);
+            grid-template-rows: min-content;
+            padding: 10px;
 
             & a {
                 all: unset;
-                width: 100%;
+                width: 90%;
                 display: grid;
                 cursor: pointer;
                 aspect-ratio: 1/1;
                 color: white;
                 font-size: x-small;
                 text-align: center;
-                margin: 10px;
+                /*margin: 10px;*/
                 padding: 2px;
 
                 & span {
@@ -121,6 +123,53 @@
 
                 & p {
                     margin: 5px auto;
+                }
+            }
+        }
+
+
+        .folder {
+            display: none;
+            font-size: 0.8Em;
+            position: absolute;
+            width: 300px;
+            height: 200px;
+            background-color: var(--accent-colour);
+            border: solid 3px var(--colour);
+            padding: 5px;
+
+            & .folder-title {
+                display: flex;
+                justify-content: space-between;
+                margin: auto;
+                cursor: pointer;
+            }
+
+            & .folder-content {
+                background-color: var(--primary-colour);
+                padding: 10px;
+                margin: auto;
+                height: 160px;
+
+                & p {
+                    margin: 5px auto;
+                }
+            }
+
+            & .folder-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-gap: 10px;
+
+                & a {
+                    display: block;
+                    text-align: center;
+                    aspect-ratio: 1/1;
+                    color: var(--colour);
+
+                    & img {
+                        width: 90%;
+                    }
                 }
             }
         }
@@ -341,6 +390,20 @@
             }
         }
 
+        #imgs {
+            position: absolute;
+            bottom: 10%;
+            right: 10px;
+            height: 100px;
+            overflow: clip;
+            text-align: center;
+
+            & img {
+                height: 100px;
+                width: 100px;
+            }
+        }
+
 
 
         @media only screen and (max-width: 700px) {
@@ -349,6 +412,7 @@
                 overflow: auto;
             }
 
+
             #left {
                 writing-mode: horizontal-tb;
                 font-size: xx-small;
@@ -356,7 +420,7 @@
 
             #desktop {
                 grid-template-columns: repeat(4, 1fr);
-                padding-bottom: 400px;
+                padding-bottom: 450px;
                 padding-top: 20px;
 
                 & a {
@@ -367,12 +431,14 @@
 
             #notepad {
                 bottom: 300px;
+                left: 5%;
+                width: 90%;
             }
-            #audio-player{
-                left: 10px;
-            }
-            #notepad{
-                left: 10px;
+
+            #audio-player {
+                left: 10%;
+                bottom: 190px;
+                width: 80%
             }
         }
     </style>
@@ -390,12 +456,13 @@
             <a href="/site-map.html" title="site map"><img src="/images/1%20doller.png"><span>Site map</span></a>
             <a href="/webmaster.html" title="webmaster"><img src="/images/catdead.png"><span>Who Am I</span></a>
             <a href="/song-of-the-week.html" title="song of the day"><img src="/images/music.png"><span>Music</span></a>
-            <a href="/shrines/index.html" title="shrines"><img src="/images/naturomaki.png"><span>Shrines</span></a>
+            <a onclick="openFolder('shrines')" title="shrines"><img src="/images/folders.png"><span>Shrines</span></a>
             <a href="/blog.html" title="blog"><img src="/images/fuck.png"><span>Blog</span></a>
             <a href="/journal.html" title="blog"><img src="/images/papers.png"><span>Journal</span></a>
             <a href="/art.html" title="art"><img src="/images/notebook.png"><span>Art</span></a>
             <a href="/sites.html" title="cool sites"><img src="/images/tamagochi.png"><span>Cool sites</span></a>
             <a href="/graphics.html" title="graphics"><img src="/images/butterfly.png"><span>Graphics</span></a>
+            <a onclick="openFolder('create')" title="create"><img src="/images/folders.png"><span>Create</span></a>
         </div>
 
         <div id="player" title="join the party?"><a href="/dance.html"><img src="/images/miku-yay.gif" width="80px"></a></div>
@@ -421,17 +488,35 @@
             </div>
         </div>
 
-        <div style="position: absolute; bottom: 10%; right: 10px;">
-            <img style="width: 100px; height: 100px;" src="https://i.pinimg.com/736x/f0/1b/9b/f01b9bca47f8b6b4ff793bd086a5f076.jpg">
-            <img style="width: 100px; height: 100px;" src="/images/stupid.jpg">
-            <img style="width: 100px; height: 100px;" src="https://i.pinimg.com/736x/7e/db/85/7edb85b63e7233bd4cf5c65cbec657ea.jpg">
-            <img style="width: 100px; height: 100px;" src="/images/trans.png">
+        <div id="imgs">
+            <img src="https://i.pinimg.com/736x/f0/1b/9b/f01b9bca47f8b6b4ff793bd086a5f076.jpg">
+            <img src="/images/stupid.jpg">
+            <img src="https://i.pinimg.com/736x/7e/db/85/7edb85b63e7233bd4cf5c65cbec657ea.jpg">
+            <img src="/images/trans.png">
         </div>
 
         <div id="notepad">
             <p id="notepad-title"><span>Notepad</span><span>- x</span></p>
             <div id="notepad-content">
                 <p>Sing the same fascist song with some new words;<br>If you hate her, i think you should kill her! But you won't, because everybody's cheering for 不幸な girl, 不幸な girl!!!</p>
+            </div>
+        </div>
+
+        <div class="folder" id="shrines" style="top: 140px; left: 10px;">
+            <div class="folder-title"><span>.../Desktop/Shrines</span><span onclick="closeFolder('shrines')">- x close</span></div>
+            <div class="folder-content">
+                <div class="folder-grid">
+                    <a href="/shrines/sky-cotl/index.html"><img src="/shrines/images/Sky_Logo.png"><span>Sky COTL</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="folder" id="create" style="top: 160px; left: 100px;">
+            <div class="folder-title"><span>.../Desktop/Create</span><span onclick="closeFolder('create')">- x close</span></div>
+            <div class="folder-content">
+                <div class="folder-grid">
+                    <a href="/create/femtanyl-papercraft.html"><img src="/create/images/femtanyl.png"><span>femtanyl papercraft</span></a>
+                </div>
             </div>
         </div>
 
@@ -474,8 +559,6 @@
         <img src="/graphics/blinkies/helloworld.gif" width="100%">
         <marquee id="marquee" style="color: var(--accent-colour)"></marquee>
     </div>
-
-
 
 
     <script>
@@ -533,8 +616,16 @@
         }, 1000);
     </script>
 
+    <script>
+        function openFolder(a) {
+            document.getElementById(a).style.display = "block";
+        }
 
-    <script src="/js/audio-player.js"></script>
+        function closeFolder(a) {
+            document.getElementById(a).style.display = "none";
+        }
+    </script>
+
     <script>
         const select = document.getElementById("player-select");
         AudioPlayer.create(
@@ -582,6 +673,7 @@
     </script>
 
     <script src="/js/views-update.js"> </script>
+    <script src="/js/audio-player.js"></script>
     <script src="/js/confetti.js"></script>
     <script src="/js/theme-switcher.js"></script>
 </body>
