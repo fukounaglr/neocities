@@ -177,35 +177,39 @@
         #left {
             width: 100%;
             color: var(--accent-colour);
-            text-align: justify;
+            text-align: center;
             align-content: center;
             text-orientation: upright;
             writing-mode: vertical-lr;
             height: 100%;
             position: relative;
 
-            & h1 {
+            & #title-2 {
                 font-size: 10Em;
+                margin: auto;
                 color: transparent;
                 -webkit-text-stroke: medium var(--primary-colour);
                 display: none;
+                font-family: "staypuft" !important;
             }
 
-            & h2 {
+            & #title-1 {
                 display: block;
                 font-size: 8EM;
+                margin: auto;
                 pointer-events: none;
                 color: var(--accent-colour);
+                font-family: "staypuft" !important;
             }
         }
 
         #left:hover {
-            & h2 {
+            & #title-1 {
                 display: none;
                 pointer-events: none;
             }
 
-            & h1 {
+            & #title-2 {
                 display: block;
                 pointer-events: none;
             }
@@ -363,6 +367,16 @@
                 position: relative;
             }
         }
+        
+        #fontSwitcher{
+            border: none;
+            border-radius: 0;
+            background-color: var(--accent-colour);
+            font-family: "OpenDyslexic";
+            &.active{
+                background-color: var(--primary-colour)
+            }
+        }
 
         #player-slider {
             position: relative;
@@ -446,8 +460,8 @@
 
 <body>
     <div id="left">
-        <h2>FUKO</h2>
-        <h1>UNA</h1>
+        <span id="title-1">FUKO</span>
+        <span id="title-2">UNA</span>
         <div id="confetti-area"></div>
     </div>
 
@@ -556,6 +570,9 @@
                 <option value="green">green</option>
             </select>
         </div>
+        <button id="fontSwitcher" onclick="changeFont()">
+            OpenDyslexic: <span id="font-stat">false</span>
+        </button>
 
         <img src="/images/my%20space.png">
         <img src="/graphics/blinkies/helloworld.gif" width="100%">

@@ -228,6 +228,7 @@ li.done {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        animation: fade 10s ease-in-out;
     }
 
     & a {
@@ -237,29 +238,18 @@ li.done {
         top: 0;
         align-content: center;
         color: transparent;
-        /*background-image: linear-gradient(to right, transparent, transparent);*/
-        animation: 1s;
     }
 
     & .back {
         left: 0;
         background-image: linear-gradient(to right, rgba(30, 18, 118, 0.32), transparent);
         color: white;
-        animation: 1s;
-
-        &:hover {
-            background-image: linear-gradient(to right, #001145, transparent);
-        }
     }
 
     & .forward {
         right: 0;
         background-image: linear-gradient(to left, rgba(30, 18, 118, 0.32), transparent);
         color: white;
-
-        &:hover {
-            background-image: linear-gradient(to left, #001145, transparent);
-        }
     }
 
     & .dots {
@@ -277,7 +267,7 @@ li.done {
             display: inline-block;
             margin: auto;
             border: 1px solid white;
-            animation: 1s;
+            transition: 1s;
 
             &:hover {
                 background-color: #001145;
@@ -290,6 +280,12 @@ li.done {
     }
 }
 
+@keyframes fade{
+    0% {opacity: 0}
+    5% {opacity: 100}
+    95% {opacity: 100}
+    100% {opacity: 0}
+}
 
 
 

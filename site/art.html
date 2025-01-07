@@ -157,10 +157,16 @@
         }
 
         #mars {
-            width: 300px;
-            max-width: 100%;
-            margin: auto;
             display: block;
+            overflow: hidden;
+            margin: auto;
+
+            & img {
+                width: 300px;
+                max-width: 100%;
+                float: left;
+                margin: 20px;
+            }
         }
 
         #m-nav::before {
@@ -175,8 +181,6 @@
                 height: auto;
                 width: 100%;
             }
-
-            table {}
 
             #prices,
             #comms,
@@ -199,13 +203,16 @@
             <a href="#tos" onclick="switchPage('tos')">ToS</a>
             <a href="#tools" onclick="switchPage('tools')">tools</a>
             <a href="#comms" onclick="switchPage('comms')">comms</a>
-            <a href="#prices" onclick="switchPage('prices')">prices</a>
             <a href="#gallery" onclick="switchPage('gallery')">gallery</a>
-            <a href="#wips" onclick="switchPage('wips')">wips</a>
         </nav>
 
 
-        <img src="/images/mars.png" id="mars" class="tab">
+        <div id="mars" class="tab">
+            <img src="/images/yume-nikki.gif">
+            <p>Hello World!</p>
+            <p>I am a disabled &amp; queer digital artist who needs money...  I cannot get a job right now, but i want to start being financially indemendent from my guardian &amp; finally be safe.</p>
+            <p>So if you want, you can buy a commission from me! Or you can donate, it's very appreaciated.</p>
+        </div>
 
         <div id="tos" class="tab">
             <h4>terms of use</h4>
@@ -232,7 +239,6 @@
                 <li>brushes:
                     <ul style="list-style: circle">
                         <li>🖤TOMBOW🖤 - 2003696</li>
-                        <li>레구리구리 - 2100015</li>
                         <li>✨💌 careful, cupid! 🎀✨ - 1991252</li>
                     </ul>
                 </li>
@@ -244,6 +250,7 @@
                         <li>lasso fill</li>
                     </ul>
                 </li>
+                <li>+ texture brushes</li>
             </ul>
         </div>
 
@@ -251,7 +258,7 @@
             <h4>commission info</h4>
             <h6><img src="/graphics/pixels/yippee-yippee-creature.gif"> status: open!</h6>
             <ul>
-                <li>communication through discord</li>
+                <li>communication through discord/bsky</li>
                 <li>describe the commission &amp; character(s)</li>
                 <li>give as much references a you can</li>
                 <li>no deadline but WIPs will be given!</li>
@@ -263,7 +270,7 @@
                 <li>payment ONLY through boosty</li>
                 <li>payment upfront</li>
                 <li>no refunds after i start the art</li>
-                <li>you can tip me!</li>
+                <li>tips are welcome</li>
             </ul>
 
 
@@ -287,35 +294,29 @@
                         <ul>
                             <li>fetish art</li>
                             <li>hateful speech</li>
-                            <li>backgrounds</li>
+                            <li>complicated backgrounds</li>
                             <li>nasty ships</li>
                         </ul>
                     </td>
                 </tr>
             </table>
             <p>feel free to contact me [bsky or discord] if you have any more questions!!</p>
-        </div>
 
-        <div class="tab" id="prices">
-            <h4 style="grid-area: 1/1/span 1/span 2">pricing</h4>
-            <p style="grid-area: 2/1/span 1/span 2">(a subject to change)</p>
-            <div>
-                <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/dichotomies.png" title="fullbody art example; character belongs to @dichotomies" loading="lazy">
-                <h6>FB - 20USD</h6>
+            <div id="prices">
+                <h4 style="grid-area: 1/1/span 1/span 2">pricing</h4>
+                <div>
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/and%20im%20gone.png" title="fullbody art example;" loading="lazy">
+                    <h6>FULLBODY - 70USD</h6>
+                </div>
+                <div>
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/all%20hail%20cannibalism.png" title="halfbody art example" loading="lazy">
+                    <h6>HALFBODY - 45USD</h6>
+                </div>
+                <div>
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/saffronfire.png" title="headshot art example; character belongs to @saffronfire" loading="lazy">
+                    <h6>HEADSHOT / PFP - 20USD</h6>
+                </div>
             </div>
-            <div>
-                <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/all%20hail%20cannibalism.png" title="halfbody art example" loading="lazy">
-                <h6>HB - 16USD</h6>
-            </div>
-            <div>
-                <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/saffronfire.png" title="headshot art example; character belongs to @saffronfire" loading="lazy">
-                <h6>HS/PFP - 12USD</h6>
-            </div>
-            <div>
-                <img src="/images/mars.png" title="chibi art example" loading="lazy">
-                <h6>CHIBI - 15USD</h6>
-            </div>
-
         </div>
 
         <div id="gallery" class="tab">
@@ -327,11 +328,43 @@
                     <img src="" title="example art;" loading="lazy">
                 </a>
             -->
-                <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/success.png">
-                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/success.png" title="example art;" loading="lazy">
+                <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/dream.png">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/dream.png" title="example art;" loading="lazy">
+                </a>
+                <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/epicsword">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/epicsword" title="example art; sketch" loading="lazy">
+                </a>
+                <!--
+                <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/raffle%20@aliky_y.png">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/raffle%20@aliky_y.png" title="example art;" loading="lazy">
+                </a>
+                <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/raffle%20@holder.of.hashbrown.png">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/raffle%20@holder.of.hashbrown.png" title="example art;" loading="lazy">
+                </a>
+                <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/raffle%20@bleeding.pink.png">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/raffle%20@bleeding.pink.png" title="example art; character of bleeding.pink" loading="lazy">
+                </a>
+                <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/raffle%20hyonk.png">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/raffle%20hyonk.png" title="example art;" loading="lazy">
+                </a>
+                <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/raffle%20@takolaks.png">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/raffle%20@takolaks.png" title="example art; character of takolaks" loading="lazy">
+                </a>
+                -->
+                <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/lupusInstinct.png">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/lupusInstinct.png" title="example art; character of lupusInstinct" loading="lazy">
+                </a>
+                <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/crabbed.png">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/crabbed.png" title="example art;" loading="lazy">
+                </a>
+                <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/whatdidido.png">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/whatdidido.png" title="example art;" loading="lazy">
                 </a>
                 <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/200.png">
                     <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/200.png" title="example art;" loading="lazy">
+                </a>
+                <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/bambiii.png">
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/bambiii.png" title="example art;" loading="lazy">
                 </a>
                 <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/mars.png">
                     <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/mars.png" title="example art;" loading="lazy">
@@ -352,20 +385,15 @@
                     <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/mangyy.png" title="example art;" loading="lazy">
                 </a>
                 <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/blahaj.png">
-                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/blahaj.png" title="example art;" loading="lazy">
-                </a>
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/blahaj.png" title="example art;" loading="lazy"></a>
                 <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/phobalicphobia.png">
-                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/phobalicphobia.png" title="example art; character belongs to @phobalicphobia" loading="lazy">
-                </a>
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/phobalicphobia.png" title="example art; character belongs to @phobalicphobia" loading="lazy"></a>
                 <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/epicskar13.png">
-                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/epicskar13.png" title="example art; character belongs to @epicskar13" loading="lazy">
-                </a>
+                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/epicskar13.png" title="example art; character belongs to @epicskar13" loading="lazy"></a>
                 <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/saffronfire.png">
                     <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/saffronfire.png" title="example art; character belongs to @saffronfire" loading="lazy"></a>
                 <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/41is0n.png">
                     <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/41is0n.png" title="example art; character belongs to @41is0n" loading="lazy"></a>
-                <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/mars%20magica">
-                    <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/mars%20magica" title="example art; lineless" loading="lazy"></a>
                 <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/fuko%20turnaround.png">
                     <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/fuko%20turnaround.png" title="example art; turnaround" loading="lazy"></a>
                 <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/art/dichotomies.png">
@@ -374,33 +402,12 @@
                     <img src="https://file.garden/ZjOP8Ik9OUXT6YVm/art/all%20hail%20cannibalism.png" title="example art;" loading="lazy"></a>
             </div>
         </div>
+        
+        
 
-        <div id="wips" class="tab">
-            <h4>Works in progress</h4>
-
-            <div class="work">
-                <h5>art raffle</h5>
-                <p>i'm one of the artists for the cjfs art raffle</p>
-                <h6>status:</h6>
-                <ul>
-                    <li><b>finished:</b> 2</li>
-                    <li><b>in progress:</b> 3</li>
-                    <li><b>not started:</b> 1</li>
-                </ul>
-            </div>
-
-            <div class="work">
-                <h5>secret santa</h5>
-                <p>particiapating in secret santa in TTI server</p>
-                <h6>status:</h6>
-                <ul>
-                    <li><b>finished</b> </li>
-                </ul>
-            </div>
-
-        </div>
-
-        <p id="links"><a href="https://discordapp.com/users/984362752439107604/" target="_blank">Discord</a> <a href="https://boosty.to/ashhmillr/donate" target="_blank">Boosty</a> <a target="_blank" href="https://bsky.app/profile/fukounaglr.bsky.social">Bluesky</a> <a href="https://artfight.net/~fukouna">Artfight</a></p>
+        <p id="links"><a href="https://boosty.to/ashhmillr/donate" target="_blank">Donate (Boosty)</a> <a target="_blank" href="https://bsky.app/profile/fukounaglr.bsky.social">Bluesky</a> <a href="https://artfight.net/~fukouna">Artfight</a></p>
+       
+        
         <footer style="text-align: center;">
             <img src="/graphics/buttons/antinft.png">
             <span> <map name="noaimini5">
@@ -435,7 +442,7 @@
         function switchPage(a) {
             document.getElementById(currentPage).style.display = "none";
             currentPage = a;
-            document.getElementById(a).style.display = "grid";
+            document.getElementById(a).style.display = "block";
         }
     </script>
     <script src="/js/theme-switcher.js"></script>

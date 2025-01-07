@@ -25,6 +25,24 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "OpenDyslexic";
+    src:
+        url("/fonts/OpenDyslexic-Regular.woff2") format("woff2"),
+        url("/fonts/OpenDyslexic-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "OpenDyslexic";
+    src:
+        url("/fonts/OpenDyslexic-Bold.woff2") format("woff2"),
+        url("/fonts/OpenDyslexic-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+}
+
 /*COLOURS*/
 :root {
     --colour: #181818;
@@ -36,6 +54,12 @@
     scrollbar-color: var(--accent-colour) white;
     scrollbar-width: thin;
     image-rendering: pixelated;
+}
+:root[dyslexic="true"] {
+    *{ font-family: OpenDyslexic !important;}
+    h1, h2, h3, h4, h5, h6{
+        font-weight: bold;
+    }
 }
 
 :root[theme="underwater"] {
