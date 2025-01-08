@@ -160,6 +160,7 @@
             display: block;
             overflow: hidden;
             margin: auto;
+            padding: 10px;
 
             & img {
                 width: 300px;
@@ -180,6 +181,11 @@
                 overflow: auto;
                 height: auto;
                 width: 100%;
+            }
+            
+            #mars img{
+                float: none;
+                width: 90%;
             }
 
             #prices,
@@ -429,9 +435,7 @@
             "tools",
             "comms",
             "tos",
-            "gallery",
-            "wips",
-            "prices"
+            "gallery"
         ]
 
         if (window.location.hash && pages.includes(window.location.hash.substring(1))) {
