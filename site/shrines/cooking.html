@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+
+    <link rel="icon" type="image/png" href="/ico.png">
+    <link rel="stylesheet" href="/style.css">
+
+    <script src="/js/theme-switcher.js"></script>
+
+    <style>
+        
+        body{
+            background-image: var(--bg)
+        }
+        
+        main{
+            height: 100vh;
+            display: grid;
+            grid-template-columns: auto auto;
+        }
+        
+        .side-img {
+            width: 200px;
+            aspect-ratio: 1/1;
+            float: left;
+            margin: 10px;
+        }
+
+        .recipe {
+            margin: 30px;
+            border: dotted;
+            overflow: hidden;
+            background-color: var(--primary-colour);
+            
+            & h6{
+                color: var(--accent-colour)
+            }
+        }
+        
+        .right-side{
+            height: 100%;
+            overflow: auto;
+        }
+        
+        .side-col{
+            width: 90%;
+            height: 100%;
+            align-content: center;
+            margin: auto;
+            
+            & img{
+                width: 100%;
+                height: 70%;
+                object-fit: cover;
+                margin: auto;
+            }
+        }
+        
+        @media only screen and (max-width: 700px) {
+            main{
+                display: block;
+                height: auto;
+            }
+        
+        .right-side{
+            height: auto;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="side-col">
+            <img src="https://i.pinimg.com/736x/99/d1/f8/99d1f834312b03c36995deedc8111d2a.jpg">
+            <h3 style="color: var(--accent-colour)">Recipes</h3>
+            <a href="/room.html">go back</a>
+        </div>
+
+        <div class="right-side">
+            <p style="color: white">some recipes i had hung up on my fridge</p>
+            <div class="recipe">
+                <img class="side-img" src="https://i.pinimg.com/736x/0e/d1/a7/0ed1a794fb8a9fc6010a620e8d64ca7e.jpg">
+
+                <h6>ash's pizza</h6>
+                <p>everyone loves my pizza</p>
+                <ul>
+                    <li>4 cups flour</li>
+                    <li>2 tbsp sugar</li>
+                    <li>1 dsp yeast</li>
+                    <li>1 tsp salt</li>
+                    <li>2-3 tbsp veg oil</li>
+                    <li>1 cup warm water</li>
+                    <li>sauce and shit</li>
+                </ul>
+                <p>mix dough. let it raise for about an hour, warm the oven to 190-210 C and cook until it's done</p>
+            </div>
+
+            <div class="recipe">
+                <img class="side-img" src="https://i.pinimg.com/736x/f6/d3/ba/f6d3bae9694a4866f0fae3643a974d5b.jpg">
+                <h6>icebox cookies</h6>
+                <p>i stole it from somewhere</p>
+                <ul>
+                    <li>5 cups flour</li>
+                    <li>1 tsp baking soda</li>
+                    <li>1 tbsp cinnamon</li>
+                    <li>2 cups butter</li>
+                    <li>1 cup white sugar</li>
+                    <li>1 cup brown sugar</li>
+                    <li>3 eggs</li>
+                </ul>
+                <p>mix flour, b. soda and cinnamon in one bowl, melted butter and both sugars in other. add eggs one by one to the butter and sugar mix. mix the flour into the mixture dradually. roll into logs and refregirate for 4 hours. cut into 5mm. i dont remember what </p>
+            </div>
+
+            <div class="recipe">
+                <img class="side-img" src="https://i.pinimg.com/474x/ee/3e/89/ee3e89382925e0fa7c9b4e93d0ba548b.jpg">
+                <h6>pancakes</h6>
+                <p>haven't made them for a while</p>
+                <ul>
+                    <li>1 cup flour</li>
+                    <li>2 tbs sugar</li>
+                    <li>2 ts baking powder</li>
+                    <li>1 ts salt</li>
+                    <li>1 cup milk</li>
+                    <li>2 tbs veg oil</li>
+                    <li>1 egg</li>
+                </ul>
+            </div>
+
+            <div class="recipe">
+                <img class="side-img" src="https://i.pinimg.com/474x/04/ec/32/04ec324e3de20dd3667ca5b980521452.jpg">
+                <h6>brownie cookies</h6>
+                <p>yeah those too</p>
+                <ul>
+                    <li>3/4 cup veg oil</li>
+                    <li>2 cups white sugar</li>
+                    <li>2/3 cup cocoa powder</li>
+                    <li>2 cups flour</li>
+                    <li>2 tsp baking powder</li>
+                    <li>4 eggs</li>
+                    <li>2 tsp vanilla extract</li>
+                    <li>1/4 cup that fucking white thing. if you dont knwo the one put weed in it ig idk</li>
+                </ul>
+                <p>mix flour and baking powder. mix veg oil, sugar, cocoa powder. add eggs one by one to the cocoa mix. mix everythigg. then maked balls with white shit... bake for 15 mins. if you think it's undercooked, it's not. get it out and let it cool down a bit.</p>
+            </div>
+
+        </div>
+    </main>
+</body>
+
+</html>
