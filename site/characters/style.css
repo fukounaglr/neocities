@@ -22,7 +22,8 @@ main {
         margin-bottom: 10px;
     }
 }
-.box{
+
+.box {
     border: dashed 3px red;
     background-color: black;
     padding: 10px 20px;
@@ -32,7 +33,7 @@ main {
 #back {
     display: block;
     text-align: left;
-    
+
 }
 
 h1 {
@@ -44,13 +45,13 @@ h1 {
     grid-template-columns: 2fr 1fr;
 }
 
-.info {
-    .main-img {
-        width: 100%;
-        aspect-ratio: 2.5/3;
-        object-fit: cover;
+.char-gallery {
+    aspect-ratio: 2.5/3;
     border: dashed 3px red;
-    }
+    margin: auto;
+    text-align: center;
+    height: 90%;
+    width: 90%;
 }
 
 
@@ -68,13 +69,15 @@ h1 {
     height: 20px;
 }
 
-.gallery{
-    width: calc(100% - 40px);
-    display: flexbox;
-    & img{
-        /*max-width: 200px;*/
-        max-height: 200px;
-    }
+.slides-container img {
+    object-fit: contain;
+}
+.slides-cantainer a{
+    margin: 5px !important
+}
+
+.dots{
+    display: none;
 }
 
 @media only screen and (max-width: 700px) {

@@ -215,79 +215,19 @@ li.done {
     filter: opacity(0);
 }
 
-.slides-container {
-
-    width: auto;
-    max-width: 600px;
-    margin: auto;
-    height: auto;
-    position: relative;
-    aspect-ratio: 3/2;
-
-    & img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        animation: fade 10s ease-in-out;
-    }
-
-    & a {
-        position: absolute;
-        height: 100%;
-        width: 5%;
-        top: 0;
-        align-content: center;
-        color: transparent;
-    }
-
-    & .back {
-        left: 0;
-        background-image: linear-gradient(to right, rgba(30, 18, 118, 0.32), transparent);
-        color: white;
-    }
-
-    & .forward {
-        right: 0;
-        background-image: linear-gradient(to left, rgba(30, 18, 118, 0.32), transparent);
-        color: white;
-    }
-
-    & .dots {
-        position: absolute;
-        width: 100%;
-        text-align: center;
-        bottom: 0;
-
-        & .dot {
-            cursor: pointer;
-            background-color: rgba(30, 18, 118, 0.32);
-            border-radius: 50%;
-            width: 15px;
-            height: 15px;
-            display: inline-block;
-            margin: auto;
-            border: 1px solid white;
-            transition: 1s;
-
-            &:hover {
-                background-color: #001145;
-            }
-
-            &.active {
-                background-color: white;
-            }
-        }
-    }
+.slides-container img {
+    object-fit: cover;
 }
 
-@keyframes fade{
-    0% {opacity: 0}
-    5% {opacity: 100}
-    95% {opacity: 100}
-    100% {opacity: 0}
+& .back {
+    background-image: linear-gradient(to right, rgba(30, 18, 118, 0.32), transparent);
+    color: white;
 }
 
-
+& .forward {
+    background-image: linear-gradient(to left, rgba(30, 18, 118, 0.32), transparent);
+    color: white;
+}
 
 
 @media only screen and (max-width: 700px) {

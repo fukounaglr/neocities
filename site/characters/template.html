@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>characters</title>
+
+    <link rel="icon" type="image/png" href="/ico.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/characters/style.css" />
+
+</head>
+
+<body>
+
+    <main>
+        <a href="/characters/index.html" id="back">← go back</a>
+
+        <div class="grid-2 info box">
+            <div class="info-box">
+                <div class="blinkies">
+                    <img src="/graphics/blinkies/">
+                    <img src="/graphics/blinkies/">
+                    <img src="/graphics/blinkies/">
+                    <img src="/graphics/blinkies/">
+                    <img src="/graphics/blinkies/">
+                </div>
+
+                <p><b>Name:</b> </p>
+                <p><b>Pronouns:</b> </p>
+                <p><b>Age:</b> </p>
+                <p><b>Personality:</b> </p>
+                <p><b>Appearance:</b> </p>
+                <p><b>Description:</b> </p>
+                <p><b>Facts:</b> </p>
+            </div>
+            <div class="char-gallery slides-container box">
+                <!--<img loading="lazy" src="/images/art/" class="slide">-->
+
+                    <div class="dots">
+                        <span class="dot active" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <span class="dot" onclick="currentSlide(4)"></span>
+                        <span class="dot" onclick="currentSlide(5)"></span>
+                        <span class="dot" onclick="currentSlide(6)"></span>
+                        <span class="dot" onclick="currentSlide(7)"></span>
+                        <span class="dot" onclick="currentSlide(8)"></span>
+                        <span class="dot" onclick="currentSlide(9)"></span>
+                        <span class="dot" onclick="currentSlide(10)"></span>
+                        <span class="dot" onclick="currentSlide(11)"></span>
+                        <span class="dot" onclick="currentSlide(12)"></span>
+                        <span class="dot" onclick="currentSlide(13)"></span>
+                        <span class="dot" onclick="currentSlide(14)"></span>
+                        <span class="dot" onclick="currentSlide(15)"></span>
+                        <span class="dot" onclick="currentSlide(16)"></span>
+                        <span class="dot" onclick="currentSlide(17)"></span>
+                    </div>
+
+
+                <a onclick="switchSlides(-1)" class="back">←</a>
+                <a onclick="switchSlides(1)" class="forward">→</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/gallery-slides.js"></script>
+</body>
+
+</html>
