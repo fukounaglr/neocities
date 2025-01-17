@@ -28,6 +28,12 @@ main {
     background-color: black;
     padding: 10px 20px;
     margin-bottom: 20px;
+    color: darkred;
+    text-align: left;
+
+    & b {
+        color: red;
+    }
 }
 
 #back {
@@ -38,6 +44,14 @@ main {
 
 h1 {
     color: white
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: red;
 }
 
 .grid-2 {
@@ -56,13 +70,7 @@ h1 {
 
 
 .info-box {
-    color: darkred;
-    text-align: left;
     margin-right: 30px;
-
-    & b {
-        color: red;
-    }
 }
 
 .blinkies img {
@@ -71,13 +79,27 @@ h1 {
 
 .slides-container img {
     object-fit: contain;
+    height: 95%;
+    width: 90%;
+    margin: auto;
 }
-.slides-cantainer a{
+
+.slides-cantainer a {
     margin: 5px !important
 }
 
-.dots{
-    display: none;
+span.dot {
+    display: none !important
+}
+
+.ref-button {
+    color: darkred;
+    display: block !important;
+    position: absolute;
+    left: 0;
+    top: -20px;
+    z-index: 10;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 700px) {
