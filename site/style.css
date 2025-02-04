@@ -132,10 +132,10 @@
             --theme-filter: hue-rotate(260deg) brightness(90%) contrast(200%) saturate(170%);
 }
 
-
 * {
     scrollbar-color: var(--accent-colour) white;
     scrollbar-width: thin;
+    font-size: 100%;
 }
 
 a {

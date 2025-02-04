@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,203 +10,199 @@
     <link rel="stylesheet" href="style.css" />
 
     <style>
+        * {
+            --bg: url(/images/waves.jpg);
+            --colour: white;
+            --accent-colour: #44caca;
+            --accent-colour-hover: #01769c;
+            --primary-colour: black;
+            --fav: url(/graphics/pixels/agua.gif);
+            color: var(--colour);
+        }
+
         body {
-            background-color: black;
-            background-position: bottom;
-            background-size: cover;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr 1fr;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        .col {
-            width: 100%;
-            height: 100vh;
-            background-color: aliceblue;
-            position: relative;
-        }
-
-        .full {
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-        }
-
-        #marquee-box {
-            width: 80%;
-            margin: 10px auto;
-            z-index: 100;
-            position: relative;
-            position: absolute;
-            left: 15%;
-            font-size: 2em;
-            top: 150px;
-            cursor: pointer;
-
-            & #marquee {
-                width: 100%;
-            }
-        }
-
-        #countdown {
-            width: 12%;
-            text-align: center;
-            font-size: 10em;
-            font-family: StayPuft;
-            position: absolute;
-            bottom: 10%;
-            left: 60%;
-
-            & img {
-                width: 100%;
-            }
-        }
-
-        #boutme {
-            grid-area: 1/2 / span 2/2;
-            background: url(/images/web-page-bg.png);
-            background-size: 100% 100%;
+            height: calc(100vh - 60px);
+            background-image: var(--bg);
+            background-size: auto;
             background-position: top;
-            padding: 0 35px;
-            width: calc(100% - 70px);
-            height: 100vh;
-            position: relative;
-
-            & #abtmarq {
-                position: absolute;
-                top: 40px;
-                width: 85%;
-                left: 50%;
-                transform: translate(-50%, 0);
-            }
+            margin: auto;
+            align-items: center;
         }
 
-        #boutme::before {
-            content: "";
-            height: 60px;
-            background-image: url(/images/web-page-bef.png);
-            width: calc(100% + 70px);
-            display: block;
-            background-size: 100% 100%;
+        main {
+            max-width: 500px;
+            margin: 30px auto;
+            height: 100%;
             position: relative;
-            left: -35px;
         }
 
-        #boutme::after {
-            content: "";
-            height: 30px;
-            background-image: url(/images/web-page-af.png);
-            width: calc(100% + 70px);
-            display: block;
-            background-size: 100% 100%;
-            position: relative;
-            left: -35px;
-            /*margin-top: 30%;*/
-            z-index: 0;
-        }
-
-        #info {
-            width: 100%;
-            height: 90%;
+        #textbox {
+            background-color: var(--primary-colour);
+            border: solid 2px var(--colour);
+            padding: 15px;
+            height: calc(100% - 34px);
             overflow: auto;
-
-            & p {
-                margin-right: 10px;
-            }
 
             & p::first-letter {
                 font-size: 1.2rem;
                 text-transform: uppercase;
                 font-weight: bold;
-                color: brown;
+                color: var(--accent-colour-hover);
             }
+        }
 
-            & h6 {
-                text-transform: uppercase;
+        #picbox {
+            position: absolute;
+            top: 0;
+            left: -212px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+
+            & img {
+                width: 170px;
+                border: 2px var(--colour) solid;
             }
+        }
+
+        #vh {
+            height: calc(100% - 40px);
+            border-left: 2px var(--accent-colour)solid;
+            position: absolute;
+            top: 20px;
+            left: -20px;
+            margin: auto;
+        }
+
+        hr {
+            width: 90%;
         }
 
         #title {
             position: absolute;
-            width: 100%;
-            top: 0;
             left: 0;
-            font-size: 14em;
-            text-align: justify;
-            line-height: 80%;
-            -webkit-text-stroke: 3px white;
-            color: transparent;
-            font-family: "staypuft" !important;
+            top: 0;
+            width: 100px;
+            transform: translate(calc(-120% - 212px), 0);
+            writing-mode: sideways-lr;
+            text-align: end;
+
+            & h3 {
+                color: var(--primary-colour);
+                -webkit-text-stroke: 1px white;
+                text-align: unset;
+            }
         }
 
-        #butterfly {
+        #body {
             position: absolute;
-            top: 5%;
-            right: 25%;
-            width: 200px;
+            right: 0;
+            top: 0;
+            height: 100%;
+            transform: translate(120%, 0);
         }
 
-        #fuko {
-            position: absolute;
-            bottom: 20px;
-            left: 30%;
-            width: 150px;
+        #lyric-marq {
+            color: var(--accent-colour);
         }
-        
-        #queezes {
-            width: 90%;
-            overflow: auto;
+
+        h6 {
+            text-transform: uppercase;
+            color: var(--accent-colour-hover);
         }
 
         @media only screen and (max-width: 700px) {
-            body {
-                display: block;
-                overflow-y: auto;
+
+            #body,
+            #picbox,
+            #title {
+                position: relative;
+                top: 0;
+                left: 0;
+                transform: translate(0, 0);
             }
 
-            #boutme {
+            #picbox {
                 height: auto;
+                /*display: inline-block;*/
+                margin: 10px;
+
+                & img {
+                    margin: 5px auto;
+                }
+            }
+
+            #body {
+                width: 250px;
+                top: 100px;
+                height: auto;
+                float: right;
+            }
+
+            #textbox {
+                height: auto;
+            }
+
+            #vh {
+                display: none;
             }
 
             #title {
-                font-size: 10em;
-            }
-
-            #info {
-                height: auto;
-            }
-
-            #audio-player {
-                position: relative;
-                height: auto;
+                width: 90%;
+                transform: translate(0, 0);
+                writing-mode: horizontal-tb;
+                text-align: end;
+                & h3{
+                    font-size: 3Em;
+                }
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="col">
-        <img class="full" src="/images/0e52dc8d14cd900e28bcaaddcd6adc5b.jpg" style="height: 40%" />
-        <img class="full" src="/images/936a8d015a21228a71a6656d00099ffe.jpg" style="object-position: bottom; height: 60%" />
-        <span id="title">WEB<br />MAS<br />TER</span>
-    </div>
+    <main>
+        <div id="textbox">
+            <marquee id="lyric-marq">this is a marquee</marquee>
+            <hr>
 
-    <div class="col" id="boutme">
-        <marquee id="abtmarq">
-            "hello my name is [redacted] but you can call me a slur. i'm stupid, sadistic &amp; suicidal"
-        </marquee>
+            <h6>ME? <img src="/graphics/pixels/nukoAbandonnedCat.gif" /></h6>
+            <p>I go by many names but you can call me a slur. i go by any pronouns, because gender is a social construct and im antisocial.</p>
+            <p>I am a real cat on the computer 100% real</p>
 
-        <div id="info">
+            <h6>SITE? <img src="/graphics/pixels/cat34.gif" /></h6>
             <p>
-                <a href="https://bsky.app/profile/fukounaglr.bsky.social" target="_blank" class="nobef"><img src="/graphics/pixels/butterfly.gif" />Bluesky</a>
-                <!--<a href="https://spacehey.com/fukounaglr" target="_blank" class="nobef"><img src="/graphics/pixels/kittyy.gif" />Spacehey</a>-->
+                i created my neocities site on 24th of October 2023, after watching
+                <a href="https://youtu.be/00qwzmMrtok?si=ToGR-R3WoK3GHi8h" target="_blank">this episode of loveweb</a>. made with <a href="https://phcode.dev/" target="_blank">phoenix code</a> &amp; hosted on <a href="https://neocities.org/" target="_blank">neocities</a>
             </p>
-            <h6>CURRENT STATUS? <img src="/graphics/pixels/cat30.gif" /></h6>
-            <p><i>watching:</i> mcyt...</p>
-            <p><i>playing:</i> sky cotl, minecraft</p>
-            <p><i>workin on:</i> nothing</p>
-            <p><i>mood:</i> terrible</p>
+
+            <h6>MUSIC? <img src="/graphics/pixels/cat32.gif" /></h6>
+            <p>I like glass beach, jhariah, femtanyl, STOMACH BOOK, Ghost and pals</p>
+            <p>My favourite song is cul-de-sac from plastic death by glass beach</p>
+            <audio controls src="https://file.garden/ZjOP8Ik9OUXT6YVm/glass%20beach%20-%20cul-de-sac.mp3"></audio>
+
+            <h6>SHOWS? <img src="/graphics/pixels/nukoSwing.gif" /></h6>
+            <p>
+                Hazbin &amp; helluva, Murder drones, Amazing Digital Circus, Panty &amp; Stocking, Brooklyn
+                Nine-Nine, Moral Orel, Madoka Magica
+            </p>
+
+            <h6>GAMES? <img src="/graphics/pixels/cat285.gif" /></h6>
+            <p>Deltarune, Minecraft, Aconite RPG, Pokemon, FNaF, Sky COTL</p>
+            <i>
+                I usually watch playthroughs rather than playing games, and also lore videos
+            </i>
+
+            <h6>OTHER? <img src="/graphics/pixels/cat137.gif" /></h6>
+            <p>
+                <b>&hearts;</b> <span style="color: red">red</span>, fish, cooking, coding, video essays, lore, stream
+                vods/highlights, sleeping, music, gore, cannibalism :3
+            </p>
+            <p>
+                <b>&chi;</b> <span style="color: purple">purple</span>, people, school, stupid internet
+                drama
+            </p>
 
             <div style="text-align: center;">
                 <h6>queezes?<img src="/graphics/pixels/nukoSoba2.gif"></h6>
@@ -216,153 +213,74 @@
                     <a href="https://www.theotaku.com/quizzes/view/1946/what_is_your_level_of_sanity%3F"><img border="0" src="http://www.theotaku.com/guru_results/1946_6.jpg" alt="What Is Your Level Of Sanity?" /><br /></a>
                 </div>
             </div>
-
-            <h6>ME? <img src="/graphics/pixels/nukoAbandonnedCat.gif" /></h6>
-            <p>you can call me [redacted]. I am [redacted] years old and i am junior in college, majoring in [redacted]. i go by any pronouns, because gender is a social construct and im antisocial.</p>
-            <p>Autistic, antisocial, have major depression &amp; beautiful princess disorder.</p>
-
-            <h6>SITE? <img src="/graphics/pixels/cat34.gif" /></h6>
-            <p>
-                i created my neocities site on 24th of October 2023, after watching
-                <a href="https://youtu.be/00qwzmMrtok?si=ToGR-R3WoK3GHi8h" target="_blank">an episode of loveweb</a>.
-            </p>
-            <p>made with <a href="https://phcode.dev/" target="_blank">phoenix code</a></p>
-            <p>hosted on <a href="https://neocities.org/" target="_blank">neocities</a></p>
-
-            <h6>MUSIC? <img src="/graphics/pixels/cat32.gif" /></h6>
-            <p>I like glass beach, jhariah, femtanyl, STOMACH BOOK, Self, will wood, Ghost and pals</p>
-            <p>
-                some music i like can be played from the player on the main page. there's also a random
-                lyric at the right here. click on it to get a new line!
-            </p>
-
-            <h6>SHOWS? <img src="/graphics/pixels/nukoSwing.gif" /></h6>
-            <p>
-                Hazbin &amp; helluva, Murder drones, Amazing Digital Circus, Panty &amp; Stocking, Brooklyn
-                Nine-Nine, Moral Orel, Madoka Magica
-            </p>
-
-            <h6>GAMES? <img src="/graphics/pixels/cat285.gif" /></h6>
-            <p>Deltarune, Minecraft, Aconite RPG, Pokemon, FNaF, Sky COTL</p>
-            <p>
-                I usually watch videos rather than playing games
-            </p>
-
-            <h6>OTHER? <img src="/graphics/pixels/cat137.gif" /></h6>
-            <p>
-                <b>i like: </b><span style="color: red">red</span>, fish, cooking, coding, video essays, stream
-                vods/highlights, sleeping, music, cannibalism :3
-            </p>
-            <p>
-                <b>i don't like:</b> <span style="color: purple">purple</span>, people, school, stupid internet
-                drama
-            </p>
+            <p>you gay lol</p>
         </div>
-    </div>
 
-    <div class="col">
-        <img class="full" src="/images/bbd13ab4fec7767296b63eb32a5e2dca.jpg" style="object-position: bottom; height: 100%" />
-        <div style="position: absolute; width: 105%; top: 20%; right: 0">
-            <img src="/images/torn%20paper.png" style="position: absolute; width: 100%" />
-            <div id="marquee-box" title="lyric randomizes every time you load the page or click here" onclick="randomMarquee()">
-                <marquee id="marquee">random lyric</marquee>
-            </div>
+        <div id="vh"></div>
+
+        <img src="/images/bodybodybody.png" id="body">
+
+        <div id="picbox">
+            <img src="/images/dolphin.jpg">
+            <img src="/images/catmusictrain.jpg">
+            <img src="/images/catexplode.jpg">
         </div>
-        <img class="full" src="/images/e0633016551772802f31eb60e5c0d819.jpg" style="height: 40%; position: absolute; top: 0; right: 0" />
 
-        <div id="countdown" title="when this reaches 0, something scary happens">...</div>
-    </div>
+        <div id="title">
+            <a>← go back</a>
+            <h3>WEBMASTER</h3>
+        </div>
+    </main>
 
-    <img src="/images/butterfly.png" id="butterfly" />
-    <img src="/images/fuko%20rpg.png" id="fuko" />
-    <a href="/room.html" style="font-size: 2em; font-family: Staypuft; color: white; position: absolute; left: 10px; bottom: 0">
-        &lt;- go back</a>
 
     <script>
         const elements = [
-            "WHY ARE THEY WATCHING?                 WHAT IS IT WHAT THEY WANNA SEE?",
             "I need to keep up appearances.                 Well I’ve appeared, have I not?",
             "These seconds bled tighten these loose ends right ‘round my neck.",
             "Is the body a property?        Razor wire anatomy",
-            "A declaration, a promise on my teeth to never leave a word without a ceremony",
-            "I scratch your back, In return you peel off mine",
             "Born inside a test tube, I broke the glass and ran away",
             "Don’t you get bored just staring through the crack in the door?",
             "Even when I scream aloud Everyone dances to the sound",
             "I'd care about the future again if i knew i could last long enough",
-            "PRESSURE BOMB IN A GODDAMN KNIFE FIGHT!!!",
-            "This isn't a love, it's anarchy",
             "Even through the pain, animals cannot change",
             "The carpet floor is so damn comfortable, what's the point of sleeping in bed?",
             "I thought too long about dying, i forgot how to feel alive",
             "Strobe death my way caught in the flash and I'm gone ",
-            "ALL NEW LIFE AFTER YOU HIT DELETE!",
-            "Simple, I get to be dumb, you get to exercise control",
             "If you ever hear me breathing, then that breathing is a joke",
             "Only love me when I'm stuck in your head; Only bite me when I'm dead",
             "Baby, please, adore me, adore me! I am living for your decease!",
             "Swallow the pill and give it a little bit, baby, I feel like I'm killin' it",
-            "Sold my soul to a businessman",
             "I'd kill myself, and you'd kill me too when I'm alone with you",
             "Covered in brand new bruises, but none that i remember",
-            "I get in the way of myself and it hurts to admit that sometimes I'm unequipped to handle it all on my own",
-            "I'm at the end of my means from idolizing a made up man who one day could be me",
             "Run to front stage, you’re all actors anyway, no one to watch,  you’re all part of the play",
             "And here I wait for something to twist the plot dramatically again",
             "All they want now is safety from what’s around, waiting for help but never learning how",
-            "The final act, I’m shaken to my knees.                             Yet crying and lonely.",
             "If i had common sense, i'd cut myself or curl up and die!",
-            "Don't mind us, we're just spilling out guts;             If this is love, i don't want to be loved!",
-            "No alchemy can give me what I wish I could be                          so I'll try a different body!",
-            "No form of love can give me what I wish I could be                             I pray just change me",
-            "My heart, rebuild from the start-              DISGUSTING!!!",
-            "I'm lower than the dirt, a worthless Homunculus",
-            "Even if I somehow find a way to feel alive, I -",
-            "We don't need to sleep - it's the weekend; I wanna stay up late and chase all the skylines",
+            "No alchemy can give me what I wish I could be;    so I'll try a different body!",
             "We need to get off of this planet before the sky falls down and the earth goes up in flames",
-            "I'd care about the future again, if i knew I could last long enough",
             "Oh little fox, you got caught in the teeth of a hunter's trap",
-            "The poison swims into deltas;              An insatiable autocannibal",
+            "The poison swims into deltas;      An insatiable autocannibal",
             "It’s my own damn life, I’ll bring it to ruin how I please",
             "Show your teeth, let me be terrified",
-            "If I’m gonna die it’ll be my way;                      It may be the end of it as we know",
-            "It’s not so bad, It’s not so bad, It’s not so bad, It’s not so bad, It’s just the end of the world",
-            "So maybe it’s not so bad if I just fall in line;                   If I just give in would it be a crime?              If I tried it, I might like it,                But every ounce of me resists and I can’t describe it",
-            "Fukouna girl, fukouna girl;            If you wanna flay me let's see what's inside",
-            "The steel is kissing her head now, Then the blood and saliva in her mouth;             All the angels laughing down",
-            "Fukouna girl, GOODBYE WORLD, 'Cause pretty girls DESERVE TO die",
-            "He looked at you with his empty eyes and said:          I'm doing you a favour",
-            "And if i were you, I wouldn't love me neither",
-            "You're dead,           That's being revised!",
-            "You're dead, but you never died",
+            "Fukouna girl, fukouna girl;        If you wanna flay me let's see what's inside",
             "Lately I've been wishing I was FIVE-FOOT-FIVE, weighting NINE-NINE, wearing THIGH HIGHS!",
             "I wish I could be a girl and that way you'd wish you could KICK MY FUCKING TEETH IN",
-            "Lock me up. Throw out the key. I’ve found my home",
+            "Lock me up.    Throw out the key.     I’ve found my home",
             "Wonder how the sun feels when it falls. I’ve been searching so hard to find out why it rises every morning",
-            "I never thought I would muster the courage to leave here.",
-            "I broke free of what kept me trapped here. And I don’t think I’m coming back here. So goodbye, farewell. I don’t need you now.",
-            "Me and my past must rift apart, but I’ll always keep this on my arm",
-            "my instinct tells me i smell like fresh meat and i gotta be ready to defend myself if i need to,           although i've never been in a fight;           i'm weak and you're right,      i'm sorry i didn't believe you",
+            "my instinct tells me i smell like fresh meat and i gotta be ready to defend myself if i need to",
             "Did you actually realize 'I' was never truly here to begin with? ",
             "The screams of a tiny girl are of no concern to the whole wide world, no matter how loud",
             "well, this decease is defined by its treatment; you people make me sick!",
-            "too weird to love, too scared to die, too alien to take you home",
-            "so if you love me, let me go, my love, so i can be no one",
-            "Why'd you come into this world or come out that way? Like freaks of nurture, well, isn't it funny? (Well, not ha-ha funny, but y'know, 'funny')",
-            "Horrified at the sight of my reflection in your eyes, I don't belong there",
-            "Mad as a hatter with a dagger and a dollar sign",
-            "And when the sun comes up,             You'll find a brand new god",
+            "And when the sun comes up, You'll find a brand new god",
             "Go fly a kite until you're tangled in the hanging tree",
-            "But what's the price of perfection?        I won't know until it's paid in full",
-            "So grab, hold tight,   'Cause you're in for quite a ride",
-            "I don't need a god to punish me;       I'm perfectly capable of doing it on my own",
+            "But what's the price of perfection? I won't know until it's paid in full",
             "I think I might fuck around and get shot in the head, Cuz maybe people like us are all better off dead",
             "They'll put you in your place, they'll put you in your place, They'll put you in a casket!",
             "I just hear my head ringing;         Lose hold of reality;               There is no way you can save me",
-            "Once, we were friends, Now we'll never meet again.         So adieu, so adieu, I still love you"
+            "Once, we were friends, Now we'll never meet again. So adieu, so adieu, I still love you"
         ];
 
-        const Marquee = document.getElementById("marquee");
+        const Marquee = document.getElementById("lyric-marq");
         const randomIndex = Math.floor(Math.random() * elements.length);
         Marquee.innerHTML = elements[randomIndex];
 
@@ -370,32 +288,6 @@
             const randomIndex = Math.floor(Math.random() * elements.length);
             Marquee.innerHTML = elements[randomIndex];
         }
-    </script>
-
-    <script>
-        // Set the date we're counting down to
-        var countDownDate = new Date("Jan 24, 2025").getTime();
-
-        // Update the count down every 1 second
-        var x = setInterval(function() {
-            // Get today's date and time
-            var now = new Date().getTime();
-
-            // Find the distance between now and the count down date
-            var distance = countDownDate - now;
-
-            // Time calculations for days, hours, minutes and seconds
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-
-            // Output the result in an element with id="demo"
-            document.getElementById("countdown").innerHTML = days;
-
-            // If the count down is over, write some text
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("countdown").innerHTML = '<img src="/images/weezer-cake.jpg">';
-            }
-        }, 1000);
     </script>
     <script src="/js/theme-switcher.js"></script>
 </body>
