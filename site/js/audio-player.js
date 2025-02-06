@@ -1,4 +1,4 @@
-// audio-player.js by june @ webcatz.neocities.org
+// audio-player.js by june @ juneish.neocities.org
 
 /*
 

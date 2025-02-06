@@ -13,96 +13,31 @@
     <style>
         body {
             background: var(--bg);
-            width: 100vw;
+            width: 100%;
             height: 100vh;
-            /*background-size: cover;*/
             background-position: center;
-            overflow-x: hidden;
-            align-content: center;
-            align-items: center;
+            padding: 0;
+            animation: fade 10s ease-in;
         }
 
-        #info {
-            width: 50vw;
-            background-color: var(--primary-colour);
+        header {
+            position: absolute;
             position: relative;
-            margin: auto;
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            border: 5px solid;
-            border-color: var(--colour);
-            padding: 10px 20px;
-
-            & h6 {
-                color: var(--accent-colour);
-                line-height: 100%;
-                margin: 0;
-            }
-        }
-
-        #title {
-            grid-area: 1/1/span 1/ span 2;
-            text-align: center;
-        }
-
-
-        #updd {
-
-            &::before {
-                filter: opacity(100);
-            }
-        }
-
-        #censor {
-            position: absolute;
             top: 0;
-            right: -150px;
-            height: 100%;
-            z-index: 10;
-            text-align: center;
-
-            & a {
-                display: block;
-                margin-bottom: 20px;
-            }
-        }
-
-        #warns {
-            display: grid;
-            grid-template-columns: 50% 50%;
-            grid-template-rows: min-content;
-        }
-
-        .bowder {
-            border: 3px dotted var(--colour);
-            margin: 3px;
-            padding: 5px;
-        }
-
-        footer {
-            position: fixed;
-            bottom: 0;
             width: 100%;
             text-align: center;
-            background-color: black;
-            color: white;
-            padding: 5px;
-        }
+            background-color: var(--colour);
+            color: var(--primary-colour);
 
-        .webrings {
-            display: grid;
-            grid-template-columns: auto auto;
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: absolute;
-            width: 100%;
-
-            & div {
+            & h4 {
                 margin: auto;
             }
+
+            & a::before {
+                filter: none;
+            }
         }
+
 
         #hitcount {
             color: var(--accent-colour);
@@ -138,12 +73,21 @@
             }
         }
 
-        #webrings {
-            align-content: center;
+        #fukoimg img {
+            width: 300px;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            filter: opacity(1);
+            transition: 1s;
 
-            & a::before {
-                content: "";
+            &:hover {
+                filter: opacity(0);
             }
+        }
+
+        #theme {
+            color: var(--primary-colour);
         }
 
         #themeSwitcher {
@@ -163,76 +107,129 @@
             }
         }
 
-        #fuko3d {
-            float: right;
-            filter: var(--theme-filter);
-            pointer-events: none;
-            width: 30%;
+        .infobox {
+            max-width: 300px;
+            background-color: var(--primary-colour);
+            padding: 5px;
+            margin: 10px auto;
+            border: double 6px var(--accent-colour);
         }
 
-        #theme-grid {
-            text-align: center;
-            align-content: center;
-            border: outset 6px var(--accent-colour);
-            display: grid;
-            grid-template-columns: 50% 50%;
-            padding: 5px;
+        #right-sidebox {
+            position: fixed;
+            left: 20px;
+            top: 120px;
         }
+
+        #left-sidebox {
+            position: absolute;
+            top: 120px;
+            right: 20px;
+        }
+
+        #enter {
+            -webkit-text-stroke: 2px var(--primary-colour)
+        }
+
+        #centerbox {
+            width: 300px;
+            margin: 15% auto;
+            text-align: center;
+            position: relative;
+
+            & a {
+                font-family: 'staypuft';
+                font-size: 4Em;
+                color: var(--colour);
+                cursor: pointer;
+
+                &::before {
+                    content: "";
+                }
+            }
+        }
+
+
+        #burst-8 {
+            background: var(--primary-colour);
+            width: 250px;
+            height: 250px;
+            position: absolute;
+            text-align: center;
+            z-index: -10;
+            position: absolute;
+            top: 50%;
+            transform: rotate(20deg) translate(0, -50%);
+            transition: 1s ease-in-out;
+        }
+
+        #burst-8:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 250px;
+            width: 250px;
+            background: var(--accent-colour);
+            transform: rotate(135deg);
+            transition: ease-in-out 1s;
+        }
+
+        #centerbox:hover {
+
+            & #burst-8 {
+                transform: rotate(380deg) translate(0, -55%);
+            }
+
+            & #burst-8:before {
+                transform: rotate(900deg) translate(20%, -55%);
+            }
+        }
+
 
         @media only screen and (max-width: 700px) {
             #phone-splash {
                 /*display: block;*/
             }
 
-            #info {
-                display: block;
-                margin: auto;
-                width: 90%;
-                padding: 0;
-            }
-
-            body {
-                overflow-y: auto;
-                height: auto;
-                padding: 100px 0;
-            }
-
-            #censor {
+            #left-sidebox,
+            #right-sidebox {
                 position: relative;
+                top: 0;
+                align-content: center;
                 margin: auto;
                 left: 0;
-                display: flex;
-                & a{
-                    margin: auto;
+            }
+
+            header {
+                position: relative;
+                margin: 0;
+                top: 0;
+
+                & .head-info {
+                    display: block;
+                }
+
+                & .dot {
+                    display: none;
                 }
             }
 
-            .bowder {
-                margin: 2px
-            }
-
-            iframe {
-                width: 100%;
-                margin-top: 20px;
-            }
-
-            #warns {
-                display: block;
-            }
-
-            #fuko3d {
-                float: none;
-                top: 0;
+            #fukoimg img {
+                position: relative;
+                float: right;
+                margin: 10px;
                 width: 90%;
-                margin: 20px auto;
             }
 
-            #theme-grid {
-                display: block;
+            #centerbox {
+                width: 90%;
+                margin: 120px auto;
             }
-        }
-        #autiring table{
-            margin: auto;
+
+            #burst-8 {
+                display: none
+            }
         }
     </style>
 </head>
@@ -246,30 +243,42 @@
         </div>
     </div>
 
+    <header>
+        <h4>WELCOME TO FUKO'S WORLD!</h4>
+        <span class="head-info"><img src="/graphics/pixels/cat30.gif">
+            I'm a god's little meow meow!</span>
+        <span class="dot"> • </span>
+        <a href="/update-log.html" id="updd" class="head-info"> Last updated: <span id="lastupdate"></span></a>
+        <span class="dot"> • </span>
+        <span class="head-info">Visitors: <span id="hitcount"></span></span>
+        <span class="dot"> • </span>
+        <span>Hosted on neocities</span>
+    </header>
 
-    <img src="/images/fuko%203d.png" id="fuko3d">
 
-    <div id="info">
-        <div id="title">
-            <h5>WELCOME TO FUKO'S WORLD!!!</h5>
-            <a href="/update-log.html" id="updd"> Last updated: <span id="lastupdate"></span></a>
-            <img src="/graphics/pixels/charm.gif">
-            <img src="/graphics/pixels/knife.gif">
-            <img src="/graphics/pixels/leaf.gif">
-            <span>Visitors: <span id="hitcount"></span></span>
-            <hr>
-
-        </div>
-        <div class="bowder" id="webrings">
+    <div id="left-sidebox">
+        <div class="infobox" id="box-1">
             <h6>
-                <img src="/graphics/pixels/bandaid.gif">
+                <img src="/graphics/pixels/melody.gif">
+                Best viewed with:
+            </h6>
+            <ul>
+                <li>1920x1080 screen</li>
+                <li>javascript, iframe &amp; animations enabled</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="right-sidebox">
+        <div class="infobox" id="box-3">
+            <h6>
+                <img src="/graphics/pixels/pc.gif">
                 Webrings
             </h6>
             <div style="font-size: 0.6Em; text-align: center;">
                 <div id="autiring">
-                    <script type="text/javascript" src="https://macaque.moe/autiring/onionring-variables.js"></script>
-                    <script type="text/javascript" src="https://macaque.moe/autiring/onionring-widget.js"></script>
-
+                    <script type="text/javascript" src="https://ballonlea.neocities.org/autiring/onionring-variables.js"></script>
+                    <script type="text/javascript" src="https://ballonlea.neocities.org/autiring/onionring-widget.js"></script>
                 </div>
 
                 <div>
@@ -281,84 +290,59 @@
                 <script src="https://snewberry.neocities.org/catfolk/webstring.js"></script>
 
                 <div>
-                    <map name="noaitxtwidget">
-                        <area href="https://baccyflap.com/noai" target="_blank" shape="rect" coords="28,0,219,30" alt="no ai webring" title="no ai webring">
-                        <area href="https://baccyflap.com/noai/?prv&s=fkn" target="_top" shape="rect" coords="0,0,27,30" alt="previous" title="previous">
-                        <area href="https://baccyflap.com/noai/?rnd" target="_top" shape="rect" coords="221,6,235,25" alt="random" title="random">
-                        <area href="https://baccyflap.com/noai/?nxt&s=fkn" target="_top" shape="rect" coords="239,0,263,30" alt="next" title="next">
+                    <map name="noaimini5">
+                        <area href="https://baccyflap.com/noai" shape="rect" coords="25,16,61,29" target="_blank" alt="no ai webring" title="no ai webring">
+                        <area href="https://baccyflap.com/noai/?prv&s=fkn" target="_top" shape="rect" coords="2,2,19,17" alt="previous" title="previous">
+                        <area href="https://baccyflap.com/noai/?rnd" target="_top" shape="rect" coords="66,22,70,28" alt="random" title="random">
+                        <area href="https://baccyflap.com/noai/?nxt&s=fkn" target="_top" shape="rect" coords="69,2,85,17" alt="next" title="next">
                     </map>
-                    <img usemap="#noaitxtwidget" src="https://baccyflap.com/noai/txtwidget-light.gif" alt="a white rectangular box with a dashed outline with the words 'the no ai webring' in the centre, with a parenthetical question mark next to it and two arrows pointing left and right to either side">
+                    <img usemap="#noaimini5" src="https://baccyflap.com/noai/miniwidget5.gif" alt="the top of a fuzzy, black sphere with two arrows rising from it, one curving to the left, one to the right. across the bulk of the sphere it reads NO AI / WEBRING in squiggly, uneven letters and next to those words is a small question mark">
                 </div>
 
                 <a href="https://fanimated.net/mylittlepony/" target="_blank"><img src="/graphics/sites/mlpring.gif"></a>
-
             </div>
         </div>
 
-        <div id="warns">
-            <div class="bowder">
-                <h6>
-                    <img src="/graphics/pixels/warning.gif">
-                    Heads up!
-                </h6>
+        <div class="infobox" id="box-2">
+            <h6>
+                <img src="/graphics/pixels/warning.gif">
+                Heads up!
+            </h6>
 
-                <ul>
-                    <li>some flashing gifs</li>
-                    <li>not fully optimized for mobile</li>
-                    <li>
-                        <details>
-                            <summary>TWs</summary>
-                            suicidal ideation/imagery, disturbing content, drugs
-                        </details>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="bowder">
-                <h6>
-                    <img src="/graphics/pixels/melody.gif">
-                    Best viewed with:
-                </h6>
-                <ul>
-                    <li>1920x1080 screen</li>
-                    <li>javascript, iframe &amp; animations enabled</li>
-                </ul>
-            </div>
-
-            <div style="grid-area: auto/auto/span 1/span 2">
-                <div id="theme-grid">
-                    <img src="/graphics/blinkies/stomachbook-fukouna-ultimate.gif" style="margin: auto; width: 90%">
-                    <div id="theme">
-                        <span>theme:</span>
-                        <select id="themeSwitcher" onchange="changeTheme()">
-                            <option value="">default</option>
-                            <option value="hell">hell</option>
-                            <option value="underwater">underwater</option>
-                            <option value="neon">neon</option>
-                            <option value="green">green</option>
-                        </select>
-                    </div>
-                </div>
-
-
-                <div id="entering">
-                    <a href="/room.html">
-                        <h4>ENTER?</h4>
-                    </a>
-                </div>
-            </div>
+            <ul>
+                <li>some flashing gifs</li>
+                <li><b>TWs</b>:
+                    suicidal ideation/imagery, disturbing content, drugs
+                </li>
+            </ul>
         </div>
-
-
-
-
-        <div id="censor">
-            <a href="https://www.mabsland.com/Adoption.html"><img src="/images/Censor_14b.gif"></a>
-            <a href="https://tamanotchi.world/17957c"><img src="https://tamanotchi.world/i2/17957" alt="It's tamaNOTchi! Click to feed!"></a>
-        </div>
-
 
     </div>
+
+    <div id="centerbox">
+        <div id="burst-8"></div>
+        <a href="/room.html" id="enter">persue? </a>
+        <div id="theme">
+            <span>theme:</span>
+            <select id="themeSwitcher" onchange="changeTheme()">
+                <option value="">default</option>
+                <option value="hell">hell</option>
+                <option value="underwater">underwater</option>
+                <option value="neon">neon</option>
+                <option value="green">green</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="fukoimg">
+        <img src="/images/fuko-def.png" style="display: var(--cats-display)">
+        <img src="/images/fuko-wat.png" style="display: var(--underwater-display)">
+        <img src="/images/fuko-hell.png" style="display: var(--hell-display)">
+        <img src="/images/fuko-neon.png" style="display: var(--neon-display)">
+        <img src="/images/fuko-gra.png" style="display: var(--green-display)">
+    </div>
+
+
 
 
     <script src="/js/views-update.js"> </script>
@@ -368,6 +352,17 @@
 
         function hide() {
             splash.style.display = "none";
+        }
+    </script>
+
+
+    <script>
+        function openFolder(a) {
+            document.getElementById(a).style.display = "block";
+        }
+
+        function closeFolder(a) {
+            document.getElementById(a).style.display = "none";
         }
     </script>
 
