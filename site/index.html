@@ -78,12 +78,6 @@
             position: fixed;
             bottom: 0;
             right: 0;
-            filter: opacity(1);
-            transition: 1s;
-
-            &:hover {
-                filter: opacity(0);
-            }
         }
 
         #theme {
@@ -132,10 +126,10 @@
         }
 
         #centerbox {
-            width: 300px;
             margin: 15% auto;
             text-align: center;
             position: relative;
+            overflow-x: clip;
 
             & a {
                 font-family: 'staypuft';
@@ -149,17 +143,22 @@
             }
         }
 
+        #burst-wrap {
+            position: absolute;
+            width: 100vw;
+            z-index: -10;
+            top: 50%;
+            transform: translate(0, -120px);
+        }
 
         #burst-8 {
             background: var(--primary-colour);
             width: 250px;
             height: 250px;
-            position: absolute;
-            text-align: center;
+            margin: auto;
             z-index: -10;
-            position: absolute;
             top: 50%;
-            transform: rotate(20deg) translate(0, -50%);
+            transform: rotate(20deg);
             transition: 1s ease-in-out;
         }
 
@@ -178,18 +177,22 @@
         #centerbox:hover {
 
             & #burst-8 {
-                transform: rotate(380deg) translate(0, -55%);
+                transform: rotate(200deg);
             }
 
             & #burst-8:before {
-                transform: rotate(900deg) translate(20%, -55%);
+                transform: rotate(360deg) translate(20%, -50%);
             }
+        }
+
+        #autiring table {
+            margin: auto;
         }
 
 
         @media only screen and (max-width: 700px) {
             #phone-splash {
-                /*display: block;*/
+                display: block;
             }
 
             #left-sidebox,
@@ -223,12 +226,8 @@
             }
 
             #centerbox {
-                width: 90%;
+                width: 100%;
                 margin: 120px auto;
-            }
-
-            #burst-8 {
-                display: none
             }
         }
     </style>
@@ -252,7 +251,9 @@
         <span class="dot"> • </span>
         <span class="head-info">Visitors: <span id="hitcount"></span></span>
         <span class="dot"> • </span>
-        <span>Hosted on neocities</span>
+        <span class="head-info">Hosted on neocities</span>
+        <span class="dot"> • </span>
+        <a href="https://tamanotchi.world/17957c" class="head-info"><img src="https://tamanotchi.world/i/17957" alt="It's tamaNOTchi! Click to feed!"></a>
     </header>
 
 
@@ -320,7 +321,9 @@
     </div>
 
     <div id="centerbox">
-        <div id="burst-8"></div>
+        <div id="burst-wrap">
+            <div id="burst-8"></div>
+        </div>
         <a href="/room.html" id="enter">persue? </a>
         <div id="theme">
             <span>theme:</span>
