@@ -57,9 +57,18 @@
     scrollbar-width: thin;
     image-rendering: pixelated;
 }
+
 :root[dyslexic="true"] {
- *{ font-family: OpenDyslexic !important;}
-    h1, h2, h3, h4, h5, h6{
+    * {
+        font-family: OpenDyslexic !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         font-weight: bold;
     }
 }
@@ -83,7 +92,7 @@
     --cats-display: none;
     --bg: url(/images/underwater-snes.png);
     --fav: url(/graphics/pixels/vapo2.gif);
-            --theme-filter: hue-rotate(180deg) brightness(80%) contrast(90%) saturate(170%);
+    --theme-filter: hue-rotate(180deg) brightness(80%) contrast(90%) saturate(170%);
 }
 
 :root[theme="green"] {
@@ -95,7 +104,7 @@
     --cats-display: none;
     --bg: url(/images/green-snes.png);
     --fav: url(/graphics/pixels/bun.gif);
-            --theme-filter: hue-rotate(120deg) brightness(100%) contrast(100%) sepia(40%) saturate(80%);
+    --theme-filter: hue-rotate(120deg) brightness(100%) contrast(100%) sepia(40%) saturate(80%);
 }
 
 :root[theme="hell"] {
@@ -107,7 +116,7 @@
     --cats-display: none;
     --bg: url(/images/hell-snes.png);
     --fav: url(/graphics/pixels/ribbon.gif);
-            --theme-filter: hue-rotate(-20deg) brightness(80%) contrast(200%) sepia(20%) saturate(200%);
+    --theme-filter: hue-rotate(-20deg) brightness(80%) contrast(200%) sepia(20%) saturate(200%);
 }
 
 :root[theme="neon"] {
@@ -119,7 +128,7 @@
     --cats-display: none;
     --bg: url(/images/neon-snes.png);
     --fav: url(/graphics/pixels/neon%20stars.gif);
-            --theme-filter: hue-rotate(260deg) brightness(90%) contrast(200%) saturate(170%);
+    --theme-filter: hue-rotate(260deg) brightness(90%) contrast(200%) saturate(170%);
 }
 
 * {
@@ -139,16 +148,18 @@ a {
     }
 }
 
-a::before{
-                content: var(--fav);
-                height: 100%;
-                filter: opacity(0);
-                margin-right: 5px;
-            }
- a:hover::before{
-                filter: opacity(100)
-            }
-a:has(h1, h2, h3, h4, h5, img, div)::before{
+a::before {
+    content: var(--fav);
+    height: 100%;
+    filter: opacity(0);
+    margin-right: 5px;
+}
+
+a:hover::before {
+    filter: opacity(100)
+}
+
+a:has(h1, h2, h3, h4, h5, img, div)::before {
     content: "";
 }
 
@@ -229,28 +240,29 @@ h6 {
     margin: 10px 0 10px 0;
 }
 
+
 h6 {
-    font-size: 120%;
+    font-size: 100%;
 }
 
 h5 {
-    font-size: 200%;
+    font-size: 150%;
 }
 
 h4 {
-    font-size: 300%;
+    font-size: 200%;
 }
 
 h3 {
-    font-size: 400%;
+    font-size: 250%;
 }
 
 h2 {
-    font-size: 500%;
+    font-size: 300%;
 }
 
 h1 {
-    font-size: 600%;
+    font-size: 350%;
 }
 
 p,
@@ -334,9 +346,20 @@ a {
     }
 }
 
-@keyframes fade{
-    0% {opacity: 0}
-    5% {opacity: 100}
-    95% {opacity: 100}
-    100% {opacity: 0}
+@keyframes fade {
+    0% {
+        opacity: 0
+    }
+
+    5% {
+        opacity: 100
+    }
+
+    95% {
+        opacity: 100
+    }
+
+    100% {
+        opacity: 0
+    }
 }
