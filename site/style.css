@@ -53,6 +53,7 @@
     --green-display: none;
     --neon-display: none;
     --underwater-display: none;
+    --depths-display: none;
     scrollbar-color: var(--accent-colour) white;
     scrollbar-width: thin;
     image-rendering: pixelated;
@@ -129,6 +130,18 @@
     --bg: url(/images/neon-snes.png);
     --fav: url(/graphics/pixels/neon%20stars.gif);
     --theme-filter: hue-rotate(260deg) brightness(90%) contrast(200%) saturate(170%);
+}
+
+:root[theme="depths"] {
+    --primary-colour: #142345;
+    --colour: #76dbff;
+    --accent-colour: #075d82;
+    --accent-colour-hover: #1376a0;
+    --depths-display: block;
+    --cats-display: none;
+    --bg: url(/images/depths-snes.png);
+    --fav: url(/graphics/pixels/gleach_allen_pixel.gif);
+    --theme-filter: hue-rotate(200deg) brightness(70%) contrast(150%) saturate(100%);
 }
 
 * {

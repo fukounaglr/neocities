@@ -117,7 +117,7 @@
             }
 
             & #notepad-content {
-                background-color: white;
+                background-color: var(--primary-colour);
                 padding: 10px;
                 margin: auto;
 
@@ -384,7 +384,7 @@
             position: relative;
             align-self: stretch;
             flex: 1;
-            width: 80%;
+            width: 50%;
             margin-bottom: 15px;
 
             & div {
@@ -498,7 +498,9 @@
                     </div>
 
                     <div id="player-select-wrapper">
-                        <marquee><select id="player-select"></select></marquee>
+                        <marquee>
+                            <select id="player-select"></select>
+                        </marquee>
                     </div>
                 </div>
             </div>
@@ -573,6 +575,7 @@
                 <option value="underwater">underwater</option>
                 <option value="neon">neon</option>
                 <option value="green">green</option>
+                <option value="depths">depths</option>
             </select>
         </div>
         <button id="fontSwitcher" onclick="changeFont()">
@@ -650,6 +653,7 @@
         }
     </script>
 
+    <script src="/js/audio-player.js"></script>
     <script>
         const select = document.getElementById("player-select");
         AudioPlayer.create(
@@ -697,7 +701,6 @@
     </script>
 
     <script src="/js/views-update.js"> </script>
-    <script src="/js/audio-player.js"></script>
     <script src="/js/confetti.js"></script>
     <script src="/js/theme-switcher.js"></script>
 </body>

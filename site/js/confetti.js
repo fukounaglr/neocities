@@ -2,7 +2,7 @@ var parent = document.getElementById("confetti-area");
 
 var X, Y;
 
-var colors = ["#3CC157", "#2AA7FF", "#FF4444", "#FCBC0F", "#F88051"];
+var colors = ["#ff4472", "#c7ff56", "#39e2cd", "#d12020", "#fce8ad"];
 var confetti_elements = [],
 	number_of_elements = 20;
 
