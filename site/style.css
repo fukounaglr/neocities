@@ -133,10 +133,10 @@
 }
 
 :root[theme="depths"] {
-    --primary-colour: #142345;
-    --colour: #76dbff;
-    --accent-colour: #075d82;
-    --accent-colour-hover: #1376a0;
+    --primary-colour: black;
+    --colour: white;
+    --accent-colour: #15b3bc;
+    --accent-colour-hover: #01769c;
     --depths-display: block;
     --cats-display: none;
     --bg: url(/images/depths-snes.png);
