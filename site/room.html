@@ -15,7 +15,7 @@
             width: 100cw;
             height: 100vh;
             overflow: hidden;
-            background-color: black;
+            background-color: #101010;
             display: grid;
             grid-template-columns: 20% 60% 20%;
         }
@@ -519,9 +519,13 @@
         </div>
 
         <div id="notepad">
-            <p id="notepad-title"><span>Notepad</span><span>- x</span></p>
+            <p id="notepad-title"><span>Notepad - TO-DO</span><span>- x</span></p>
             <div id="notepad-content">
-                <p>Sing the same fascist song with some new words;<br>If you hate her, i think you should kill her! But you won't, because everybody's cheering for 不幸な girl, 不幸な girl!!!</p>
+                <ul>
+                <li>room update (make it look cooler!)</li>
+                    <li>Fuko update (put it in the room + make it better)</li>
+                    <li>fix depths theme</li>
+                </ul>
             </div>
         </div>
 
@@ -563,8 +567,9 @@
                 <img src="/graphics/blinkies/comicsans.gif">
                 <img src="/graphics/blinkies/never%20judge.gif">
                 <img src="/graphics/blinkies/BornToDie.gif">
-                <img src="/graphics/blinkies/BornToDie.gif">
                 <img src="/graphics/blinkies/dontlike.gif">
+                <img src="/graphics/blinkies/asshurt.gif">
+                <img src="/graphics/blinkies/trans%20furious.gif">
             </marquee>
             <p style="margin: auto 0; text-align: end;" id="time"></p>
         </div>
@@ -579,7 +584,7 @@
                 <option value="underwater">underwater</option>
                 <option value="neon">neon</option>
                 <option value="green">green</option>
-                <option value="depths">depths</option>
+                <!--<option value="depths">depths</option>-->
             </select>
         </div>
         <button id="fontSwitcher" onclick="changeFont()">

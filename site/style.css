@@ -134,7 +134,7 @@
 
 :root[theme="depths"] {
     --primary-colour: black;
-    --colour: white;
+    --colour: #cfd8e9;
     --accent-colour: #15b3bc;
     --accent-colour-hover: #01769c;
     --depths-display: block;
@@ -172,7 +172,7 @@ a:hover::before {
     filter: opacity(100)
 }
 
-a:has(h1, h2, h3, h4, h5, img, div)::before {
+a:has(h1, h2, h3, h4, h5, img, div, svg)::before {
     content: "";
 }
 

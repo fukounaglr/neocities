@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=0.1, user-scalable=no" />
@@ -24,11 +25,12 @@
             background-color: var(--colour);
             height: 100%;
             align-content: center;
+            overflow: auto;
         }
 
         ol {
             font-size: 1em;
-            height: 70%;
+            /*height: 70%;*/
             list-style: none;
             overflow: auto;
             margin: 0;
@@ -54,9 +56,8 @@
         }
 
         #donot {
-            position: absolute;
-            bottom: 10px;
-            left: 20px;
+            text-align: center;
+            display: block;
         }
 
         h1 {
@@ -97,21 +98,24 @@
             width: 100%;
             height: 100%;
             position: relative;
-            & .img{
-            font-family: "staypuft" !important;
+
+            & .img {
+                font-family: "staypuft" !important;
             }
         }
-        
-        #fontSwitcher{
+
+        #fontSwitcher {
             border: none;
             border-radius: 0;
             background-color: var(--accent-colour);
             font-family: "OpenDyslexic";
-            &.active{
-                background-color: var(--primary-colour)
+
+            &.active {
+                background-color: var(--primary-colour);
+                color: var(--accent-colour)
             }
         }
-        
+
 
         @media only screen and (max-width: 700px) {
             body {
@@ -133,45 +137,68 @@
 
 <body>
     <div class="side-col">
+
+            <h3>where to?</h3>
+
+            <div id="donot">
+                <div id="theme">
+                    <span>theme:</span>
+                    <select id="themeSwitcher" onchange="changeTheme()">
+                        <option value="">choose</option>
+                        <option value="hell">hell</option>
+                        <option value="neon">neon</option>
+                        <option value="underwater">underwater</option>
+                        <option value="green">green</option>
+                        <!--<option value="depths">depths</option>-->
+                    </select>
+                </div>
+
+                <audio id="audio" src="https://64.media.tumblr.com/5cfdb5b4911fc813f8d2ecc9a59c706c/fed64cd68b42bd35-0a/7d861edb29cd262194f4361a5b988b98b18789b7.mp3"></audio>
+                <a href="" id="play" style="display: block"> do not click here! </a>
+
+                <button id="fontSwitcher" onclick="changeFont()">
+                    OpenDyslexic: <span id="font-stat">false</span>
+                </button>
+            </div>
+
         <ol>
-            <li><a href="/index.html">index</a></li>
-            <li><a href="/room.html">room</a></li>
-            <li><a href="/song-of-the-week.html">song of the week</a></li>
-            <li><a href="/webmaster.html">webmaster</a></li>
-            <li><a href="/blog.html">blog</a></li>
-            <li><a href="/journal.html">journal</a></li>
-            <li><a href="/art">art</a></li>
-            <li><a href="/sites.html">cool sites</a></li>
-            <li><a href="/graphics.html">graphics</a></li>
             <li>
-                <details>
-                    <summary>shrines</summary>
-                    <ul>
-                        <li><a href="/shrines/sky-cotl/index.html">Sky COTL</a></li>
-                        <li><a href="/shrines/cooking.html">Cooking</a></li>
-                    </ul>
-                </details>
+                <p>main</p>
+                <ul>
+                    <li><a href="/index.html">index</a></li>
+                    <li><a href="/room.html">room</a></li>
+                    <li><a href="/song-of-the-week.html">song of the week</a></li>
+                    <li><a href="/webmaster.html">webmaster</a></li>
+                    <li><a href="/blog.html">blog</a></li>
+                    <li><a href="/journal.html">journal</a></li>
+                    <li><a href="/art">art</a></li>
+                    <li><a href="/sites.html">cool sites</a></li>
+                    <li><a href="/graphics.html">graphics</a></li>
+                </ul>
             </li>
             <li>
-                <details>
-                    <summary>create</summary>
-                    <ul>
-                        <li><a href="/create/femtanyl-papercraft.html">femtanyl papercraft</a></li>
-                        <li><a href="/characters/index.html">characters</a></li>
-                    </ul>
-                </details>
+                <p>shrines</p>
+                <ul>
+                    <li><a href="/shrines/sky-cotl/index.html">Sky COTL</a></li>
+                    <li><a href="/shrines/cooking.html">Cooking</a></li>
+                </ul>
             </li>
             <li>
-                <details>
-                    <summary>misc</summary>
-                    <ul>
-                        <li><a href="/dance.html">dance party</a></li>
-                        <li><a href="/end.html">backrooms</a></li>
-                        <li><a href="/update-log.html">updates log</a></li>
-                        <li><a href="/archive.html">archive</a></li>
-                        <li><a href="/trans-rights.html">trans rights</a></li>
-                    </ul>
-                </details>
+                <p>create</p>
+                <ul>
+                    <li><a href="/create/femtanyl-papercraft.html">femtanyl papercraft</a></li>
+                    <li><a href="/characters/index.html">characters</a></li>
+                </ul>
+            </li>
+            <li>
+                <p>misc</p>
+                <ul>
+                    <li><a href="/dance.html">dance party</a></li>
+                    <li><a href="/end.html">backrooms</a></li>
+                    <li><a href="/update-log.html">updates log</a></li>
+                    <li><a href="/archive.html">archive</a></li>
+                    <li><a href="/trans-rights.html">trans rights</a></li>
+                </ul>
             </li>
         </ol>
     </div>
@@ -184,29 +211,6 @@
             <h1 id="c" class="img" data-speed="10">Site map!</h1>
         </section>
     </div>
-
-    <div id="donot">
-        <div id="theme">
-            <span>theme:</span>
-            <select id="themeSwitcher" onchange="changeTheme()">
-                <option value="">choose</option>
-                <option value="hell">hell</option>
-                <option value="neon">neon</option>
-                <option value="underwater">underwater</option>
-                <option value="green">green</option>
-                <option value="depths">depths</option>
-            </select>
-        </div>
-        
-        <button id="fontSwitcher" onclick="changeFont()">
-            OpenDyslexic: <span id="font-stat">false</span>
-        </button>
-        
-        <audio id="audio" src="https://64.media.tumblr.com/5cfdb5b4911fc813f8d2ecc9a59c706c/fed64cd68b42bd35-0a/7d861edb29cd262194f4361a5b988b98b18789b7.mp3"></audio>
-        <a href="" id="play"> do not click here! </a>
-    </div>
-
-    <h4 style="position: absolute; top: 0; left: 20px">where to?</h4>
 
     <script>
         document.getElementById("play").addEventListener("click", function(e) {
