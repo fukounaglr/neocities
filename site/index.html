@@ -14,7 +14,7 @@
         body {
             background: var(--bg);
             width: 100%;
-            height: 100vh;
+            min-height: 100vh;
             background-position: center;
             padding: 0;
         }
@@ -37,6 +37,15 @@
             }
         }
 
+        main{
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: var(--colour);
+            padding: 10px 20px;
+            border: double var(--accent-colour) 4px;
+        }
+
+
 
         #hitcount {
             color: var(--accent-colour);
@@ -46,7 +55,7 @@
         #phone-splash {
             z-index: 100;
             position: fixed;
-            background-color: black;
+            background-color: var(--colour);
             width: 100%;
             height: 100%;
             top: 0;
@@ -74,9 +83,11 @@
 
         #fukoimg img {
             width: 300px;
+            float: right;
             position: fixed;
             bottom: 0;
             right: 0;
+            margin: 20px 0;
         }
 
         #theme {
@@ -100,28 +111,31 @@
             }
         }
 
+        #infobox-container{
+            display: block;
+            position: relative;
+            height: min-content
+        }
+
         .infobox {
-            max-width: 300px;
+            /*max-width: 300px;*/
             background-color: var(--primary-colour);
             padding: 5px;
-            margin: 10px auto;
+            margin: 10px;
             border: double 6px var(--accent-colour);
+            width: 40%
         }
-
-        #right-sidebox {
-            position: fixed;
-            left: 20px;
-            top: 120px;
+        #box-1, #box-2{
+            /*float: left*/
         }
-
-        #left-sidebox {
-            position: absolute;
-            top: 120px;
-            right: 20px;
+        #box-3{
+            float: right;
+            height: 100%;
         }
 
         #enter {
-            -webkit-text-stroke: 2px var(--primary-colour)
+            -webkit-text-stroke: 2px var(--primary-colour);
+            z-index: 2;
         }
 
         #centerbox {
@@ -129,6 +143,7 @@
             text-align: center;
             position: relative;
             overflow-x: clip;
+            z-index: 10;
 
             & a {
                 font-family: 'staypuft';
@@ -145,15 +160,16 @@
         #burst-wrap {
             position: absolute;
             width: 100vw;
-            z-index: -10;
+            z-index: -1;
             top: 50%;
-            transform: translate(0, -120px);
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
         #burst-8 {
             background: var(--primary-colour);
-            width: 250px;
-            height: 250px;
+            width: 200px;
+            height: 200px;
             margin: auto;
             z-index: -10;
             top: 50%;
@@ -166,8 +182,8 @@
             position: absolute;
             top: 0;
             left: 0;
-            height: 250px;
-            width: 250px;
+            height: 200px;
+            width: 200px;
             background: var(--accent-colour);
             transform: rotate(135deg);
             transition: ease-in-out 1s;
@@ -176,11 +192,11 @@
         #centerbox:hover {
 
             & #burst-8 {
-                transform: rotate(200deg);
+                transform: rotate(100deg);
             }
 
             & #burst-8:before {
-                transform: rotate(360deg) translate(20%, -50%);
+                transform: rotate(300deg);
             }
         }
 
@@ -190,26 +206,29 @@
 
 
         @media only screen and (max-width: 700px) {
+
             #phone-splash {
                 display: block;
             }
 
-            #left-sidebox,
-            #right-sidebox {
-                position: relative;
-                top: 0;
-                align-content: center;
-                margin: auto;
-                left: 0;
+            #box-1, #box-2, #box-3{
+                float: none;
+                width: auto;
             }
 
             header {
                 position: relative;
-                margin: 0;
+                padding: 20px 0;
+                margin: 230px 0;
                 top: 0;
 
                 & .head-info {
                     display: block;
+                    margin-top: 5px;
+                }
+
+                & h4 {
+                    margin-bottom: 30px;
                 }
 
                 & .dot {
@@ -217,17 +236,15 @@
                 }
             }
 
-            #fukoimg img {
-                position: relative;
-                float: right;
-                margin: 10px;
-                width: 90%;
-            }
-
             #centerbox {
                 width: 100%;
                 margin: 120px auto;
             }
+
+
+        #fukoimg img {
+            position: relative;
+        }
         }
     </style>
 </head>
@@ -250,102 +267,102 @@
         <span class="dot"> • </span>
         <span class="head-info">Visitors: <span id="hitcount"></span></span>
         <span class="dot"> • </span>
-        <span class="head-info">Hosted on neocities</span>
-        <span class="dot"> • </span>
         <a href="https://tamanotchi.world/17957c" class="head-info"><img src="https://tamanotchi.world/i/17957" alt="It's tamaNOTchi! Click to feed!"></a>
     </header>
 
+    <main>
 
-    <div id="left-sidebox">
-        <div class="infobox" id="box-1">
-            <h6>
-                <img src="/graphics/pixels/melody.gif">
-                Best viewed with:
-            </h6>
-            <ul>
-                <li>1920x1080 screen</li>
-                <li>javascript, iframe &amp; animations enabled</li>
-            </ul>
+        <div id="infobox-container">
+                <div class="infobox" id="box-3">
+                    <h6>
+                        <img src="/graphics/pixels/pc.gif">
+                        Webrings
+                    </h6>
+                    <div style="font-size: 0.6Em; text-align: center;">
+                        <div id="autiring">
+                            <script type="text/javascript" src="https://ballonlea.neocities.org/autiring/onionring-variables.js"></script>
+                            <script type="text/javascript" src="https://ballonlea.neocities.org/autiring/onionring-widget.js"></script>
+                        </div>
+
+                        <div>
+                            <script src="https://nuthead.neocities.org/ring/ring.js"></script>
+                        </div>
+
+                        <script src="https://transring.neocities.org/ring.js" data-widget="cloud"></script>
+
+                        <script src="https://snewberry.neocities.org/catfolk/webstring.js"></script>
+
+                        <div>
+                            <map name="noaimini5">
+                                <area href="https://baccyflap.com/noai" shape="rect" coords="25,16,61,29" target="_blank" alt="no ai webring" title="no ai webring">
+                                <area href="https://baccyflap.com/noai/?prv&s=fkn" target="_top" shape="rect" coords="2,2,19,17" alt="previous" title="previous">
+                                <area href="https://baccyflap.com/noai/?rnd" target="_top" shape="rect" coords="66,22,70,28" alt="random" title="random">
+                                <area href="https://baccyflap.com/noai/?nxt&s=fkn" target="_top" shape="rect" coords="69,2,85,17" alt="next" title="next">
+                            </map>
+                            <img usemap="#noaimini5" src="https://baccyflap.com/noai/miniwidget5.gif" alt="the top of a fuzzy, black sphere with two arrows rising from it, one curving to the left, one to the right. across the bulk of the sphere it reads NO AI / WEBRING in squiggly, uneven letters and next to those words is a small question mark">
+                        </div>
+
+                        <a href="https://fanimated.net/mylittlepony/" target="_blank"><img src="/graphics/sites/mlpring.gif"></a>
+                    </div>
+                </div>
+                <div class="infobox" id="box-1">
+                    <h6>
+                        <img src="/graphics/pixels/melody.gif">
+                        Best viewed with:
+                    </h6>
+                    <ul>
+                        <li>1920x1080 screen</li>
+                        <li>javascript, iframe &amp; animations enabled</li>
+                    </ul>
+                </div>
+
+                <div class="infobox" id="box-2">
+                    <h6>
+                        <img src="/graphics/pixels/warning.gif">
+                        Heads up!
+                    </h6>
+                    <img src="/images/Censor_14b.gif">
+
+                    <ul>
+                        <li>some flashing gifs</li>
+                        <li>
+                            disturbing content, drugs
+                        </li>
+                    </ul>
+                </div>
         </div>
-    </div>
 
-    <div id="right-sidebox">
-        <div class="infobox" id="box-3">
-            <h6>
-                <img src="/graphics/pixels/pc.gif">
-                Webrings
-            </h6>
-            <div style="font-size: 0.6Em; text-align: center;">
-                <div id="autiring">
-                    <script type="text/javascript" src="https://ballonlea.neocities.org/autiring/onionring-variables.js"></script>
-                    <script type="text/javascript" src="https://ballonlea.neocities.org/autiring/onionring-widget.js"></script>
-                </div>
 
-                <div>
-                    <script src="https://nuthead.neocities.org/ring/ring.js"></script>
-                </div>
-
-                <script src="https://transring.neocities.org/ring.js" data-widget="cloud"></script>
-
-                <script src="https://snewberry.neocities.org/catfolk/webstring.js"></script>
-
-                <div>
-                    <map name="noaimini5">
-                        <area href="https://baccyflap.com/noai" shape="rect" coords="25,16,61,29" target="_blank" alt="no ai webring" title="no ai webring">
-                        <area href="https://baccyflap.com/noai/?prv&s=fkn" target="_top" shape="rect" coords="2,2,19,17" alt="previous" title="previous">
-                        <area href="https://baccyflap.com/noai/?rnd" target="_top" shape="rect" coords="66,22,70,28" alt="random" title="random">
-                        <area href="https://baccyflap.com/noai/?nxt&s=fkn" target="_top" shape="rect" coords="69,2,85,17" alt="next" title="next">
-                    </map>
-                    <img usemap="#noaimini5" src="https://baccyflap.com/noai/miniwidget5.gif" alt="the top of a fuzzy, black sphere with two arrows rising from it, one curving to the left, one to the right. across the bulk of the sphere it reads NO AI / WEBRING in squiggly, uneven letters and next to those words is a small question mark">
-                </div>
-
-                <a href="https://fanimated.net/mylittlepony/" target="_blank"><img src="/graphics/sites/mlpring.gif"></a>
+        <div id="centerbox">
+            <div id="burst-wrap">
+                <div id="burst-8"></div>
+            </div>
+            <a href="/room.html" id="enter">persue? </a>
+            <div id="theme">
+                <span>theme:</span>
+                <select id="themeSwitcher" onchange="changeTheme()">
+                    <option value="">default</option>
+                    <option value="hell">hell</option>
+                    <option value="underwater">underwater</option>
+                    <option value="neon">neon</option>
+                    <option value="green">green</option>
+                    <!--<option value="depths">depths</option>-->
+                </select>
             </div>
         </div>
 
-        <div class="infobox" id="box-2">
-            <h6>
-                <img src="/graphics/pixels/warning.gif">
-                Heads up!
-            </h6>
 
-            <ul>
-                <li>some flashing gifs</li>
-                <li><b>TWs</b>:
-                    suicidal ideation/imagery, disturbing content, drugs
-                </li>
-            </ul>
+        <p style="color: var(--accent-colour)">Made in Phoenix code, tested in Firefox, hosted on Neocities</p>
+    </main>
+
+        <div id="fukoimg">
+            <img src="/images/fuko-def.png" style="display: var(--cats-display)">
+            <img src="/images/fuko-wat.png" style="display: var(--underwater-display)">
+            <img src="/images/fuko-hell.png" style="display: var(--hell-display)">
+            <img src="/images/fuko-neon.png" style="display: var(--neon-display)">
+            <img src="/images/fuko-gra.png" style="display: var(--green-display)">
+            <img src="/images/fuko-depths.png" style="display: var(--depths-display)">
         </div>
-
-    </div>
-
-    <div id="centerbox">
-        <div id="burst-wrap">
-            <div id="burst-8"></div>
-        </div>
-        <a href="/room.html" id="enter">persue? </a>
-        <div id="theme">
-            <span>theme:</span>
-            <select id="themeSwitcher" onchange="changeTheme()">
-                <option value="">default</option>
-                <option value="hell">hell</option>
-                <option value="underwater">underwater</option>
-                <option value="neon">neon</option>
-                <option value="green">green</option>
-                <!--<option value="depths">depths</option>-->
-            </select>
-        </div>
-    </div>
-
-    <div id="fukoimg">
-        <img src="/images/fuko-def.png" style="display: var(--cats-display)">
-        <img src="/images/fuko-wat.png" style="display: var(--underwater-display)">
-        <img src="/images/fuko-hell.png" style="display: var(--hell-display)">
-        <img src="/images/fuko-neon.png" style="display: var(--neon-display)">
-        <img src="/images/fuko-gra.png" style="display: var(--green-display)">
-        <img src="/images/fuko-depths.png" style="display: var(--depths-display)">
-    </div>
-
 
 
 

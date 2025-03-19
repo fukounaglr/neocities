@@ -190,6 +190,7 @@ main {
     width: 300px;
     float: inline-start;
     margin: 15px;
+    object-fit: cover;
 }
 
 .at-end {
