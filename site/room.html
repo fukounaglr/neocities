@@ -32,6 +32,10 @@
             border: double 10px var(--primary-colour);
         }
 
+        .done{
+            text-decoration: line-through;
+        }
+
         #desktop {
             display: grid;
             background-image: var(--bg);
@@ -177,43 +181,8 @@
 
         #left {
             width: 100%;
-            color: var(--accent-colour);
-            text-align: center;
-            align-content: center;
-            text-orientation: upright;
-            writing-mode: vertical-lr;
             height: 100%;
             position: relative;
-
-            & #title-2 {
-                font-size: 10Em;
-                margin: auto;
-                color: transparent;
-                -webkit-text-stroke: medium var(--primary-colour);
-                display: none;
-                font-family: "staypuft" !important;
-            }
-
-            & #title-1 {
-                display: block;
-                font-size: 8EM;
-                margin: auto;
-                pointer-events: none;
-                color: var(--accent-colour);
-                font-family: "staypuft" !important;
-            }
-        }
-
-        #left:hover {
-            & #title-1 {
-                display: none;
-                pointer-events: none;
-            }
-
-            & #title-2 {
-                display: block;
-                pointer-events: none;
-            }
         }
 
 
@@ -343,8 +312,6 @@
                 position: relative;
             }
 
-
-
             & #player-select {
                 all: unset;
                 font-family: "syne mono";
@@ -422,26 +389,72 @@
 
 
 
+        #fuko {
+            position: absolute;
+            text-align: center;
+            left: 10px;
+            bottom: 10%;
+
+            & span {
+                text-decoration: underline;
+            }
+
+            & #threed {
+                width: 200px;
+            }
+
+            & #rpgbox {
+                position: relative;
+                background-color: black;
+                text-align: left;
+                width: calc(100% - 40px);
+                height: 100px;
+                display: grid;
+                grid-template-columns: 25% 80%;
+                padding: 10px;
+                border: double white 4px;
+                color: white;
+                border-radius: 10px;
+                cursor: help;
+            }
+        }
+
+        /*STATUS CAFE*/
+        #statuscafe {
+            padding: .5em;
+            background-color: var(--primary-colour);
+            border: 5px double var(--accent-colour);
+            color: var(--colour);
+        }
+
+        #statuscafe-username {
+            margin-bottom: .5em;
+        }
+
+        #statuscafe-content {
+            margin: 0 1em 0.5em 1em;
+        }
+
+
+
         @media only screen and (max-width: 700px) {
             body {
                 display: block;
                 overflow: auto;
             }
 
-
             #left {
-                writing-mode: horizontal-tb;
-                font-size: xx-small;
+                height: auto;
             }
 
-            #right{
+            #right {
                 height: auto;
                 padding-bottom: 100px;
             }
 
             #desktop {
                 grid-template-columns: repeat(4, 1fr);
-                padding-bottom: 450px;
+                padding-bottom: 520px;
                 padding-top: 20px;
 
                 & a {
@@ -451,15 +464,26 @@
             }
 
             #notepad {
-                bottom: 300px;
+                bottom: 320px;
                 left: 5%;
                 width: 90%;
             }
 
             #audio-player {
-                left: 10%;
+                left: 5%;
                 bottom: 190px;
-                width: 80%
+                width: 90%
+            }
+
+            #fuko {
+                width: 100%;
+                position: relative;
+                left: auto;
+                margin: 50px 0;
+            }
+
+            #rpgbox {
+                margin: auto;
             }
         }
     </style>
@@ -467,23 +491,36 @@
 
 <body>
     <div id="left">
-        <span id="title-1">FUKO</span>
-        <span id="title-2">UNA</span>
-        <div id="confetti-area"></div>
+
+
+        <div id="fuko">
+            <img id="threed" src="/images/fuko%20rpg.png">
+            <div id="rpgbox">
+                <img src="/images/fuko%20speech%20icon%20og.png" id="rpgimg" width="100%;">
+                <div>
+                    <span onclick="speech(talk)">talk</span>
+                    <span onclick="speech(about)">about</span>
+                    <span onclick="speech(joke)">joke</span>
+                    <p id="rpgtext">* I can talk. Click on the options above.</p>
+                </div>
+            </div>
+        </div>
+
+
+
     </div>
 
     <main>
         <div id="desktop">
-            <a href="/site-map.html" title="site map"><img src="/images/fishinscreen-gif.webp"><span>Site map</span></a>
-            <a href="/webmaster.html" title="webmaster"><img src="/images/fuko%20rpg.png"><span>Who Am I</span></a>
-            <a href="/song-of-the-week.html" title="song of the day"><img src="/images/music.png"><span>Music</span></a>
-            <a onclick="openFolder('shrines')" title="shrines"><img src="/images/folders.png"><span>Shrines</span></a>
-            <a href="/blog.html" title="blog"><img src="/images/fuck.png"><span>Blog</span></a>
-            <a href="/journal.html" title="blog"><img src="/images/papers.png"><span>Journal</span></a>
-            <a href="/art.html" title="art"><img src="/images/notebook.png"><span>Art</span></a>
-            <a href="/sites.html" title="cool sites"><img src="/images/cool.png"><span>Cool sites</span></a>
-            <a href="/graphics.html" title="graphics"><img src="/images/butterfly.png"><span>Graphics</span></a>
-            <a onclick="openFolder('create')" title="create"><img src="/images/folders.png"><span>Create</span></a>
+            <a href="/site-map.html" title="site map"><img src="/images/icon_map.png"><span>Site map</span></a>
+            <a href="/webmaster.html" title="webmaster"><img src="/images/icon_me.png"><span>Who Am I</span></a>
+            <a href="/song-of-the-week.html" title="song of the day"><img src="/images/icon_music.png"><span>Music</span></a>
+            <a href="/blog.html" title="blog"><img src="/images/icon_blog.png"><span>Blog</span></a>
+            <a href="/journal.html" title="blog"><img src="/images/icon_journal.png"><span>Journal</span></a>
+            <a href="/art.html" title="art"><img src="/images/icon_art.png"><span>Art</span></a>
+            <a href="/sites.html" title="cool sites"><img src="/images/icon_sites.png"><span>Cool sites</span></a>
+            <a href="/graphics.html" title="graphics"><img src="/images/icon_graphic.png"><span>Graphics</span></a>
+            <a onclick="openFolder('stuff')" title="stuff"><img src="/images/icon_folder.png"><span>Stuff</span></a>
         </div>
 
         <div id="player" title="join the party?"><a href="/dance.html"><img src="/images/miku-yay.gif" width="80px"></a></div>
@@ -512,9 +549,7 @@
         </div>
 
         <div id="imgs">
-            <img src="https://i.pinimg.com/736x/f0/1b/9b/f01b9bca47f8b6b4ff793bd086a5f076.jpg">
             <img src="/images/stupid.jpg">
-            <img src="https://i.pinimg.com/736x/7e/db/85/7edb85b63e7233bd4cf5c65cbec657ea.jpg">
             <img src="/images/breaking%20trans.png">
         </div>
 
@@ -522,30 +557,25 @@
             <p id="notepad-title"><span>Notepad - TO-DO</span><span>- x</span></p>
             <div id="notepad-content">
                 <ul>
-                <li>room update (make it look cooler!)</li>
+                    <li>room update (make it look cooler!)</li>
                     <li>Fuko update (put it in the room + make it better)</li>
                     <li>fix depths theme</li>
+                </ul>
+                <ul>
+                    <li class="done">index update</li>
                 </ul>
             </div>
         </div>
 
-        <div class="folder" id="shrines" style="top: 140px; left: 10px;">
-            <div class="folder-title"><span>.../Desktop/Shrines</span><span onclick="closeFolder('shrines')">- x close</span></div>
+        <div class="folder" id="stuff" style="top: 140px; left: 10px;">
+            <div class="folder-title"><span>.../Desktop/Stuff</span><span onclick="closeFolder('stuff')">- x close</span></div>
             <div class="folder-content">
                 <div class="folder-grid">
-                    <a href="/shrines/sky-cotl/index.html"><img src="/shrines/images/Sky_Logo.png"><span>Sky COTL</span></a>
-                    <a href="/shrines/cooking.html"><img src="/images/naturomaki.png"><span>Cooking</span></a>
-                    <a href="/trans-rights.html"><img src="/images/trans.png"><span>trans rights</span></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="folder" id="create" style="top: 160px; left: 100px;">
-            <div class="folder-title"><span>.../Desktop/Create</span><span onclick="closeFolder('create')">- x close</span></div>
-            <div class="folder-content">
-                <div class="folder-grid">
-                    <a href="/create/femtanyl-papercraft.html"><img src="/create/images/femtanyl.png"><span>femtanyl papercraft</span></a>
-                    <a href="/characters/"><img src="/images/1%20doller.png"><span>characters</span></a>
+                    <a href="/shrines/sky-cotl/index.html"><img src="/shrines/images/Sky_Logo.png"><span>Sky Shrine</span></a>
+                    <a href="/shrines/cooking.html"><img src="/images/icon_cook.png"><span>Recipes</span></a>
+                    <a href="/trans-rights.html"><img src="/images/trans.png"><span>Trans rights</span></a>
+                    <a href="/create/femtanyl-papercraft.html"><img src="/create/images/femtanyl.png"><span>Femtanyl papercraft</span></a>
+                    <a href="/characters/"><img src="/images/1%20doller.png"><span>Characters</span></a>
                 </div>
             </div>
         </div>
@@ -593,6 +623,12 @@
 
         <img src="/graphics/blinkies/helloworld.gif" width="100%">
         <marquee id="marquee" style="color: var(--accent-colour)"></marquee>
+
+        <div id="statuscafe">
+            <div id="statuscafe-username"></div>
+            <div id="statuscafe-content"></div>
+        </div>
+        <script src="https://status.cafe/current-status.js?name=whosthecat" defer></script>
     </div>
 
 
@@ -658,6 +694,44 @@
 
         function closeFolder(a) {
             document.getElementById(a).style.display = "none";
+        }
+    </script>
+
+
+    <script>
+        const talk = [
+            "Being mentally ill is like being on hard drugs, but with no fun.",
+            "Hell is other people.",
+            "i gave up on trying to be okay and now im doing many drugs",
+            "guys i'm so sorry i was toxic that won't happen again [turns into a biblically accurate angel]",
+            "my hate club is so small that i am the one who has to do the all hating",
+            "what doesn't kill me should try harder",
+            "i have 0 knowledge",
+            "gay bloodcells be carrying homoglobin",
+            "tasty megabites..."
+        ];
+        const about = [
+            "hi! i'm this site's mascot",
+            "My name is Fuko Una!",
+            //"Fuko 2.0!",
+            "I live in your computer!",
+            "update pending . . ."
+        ]
+        const joke = [
+            "how do you call a horse that lives the next door? a neigh-bour.",
+            "what do you call a sheep that can dance and sing? a lady ba-ba.",
+            "how do you make something holy? you beat the hell outta it.",
+            "what do you call a british dinosaur? a tea-rex.",
+            "cargo? yeah i hope it does",
+            "catwalks? yeah it sure does.",
+            "How do you call a gay ghost? A fa-ghost"
+        ]
+
+        const box = document.getElementById("rpgtext");
+
+        function speech(a) {
+            const randomIndex = Math.floor(Math.random() * a.length);
+            box.innerHTML = "* " + a[randomIndex];
         }
     </script>
 

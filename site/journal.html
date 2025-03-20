@@ -90,37 +90,6 @@
             }
         }
 
-        #fuko {
-            position: absolute;
-            text-align: center;
-            justify-content: end;
-            right: 0;
-            bottom: 20px;
-            width: 400px;
-            
-            & span{
-                text-decoration: underline;
-            }
-
-            & #threed {
-                width: 200px;
-            }
-
-            & #rpgbox {
-                background-color: black;
-                text-align: left;
-                width: 90%;
-                height: 100px;
-                display: grid;
-                grid-template-columns: 20% 80%;
-                padding: 10px;
-                border: double white 4px;
-                color: white;
-                border-radius: 10px;
-                cursor: help;
-            }
-        }
-
         header {
             background-image: url(/images/consolebg.jpg);
             height: 100px;
@@ -150,15 +119,6 @@
             }
 
             main {
-                width: 90%;
-                margin: auto;
-            }
-            
-            #fuko{
-                position: relative;
-                width: auto;
-            }
-            #rpgbox{
                 width: 90%;
                 margin: auto;
             }
@@ -399,6 +359,7 @@
         <div class="page" id="quotes">
             <h5>quotes</h5>
             <!--<p></p>-->
+            <p>"oh yeah it only gets better on this hole, actually" -AstralSpiff playing golf in SB</p>
             <p>"my family tree looks more like a ladder"</p>
             <p>"did you know you can dupe dragon eggs on java?"  - "can you make scrumbled eggs out of them?" - "they're better be fucking delicious scrambled eggs because there's only 2 of them"</p>
             <p>ah yeah, this is a great moment and all, yeah the day is saved, uh, but i'd like to object the fact that THEY'RE STILL KISSING</p>
@@ -483,58 +444,6 @@
 
 
 
-
-    <div id="fuko">
-        <img id="threed" src="/images/fuko%20rpg.png">
-        <div id="rpgbox">
-            <img src="/images/fuko%20speech%20icon%20og.png" id="rpgimg" width="100%;">
-            <div>
-                <span onclick="speech(talk)">talk</span>
-                <span onclick="speech(about)">about</span>
-                <span onclick="speech(joke)">joke</span>
-                <p id="rpgtext">* I can talk. Click on the options above.</p>
-            </div>
-        </div>
-    </div>
-
-    
-    
-    <script>
-        const talk = [
-            "Being mentally ill is like being on hard drugs, but with no fun.",
-            "Hell is other people.",
-            "i gave up on trying to be okay and now im doing many drugs",
-            "guys i'm so sorry i was toxic that won't happen again *turns into a biblically accurate angel*",
-            "my hate club is so small that i am the one who has to do the all hating",
-            "what doesn't kill me should try harder",
-            "i have 0 knowledge",
-            "gay bloodcells be carrying homoglobin",
-            "blasthemy? blasthem you!",
-            "is the god just an insane parent?"
-        ];
-        const about = [
-            "hi! i'm this site's mascot",
-            "My name is Fuko Una!",
-            "update pending . . .",
-            "I live in your computer!"
-        ]
-        const joke = [
-            "how do you call a horse that lives the next door? a neigh-bour.",
-            "what do you call a sheep that can dance and sing? a lady ba-ba.",
-            "how do you make something holy? you beat the hell outta it.",
-            "what do you call a british dinosaur? a tea-rex.",
-            "cargo? yeah i hope it does",
-            "catwalks? yeah it sure does.",
-            "How do you call a gay ghost? A fa-ghost"
-        ]
-
-        const box = document.getElementById("rpgtext");
-
-        function speech(a) {
-            const randomIndex = Math.floor(Math.random() * a.length);
-            box.innerHTML = "* " + a[randomIndex];
-        }
-    </script>
     
     <script>
         var currentPage = "main";
