@@ -109,7 +109,19 @@
             position: absolute;
             top: 0;
             left: 0;
+            & img{
+                position: absolute;
+                border: dotted 3px var(--colour);
+
+            }
         }
+
+            #crossword-lan{
+                display: block;
+            }
+            #crossword-por{
+                display: none;
+            }
 
         @media only screen and (max-width: 700px) {
             body {
@@ -126,6 +138,15 @@
             .flow-img{
                 display: none;
             }
+            #crossword-lan{
+                display: none;
+            }
+            #crossword-por{
+                display: block;
+            }
+            #float-imgs{
+                display: none
+            }
         }
     </style>
 </head>
@@ -134,10 +155,12 @@
     
     
 <div id="float-imgs">
-    <img src="/images/catfishing.jpg" width="180px" style="position: absolute; left: 200px; top: 50px; border: dotted 3px var(--colour);">
-    <img src="/images/seaside.jpg" width="200px" style="position: absolute; left: 50px; bottom: 300px; border: dotted 3px var(--colour);">
-    <img src="https://i.pinimg.com/736x/cc/67/75/cc6775ad4ea561d788444d562e6fd88a.jpg" width="250px" style="position: absolute; left: 150px; bottom: 50px; border: dotted 3px var(--colour);">
-    <img src="https://i.pinimg.com/736x/53/77/a5/5377a537b11c9fa5a4397f5fe3adb4d6.jpg" width="250px" style="position: absolute; right: 50px; top: 20px; border: dotted 3px var(--colour);">
+    <img src="/images/catfishing.jpg" width="180px" style="left: 200px; top: 50px;">
+    <img src="/images/seaside.jpg" width="200px" style="left: 50px; bottom: 300px;">
+    <img src="/images/uglycat.jpg" width="250px" style="left: 150px; bottom: 50px;">
+    <img src="/images/vissen.jpg" width="250px" style="right: 50px; bottom: 200px;">
+    <img src="/images/stupid.jpg" width="180px" style="right: 30px; bottom: 50px;">
+    <img src="/images/catboat.jpg" width="250px" style="right: 20px; top: 20px;">
 </div>
     
     
@@ -157,26 +180,35 @@
 
         <div class="page" id="main">
             <img src="/images/vaporeon-spin.gif">
-            <p>hello this is my journal hii :pjust some stuff here</p>
+            <p>hello this is my journal hii :p just some stuff here</p>
 
             <img src="/images/%D0%BA%D0%BE%D1%82%D0%B8%D0%BA-playing-guitar.gif" style="width: 50%; float: left">
             <img src="/images/blunt.gif" style="width: 45%;">
 
+            <h5 style="display: block">GAMEZ</h5>
+
             <iframe title="sudoku" src="//widget.websudoku.com/?level=1" width="250" height="260" scrolling="no" frameborder="0" style="margin: auto"></iframe>
             
-            <div style="margin: auto; text-align: center; display: flex; justify-content: space-evenly">
+            <div id="crossword-por">
                 <script type="text/javascript">
                     boatload_puzzles_format = 'CompactPortrait';
                 </script>
                 <p>Loading <a href="https://www.boatloadpuzzles.com/playcrossword">
                         crossword puzzle</a>. One moment please.</p>
                 <script type="text/javascript" src="//www.boatloadpuzzles.com/Crossword.js"></script>
-                
-            <iframe src="https://www.nytimes.com/games/wordle/index.html" title="wordle" width="300" height="400"></iframe>
+            </div>
+            <div id="crossword-lan">
+                <script type="text/javascript">
+                    boatload_puzzles_format = 'CompactLandscape';
+                </script>
+                <p>Loading <a href="https://www.boatloadpuzzles.com/playcrossword">
+                        crossword puzzle</a>. One moment please.</p>
+                <script type="text/javascript" src="//www.boatloadpuzzles.com/Crossword.js"></script>
             </div>
             
-            <a href="https://liouh.com/picross/">picross</a>
-            <a href="https://minecraftle.zachmanson.com/">minecraftle</a>
+            <a href="https://liouh.com/picross/">picross <img src="/images/picross.png" width="120px"></a>
+            <a href="https://www.nytimes.com/games/wordle/index.html">wordle <img src="/images/wordle.png" width="120px"></a>
+            <a href="https://minecraftle.zachmanson.com/">minecraftle <img src="/images/minecraftle.png" width="120px"></a>
 
         </div>
 
@@ -232,56 +264,17 @@
             <img loading="lazy" src="https://i.pinimg.com/736x/ac/d9/0d/acd90da7a4bf76348168f81d26fd9e79.jpg">
             <img loading="lazy" src="https://i.pinimg.com/736x/7a/34/91/7a34914532ebd11e520a254d69561a71.jpg">
             <img loading="lazy" src="https://i.pinimg.com/736x/7f/59/37/7f5937c9bec8ba13fab72051045f16c4.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/u3osuv.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/5zj93a.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/1kr7e2.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/yg17f6.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/70l4f1.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/w05tff.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/b1lao6.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/a2lgz1.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/kp9kis.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/o2wqan.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/tvx8n9.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/f3h521.png">
-            <img loading="lazy" src="https://files.catbox.moe/cnrgp5.png">
-            <img loading="lazy" src="https://files.catbox.moe/7jdytd.png">
-            <img loading="lazy" src="https://files.catbox.moe/r7lcrh.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/3oavm7.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/20c0sr.png">
-            <img loading="lazy" src="https://files.catbox.moe/h91mzd.png">
-            <img loading="lazy" src="https://files.catbox.moe/vsjy29.png">
-            <img loading="lazy" src="https://files.catbox.moe/k5xpms.png">
-            <img loading="lazy" src="https://files.catbox.moe/du7upv.png">
-            <img loading="lazy" src="https://files.catbox.moe/du7upv.png">
-            <img loading="lazy" src="https://files.catbox.moe/g45565.png">
-            <img loading="lazy" src="https://files.catbox.moe/78zzpe.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/78zzpe.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/78zzpe.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/z2ufpn.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/wpjq20.png">
-            <img loading="lazy" src="https://files.catbox.moe/nfohly.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/awi0ub.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/0ockr0.png">
-            <img loading="lazy" src="https://files.catbox.moe/ibsxl9.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/d6tmpm.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/dwh2bp.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/5ktu7m.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/2596bl.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/ocfxsx.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/mra8i3.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/hqov3c.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/kidn91.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/8aw1a6.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/cxzram.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/hc7t4d.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/2ld7ix.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/4p1bml.jpg">
         </div>
 
         <div class="page" id="mood">
             <h5>mood</h5>
             <!--<img loading="lazy" src="">-->
+            <img loading="lazy" src="https://i.pinimg.com/736x/f6/69/47/f6694750bf901b836d4e285ce01e1e90.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/9c/fa/6b/9cfa6bbb167f2a7c88c57bc9a46bf8a2.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/68/4a/67/684a67a98380444fbf93548cc110c020.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/83/2a/ad/832aadad99c4bd3f67ce172da8437954.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/72/23/ad/7223adbd04e677e15f5aa3873c00daa1.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/52/7b/8e/527b8eb3d0545a69d4800631a31cd8c8.jpg">
             <img loading="lazy" src="https://i.pinimg.com/736x/72/23/ad/7223adbd04e677e15f5aa3873c00daa1.jpg">
             <img loading="lazy" src="https://i.pinimg.com/736x/52/8e/08/528e08ec6bb95b52bde686166f9e0c90.jpg">
             <img loading="lazy" src="https://i.pinimg.com/736x/49/6c/28/496c28ca5b5cf1a4fd77181b40e7826d.jpg">
@@ -347,14 +340,7 @@
             <img loading="lazy" src="https://i.pinimg.com/736x/b3/4b/55/b34b558d22ceb8f84737d0384f4b0937.jpg">
             <img loading="lazy" src="https://i.pinimg.com/736x/12/06/99/12069964b835f73c55317bc825946af9.jpg">
             <img loading="lazy" src="https://i.pinimg.com/736x/f7/4f/cc/f74fcc8a1ab6a3d4f291d3228f7b7bbd.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/5kp9k6.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/64f38p.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/m83li3.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/86b4ht.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/aja0he.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/41broo.jpg">
-            <img loading="lazy" src="https://files.catbox.moe/ao3hvs.png">
-        </div>
+                    </div>
 
         <div class="page" id="quotes">
             <h5>quotes</h5>

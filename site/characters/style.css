@@ -10,12 +10,17 @@ a {
     margin-bottom: 10px
 }
 
+mark{
+    background-color: darkred;
+}
+
 a::before {
     content: "";
 }
 
 main {
     margin: auto;
+    max-width: 600px;
     text-align: center;
 
     & a img {
@@ -54,31 +59,13 @@ h6 {
     color: red;
 }
 
-.grid-2 {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-}
-
 .char-gallery {
-    aspect-ratio: 2.5/3;
-    margin: auto;
     text-align: center;
-    height: 90%;
-    width: 90%;
-}
-
-
-.info-box {
-    margin-right: 30px;
-}
-
-.blinkies img {
-    height: 20px;
+    padding-top: 30px;
 }
 
 .slides-container img {
     object-fit: contain;
-    height: 95%;
     width: 90%;
     margin: auto;
 }
@@ -87,29 +74,26 @@ h6 {
     margin: 5px !important
 }
 
-span.dot {
-    display: none !important
+a.back {
+    color: red !important;
+    left: 10px !important;
+}
+a.forward {
+    color: red !important;
+    right: 10px !important;
 }
 
 .ref-button {
     color: darkred;
     display: block !important;
     position: absolute;
-    left: 0;
-    top: -20px;
+    left: 2;
+    top: 5px;
     z-index: 10;
     cursor: pointer;
 }
 
 @media only screen and (max-width: 700px) {
-    .grid-2 {
-        display: block;
-    }
-
-    .info-box {
-        margin: auto;
-        margin-bottom: 20px
-    }
 
     body {
         padding: 10px;
