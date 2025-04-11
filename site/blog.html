@@ -14,19 +14,21 @@
             grid-template-columns: 20% 35% 35%;
             grid-gap: 5%;
             height: 100vh;
-            --fav: url(/graphics/pixels/bandaid.gif);
+            --fav: url(/graphics/pixels/agua.gif);
             font-size: 0.7em;
-            background-image: url(/images/fire-snes.png);
-            background-color: black;
+            /*background-image: url(/images/fire-snes.png);*/
+            background-image: url(/images/bubbles.jpg);
+            background-color: deepskyblue;
             background-repeat: repeat;
             background-size: initial;
         }
 
         #sidebar {
             background-color: black;
-            background-image: url(https://i.pinimg.com/564x/78/67/9b/78679bff250e0627b205e6510d2ae2d3.jpg);
-            background-repeat: repeat-x;
-            color: red;
+            background-image: url(/images/fis.jpg);
+            background-repeat: repeat;
+            background-size: 100%;
+            color: steelblue;
             height: 100%;
             align-content: center;
             text-align: center;
@@ -38,36 +40,33 @@
 
             & h6 {
                 margin-top: 0;
-                color: darkred;
+                color: #6cbec1;
             }
 
             & p {
                 text-align: left;
-                color: white;
+                color: steelblue;
             }
 
             & a,
             a:hover {
-                color: red;
+                color: #6cbec1;
             }
         }
 
         #sidebar-2 {
-            background-color: black;
-            background-image: url(https://i.pinimg.com/564x/78/67/9b/78679bff250e0627b205e6510d2ae2d3.jpg);
+            background-color: skyblue;
+            background-image: url(/images/crazyfreaky.jpg);
             background-repeat: repeat-x;
             position: relative;
         }
 
         main {
-            background-color: black;
-            background-image: url(https://i.pinimg.com/564x/78/67/9b/78679bff250e0627b205e6510d2ae2d3.jpg);
-            background-repeat: repeat-x;
             height: auto;
             overflow-x: auto;
 
             & h4 {
-                -webkit-text-stroke: 2px white;
+                /*-webkit-text-stroke: 2px white;*/
             }
         }
 
@@ -75,24 +74,29 @@
             width: 80%;
             margin: 20px auto;
             background-color: #d8d8d8;
-            border: double 6px darkred;
+            border: double 6px #6cbec1;
             border-radius: 10px;
-            color: var(--colour)
-
-            &
+            color: steelblue;
 
             & p {
                 margin: 10px;
             }
         }
+
         summary {
-                font-family: "staypuft";
+            font-family: "staypuft";
             font-size: large;
-                background-color: darkred;
-                margin: auto;
-                padding: 5px;
-                text-align: left;
+            background-color: #6cbec1;
+            margin: auto;
+            padding: 5px;
+            text-align: left;
+            cursor: pointer;
+
+            &:after {
+                content: url(/graphics/pixels/fish.gif);
+                margin-left: 10px;
             }
+        }
 
         #myspace {
             position: fixed;
@@ -122,28 +126,36 @@
 </head>
 
 <body>
-    <img src="/images/my%20space.png" id="myspace" onclick="hide()" title="click to hide">
 
     <div id="sidebar">
         <h4>Deleted User</h4>
         <h6>@deleted_user_57</h6>
-        <img src="/images/kitte.png">
+        <img src="/images/lokke.jpg">
         <p>"Well, this dicease is defined by its treatment, you people make me sick"</p>
-        <p>any prns • XXteen • i identify as danger to self and others</p>
-        <img src="/images/onlinemeat.gif">
+        <p>they/it • 8teen</p>
         <p style="text-align: center"><a href="/site-map.html">site map</a> <a href="/room.html">home</a> <a href="https://fukounaglr.straw.page/">inbox</a></p>
     </div>
 
     <main>
         <h4>BLOG</h4>
-        
+
         <!--
         <details class="blog">
             <summary></summary>
             <p></p>
         </details>
         -->
-        
+
+        <details class="blog">
+            <summary>11/04/2025</summary>
+            <p>oh man. the time passes by so fast.</p>
+            <p>sooo... yeah. anothe practice in school started. i gave 1 lesson so far and it went much worse than last time. i don't care. i just want to leave this place. one more year left. i just gotta survive it. but i'm seriously considering just dropping out at this point. this degree will give me nothing. i don't wanna work in school. i only haven't done so yet bcs i couldn't find a job and bcs dad paid for the side course i was taking and i didnt want it to go to waste.</p>
+            <p>I've been feeling very weak past few days, having hard time to fins energy to even just walk to college. I feel a little better now, but still not ideal. I'd go to work, since i have mostly free days of practice, but i cannot due to my physical (and mental) state. I've been also starting to spiral again lately. Feeling like i low-key wanna blow my brains out or slit my wrist. If anything else happens, I'm gonna lose it again istg.</p>
+            <p>Anyway... On good side, I've been consuming new stuff. Firstly, i finished The ghost and molly mcgee and started watching moon girl. I also started reading dropout, on 100-smth page rn. And also i played Ena dream bbq! unlocked all achievements. Parkour isn't even that hard. Also watched a playthrough of clinical trial (bcs i aint reading allat, i want someone else to read for me lol). I like it. I honestly find stalking more eh than murder. You can kill people, i guess. I'm a god and i shall allow that.</p>
+            <p>my head hurts... </p>
+            <p>working on new and improved (tm) fuko! my site will soon get 100k views so i ping post that then.</p>
+        </details>
+
         <details class="blog">
             <summary>16/03/2025</summary>
             <p>Heeey!!! Sooooo.....</p>
@@ -153,7 +165,7 @@
             <p>It's been a couple of weeks since i got my new glasses. I got used to them pretty quickly. Whihc is good. Cuz now i can actually wear them all the time, as i'm supposed to. And i also got a haircut last week.</p>
             <p>I am working on a 40~ second animation right now. It's work time right now is over 25 hours, and i'm on the clean-up + inbetween + colouring stage. Yeah, I'm doing it all in one, cuz i need a break from clean-up. It's looking very good so far!! so excited for it, and I'm trying to work on it instead of doing nothing while i still have the motivation.</p>
             <p>I wanted to add something else but i forgot....</p>
-            <p>I've also been getting into the owl house again lately, i spent my entire mobile data pack last month on cartoons.  <a href="https://fukounaglr.straw.page/" target="_blank">I kin Hunter btw.</a> </p>
+            <p>I've also been getting into the owl house again lately, i spent my entire mobile data pack last month on cartoons. <a href="https://fukounaglr.straw.page/" target="_blank">I kin Hunter btw.</a> </p>
             <p>One thing i said to my sibling recently was, "You start to see the world differently after a phychotic episode".</p>
             <p>My mental wellbeing has been improving since i quit discord and deleted my old channels. I'm not sure what's the reason and what's the consequence here, but oh well. I seem to be getting by just fine without talking to people other than my sibling. I've also had comments disabled on both my art on BSky and youtube, for the same reason. I think these lyrics said it quite nice:</p>
             <blockquote>"Well, this dicease is defined by it's treatment, -<br>You people make me sick."</blockquote>
@@ -175,12 +187,12 @@
             <p>i hate everything and everyone.</p>
             <p>the world is cruel and not fair and i don't wanna be a part of it.</p>
         </details>
-        
+
         <details class="blog">
             <summary>19/01/2025</summary>
             <p>Me when i feel left out after not particiapating in any group activities</p>
         </details>
-        
+
         <details class="blog">
             <summary>14/01/2025</summary>
             <p>Welp, that's embarrassing.</p>
@@ -279,8 +291,11 @@
     </main>
 
     <div id="sidebar-2">
-        <img src="/images/ghostcat.png" width="300px" style="margin: auto; bottom: 20px; left: 10%; position: absolute;">
-        <img src="/images/therapiss.png" width="150px" style="margin: auto; bottom: 50px; right: 10%; position: absolute;">
+        <img src="/images/vapor.png" width="300px" style="margin: auto; bottom: 20px; left: 10%; position: absolute;">
+        <img src="/images/stamp1.jpg" width="120px" style="margin: auto; top: 30px; right: 20px; position: absolute;">
+        <img src="/images/stamp2.jpg" width="120px" style="margin: auto; top: 130px; right: 20px; position: absolute;">
+        <img src="/images/stamp3.png" width="120px" style="margin: auto; top: 230px; right: 20px; position: absolute;">
+        <img src="/images/stamp4.png" width="100px" style="margin: auto; top: 330px; right: 20px; position: absolute;">
     </div>
 
     <script type="text/javascript">
