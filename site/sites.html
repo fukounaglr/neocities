@@ -14,9 +14,12 @@
 
     <style>
         body {
-            background-image: var(--bg);
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.5),
+                    rgba(0, 0, 0, 0.5)),
+                var(--bg);
             display: grid;
-            grid-template-columns: auto auto auto auto;
+            grid-template-columns: auto 1fr 1.5fr 1fr;
             grid-gap: 20px;
             align-content: center;
             height: calc(100vh - 100px);
@@ -31,6 +34,7 @@
         .infobox {
             background-color: var(--colour);
             margin: auto;
+            width: calc(100% - 60px);
             color: white;
             text-align: center;
             padding: 20px;
@@ -70,8 +74,7 @@
             text-decoration: none;
             margin: none;
             & img{
-                width: 88;
-                height: 31;
+                width: 88px;
             }
         }
         
@@ -91,6 +94,7 @@
         @media only screen and (max-width: 700px) {
             body {
                 display: block;
+                padding: 0;
             }
 
             #col1{
@@ -128,6 +132,7 @@
         <h5>cool sites &amp; neighbors!</h5>
 
         <!--<a target="_blank" href=""><img src="/graphics/sites/"></a>-->
+        <a target="_blank" href="https://swiftyshq.neocities.org/"><img src="/graphics/sites/swiftyhq.png"></a>
         <a target="_blank" href="https://www.hyonktea.xyz/"><img src="/graphics/sites/hyonktea.gif"></a>
         <a target="_blank" href="https://jnkyrd.neocities.org/"><img src="/graphics/sites/jnkyrd.gif"></a>
         <a target="_blank" href="https://icosahedr.online/"><img src="/graphics/sites/icosahedr.gif"></a>

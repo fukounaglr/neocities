@@ -19,6 +19,11 @@
             overflow: hidden
         }
 
+        hr {
+            border-color: var(--accent-colour);
+            width: 90%
+        }
+
         blockquote {
             border-left: solid 3px var(--accent-colour);
             margin-left: 5px;
@@ -58,8 +63,13 @@
         }
 
         #song-archive-inside {
-            height: 70%;
+            height: calc(100% - 50px);
             overflow-y: scroll;
+        }
+
+        .ytlink {
+            transform: translate(0, 10px);
+            margin: 0 5px;
         }
 
         @media only screen and (max-width: 800px) {
@@ -91,36 +101,48 @@
 
 
     <div id="song-archive">
-        <h4>song of the week</h4>
+        <h4 style="text-transform: uppercase;">song of the week</h4>
         <div id="song-archive-inside">
 
             <!--
                 <div class="sotw-archive-box">
-                    <p>DATE • TITLE</p>
-                    <iframe src="SPSRC" title="player" style="border-radius: 0" width="100%" height="152px" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                    <a href="YTLINK" target="_blank"><img src="/images/youtube-icon.png" width="40" alt="youtube link" /></a>
-                    <a href="SPLINK"><img src="/images/spotify-icon.png" width="40" alt="spotify link" /></a>
+                    <p>DATE
+                        <a href="YTLINK" target="_blank"><img  class="ytlink" src="/images/youtube-icon.png" alt="youtube link" /></a>
+                        TITLE
+                    </p
                     <hr />
+                    <p></p>
                 </div>
                 -->
 
-                <div class="sotw-archive-box">
-                    <p>27/03/2025 • unfathomable pain - GEZEBELLE GABURGABLY</p>
-                    <iframe src="https://open.spotify.com/embed/track/1VgL1z5vPhtEp4B0IO9fJe?utm_source=generator" title="player" style="border-radius: 0" width="100%" height="152px" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                    <a href="https://youtu.be/2e37NI6wpsE?si=09y3nhLGsSvPj-nH" target="_blank"><img src="/images/youtube-icon.png" width="40" alt="youtube link" /></a>
-                    <a href="https://open.spotify.com/track/1VgL1z5vPhtEp4B0IO9fJe?si=b1e13be0e23e4801"><img src="/images/spotify-icon.png" width="40" alt="spotify link" /></a>
-                    <hr />
-                    <p>if i misspelled artist's name i'm so sorry but it's not my fault</p>
-                    <p>but anyway i think i'm gonna enjoy their other songs, as this sounds like stuff i like.</p>
-                    <p>cool lyrics and i do be projecting on them.</p>
-                    <blockquote>
-                        you caused me such unfathomable pain<br>
-                        and you never even told me your real name<br>
-                        and tried to ruid mine by occusing me of crime<br>
-                        boy all you do is lie
-                    </blockquote>
-                    <p>expecially this</p>
-                </div>
+            <div class="sotw-archive-box">
+                <p>20/04/2025
+                    <a href="https://youtu.be/rrwT3bhRz8M?si=PtxREJhLlfOrg3OD" target="_blank"><img class="ytlink" src="/images/youtube-icon.png" alt="youtube link" /></a>
+                    Me and Mr Wolf - The Real Tuesday Weld
+                </p>
+                <hr />
+                <sub>[I do not use spotify anymore so i won't be putting spotify links anymore]</sub>
+                <p>Found this song about a month ago though <a href="https://youtu.be/mACfMB6l9I0?si=XEXe0uYwL4VrRjrP">this animation</a>. I didn't know about the game back then, but i watched a playthrough a bit later and i like it.</p>
+                <p>I don't have moch more to say about the song itself. Cannibalism cool</p>
+            </div>
+
+            <div class="sotw-archive-box">
+                <p>27/03/2025 • unfathomable pain - GEZEBELLE GABURGABLY</p>
+                <iframe src="https://open.spotify.com/embed/track/1VgL1z5vPhtEp4B0IO9fJe?utm_source=generator" title="player" style="border-radius: 0" width="100%" height="152px" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <a href="https://youtu.be/2e37NI6wpsE?si=09y3nhLGsSvPj-nH" target="_blank"><img src="/images/youtube-icon.png" width="40" alt="youtube link" /></a>
+                <a href="https://open.spotify.com/track/1VgL1z5vPhtEp4B0IO9fJe?si=b1e13be0e23e4801"><img src="/images/spotify-icon.png" width="40" alt="spotify link" /></a>
+                <hr />
+                <p>if i misspelled artist's name i'm so sorry but it's not my fault</p>
+                <p>but anyway i think i'm gonna enjoy their other songs, as this sounds like stuff i like.</p>
+                <p>cool lyrics and i do be projecting on them.</p>
+                <blockquote>
+                    you caused me such unfathomable pain<br>
+                    and you never even told me your real name<br>
+                    and tried to ruid mine by occusing me of crime<br>
+                    boy all you do is lie
+                </blockquote>
+                <p>expecially this</p>
+            </div>
 
             <div class="sotw-archive-box">
                 <p>19/03/2025 • New God - Moon Walker</p>
