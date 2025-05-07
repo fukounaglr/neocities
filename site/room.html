@@ -37,10 +37,11 @@
             position: absolute;
             /*top: calc(80% - 50px);*/
             bottom: 50px;
-            left: 200px;
+            left: 50px;
             background-color: black;
             text-align: left;
             width: 600px;
+            max-width: 60%;
             min-height: 100px;
             display: grid;
             grid-template-columns: 120px auto;
@@ -83,12 +84,13 @@
         }
 
         #fuko-pixel {
-            height: 90%;
+            height: 75%;
             position: relative;
             position: absolute;
             right: 10px;
             bottom: 0;
             overflow: clip;
+            pointer-events: none;
 
             & img {
                 height: 100%;
@@ -441,7 +443,7 @@
                 <a onclick="openFolder('music')" title="music"><img class="filter" src="/images/icon_music.png"><span>Music</span></a>
                 <a onclick="openFolder('blog')" ><img class="filter" src="/images/icon_blog.png"><span>Blog</span></a>
                 <a onclick="openFolder('journal')" title="blog"><img class="filter" src="/images/icon_journal.png"><span>Journal</span></a>
-                <a onclick="openFolder('art')" title="art"><img class="filter" src="/images/icon_art.png"><span>Art</span></a>
+                <a onclick="openFolder('create')" title="create"><img class="filter" src="/images/icon_art.png"><span>Create</span></a>
                 <a onclick="openFolder('sites')" title="cool sites"><img class="filter" src="/images/icon_sites.png"><span>Cool sites</span></a>
                 <a onclick="openFolder('graphics')" title="graphics"><img class="filter" src="/images/icon_graphic.png"><span>Graphics</span></a>
                 <a onclick="openFolder('notepad')" title="notepad"><img class="filter" src="/images/icon_notepad.png"><span>notepad</span></a>
@@ -479,9 +481,9 @@
             <p class="folder-title"><span>Notepad - TO-DO</span><span class="close" onclick="closeFolder('notepad')">- x close</span></p>
             <div class="folder-content">
                 <ul>
-                    <li>toybox [oc] icon</li>
+                    <li>toybox</li>
                     <li>add section for Mars &amp; Luca stuff</li>
-                    <li>fix depths theme</li>
+                    <li class="done">fix depths theme</li>
                     <li class="done">room update (make it look cooler!)</li>
                     <li class="done">Fuko update (put it in the room + make it better)</li>
                     <li class="done">index update</li>
@@ -579,16 +581,16 @@
             <div class="folder-title"><span>.../Blog</span><span class="close" onclick="closeFolder('blog')">- x close</span></div>
             <div class="folder-content">
                 <img src="/images/my%20space.png" width="200px">
-                <p>warnings: mental health shit idk</p>
                 <a href="/blog.html">proceed</a>
             </div>
         </div>
 
-        <div class="draggable folder" id="art" style="top: 200px; right: 100px; width: 350px; height: 400px;">
-            <div class="folder-title"><span>.../Art</span><span class="close" onclick="closeFolder('art')">- x close</span></div>
+        <div class="draggable folder" id="create" style="top: 200px; right: 100px; width: 350px; height: 400px;">
+            <div class="folder-title"><span>.../Create</span><span class="close" onclick="closeFolder('create')">- x close</span></div>
             <div class="folder-content">
-                <iframe title="art" src="/art.html" width="100%" height="90%"></iframe>
-                <a href="/art.html">open full page</a>
+                <!--<iframe title="art" src="/create/index.html" width="100%" height="90%"></iframe>-->
+                <iframe title="art" src="/not_found.html" width="100%" height="90%"></iframe>
+                <!--<a href="/create/index.html">open full page</a>-->
             </div>
         </div>
 
@@ -642,7 +644,7 @@
 
     <div id="rpgbox">
         <img class="filter" src="/images/fuko%20speech%20icon%20og.png" id="rpgimg">
-        <p id="rpgtext">* I can talk. Click on the options above.</p>
+        <p id="rpgtext">* I can talk. Please enable javascript!</p>
         <div id="options">
             <span onclick="speech(talk)">talk</span>
             <span onclick="speech(about)">about</span>
@@ -732,7 +734,7 @@
             "hi! i'm this site's mascot",
             "My name is Fuko Una!",
             "Fuko 2.0!",
-            "I live in your computer!",
+            "I live in your cat-puter!",
             "you are just as much a tool as i am!",
             "I may be just a program, but you're just 7 bars of soap",
             "My gender is being witheld by the CIA and housed in undisclosed locations around the world"

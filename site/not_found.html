@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,48 +13,56 @@
     <style>
         body {
             background-color: black;
-            background-image: url(/images/mangle-bg.png);
+            background-image: url(/images/color%20bars.png);
             background-position: bottom;
-            background-size: contain;
+            background-size: cover;
             align-content: center;
             background-repeat: no-repeat;
             height: 100vh;
+        }
+
+        main{
+            max-width: 500px;
+            margin: auto;
         }
 
         * {
             color: white;
             text-align: center;
         }
-        
-        a{
-            width: 180px;
-            position: absolute;
-            top: 0;
-            left: 300px;
-            
-            & img{
-            transition: 0.5s;
+
+        a {
+                text-decoration: none;
+            & img {
+                transition: 0.5s;
+            }
+            & p{
+                background-color: black;
+                padding: 10px
             }
         }
-        a:hover img{
+
+        a:hover img {
             filter: brightness(60%);
         }
-        
-         @media only screen and (max-width: 700px) {
-             a{
-                 left: 10px
-             }
-    }
 
+        @media only screen and (max-width: 700px) {
+            a {
+                left: 10px
+            }
+        }
     </style>
 </head>
 
 
 <body>
-
-    <a href="/room.html">
-        <img src="/images/mangle.png" width="100%">
+    <main>
+        <h4>PLEASE STAND BY</h4>
+        <a href="/room.html">
+            <img src="/images/manglerepair.png" width="90%">
+            <p>You have gone too deep into the code.</p>
         </a>
+    </main>
 </body>
 
 </html>

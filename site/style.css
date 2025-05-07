@@ -285,7 +285,16 @@ a {
     margin: 10 0;
 }
 
-
+.spoiler{
+    background-color: black;
+    border: 1px dotted white;
+    filter: brightness(-1);
+    color: black;
+    &:hover{
+        filter: opacity(1);
+        color: white;
+    }
+}
 
 .confetti {
     position: absolute;
