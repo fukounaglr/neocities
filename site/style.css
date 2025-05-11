@@ -43,11 +43,12 @@
     font-style: normal;
 }
 
-/*COLOURS*/
+/*THEME*/
 :root {
-    --colour: #181818;
-    --accent-colour: blue;
-    --accent-colour-hover: paleturquoise;
+    --col: var(--colour);
+    --acc: var(--accent-colour);
+    --acc-hov: var(--accent-colour-hover);
+    --pri: var(--primary-colour: #c6bda5);
     --cats-display: none;
     --hell-display: none;
     --green-display: none;
@@ -88,7 +89,7 @@
 :root[theme="underwater"] {
     --primary-colour: mediumturquoise;
     --accent-colour: #db3c70;
-    --accent-colour-hover: paleturquoise;
+    --accent-colour-hover: #b42054;
     --colour: #181818;
     --underwater-display: block;
     --cats-display: none;
@@ -175,6 +176,7 @@ a:hover::before {
 
 a:has(h1, h2, h3, h4, h5, img, div, svg)::before {
     content: "";
+    display: none;
 }
 
 ul {

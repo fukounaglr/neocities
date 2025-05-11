@@ -1,4 +1,4 @@
- const Themes = ["underwater", "green", "neon", "hell", "default"];
+ const Themes = ["underwater", "green", "neon", "hell", "cats", "depths"];
 
  document.documentElement.setAttribute('theme', localStorage.getItem("selectedTheme"));
  document.documentElement.setAttribute('dyslexic', localStorage.getItem("openDyslexic"));

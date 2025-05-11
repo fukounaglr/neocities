@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>art</title>
+    <link rel="icon" type="image/png" href="/ico.png">
+    <link rel="stylesheet" href="/style.css">
+
+    <style>
+        .tab {
+            display: none;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 5px;
+            text-align: center;
+            padding: 10px;
+            background-color: var(--colour);
+
+            & img {
+                width: 100%;
+                aspect-ratio: 1/1;
+                object-fit: cover;
+                margin: auto;
+            }
+        }
+
+        body {
+            height: 100vh;
+            background-image: var(--bg);
+            background-size: auto;
+            background-attachment: fixed;
+            align-content: center;
+        }
+
+
+        main {
+            align-items: center;
+            max-width: 500px;
+            margin: auto;
+            background-color: var(--primary-colour);
+        }
+
+        #info {
+            background-color: var(--colour);
+            color: var(--primary-colour);
+            padding: 10px 0;
+            align-content: center;
+
+            & h6 {
+                color: var(--accent-colour);
+                text-decoration: underline wavy;
+            }
+        }
+
+        ul {
+            list-style-image: var(--fav);
+        }
+
+        table {
+            margin: auto;
+
+            & td {
+                border: 3px dotted var(--accent-colour);
+            }
+
+            & tr:first-child {
+                background-color: var(--accent-colour);
+                border: none;
+            }
+        }
+
+        #prices {
+            grid-template-columns: 1fr 1fr;
+            background-color: var(--accent-colour);
+            text-align: center;
+            padding-top: 10px;
+            border: double 6px var(--primary-colour);
+
+            & img {
+                width: 90%;
+                object-fit: cover;
+                border: double 5px var(--primary-colour);
+            }
+        }
+
+        #comms {
+            padding: 0;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow-y: auto;
+            height: 100%;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            background-color: var(--primary-colour);
+            border: double 6px var(--colour);
+        }
+
+        .work {
+            border: double 5px var(--accent-colour);
+            width: 90%;
+            margin: 10px auto;
+            padding: 10px;
+
+            & h6 {
+                text-align: left;
+            }
+        }
+
+        header,
+        footer {
+            background-color: var(--colour);
+            width: calc(100% - 10px);
+            margin: 0;
+            padding: 5px;
+            color: var(--primary-colour);
+
+            & a::before {
+                display: none;
+            }
+
+            & a,
+            span {
+                background-color: var(--colour);
+            }
+        }
+
+        #info,
+        #prices {
+            height: 100%;
+            overflow: auto;
+        }
+
+        nav {
+            margin: 10px;
+
+            & a {
+                display: block;
+                margin: 10px auto;
+                padding: 20px;
+                background-color: aliceblue;
+                width: 200px;
+                box-shadow: -7px 5px;
+                transform: translate(0, 0);
+                transition: .2;
+
+                &:hover {
+                    box-shadow: -7px 8px;
+                    transform: translate(0, -3px);
+                }
+            }
+
+            & a::before {
+                content: "";
+            }
+        }
+
+        #links {
+            & a {
+                display: block;
+                padding: 10px;
+                background-color: aliceblue;
+                margin: 10px;
+            }
+        }
+
+        #main {
+            display: block;
+            overflow: hidden;
+            margin: auto;
+            padding: 10px;
+
+            & img {
+                width: 300px;
+                max-width: 100%;
+                float: left;
+                margin: 10px;
+            }
+        }
+
+        #m-nav::before {
+            content: url(/graphics/pixels/kit.gif);
+            filter: opacity(100);
+        }
+
+        @media only screen and (max-width: 800px) {
+            main {
+                display: block;
+                overflow: auto;
+                height: auto;
+                width: 100%;
+            }
+
+            #mars img {
+                float: none;
+                width: 90%;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            #prices,
+            #comms,
+            #info {
+                height: auto;
+                width: auto;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <header>
+            <h5 style="text-align: left; color: var(--acc)">&gt; <a href="#main" onclick="switchPage('main')" style="all: unset; cursor: pointer; text-decoration: underline">Art</a> <span id="pagename">- main</span> - <a href="/room.html">go back</a></h5>
+        </header>
+
+
+        <div id="main" class="tab">
+            <nav>
+                <a href="#tos" onclick="switchPage('tos')">ToS</a>
+                <a href="#tools" onclick="switchPage('tools')">tools</a>
+                <a href="#comms" onclick="switchPage('comms')">comms</a>
+                <a href="#gallery" onclick="switchPage('gallery')">gallery</a>
+                <a href="#links" onclick="switchPage('links')">links</a>
+            </nav>
+
+        </div>
+
+        <div id="links" class="tab">
+            <h4>here's where you can find me</h4>
+            <a href="https://hipolink.net/fukouna" target="_blank">Hipolink</a>
+            <a target="_blank" href="https://bsky.app/profile/fukounaglr.neocities.org">Bluesky</a>
+            <a href="https://artfight.net/~fukouna">Artfight</a>
+            <a href="https://www.youtube.com/@fukounaglr">Youtube</a>
+            <a href="https://fukouna.bandcamp.com/">Bandcamp</a>
+        </div>
+
+        <div id="tos" class="tab">
+            <h4>terms of use</h4>
+
+            <h6>you can</h6>
+            <ul>
+                <li>get inspiration from my art and/or style</li>
+                <li>you can trace/ refraw; idc just dont claim it as your own</li>
+                <li>use my art as pfp/reupload (credit optional)</li>
+            </ul>
+
+            <h6>you can't</h6>
+            <ul>
+                <li>claim my art as your own</li>
+                <li>use my art for AI &amp; NFT</li>
+                <li>use my art for commercial purposes</li>
+            </ul>
+        </div>
+
+        <div id="tools" class="tab">
+            <h4>tools i use</h4>
+            <ul>
+                <li>tablet: Gaomon S620</li>
+                <li>drawing program: Clip Studio Paint EX</li>
+                <li>brushes:
+                    <ul style="list-style: circle">
+                        <li>artemis chalk (2018139)</li>
+                        <li>SCRIBBLERRR (2036817)</li>
+                        <li>dry ink (default)</li>
+                        <li>lasso fill</li>
+                    </ul>
+                </li>
+                <li>workspace: 2159847</li>
+            </ul>
+        </div>
+
+        <div class="tab" id="comms">
+            <h4>commission info</h4>
+            <h5><img src="/graphics/pixels/yippee-yippee-creature.gif"> status: closed!</h5>
+            <ul>
+                <li>communication through bsky or email</li>
+                <li>describe the commission &amp; character(s)</li>
+                <li>give as much references a you can</li>
+                <li>no deadline but WIPs will be given!</li>
+                <li>if you need the art done by certain date, inform me beforehand</li>
+            </ul>
+            <h6>payment</h6>
+            <ul>
+                <li>payment through hipolink or boosty</li>
+                <li>payment upfront</li>
+                <li>no refunds after i start the art</li>
+                <li>tips are welcome</li>
+            </ul>
+
+
+            <table>
+                <tr>
+                    <td>can do</td>
+                    <td>won't do</td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>humanoid (humans, furry), feral</li>
+                            <li>light-mild gore</li>
+                            <li>ship art</li>
+                            <li>PFP, ref sheet, turnaround + more</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>fetish art</li>
+                            <li>hateful speech</li>
+                            <li>complicated backgrounds</li>
+                            <li>nasty ships</li>
+                            <li>nsfw</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+            <p>feel free to contact me [bsky or email] if you have any more questions</p>
+            <sub>prices will be discussed on individual basis (min 10$, max - 100$)</sub>
+        </div>
+
+        <div id="gallery" class="tab">
+            <h4>Gallery</h4>
+            <h5>2025</h5>
+            <div class="gallery-grid">
+
+                <!--<img src="/images/art/" title="example art;" loading="lazy">-->
+                <img src="/images/art/brooks%20dies%20bottom%20text.webp" title="example art;" loading="lazy">
+                <img src="/images/art/oleander.webp" title="example art;" loading="lazy">
+                <img src="/images/art/metanoia.webp" title="example art;" loading="lazy">
+                <img src="/images/art/angel%20drawing.webp" title="example art;" loading="lazy">
+                <img src="/images/art/angle.webp" title="example art;" loading="lazy">
+                <img src="/images/art/you%20think%20youre%20cooler%20than%20me.webp" title="example art;" loading="lazy">
+                <img src="/images/art/mars%20gazing.webp" title="example art;" loading="lazy">
+                <img src="/images/art/fukofuko.webp" title="example art;" loading="lazy">
+                <img src="/images/art/new%20god.webp" title="example art;" loading="lazy">
+                <img src="/images/art/cute%20and%20murderous.webp" title="example art;" loading="lazy">
+                <img src="/images/art/deerling.webp" title="example art;" loading="lazy">
+                <img src="/images/art/funy%20sketches.webp" title="example art;" loading="lazy">
+                <img src="/images/art/spring%20egg.webp" title="example art;" loading="lazy">
+                <img src="/images/art/mirror.webp" title="example art;" loading="lazy">
+                <img src="/images/art/basement.webp" title="example art;" loading="lazy">
+                <img src="/images/art/blasthem%20you.webp" title="example art;" loading="lazy">
+                <img src="/images/art/HINTERRRR.webp" title="example art;" loading="lazy">
+                <img src="/images/art/luz.webp" title="example art;" loading="lazy">
+                <img src="/images/art/splittrr.webp" title="example art;" loading="lazy">
+                <img src="/images/art/mafd%20hatter.webp" title="example art;" loading="lazy">
+                <img src="/images/art/glass%20beach.webp" title="example art;" loading="lazy">
+                <img src="/images/art/PETT.webp" title="example art;" loading="lazy">
+                <img src="/images/art/whole%20madoka.webp" title="example art;" loading="lazy">
+                <img src="/images/art/idk.webp" title="example art;" loading="lazy">
+                <img src="/images/art/peple%20plese.webp" title="example art;" loading="lazy">
+                <img src="/images/art/mars%20sketches.webp" title="example art;" loading="lazy">
+                <img src="/images/art/splitter%20mars.webp" title="example art;" loading="lazy">
+                <img src="/images/art/rot.webp" title="example art;" loading="lazy">
+                <img src="/images/art/track%2007.webp" title="example art;" loading="lazy">
+                <img src="/images/art/gore%20festival.webp" title="example art;" loading="lazy">
+            </div>
+
+            <h5>2024</h5>
+            <div class="gallery-grid">
+                <img src="/images/art/crabbed.webp" title="example art;" loading="lazy">
+                <img src="/images/art/and%20im%20gone.webp" title="example art;" loading="lazy">
+                <img src="/images/art/mangyy.webp" title="example art;" loading="lazy">
+                <img src="/images/art/all%20hail%20cannibalism.webp" title="example art;" loading="lazy">
+            </div>
+        </div>
+
+
+        <footer style="text-align: center;">
+            <img title="this is an anti-NFT site" src="/graphics/buttons/antinft.png">
+            <span> <map name="noaimini5">
+                    <area href="https://baccyflap.com/noai" shape="rect" coords="25,16,61,29" target="_blank" alt="no ai webring" title="no ai webring">
+                    <area href="https://baccyflap.com/noai/?prv&s=fkn" target="_top" shape="rect" coords="2,2,19,17" alt="previous" title="previous">
+                    <area href="https://baccyflap.com/noai/?rnd" target="_top" shape="rect" coords="66,22,70,28" alt="random" title="random">
+                    <area href="https://baccyflap.com/noai/?nxt&s=fkn" target="_top" shape="rect" coords="69,2,85,17" alt="next" title="next">
+                </map>
+                <img usemap="#noaimini5" src="https://baccyflap.com/noai/miniwidget5.gif" alt="the top of a fuzzy, black sphere with two arrows rising from it, one curving to the left, one to the right. across the bulk of the sphere it reads NO AI / WEBRING in squiggly, uneven letters and next to those words is a small question mark"> </span>
+            <img title="delete TikTok" src="/graphics/buttons/stamp%20antiTT.jpg">
+            <img title="make the web accessible" src="/graphics/buttons/accessibility_button.png">
+
+        </footer>
+    </main>
+
+    <script>
+        var currentPage = "main";
+        const pages = [
+            "tools",
+            "comms",
+            "tos",
+            "gallery"
+        ]
+
+        if (window.location.hash && pages.includes(window.location.hash.substring(1))) {
+            var hash = window.location.hash.substring(1);
+            switchPage(hash);
+        }
+
+        function switchPage(a) {
+            document.getElementById(currentPage).style.display = "none";
+            currentPage = a;
+            document.getElementById(a).style.display = "block";
+            document.getElementById("pagename").innerHTML = " - " + a;
+        }
+    </script>
+    <script src="/js/theme-switcher.js"></script>
+</body>
+
+</html>

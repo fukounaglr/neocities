@@ -481,12 +481,13 @@
             <p class="folder-title"><span>Notepad - TO-DO</span><span class="close" onclick="closeFolder('notepad')">- x close</span></p>
             <div class="folder-content">
                 <ul>
-                    <li>toybox</li>
-                    <li>add section for Mars &amp; Luca stuff</li>
-                    <li class="done">fix depths theme</li>
-                    <li class="done">room update (make it look cooler!)</li>
-                    <li class="done">Fuko update (put it in the room + make it better)</li>
-                    <li class="done">index update</li>
+                    <li>redesign toybox</li>
+                    <li>redesign art page</li>
+                    <li>redesign character pages</li>
+                    <li>remake fuko's talking icon</li>
+                    <li>add section for Mars &amp; Luca stuff (choose name too...)</li>
+                    <hr>
+                    <li class="done">add "create"</li>
                 </ul>
             </div>
         </div>
@@ -588,8 +589,8 @@
         <div class="draggable folder" id="create" style="top: 200px; right: 100px; width: 350px; height: 400px;">
             <div class="folder-title"><span>.../Create</span><span class="close" onclick="closeFolder('create')">- x close</span></div>
             <div class="folder-content">
-                <!--<iframe title="art" src="/create/index.html" width="100%" height="90%"></iframe>-->
-                <iframe title="art" src="/not_found.html" width="100%" height="90%"></iframe>
+                <iframe title="art" src="/create/index.html" width="100%" height="90%"></iframe>
+                <!--<iframe title="art" src="/not_found.html" width="100%" height="90%"></iframe>-->
                 <!--<a href="/create/index.html">open full page</a>-->
             </div>
         </div>
@@ -617,6 +618,7 @@
                 <div id="statuscafe-content"></div>
             </div>
             <script src="https://status.cafe/current-status.js?name=whosthecat" defer></script>
+            <a href="https://fukouna.atabook.org/" target="_blank" style="color: white; display: block; margin: 10px;text-decoration: none;"><img src="/graphics/pixels/stella%20octangula%20pixel.gif"> Sign my guestbook!</a>
             <button id="fontSwitcher" onclick="changeFont()">
                 OpenDyslexic: <span id="font-stat">false</span>
             </button>
@@ -624,7 +626,7 @@
             <a href="https://bsky.app/profile/fukounaglr.neocities.org"><img width="32px" style="transform: translate(0, 10px)" title="Strawpage" src="/images/strawpage.png"></a>
                 <span>theme:</span>
                 <select id="themeSwitcher" onchange="changeTheme()">
-                    <option value="">default</option>
+                    <option value="">cats</option>
                     <option value="hell">hell</option>
                     <option value="underwater">underwater</option>
                     <option value="neon">neon</option>
