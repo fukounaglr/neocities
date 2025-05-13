@@ -12,11 +12,15 @@
 
     <style>
         body {
-            background: var(--bg);
+            background: linear-gradient(rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.9)),
+                var(--bg);
+            background: cross-fade();
             width: 100%;
             min-height: 100vh;
             background-position: center;
             padding: 0;
+            align-content: center;
         }
 
         header {
@@ -25,7 +29,7 @@
             top: 0;
             width: 100%;
             text-align: center;
-            background-color: var(--colour);
+            /*background-color: var(--colour);*/
             color: var(--primary-colour);
 
             & h4 {
@@ -35,14 +39,20 @@
             & a::before {
                 filter: none;
             }
+
+            & .head-info {
+                /*display: block;*/
+                margin-top: 5px;
+            }
         }
 
-        main{
+        main {
             max-width: 500px;
             margin: 50px auto;
             background-color: var(--colour);
             padding: 10px 20px;
             border: double var(--accent-colour) 4px;
+            overflow: hidden;
         }
 
 
@@ -81,37 +91,7 @@
             }
         }
 
-        #fukoimg img {
-            width: 300px;
-            float: right;
-            position: fixed;
-            bottom: 0;
-            right: 0;
-            margin: 20px 0;
-        }
-
-        #theme {
-            color: var(--primary-colour);
-        }
-
-        #themeSwitcher {
-            all: unset;
-            background-color: var(--primary-colour);
-            border: none;
-            padding: 10px;
-            border-radius: 0;
-            margin: 0;
-            cursor: pointer;
-            transition: 0.4s;
-            color: var(--accent-colour);
-
-            &option {
-                padding: 5px 0;
-                background-color: var(--colour)
-            }
-        }
-
-        #infobox-container{
+        #infobox-container {
             display: block;
             position: relative;
             height: min-content
@@ -125,10 +105,8 @@
             border: double 6px var(--accent-colour);
             width: 40%
         }
-        #box-1, #box-2{
-            /*float: left*/
-        }
-        #box-3{
+
+        #box-3 {
             float: right;
             height: 100%;
         }
@@ -136,67 +114,19 @@
         #enter {
             -webkit-text-stroke: 2px var(--primary-colour);
             z-index: 2;
-        }
-
-        #centerbox {
             margin: 15% auto;
             text-align: center;
             position: relative;
             overflow-x: clip;
             z-index: 10;
+            font-family: 'staypuft';
+            font-size: 4Em;
+            color: var(--colour);
+            cursor: pointer;
+            text-decoration-color: var(--primary-colour);
 
-            & a {
-                font-family: 'staypuft';
-                font-size: 4Em;
-                color: var(--colour);
-                cursor: pointer;
-
-                &::before {
-                    content: "";
-                }
-            }
-        }
-
-        #burst-wrap {
-            position: absolute;
-            width: 100vw;
-            z-index: -1;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        #burst-8 {
-            background: var(--primary-colour);
-            width: 200px;
-            height: 200px;
-            margin: auto;
-            z-index: -10;
-            top: 50%;
-            transform: rotate(20deg);
-            transition: 1s ease-in-out;
-        }
-
-        #burst-8:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 200px;
-            width: 200px;
-            background: var(--accent-colour);
-            transform: rotate(135deg);
-            transition: ease-in-out 1s;
-        }
-
-        #centerbox:hover {
-
-            & #burst-8 {
-                transform: rotate(100deg);
-            }
-
-            & #burst-8:before {
-                transform: rotate(300deg);
+            &::before {
+                display: none;
             }
         }
 
@@ -211,40 +141,17 @@
                 display: block;
             }
 
-            #box-1, #box-2, #box-3{
+            main{
+                width: 80%;
+             font-size: 0.9Em;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            #box-3{
                 float: none;
                 width: auto;
             }
-
-            header {
-                position: relative;
-                padding: 20px 0;
-                margin: 230px 0;
-                top: 0;
-
-                & .head-info {
-                    display: block;
-                    margin-top: 5px;
-                }
-
-                & h4 {
-                    margin-bottom: 30px;
-                }
-
-                & .dot {
-                    display: none;
-                }
-            }
-
-            #centerbox {
-                width: 100%;
-                margin: 120px auto;
-            }
-
-
-        #fukoimg img {
-            position: relative;
-        }
         }
     </style>
 </head>
@@ -258,100 +165,57 @@
         </div>
     </div>
 
-    <header>
-        <h4>WELCOME TO FUKO'S WORLD!</h4>
-        <span class="head-info"><img src="/graphics/pixels/cat30.gif">
-            I'm a god's little meow meow!</span>
-        <span class="dot"> • </span>
-        <a href="/update-log.html" id="updd" class="head-info"> Last updated: <span id="lastupdate"></span></a>
-        <span class="dot"> • </span>
-        <span class="head-info">Visitors: <span id="hitcount"></span></span>
-        <span class="dot"> • </span>
-        <a href="https://tamanotchi.world/17957c" class="head-info"><img src="https://tamanotchi.world/i/17957" alt="It's tamaNOTchi! Click to feed!"></a>
-    </header>
-
     <main>
 
         <div id="infobox-container">
-                <div class="infobox" id="box-3">
-                    <h6>
-                        <img src="/graphics/pixels/pc.gif">
-                        Webrings
-                    </h6>
-                    <div style="font-size: 0.6Em; text-align: center;">
-                        <div id="autiring">
-                            <script type="text/javascript" src="https://ballonlea.neocities.org/autiring/onionring-variables.js"></script>
-                            <script type="text/javascript" src="https://ballonlea.neocities.org/autiring/onionring-widget.js"></script>
-                        </div>
-
-                        <div>
-                            <script src="https://nuthead.neocities.org/ring/ring.js"></script>
-                        </div>
-
-                        <script src="https://transring.neocities.org/ring.js" data-widget="cloud"></script>
-
-                        <script src="https://snewberry.neocities.org/catfolk/webstring.js"></script>
-
-                        <div>
-                            <map name="noaimini5">
-                                <area href="https://baccyflap.com/noai" shape="rect" coords="25,16,61,29" target="_blank" alt="no ai webring" title="no ai webring">
-                                <area href="https://baccyflap.com/noai/?prv&s=fkn" target="_top" shape="rect" coords="2,2,19,17" alt="previous" title="previous">
-                                <area href="https://baccyflap.com/noai/?rnd" target="_top" shape="rect" coords="66,22,70,28" alt="random" title="random">
-                                <area href="https://baccyflap.com/noai/?nxt&s=fkn" target="_top" shape="rect" coords="69,2,85,17" alt="next" title="next">
-                            </map>
-                            <img usemap="#noaimini5" src="https://baccyflap.com/noai/miniwidget5.gif" alt="the top of a fuzzy, black sphere with two arrows rising from it, one curving to the left, one to the right. across the bulk of the sphere it reads NO AI / WEBRING in squiggly, uneven letters and next to those words is a small question mark">
-                        </div>
-
-                        <a href="https://fanimated.net/mylittlepony/" target="_blank"><img src="/graphics/sites/mlpring.gif"></a>
+            <div class="infobox" id="box-3">
+                <h6>
+                    <img src="/graphics/pixels/pc.gif">
+                    Webrings
+                </h6>
+                <div style="font-size: 0.6Em; text-align: center;">
+                    <div id="autiring">
+                        <script type="text/javascript" src="https://ballonlea.neocities.org/autiring/onionring-variables.js"></script>
+                        <script type="text/javascript" src="https://ballonlea.neocities.org/autiring/onionring-widget.js"></script>
                     </div>
+
+                    <div>
+                        <script src="https://nuthead.neocities.org/ring/ring.js"></script>
+                    </div>
+
+                    <script src="https://transring.neocities.org/ring.js" data-widget="cloud"></script>
+
+                    <script src="https://snewberry.neocities.org/catfolk/webstring.js"></script>
+
+                    <div>
+                        <map name="noaimini5">
+                            <area href="https://baccyflap.com/noai" shape="rect" coords="25,16,61,29" target="_blank" alt="no ai webring" title="no ai webring">
+                            <area href="https://baccyflap.com/noai/?prv&s=fkn" target="_top" shape="rect" coords="2,2,19,17" alt="previous" title="previous">
+                            <area href="https://baccyflap.com/noai/?rnd" target="_top" shape="rect" coords="66,22,70,28" alt="random" title="random">
+                            <area href="https://baccyflap.com/noai/?nxt&s=fkn" target="_top" shape="rect" coords="69,2,85,17" alt="next" title="next">
+                        </map>
+                        <img usemap="#noaimini5" src="https://baccyflap.com/noai/miniwidget5.gif" alt="the top of a fuzzy, black sphere with two arrows rising from it, one curving to the left, one to the right. across the bulk of the sphere it reads NO AI / WEBRING in squiggly, uneven letters and next to those words is a small question mark">
+                    </div>
+
+                    <a href="https://fanimated.net/mylittlepony/" target="_blank"><img src="/graphics/sites/mlpring.gif"></a>
                 </div>
-                <div class="infobox" id="box-1">
-                    <h6>
-                        <img src="/graphics/pixels/melody.gif">
-                        Best viewed with:
-                    </h6>
-                    <ul>
-                        <li>1920x1080 screen</li>
-                        <li>javascript, iframe &amp; animations enabled</li>
-                    </ul>
-                </div>
-
-                <div class="infobox" id="box-2">
-                    <h6>
-                        <img src="/graphics/pixels/warning.gif">
-                        Heads up!
-                    </h6>
-                    <img src="/images/Censor_14b.gif">
-
-                    <ul>
-                        <li>some flashing gifs</li>
-                        <li>
-                            disturbing content, drugs
-                        </li>
-                    </ul>
-                </div>
-        </div>
-
-
-        <div id="centerbox">
-            <div id="burst-wrap">
-                <div id="burst-8"></div>
             </div>
-            <a href="/room.html" id="enter">persue? </a>
         </div>
 
+        <header>
+            <h5>WELCOME TO FUKO'S WORLD!</h5>
+            <span class="head-info"><img src="/graphics/pixels/cat30.gif">
+                I'm a god's little meow meow!</span>
+            <a href="/update-log.html" id="updd" class="head-info"> Last updated: <span id="lastupdate"></span></a>
+            <span class="head-info">Visitors: <span id="hitcount"></span></span>
+        </header>
 
-        <p style="color: var(--accent-colour)">Made in Phoenix code, tested in Firefox, hosted on Neocities</p>
+
+        <a href="/room.html" id="enter">persue? </a>
+
+
+        <p style="color: var(--accent-colour); font-size: small">Made in Phoenix code, tested in Firefox, hosted on Neocities</p>
     </main>
-
-        <div id="fukoimg">
-            <img src="/images/fuko-def.png" style="display: var(--cats-display)">
-            <img src="/images/fuko-wat.png" style="display: var(--underwater-display)">
-            <img src="/images/fuko-hell.png" style="display: var(--hell-display)">
-            <img src="/images/fuko-neon.png" style="display: var(--neon-display)">
-            <img src="/images/fuko-gra.png" style="display: var(--green-display)">
-            <img src="/images/fuko-depths.png" style="display: var(--depths-display)">
-        </div>
 
 
 

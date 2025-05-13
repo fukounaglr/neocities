@@ -207,7 +207,7 @@ body {
     padding: 0;
     margin: 0 auto;
     text-align: left;
-    background: var(--primary-colour);
+    background: #1c1c1c;
     background-position: center;
     background-size: cover;
 }
