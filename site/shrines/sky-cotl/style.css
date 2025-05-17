@@ -20,6 +20,12 @@ blockquote {
     --fav: url(/graphics/pixels/sparkles.gif)
 }
 
+* {
+    scrollbar-color: var(--accent-colour) #090725;
+    scrollbar-width: thin;
+    font-size: 100%;
+}
+
 
 header {
     width: 100%;
@@ -86,6 +92,10 @@ i {
     color: skyblue;
 }
 
+hr {
+    border-top: 1px solid;
+}
+
 
 h1,
 h2,
@@ -117,10 +127,10 @@ main {
     position: relative;
     max-width: 900px;
     display: grid;
-    grid-template-columns: 70% 20%;
+    grid-template-columns: 20% 70%;
     grid-gap: 4%;
-    margin: 20px auto;
-    height: 90vh;
+    margin: auto;
+    height: calc(100vh - 50px);
     overflow: hidden;
 }
 
@@ -143,6 +153,7 @@ main {
 
 .construction {
     background-color: darkblue;
+    grid-area: 1/1/span 1/ span 2;
     text-align: center;
     width: 100%;
     font-style: italic;
@@ -249,11 +260,19 @@ li.done {
 }
 
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 500px) {
     main {
         display: block;
         margin: auto;
-        width: 90%;
+        width: 100%;
+        overflow: auto;
+        padding: 0;
+        height: calc(100vh - 210px);
+    }
+
+    .collumn-container {
+        width: 100%;
+        padding: 0;
     }
 
     .side-img {
@@ -269,18 +288,25 @@ li.done {
     }
 
     .col {
-        margin-bottom: 20px;
+        margin: auto;
+        width: 90%;
     }
 
-    header {
+    header, header:hover {
         display: block;
+        position: relative;
         text-align: center;
-        height: auto;
+        height: 160px;
+        margin: auto;
+        width: 100%;
+        color: skyblue;
 
         & img {
             width: 200px;
             display: block;
-            margin: 10px auto;
+            margin: auto;
+            object-fit: contain;
+            position: relative;
         }
     }
 }
