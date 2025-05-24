@@ -7,63 +7,11 @@
 
     <link rel="icon" type="image/png" href="/ico.png" />
     <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/create/style.css" />
 
     <style>
-        body {
-            background-color: #1c1c1c;
-            height: 100vh;
-            align-content: center;
-            align-items: center;
-            align-self: center;
-        }
-
-        main {
-            max-width: 400px;
-            margin: 20px auto;
-            padding: 30px;
-        }
-
-        #main {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            color: aliceblue;
-            text-align: left;
-        }
-
-        .create-link {
-            all: unset;
-            cursor: pointer;
-            background-color: palegoldenrod;
-            text-align: center;
-            padding: 5px;
-            margin: 7px;
-            box-shadow: -5px 5px lightgoldenrodyellow;
-            transform: translate(0, 0);
-            transition: .2s;
-
-            &:hover {
-                box-shadow: -5px 10px lightgoldenrodyellow;
-                transform: translate(0, -5px);
-            }
-
-            & img {
-                width: calc(100% - 10px);
-                margin: auto;
-                aspect-ratio: 1/1;
-                object-fit: cover;
-            }
-
-            & p{
-                margin: 2px;
-            }
+        .create-link{
+            color: var(--acc);
         }
     </style>
 </head>
@@ -90,12 +38,6 @@
             </a>
         </div>
 
-
     </main>
 </body>
-
-<script>
-
-</script>
-
 </html>

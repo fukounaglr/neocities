@@ -14,25 +14,85 @@
         }
 
         .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 5px;
-            text-align: center;
-            padding: 10px;
-            background-color: var(--colour);
+            display: none;
+        }
 
-            & img {
-                width: 100%;
-                aspect-ratio: 1/1;
-                object-fit: cover;
+        #gallery.grid {
+            & .gallery-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 5px;
+                text-align: center;
+                padding: 10px;
+                background-color: var(--colour);
+
+                & img {
+                    width: 100%;
+                    aspect-ratio: 1/1;
+                    object-fit: cover;
+                    margin: auto;
+                }
+            }
+        }
+
+        #gallery.full {
+            & .gallery-grid {
+                display: block;
+                text-align: center;
+                padding: 10px;
+                background-color: var(--colour);
+
+                & img {
+                    width: 100%;
+                    /*aspect-ratio: 1/1;*/
+                    object-fit: cover;
+                    margin: auto;
+                }
+            }
+        }
+
+        .gototop{
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            background-color: aliceblue;
+            padding: 5px 10px;
+            transition: .5s;
+            &::before{
+                filter: none;
+            }
+        }
+
+        #view-toggle {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin: auto;
+            height: 60px;
+
+            & button {
+                all: unset;
+                width: 90%;
+                text-align: center;
+                background-color: var(--acc);
+                padding: 10px 0;
                 margin: auto;
+                cursor: pointer;
+                border: solid 1px var(--col);
+                transition: .5s;
+
+                &:hover {
+                    padding: 15px 0;
+                    border: solid 5px var(--col);
+                }
             }
         }
 
         body {
             height: 100vh;
-            background-image: var(--bg);
-            background-size: auto;
+            background: linear-gradient(rgba(0, 0, 0, 0.7),
+                    rgba(0, 0, 0, 0.8)),
+                var(--bg);
+            background-size: 100%;
             background-attachment: fixed;
             align-content: center;
         }
@@ -136,12 +196,14 @@
             overflow: auto;
         }
 
-        nav, #links {
+        nav,
+        #links {
             margin: 10px;
 
             & a {
                 display: block;
                 margin: 10px auto;
+                text-decoration: none;
                 padding: 20px;
                 background-color: var(--col);
                 width: 200px;
@@ -218,9 +280,10 @@
 </head>
 
 <body>
-    <main>
+    <main id="top">
         <header>
-            <h5 style="text-align: left; color: var(--acc)">&gt; <a href="#main" onclick="switchPage('main')" style="all: unset; cursor: pointer; text-decoration: underline">Art</a> <span id="pagename">- main</span> - <a href="/room.html">go back</a></h5>
+            <a href="/room.html">go back</a>
+            <h5 style="text-align: left; color: var(--acc)">&gt; <a href="#main" onclick="switchPage('main')" style="all: unset; cursor: pointer; text-decoration: underline">Art</a> <span id="pagename">- main</span></h5>
         </header>
 
 
@@ -240,6 +303,7 @@
             <a href="https://hipolink.net/fukouna" target="_blank">Hipolink</a>
             <a target="_blank" href="https://bsky.app/profile/fukounaglr.neocities.org">Bluesky</a>
             <a href="https://artfight.net/~fukouna">Artfight</a>
+            <a href="https://toyhou.se/fukouna">Toyhouse</a>
             <a href="https://www.youtube.com/@fukounaglr">Youtube</a>
             <a href="https://fukouna.bandcamp.com/">Bandcamp</a>
         </div>
@@ -329,10 +393,23 @@
 
         <div id="gallery" class="tab">
             <h4>Gallery</h4>
+            <div id="view-toggle">
+                <button onclick="display('grid')">grid view</button>
+                <button onclick="display('full')">full view</button>
+            </div>
+            <a href="#gallery" class="gototop">Go to top</a>
+
             <h5>2025</h5>
             <div class="gallery-grid">
 
                 <!--<img src="/images/art/" title="example art;" loading="lazy">-->
+                <img src="/images/art/skyb%20posters.webp" title="example art;" loading="lazy">
+                <img src="/images/art/blunt%20rotation.webp" title="example art;" loading="lazy">
+                <img src="/images/art/bloddyvcat.webp" title="example art;" loading="lazy">
+                <img src="/images/art/skinning.webp" title="example art;" loading="lazy">
+                <img src="/images/art/goshi%20n%20red%20playground.webp" title="example art;" loading="lazy">
+                <img src="/images/art/fukouna%20girl%20tomac.webp" title="example art;" loading="lazy">
+                <img src="/images/art/mars-des-mood.webp" title="example art;" loading="lazy">
                 <img src="/images/art/brooks%20dies%20bottom%20text.webp" title="example art;" loading="lazy">
                 <img src="/images/art/oleander.webp" title="example art;" loading="lazy">
                 <img src="/images/art/metanoia.webp" title="example art;" loading="lazy">
@@ -348,6 +425,7 @@
                 <img src="/images/art/spring%20egg.webp" title="example art;" loading="lazy">
                 <img src="/images/art/mirror.webp" title="example art;" loading="lazy">
                 <img src="/images/art/basement.webp" title="example art;" loading="lazy">
+                <img src="/images/art/spring%20egg.webp" title="example art;" loading="lazy">
                 <img src="/images/art/blasthem%20you.webp" title="example art;" loading="lazy">
                 <img src="/images/art/HINTERRRR.webp" title="example art;" loading="lazy">
                 <img src="/images/art/luz.webp" title="example art;" loading="lazy">
@@ -359,8 +437,10 @@
                 <img src="/images/art/idk.webp" title="example art;" loading="lazy">
                 <img src="/images/art/peple%20plese.webp" title="example art;" loading="lazy">
                 <img src="/images/art/mars%20sketches.webp" title="example art;" loading="lazy">
+                <img src="/images/art/mr%20person.webp" title="example art;" loading="lazy">
                 <img src="/images/art/splitter%20mars.webp" title="example art;" loading="lazy">
                 <img src="/images/art/rot.webp" title="example art;" loading="lazy">
+                <img src="/images/art/tonight.webp" title="example art;" loading="lazy">
                 <img src="/images/art/track%2007.webp" title="example art;" loading="lazy">
                 <img src="/images/art/gore%20festival.webp" title="example art;" loading="lazy">
             </div>
@@ -409,6 +489,11 @@
             currentPage = a;
             document.getElementById(a).style.display = "block";
             document.getElementById("pagename").innerHTML = " - " + a;
+        }
+    </script>
+    <script>
+        function display(a) {
+            document.getElementById("gallery").className = "tab " + a;
         }
     </script>
     <script src="/js/theme-switcher.js"></script>

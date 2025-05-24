@@ -7,70 +7,75 @@
 
     <link rel="icon" type="image/png" href="/ico.png" />
     <link rel="stylesheet" href="/style.css" />
-    <link rel="stylesheet" href="/characters/style.css" />
+    <link rel="stylesheet" href="/create/style.css" />
+
 
     <style>
-        body{
-            height: 100vh;
-            overflow: hidden;
-            background-image: var(--bg)
+        header,
+        #side-col {
+            align-content: center;
+            display: grid;
         }
-        main {
-            height: 90%;
-            overflow: auto;
-            padding: 20px 50px;
-            margin: auto;
-            border: dashed 3px var(--accent-colour);
-            background-color: black;
-            text-align: center;
 
-            & a img {
-                margin-bottom: 10px;
+        main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-width: 800px;
+            height: calc(100vh - 160px);
+        }
+
+        .create-link {
+            background-color: dimgray;
+            text-align: left;
+            padding-left: 20px;
+
+            &:hover {
+                color: lightgray;
+
+                & h5::before {
+                    letter-spacing: 0;
+                }
             }
 
-            background: linear-gradient(rgba(0, 0, 0, 0.8),
-                rgba(0, 0, 0, 0.9)),
-            var(--bg);
-            background: cross-fade();
+            & h5::before {
+                content: ">>> ";
+                letter-spacing: -8px;
+                margin: auto 10px;
+                transition: .5s;
+            }
         }
 
-        .unfinished img {
-            filter: grayscale(100)
-        }
-
-        #back {
-            display: block;
-            text-align: left
-        }
-
-        h3 {
-            color: white;
-            display: block;
-        }
-
-        a,
-        p {
-            color: red;
+        @media only screen and (max-width: 700px) {
+            main {
+                display: block;
+                margin-bottom: 50px;
+            }
         }
     </style>
 </head>
 
 <body>
 
+
     <main>
-        <h3>characters</h3>
-        <p>grey ones are unfinished!</p>
-        <a class="unfinished" href="/characters/mars.html" title="mars"><img src="/characters/images/mars.gif"></a>
-        <a class="unfinished" href="/characters/luca.html" title="luca"><img src="/characters/images/luca.gif"></a>
-        <a class="unfinished" href="/characters/charlie.html" title="charlie"><img src="/characters/images/charlie.gif"></a>
-        <a href="/characters/sam.html" title="sam"><img src="/characters/images/sam.gif"></a>
-        <a href="/characters/fuko.html" title="fuko"><img src="/characters/images/fuko.gif"></a>
-        <a class="unfinished" href="/characters/moff.html" title="moff"><img src="/characters/images/moff.gif"></a>
-        <a href="/characters/gochi.html" title="gochi"><img src="/characters/images/gochi.gif"></a>
-        <a href="/characters/plush.html" title="plush"><img src="/characters/images/plush.gif"></a>
-        <a href="/characters/egg.html" title="egg"><img src="/characters/images/egg.gif"></a>
-        <a href="/characters/aggel.html" title="aggel"><img src="/characters/images/aggel.gif"></a>
-        <!--<a class="unfinished" href="/characters/"><img src="/characters/images/"></a>-->
+        <header>
+            <a href="/create/index.html" style="position: absolute; top: 0; left: 0;">go back</a>
+            <img src="/create/images/mars-pfp.png">
+        </header>
+        <div id="side-col">
+            <a href="/characters-interactions.html" class="blue-bg create-link">
+                <h5>OC interactions</h5>
+                <p>Just some funny interactions of my characters.</p>
+            </a>
+            <a href="https://toyhou.se/fukouna" class="pink-bg create-link">
+                <h5>Toyhouse</h5>
+                <p>My toyhouse page with all of my OC's</p>
+            </a>
+            <a href="/create/toybox/oleander.html" class="green-bg create-link">
+                <h5>Oleander</h5>
+                <p>[wip] My current main OC universe</p>
+            </a>
+        </div>
     </main>
 </body>
 

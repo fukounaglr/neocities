@@ -18,13 +18,15 @@
                     rgba(0, 0, 0, 0.9)),
                 var(--bg);
             background: cross-fade();
+            background-size: 100%;
         }
 
         .done {
             text-decoration: line-through;
         }
 
-        img.filter, #player-bubble {
+        img.filter,
+        #player-bubble {
             filter: var(--theme-filter);
         }
 
@@ -366,7 +368,7 @@
             width: 100%;
         }
 
-        #links img{
+        #links img {
             width: 24px;
         }
 
@@ -396,7 +398,7 @@
                 text-align: center;
             }
 
-            .folder{
+            .folder {
                 left: 5% !important;
                 max-width: 90% !important;
             }
@@ -441,7 +443,7 @@
                 <a onclick="openFolder('map')" title="site map"><img class="filter" src="/images/icon_map.png"><span>Site map</span></a>
                 <a onclick="openFolder('webmaster')" title="webmaster"><img class="filter" src="/images/icon_me.png"><span>Who Am I</span></a>
                 <a onclick="openFolder('music')" title="music"><img class="filter" src="/images/icon_music.png"><span>Music</span></a>
-                <a onclick="openFolder('blog')" ><img class="filter" src="/images/icon_blog.png"><span>Blog</span></a>
+                <a onclick="openFolder('blog')"><img class="filter" src="/images/icon_blog.png"><span>Blog</span></a>
                 <a onclick="openFolder('journal')" title="blog"><img class="filter" src="/images/icon_journal.png"><span>Journal</span></a>
                 <a onclick="openFolder('create')" title="create"><img class="filter" src="/images/icon_art.png"><span>Create</span></a>
                 <a onclick="openFolder('sites')" title="cool sites"><img class="filter" src="/images/icon_sites.png"><span>Cool sites</span></a>
@@ -481,13 +483,12 @@
             <p class="folder-title"><span>Notepad - TO-DO</span><span class="close" onclick="closeFolder('notepad')">- x close</span></p>
             <div class="folder-content">
                 <ul>
-                    <li>redesign index...</li>
-                    <li>redesign toybox</li>
-                    <li>redesign character pages</li>
                     <li>remake fuko's talking icon</li>
                     <li>add section for Mars &amp; Luca stuff (choose name too...)</li>
                 </ul>
                 <ul class="done">
+                    <li>redesign index...</li>
+                    <li>redesign toybox</li>
                     <li>redesign art page</li>
                     <li>add "create"</li>
                 </ul>
@@ -522,35 +523,35 @@
             <div class="folder-title"><span>.../Desktop/Stuff</span><span class="close" onclick="closeFolder('stuff')">- x close</span></div>
             <div class="folder-content">
                 <img loading="lazy" class="mimage" src="/images/stupid.jpg">
-                <img loading="lazy"  class="mimage" src="/images/catpc2.jpg">
-                <img loading="lazy"  class="mimage" src="/images/breaking%20trans.png">
-                <img loading="lazy"  class="mimage" src="/images/Weezer_Blue_Album.jpg">
-                <img loading="lazy"  class="mimage" src="/images/new.jpg">
-                <img loading="lazy"  class="mimage" src="/images/sleep.jpg">
-                <img loading="lazy"  class="mimage" src="/images/lick.gif">
-                <img loading="lazy"  class="mimage" src="/images/gleach-bubble.png">
-                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/05/2a/70/052a702f41464b1adff10c2ab93bbe82.jpg">
-                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/f8/3e/5e/f83e5e976c4ef2b25d77bf572529ccd0.jpg">
-                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/2a/ee/ad/2aeead341e735f4f5940727a3ae43b8e.jpg">
-                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/6d/02/70/6d02701b4f039aec273eb2d5524415d1.jpg">
-                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/f4/82/52/f48252f49a7abaa3cc160003100a6bb9.jpg">
-                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/97/4b/e1/974be1c18c55d7c31f8ac83118410dd5.jpg">
-                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/7e/db/85/7edb85b63e7233bd4cf5c65cbec657ea.jpg">
-                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/42/4c/3a/424c3ad1118df0ffb6f55892aec4df6e.jpg">
-                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/b4/68/16/b468168b83081ec42a1b4a050a9d5c7d.jpg">
-                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/3c/0c/32/3c0c32e62f2c16418fe4de6aef9b9b21.jpg">
-                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/50/ec/27/50ec27fae79c27dc346a83f5dbb7a930.jpg">
-                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/f2/96/54/f29654e4c0b952b49c773131f9d9b24a.jpg">
-                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/a5/fb/4e/a5fb4edce74102187571e6ac9588f783.jpg">
-                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/50/21/58/502158eae68c993290dccbd3ce9b0c63.jpg">
-                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/1a/e0/b7/1ae0b7a2df31b2397ab7086f48b9ba4a.jpg">
-                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/65/ad/cc/65adccd79c34a950b3b4f66480021e05.jpg">
-                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/474x/73/9e/ff/739efff667c6c204788707e7d96333c5.jpg">
-                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/2e/48/fc/2e48fc544776b617c91055dcf43468a6.jpg">
-                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/474x/e5/e6/dd/e5e6dd523ce5ec623c582e83e9db7ff7.jpg">
-                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/ac/1f/1d/ac1f1d5cce26b83c6efeb910664d6209.jpg">
-                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/1d/3e/a6/1d3ea69374ec0e9155ac6efdff6b9353.jpg">
-                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/18/43/11/184311ddbb9c92436e89fb1d56d7c779.jpg">
+                <img loading="lazy" class="mimage" src="/images/catpc2.jpg">
+                <img loading="lazy" class="mimage" src="/images/breaking%20trans.png">
+                <img loading="lazy" class="mimage" src="/images/Weezer_Blue_Album.jpg">
+                <img loading="lazy" class="mimage" src="/images/new.jpg">
+                <img loading="lazy" class="mimage" src="/images/sleep.jpg">
+                <img loading="lazy" class="mimage" src="/images/lick.gif">
+                <img loading="lazy" class="mimage" src="/images/gleach-bubble.png">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/05/2a/70/052a702f41464b1adff10c2ab93bbe82.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/f8/3e/5e/f83e5e976c4ef2b25d77bf572529ccd0.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/2a/ee/ad/2aeead341e735f4f5940727a3ae43b8e.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/6d/02/70/6d02701b4f039aec273eb2d5524415d1.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/f4/82/52/f48252f49a7abaa3cc160003100a6bb9.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/97/4b/e1/974be1c18c55d7c31f8ac83118410dd5.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/7e/db/85/7edb85b63e7233bd4cf5c65cbec657ea.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/42/4c/3a/424c3ad1118df0ffb6f55892aec4df6e.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/b4/68/16/b468168b83081ec42a1b4a050a9d5c7d.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/3c/0c/32/3c0c32e62f2c16418fe4de6aef9b9b21.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/50/ec/27/50ec27fae79c27dc346a83f5dbb7a930.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/f2/96/54/f29654e4c0b952b49c773131f9d9b24a.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/a5/fb/4e/a5fb4edce74102187571e6ac9588f783.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/50/21/58/502158eae68c993290dccbd3ce9b0c63.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/1a/e0/b7/1ae0b7a2df31b2397ab7086f48b9ba4a.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/65/ad/cc/65adccd79c34a950b3b4f66480021e05.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/474x/73/9e/ff/739efff667c6c204788707e7d96333c5.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/2e/48/fc/2e48fc544776b617c91055dcf43468a6.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/474x/e5/e6/dd/e5e6dd523ce5ec623c582e83e9db7ff7.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/ac/1f/1d/ac1f1d5cce26b83c6efeb910664d6209.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/1d/3e/a6/1d3ea69374ec0e9155ac6efdff6b9353.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/18/43/11/184311ddbb9c92436e89fb1d56d7c779.jpg">
                 <!--<img loading="lazy"  class="mimage" src="">-->
                 <!--<img loading="lazy"  class="mimage" src="/images/">-->
             </div>
@@ -625,7 +626,7 @@
                 OpenDyslexic: <span id="font-stat">false</span>
             </button>
             <div id="theme">
-            <a href="https://bsky.app/profile/fukounaglr.neocities.org"><img width="32px" style="transform: translate(0, 10px)" title="Strawpage" src="/images/strawpage.png"></a>
+                <a href="https://bsky.app/profile/fukounaglr.neocities.org"><img width="32px" style="transform: translate(0, 10px)" title="Strawpage" src="/images/strawpage.png"></a>
                 <span>theme:</span>
                 <select id="themeSwitcher" onchange="changeTheme()">
                     <option value="">cats</option>
@@ -766,31 +767,41 @@
         const select = document.getElementById("player-select");
         AudioPlayer.create(
             [
-                "STOMACH BOOK - FUKOUNA GIRL",
-                "STOMACH BOOK - Circuit Bent",
-                "gezebelle gaburgably - unfathomable pain",
-                "gezebelle gaburgably - Quarter Pounder",
-                "glass beach - running",
-                "glass beach - cul-de-sac",
-                "glass beach - 1015",
-                "glass beach - slip under the door",
-                "glass beach - bone skull",
-                "Whomst? - Forget Me",
-                "Jhariah - ENTER: A BEGINNER'S GUIDE TO FAKING YOUR DEATH",
-                "Jhariah - RUSSIAN DOLL",
-                //"Jhariah - Not So Bad",
-                "Jhariah - Needed a Change of Pace",
-                "Jhariah - SPLIT! (Live From The Bad Luck Tour)",
-                "Jhariah - PRESSURE BOMB 3!!",
-                //"doefriends - how to feel alive",
-                "femtanyl - GIRL HELL 1999",
-                "femtanyl - P3T",
-                "4lung - I Love You So Much Stay The Fuck Away From Me",
-                //"Ghost and Pals - The Things I Deserve",
-                //"Chonny Jash - To Toe Dead Lines",
-                "Will Wood - I Me Myself (2018 live in studio demo)",
-                "MSI - Unsociable (SV Cover ft. Kasane Teto)",
-                "diest tea other cola - A Close, Trusted, Friend or Gas Station"
+                "FUKOUNA GIRL - STOMACH BOOK",
+                "Circuit Bent - STOMACH BOOK",
+                "anarchy!!! - STOMACH BOOK",
+                "all you can hope for now are the scars to show for it!!! - STOMACH BOOK",
+                "Casket Kids - STOMACH BOOK",
+                "greetings from oblivion! we hope to see you soon! - STOMACH BOOK",
+                "unfathomable pain - gezebelle gaburgably",
+                "Quarter Pounder - gezebelle gaburgably",
+                "running - glass beach",
+                "cul-de-sac - glass beach",
+                "1015 - glass beach",
+                "slip under the door - glass beach",
+                "bone skull - glass beach",
+                "Needed a Change of Pace - Jhariah",
+                "Trust Ceremony - Jhariah",
+                "SPLIT! (Live From The Bad Luck Tour) - Jhariah",
+                "GIRL HELL 1999 - femtanyl",
+                "KATAMARI - femtanyl",
+                "P3T - femtanyl",
+                "MIX. 02 - BOTHERED! - femtanyl",
+                "I Love You So Much Stay The Fuck Away From Me - 4lung",
+                "Unsociable - MSI (SV Cover ft. Kasane Teto)",
+                "A Close, Trusted, Friend or Gas Station - Diet Tea Other Cola",
+                "I Need To Be Reprogrammed - Diet Tea Other Cola.mp3",
+                "Blood Soup - Diet Tea Other Cola",
+                "Break Stuff - Limp Bizkit",
+                "Sure You Will - OSI",
+                "Leopard - Jack Stauber",
+                "New God - Moon Walker",
+                "BITE ME Nightcore - AJ DiSpirito",
+                "Forget Me - Whomst?",
+                "CULPABILITY AND THE PANOPTICON - Ghost and Pals",
+                "Rotary Park - Joe Hawley",
+                "things to do - alex g",
+                "Beautiful Princess Disorder - Milkypossum"
             ], {
                 playButton: document.getElementById("player-button"),
                 skipButton: document.getElementById("skip-button"),
