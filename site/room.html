@@ -73,11 +73,13 @@
                 }
             }
 
-            & #rpgimg {
-                height: 100px;
-                width: 100px;
-                object-fit: contain;
-                grid-area: 1/1/span 2/span 1;
+            & #rpgimgidle {
+                float: left;
+            }
+
+            & #rpgimgtalk {
+                display: none;
+                float: left;
             }
 
             & #rpgtext {
@@ -397,6 +399,12 @@
                 left: 0;
                 text-align: center;
             }
+            #desktop-grid{
+                grid-template-columns: 1fr 1fr !important;
+                & a, img{
+                    width: 90%;
+                }
+            }
 
             .folder {
                 left: 5% !important;
@@ -412,11 +420,22 @@
                 margin: 20px auto;
 
                 & #options {
-                    grid-area: 2/1/span 1/ span 1;
+                    grid-area: 1/2/span 1/ span 1;
+                    grid-template-columns: 1fr;
+                    grid-gap: 10px;
+
+                    & span{
+                        margin: auto;
+                    }
                 }
 
                 & #rpgimg {
                     grid-area: 1/1/span 1/span 1;
+                    width: 70%;
+                    text-align: center;
+                }
+                & #rpgtext {
+                    grid-area: 2/1/span 1/span 2;
                 }
             }
 
@@ -435,7 +454,7 @@
     </style>
 </head>
 
-<body>
+<body onload="speech(quote)">
     <main>
         <div class="box" id="desktop">
             <a href="/index.html" title="Log out?"><img src="/graphics/pixels/pc.gif"> Logged in as User</a>
@@ -510,7 +529,7 @@
                                 <div aria-hidden="true"></div>
                             </div>
                             <div id="player-select-wrapper">
-                                <marquee><select id="player-select"></select></marquee>
+                                <marquee style="width: 70%"><select id="player-select"></select></marquee>
                             </div>
                         </div>
                     </div>
@@ -648,7 +667,8 @@
     </div>
 
     <div id="rpgbox">
-        <img class="filter" src="/images/fuko%20speech%20icon%20og.png" id="rpgimg">
+        <img class="filter" src="/images/fuko_idle.gif" id="rpgimgidle">
+        <img class="filter" src="/images/fuko_talk.gif" id="rpgimgtalk">
         <p id="rpgtext">* I can talk. Please enable javascript!</p>
         <div id="options">
             <span onclick="speech(talk)">talk</span>
@@ -656,61 +676,6 @@
             <span onclick="speech(joke)">joke</span>
         </div>
     </div>
-
-    <script>
-        const elements = [
-            "Dimly lit, the room emits a hollow, muffled sound. It houses a single sorry soul, no other to be found",
-            "Water-damaged off-white ceilings, crumbling crown molding, faded paint and threadbare linens and there's no place I'd rather sleep",
-            "These four walls extend beyond my sight and breathe new life into me",
-            "I’ve found my home inside these walls, the world is my own. I write the rules alone in here. I sit atop a throne",
-            "I get this feeling that I’m not the first and not the last to find solace in this empty room",
-            "These decaying walls were all that kept me sane",
-            "In my little space     nothing changes.        I don't like this place.        I wanna escape this"
-        ];
-
-        const Marquee = document.getElementById("rpgtext");
-        const randomIndex = Math.floor(Math.random() * elements.length);
-        Marquee.innerHTML = elements[randomIndex];
-
-        function randomMarquee() {
-            const randomIndex = Math.floor(Math.random() * elements.length);
-            Marquee.innerHTML = "*" + elements[randomIndex];
-        }
-    </script>
-
-    <script>
-        function getDateTime() {
-            var now = new Date();
-            var year = now.getFullYear();
-            var month = now.getMonth() + 1;
-            var day = now.getDate();
-            var hour = now.getHours();
-            var minute = now.getMinutes();
-            var second = now.getSeconds();
-            if (month.toString().length == 1) {
-                month = '0' + month;
-            }
-            if (day.toString().length == 1) {
-                day = '0' + day;
-            }
-            if (hour.toString().length == 1) {
-                hour = '0' + hour;
-            }
-            if (minute.toString().length == 1) {
-                minute = '0' + minute;
-            }
-            if (second.toString().length == 1) {
-                second = '0' + second;
-            }
-            var dateTime = year + '/' + month + '/' + day + ' ' + hour + ':' + minute + ':' + second;
-            return dateTime;
-        }
-
-        setInterval(function() {
-            currentTime = getDateTime();
-            document.getElementById("time").innerHTML = currentTime;
-        }, 1000);
-    </script>
 
     <script>
         function openFolder(a) {
@@ -721,48 +686,9 @@
             document.getElementById(a).style.display = "none";
         }
     </script>
-
-    <script>
-        const talk = [
-            "Being mentally ill is like being on hard drugs, but with no fun.",
-            "Hell is other people.",
-            "i gave up on trying to be okay and now im doing many drugs",
-            "guys i'm so sorry i was toxic that won't happen again [turns into a biblically accurate angel]",
-            "my hate club is so small that i am the one who has to do the all hating",
-            "what doesn't kill me should try harder",
-            "i have 0 knowledge",
-            "gay bloodcells be carrying homoglobin",
-            "tasty megabites...",
-            "if there's adverb and verb, there should be adjective and jective"
-        ];
-        const about = [
-            "hi! i'm this site's mascot",
-            "My name is Fuko Una!",
-            "Fuko 2.0!",
-            "I live in your cat-puter!",
-            "you are just as much a tool as i am!",
-            "I may be just a program, but you're just 7 bars of soap",
-            "My gender is being witheld by the CIA and housed in undisclosed locations around the world"
-        ]
-        const joke = [
-            "how do you call a horse that lives the next door? a neigh-bour.",
-            "what do you call a sheep that can dance and sing? a lady ba-ba.",
-            "how do you make something holy? you beat the hell outta it.",
-            "what do you call a british dinosaur? a tea-rex.",
-            "cargo? yeah i hope it does",
-            "catwalks? yeah it sure does.",
-            "How do you call a gay ghost? A fa-ghost"
-        ]
-
-        const box = document.getElementById("rpgtext");
-
-        function speech(a) {
-            const randomIndex = Math.floor(Math.random() * a.length);
-            box.innerHTML = "* " + a[randomIndex];
-        }
-    </script>
-
     <script src="/js/audio-player.js"></script>
+    <script src="/js/clock.js"></script>
+    <script src="/js/talkingfuko.js"></script>
     <script>
         const select = document.getElementById("player-select");
         AudioPlayer.create(

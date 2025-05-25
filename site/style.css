@@ -48,7 +48,7 @@
     --col: var(--colour);
     --acc: var(--accent-colour);
     --acc-hov: var(--accent-colour-hover);
-    --pri: var(--primary-colour: #c6bda5);
+    --pri: var(--primary-colour);
     --cats-display: none;
     --hell-display: none;
     --green-display: none;

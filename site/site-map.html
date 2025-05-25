@@ -28,7 +28,7 @@
             overflow: auto;
         }
 
-        h3{
+        h3 {
             margin: 30px 0;
         }
 
@@ -144,12 +144,11 @@
 <body>
     <div class="side-col">
 
-            <h3>where to?</h3>
+        <h3>where to?</h3>
 
-            <div id="donot">
-                <audio id="audio" src="https://64.media.tumblr.com/5cfdb5b4911fc813f8d2ecc9a59c706c/fed64cd68b42bd35-0a/7d861edb29cd262194f4361a5b988b98b18789b7.mp3"></audio>
-                <a href="" id="play" style="display: block"> do not click here! </a>
-            </div>
+        <div id="donot">
+            <span id="play" onclick="playAudio('https://file.garden/ZjOP8Ik9OUXT6YVm/weezer%20riff.mp3')" style="display: block"> do not click here! </span>
+        </div>
 
         <ol>
             <li>
@@ -176,8 +175,8 @@
                 <p>create</p>
                 <ul>
                     <li><a target="_parent" href="/create/toybox/index.html">Toybox</a>
-                    <ul>
-                        <li><a target="_parent" href="/create/toybox/characters-interactions.html">OC interactions</a></li>
+                        <ul>
+                            <li><a target="_parent" href="/create/toybox/characters-interactions.html">OC interactions</a></li>
                         </ul>
                     </li>
                     <li><a target="_parent" href="/create/femtanyl-papercraft.html">papercraft</a></li>
@@ -207,11 +206,9 @@
     </div>
 
     <script>
-        document.getElementById("play").addEventListener("click", function(e) {
-            e.preventDefault();
-            document.getElementById("audio").play();
-            document.getElementById("play").innerHTML = 'warned you.';
-        });
+        function playAudio(url) {
+            new Audio(url).play();
+        }
     </script>
     <script src="/js/parallax.js"></script>
     <script src="/js/theme-switcher.js"></script>
