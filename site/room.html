@@ -330,6 +330,31 @@
             }
         }
 
+        #music-title {
+            background-color: var(--acc);
+            width: auto;
+            position: absolute;
+            top: -15px;
+            right: 50px;
+            z-index: 20;
+            padding: 5px;
+            border-radius: 10px 10px 0 0;
+            border: solid 2px var(--colour);
+            border-bottom: none;
+        }
+
+        #sotw {
+            color: white;
+            position: absolute;
+            bottom: 5px;
+            right: 50px;
+            font-size: x-small;
+            text-decoration: none;
+            &::before{
+                display: none;
+            }
+        }
+
 
         /*STATUS CAFE*/
         #side-bar {
@@ -399,14 +424,17 @@
                 left: 0;
                 text-align: center;
             }
-            #desktop-grid{
+
+            #desktop-grid {
                 grid-template-columns: 1fr 1fr !important;
-                & a, img{
+
+                & a,
+                img {
                     width: 90%;
                 }
             }
 
-            .folder {
+            .folder, #music {
                 left: 5% !important;
                 max-width: 90% !important;
             }
@@ -424,7 +452,7 @@
                     grid-template-columns: 1fr;
                     grid-gap: 10px;
 
-                    & span{
+                    & span {
                         margin: auto;
                     }
                 }
@@ -434,6 +462,7 @@
                     width: 70%;
                     text-align: center;
                 }
+
                 & #rpgtext {
                     grid-area: 2/1/span 1/span 2;
                 }
@@ -502,10 +531,10 @@
             <p class="folder-title"><span>Notepad - TO-DO</span><span class="close" onclick="closeFolder('notepad')">- x close</span></p>
             <div class="folder-content">
                 <ul>
-                    <li>remake fuko's talking icon</li>
                     <li>add section for Mars &amp; Luca stuff (choose name too...)</li>
                 </ul>
                 <ul class="done">
+                    <li>remake fuko's talking icon</li>
                     <li>redesign index...</li>
                     <li>redesign toybox</li>
                     <li>redesign art page</li>
@@ -514,27 +543,27 @@
             </div>
         </div>
 
-        <div class="draggable folder" id="music" style="top: 340px; left: 160px; width: auto;">
-            <p class="folder-title"><span>Media Player</span><span class="close" onclick="closeFolder('music')">- x close</span></p>
-            <div class="folder-content">
-                <a href="/song-of-the-week.html">Song of the week</a>
-                <div id="audio-player">
-                    <img id="player-bubble" src="/images/disk.png" class="paused" />
+        <div class="draggable" id="music" style="top: 340px; left: 160px;">
+            <div id="music-title">
+                <span>Media Player</span>
+                <span class="close" onclick="closeFolder('music')">- x</span>
+            </div>
+            <div id="audio-player">
+                <img id="player-bubble" src="/images/disk.png" class="paused" />
 
-                    <div style="margin-left: 10px">
-                        <div id="player-body">
-                            <h6 style="text-align: left"> <button id="player-button"></button><button id="skip-button"></button>Now playing:</h6>
-                            <div id="player-slider">
-                                <div aria-hidden="true"></div>
-                                <div aria-hidden="true"></div>
-                            </div>
-                            <div id="player-select-wrapper">
-                                <marquee style="width: 70%"><select id="player-select"></select></marquee>
-                            </div>
+                <div style="margin-left: 10px">
+                    <div id="player-body">
+                        <h6 style="text-align: left"> <button id="player-button"></button><button id="skip-button"></button>Now playing:</h6>
+                        <div id="player-slider">
+                            <div aria-hidden="true"></div>
+                            <div aria-hidden="true"></div>
+                        </div>
+                        <div id="player-select-wrapper">
+                            <marquee style="width: 70%"><select id="player-select"></select></marquee>
                         </div>
                     </div>
                 </div>
-                <img src="/images/miku-yay.gif">
+                <a href="/song-of-the-week.html" id="sotw">&gt; Song of the week</a>
             </div>
         </div>
 
