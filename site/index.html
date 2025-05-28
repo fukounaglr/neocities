@@ -21,6 +21,14 @@
             background-position: center;
             padding: 0;
             align-content: center;
+            align-items: center;
+        }
+
+        footer {
+            color: var(--acc);
+            font-size: small;
+            text-align: center;
+            margin: 5px;
         }
 
         header {
@@ -48,11 +56,14 @@
 
         main {
             max-width: 500px;
-            margin: 50px auto;
+            margin: auto;
             background-color: var(--colour);
             padding: 10px 20px;
             border: double var(--accent-colour) 4px;
-            overflow: hidden;
+            overflow: auto;
+            align-content: center;
+            aspect-ratio: 3/2;
+            position: relative;
         }
 
 
@@ -94,7 +105,7 @@
         #infobox-container {
             display: block;
             position: relative;
-            height: min-content
+            height: min-content;
         }
 
         .infobox {
@@ -102,19 +113,20 @@
             background-color: var(--primary-colour);
             padding: 5px;
             margin: 10px;
-            border: double 6px var(--accent-colour);
+            border: solid 6px var(--acc);
             width: 40%;
             position: relative;
         }
 
         #box-3 {
             float: right;
-            height: 100%;
+            height: 300px;
             z-index: 10;
+            overflow: auto;
         }
 
         #enter {
-            -webkit-text-stroke: 2px var(--primary-colour);
+            -webkit-text-stroke: 2px var(--pri);
             z-index: 2;
             margin: 15% auto;
             text-align: center;
@@ -125,15 +137,57 @@
             font-size: 4Em;
             color: var(--colour);
             cursor: pointer;
-            text-decoration-color: var(--primary-colour);
+            text-decoration-color: var(--pri);
 
             &::before {
                 display: none;
+            }
+
+            &:hover {
+                -webkit-text-stroke: 2px var(--acc);
+                text-decoration-color: var(--acc);
             }
         }
 
         #autiring table {
             margin: auto;
+        }
+
+        #luca100 {
+            text-align: center;
+            color: var(--pri);
+            position: absolute;
+            bottom: 20px;
+            left: 10px;
+            pointer-events: none;
+            z-index: 20;
+            display: none;
+
+            & img {
+                max-width: 200px;
+            }
+
+            & p {
+                color: var(--acc)
+            }
+        }
+
+        #Tranarchy {
+            scale: .7;
+            margin: auto;
+            width: min-content;
+            transform: translateX(-15%);
+
+            & a::before {
+                display: none;
+                content: "";
+            }
+
+            & span {
+                margin: auto;
+                left: 0;
+                width: 100%
+            }
         }
 
 
@@ -146,6 +200,18 @@
             main {
                 width: 80%;
                 font-size: 0.9Em;
+                overflow: hidden;
+                aspect-ratio: auto;
+            }
+
+            #luca100 {
+                position: relative;
+                margin-bottom: 50px;
+            }
+
+
+            #Tranarchy {
+                transform: translateX(-12px);
             }
         }
 
@@ -176,7 +242,9 @@
                     Webrings
                 </h6>
                 <div style="font-size: 0.6Em; text-align: center;">
-                    <script src="https://tranarchy-webring.neocities.org/SCRIPTS/tranarchy.js"></script>
+                    <div id="Tranarchy">
+                        <script src="https://tranarchy-webring.neocities.org/SCRIPTS/tranarchy.js"></script>
+                    </div>
 
                     <div id="autiring">
                         <script type="text/javascript" src="https://ballonlea.neocities.org/autiring/onionring-variables.js"></script>
@@ -220,8 +288,16 @@
         <a href="/room.html" id="enter">&gt;&gt;&gt; enter!!! </a>
 
         <p style="color: var(--primary-colour)">please leave your shoes at the door!</p>
-        <p style="color: var(--acc); font-size: small">Made in Phoenix code, tested in Firefox, hosted on <a href="https://neocities.org/site/fukounaglr"><img>Neocities</a></p>
     </main>
+    <footer>
+        <p>Made in Phoenix code, tested in Firefox, hosted on <a href="https://neocities.org/site/fukounaglr"><img>Neocities</a></p>
+    </footer>
+
+    <div id="luca100">
+        <img src="/images/luca%20happy%20jummp.gif">
+        <h4>Thank you for 100K visitors!!</h4>
+        <p>Oh my god.. that's a lot!!??</p>
+    </div>
 
 
 

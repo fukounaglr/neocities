@@ -22,7 +22,8 @@ const talk = [
             "i have 0 knowledge",
             "gay bloodcells be carrying homoglobin",
             "tasty megabites...",
-            "if there's adverb and verb, there should be adjective and jective"
+            "if there's adverb and verb, there should be adjective and jective",
+    "stereo sound makes my head hurt..."
         ];
 const about = [
             "hi! i'm this site's mascot",
@@ -56,7 +57,7 @@ async function speech(a) {
 
     typeWriter();
 
-    await sleep(speed * txt.length);
+    await sleep(speed * txt.length * 1.2);
     imgIdle.style.display = "block";
     imgTalk.style.display = "none";
 }

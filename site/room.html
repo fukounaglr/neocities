@@ -512,6 +512,7 @@
                 <a onclick="openFolder('graphics')" title="graphics"><img class="filter" src="/images/icon_graphic.png"><span>Graphics</span></a>
                 <a onclick="openFolder('notepad')" title="notepad"><img class="filter" src="/images/icon_notepad.png"><span>notepad</span></a>
                 <a onclick="openFolder('stuff')" title="stuff"><img class="filter" src="/images/icon_folder.png"><span>Stuff</span></a>
+                <a onclick="openFolder('trans')" title="stuff"><img class="filter" src="/images/trans.png" width="60%;"><span>Trans!!</span></a>
 
             </div>
 
@@ -545,6 +546,9 @@
             <p class="folder-title"><span>Notepad - TO-DO</span><span class="close" onclick="closeFolder('notepad')">- x close</span></p>
             <div class="folder-content">
                 <ul>
+                    <li>make custom cursor</li>
+                    <li>make second click jump forward [fuko]</li>
+                    <li>draw sprite for guestbook</li>
                     <li>add section for Mars &amp; Luca stuff (choose name too...)</li>
                 </ul>
                 <ul class="done">
@@ -640,6 +644,14 @@
             <div class="folder-title"><span>.../journal</span><span class="close" onclick="closeFolder('journal')">- x close</span></div>
             <div class="folder-content">
                 <iframe title="journal" src="/journal.html" width="100%" height="90%"></iframe>
+                <a href="/journal.html">open full page</a>
+            </div>
+        </div>
+
+        <div class="draggable folder" id="trans" style="top: 210px; right: 200px; width: 500px; height: 450px;">
+            <div class="folder-title"><span>.../trans rights!!!</span><span class="close" onclick="closeFolder('trans')">- x close</span></div>
+            <div class="folder-content">
+                <iframe title="journal" src="/trans-rights.html" width="100%" height="90%"></iframe>
                 <a href="/journal.html">open full page</a>
             </div>
         </div>
@@ -749,29 +761,30 @@
                 "cul-de-sac - glass beach",
                 "1015 - glass beach",
                 "slip under the door - glass beach",
-                "bone skull - glass beach",
-                "Needed a Change of Pace - Jhariah",
-                "Trust Ceremony - Jhariah",
+                //"bone skull - glass beach",
+                //"Needed a Change of Pace - Jhariah",
+                //"Trust Ceremony - Jhariah",
                 "SPLIT! (Live From The Bad Luck Tour) - Jhariah",
                 "GIRL HELL 1999 - femtanyl",
                 "KATAMARI - femtanyl",
                 "P3T - femtanyl",
                 "MIX. 02 - BOTHERED! - femtanyl",
-                "I Love You So Much Stay The Fuck Away From Me - 4lung",
-                "Unsociable - MSI (SV Cover ft. Kasane Teto)",
+                //"I Love You So Much Stay The Fuck Away From Me - 4lung",
+                //"Unsociable - MSI (SV Cover ft. Kasane Teto)",
                 "A Close, Trusted, Friend or Gas Station - Diet Tea Other Cola",
-                "I Need To Be Reprogrammed - Diet Tea Other Cola.mp3",
+                "I Need To Be Reprogrammed - Diet Tea Other Cola",
                 "Blood Soup - Diet Tea Other Cola",
                 "Break Stuff - Limp Bizkit",
                 "Sure You Will - OSI",
-                "Leopard - Jack Stauber",
+                //"Leopard - Jack Stauber",
                 "New God - Moon Walker",
                 "BITE ME Nightcore - AJ DiSpirito",
                 "Forget Me - Whomst?",
                 "CULPABILITY AND THE PANOPTICON - Ghost and Pals",
                 "Rotary Park - Joe Hawley",
                 "things to do - alex g",
-                "Beautiful Princess Disorder - Milkypossum"
+                "Beautiful Princess Disorder - Milkypossum",
+                "Splitter Girl  - weevildoing"
             ], {
                 playButton: document.getElementById("player-button"),
                 skipButton: document.getElementById("skip-button"),
