@@ -123,6 +123,11 @@
             height: 300px;
             z-index: 10;
             overflow: auto;
+
+            & a::before {
+                display: none;
+                content: "";
+            }
         }
 
         #enter {
@@ -177,11 +182,6 @@
             margin: auto;
             width: min-content;
             transform: translateX(-15%);
-
-            & a::before {
-                display: none;
-                content: "";
-            }
 
             & span {
                 margin: auto;

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Shimejis</title>
+
+    <link rel="icon" type="image/png" href="/ico.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/create/style.css" />
+
+
+    <style>
+        header,
+        #side-col {
+            align-content: center;
+            display: grid;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .create-link {
+            background-color: dimgray;
+            text-align: left;
+            width: 90%;
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            & img{
+                width: 200px;
+                display: block;
+            }
+
+            &:hover {
+                color: lightgray;
+
+                & h5::before {
+                    letter-spacing: 0;
+                }
+            }
+
+            & h5::before {
+                content: ">>> ";
+                letter-spacing: -8px;
+                margin: auto 10px;
+                transition: .5s;
+            }
+            & a{
+                color: white;
+                & img{
+                    width: 20px;
+                    display: inline
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <main>
+        <header>
+            <a href="/create/index.html" style="position: absolute; top: 0; left: 0;">go back</a>
+            <h3>Shimejis</h3>
+        </header>
+            <div class="pink-bg create-link">
+                <h5>Angel Martinez</h5>
+                <p>From <a href="https://homieshouse.itch.io/clinical-trial">Clinical Trial</a> by homie</p>
+                <img src="/create/images/shime-angel.png">
+                <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/CTG%20Angel%20shimeji.zip" download><img src="/create/images/icon-angel.png"> download ZIP</a>
+            </div>
+    </main>
+</body>
+
+</html>

@@ -290,10 +290,10 @@ a {
 .spoiler{
     background-color: black;
     border: 1px dotted white;
-    filter: brightness(-1);
+    filter: brightness(0) opacity(0);
     color: black;
     &:hover{
-        filter: opacity(1);
+        filter: opacity(1) brightness(1);
         color: white;
     }
 }
@@ -370,6 +370,30 @@ a {
         }
     }
 }
+
+        .popup {
+            position: relative;
+            position: fixed;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.83);
+            align-content: center;
+            text-align: center;
+            padding: 20px 0;
+            display: none;
+            animation: fade 5s ease-in;
+
+            & img {
+                width: 90%;
+                max-width: 600px;
+                max-height: 80vh;
+                object-fit: contain;
+                border: none;
+            }
+        }
 
 @keyframes fade {
     0% {
