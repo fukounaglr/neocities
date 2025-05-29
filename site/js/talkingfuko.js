@@ -10,6 +10,10 @@ const quote = [
             "I’ve found my home inside these walls, the world is my own. I write the rules alone in here. I sit atop a throne",
             "I get this feeling that I’m not the first and not the last to find solace in this empty room",
             "These decaying walls were all that kept me sane",
+            "不幸な girl, 不幸な girl;        If you wanna flay me let's see what's inside",
+            "The screams of a tiny girl are of no concern to the whole wide world, no matter how loud",
+            "well, this decease is defined by its treatment; you people make me sick!",
+            "I wanna contribute to the chaos, I don't wanna watch and then complain",
             "In my little space     nothing changes.        I don't like this place.        I wanna escape this"
         ];
 const talk = [

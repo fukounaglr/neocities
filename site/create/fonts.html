@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Fonts</title>
+
+    <link rel="icon" type="image/png" href="/ico.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/create/style.css" />
+
+
+    <style>
+        @font-face {
+            font-family: "Scrambled Eggs";
+            src:
+                url("/create/images/scrambled-eggs.woff2") format("woff2"),
+                url("/fonts/scrambled-eggs.woff") format("woff");
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "ashhmillr regular";
+            src:
+                url("/create/images/ashhmillr-regular.woff2") format("woff2"),
+                url("/fonts/ashhmillr-regular.woff") format("woff");
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "ashh regular";
+            src:
+                url("/create/images/ashh-regular.woff2") format("woff2"),
+                url("/fonts/ashh-regular.woff") format("woff");
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        header,
+        #side-col {
+            align-content: center;
+            display: grid;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .create-link {
+            background-color: dimgray;
+            text-align: left;
+            width: 90%;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+
+            & img {
+                width: 200px;
+                display: block;
+            }
+
+            &:hover {
+                color: lightgray;
+
+                & h5::before {
+                    letter-spacing: 0;
+                }
+            }
+
+            & h5::before {
+                content: ">>> ";
+                letter-spacing: -8px;
+                margin: auto 10px;
+                transition: .5s;
+            }
+
+            & a {
+                color: white;
+
+                & img {
+                    width: 20px;
+                    display: inline
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <main>
+        <header>
+            <a href="/create/index.html" style="position: absolute; top: 0; left: 0;">go back</a>
+            <h3>Fonts</h3>
+        </header>
+        <a href="" class="pink-bg create-link" style="font-family: Scrambled Eggs;">
+            <h5 style="font-family: Scrambled Eggs;">Scrambled Eggs</h5>
+            <p>five quacking zephyrs jolt my wax bed</p>
+            <p style="text-transform: uppercase;">Pack my box with five dozen liquor jugs</p>
+        </a>
+        <a href="" class="pink-bg create-link" style="font-family: ashh regular;">
+            <h5 style="font-family: ashh regular;"></h5>
+            <p>five quacking zephyrs jolt my wax bed</p>
+            <p style="text-transform: uppercase;">Pack my box with five dozen liquor jugs</p>
+        </a>
+        <a href="" class="pink-bg create-link" style="font-family: ashhmillr regular;">
+            <h5 style="font-family: ashhmillr regular;">Eggfont</h5>
+            <p>five quacking zephyrs jolt my wax bed</p>
+            <p style="text-transform: uppercase;">Pack my box with five dozen liquor jugs</p>
+        </a>
+    </main>
+</body>
+
+</html>

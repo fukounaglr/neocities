@@ -96,19 +96,10 @@
             bottom: 0;
             overflow: clip;
             z-index: -10;
+            pointer-events: all;
 
             & img {
                 height: 100%;
-            }
-
-            #thebox {
-                width: 600px;
-                height: 300px;
-                background-image: var(--bg);
-                z-index: -1;
-                position: absolute;
-                bottom: -90px;
-                border: solid 2px var(--accent-colour);
             }
         }
 
@@ -507,7 +498,7 @@
             <div id="desktop-grid">
                 <a onclick="openFolder('map')" title="site map"><img class="filter" src="/images/icon_map.png"><span>Site map</span></a>
                 <a onclick="openFolder('webmaster')" title="webmaster"><img class="filter" src="/images/icon_me.png"><span>Who Am I</span></a>
-                <a onclick="openFolder('music')" title="music"><img class="filter" src="/images/icon_music.png"><span>Music</span></a>
+                <a onclick="openFolder('music')" title="music player"><img class="filter" src="/images/icon_music.png"><span>Music</span></a>
                 <a onclick="openFolder('blog')"><img class="filter" src="/images/icon_blog.png"><span>Blog</span></a>
                 <a onclick="openFolder('journal')" title="blog"><img class="filter" src="/images/icon_journal.png"><span>Journal</span></a>
                 <a onclick="openFolder('create')" title="create"><img class="filter" src="/images/icon_art.png"><span>Create</span></a>
@@ -515,8 +506,8 @@
                 <a onclick="openFolder('graphics')" title="graphics"><img class="filter" src="/images/icon_graphic.png"><span>Graphics</span></a>
                 <a onclick="openFolder('notepad')" title="notepad"><img class="filter" src="/images/icon_notepad.png"><span>notepad</span></a>
                 <a onclick="openFolder('stuff')" title="stuff"><img class="filter" src="/images/icon_folder.png"><span>Stuff</span></a>
-                <a onclick="openFolder('trans')" title="stuff"><img class="" src="/images/trans.png" width="60%;"><span>Trans!!</span></a>
-                <a onclick="openFolder('album')" title="stuff"><img class="filter" src="/images/icon_album.png" width="60%;"><span>Photo album</span></a>
+                <a onclick="openFolder('trans')" title="trans rights"><img class="" src="/images/trans.png" width="60%;"><span>Trans!!</span></a>
+                <a onclick="openFolder('album')" title="photo album"><img class="filter" src="/images/icon_album.png" width="60%;"><span>Photo album</span></a>
 
             </div>
 
@@ -657,7 +648,7 @@
         <div class="draggable folder" id="webmaster" style="top: 120px; left: 250px; width: 500px; height: 400px;">
             <div class="folder-title"><span>.../Webmaster</span><span class="close" onclick="closeFolder('webmaster')">- x close</span></div>
             <div class="folder-content">
-                <iframe title="webmaster" src="/webmaster.html" width="100%" height="90%"></iframe>
+                <iframe loading="lazy" title="webmaster" src="/webmaster.html" width="100%" height="90%"></iframe>
                 <a href="/webmaster.html">open full page</a>
             </div>
         </div>
@@ -665,7 +656,7 @@
         <div class="draggable folder" id="journal" style="top: 200px; right: 250px; width: 500px; height: 450px;">
             <div class="folder-title"><span>.../journal</span><span class="close" onclick="closeFolder('journal')">- x close</span></div>
             <div class="folder-content">
-                <iframe title="journal" src="/journal.html" width="100%" height="90%"></iframe>
+                <iframe loading="lazy" title="journal" src="/journal.html" width="100%" height="90%"></iframe>
                 <a href="/journal.html">open full page</a>
             </div>
         </div>
@@ -673,7 +664,7 @@
         <div class="draggable folder" id="trans" style="top: 210px; right: 200px; width: 500px; height: 450px;">
             <div class="folder-title"><span>.../trans rights!!!</span><span class="close" onclick="closeFolder('trans')">- x close</span></div>
             <div class="folder-content">
-                <iframe title="trans rights" src="/trans-rights.html" width="100%" height="90%"></iframe>
+                <iframe loading="lazy" title="trans rights" src="/trans-rights.html" width="100%" height="90%"></iframe>
                 <a href="/trans-rights.html">open full page</a>
             </div>
         </div>
@@ -689,14 +680,14 @@
         <div class="draggable folder" id="create" style="top: 200px; right: 100px; width: 350px; height: 400px;">
             <div class="folder-title"><span>.../Create</span><span class="close" onclick="closeFolder('create')">- x close</span></div>
             <div class="folder-content">
-                <iframe title="art" src="/create/index.html" width="100%" height="90%"></iframe>
+                <iframe  loading="lazy" title="create" src="/create/index.html" width="100%" height="90%"></iframe>
             </div>
         </div>
 
         <div class="draggable folder" id="graphics" style="top: 100px; right: 200px; width: 400px; height: 300px;">
             <div class="folder-title"><span>.../Graphics</span><span class="close" onclick="closeFolder('graphics')">- x close</span></div>
             <div class="folder-content">
-                <iframe title="graphics" src="/graphics.html" width="100%" height="90%"></iframe>
+                <iframe  loading="lazy" title="graphics" src="/graphics.html" width="100%" height="90%"></iframe>
                 <a href="/graphics.html">open full page</a>
             </div>
         </div>
@@ -704,7 +695,7 @@
         <div class="draggable folder" id="album" style="top: 120px; right: 140px; width: 450px; height: 600px;">
             <div class="folder-title"><span>.../Photo album</span><span class="close" onclick="closeFolder('album')">- x close</span></div>
             <div class="folder-content">
-                <iframe title="photo album" src="/photo-album.html" width="100%" height="90%"></iframe>
+                <iframe  loading="lazy" title="photo album" src="/photo-album.html" width="100%" height="90%"></iframe>
                 <a href="/photo-album.html">open full page</a>
             </div>
         </div>
@@ -712,7 +703,7 @@
         <div class="draggable folder" id="sites" style="top: 50px; right: 250px; width: 400px; height: 500px;">
             <div class="folder-title"><span>.../Cool Sites</span><span class="close" onclick="closeFolder('sites')">- x close</span></div>
             <div class="folder-content">
-                <iframe title="sites" src="/sites.html" width="100%" height="90%"></iframe>
+                <iframe  loading="lazy" title="sites" src="/sites.html" width="100%" height="90%"></iframe>
                 <a href="/sites.html">open full page</a>
             </div>
         </div>
@@ -744,7 +735,7 @@
     </main>
 
 
-    <div id="fuko-pixel">
+    <div id="fuko-pixel" title="click me and i'll show you something cool">
         <img class="filter" src="/images/fuko%20pixel.png">
         <!--<div id="thebox"></div>-->
         <div id="confetti-area"></div>
@@ -765,10 +756,10 @@
 
 
     <script src="/js/confetti.js"></script>
+    <script src="/js/talkingfuko.js"></script>
     <script src="/js/theme-switcher.js"></script>
     <script src="/js/audio-player.js"></script>
     <script src="/js/clock.js"></script>
-    <script src="/js/talkingfuko.js"></script>
     <script>
         function openFolder(a) {
             document.getElementById(a).style.display = "block";
