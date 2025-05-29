@@ -42,7 +42,9 @@ const joke = [
             "what do you call a british dinosaur? a tea-rex.",
             "cargo? yeah i hope it does",
             "catwalks? yeah it sure does.",
-            "How do you call a gay ghost? A fa-ghost"
+            "How do you call a gay ghost? A fa-ghost",
+            "What does a door on a verge of mental break down say? 'I can't handle this anymore.",
+            "When did japanese start eating eggs? A long たまご!"
         ];
 
 function sleep(ms) {

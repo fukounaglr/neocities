@@ -31,8 +31,9 @@
         }
 
         .mimage {
-            width: 100px;
-            height: 100px;
+            width: 30%;
+            /*height: 100px;*/
+            aspect-ratio: 1/1;
         }
 
         #rpgbox {
@@ -94,7 +95,7 @@
             right: 10px;
             bottom: 0;
             overflow: clip;
-            pointer-events: none;
+            z-index: -10;
 
             & img {
                 height: 100%;
@@ -527,6 +528,8 @@
                     <img src="/graphics/buttons/hemp.gif">
                     <img src="/graphics/buttons/killmenow.gif">
                     <img src="/graphics/buttons/transrights.gif">
+                    <img src="/graphics/buttons/trans2.png">
+                    <img src="/graphics/buttons/vap.png">
                     <img src="/graphics/buttons/youre_telling_me.png">
                     <img src="/graphics/buttons/paws.png">
                     <img src="/graphics/buttons/kris_where_tf_are_we.png">
@@ -539,6 +542,13 @@
                     <img src="/graphics/blinkies/dontlike.gif">
                     <img src="/graphics/blinkies/asshurt.gif">
                     <img src="/graphics/blinkies/trans%20furious.gif">
+                    <img src="/graphics/blinkies/tft.gif">
+                    <img src="/graphics/blinkies/535c0ba5.gif">
+                    <img src="/graphics/blinkies/femtanyl_1.gif">
+                    <img src="/graphics/blinkies/95fa12b0.gif">
+                    <img src="/graphics/blinkies/tumblr_96ad2cd9855e2fd464b654ed6dadf9d2_996a2d7a_250.gif">
+                    <img src="/graphics/blinkies/sylveon-trans-rights.gif">
+                    <img src="/graphics/blinkies/gleach_slipunderthedoor.gif">
                 </marquee>
                 <p style="margin: auto 0; text-align: end;" id="time"></p>
             </div>
@@ -549,13 +559,13 @@
             <p class="folder-title"><span>Notepad - TO-DO</span><span class="close" onclick="closeFolder('notepad')">- x close</span></p>
             <div class="folder-content">
                 <ul>
-                    <li>make photo album icon</li>
                     <li>make custom cursor</li>
                     <li>make second click jump forward [fuko]</li>
                     <li>draw sprite for guestbook</li>
                     <li>add section for Mars &amp; Luca stuff</li>
                 </ul>
                 <ul class="done">
+                    <li>make photo album icon</li>
                     <li>make photo album page</li>
                     <li>make shimejis page</li>
                     <li>make photo album page</li>
@@ -596,6 +606,12 @@
         <div class="draggable folder" id="stuff" style="top: 140px; left: 10px; height: 300px; width: 350px">
             <div class="folder-title"><span>.../Desktop/Stuff</span><span class="close" onclick="closeFolder('stuff')">- x close</span></div>
             <div class="folder-content">
+                <!--<img loading="lazy"  class="mimage" src="">-->
+                <!--<img loading="lazy"  class="mimage" src="">-->
+                <!--<img loading="lazy"  class="mimage" src="">-->
+                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/f6/ae/ac/f6aeac162b0cacc46e9f5295da452cfb.jpg">
+                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/84/87/b5/8487b5c250af6dbf5d330f1063e33199.jpg">
+                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/13/b2/27/13b227061b333314a44d6db5a4889544.jpg">
                 <img loading="lazy" class="mimage" src="/images/stupid.jpg">
                 <img loading="lazy" class="mimage" src="/images/catpc2.jpg">
                 <img loading="lazy" class="mimage" src="/images/breaking%20trans.png">
@@ -626,7 +642,6 @@
                 <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/ac/1f/1d/ac1f1d5cce26b83c6efeb910664d6209.jpg">
                 <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/1d/3e/a6/1d3ea69374ec0e9155ac6efdff6b9353.jpg">
                 <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/18/43/11/184311ddbb9c92436e89fb1d56d7c779.jpg">
-                <!--<img loading="lazy"  class="mimage" src="">-->
                 <!--<img loading="lazy"  class="mimage" src="/images/">-->
             </div>
         </div>
@@ -731,7 +746,7 @@
 
     <div id="fuko-pixel">
         <img class="filter" src="/images/fuko%20pixel.png">
-        <div id="thebox"></div>
+        <!--<div id="thebox"></div>-->
         <div id="confetti-area"></div>
     </div>
 
@@ -746,6 +761,8 @@
         </div>
     </div>
 
+
+
     <script>
         function openFolder(a) {
             document.getElementById(a).style.display = "block";
@@ -755,9 +772,6 @@
             document.getElementById(a).style.display = "none";
         }
     </script>
-    <script src="/js/audio-player.js"></script>
-    <script src="/js/clock.js"></script>
-    <script src="/js/talkingfuko.js"></script>
     <script>
         const select = document.getElementById("player-select");
         AudioPlayer.create(
@@ -819,7 +833,11 @@
             AudioPlayer.next();
         };
     </script>
+    <script src="/js/confetti.js"></script>
     <script src="/js/theme-switcher.js"></script>
+    <script src="/js/audio-player.js"></script>
+    <script src="/js/clock.js"></script>
+    <script src="/js/talkingfuko.js"></script>
 </body>
 
 </html>

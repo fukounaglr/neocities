@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>enter; fuko's world</title>
+    <title>enter; fuko's room</title>
 
     <link rel="icon" type="image/png" href="/ico.png" />
     <link rel="stylesheet" href="/style.css" />
@@ -37,7 +37,6 @@
             top: 0;
             width: 100%;
             text-align: center;
-            /*background-color: var(--colour);*/
             color: var(--primary-colour);
 
             & h4 {
@@ -49,21 +48,22 @@
             }
 
             & .head-info {
-                /*display: block;*/
                 margin-top: 5px;
             }
         }
 
         main {
-            max-width: 500px;
+            position: relative;
+            max-width: 550px;
             margin: auto;
             background-color: var(--colour);
-            padding: 10px 20px;
+            color: var(--pri);
             border: double var(--accent-colour) 4px;
-            overflow: auto;
+            overflow: hidden;
             align-content: center;
             aspect-ratio: 3/2;
-            position: relative;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
         }
 
 
@@ -77,9 +77,10 @@
             z-index: 100;
             position: fixed;
             background-color: var(--colour);
-            width: 100%;
-            height: 100%;
+            width: calc(100% - 20px);
             top: 0;
+            height: 100%;
+            padding: 50px 10px;
             text-align: center;
             vertical-align: middle;
             color: white;
@@ -95,34 +96,28 @@
                 color: var(--accent-colour);
             }
 
-            #phone-enter {
+            #phone-enter, #phone-dontask {
                 cursor: pointer;
                 color: var(--accent-colour);
                 text-decoration: underline;
             }
         }
 
-        #infobox-container {
-            display: block;
-            position: relative;
-            height: min-content;
-        }
-
         .infobox {
-            /*max-width: 300px;*/
-            background-color: var(--primary-colour);
-            padding: 5px;
-            margin: 10px;
-            border: solid 6px var(--acc);
-            width: 40%;
             position: relative;
+            height: 100%;
+            width: calc(100% - 30px);
+            overflow: auto;
+            padding: 0 15px;
+            align-content: center;margin:
         }
 
-        #box-3 {
-            float: right;
-            height: 300px;
-            z-index: 10;
-            overflow: auto;
+        #box-3{
+            background-color: var(--primary-colour);
+            color: var(--col);
+            grid-area: 1/2;
+            padding: 30px 15px;
+            height: calc(100% - 60px);
 
             & a::before {
                 display: none;
@@ -166,7 +161,6 @@
             left: 10px;
             pointer-events: none;
             z-index: 20;
-            display: none;
 
             & img {
                 max-width: 200px;
@@ -190,35 +184,49 @@
             }
         }
 
+        #rating {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 10;
+        }
+
 
         @media only screen and (max-width: 700px) {
-
-            #phone-splash {
-                display: block;
-            }
 
             main {
                 width: 80%;
                 font-size: 0.9Em;
                 overflow: hidden;
                 aspect-ratio: auto;
+                grid-template-columns: 1fr;
             }
 
             #luca100 {
                 position: relative;
                 margin-bottom: 50px;
+                left: 0;
+                bottom: 0;
+            }
+            .infobox{
+                height: auto;
+                width: auto;
+            }
+            #box-3{
+                grid-area: auto;
             }
 
+            #rating {
+                position: relative;
+                top: 0;
+                left: 0;
+                display: block;
+                margin-top: 20px;
+                text-align: center;
+            }
 
             #Tranarchy {
                 transform: translateX(-12px);
-            }
-        }
-
-        @media only screen and (max-width: 500px) {
-            #box-3 {
-                float: none;
-                width: auto;
             }
         }
     </style>
@@ -229,54 +237,56 @@
         <div>
             <h6>WARNING! PHONE DETECTED!</h6>
             <p>not all pages are mobile friendly! please consider switching to PC or a PC mode for best viewing!!</p>
-            <span id="phone-enter" onclick="hide()"> enter anyway</span>
+            <span id="phone-enter" onclick="hide()"> enter</span>
+            <span>|</span>
+            <span id="phone-dontask" onclick="dontask()"> don't ask again</span>
         </div>
     </div>
 
     <main>
+        <a id="rating" href="https://www.mabsland.com/Adoption.html" target="_blank"><img src="/images/Censor_Mc.gif" title="For mature audiences.  Contains high risk of violence, nudity, and adult situations.  Viewer should be at least 17 or with parental guidance."></a>
 
-        <div id="infobox-container">
-            <div class="infobox" id="box-3">
-                <h6>
-                    <img src="/graphics/pixels/pc.gif">
-                    Webrings
-                </h6>
-                <div style="font-size: 0.6Em; text-align: center;">
-                    <div id="Tranarchy">
-                        <script src="https://tranarchy-webring.neocities.org/SCRIPTS/tranarchy.js"></script>
-                    </div>
-
-                    <div id="autiring">
-                        <script type="text/javascript" src="https://ballonlea.neocities.org/autiring/onionring-variables.js"></script>
-                        <script type="text/javascript" src="https://ballonlea.neocities.org/autiring/onionring-widget.js"></script>
-                    </div>
-
-                    <div>
-                        <script src="https://nuthead.neocities.org/ring/ring.js"></script>
-                    </div>
-
-                    <script src="https://transring.neocities.org/ring.js" data-widget="cloud"></script>
-
-                    <script src="https://snewberry.neocities.org/catfolk/webstring.js"></script>
-
-                    <div>
-                        <map name="noaimini5">
-                            <area href="https://baccyflap.com/noai" shape="rect" coords="25,16,61,29" target="_blank" alt="no ai webring" title="no ai webring">
-                            <area href="https://baccyflap.com/noai/?prv&s=fkn" target="_top" shape="rect" coords="2,2,19,17" alt="previous" title="previous">
-                            <area href="https://baccyflap.com/noai/?rnd" target="_top" shape="rect" coords="66,22,70,28" alt="random" title="random">
-                            <area href="https://baccyflap.com/noai/?nxt&s=fkn" target="_top" shape="rect" coords="69,2,85,17" alt="next" title="next">
-                        </map>
-                        <img usemap="#noaimini5" src="https://baccyflap.com/noai/miniwidget5.gif" alt="the top of a fuzzy, black sphere with two arrows rising from it, one curving to the left, one to the right. across the bulk of the sphere it reads NO AI / WEBRING in squiggly, uneven letters and next to those words is a small question mark">
-                    </div>
-
-                    <a href="https://fanimated.net/mylittlepony/" target="_blank"><img src="/graphics/sites/mlpring.gif"></a>
-
+        <div class="infobox" id="box-3">
+            <h6>
+                <img src="/graphics/pixels/pc.gif">
+                Webrings
+            </h6>
+            <div style="font-size: 0.6Em; text-align: center;">
+                <div id="Tranarchy">
+                    <script src="https://tranarchy-webring.neocities.org/SCRIPTS/tranarchy.js"></script>
                 </div>
+
+                <div id="autiring">
+                    <script type="text/javascript" src="https://ballonlea.neocities.org/autiring/onionring-variables.js"></script>
+                    <script type="text/javascript" src="https://ballonlea.neocities.org/autiring/onionring-widget.js"></script>
+                </div>
+
+                <div>
+                    <script src="https://nuthead.neocities.org/ring/ring.js"></script>
+                </div>
+
+                <script src="https://transring.neocities.org/ring.js" data-widget="cloud"></script>
+
+                <script src="https://snewberry.neocities.org/catfolk/webstring.js"></script>
+
+                <div>
+                    <map name="noaimini5">
+                        <area href="https://baccyflap.com/noai" shape="rect" coords="25,16,61,29" target="_blank" alt="no ai webring" title="no ai webring">
+                        <area href="https://baccyflap.com/noai/?prv&s=fkn" target="_top" shape="rect" coords="2,2,19,17" alt="previous" title="previous">
+                        <area href="https://baccyflap.com/noai/?rnd" target="_top" shape="rect" coords="66,22,70,28" alt="random" title="random">
+                        <area href="https://baccyflap.com/noai/?nxt&s=fkn" target="_top" shape="rect" coords="69,2,85,17" alt="next" title="next">
+                    </map>
+                    <img usemap="#noaimini5" src="https://baccyflap.com/noai/miniwidget5.gif" alt="the top of a fuzzy, black sphere with two arrows rising from it, one curving to the left, one to the right. across the bulk of the sphere it reads NO AI / WEBRING in squiggly, uneven letters and next to those words is a small question mark">
+                </div>
+
+                <a href="https://fanimated.net/mylittlepony/" target="_blank"><img src="/graphics/sites/mlpring.gif"></a>
+
             </div>
         </div>
 
+        <div class="infobox">
         <header>
-            <h4>WELCOME TO FUKO'S ROOM!</h4>
+            <h4>FUKO'S ROOM</h4>
             <hr style="border-color: var(--pri)">
             <span class="head-info"><img src="/graphics/pixels/cat30.gif">
                 I'm a god's little meow meow!</span>
@@ -285,12 +295,18 @@
         </header>
 
 
+        <details style="color: var(--pri); margin-top: 20px">
+            <summary style="color: var(--acc)">heads up!</summary> this site uses a lot of javascript, is image-heavy and may contain some triggering content
+        </details>
+
+
         <a href="/room.html" id="enter">&gt;&gt;&gt; enter!!! </a>
 
         <p style="color: var(--primary-colour)">please leave your shoes at the door!</p>
+        </div>
     </main>
     <footer>
-        <p>Made in Phoenix code, tested in Firefox, hosted on <a href="https://neocities.org/site/fukounaglr"><img>Neocities</a></p>
+        <p>Made in Phoenix code, tested in Firefox, hosted on <a href="https://neocities.org/site/fukounaglr" class="noico">Neocities</a></p>
     </footer>
 
     <div id="luca100">
@@ -305,20 +321,26 @@
     <script type="text/javascript">
         const enter = document.getElementById("phone-enter");
         const splash = document.getElementById("phone-splash");
+        document.documentElement.setAttribute('mobile-warning', localStorage.getItem("mobwarn"));
 
         function hide() {
             splash.style.display = "none";
         }
+
+        function dontask() {
+            splash.style.display = "none";
+            localStorage.setItem('mobwarn', 'false');
+        }
+        if (localStorage.getItem("mobwarn") == "false") {
+            splash.style.display = "none";
+        } else if (window.matchMedia("(max-width: 600px)").matches) {
+            splash.style.display = "block";
+        }
     </script>
 
-
     <script>
-        function openFolder(a) {
-            document.getElementById(a).style.display = "block";
-        }
-
-        function closeFolder(a) {
-            document.getElementById(a).style.display = "none";
+        if (/headless/i.test(window.navigator.userAgent) || window.navigator.webdriver) {
+            window.location.replace("/thumb.html");
         }
     </script>
 
