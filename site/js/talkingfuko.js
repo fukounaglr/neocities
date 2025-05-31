@@ -2,6 +2,7 @@ var speed = 50;
 const box = document.getElementById("rpgtext");
 const imgIdle = document.getElementById("rpgimgidle");
 const imgTalk = document.getElementById("rpgimgtalk");
+let typingId = 0;
 
 const quote = [
             "Dimly lit, the room emits a hollow, muffled sound. It houses a single sorry soul, no other to be found",
@@ -39,7 +40,9 @@ const about = [
             "I live in your cat-puter!",
             "you are just as much a tool as i am!",
             "I may be just a program, but you're just 7 bars of soap",
-            "My gender is being witheld by the CIA and housed in undisclosed locations around the world"
+            "My gender is being witheld by the CIA and housed in undisclosed locations around the world",
+    "Help me pay my electricity bills! Being a robot is sometimes expensive",
+    "If i sound pleased about this, it' because i was programmed to sound like that, I am actually quite depressed"
         ];
 const joke = [
             "how do you call a horse that lives the next door? a neigh-bour.",
@@ -58,21 +61,23 @@ function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
 }
 async function speech(a) {
+    typingId++;
     imgIdle.style.display = "none";
     imgTalk.style.display = "block";
     const randomIndex = Math.floor(Math.random() * a.length);
     txt = a[randomIndex];
     box.innerHTML = "* ";
 
-    typeWriter();
+    typeWriter(typingId);
 
     await sleep(speed * txt.length * 1.2);
     imgIdle.style.display = "block";
     imgTalk.style.display = "none";
 }
 
-async function typeWriter() {
+async function typeWriter(myId) {
     for (let i = 0; i < txt.length; i++) {
+        if (myId !== typingId) return;
         console.log(i);
         box.innerHTML += txt.charAt(i);
         await sleep(speed);
