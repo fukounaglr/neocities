@@ -14,7 +14,9 @@ const quote = [
             "The screams of a tiny girl are of no concern to the whole wide world, no matter how loud",
             "well, this decease is defined by its treatment; you people make me sick!",
             "I wanna contribute to the chaos, I don't wanna watch and then complain",
-            "In my little space     nothing changes.        I don't like this place.        I wanna escape this"
+            "In my little space     nothing changes.        I don't like this place.        I wanna escape this",
+    "not a sibgle star graces our sky tonight.",
+    "Make sure you kiss your knuckles before you punch me in the face!"
         ];
 const talk = [
             "Being mentally ill is like being on hard drugs, but with no fun.",
@@ -48,7 +50,8 @@ const joke = [
             "catwalks? yeah it sure does.",
             "How do you call a gay ghost? A fa-ghost",
             "What does a door on a verge of mental break down say? 'I can't handle this anymore.",
-            "When did japanese start eating eggs? A long たまご!"
+            "When did japanese start eating eggs? A long たまご!",
+    "What grows on a faggot tree? Fruits."
         ];
 
 function sleep(ms) {

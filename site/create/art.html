@@ -12,9 +12,10 @@
         .tab {
             display: none;
         }
-        p{
-                margin: 0 5px;
-            }
+
+        p {
+            margin: 0 5px;
+        }
 
         .gallery-grid {
             display: none;
@@ -205,18 +206,23 @@
             margin: 10px;
 
             & a {
+                background-image: var(--blink);
+                background-size: cover;
                 display: block;
                 margin: 10px auto;
                 text-decoration: none;
                 padding: 20px;
                 background-color: var(--col);
                 width: 200px;
-                box-shadow: -7px 5px;
+                text-align-last: end;
+                box-shadow: -7px 5px var(--acc);
                 transform: translate(0, 0);
                 transition: .2;
+                color: var(--col);
 
                 &:hover {
-                    box-shadow: -7px 8px;
+                    color: white;
+                    box-shadow: -7px 8px white;
                     transform: translate(0, -3px);
                 }
             }
@@ -286,7 +292,6 @@
 <body>
     <main id="top">
         <header>
-            <a href="/room.html">go back</a>
             <h5 style="text-align: left; color: var(--acc)">&gt; <a href="#main" onclick="switchPage('main')" style="all: unset; cursor: pointer; text-decoration: underline">Art</a> <span id="pagename">- main</span></h5>
         </header>
 
@@ -297,7 +302,7 @@
                 <a href="#tools" onclick="switchPage('tools')">tools</a>
                 <a href="#comms" onclick="switchPage('comms')">comms</a>
                 <a href="#gallery" onclick="switchPage('gallery')">gallery</a>
-                <a href="#links" onclick="switchPage('links')">links</a>
+                <a href="#links" onclick="switchPage('links')">my links</a>
             </nav>
 
         </div>
@@ -348,28 +353,81 @@
         </div>
 
         <div class="tab" id="comms">
-            <h4>commission info</h4>
-            <h5><img src="/graphics/pixels/yippee-yippee-creature.gif"> status: closed!</h5>
-            <ul>
-                <li>communication through bsky or email</li>
-                <li>describe the commission &amp; character(s)</li>
-                <li>give as much references a you can</li>
-                <li>no deadline but WIPs will be given!</li>
-                <li>if you need the art done by certain date, inform me beforehand</li>
-            </ul>
-            <h6>payment</h6>
-            <ul>
-                <li>payment through hipolink or boosty</li>
-                <li>payment upfront</li>
-                <li>no refunds after i start the art</li>
-                <li>tips are welcome</li>
-            </ul>
+            <h5><img src="/graphics/pixels/yippee-yippee-creature.gif"> status: open!<br>
+                <!--<img title="comms are closed" src="/graphics/stamps/stamp001.png">-->
+                <img title="comms are open" src="/graphics/stamps/stamp0.png">
+            </h5>
+            <details>
+                <summary>
+                    <h5>commission info</h5>
+                </summary>
+                <ul>
+                    <li>communication through bsky or email</li>
+                    <li>describe the commission &amp; character(s)</li>
+                    <li>give as much references a you can</li>
+                    <li>no deadline but you can ask for WIPs</li>
+                    <li>I can reject a comm if I'm not comfortable drawing it</li>
+                    <li>Only simple background (gradient/pattern/shapes)</li>
+                    <li>I am allowed to post your comm on my socials and use it as example</li>
+                    <li>if you need the art done by certain date, inform me beforehand (might raise the cost)</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>
+                    <h5>payment</h5>
+                </summary>
+                <ul>
+                    <li>payment through hipolink or boosty</li>
+                    <li>payment upfront</li>
+                    <li>no refunds after i start the art</li>
+                    <li>tips are welcome</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>
+                    <h5>price list</h5>
+                </summary>
+                <div style="overflow: hidden">
+                    <img src="/images/art/new%20god.webp" width="200" style="float: left;">
+                    <h6>Headshot ~ 20$</h6>
+                    <p>A drawing of your character up to shoulders. Can be used for icons or profile pictures.</p>
+                    <p>Can be animated (will raise the cost). *</p>
+                </div>
+                <div style="overflow: hidden">
+                    <img src="/images/art/sam%20hhh.webp" width="200" style="float: left;">
+                    <h6>Halfbody ~ 30$</h6>
+                    <p>Somewhere in-between. [I don't have a full piece so example is a sketch]</p>
+                    <p>Can have up to 6 characters (will raise the cost).</p>
+                </div>
+                <div style="overflow: hidden">
+                    <img src="/images/art/you%20think%20youre%20cooler%20than%20me.webp" width="200" style="float: left;">
+                    <h6>Fullbody ~ 40$</h6>
+                    <p>A drawing of your character in full of their glory!</p>
+                    <p>Can have up to 6 characters (will raise the cost).</p>
+                </div>
+                <div style="overflow: hidden">
+                    <img src="/images/luca%20happy%20jummp.gif" width="200" style="float: left;">
+                    <h6>Chibi ~ 10$-30$</h6>
+                    <p>A drawing of your character as a chibi!.</p>
+                    <p>Can be animated (will raise the cost).</p>
+                </div>
+                <h6>Price may be raised for</h6>
+                <ul>
+                    <li>Animated: price will depend on how many frames there are and might be higher if your character has a lot of details</li>
+                    <li>Addicional characters: will add 50% of the original price</li>
+                    <li>Major tweaks after art is done</li>
+                    <li>If art needs to be done due to certain date and there are other comms being worked on</li>
+                </ul>
+            </details>
+            <hr>
 
 
             <table>
                 <tr>
-                    <td>can do</td>
-                    <td>won't do</td>
+                    <td>A-OK</td>
+                    <td>NOPE</td>
                 </tr>
                 <tr>
                     <td>
@@ -377,6 +435,7 @@
                             <li>humanoid (humans, furry), feral</li>
                             <li>light-mild gore</li>
                             <li>ship art</li>
+                            <li>suggestive</li>
                             <li>PFP, ref sheet, turnaround + more</li>
                         </ul>
                     </td>
@@ -385,14 +444,14 @@
                             <li>fetish art</li>
                             <li>hateful speech</li>
                             <li>complicated backgrounds</li>
-                            <li>nasty ships</li>
+                            <li>nasty ships or loli/cub</li>
                             <li>nsfw</li>
                         </ul>
                     </td>
                 </tr>
             </table>
+            <hr>
             <p>feel free to contact me [bsky or email] if you have any more questions</p>
-            <p>prices will be discussed on individual basis (min 10$, max - 100$)</p>
         </div>
 
         <div id="gallery" class="tab">
@@ -409,6 +468,10 @@
             <div class="gallery-grid gallery-container">
 
                 <!--<img src="/images/art/" loading="lazy">-->
+                <!--<img src="/images/art/" loading="lazy">-->
+                <!--<img src="/images/art/" loading="lazy">-->
+                <img src="/images/art/lipstick%20covered%20magnet.webp" loading="lazy">
+                <img src="/images/art/egg%20big%20eye.webp" loading="lazy">
                 <img src="/images/art/samdoomed.webp" loading="lazy">
                 <img src="/images/art/sam%20hhh.webp" loading="lazy">
                 <img src="/images/art/control%20baby.webp" loading="lazy">
