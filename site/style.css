@@ -338,8 +338,8 @@ a {
 
 .spoiler {
     background-color: black;
+    filter: brightness(0);
     border: 1px dotted white;
-    filter: brightness(0) opacity(0);
     color: black;
 
     &:hover {
