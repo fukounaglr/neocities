@@ -33,27 +33,27 @@ const talk = [
     "stereo sound makes my head hurt..."
         ];
 const about = [
-            "hi! i'm this site's mascot",
-            "My name is Fuko Una!",
-            "Fuko 2.0!",
-            "Powered by meowclawsoft",
-            "I live in your cat-puter!",
-            "you are just as much a tool as i am!",
-            "I may be just a program, but you're just 7 bars of soap",
-            "My gender is being witheld by the CIA and housed in undisclosed locations around the world",
-    "Help me pay my electricity bills! Being a robot is sometimes expensive",
-    "If i sound pleased about this, it' because i was programmed to sound like that, I am actually quite depressed"
+    "hi! i'm this site's mascot.",
+    "My name is Fuko Una!",
+    "Fuko 2.0!",
+    "Powered by meowclawsoft :3",
+    "I live in your cat-puter!",
+    "you are just as much a tool as i am!",
+    "I may be just a program, but you're just 7 bars of soap!",
+    "My gender is being witheld by the CIA and housed in undisclosed locations around the world.",
+    "Help me pay my electricity bills! Being a robot is sometimes expensive.",
+    "If i sound pleased about this, it's because i was programmed to sound like that, I am actually quite depressed."
         ];
 const joke = [
-            "how do you call a horse that lives the next door? a neigh-bour.",
-            "what do you call a sheep that can dance and sing? a lady ba-ba.",
-            "how do you make something holy? you beat the hell outta it.",
-            "what do you call a british dinosaur? a tea-rex.",
-            "cargo? yeah i hope it does",
-            "catwalks? yeah it sure does.",
-            "How do you call a gay ghost? A fa-ghost",
-            "What does a door on a verge of mental break down say? 'I can't handle this anymore.",
-            "When did japanese start eating eggs? A long たまご!",
+    "how do you call a horse that lives the next door? a neigh-bour.",
+    "what do you call a sheep that can dance and sing? a lady ba-ba.",
+    "how do you make something holy? you beat the hell outta it.",
+    "what do you call a british dinosaur? a tea-rex.",
+    "cargo? yeah i hope it does",
+    "catwalks? yeah it sure does.",
+    "How do you call a gay ghost? A fa-ghost",
+    "What does a door on a verge of mental break down say? 'I can't handle this anymore.",
+    "When did japanese start eating eggs? A long たまご!",
     "What grows on a faggot tree? Fruits."
         ];
 
@@ -62,8 +62,6 @@ function sleep(ms) {
 }
 async function speech(a) {
     typingId++;
-    imgIdle.style.display = "none";
-    imgTalk.style.display = "block";
     const randomIndex = Math.floor(Math.random() * a.length);
     txt = a[randomIndex];
     box.innerHTML = "* ";
@@ -78,6 +76,8 @@ async function speech(a) {
 async function typeWriter(myId) {
     for (let i = 0; i < txt.length; i++) {
         if (myId !== typingId) return;
+        imgIdle.style.display = "none";
+        imgTalk.style.display = "block";
         console.log(i);
         box.innerHTML += txt.charAt(i);
         await sleep(speed);
