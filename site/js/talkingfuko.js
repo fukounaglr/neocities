@@ -36,6 +36,7 @@ const about = [
     "hi! i'm this site's mascot.",
     "My name is Fuko Una!",
     "Fuko 2.0!",
+    "beep boop, i'm  a robot",
     "Powered by meowclawsoft :3",
     "I live in your cat-puter!",
     "you are just as much a tool as i am!",
