@@ -54,8 +54,7 @@
             left: 0;
             top: 0;
             width: 100%;
-            /*position: fixed;*/
-            /*display: grid;*/
+            height: 140px;
             display: none;
             grid-template-columns: 1fr 1fr 1fr;
 
@@ -66,6 +65,7 @@
                 text-decoration: none;
                 padding: 5px 10px;
                 margin: 5px;
+                align-content: center;
 
                 &::before {
                     display: none;
@@ -80,8 +80,11 @@
         }
 
         @media only screen and (max-width: 700px) {
+            body{
+                overflow: hidden;
+            }
             main {
-                height: 90vh;
+                height: calc(100vh - 140px);
                 display: block;
                 padding: 0;
                 overflow: auto;
@@ -100,20 +103,21 @@
 
 <body>
     <nav>
+            <a href="/room.html" target="_top" style="all: unset; grid-area: 1/1/span 1/ span 2; color: var(--pri); position: relative"><h4>graphics</h4></a>
+        <a href="#byme" style="background-color: var(--pri); color: var(--col)">by me</a>
         <a href="#badges">badges</a>
         <a href="#pixels">pixels</a>
         <a href="#buttons">buttons</a>
+        <a href="#dividers">dividers</a>
         <a href="#blinkies">blinkies</a>
         <a href="#stamps">stamps</a>
-        <a href="#byme">by me</a>
     </nav>
     <main>
-        <header class="graphics">
-            <h3>graphics</h3>
-        </header>
 
         <div class="graphics" id="badges">
             <h5>Badges</h5>
+            <!--<img src="/graphics/badges/">-->
+            <img src="/graphics/badges/webmaster.gif">
             <a href="https://www1.flightrising.com/forums/cc/3078623" target="_blank" style="text-decoration: none">
                 <img src="/graphics/badges/badge-aroace.png" />
                 <img src="/graphics/badges/badge-intergender.png" />
@@ -219,6 +223,13 @@
         <div class="graphics" id="buttons">
             <h5>buttons</h5>
             <!--<img src="/graphics/buttons/">-->
+            <!--<img src="/graphics/buttons/">-->
+            <img src="/graphics/buttons/ps2.jpg">
+            <img src="/graphics/buttons/makeasite.jpg">
+            <img src="/graphics/buttons/guestbook.jpg">
+            <img src="/graphics/buttons/comic%20sans.jpg">
+            <img src="/graphics/buttons/vhs.gif">
+            <img src="/graphics/buttons/player.gif">
             <a target="_blank" href="https://suntooth.online/images/buttons/copy_floppy.gif"><img src="/graphics/buttons/copy_floppy.gif"></a>
             <img src="/graphics/buttons/vap.png">
             <img src="/graphics/buttons/trans2.png">
@@ -261,6 +272,32 @@
             <a href="https://sapphic-cafe.neocities.org/buttons/sapphic-cafe-pride-button.png" target="_blank"><img src="/graphics/buttons/sapphic-cafe-pride-button.png" /></a>
             <a href="https://www.youtube.com/@kaleiido" target="_blank"><img src="/graphics/buttons/RICK%20RISK%20RISK.gif" /></a>
         </div>
+        <div class="graphics" id="dividers">
+            <h5>dividers</h5>
+            <!--<img src="/graphics/dividers/">-->
+            <img src="/graphics/dividers/paint.webp">
+            <img src="/graphics/dividers/stars.gif">
+            <img src="/graphics/dividers/neko.gif">
+            <img src="/graphics/dividers/skulls.gif">
+            <img src="/graphics/dividers/phone.gif">
+            <img src="/graphics/dividers/heart.gif">
+            <img src="/graphics/dividers/paster-stars.gif">
+            <img src="/graphics/dividers/glitter.gif">
+            <img src="/graphics/dividers/fish.gif">
+            <img src="/graphics/dividers/waves.gif">
+            <img src="/graphics/dividers/fbkpmu.png">
+            <img src="/graphics/dividers/c95zuz.png">
+            <img src="/graphics/dividers/4oiljv.png">
+            <img src="/graphics/dividers/code.webp">
+            <img src="/graphics/dividers/blood.gif">
+            <img src="/graphics/dividers/shells.webp">
+            <img src="/graphics/dividers/not-found.png">
+            <img src="/graphics/dividers/message.webp">
+            <img src="/graphics/dividers/berry.gif">
+            <img src="/graphics/dividers/xmas.gif">
+            <img src="/graphics/dividers/stars7divider.gif">
+            <img src="/graphics/dividers/divider02.gif">
+        </div>
 
 
 
@@ -272,6 +309,12 @@
             <!--<a href="" target="_blank"><img src="/graphics/blinkies/" /></a>-->
             <!--<a href="" target="_blank"><img src="/graphics/blinkies/" /></a>-->
             <!--<a href="" target="_blank"><img src="/graphics/blinkies/" /></a>-->
+            <!--<img src="/graphics/blinkies/" />-->
+            <img src="/graphics/blinkies/makeasite.gif" />
+            <a href="https://64.media.tumblr.com/e96804bc0775399dcc02713db6478290/06dd687212b1b0bd-fc/s400x600/bd8cf71dd4bf93941b3f6b90d0ad6bea29f01649.gif" target="_blank"><img src="/graphics/blinkies/lightnerslive.gif" /></a>
+            <img src="/graphics/blinkies/how2be.gif" />
+            <img src="/graphics/blinkies/af-fossils.webp" />
+            <a href="https://64.media.tumblr.com/98f6790a2a4953eab0fc3db2fea710c2/0c5330ca71a3c1f5-e9/s250x400/a19a132169d5838cc0385ee7d853decc69e4a13b.gif" target="_blank"><img src="/graphics/blinkies/emoticons.gif" /></a>
             <a href="https://prophetesque.gay/images/transsparkle.gif" target="_blank"><img src="/graphics/blinkies/transsparkle.gif" /></a>
             <a target="_blank" href="https://wrender.neocities.org"><img src="/graphics/blinkies/mikublinkie.gif" /></a>
             <a target="_blank" href="https://wrender.neocities.org"><img src="/graphics/blinkies/waberblinkie.gif" /></a>
@@ -437,6 +480,19 @@
 
         <div class="graphics" id="stamps" style="grid-area: 3/3 / span 1 / span 1">
             <h4>stamps</h4>
+            <!--<img src="/graphics/stamps/">-->
+            <img src="/graphics/stamps/imfine.gif">
+            <img src="/graphics/stamps/bedperson.gif">
+            <img src="/graphics/stamps/fourleaf.jpg">
+            <img src="/graphics/stamps/minnow.jpg">
+            <img src="/graphics/stamps/critter.jpg">
+            <img src="/graphics/stamps/kill.png">
+            <img src="/graphics/stamps/tomato.png">
+            <img src="/graphics/stamps/strawpage.png">
+            <img src="/graphics/stamps/webp.png">
+            <img src="/graphics/stamps/transgit.png">
+            <img src="/graphics/stamps/fis.png">
+            <img src="/graphics/stamps/fishtank.gif">
             <img src="/graphics/stamps/vio.gif">
             <img src="/graphics/stamps/whenidie.png">
             <img src="/graphics/stamps/you%20know.gif">
