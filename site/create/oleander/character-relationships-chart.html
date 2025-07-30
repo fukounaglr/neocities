@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>character relationship chart</title>
+    <link rel="icon" type="image/png" href="/ico.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/create/style.css" />
+
+    <style>
+        body {
+            width: 100vw;
+        }
+
+        main {
+            max-width: 600px;
+            align-items: center;
+            text-align-last: center;
+        }
+
+
+        .char-icon {
+            width: 150px;
+            border-radius: 50px;
+            border: 5px black solid;
+            transition: .5s;
+            cursor: pointer;
+
+            &:hover {
+                width: 200px;
+            }
+        }
+
+
+
+        .info-side-bar {
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .info-box {
+            padding: 20px 10px;
+            border: solid var(--acc);
+            margin: 20px;
+            color: white;
+            display: none;
+
+            & img {
+                width: 50px;
+                float: left;
+                margin: 2px;
+            }
+        }
+
+        .main {
+            background-color: orangered;
+            border: none;
+
+            & img {
+                width: 100px
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <img class="char-icon" onclick="showInfo(luca)" src="/create/images/luca-pfp.png">
+    </main>
+
+    <div class="info-side-bar">
+        <div class="info-box main luca">
+            <img src="/create/images/luca-pfp.png">
+            <h4>Luca</h4>
+            <p>this is main info about luca</p>
+        </div>
+        <div class="info-box luca mars">
+            <img src="/create/images/luca-pfp.png">
+            <img src="/create/images/mars-pfp.png">
+            <h4>Luca &amp; Mars</h4>
+            <p>this is info about luca and mars</p>
+        </div>
+    </div>
+
+
+    <script>
+
+        function showInfo(a) {
+            const infobox = document.querySelectorAll("info-box");
+            for (let i = 0; i < infobox.length; i++) {
+               infobox.style.display = "none";
+            }
+
+            const char = document.querySelectorAll(a);
+            for (let i = 0; i < char.length; i++) {
+               char.style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>

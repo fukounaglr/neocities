@@ -43,7 +43,7 @@ const about = [
     "I may be just a program, but you're just 7 bars of soap!",
     "My gender is being witheld by the CIA and housed in undisclosed locations around the world.",
     "Help me pay my electricity bills! Being a robot is sometimes expensive.",
-    "If i sound pleased about this, it's because i was programmed to sound like that, I am actually quite depressed."
+    "If i sound happy, it's because i was programmed to sound like that, I am actually quite depressed."
         ];
 const joke = [
     "how do you call a horse that lives the next door? a neigh-bour.",
@@ -55,7 +55,10 @@ const joke = [
     "How do you call a gay ghost? A fa-ghost",
     "What does a door on a verge of mental break down say? 'I can't handle this anymore.",
     "When did japanese start eating eggs? A long たまご!",
-    "What grows on a faggot tree? Fruits."
+    "What grows on a faggot tree? Fruits.",
+    "how do you call a gay spirder? a spigot",
+    "a car carreered? how much did it get paid?",
+    "ppl in stone age going to sleep be like: ah yes, bed rock"
         ];
 
 function sleep(ms) {
@@ -76,9 +79,9 @@ async function speech(a) {
 
 async function typeWriter(myId) {
     for (let i = 0; i < txt.length; i++) {
-        if (myId !== typingId) return;
         imgIdle.style.display = "none";
         imgTalk.style.display = "block";
+        if (myId !== typingId) return;
         console.log(i);
         box.innerHTML += txt.charAt(i);
         await sleep(speed);
