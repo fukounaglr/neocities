@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Papercraft</title>
+
+    <link rel="icon" type="image/png" href="/ico.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/create/style.css" />
+
+
+    <style>
+        header,
+        #side-col {
+            align-content: center;
+            display: grid;
+        }
+
+        b {
+            color: white;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .create-link {
+            background-color: dimgray;
+            text-align: left;
+            width: 90%;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+
+            & img {
+                width: 200px;
+                display: block;
+            }
+
+            &:hover {
+                color: lightgray;
+
+                & h5::before {
+                    letter-spacing: 0;
+                }
+            }
+
+            & h5::before {
+                content: ">>> ";
+                letter-spacing: -8px;
+                margin: auto 10px;
+                transition: .5s;
+            }
+
+            & a {
+                color: white;
+
+                & img {
+                    width: 16px;
+                    display: inline
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <main>
+        <header>
+            <a href="/create/index.html" style="position: absolute; top: 0; left: 0;">go back</a>
+            <h3>Papercraft</h3>
+            <p>Made with <a href="https://www.blender.org/">Blender</a> and <a href="https://papercraft-maker.com/">papercraft maker</a></p>
+            <details>
+                <summary>How to use</summary>
+                <p><b>1. cut</b> following the black solid lines</p>
+                <p><b>2. fold</b> dashed lines</p>
+                <p><b>3. glue</b> the parts with the same number/letter</p>
+                <p><b>done!</b> now you have paper model :&#41;</p>
+            </details>
+        </header>
+        <hr>
+        <div class="blue-bg create-link">
+            <h5>token / p3t / femtanyl</h5>
+            <p>By Noelle Mansbridge /<a href="https://www.youtube.com/@Femtanyl03">femtanyl</a></p>
+            <img src="/create/images/femtaanyl-trans.gif">
+            <a href="/create/images/femtanyl-papercraft-1.png" download><img src="/graphics/pixels/disk1.gif"> page #1</a>
+            <a href="/create/images/femtanyl-papercraft-2.png" download><img src="/graphics/pixels/disk1.gif"> page #2</a>
+        </div>
+        <div class="green-bg create-link">
+            <h5>the_p.AI.nter</h5>
+            <p>From <a href="https://urbanshade.org/" >Pressure</a></p>
+            <img src="/create/images/PainterRender.png">
+            <a href="/create/images/painter-papercraft.png" download><img src="/graphics/pixels/disk1.gif"> page #1</a>
+        </div>
+    </main>
+</body>
+
+</html>
