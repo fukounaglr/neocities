@@ -58,7 +58,8 @@ const joke = [
     "What grows on a faggot tree? Fruits.",
     "how do you call a gay spirder? a spigot",
     "a car carreered? how much did it get paid?",
-    "ppl in stone age going to sleep be like: ah yes, bed rock"
+    "ppl in stone age going to sleep be like: ah yes, bed rock",
+    "how do you call a sleeping male cow? a bulldozer."
         ];
 
 function sleep(ms) {
