@@ -16,6 +16,7 @@
                     rgba(0, 0, 0, 0.9)),
                 var(--bg);
             background: cross-fade();
+            background-size: cover;
             width: 100%;
             min-height: 100vh;
             background-position: center;
@@ -25,7 +26,7 @@
         }
 
         footer {
-            color: var(--acc);
+            color: white;
             font-size: small;
             text-align: center;
             margin: 5px;
@@ -36,8 +37,7 @@
             position: relative;
             top: 0;
             width: 100%;
-            text-align: center;
-            color: var(--primary-colour);
+            text-align: left;
 
             & h4 {
                 margin: auto;
@@ -56,9 +56,6 @@
             position: relative;
             max-width: 550px;
             margin: auto;
-            background-color: var(--colour);
-            color: var(--pri);
-            border: double var(--accent-colour) 4px;
             overflow: hidden;
             align-content: center;
             aspect-ratio: 3/2;
@@ -69,21 +66,19 @@
 
 
         #hitcount {
-            color: var(--accent-colour);
+            color: var(--acc);
         }
 
 
         #phone-splash {
             z-index: 100;
             position: fixed;
-            background-color: var(--colour);
             width: calc(100% - 20px);
             top: 0;
             height: 100%;
             padding: 50px 10px;
             text-align: center;
             vertical-align: middle;
-            color: white;
             display: none;
 
             & div {
@@ -92,13 +87,9 @@
                 height: 100%
             }
 
-            & h6 {
-                color: var(--accent-colour);
-            }
-
-            #phone-enter, #phone-dontask {
+            #phone-enter,
+            #phone-dontask {
                 cursor: pointer;
-                color: var(--accent-colour);
                 text-decoration: underline;
             }
         }
@@ -106,18 +97,20 @@
         .infobox {
             position: relative;
             height: 100%;
-            width: calc(100% - 30px);
+            width: calc(100% - 38px);
             overflow: auto;
             padding: 0 15px;
-            align-content: center;margin:
+            align-content: center;
+            overflow-x: hidden;
         }
 
-        #box-3{
-            background-color: var(--primary-colour);
+        #box-3 {
             color: var(--col);
-            grid-area: 1/2;
+            grid-area: 2/2;
             padding: 30px 15px;
             height: calc(100% - 60px);
+            border: 2px solid gray;
+            margin-left: 2px;
 
             & a::before {
                 display: none;
@@ -125,37 +118,12 @@
             }
         }
 
-        #enter {
-            -webkit-text-stroke: 2px var(--pri);
-            z-index: 2;
-            margin: 15% auto;
-            text-align: center;
-            position: relative;
-            overflow-x: clip;
-            z-index: 10;
-            font-family: 'staypuft';
-            font-size: 4Em;
-            color: var(--colour);
-            cursor: pointer;
-            text-decoration-color: var(--pri);
-
-            &::before {
-                display: none;
-            }
-
-            &:hover {
-                -webkit-text-stroke: 2px var(--acc);
-                text-decoration-color: var(--acc);
-            }
-        }
-
         #autiring table {
             margin: auto;
         }
 
-        #luca100 {
-            text-align: center;
-            color: var(--pri);
+        #news {
+            max-width: 300px;
             position: absolute;
             bottom: 20px;
             left: 10px;
@@ -163,11 +131,7 @@
             z-index: 20;
 
             & img {
-                max-width: 200px;
-            }
-
-            & p {
-                color: var(--acc)
+                max-width: 150px;
             }
         }
 
@@ -186,8 +150,8 @@
 
         #rating {
             position: absolute;
-            top: 0;
-            right: 0;
+            top: 2px;
+            right: 2px;
             z-index: 10;
         }
 
@@ -202,27 +166,22 @@
                 grid-template-columns: 1fr;
             }
 
-            #luca100 {
+            #news {
                 position: relative;
+                width: calc(80% - 10px);
                 margin-bottom: 50px;
-                left: 0;
+                left: 10%;
                 bottom: 0;
             }
-            .infobox{
+
+            .infobox {
                 height: auto;
                 width: auto;
             }
-            #box-3{
-                grid-area: auto;
-            }
 
-            #rating {
-                position: relative;
-                top: 0;
-                left: 0;
-                display: block;
-                margin-top: 20px;
-                text-align: center;
+            #box-3 {
+                grid-area: 3/1;
+                margin-left: 3px;
             }
 
             #Tranarchy {
@@ -233,7 +192,7 @@
 </head>
 
 <body>
-    <div id="phone-splash">
+    <div id="phone-splash" class="window">
         <div>
             <h6>WARNING! PHONE DETECTED!</h6>
             <p>not all pages are mobile friendly! please consider switching to PC or a PC mode for best viewing!!</p>
@@ -243,14 +202,43 @@
         </div>
     </div>
 
-    <main>
+    <main class="window">
+        <div class="win-title" style="grid-area: 1/1/span 1/span 2"><img src="/graphics/pixels/agua.gif"> Enter!!</div>
+
         <a id="rating" href="https://www.mabsland.com/Adoption.html" target="_blank"><img src="/images/Censor_Mc.gif" title="For mature audiences.  Contains high risk of violence, nudity, and adult situations.  Viewer should be at least 17 or with parental guidance."></a>
 
-        <div class="infobox" id="box-3">
-            <h6>
+
+
+        <div class="infobox win-raise win-content">
+            <header>
+                <marquee style="margin-top: 5px">FUKOUNA GIRL! FUKOUNA GIRL! IF YOU WANNA FLAY ME, LETS SEE WHATS INSIDE!</marquee>
+                <p>
+                    <img src="/graphics/blinkies/danger-to-society.gif" width="45%">
+                    <img src="/graphics/blinkies/a%20life.gif" width="45%">
+                </p>
+                <span class="head-info"><img src="/graphics/pixels/cat30.gif">
+                    I'm a god's little meow meow!</span><br>
+                <a href="/update-log.html" id="updd" class="head-info"> Last updated: <span id="lastupdate"></span></a><br>
+                <span class="head-info"><img src="/graphics/pixels/gleach_allen_pixel.gif"> Visitors: <span id="hitcount"></span></span>
+            </header>
+            <div style="height: 20px;">
+            <hr style="border: 1px solid; width: 100%; position: absolute; left: 0;">
+            </div>
+            <details>
+                <summary>heads up!</summary> <div class="win-content">this site uses a lot of javascript, is image-heavy and may contain some triggering content: <span class="spoiler">slurs, drug use, cartoon gore, topics of suicide and mental illness</span>. Proceed only if you are OK with all of these and are over 17.</div>
+            </details>
+
+
+            <p><a href="/room.html" id="enter" class="win-button">&gt;&gt;&gt; enter!!! </a></p>
+
+            <p>please leave your shoes at the door!</p>
+        </div>
+
+        <div class="infobox win-raise win-content " id="box-3">
+            <div class="win-subtitle">
                 <img src="/graphics/pixels/pc.gif">
                 Webrings
-            </h6>
+            </div>
             <div style="font-size: 0.6Em; text-align: center;">
                 <div id="Tranarchy">
                     <script src="https://tranarchy-webring.neocities.org/SCRIPTS/tranarchy.js"></script>
@@ -283,39 +271,18 @@
 
             </div>
         </div>
-
-        <div class="infobox">
-        <header>
-            <h4>FUKO'S ROOM</h4>
-            <!--<hr style="border-color: var(--pri)">-->
-            <img src="/graphics/blinkies/danger-to-society.gif" style="margin: auto; display: block;">
-            <span class="head-info"><img src="/graphics/pixels/cat30.gif">
-                I'm a god's little meow meow!</span>
-            <a href="/update-log.html" id="updd" class="head-info"> Last updated: <span id="lastupdate"></span></a>
-            <span class="head-info">Visitors: <span id="hitcount"></span></span>
-        </header>
-
-
-        <details style="color: var(--pri); margin-top: 20px">
-            <summary style="color: var(--acc)">heads up!</summary> this site uses a lot of javascript, is image-heavy and may contain some triggering content: <span class="spoiler">slurs, drug use, cartoon gore, topics of suicide and mental illness</span>. Proceed only if you are OK with all of these and are over 16.
-        </details>
-
-
-        <a href="/room.html" id="enter">&gt;&gt;&gt; enter!!! </a>
-
-        <p style="color: var(--primary-colour)">please leave your shoes at the door!</p>
-        </div>
     </main>
     <footer>
         <p>Made in Phoenix code, tested in Firefox, hosted on <a href="https://neocities.org/site/fukounaglr" class="noico">Neocities</a></p>
     </footer>
 
-    <div id="luca100">
-        <img src="/create/images/PainterRender.png">
-        <!--<img src="/images/luca%20happy%20jummp.gif">-->
-        <h4>New papercraft!</h4>
-        <p>find it <a href="/create/papercraft.html" class="noico">here!!!!</a></p>
-    </div>
+    <div id="news" class="window">
+        <div class="win-title"><img src="/graphics/pixels/cat34.gif"> news</div>
+        <div class="win-content">
+        <img src="/images/manglerepair.png">
+        <h4>Update pending!</h4>
+        <p>Some things may be broken right now.</p>
+    </div></div>
 
 
 

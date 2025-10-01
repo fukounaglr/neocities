@@ -59,7 +59,8 @@ const joke = [
     "how do you call a gay spirder? a spigot",
     "a car carreered? how much did it get paid?",
     "ppl in stone age going to sleep be like: ah yes, bed rock",
-    "how do you call a sleeping male cow? a bulldozer."
+    "how do you call a sleeping male cow? a bulldozer.",
+    "fungi? what's so fun about him?"
         ];
 
 function sleep(ms) {

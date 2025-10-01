@@ -54,15 +54,10 @@
 
 /*THEME*/
 :root {
-    --col: var(--colour);
-    --acc: var(--accent-colour);
-    --acc-hov: var(--accent-colour-hover);
-    --pri: var(--primary-colour);
-    --cats-display: none;
     --hell-display: none;
     --green-display: none;
     --neon-display: none;
-    --underwater-display: none;
+    --water-display: none;
     --depths-display: none;
     scrollbar-color: var(--accent-colour) white;
     scrollbar-width: thin;
@@ -86,27 +81,16 @@
 }
 
 :root {
-    --primary-colour: #c6bda5;
-    --colour: #201818;
-    --accent-colour: #ce5229;
-    --accent-colour-hover: darkred;
-    --cats-display: block;
-    --bg: url(/images/stars-snes.png);
-    --fav: url(/graphics/pixels/heart.gif);
-    --blink: url(/graphics/blinkies/boo_blank.gif);
-}
 
-:root[theme="underwater"] {
-    --primary-colour: mediumturquoise;
-    --accent-colour: #db3c70;
-    --accent-colour-hover: #b42054;
-    --colour: #181818;
-    --underwater-display: block;
-    --cats-display: none;
-    --bg: url(/images/underwater-snes.png);
+    --col: #1F1F1F;
+    --acc: #E35469;
+    --acc-hov: lightpink;
+    --pri: #BAFFFF;
+    --sec: #55A9C9;
+    --bg-col: seashell;
+    --bg: url(/images/abstract.jpg);
     --fav: url(/graphics/pixels/vapo2.gif);
     --blink: url(/graphics/blinkies/pirate_blank.gif);
-    --theme-filter: hue-rotate(-20deg) brightness(100%) contrast(90%) saturate(140%);
 }
 
 :root[theme="green"] {
@@ -242,7 +226,11 @@ iframe {
     border: none;
 }
 
-summary h1, summary h2, summary h3, summary h4, summary h5 {
+summary h1,
+summary h2,
+summary h3,
+summary h4,
+summary h5 {
     margin: auto;
     text-align: left;
     display: inline;
@@ -301,7 +289,7 @@ html {
     font-style: normal;
     text-wrap: normal;
     color: var(--colour);
-    font-size: 1em;
+    font-size: 1Em;
 }
 
 
@@ -376,6 +364,67 @@ a {
 
 
 
+.window {
+    background-color: lightgrey;
+    width: fit-content;
+    border: 5px outset gray;
+    box-shadow: 5px 5px black;
+    color: black;
+}
+
+.win-title {
+    background-image: linear-gradient(to right, darkblue, lightcyan);
+    padding: 5px 15px;
+    margin: 3px;
+    position: relative;
+    color: white;
+    z-index: 1;
+
+    &::after {
+        content: "- ◻ x";
+        position: absolute;
+        right: 5px;
+        color: black;
+
+    }
+}
+.win-subtitle{
+    margin: 0 -20px;
+   margin-top: -30px;
+    border: solid 2px gray;
+    padding: 5px 10px;
+}
+
+.win-content {
+    padding: 2px 5px;
+    margin: 3px;
+    border: 2px solid gray;
+}
+.win-raise {
+    margin-top: -6px;
+}
+
+.win-button {
+    all: unset;
+    color: black;
+    border: 2px gray solid;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+
+    &::before {
+        content: "";
+        display: none;
+    }
+
+    &:hover {
+        color: dimgray;
+    }
+}
+
+
+
+
 .slides-container {
 
     width: auto;
@@ -438,9 +487,11 @@ a {
         }
     }
 }
-.gallery-container img{
+
+.gallery-container img {
     cursor: zoom-in;
 }
+
 .popup {
     position: relative;
     position: fixed;

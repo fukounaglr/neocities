@@ -12,44 +12,26 @@
 
     <style>
         body {
-            background-color: black;
-            background-image: url(/images/color%20bars.png);
+            background-image: url(https://i.pinimg.com/originals/e0/cf/be/e0cfbe7818f6d5f7d657b17b054175d4.gif);
             background-position: bottom;
             background-size: cover;
             align-content: center;
             background-repeat: no-repeat;
             height: 100vh;
+            background-blend-mode: overlay;
         }
 
-        main{
+        main {
             max-width: 500px;
             margin: auto;
         }
 
         * {
-            color: white;
-            text-align: center;
-        }
-
-        a {
-                text-decoration: none;
-            & img {
-                transition: 0.5s;
-            }
-            & p{
-                background-color: black;
-                padding: 10px
-            }
-        }
-
-        a:hover img {
-            filter: brightness(60%);
+            color: black;
+            text-align: left !important;
         }
 
         @media only screen and (max-width: 700px) {
-            a {
-                left: 10px
-            }
         }
     </style>
 </head>
@@ -57,11 +39,16 @@
 
 <body>
     <main>
-        <h4>PLEASE STAND BY</h4>
-        <a href="/room.html">
-            <img src="/images/manglerepair.png" width="90%">
-            <p>You have gone too deep into the code.</p>
-        </a>
+        <div class="window">
+            <div class="win-title"><img src="/graphics/pixels/warning.gif"> Error 404</div>
+            <div class="win-content">
+                <h4>OOPS!!!</h4>
+                <p>It seems like the page you are looking for does not exist!</p>
+                <p><a href="/room.html" class="win-button">
+                    &lt; Go back
+                </a> </p>
+            </div>
+        </div>
     </main>
 </body>
 
