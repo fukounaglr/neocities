@@ -18,11 +18,9 @@
             height: 100vh;
             grid-template-columns: 1fr 2fr;
             overflow: hidden;
-            color: var(--primary-colour);
         }
 
         .side-col {
-            background-color: var(--colour);
             height: 100%;
             align-content: center;
             overflow: auto;
@@ -77,26 +75,26 @@
         }
 
         #a {
-            color: var(--colour);
+            color: var(--col);
             top: 0;
             left: 0;
         }
 
         #b {
-            -webkit-text-stroke: 3px var(--accent-colour);
+            -webkit-text-stroke: 3px var(--acc);
             top: 5px;
             left: -5px;
         }
 
         #c {
-            -webkit-text-stroke: 3px var(--primary-colour);
+            -webkit-text-stroke: 3px var(--pri);
             top: 10px;
             left: -10px;
         }
 
         #themeSwitcher {
             all: unset;
-            background-color: var(--accent-colour);
+            background-color: var(--acc);
             text-align: center
         }
 
@@ -113,12 +111,12 @@
         #fontSwitcher {
             border: none;
             border-radius: 0;
-            background-color: var(--accent-colour);
+            background-color: var(--acc);
             font-family: "OpenDyslexic";
 
             &.active {
-                background-color: var(--primary-colour);
-                color: var(--accent-colour)
+                background-color: var(--pri);
+                color: var(--acc)
             }
         }
 
@@ -142,7 +140,7 @@
 </head>
 
 <body>
-    <div class="side-col">
+    <div class=" window side-col">
 
         <h3>where to?</h3>
 
@@ -150,7 +148,7 @@
             <span id="play" onclick="playAudio('https://file.garden/ZjOP8Ik9OUXT6YVm/weezer%20riff.mp3')" style="display: block"> do not click here! </span>
         </div>
 
-        <ol>
+        <ol class="win-content">
             <li>
                 <p>main</p>
                 <ul>

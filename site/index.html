@@ -28,8 +28,8 @@
         footer {
             color: white;
             font-size: small;
-            text-align: center;
-            margin: 5px;
+            text-align: left;
+            margin: 25px;
         }
 
         header {
@@ -55,7 +55,7 @@
         main {
             position: relative;
             max-width: 550px;
-            margin: auto;
+            margin: 20px;
             overflow: hidden;
             align-content: center;
             aspect-ratio: 3/2;
@@ -125,8 +125,8 @@
         #news {
             max-width: 300px;
             position: absolute;
-            bottom: 20px;
-            left: 10px;
+            top: 20px;
+            right: 20px;
             pointer-events: none;
             z-index: 20;
 
@@ -209,7 +209,7 @@
 
 
 
-        <div class="infobox win-raise win-content">
+        <div class="win-content" style="position: relative; height: calc(100% - 13px)">
             <header>
                 <marquee style="margin-top: 5px">FUKOUNA GIRL! FUKOUNA GIRL! IF YOU WANNA FLAY ME, LETS SEE WHATS INSIDE!</marquee>
                 <p>
@@ -222,14 +222,15 @@
                 <span class="head-info"><img src="/graphics/pixels/gleach_allen_pixel.gif"> Visitors: <span id="hitcount"></span></span>
             </header>
             <div style="height: 20px;">
-            <hr style="border: 1px solid; width: 100%; position: absolute; left: 0;">
+                <hr style="border: 1px solid; width: 100%; position: absolute; left: 0;">
             </div>
             <details>
-                <summary>heads up!</summary> <div class="win-content">this site uses a lot of javascript, is image-heavy and may contain some triggering content: <span class="spoiler">slurs, drug use, cartoon gore, topics of suicide and mental illness</span>. Proceed only if you are OK with all of these and are over 17.</div>
+                <summary>heads up!</summary>
+                <div class="win-content">this site uses a lot of javascript, is image-heavy and may contain some triggering content: <span class="spoiler">slurs, drug use, cartoon gore, topics of suicide and mental illness</span>. Proceed only if you are OK with all of these and are over 16.</div>
             </details>
 
 
-            <p><a href="/room.html" id="enter" class="win-button">&gt;&gt;&gt; enter!!! </a></p>
+            <p><a href="/site-map.html" id="enter" class="win-button">&gt;&gt;&gt; enter!!! </a></p>
 
             <p>please leave your shoes at the door!</p>
         </div>
@@ -276,44 +277,54 @@
         <p>Made in Phoenix code, tested in Firefox, hosted on <a href="https://neocities.org/site/fukounaglr" class="noico">Neocities</a></p>
     </footer>
 
-    <div id="news" class="window">
-        <div class="win-title"><img src="/graphics/pixels/cat34.gif"> news</div>
-        <div class="win-content">
-        <img src="/images/manglerepair.png">
-        <h4>Update pending!</h4>
-        <p>Some things may be broken right now.</p>
-    </div></div>
+    <div id="news">
+        <div class="window" style="width: 300px">
+            <div class="win-title"><img src="/graphics/pixels/cat34.gif"> news</div>
+            <div class="win-content">
+                <img src="/images/manglerepair.png">
+                <h4>Update pending!</h4>
+                <p>Some things may be broken right now.</p>
+            </div>
+        </div>
+
+            <div class="window" style="width: 300px; margin-top: 20px">
+                <div class="win-title"><img src="/graphics/pixels/cat34.gif"> log</div>
+                <div class="win-content">
+                    <iframe title="update log" style="width: 100%; height: 200px; overflow: scroll" src="/update-log.html"></iframe>
+                </div>
+            </div>
+        </div>
 
 
 
-    <script src="/js/views-update.js"> </script>
-    <script type="text/javascript">
-        const enter = document.getElementById("phone-enter");
-        const splash = document.getElementById("phone-splash");
-        document.documentElement.setAttribute('mobile-warning', localStorage.getItem("mobwarn"));
+        <script src="/js/views-update.js"> </script>
+        <script type="text/javascript">
+            const enter = document.getElementById("phone-enter");
+            const splash = document.getElementById("phone-splash");
+            document.documentElement.setAttribute('mobile-warning', localStorage.getItem("mobwarn"));
 
-        function hide() {
-            splash.style.display = "none";
-        }
+            function hide() {
+                splash.style.display = "none";
+            }
 
-        function dontask() {
-            splash.style.display = "none";
-            localStorage.setItem('mobwarn', 'false');
-        }
-        if (localStorage.getItem("mobwarn") == "false") {
-            splash.style.display = "none";
-        } else if (window.matchMedia("(max-width: 600px)").matches) {
-            splash.style.display = "block";
-        }
-    </script>
+            function dontask() {
+                splash.style.display = "none";
+                localStorage.setItem('mobwarn', 'false');
+            }
+            if (localStorage.getItem("mobwarn") == "false") {
+                splash.style.display = "none";
+            } else if (window.matchMedia("(max-width: 600px)").matches) {
+                splash.style.display = "block";
+            }
+        </script>
 
-    <script>
-        if (/headless/i.test(window.navigator.userAgent) || window.navigator.webdriver) {
-            window.location.replace("/thumb.html");
-        }
-    </script>
+        <script>
+            if (/headless/i.test(window.navigator.userAgent) || window.navigator.webdriver) {
+                window.location.replace("/thumb.html");
+            }
+        </script>
 
-    <script src="/js/theme-switcher.js"></script>
+        <script src="/js/theme-switcher.js"></script>
 
 </body>
 
