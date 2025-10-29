@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -10,14 +10,13 @@
     <link rel="stylesheet" href="style.css" />
 
     <style>
+        @import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+
         * {
             --bg: url(/images/waves.jpg);
-            --colour: white;
-            --accent-colour: #44caca;
-            --accent-colour-hover: #01769c;
-            --primary-colour: black;
+            --acc: #44caca;
+            --acc-hov: #01769c;
             --fav: url(/graphics/pixels/agua.gif);
-            color: var(--colour);
         }
 
         body {
@@ -30,69 +29,23 @@
         }
 
         main {
-            max-width: 500px;
+            max-width: 1200px;
             margin: 30px auto;
             height: 100%;
             position: relative;
+            display: grid;
+            grid-template-areas: side img links;
         }
 
         #textbox {
-            background-color: var(--primary-colour);
-            border: solid 2px var(--colour);
             padding: 15px;
             height: calc(100% - 34px);
             overflow: auto;
-
-            & p::first-letter, div::first-letter {
-                font-size: 1.2rem;
-                text-transform: uppercase;
-                font-weight: bold;
-                color: var(--accent-colour-hover);
-            }
         }
 
-        #picbox {
-            position: absolute;
-            top: 0;
-            left: -212px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%;
-
-            & img {
-                width: 170px;
-                border: 2px var(--colour) solid;
-            }
-        }
-
-        #vh {
-            height: calc(100% - 40px);
-            border-left: 2px var(--accent-colour)solid;
-            position: absolute;
-            top: 20px;
-            left: -20px;
-            margin: auto;
-        }
-
-        hr {
-            width: 90%;
-        }
-
-        #title {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100px;
-            transform: translate(calc(-120% - 212px), 0);
-            writing-mode: sideways-lr;
-            text-align: end;
-
-            & h3 {
-                color: var(--primary-colour);
-                -webkit-text-stroke: 1px white;
-                text-align: unset;
-            }
+        #quizzes img {
+            max-width: 90%;
+            max-height: 140px;
         }
 
         #body {
@@ -105,13 +58,65 @@
             transform: translate(120%, 0);
         }
 
-        #lyric-marq {
-            color: var(--accent-colour);
+        .col-3 {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-areas:
+                "likes profile"
+                "about profile";
+            grid-template-columns: 2fr 1fr;
         }
 
-        h6 {
-            text-transform: uppercase;
-            color: var(--accent-colour-hover);
+        .collumn {
+            border: 2px solid darkgray;
+            margin: 1px;
+            overflow: auto;
+        }
+
+        .pfp {
+            width: calc(100% - 8px);
+            aspect-ratio: 1/1;
+            margin: auto;
+            border: solid 2px gray;
+            margin: 2px;
+        }
+
+        #win-links a {
+            color: var(--col);
+            margin-left: 5px;
+
+            &::before {
+                display: none;
+                content: "";
+            }
+
+            &:hover {
+                font-style: italic;
+                text-decoration: underline;
+            }
+        }
+
+        .win-content {
+            padding: 2px 5px;
+            margin: 5px;
+            border: 2px solid gray;
+            height: calc(100% - 5em - 7px);
+        }
+
+        .tab {
+            display: none;
+            overflow: auto;
+            max-height: 100%;
+        }
+
+        #misc {
+            display: block;
+        }
+
+        .stamps img {
+            margin: 0;
+            width: 30%;
         }
 
         @media only screen and (max-width: 700px) {
@@ -148,46 +153,178 @@
             #vh {
                 display: none;
             }
-
-            #title {
-                width: 90%;
-                transform: translate(0, 0);
-                writing-mode: horizontal-tb;
-                text-align: end;
-
-                & h3 {
-                    font-size: 2.5Em;
-                }
-            }
         }
     </style>
 </head>
 
 <body>
     <main>
-
-        <div id="title">
-            <a href="/room.html">← go back</a>
-            <h3>WEBMASTER</h3>
+        <div class="snowflakes">
+            <div class="snowflake"><img src="/graphics/pixels/agua.gif" /></div>
+            <div class="snowflake"><img src="/graphics/pixels/agua.gif" /></div>
+            <div class="snowflake"><img src="/graphics/pixels/agua.gif" /></div>
+            <div class="snowflake"><img src="/graphics/pixels/agua.gif" /></div>
+            <div class="snowflake"><img src="/graphics/pixels/agua.gif" /></div>
+            <div class="snowflake"><img src="/graphics/pixels/agua.gif" /></div>
+            <div class="snowflake"><img src="/graphics/pixels/agua.gif" /></div>
         </div>
-        <div id="textbox">
+
+        <div>
+            <div class="window">
+                <div class="win-title">Links</div>
+                <div class="win-content" id="links">
+                    <a class="button noico" href="https://fukounaglr.straw.page/">strawpage</a>
+                    <a class="button noico" href="https://bsky.app/profile/fukounaglr.bsky.social">bsky</a>
+                    <a class="button noico" href="https://youtube.com/@fukounaglr">youtube</a>
+                    <a class="button noico" href="https://toyhou.se/fukouna">toyhouse</a>
+                    <a class="button noico" href="https://casketkid.bandcamp.com/">bandcamp</a>
+                    <a class="button noico" href="https://discord.gg/XxKaGgukz">discord</a>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="window" style="width: 500px">
+                <div class="win-title">
+                    <img src="/graphics/badges/webmaster.gif" />
+                </div>
+                <div class="win-content" style="border: none">
+                    <div id="win-links">
+                        <a onclick="switchPage('misc')">misc</a>
+                        <a onclick="switchPage('music')">music</a>
+                        <a onclick="switchPage('tv')">tv</a>
+                        <a onclick="switchPage('games')">games</a>
+                        <a onclick="switchPage('quizzes')">quizzes</a>
+                    </div>
+                    <div class="col-3">
+                        <div class="collumn" id="likes" style="grid-area: likes; height: 200px">
+                            <div id="misc" class="tab">
+                                <img src="/graphics/badges/badge-autistic.png" />
+                                <img src="/graphics/badges/badge-disabled.png" />
+                                <img src="/graphics/badges/badge-aroace.png" />
+                                <img src="/graphics/badges/badge-intergender.png" />
+                                <img src="/graphics/badges/aphantasia.png" />
+                                <img src="/graphics/badges/badge-selectivemutism.png" />
+                                <!--<img src="/graphics/badges/badge-system.png">-->
+                                <br />
+                                <img src="/graphics/buttons/trans2.png" />
+                                <img src="/graphics/buttons/fuckingwebmaster.gif" />
+                                <img src="/graphics/buttons/autistic.png" />
+                                <img src="/graphics/buttons/comic%20sans.jpg" />
+                                <img src="/graphics/buttons/hemp.gif" />
+                                <img src="/graphics/buttons/css.png" />
+                                <br />
+                                <div class="stamps">
+                                    <img src="/graphics/stamps/headpats.png" />
+                                    <img src="/graphics/stamps/whenidie.png" />
+                                    <img src="/graphics/stamps/gender.png" />
+                                    <img src="/graphics/stamps/069.gif" />
+                                    <img src="/graphics/stamps/imfine.gif" />
+                                    <img src="/graphics/stamps/Db7KQYp.gif" />
+                                    <img src="/graphics/stamps/st.png" />
+                                    <img src="/graphics/stamps/fslur.png" />
+                                    <img src="/graphics/stamps/vio.gif" />
+                                </div>
+                            </div>
+                            <div id="music" class="tab">
+                                <p>
+                                    I like glass beach, jhariah, femtanyl, STOMACH BOOK, Ghost and pals, diet tea
+                                    other cola, gezebelle gaburgably &amp; more
+                                </p>
+                                <p>My favourite song is cul-de-sac from plastic death by glass beach</p>
+                                <audio controls src="https://file.garden/ZjOP8Ik9OUXT6YVm/glass%20beach%20-%20cul-de-sac.mp3"></audio>
+                                <div class="stamps">
+                                    <img src="/graphics/stamps/gameoflife.png" />
+                                    <img src="/graphics/stamps/teto.gif" />
+                                    <img src="/graphics/stamps/mikumiku%20playlist.gif" />
+                                    <img src="/graphics/stamps/stomach%20book%202.jpg" />
+                                    <img src="/graphics/stamps/femtanyl.jpg" />
+                                    <img src="/graphics/stamps/plasticdeathstamp.png" />
+                                    <img src="/graphics/stamps/stamp06.png" />
+                                    <img src="/graphics/stamps/jhariah%20teeth.png" />
+                                    <img src="/graphics/stamps/stamp11.gif" />
+                                    <img src="/graphics/stamps/gumi.gif" />
+                                </div>
+                            </div>
+                            <div id="tv" class="tab">
+                                Stranger things, The owl house, Ghost and Molly McGee, Hazbin &amp; helluva, Murder
+                                drones, Amazing Digital Circus, Panty &amp; Stocking, Brooklyn Nine-Nine, Moral
+                                Orel, Madoka Magica, Ena
+                                <div class="stamps">
+                                    <img src="/graphics/stamps/lacey.png" />
+                                    <img src="/graphics/stamps/panty%20y%20stocking.gif" />
+                                    <img src="/graphics/stamps/madoka.gif" />
+                                    <img src="/graphics/stamps/alastor.png" />
+                                    <img src="/graphics/stamps/fizz.png" />
+                                    <img src="/graphics/stamps/bee%20and%20puppycat.png" />
+                                    <img src="/graphics/stamps/young%20neil.png" />
+                                    <img src="/graphics/stamps/stamp23.gif" />
+                                    <img src="/graphics/stamps/stamp25.gif" />
+                                    <img src="/graphics/stamps/stamp26.gif" />
+                                    <img src="/graphics/stamps/stamp20.gif" />
+                                    <img src="/graphics/stamps/stamp22.gif" />
+                                </div>
+                            </div>
+                            <div id="games" class="tab">
+                                <p>
+                                    <i>Pressure</i>, Deltarune, Minecraft, Aconite RPG, Pokemon, FNaF,
+                                    <i>Sky COTL</i>, Clinical trial, ENA dream BBQ
+                                </p>
+                                <div class="stamps">
+                                    <img src="/graphics/stamps/stamp27.gif" />
+                                    <img src="/graphics/stamps/stamp28.gif" />
+                                    <img src="/graphics/stamps/eeveelutions.png" />
+                                    <img src="/graphics/stamps/mangle.gif" />
+                                    <img src="/graphics/stamps/mc.gif" />
+                                    <img src="/graphics/stamps/roblox.png" />
+                                    <img src="/graphics/stamps/ame.png" />
+                                    <img src="/graphics/stamps/sebastian_solace.png" />
+                                </div>
+                            </div>
+                            <div id="quizzes" class="tab">
+                                <p>i took one of those online tests and it said i have connectivity problems!</p>
+                                <a href="https://swiftyshq.neocities.org/fun/quiz/eon"><img src="https://swiftyshq.neocities.org/img/quiz/eon/vee6.png" alt="leafeon" title="relaxed and introverted, you are a very sleepy person who doesn't care for drama" /></a>
+                                <a href="http://www.dragonflycave.com/quizzes/what-pokemon-are-you"><img src="http://www.dragonflycave.com/wpay/ninetales.gif" alt="I am a Ninetales!" title="Find out what Pokémon you are at The Cave of Dragonflies" /></a>
+                                <a href="https://www.theotaku.com/quizzes/view/2704/what_sonic_character_are_you%3F"><img border="0" src="http://www.theotaku.com/guru_results/2704_Shadow.jpg" alt="What Sonic Character Are You?" /><br /></a>
+                                <a href="https://www.theotaku.com/quizzes/view/1946/what_is_your_level_of_sanity%3F"><img border="0" src="http://www.theotaku.com/guru_results/1946_6.jpg" alt="What Is Your Level Of Sanity?" /><br /></a>
+                                <a href="https://swiftyshq.neocities.org/fun/quiz/creature"><img src="https://swiftyshq.neocities.org/img/quiz/creature/res3.png" alt="m4lw4r3 m0nst3r" title="http creature not found. you are maybe toxic but in a funny way. gods little meow meow" /></a>
+                            </div>
+                            <!--<div id="" class="tab"></div>-->
+                        </div>
+                        <div class="collumn" style="grid-area: about; height: 100px">
+                            <p>
+                                queer and disabled digital artist, animator, gamer, (possible musician?), webmaster,
+                                monster from the backrooms, self-proclaimed edgelord and a professional slug
+                            </p>
+                        </div>
+                        <div class="collumn" style="grid-area: profile">
+                            <img class="pfp" src="https://i.pinimg.com/736x/04/9a/4b/049a4b7aef43df0aa0982ddfc5c75572.jpg" />
+                            <p>Ash - they/it</p>
+                            <p style="color: dimgray; font-style: italic">
+                                "Hi, my name is Two Time and my pronouns are they/them"
+                            </p>
+                            <p>
+                                <img src="https://file.garden/ZT2StWKGxCOellbN/Pride%20Pixels/autism.png" class="fr-fic fr-fil fr-dii" width="30" height="20" alt="autism flag"><img src="https://file.garden/ZT2StWKGxCOellbN/Pride%20Pixels/bpd.png" class="fr-fic fr-dii fr-fil" width="30" height="20" alt="bpd [borderline personality disorder] flag"><img src="https://file.garden/ZT2StWKGxCOellbN/Pride%20Pixels/aroace.png" class="fr-fic fr-fil fr-dii" width="30" height="20" alt="aroace flag"><img src="https://file.garden/ZT2StWKGxCOellbN/Pride%20Pixels/androgyne.png" class="fr-fic fr-dii fr-fil" width="30" height="20" alt="androgyne flag">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="speech-bubble"></div>
+
+        <img src="/images/bodybodybody.png" id="body" />
+
+        <!--
+        <div id="textbox" class="window">
+            <div class="win-title"><img src="/graphics/pixels/bun.gif"> Webmaster</div>
             <marquee id="lyric-marq">this is a marquee</marquee>
             <hr>
+            <div class="win-content">
+            <p>OBJECT: NULL <img src="/graphics/pixels/nukoAbandonnedCat.gif" /></p>
 
-            <h6>OBJECT: NULL <img src="/graphics/pixels/nukoAbandonnedCat.gif" /></h6>
 
-            <img src="/graphics/badges/webmaster.gif">
-            <p>NAME: Casket, Fukouna, Marbles col. [redacted]</p>
-            <div>
-                CURRENT FRONT:
-                <div data-pkfronters-system="kqpbr" data-pkfronters-type="card" style="display: inline-block;"></div>
-                <script src="https://irys.cc/fronters/pkfronters.js" async></script>
-            </div>
-            <p>CLASSIFICATION: eldritch monster from backrooms</p>
-            <p>fluent in english, fnaf and mystery language;</p>
-            <p>Often forgets how to talk due to fish DNA.</p>
-            <p>LINKS: <a href="https://bsky.app/profile/fukounaglr.neocities.org">strawpage</a> or <a href="/create/art#links">here</a></p>
-            <p>CONTACT THE ENTITY: <span class="spoiler">fukounaglr@proton.me</span></p>
             <div style="padding: 5px; border: 2px white dotted;">
                 <img src="/graphics/badges/badge-autistic.png">
                 <img src="/graphics/badges/badge-disabled.png">
@@ -208,6 +345,7 @@
                 <img src="/graphics/stamps/069.gif">
                 <img src="/graphics/stamps/imfine.gif">
             </div>
+            </div>
 
             <h6>SITE? <img src="/graphics/pixels/cat34.gif" /></h6>
             <p>
@@ -217,18 +355,15 @@
             <p>The reason for me to make site was 'cuz its cool'. That's it. I also like design. And i took a web design course back in my baby kitteh years. Then we were learning basics of html in compsci.</p>
 
             <h6>MUSIC? <img src="/graphics/pixels/cat32.gif" /></h6>
-            <p>I like glass beach, jhariah, femtanyl, STOMACH BOOK, Ghost and pals, diet tea other cola, gezebelle gaburgably &amp; more</p>
-            <p>My favourite song is cul-de-sac from plastic death by glass beach</p>
-            <audio controls src="https://file.garden/ZjOP8Ik9OUXT6YVm/glass%20beach%20-%20cul-de-sac.mp3"></audio>
+
 
             <h6>SHOWS? <img src="/graphics/pixels/nukoSwing.gif" /></h6>
             <p>
-                Stranger things, <i>The owl house</i>, Ghost and Molly McGee, Hazbin &amp; helluva, Murder drones, Amazing Digital Circus, Panty &amp; Stocking, Brooklyn
-                Nine-Nine, Moral Orel, Madoka Magica, Ena
+
             </p>
 
             <h6>GAMES? <img src="/graphics/pixels/cat285.gif" /></h6>
-            <p><i>Pressure</i>, Deltarune, Minecraft, Aconite RPG, Pokemon, FNaF, <i>Sky COTL</i>, Clinical trial, ENA dream BBQ</p>
+
 
             <h6>OTHER? <img src="/graphics/pixels/cat137.gif" /></h6>
             <p>
@@ -240,27 +375,29 @@
 
             <div style="text-align: center;">
                 <h6>queezes?<img src="/graphics/pixels/nukoSoba2.gif"></h6>
-                <div id="queezes">
-                    <a href="https://swiftyshq.neocities.org/fun/quiz/eon"><img src="https://swiftyshq.neocities.org/img/quiz/eon/vee6.png" alt="leafeon" title="relaxed and introverted, you are a very sleepy person who doesn't care for drama" style="max-width: 100%" /></a>
-                    <a href="http://www.dragonflycave.com/quizzes/what-pokemon-are-you"><img src="http://www.dragonflycave.com/wpay/ninetales.gif" alt="I am a Ninetales!" title="Find out what Pokémon you are at The Cave of Dragonflies"></a>
-                    <a href="https://www.theotaku.com/quizzes/view/2704/what_sonic_character_are_you%3F"><img border="0" src="http://www.theotaku.com/guru_results/2704_Shadow.jpg" alt="What Sonic Character Are You?" /><br /></a>
-                    <a href="https://www.theotaku.com/quizzes/view/1946/what_is_your_level_of_sanity%3F"><img border="0" src="http://www.theotaku.com/guru_results/1946_6.jpg" alt="What Is Your Level Of Sanity?" style="max-width: 100%" /><br /></a>
-                    <a href="https://swiftyshq.neocities.org/fun/quiz/creature"><img src="https://swiftyshq.neocities.org/img/quiz/creature/res3.png" alt="m4lw4r3 m0nst3r" title="http creature not found. you are maybe toxic but in a funny way. gods little meow meow" style="max-width: 100%"></a>
-                </div>
             </div>
         </div>
 
         <div id="vh"></div>
-
-        <img src="/images/bodybodybody.png" id="body">
 
         <div id="picbox">
             <img src="/images/dolphin.jpg">
             <img src="/images/catmusictrain.jpg">
             <img src="/images/catexplode.jpg">
         </div>
+    -->
     </main>
 
+    <script>
+        var currentPage = "misc";
+        const pages = ["misc", "music", "tv", "games", "quizzes"];
+
+        function switchPage(a) {
+            document.getElementById(currentPage).style.display = "none";
+            currentPage = a;
+            document.getElementById(a).style.display = "block";
+        }
+    </script>
 
     <script>
         const elements = [

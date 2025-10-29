@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,8 @@
 
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+
         body {
             background:
                 linear-gradient(rgba(0, 0, 0, 0.5),
@@ -25,65 +28,48 @@
             height: calc(100vh - 100px);
             padding: 50px;
         }
-        
-        h6{
+
+        h6 {
             text-transform: uppercase;
         }
 
 
-        .infobox {
-            background-color: var(--colour);
+        .window {
             margin: auto;
-            width: calc(100% - 60px);
-            color: white;
-            text-align: center;
-            padding: 20px;
+            width: calc(100% - 20px);
             height: calc(50vh - 100px);
             overflow: auto;
             position: relative;
         }
 
-
-        .accentbg a {
-            color: var(--colour);
-        }
-
         #col1 {
             & h1 {
-                -webkit-text-stroke: 3px var(--colour);
-                color: var(--accent-colour);
+                -webkit-text-stroke: 3px var(--col);
+                color: var(--acc);
                 margin-top: 40px;
                 writing-mode: tb-rl;
-            }
 
-            & a {
-                color: var(--colour);
-                background-color: var(--accent-colour);
-                cursor: pointer;
-                padding: 10px;
-                text-align: center;
-                font-family: staypuft;
-            }
-
-            & a:hover {
-                background-color: var(--accent-colour-hover);
+            font-family: "Rampart One", sans-serif;
+            font-weight: 400;
+            font-style: normal;
             }
         }
 
         #sites a {
             text-decoration: none;
             margin: none;
-            & img{
+
+            & img {
                 width: 88px;
             }
         }
-        
-        li{
+
+        li {
             list-style: none;
             margin: 10px auto;
-            margin-left: -20px;
         }
-        ul{
+
+        ul {
             padding: 10px;
         }
 
@@ -97,19 +83,19 @@
                 padding: 0;
             }
 
-            #col1{
+            #col1 {
                 display: grid;
                 grid-template-columns: auto auto;
-                
-                & h1{
+
+                & h1 {
                     writing-mode: horizontal-tb;
                     font-size: 4Em;
                     line-height: 100%;
                     margin-top: 0;
                 }
             }
-            
-            .infobox{
+
+            .window {
                 margin-bottom: 20px;
                 height: auto;
             }
@@ -120,125 +106,133 @@
 
 <body>
     <div id="col1" style="grid-area: 1/1/span 2/ span 1; align-content: center;">
-        <h1 style="">cool sites!</h1>
+        <h1>cool sites!</h1>
     </div>
 
-    <div class="infobox" id="sites" style="grid-area: 1/2/span 1/span 2">
-        <h4>link m3!</h4>
-        <img src="/fukounaglr-alt.gif">
-        <img src="/fukounaglr.png">
-
-        <h5>cool sites &amp; neighbors!</h5>
-
-        <!--<a target="_blank" href=""><img src="/graphics/sites/"></a>-->
-        <a href="https://olliveen.neocities.org/" target="_blank"><img src="https://olliveen.neocities.org/img/button.gif"></a>
-        <a target="_blank" href="https://hekate.neocities.org/"><img src="/graphics/sites/hekate.png"></a>
-        <a target="_blank" href="https://ephesusmoon.neocities.org/"><img src="/graphics/sites/ephesusmoon.png"></a>
-        <a target="_blank" href="https://thewhiteflareon.straw.page/"><img src="/graphics/sites/thewhiteflareon.gif"></a>
-        <a target="_blank" href="https://korumeow.dev/"><img src="/graphics/sites/korumeow.png"></a>
-        <a href="https://lerariemann.nekoweb.org/"><img src="https://lerariemann.nekoweb.org/banner.gif" width=88px height=31px></a>
-        <a target="_blank" href="https://swiftyshq.neocities.org/"><img src="/graphics/sites/swiftyhq.png"></a>
-        <a target="_blank" href="https://www.hyonktea.xyz/"><img src="/graphics/sites/hyonktea.gif"></a>
-        <a target="_blank" href="https://jnkyrd.neocities.org/"><img src="/graphics/sites/jnkyrd.gif"></a>
-        <a target="_blank" href="https://icosahedr.online/"><img src="/graphics/sites/icosahedr.gif"></a>
-        <a href="https://darlingfawn.neocities.org/" target="_blank"><img src="/graphics/sites/darlingfawn.png"></a>
-        <a target="_blank" href="https://computerguts.neocities.org/"><img src="/graphics/sites/computerguts.png"></a>
-        <a target="_blank" href="https://quaggos.neocities.org/"><img src="/graphics/sites/quaggos.png"></a>
-        <a target="_blank" href="https://sillygirlclub.neocities.org/homepage"><img src="/graphics/sites/sillygirlclub.png"></a>
-        <a target="_blank" href="https://poetofu.neocities.org/"><img src="/graphics/sites/poetofun.png"></a>
-        <a target="_blank" href="https://feelingmachine.moe/"><img src="/graphics/sites/feelingmachine.gif"></a>
-        <a target="_blank" href="https://ray0fsunsh1ne.neocities.org/"><img src="/graphics/sites/ray0fsunsh1ne.png"></a>
-        <a target="_blank" href="https://spiderlily.neocities.org/"><img src="/graphics/sites/spiderlily.png"></a>
-        <a href="https://bundleofstyx.neocities.org/" target="_blank"><img src="/graphics/sites/bundleofstyxalt.gif" alt="Bundleostyx button"></a>
-        <a target="_blank" href="https://cresentri.neocities.org/">
-            <img src="https://cresentri.neocities.org/buttons!!!/dynamic.gif" style="width: 88px; height: 31px; image-rendering: optimizeSpeed; -moz-image-rendering: crisp-edges; -o-image-rendering: crisp-edges; -webkit-image-rendering: optimize-contrast; image-rendering: pixelated; image-rendering: optimize-contrast; -ms-interpolation-mode: nearest-neighbor;">
-        </a>
-        <a href="https://asmodeusvulcan.neocities.org/"><img src="/graphics/sites/asmodeusvulcan.jpg"></a>
-        <a href="https://themightyloser.nekoweb.org/" target="_blank"><img src="/graphics/sites/jelliagain.png"></a>
-        <a target="_blank" href="https://troy-sucks.neocities.org/"><img src="https://troy-sucks.neocities.org/images/troysuckwiggly.gif" /></a>
-        <a href="https://swiftyshq.neocities.org/"><img src="https://swiftyshq.neocities.org/img/res/aff/threadbare.gif" alt="Swifty's HQ!" /></a>
-        <a href="https://virtualobserver.moe/"><img src="https://virtualobserver.moe/images/sitebutton.png"></a>
-        <a href="https://leyy.neocities.org/"><img src="https://leyy.neocities.org/leyy.png"></a>
-        <a href="https://chocolaterevel.neocities.org/" target="_blank"><img src="/graphics/sites/0kqXUCD.gif" class="freezeframe"></a>
-        <a href=https://dulcesilly.neocities.org/ target="_blank"><img src="/graphics/sites/buttonsilly.gif" class="freezeframe"></a>
-        <a href="https://wrender.neocities.org/" target="_blank"><img src="/graphics/sites/site%20button.gif" class="freezeframe"></a>
-        <a href="https://shinyexe.neocities.org/" target="_blank"><img src="/graphics/sites/shinyexe.gif" class="freezeframe"></a>
-        <a href="https://ballonlea.neocities.org/" target="_blank"><img src="/graphics/sites/ballonlea.gif" alt="Ballonlea's site button"></a>
-        <a href="https://klomfel.neocities.org/" target="_blank"><img src="/graphics/sites/klomfelv1.png" width="88px"></a>
-        <a href="https://grlrot.neocities.org/" target="_blank"><img src="/graphics/sites/grlbutton.gif" class="freezeframe"></a>
-        <a href="https://sugarforbrains.neocities.org/" target="_blank"><img src="/graphics/sites/sugarNEW.gif" class="freezeframe"></a>
-        <a href="https://davemiller.neocities.org/" target="_blank"><img src="/graphics/sites/davemiller_button.gif" class="freezeframe"></a>
-        <a href="https://iwasarob0t.neocities.org/"><img src="/graphics/sites/iwasarob0tbutton.gif" class="freezeframe"></a>
-        <a href="https://dashweb.neocities.org/" target="_blank"><img src="/graphics/sites/dashbutton.gif" class="freezeframe"></a>
-        <a href="https://possum1827.neocities.org/" target="_blank"><img src="/graphics/sites/simonsfunzone.gif" class="freezeframe"></a>
-        <a href="https://juneish.neocities.org/" target="_blank"><img src="/graphics/sites/webcatz.gif" class="freezeframe"></a>
-        <a target="_blank" href="https://aiston.scungled.gay/"><img src="/graphics/sites/ashton.gif" class="freezeframe"></a>
-        <a target="_blank" href="https://shadok.neocities.org/"><img src="/graphics/sites/shadok.gif" class="freezeframe"></a>
-        <a href="https://mordecaialba.com"><img src="/graphics/sites/mordecaialba.png" width="82px" alt="A pixel art button of a brown rabbit with glasses that says 'Mordecai Alba' in green letters."> </a>
-        <a href="https://odditycommoddity.neocities.org/" target="_blank"><img src="/graphics/sites/odditycommoddity.gif" class="freezeframe"></a>
-        <a href="https://octosquigglez.neocities.org" target="_blank"><img src="/graphics/sites/octosquigglez.gif" class="freezeframe"></a>
-        <a href="https://revived.neocities.org" target="_blank"><img src="/graphics/sites/revivded.png"></a>
-        <a href="https://dimden.dev/"><img src="https://dimden.dev/images/88x31.gif" class="freezeframe"></a>
-        <a href="https://classicj.neocities.org/" target="_blank"><img src="/graphics/sites/classicj.png" title="button by me"></a>
+    <div class="window" id="sites" style="grid-area: 1/2/span 1/span 2; display: grid; grid-template-columns: 108px auto;">
+        <div class="win-title" style="grid-area: 1/1/span 1/span 2"><img src="/graphics/pixels/butterfly.gif"> cool sites &amp; friends!</div>
+        <div class="win-content" style="height: calc(100% - 13px)">
+            <p>link m3!</p>
+            <img src="/fukounaglr-alt.gif">
+            <img src="/fukounaglr.png">
+        </div>
+        <div class="win-content"  style="height: calc(100% - 13px)">
+            <!--<a target="_blank" href=""><img src="/graphics/sites/"></a>-->
+            <a href="https://olliveen.neocities.org/" target="_blank"><img src="https://olliveen.neocities.org/img/button.gif"></a>
+            <a target="_blank" href="https://hekate.neocities.org/"><img src="/graphics/sites/hekate.png"></a>
+            <a target="_blank" href="https://ephesusmoon.neocities.org/"><img src="/graphics/sites/ephesusmoon.png"></a>
+            <a target="_blank" href="https://thewhiteflareon.straw.page/"><img src="/graphics/sites/thewhiteflareon.gif"></a>
+            <a target="_blank" href="https://korumeow.dev/"><img src="/graphics/sites/korumeow.png"></a>
+            <a href="https://lerariemann.nekoweb.org/"><img src="https://lerariemann.nekoweb.org/banner.gif" width=88px height=31px></a>
+            <a target="_blank" href="https://swiftyshq.neocities.org/"><img src="/graphics/sites/swiftyhq.png"></a>
+            <a target="_blank" href="https://www.hyonktea.xyz/"><img src="/graphics/sites/hyonktea.gif"></a>
+            <a target="_blank" href="https://jnkyrd.neocities.org/"><img src="/graphics/sites/jnkyrd.gif"></a>
+            <a target="_blank" href="https://icosahedr.online/"><img src="/graphics/sites/icosahedr.gif"></a>
+            <a href="https://darlingfawn.neocities.org/" target="_blank"><img src="/graphics/sites/darlingfawn.png"></a>
+            <a target="_blank" href="https://computerguts.neocities.org/"><img src="/graphics/sites/computerguts.png"></a>
+            <a target="_blank" href="https://quaggos.neocities.org/"><img src="/graphics/sites/quaggos.png"></a>
+            <a target="_blank" href="https://sillygirlclub.neocities.org/homepage"><img src="/graphics/sites/sillygirlclub.png"></a>
+            <a target="_blank" href="https://poetofu.neocities.org/"><img src="/graphics/sites/poetofun.png"></a>
+            <a target="_blank" href="https://feelingmachine.moe/"><img src="/graphics/sites/feelingmachine.gif"></a>
+            <a target="_blank" href="https://ray0fsunsh1ne.neocities.org/"><img src="/graphics/sites/ray0fsunsh1ne.png"></a>
+            <a target="_blank" href="https://spiderlily.neocities.org/"><img src="/graphics/sites/spiderlily.png"></a>
+            <a href="https://bundleofstyx.neocities.org/" target="_blank"><img src="/graphics/sites/bundleofstyxalt.gif" alt="Bundleostyx button"></a>
+            <a target="_blank" href="https://cresentri.neocities.org/">
+                <img src="https://cresentri.neocities.org/buttons!!!/dynamic.gif" style="width: 88px; height: 31px; image-rendering: optimizeSpeed; -moz-image-rendering: crisp-edges; -o-image-rendering: crisp-edges; -webkit-image-rendering: optimize-contrast; image-rendering: pixelated; image-rendering: optimize-contrast; -ms-interpolation-mode: nearest-neighbor;">
+            </a>
+            <a href="https://asmodeusvulcan.neocities.org/"><img src="/graphics/sites/asmodeusvulcan.jpg"></a>
+            <a href="https://themightyloser.nekoweb.org/" target="_blank"><img src="/graphics/sites/jelliagain.png"></a>
+            <a target="_blank" href="https://troy-sucks.neocities.org/"><img src="https://troy-sucks.neocities.org/images/troysuckwiggly.gif" /></a>
+            <a href="https://swiftyshq.neocities.org/"><img src="https://swiftyshq.neocities.org/img/res/aff/threadbare.gif" alt="Swifty's HQ!" /></a>
+            <a href="https://virtualobserver.moe/"><img src="https://virtualobserver.moe/images/sitebutton.png"></a>
+            <a href="https://leyy.neocities.org/"><img src="https://leyy.neocities.org/leyy.png"></a>
+            <a href="https://chocolaterevel.neocities.org/" target="_blank"><img src="/graphics/sites/0kqXUCD.gif" class="freezeframe"></a>
+            <a href=https://dulcesilly.neocities.org/ target="_blank"><img src="/graphics/sites/buttonsilly.gif" class="freezeframe"></a>
+            <a href="https://wrender.neocities.org/" target="_blank"><img src="/graphics/sites/site%20button.gif" class="freezeframe"></a>
+            <a href="https://shinyexe.neocities.org/" target="_blank"><img src="/graphics/sites/shinyexe.gif" class="freezeframe"></a>
+            <a href="https://ballonlea.neocities.org/" target="_blank"><img src="/graphics/sites/ballonlea.gif" alt="Ballonlea's site button"></a>
+            <a href="https://klomfel.neocities.org/" target="_blank"><img src="/graphics/sites/klomfelv1.png" width="88px"></a>
+            <a href="https://grlrot.neocities.org/" target="_blank"><img src="/graphics/sites/grlbutton.gif" class="freezeframe"></a>
+            <a href="https://sugarforbrains.neocities.org/" target="_blank"><img src="/graphics/sites/sugarNEW.gif" class="freezeframe"></a>
+            <a href="https://davemiller.neocities.org/" target="_blank"><img src="/graphics/sites/davemiller_button.gif" class="freezeframe"></a>
+            <a href="https://iwasarob0t.neocities.org/"><img src="/graphics/sites/iwasarob0tbutton.gif" class="freezeframe"></a>
+            <a href="https://dashweb.neocities.org/" target="_blank"><img src="/graphics/sites/dashbutton.gif" class="freezeframe"></a>
+            <a href="https://possum1827.neocities.org/" target="_blank"><img src="/graphics/sites/simonsfunzone.gif" class="freezeframe"></a>
+            <a href="https://juneish.neocities.org/" target="_blank"><img src="/graphics/sites/webcatz.gif" class="freezeframe"></a>
+            <a target="_blank" href="https://aiston.scungled.gay/"><img src="/graphics/sites/ashton.gif" class="freezeframe"></a>
+            <a target="_blank" href="https://shadok.neocities.org/"><img src="/graphics/sites/shadok.gif" class="freezeframe"></a>
+            <a href="https://mordecaialba.com"><img src="/graphics/sites/mordecaialba.png" width="82px" alt="A pixel art button of a brown rabbit with glasses that says 'Mordecai Alba' in green letters."> </a>
+            <a href="https://odditycommoddity.neocities.org/" target="_blank"><img src="/graphics/sites/odditycommoddity.gif" class="freezeframe"></a>
+            <a href="https://octosquigglez.neocities.org" target="_blank"><img src="/graphics/sites/octosquigglez.gif" class="freezeframe"></a>
+            <a href="https://revived.neocities.org" target="_blank"><img src="/graphics/sites/revivded.png"></a>
+            <a href="https://dimden.dev/"><img src="https://dimden.dev/images/88x31.gif" class="freezeframe"></a>
+            <a href="https://classicj.neocities.org/" target="_blank"><img src="/graphics/sites/classicj.png" title="button by me"></a>
+        </div>
     </div>
 
-    <div class="infobox accentbg" style="background-color: var(--accent-colour);">
-        <h6>graphics!</h6>
-        <!--<a href=""><img src="/graphics/sites/"></a>-->
-        <a href="https://pixelsea.neocities.org/"><img src="/graphics/sites/pixelsea.gif"></a>
-        <a href="https://blinkies.cafe/"><img src="/graphics/sites/b_blinkies.gif"></a>
-        <a href="https://nukocities.neocities.org/"><img src="https://nukocities.neocities.org/img/nukocities.gif"></a>
-        <a href="https://nukochannel.neocities.org" target="_blank"><img src="https://nukochannel.neocities.org/NukoChannelButton.gif"></a>
-        <a target="_blank" href="https://textures.neocities.org/"><img src="/graphics/sites/textures.gif"></a>
-        <ul>
-            <!--<li><a href="" target="_blank"></a></li>-->
-            <li><a href="http://www.backgroundsarchive.com/" target="_blank">backgrounds archive</a></li>
-            <li><a href="https://blog.spacehey.com/entry?id=832786" target="_blank">gifs, images, dividers, blinkies, the works</a></li>
-            <li><a href="https://blog.spacehey.com/entry?id=570352" target="_blank">Blinkie collection</a></li>
-            <li><a href="https://blog.spacehey.com/entry?id=811498" target="_blank">Favicon collection</a></li>
-            <li><a href="https://blog.spacehey.com/entry?id=1001755" target="_blank">GIF collection</a></li>
-            <li><a href="https://blinkie-net.neocities.org/blinkies" target="_blank">blinkie net</a> FW! </li>
-            <li><a href="https://www.glitter-graphics.com/" target="_blank">glitter graphics</a></li>
-            <li><a href="https://cyber.dabamos.de/88x31/index.html" target="_blank">The 88x31 GIF Collection</a> FW! </li>
-            <li><a href="https://blinkies.cafe/" target="_blank">blinkie cafe</a></li>
-            <li><a href="https://rotatingsandwiches.com/" target="_blank">rotating sandwiches</a></li>
-            <li><a href="https://kawaiiyuri.com/fishy/index.html" target="_blank">heather's animations</a></li>
-            <li><a href="https://web.badges.world/" target="_blank">web bages world</a></li>
-            <li><a href="https://www1.flightrising.com/forums/cc/3078623" target="_blank">tiny identity buttons</a></li>
-            <li><a href="https://pixels.crd.co/#pixels" target="_blank">pixels</a></li>
-            <li><a href="https://www.mazeguy.net/smilies" target="_blank">Mazeguy Smilies</a></li>
-            <li><a href="https://ps1.tumblr.com/smolpxl" target="_blank">pixels</a></li>
-        </ul>
+    <div class="window">
+        <div class="win-title"><img src="/graphics/pixels/cat30.gif"> graphics!</div>
+        <div class="win-content">
+            <!--<a href=""><img src="/graphics/sites/"></a>-->
+            <a href="https://pixelsea.neocities.org/"><img src="/graphics/sites/pixelsea.gif"></a>
+            <a href="https://blinkies.cafe/"><img src="/graphics/sites/b_blinkies.gif"></a>
+            <a href="https://nukocities.neocities.org/"><img src="https://nukocities.neocities.org/img/nukocities.gif"></a>
+            <a href="https://nukochannel.neocities.org" target="_blank"><img src="https://nukochannel.neocities.org/NukoChannelButton.gif"></a>
+            <a target="_blank" href="https://textures.neocities.org/"><img src="/graphics/sites/textures.gif"></a>
+            <ul>
+                <!--<li><a href="" target="_blank"></a></li>-->
+                <li><a href="http://www.backgroundsarchive.com/" target="_blank">backgrounds archive</a></li>
+                <li><a href="https://blog.spacehey.com/entry?id=832786" target="_blank">gifs, images, dividers, blinkies, the works</a></li>
+                <li><a href="https://blog.spacehey.com/entry?id=570352" target="_blank">Blinkie collection</a></li>
+                <li><a href="https://blog.spacehey.com/entry?id=811498" target="_blank">Favicon collection</a></li>
+                <li><a href="https://blog.spacehey.com/entry?id=1001755" target="_blank">GIF collection</a></li>
+                <li><a href="https://blinkie-net.neocities.org/blinkies" target="_blank">blinkie net</a> FW! </li>
+                <li><a href="https://www.glitter-graphics.com/" target="_blank">glitter graphics</a></li>
+                <li><a href="https://cyber.dabamos.de/88x31/index.html" target="_blank">The 88x31 GIF Collection</a> FW! </li>
+                <li><a href="https://blinkies.cafe/" target="_blank">blinkie cafe</a></li>
+                <li><a href="https://rotatingsandwiches.com/" target="_blank">rotating sandwiches</a></li>
+                <li><a href="https://kawaiiyuri.com/fishy/index.html" target="_blank">heather's animations</a></li>
+                <li><a href="https://web.badges.world/" target="_blank">web bages world</a></li>
+                <li><a href="https://www1.flightrising.com/forums/cc/3078623" target="_blank">tiny identity buttons</a></li>
+                <li><a href="https://pixels.crd.co/#pixels" target="_blank">pixels</a></li>
+                <li><a href="https://www.mazeguy.net/smilies" target="_blank">Mazeguy Smilies</a></li>
+                <li><a href="https://ps1.tumblr.com/smolpxl" target="_blank">pixels</a></li>
+            </ul>
+        </div>
     </div>
 
-    <div class="infobox">
-        <h5>Tools &amp; plugins</h5>
-        <ul>
-            <li><a href="https://amp3.cc/" target="_blank">amp3.cc - download videos</a></li>
-            <li><a href="https://123apps.com/" target="_blank">123apps - many useful free tools</a></li>
-            <li><a href="https://htmlcolorcodes.com/color-picker/" target="_blank">Color Picker</a></li>
-            <li><a href="https://removal.ai/upload" target="_blank">Remove BG from image</a></li>
-            <li><a href="https://ezgif.com/" target="_blank">Ezgif (gif tools)</a></li>
-            <li><a href="https://lospec.com/pixel-art-scaler/" target="_blank">Lospec (pixel art scaler)</a></li>
-            <!--<li><a href="" target="_blank"></a></li>-->
-        </ul>
-
-        <h6>plugins</h6>
-        <ul>
-            <li><a href="https://addons.mozilla.org/en-US/firefox/addon/pockettube-youtube-playlist/" target="_blank">PokeTube - playlist manager</a></li>
-            <li><a href="https://addons.mozilla.org/en-US/firefox/addon/enhancer-for-youtube/" target="_blank">Enchancer for youtube</a></li>
-            <li><a href="https://addons.mozilla.org/en-US/firefox/addon/ecosia-the-green-search/" target="_blank">Ecosia- the green search</a></li>
-            <li><a href="https://addons.mozilla.org/en-US/firefox/addon/indie-wiki-buddy/" target="_blank">Indie Wiki Buddy</a></li>
-            <li><a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/" target="_blank">Ublock Origin</a></li>
-            <li><a href="https://addons.mozilla.org/en-US/firefox/addon" target="_blank">Tabliss - new tab</a></li>
-            <li><a href="https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab/" target="_blank">Tree style tab</a></li>
-            <li><a href="https://addons.mozilla.org/en-US/firefox/addon/ruffle_rs/" target="_blank">Ruffle</a></li>
-            <!--<li><a href="" target="_blank"></a></li>-->
-        </ul>
+    <div class="window">
+        <div class="win-title"><img src="/graphics/pixels/sparkle.gif"> Tools &amp; plugins</div>
+        <div class="win-content">
+            <ul>
+                <li><a href="https://amp3.cc/" target="_blank">amp3.cc - download videos</a></li>
+                <li><a href="https://123apps.com/" target="_blank">123apps - many useful free tools</a></li>
+                <li><a href="https://htmlcolorcodes.com/color-picker/" target="_blank">Color Picker</a></li>
+                <li><a href="https://removal.ai/upload" target="_blank">Remove BG from image</a></li>
+                <li><a href="https://ezgif.com/" target="_blank">Ezgif (gif tools)</a></li>
+                <li><a href="https://lospec.com/pixel-art-scaler/" target="_blank">Lospec (pixel art scaler)</a></li>
+                <!--<li><a href="" target="_blank"></a></li>-->
+            </ul>
+            <hr>
+            <p>plugins
+            </p>
+            <ul>
+                <li><a href="https://addons.mozilla.org/en-US/firefox/addon/pockettube-youtube-playlist/" target="_blank">PokeTube - playlist manager</a></li>
+                <li><a href="https://addons.mozilla.org/en-US/firefox/addon/enhancer-for-youtube/" target="_blank">Enchancer for youtube</a></li>
+                <li><a href="https://addons.mozilla.org/en-US/firefox/addon/ecosia-the-green-search/" target="_blank">Ecosia- the green search</a></li>
+                <li><a href="https://addons.mozilla.org/en-US/firefox/addon/indie-wiki-buddy/" target="_blank">Indie Wiki Buddy</a></li>
+                <li><a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/" target="_blank">Ublock Origin</a></li>
+                <li><a href="https://addons.mozilla.org/en-US/firefox/addon" target="_blank">Tabliss - new tab</a></li>
+                <li><a href="https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab/" target="_blank">Tree style tab</a></li>
+                <li><a href="https://addons.mozilla.org/en-US/firefox/addon/ruffle_rs/" target="_blank">Ruffle</a></li>
+                <!--<li><a href="" target="_blank"></a></li>-->
+            </ul>
+        </div>
     </div>
 
-    <div class="infobox">
-        <h6>WEB</h6>
+    <div class="window">
+        <div class="win-title"><img src="/graphics/pixels/pc.gif"> WEB</div>
+        <div class="win-content">
         <ul>
             <li><a href="https://neocities.org/dashboard" target="_blank">neocities</a></li>
             <li><a href="https://juneish.neocities.org/written/resources/?page=neocities-git" target="_blank">deploy your neocities with github</a></li>
@@ -256,12 +250,14 @@
             <li><a target="_blank" href="https://codepen.io/troy-sucks/pen/abxBXMJ">theme system</a></li>
             <li><a target="_blank" href="https://simplestepscode.com/javascript-quiz-tutorial/">JS quiz tutorial</a></li>
         </ul>
+        </div>
     </div>
 
 
 
-    <div class="infobox half">
-        <h6>other stuff</h6>
+    <div class="window">
+        <div class="win-title"><img src="/graphics/pixels/kittyy.gif"> other stuff</div>
+        <div class="win-content">
         <ul>
             <li><a href="https://archive.org/" target="_blank"><img src="/graphics/sites/internetarchive.gif"></a></li>
             <li><a href="https://gifypet.neocities.org/" target="_blank"><img src="/graphics/sites/gifypet.gif"></a></li>
@@ -274,7 +270,7 @@
             <li><a href="https://shroom.ink/decay/adopt-a-shroom/" target="_blank">Adopt a shroom</a></li>
             <li><a href="https://www.mabsland.com/Adoption.html" target="_blank">Adopt a panda [web ratings]</a></li>
         </ul>
-    </div>
+        </div></div>
 
 </body>
 

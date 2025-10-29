@@ -12,6 +12,8 @@
     <script src="/js/theme-switcher.js"></script>
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
         main {
             background: var(--bg);
             background-size: auto;
@@ -19,7 +21,7 @@
             grid-template-columns: 1fr 1fr 1.5fr;
             grid-template-rows: 1fr 2fr 2fr;
             padding: 20px;
-            height: calc(100vh - 40px);
+            height: calc(100vh - 140px);
             position: relative;
         }
 
@@ -27,14 +29,11 @@
             max-width: 90%;
         }
 
-        .graphics {
-            background-color: var(--primary-colour);
+        .window {
             margin: 20px;
-            max-height: calc(100% - 20px);
+            max-height: 100%;
             overflow: auto;
             text-align: center;
-            padding: 10px;
-            border: 3px solid var(--colour);
         }
 
         .back {
@@ -51,45 +50,25 @@
         }
 
         nav {
-            left: 0;
-            top: 0;
             width: 100%;
-            height: 140px;
-            display: none;
-            grid-template-columns: 1fr 1fr 1fr;
-
-            & a {
-                text-align: center;
-                background-color: var(--acc);
-                color: var(--pri);
-                text-decoration: none;
-                padding: 5px 10px;
-                margin: 5px;
-                align-content: center;
-
-                &::before {
-                    display: none;
-                }
-
-                &:hover {
-                    background-color: var(--acc-hov);
-                    color: var(--pri);
-                    text-decoration: underline;
-                }
-            }
+            height: 50px;
+            align-content: center;
+            text-align: center;
         }
 
         @media only screen and (max-width: 700px) {
-            body{
+            body {
                 overflow: hidden;
             }
+
             main {
                 height: calc(100vh - 140px);
                 display: block;
                 padding: 0;
                 overflow: auto;
             }
-            .graphics{
+
+            .graphics {
                 height: auto;
                 max-height: max-content;
             }
@@ -103,8 +82,10 @@
 
 <body>
     <nav>
-            <a href="/room.html" target="_top" style="all: unset; grid-area: 1/1/span 1/ span 2; color: var(--pri); position: relative"><h4>graphics</h4></a>
-        <a href="#byme" style="background-color: var(--pri); color: var(--col)">by me</a>
+        <a href="/room.html" class="button noico" target="_top" >
+            graphics
+        </a>
+        <a href="#byme">by me</a>
         <a href="#badges">badges</a>
         <a href="#pixels">pixels</a>
         <a href="#buttons">buttons</a>
@@ -114,8 +95,9 @@
     </nav>
     <main>
 
-        <div class="graphics" id="badges">
-            <h5>Badges</h5>
+        <div class="window" id="badges">
+            <div class="win-title">Badges</div>
+            <div class="win-content">
             <!--<img src="/graphics/badges/">-->
             <img src="/graphics/badges/webmaster.gif">
             <a href="https://www1.flightrising.com/forums/cc/3078623" target="_blank" style="text-decoration: none">
@@ -147,13 +129,11 @@
             <a href="https://liedown1.neocities.org/stamps/boygirl.png" target="_blank"><img src="/graphics/badges//boygirl.png" /></a>
             <a href="https://liedown1.neocities.org/stamps/girlboy.png" target="_blank"><img src="/graphics/badges//girlboy.png" /></a>
         </div>
+        </div>
 
-
-
-
-
-        <div class="graphics" id="pixels">
-            <h5>pixels</h5>
+        <div class="window" id="pixels">
+            <div class="win-title">pixels</div>
+            <div class="win-content">
             <!--<img src="/graphics/pixels/" />-->
             <img src="/graphics/pixels/sparkle.gif" />
             <img src="/graphics/pixels/kit.gif" />
@@ -215,13 +195,11 @@
             <img src="/graphics/pixels/Spr_3f_003.png" />
             <img src="/graphics/pixels/n2.png" />
         </div>
+        </div>
 
-
-
-
-
-        <div class="graphics" id="buttons">
-            <h5>buttons</h5>
+        <div class="window" id="buttons">
+            <div class="win-title">buttons</div>
+            <div class="win-content">
             <!--<img src="/graphics/buttons/">-->
             <!--<img src="/graphics/buttons/">-->
             <img src="/graphics/buttons/ps2.jpg">
@@ -272,8 +250,11 @@
             <a href="https://sapphic-cafe.neocities.org/buttons/sapphic-cafe-pride-button.png" target="_blank"><img src="/graphics/buttons/sapphic-cafe-pride-button.png" /></a>
             <a href="https://www.youtube.com/@kaleiido" target="_blank"><img src="/graphics/buttons/RICK%20RISK%20RISK.gif" /></a>
         </div>
-        <div class="graphics" id="dividers">
-            <h5>dividers</h5>
+        </div>
+
+        <div class="window" id="dividers">
+            <div class="win-title">dividers</div>
+            <div class="win-content">
             <!--<img src="/graphics/dividers/">-->
             <img src="/graphics/dividers/paint.webp">
             <img src="/graphics/dividers/stars.gif">
@@ -298,13 +279,15 @@
             <img src="/graphics/dividers/stars7divider.gif">
             <img src="/graphics/dividers/divider02.gif">
         </div>
+        </div>
 
 
 
 
 
-        <div class="graphics" id="blinkies" style="grid-area: 1/2 / span 2 / span 1">
-            <h5>blinkies</h5>
+        <div class="window" id="blinkies" style="grid-area: 1/2 / span 2 / span 1">
+            <div class="win-title">blinkies</div>
+            <div class="win-content">
             <!--<img src="/graphics/blinkies/" />-->
             <!--<a href="" target="_blank"><img src="/graphics/blinkies/" /></a>-->
             <!--<a href="" target="_blank"><img src="/graphics/blinkies/" /></a>-->
@@ -472,230 +455,239 @@
             <img src="/graphics/blinkies/tumblr_067e9e8537f9f037288435f9905a9c4d_b700999d_250.gif" />
             <img src="/graphics/blinkies/tumblr_62b602f4f4759ee0d8a91490d86764fa_35e25497_250.webp" />
         </div>
-
-
-
-
-
-
-        <div class="graphics" id="stamps" style="grid-area: 3/3 / span 1 / span 1">
-            <h4>stamps</h4>
-            <!--<img src="/graphics/stamps/">-->
-            <img src="/graphics/stamps/imfine.gif">
-            <img src="/graphics/stamps/bedperson.gif">
-            <img src="/graphics/stamps/fourleaf.jpg">
-            <img src="/graphics/stamps/minnow.jpg">
-            <img src="/graphics/stamps/critter.jpg">
-            <img src="/graphics/stamps/kill.png">
-            <img src="/graphics/stamps/tomato.png">
-            <img src="/graphics/stamps/strawpage.png">
-            <img src="/graphics/stamps/webp.png">
-            <img src="/graphics/stamps/transgit.png">
-            <img src="/graphics/stamps/fis.png">
-            <img src="/graphics/stamps/fishtank.gif">
-            <img src="/graphics/stamps/vio.gif">
-            <img src="/graphics/stamps/whenidie.png">
-            <img src="/graphics/stamps/you%20know.gif">
-            <img src="/graphics/stamps/headpats.png">
-            <img src="/graphics/stamps/computer.jpg">
-            <img src="/graphics/stamps/CANNIBALISM.jpg">
-            <img src="/graphics/stamps/penis.jpg">
-            <img src="/graphics/stamps/fish.gif">
-            <img src="/graphics/stamps/plushies.png">
-            <img src="/graphics/stamps/gay.png">
-            <img src="/graphics/stamps/plague.png">
-            <img src="/graphics/stamps/madoka%20y%20homura.png">
-            <img src="/graphics/stamps/lacey.png">
-            <img src="/graphics/stamps/mikumiku%20playlist.gif">
-            <img src="/graphics/stamps/panty%20y%20stocking.gif">
-            <img src="/graphics/stamps/panty_y_stocking_stamp_by_julittah-d4qptt2.gif">
-            <img src="/graphics/stamps/gender.png">
-            <img src="/graphics/stamps/woah.png">
-            <img src="/graphics/stamps/stocking-.gif">
-            <img src="/graphics/stamps/mangle.gif">
-            <img src="/graphics/stamps/madoka.gif">
-            <img src="/graphics/stamps/mikugutair.gif">
-            <img src="/graphics/stamps/nicole.png">
-            <img src="/graphics/stamps/kangel%20n%20ame.png">
-            <img src="/graphics/stamps/teto.gif">
-            <img src="/graphics/stamps/fnaf.png">
-            <img src="/graphics/stamps/roblox.png">
-            <img src="/graphics/stamps/mc.gif">
-            <img src="/graphics/stamps/autistic%20artist.png">
-            <img src="/graphics/stamps/pomni.gif">
-            <a href="https://www.tumblr.com/grox-empire/746487085398196224"><img src="/graphics/stamps/femtanyl.jpg"></a>
-            <a href="https://www.tumblr.com/grox-empire/746487085398196224"><img src="/graphics/stamps/stomach%20book%202.jpg"></a>
-            <a href="https://www.tumblr.com/grox-empire/746487085398196224"><img src="/graphics/stamps/stomach%20book.jpg"></a>
-            <img src="/graphics/stamps/needmoresleep.gif">
-            <img src="/graphics/stamps/gumi.gif">
-            <img src="/graphics/stamps/badapple.gif">
-            <img src="/graphics/stamps/eeveelutions.png">
-            <img src="/graphics/stamps/fslur.png">
-            <img src="/graphics/stamps/stamp08.gif" title="i made the stamp, but not the og gif, so lmk if you know where it's from" />
-            <a href="https://www.tumblr.com/futurefishy/723108945465622528" target="_blank"><img src="/graphics/stamps/stamp002.png" /></a>
-            <a href="https://www.tumblr.com/futurefishy/721366902632562688" target="_blank"><img src="/graphics/stamps/stamp003.png" /></a>
-            <a href="https://www.tumblr.com/futurefishy/721366902632562688" target="_blank"><img src="/graphics/stamps/stamp004.png" /></a>
-            <a href="https://www.tumblr.com/futurefishy/721366902632562688" target="_blank"><img src="https://64.media.tumblr.com/d0e7fdf8fd808a59c794bac370084a10/85e0f5d14f85bcb6-c4/s100x200/a9da74d7a58a2bb03fff7a783bc6964ffb1c4bb6.png" /></a>
-            <a href="https://www.pinterest.com.au/pin/669769775859591596/" target="_blank"><img src="/graphics/stamps/stamp%20not%20enough%20sleep.jpg" /></a>
-            <img src="/graphics/stamps/mspain.png" />
-            <a href="https://wrender.neocities.org/Images/vaporeonstamp.gif" target="_blank"><img src="/graphics/stamps/vaporeonstamp.gif" /></a>
-            <a href="https://wrender.neocities.org/Images/wavestamp.gif" target="_blank"><img src="/graphics/stamps/wavestamp.gif" /></a>
-            <a href="https://wrender.neocities.org/Images/water2stamp.gif" target="_blank"><img src="/graphics/stamps/water2stamp.gif" /></a>
-            <a href="https://wrender.neocities.org/Images/Dancing%20Stamp.gif" target="_blank"><img src="/graphics/stamps/Dancing%20Stamp.gif" /></a>
-            <a href="https://wrender.neocities.org/Images/dogcarstamp.gif" target="_blank"><img src="/graphics/stamps/dogcarstamp.gif" /></a>
-            <img src="/graphics/stamps/queervillain.png" />
-            <a href="https://www.tumblr.com/angelfiresworld/729650197999894528" target="_blank"><img src="https://64.media.tumblr.com/71b6f209c72a270c28b9a1076ff091a8/d7d529b67f874c85-14/s100x200/69fdaf8e2d80736e841f37f00afe590685cf9b16.pnj" /></a>
-            <img src="/graphics/stamps/queer.gif" />
-            <img src="/graphics/stamps/neil.png" />
-            <a href="https://collection.ju.mp/assets/images/gallery03/f7db1bad_original.png" target="_blank"><img src="/graphics/stamps/f7db1bad_original.png" /></a>
-            <a href="https://sugarforbrains.neocities.org/img/stamp/cool.gif" target="_blank"><img src="/graphics/stamps/cool.gif" /></a>
-            <img src="/graphics/stamps/stamp49.png" />
-            <img src="/graphics/stamps/stamp48.png" />
-            <img src="/graphics/stamps/stamp47.png" />
-            <img src="/graphics/stamps/stamp46.gif" />
-            <img src="/graphics/stamps/stamp46.png" />
-            <img src="/graphics/stamps/stamp45.png" />
-            <img src="/graphics/stamps/stamp44.png" />
-            <img src="/graphics/stamps/stamp43.gif" />
-            <img src="/graphics/stamps/stamp41.gif" />
-            <img src="/graphics/stamps/stamp40.gif" />
-            <img src="/graphics/stamps/stamp30.png" />
-            <img src="/graphics/stamps/stamp29.png" />
-            <a href="https://shadok.neocities.org/stamps/otgw.gif" target="_blank"><img src="/graphics/stamps/stamp26.gif" /></a>
-            <img src="/graphics/stamps/stamp24.gif" />
-            <img src="/graphics/stamps/88.gif" />
-            <img src="/graphics/stamps/adhd_stamp_by_vyrmn_dg1lzrw-fullview.png" />
-            <img src="/graphics/stamps/autistic_stamp_by_vyrmn_dg1lzsg-fullview.png" />
-            <img src="/graphics/stamps/d87xmn8-ddf8b510-12c2-450b-97c6-bb4a257066b2.gif" />
-            <img src="/graphics/stamps/daydreamer.png" />
-            <img src="/graphics/stamps/ASD.png" />
-            <img src="/graphics/stamps/Anxiety%20(1).png" />
-            <img src="/graphics/stamps/stamp05.png" />
-            <img src="/graphics/stamps/stamp06.png" />
-            <img src="/graphics/stamps/stamp07.png" />
-            <a href="https://www.tumblr.com/reahustar/720983476727431168" target="_blank"><img src="/graphics/stamps/stamp11.gif" /></a>
-            <img src="/graphics/stamps/stamp12.png" />
-            <img src="/graphics/stamps/stamp13.png" />
-            <img src="/graphics/stamps/stamp15.png" />
-            <a href="https://yefreitor.com/img/stamps/gamesucks.png" target="_blank"><img src="/graphics/stamps/gamesucks.png" /></a>
-            <a href="https://rainbow-butterfly-knife.tumblr.com/stamps" target="_blank"><img src="https://64.media.tumblr.com/018d9266e5ff53183fb5174793b5a781/tumblr_inline_pgracvXEBc1v11djx_540.png" /></a>
-            <a href="https://rainbow-butterfly-knife.tumblr.com/stamps" target="_blank"><img src="https://64.media.tumblr.com/31fc685f9cd2a0b983ba7d65c7b8995a/tumblr_inline_owuhziRwzF1u5rvwj_500.png" /></a>
-            <a href="https://rainbow-butterfly-knife.tumblr.com/stamps" target="_blank"><img src="https://64.media.tumblr.com/da0f20533c9be4ad5a704f11b9e76371/tumblr_inline_paunblL1lC1v11djx_100.gif" /></a>
-            <a href="https://rainbow-butterfly-knife.tumblr.com/stamps" target="_blank"><img src="https://64.media.tumblr.com/c21ffd6e5738229df33f7161ed8addab/tumblr_inline_pgas19srxj1v11djx_500.gif" /></a>
-            <a href="https://rainbow-butterfly-knife.tumblr.com/stamps" target="_blank"><img src="https://64.media.tumblr.com/a6806ef0957daa4b5a8a550331490901/tumblr_pe6xjbYQXO1xy0eh3o6_100.gif" /></a>
-            <a href="https://rainbow-butterfly-knife.tumblr.com/stamps" target="_blank"><img src="https://64.media.tumblr.com/4eb42d93350433012fbad6a51140f0aa/tumblr_inline_pe6lbtTcdY1v11djx_540.gif" /></a>
-            <a href="https://rainbow-butterfly-knife.tumblr.com/stamps" target="_blank"><img src="https://64.media.tumblr.com/3152ea4d4b2aff2d6a905507e9bdb7f9/tumblr_inline_paunukSEXe1v11djx_100.gif" /></a>
-            <a href="https://rainbow-butterfly-knife.tumblr.com/stamps" target="_blank"><img src="https://64.media.tumblr.com/52ca2b1690d206c3ec04d83c4b868f73/tumblr_oyrvreZdAH1we969bo1_100.gif" /></a>
-            <a href="https://rainbow-butterfly-knife.tumblr.com/stamps" target="_blank"><img src="https://64.media.tumblr.com/6e4e1bdd664295bef07e470df27f2040/tumblr_inline_paunuiiAK71v11djx_100.gif" /></a>
-            <a href="https://rainbow-butterfly-knife.tumblr.com/stamps" target="_blank"><img src="https://64.media.tumblr.com/c1f694542289b8aa6bd11dfc5ed04298/tumblr_inline_pe6lz0r03T1v11djx_540.png" /></a>
-            <img src="/graphics/stamps/522.png" />
-            <img src="/graphics/stamps/006.jpg" />
-            <img src="/graphics/stamps/116.jpg" />
-            <img src="/graphics/stamps/069.gif" />
-            <img src="/graphics/stamps/090.png" />
-            <img src="/graphics/stamps/096.gif" />
-            <img src="/graphics/stamps/158.jpg" />
-            <img src="/graphics/stamps/476.png" />
-            <img src="/graphics/stamps/485.png" />
-            <img src="/graphics/stamps/560.jpg" />
-            <img src="/graphics/stamps/566.png" />
-            <img src="/graphics/stamps/614.png" />
-            <img src="/graphics/stamps/053.png" />
-            <img src="/graphics/stamps/127.gif" />
-            <img src="/graphics/stamps/125.jpg" />
-            <img src="/graphics/stamps/175.png" />
-            <img src="/graphics/stamps/189.gif" />
-            <img src="/graphics/stamps/261.gif" />
-            <img src="/graphics/stamps/343.gif" />
-            <img src="/graphics/stamps/362.png" />
-            <img src="/graphics/stamps/398.gif" />
-            <img src="/graphics/stamps/364.gif" />
-            <img src="/graphics/stamps/457.gif" />
-            <img src="/graphics/stamps/460.gif" />
-            <img src="/graphics/stamps/441.png" />
-            <img src="/graphics/stamps/509.png" />
-            <img src="/graphics/stamps/829.png" />
-            <img src="/graphics/stamps/714.png" />
-            <img src="/graphics/stamps/631.gif" />
-            <img src="/graphics/stamps/492.gif" />
-            <img src="/graphics/stamps/433.gif" />
-            <img src="/graphics/stamps/84038820_15X3q30uKXrg7eD.gif" />
-            <img src="/graphics/stamps/84038791_IFNVuMNcahefJD8.gif" />
-            <img src="/graphics/stamps/tumblr_44be30cefa3c64253b3a17e661e427c8_ca8d8ef4_100.png" />
-            <img src="/graphics/stamps/tumblr_ac4b1304311a0ae9fcf63f512ce5d907_ca4d8952_100.gif" />
-            <img src="/graphics/stamps/tumblr_68bb9e71ec030bfeb579002c6761aa36_9f052121_100.webp" />
-            <a href="https://www.tumblr.com/falkadanstamps/742099318637559808" target="_blank"><img src="/graphics/stamps/tumblr_66b9a67019cc84a9a7c7055bd83dfee6_0ad99749_100.png" /></a>
-            <a href="https://www.tumblr.com/falkadanstamps/742099318637559808" target="_blank"><img src="/graphics/stamps/tumblr_24ccbad79db3b51cc9ee2594f27a7943_451b076b_100.gif" /></a>
-            <a href="https://www.tumblr.com/falkadanstamps/742099512089247744" target="_blank"><img src="/graphics/stamps/loser%20baby.gif" /></a>
-            <a href="https://www.tumblr.com/falkadanstamps/742099512089247744" target="_blank"><img src="/graphics/stamps/hazbin%20hotel.png" /></a>
-            <a href="https://www.tumblr.com/falkadanstamps/742099512089247744" target="_blank"><img src="/graphics/stamps/alastor%20and%20lucifer.png" /></a>
-            <img src="/graphics/stamps/438.gif" />
         </div>
 
 
 
 
 
-        <div class="graphics acc" id="byme" style="grid-area: 1/3 / span 2 / span 3">
-            <h4>by me</h4>
-            <img src="/graphics/pixels/stella%20octangula%20pixel.gif" />
-            <img src="/graphics/pixels/gleach_allen_pixel.gif" />
-            <img src="/graphics/pixels/cursed%20cat%20alastor.gif" />
-            <hr />
 
-            <img src="/graphics/blinkies/watercooler.gif" />
-            <img src="/graphics/blinkies/stomachbook-circuit-ultimate.gif" />
-            <img src="/graphics/blinkies/comicsans.gif" />
-            <img src="/graphics/blinkies/stomachbook-fukouna-ultimate.gif" />
-            <img src="/graphics/blinkies/stomachbook-fukouna-title.gif" />
-            <img src="/graphics/blinkies/stomachbook-fukouna-lyrics.gif" />
-            <img src="/graphics/blinkies/helloworld.gif" />
-            <img src="/graphics/blinkies/fukouna.gif" />
-            <img src="/graphics/blinkies/blinkie-sandwiches.gif" />
-            <img src="/graphics/blinkies/gleach%20blinkie%20PD.gif" />
-            <img src="/graphics/blinkies/gleach%20plastic%20death.gif" />
-            <img src="/graphics/blinkies/gleach%20plastic%20death2.gif" />
-            <img src="/graphics/blinkies/gleach_commatose.gif" />
-            <img src="/graphics/blinkies/gleach_slipunderthedoor.gif" />
-            <img src="/graphics/blinkies/i%20am%20(not)%20a%20ronot.png" />
-            <img src="/graphics/blinkies/cursed%20cat%20alastor%20blinnkie.gif" />
+        <div class="window" id="stamps" style="grid-area: 3/3/span 1/span 1">
+            <div class="win-title">stamps</div>
+            <div class="win-content">
+                <!--<img src="/graphics/stamps/">-->
+                <img src="/graphics/stamps/imfine.gif">
+                <img src="/graphics/stamps/bedperson.gif">
+                <img src="/graphics/stamps/fourleaf.jpg">
+                <img src="/graphics/stamps/minnow.jpg">
+                <img src="/graphics/stamps/critter.jpg">
+                <img src="/graphics/stamps/kill.png">
+                <img src="/graphics/stamps/tomato.png">
+                <img src="/graphics/stamps/strawpage.png">
+                <img src="/graphics/stamps/webp.png">
+                <img src="/graphics/stamps/transgit.png">
+                <img src="/graphics/stamps/fis.png">
+                <img src="/graphics/stamps/fishtank.gif">
+                <img src="/graphics/stamps/vio.gif">
+                <img src="/graphics/stamps/whenidie.png">
+                <img src="/graphics/stamps/you%20know.gif">
+                <img src="/graphics/stamps/headpats.png">
+                <img src="/graphics/stamps/computer.jpg">
+                <img src="/graphics/stamps/CANNIBALISM.jpg">
+                <img src="/graphics/stamps/penis.jpg">
+                <img src="/graphics/stamps/fish.gif">
+                <img src="/graphics/stamps/plushies.png">
+                <img src="/graphics/stamps/gay.png">
+                <img src="/graphics/stamps/plague.png">
+                <img src="/graphics/stamps/madoka%20y%20homura.png">
+                <img src="/graphics/stamps/lacey.png">
+                <img src="/graphics/stamps/mikumiku%20playlist.gif">
+                <img src="/graphics/stamps/panty%20y%20stocking.gif">
+                <img src="/graphics/stamps/panty_y_stocking_stamp_by_julittah-d4qptt2.gif">
+                <img src="/graphics/stamps/gender.png">
+                <img src="/graphics/stamps/woah.png">
+                <img src="/graphics/stamps/stocking-.gif">
+                <img src="/graphics/stamps/mangle.gif">
+                <img src="/graphics/stamps/madoka.gif">
+                <img src="/graphics/stamps/mikugutair.gif">
+                <img src="/graphics/stamps/nicole.png">
+                <img src="/graphics/stamps/kangel%20n%20ame.png">
+                <img src="/graphics/stamps/teto.gif">
+                <img src="/graphics/stamps/fnaf.png">
+                <img src="/graphics/stamps/roblox.png">
+                <img src="/graphics/stamps/mc.gif">
+                <img src="/graphics/stamps/autistic%20artist.png">
+                <img src="/graphics/stamps/pomni.gif">
+                <a href="https://www.tumblr.com/grox-empire/746487085398196224"><img src="/graphics/stamps/femtanyl.jpg"></a>
+                <a href="https://www.tumblr.com/grox-empire/746487085398196224"><img src="/graphics/stamps/stomach%20book%202.jpg"></a>
+                <a href="https://www.tumblr.com/grox-empire/746487085398196224"><img src="/graphics/stamps/stomach%20book.jpg"></a>
+                <img src="/graphics/stamps/needmoresleep.gif">
+                <img src="/graphics/stamps/gumi.gif">
+                <img src="/graphics/stamps/badapple.gif">
+                <img src="/graphics/stamps/eeveelutions.png">
+                <img src="/graphics/stamps/fslur.png">
+                <img src="/graphics/stamps/stamp08.gif" title="i made the stamp, but not the og gif, so lmk if you know where it's from" />
+                <a href="https://www.tumblr.com/futurefishy/723108945465622528" target="_blank"><img src="/graphics/stamps/stamp002.png" /></a>
+                <a href="https://www.tumblr.com/futurefishy/721366902632562688" target="_blank"><img src="/graphics/stamps/stamp003.png" /></a>
+                <a href="https://www.tumblr.com/futurefishy/721366902632562688" target="_blank"><img src="/graphics/stamps/stamp004.png" /></a>
+                <a href="https://www.tumblr.com/futurefishy/721366902632562688" target="_blank"><img src="https://64.media.tumblr.com/d0e7fdf8fd808a59c794bac370084a10/85e0f5d14f85bcb6-c4/s100x200/a9da74d7a58a2bb03fff7a783bc6964ffb1c4bb6.png" /></a>
+                <a href="https://www.pinterest.com.au/pin/669769775859591596/" target="_blank"><img src="/graphics/stamps/stamp%20not%20enough%20sleep.jpg" /></a>
+                <img src="/graphics/stamps/mspain.png" />
+                <a href="https://wrender.neocities.org/Images/vaporeonstamp.gif" target="_blank"><img src="/graphics/stamps/vaporeonstamp.gif" /></a>
+                <a href="https://wrender.neocities.org/Images/wavestamp.gif" target="_blank"><img src="/graphics/stamps/wavestamp.gif" /></a>
+                <a href="https://wrender.neocities.org/Images/water2stamp.gif" target="_blank"><img src="/graphics/stamps/water2stamp.gif" /></a>
+                <a href="https://wrender.neocities.org/Images/Dancing%20Stamp.gif" target="_blank"><img src="/graphics/stamps/Dancing%20Stamp.gif" /></a>
+                <a href="https://wrender.neocities.org/Images/dogcarstamp.gif" target="_blank"><img src="/graphics/stamps/dogcarstamp.gif" /></a>
+                <img src="/graphics/stamps/queervillain.png" />
+                <a href="https://www.tumblr.com/angelfiresworld/729650197999894528" target="_blank"><img src="https://64.media.tumblr.com/71b6f209c72a270c28b9a1076ff091a8/d7d529b67f874c85-14/s100x200/69fdaf8e2d80736e841f37f00afe590685cf9b16.pnj" /></a>
+                <img src="/graphics/stamps/queer.gif" />
+                <img src="/graphics/stamps/neil.png" />
+                <a href="https://collection.ju.mp/assets/images/gallery03/f7db1bad_original.png" target="_blank"><img src="/graphics/stamps/f7db1bad_original.png" /></a>
+                <a href="https://sugarforbrains.neocities.org/img/stamp/cool.gif" target="_blank"><img src="/graphics/stamps/cool.gif" /></a>
+                <img src="/graphics/stamps/stamp49.png" />
+                <img src="/graphics/stamps/stamp48.png" />
+                <img src="/graphics/stamps/stamp47.png" />
+                <img src="/graphics/stamps/stamp46.gif" />
+                <img src="/graphics/stamps/stamp46.png" />
+                <img src="/graphics/stamps/stamp45.png" />
+                <img src="/graphics/stamps/stamp44.png" />
+                <img src="/graphics/stamps/stamp43.gif" />
+                <img src="/graphics/stamps/stamp41.gif" />
+                <img src="/graphics/stamps/stamp40.gif" />
+                <img src="/graphics/stamps/stamp30.png" />
+                <img src="/graphics/stamps/stamp29.png" />
+                <a href="https://shadok.neocities.org/stamps/otgw.gif" target="_blank"><img src="/graphics/stamps/stamp26.gif" /></a>
+                <img src="/graphics/stamps/stamp24.gif" />
+                <img src="/graphics/stamps/88.gif" />
+                <img src="/graphics/stamps/adhd_stamp_by_vyrmn_dg1lzrw-fullview.png" />
+                <img src="/graphics/stamps/autistic_stamp_by_vyrmn_dg1lzsg-fullview.png" />
+                <img src="/graphics/stamps/d87xmn8-ddf8b510-12c2-450b-97c6-bb4a257066b2.gif" />
+                <img src="/graphics/stamps/daydreamer.png" />
+                <img src="/graphics/stamps/ASD.png" />
+                <img src="/graphics/stamps/Anxiety%20(1).png" />
+                <img src="/graphics/stamps/stamp05.png" />
+                <img src="/graphics/stamps/stamp06.png" />
+                <img src="/graphics/stamps/stamp07.png" />
+                <a href="https://www.tumblr.com/reahustar/720983476727431168" target="_blank"><img src="/graphics/stamps/stamp11.gif" /></a>
+                <img src="/graphics/stamps/stamp12.png" />
+                <img src="/graphics/stamps/stamp13.png" />
+                <img src="/graphics/stamps/stamp15.png" />
+                <a href="https://yefreitor.com/img/stamps/gamesucks.png" target="_blank"><img src="/graphics/stamps/gamesucks.png" /></a>
+                <a href="https://rainbow-butterfly-knife.tumblr.com/stamps" target="_blank"><img src="https://64.media.tumblr.com/018d9266e5ff53183fb5174793b5a781/tumblr_inline_pgracvXEBc1v11djx_540.png" /></a>
+                <a href="https://rainbow-butterfly-knife.tumblr.com/stamps" target="_blank"><img src="https://64.media.tumblr.com/31fc685f9cd2a0b983ba7d65c7b8995a/tumblr_inline_owuhziRwzF1u5rvwj_500.png" /></a>
+                <a href="https://rainbow-butterfly-knife.tumblr.com/stamps" target="_blank"><img src="https://64.media.tumblr.com/da0f20533c9be4ad5a704f11b9e76371/tumblr_inline_paunblL1lC1v11djx_100.gif" /></a>
+                <a href="https://rainbow-butterfly-knife.tumblr.com/stamps" target="_blank"><img src="https://64.media.tumblr.com/c21ffd6e5738229df33f7161ed8addab/tumblr_inline_pgas19srxj1v11djx_500.gif" /></a>
+                <a href="https://rainbow-butterfly-knife.tumblr.com/stamps" target="_blank"><img src="https://64.media.tumblr.com/a6806ef0957daa4b5a8a550331490901/tumblr_pe6xjbYQXO1xy0eh3o6_100.gif" /></a>
+                <a href="https://rainbow-butterfly-knife.tumblr.com/stamps" target="_blank"><img src="https://64.media.tumblr.com/4eb42d93350433012fbad6a51140f0aa/tumblr_inline_pe6lbtTcdY1v11djx_540.gif" /></a>
+                <a href="https://rainbow-butterfly-knife.tumblr.com/stamps" target="_blank"><img src="https://64.media.tumblr.com/3152ea4d4b2aff2d6a905507e9bdb7f9/tumblr_inline_paunukSEXe1v11djx_100.gif" /></a>
+                <a href="https://rainbow-butterfly-knife.tumblr.com/stamps" target="_blank"><img src="https://64.media.tumblr.com/52ca2b1690d206c3ec04d83c4b868f73/tumblr_oyrvreZdAH1we969bo1_100.gif" /></a>
+                <a href="https://rainbow-butterfly-knife.tumblr.com/stamps" target="_blank"><img src="https://64.media.tumblr.com/6e4e1bdd664295bef07e470df27f2040/tumblr_inline_paunuiiAK71v11djx_100.gif" /></a>
+                <a href="https://rainbow-butterfly-knife.tumblr.com/stamps" target="_blank"><img src="https://64.media.tumblr.com/c1f694542289b8aa6bd11dfc5ed04298/tumblr_inline_pe6lz0r03T1v11djx_540.png" /></a>
+                <img src="/graphics/stamps/522.png" />
+                <img src="/graphics/stamps/006.jpg" />
+                <img src="/graphics/stamps/116.jpg" />
+                <img src="/graphics/stamps/069.gif" />
+                <img src="/graphics/stamps/090.png" />
+                <img src="/graphics/stamps/096.gif" />
+                <img src="/graphics/stamps/158.jpg" />
+                <img src="/graphics/stamps/476.png" />
+                <img src="/graphics/stamps/485.png" />
+                <img src="/graphics/stamps/560.jpg" />
+                <img src="/graphics/stamps/566.png" />
+                <img src="/graphics/stamps/614.png" />
+                <img src="/graphics/stamps/053.png" />
+                <img src="/graphics/stamps/127.gif" />
+                <img src="/graphics/stamps/125.jpg" />
+                <img src="/graphics/stamps/175.png" />
+                <img src="/graphics/stamps/189.gif" />
+                <img src="/graphics/stamps/261.gif" />
+                <img src="/graphics/stamps/343.gif" />
+                <img src="/graphics/stamps/362.png" />
+                <img src="/graphics/stamps/398.gif" />
+                <img src="/graphics/stamps/364.gif" />
+                <img src="/graphics/stamps/457.gif" />
+                <img src="/graphics/stamps/460.gif" />
+                <img src="/graphics/stamps/441.png" />
+                <img src="/graphics/stamps/509.png" />
+                <img src="/graphics/stamps/829.png" />
+                <img src="/graphics/stamps/714.png" />
+                <img src="/graphics/stamps/631.gif" />
+                <img src="/graphics/stamps/492.gif" />
+                <img src="/graphics/stamps/433.gif" />
+                <img src="/graphics/stamps/84038820_15X3q30uKXrg7eD.gif" />
+                <img src="/graphics/stamps/84038791_IFNVuMNcahefJD8.gif" />
+                <img src="/graphics/stamps/tumblr_44be30cefa3c64253b3a17e661e427c8_ca8d8ef4_100.png" />
+                <img src="/graphics/stamps/tumblr_ac4b1304311a0ae9fcf63f512ce5d907_ca4d8952_100.gif" />
+                <img src="/graphics/stamps/tumblr_68bb9e71ec030bfeb579002c6761aa36_9f052121_100.webp" />
+                <a href="https://www.tumblr.com/falkadanstamps/742099318637559808" target="_blank"><img src="/graphics/stamps/tumblr_66b9a67019cc84a9a7c7055bd83dfee6_0ad99749_100.png" /></a>
+                <a href="https://www.tumblr.com/falkadanstamps/742099318637559808" target="_blank"><img src="/graphics/stamps/tumblr_24ccbad79db3b51cc9ee2594f27a7943_451b076b_100.gif" /></a>
+                <a href="https://www.tumblr.com/falkadanstamps/742099512089247744" target="_blank"><img src="/graphics/stamps/loser%20baby.gif" /></a>
+                <a href="https://www.tumblr.com/falkadanstamps/742099512089247744" target="_blank"><img src="/graphics/stamps/hazbin%20hotel.png" /></a>
+                <a href="https://www.tumblr.com/falkadanstamps/742099512089247744" target="_blank"><img src="/graphics/stamps/alastor%20and%20lucifer.png" /></a>
+                <img src="/graphics/stamps/438.gif" />
+            </div>
+        </div>
 
-            <p>blank templates</p>
-            <img src="/graphics/blinkies/gleach_blank.gif" />
-            <img src="/graphics/blinkies/stomachbook-fukouna-blank.gif" />
-            <img src="/graphics/blinkies/stomachbook-circuit-blank.gif" />
-            <img src="/graphics/blinkies/blinkie-sandwiches-blank.gif" />
-            <img src="/graphics/blinkies/cursed%20cat%20alastor%20blank.gif" />
 
-            <hr />
-            <img src="/graphics/stamps/teto.png" />
-            <img src="/graphics/stamps/alastor.png" />
-            <img src="/graphics/stamps/fizz.png" />
-            <img src="/graphics/stamps/ruru.png" />
-            <img src="/graphics/stamps/ame.png" />
-            <img src="/graphics/stamps/kangel.png" />
-            <img src="/graphics/stamps/jhariah%20teeth.png" />
-            <img src="/graphics/stamps/bee%20and%20puppycat.png" />
-            <img src="/graphics/stamps/young%20neil.png" />
-            <img src="/graphics/stamps/aconite-4.png" />
-            <img src="/graphics/stamps/aconite-3.png" />
-            <img src="/graphics/stamps/aconite-2.png" />
-            <img src="/graphics/stamps/aconite.png" />
-            <img src="/graphics/stamps/stocking.png" />
-            <img src="/graphics/stamps/laikascomet_mars3.png" />
-            <img src="/graphics/stamps/laikascomet_mars2.png" />
-            <img src="/graphics/stamps/laikascomet_mars.png" />
-            <img src="/graphics/stamps/laikascomet_laika.png" />
-            <img src="/graphics/stamps/plasticdeathstamp.png" />
-            <img src="/graphics/stamps/stamp20.gif" />
-            <img src="/graphics/stamps/stamp21.gif" />
-            <img src="/graphics/stamps/stamp22.gif" />
-            <img src="/graphics/stamps/stamp09.png" />
-            <img src="/graphics/stamps/stamp23.gif" />
-            <img src="/graphics/stamps/stamp25.gif" />
-            <img src="/graphics/stamps/stamp28.gif" />
-            <img src="/graphics/stamps/stamp27.gif" />
-            <img src="/graphics/stamps/glass%20beach%20stamp.png" />
+
+
+
+        <div class="window" id="byme" style="grid-area: 1/3 / span 2 / span 3">
+            <div class="win-title">by me</div>
+            <div class="win-content">
+                <img src="/graphics/pixels/stella%20octangula%20pixel.gif" />
+                <img src="/graphics/pixels/gleach_allen_pixel.gif" />
+                <img src="/graphics/pixels/cursed%20cat%20alastor.gif" />
+                <hr />
+
+                <img src="/graphics/blinkies/watercooler.gif" />
+                <img src="/graphics/blinkies/stomachbook-circuit-ultimate.gif" />
+                <img src="/graphics/blinkies/comicsans.gif" />
+                <img src="/graphics/blinkies/stomachbook-fukouna-ultimate.gif" />
+                <img src="/graphics/blinkies/stomachbook-fukouna-title.gif" />
+                <img src="/graphics/blinkies/stomachbook-fukouna-lyrics.gif" />
+                <img src="/graphics/blinkies/helloworld.gif" />
+                <img src="/graphics/blinkies/fukouna.gif" />
+                <img src="/graphics/blinkies/blinkie-sandwiches.gif" />
+                <img src="/graphics/blinkies/gleach%20blinkie%20PD.gif" />
+                <img src="/graphics/blinkies/gleach%20plastic%20death.gif" />
+                <img src="/graphics/blinkies/gleach%20plastic%20death2.gif" />
+                <img src="/graphics/blinkies/gleach_commatose.gif" />
+                <img src="/graphics/blinkies/gleach_slipunderthedoor.gif" />
+                <img src="/graphics/blinkies/i%20am%20(not)%20a%20ronot.png" />
+                <img src="/graphics/blinkies/cursed%20cat%20alastor%20blinnkie.gif" />
+
+                <p>blank templates</p>
+                <img src="/graphics/blinkies/gleach_blank.gif" />
+                <img src="/graphics/blinkies/stomachbook-fukouna-blank.gif" />
+                <img src="/graphics/blinkies/stomachbook-circuit-blank.gif" />
+                <img src="/graphics/blinkies/blinkie-sandwiches-blank.gif" />
+                <img src="/graphics/blinkies/cursed%20cat%20alastor%20blank.gif" />
+
+                <hr />
+                <!--<img src="/graphics/stamps/" />-->
+                <img src="/graphics/stamps/gameoflife.png" />
+                <img src="/graphics/stamps/painter.png" />
+                <img src="/graphics/stamps/sebastian_solace.png" />
+                <img src="/graphics/stamps/teto.png" />
+                <img src="/graphics/stamps/alastor.png" />
+                <img src="/graphics/stamps/fizz.png" />
+                <img src="/graphics/stamps/ruru.png" />
+                <img src="/graphics/stamps/ame.png" />
+                <img src="/graphics/stamps/kangel.png" />
+                <img src="/graphics/stamps/jhariah%20teeth.png" />
+                <img src="/graphics/stamps/bee%20and%20puppycat.png" />
+                <img src="/graphics/stamps/young%20neil.png" />
+                <img src="/graphics/stamps/aconite-4.png" />
+                <img src="/graphics/stamps/aconite-3.png" />
+                <img src="/graphics/stamps/aconite-2.png" />
+                <img src="/graphics/stamps/aconite.png" />
+                <img src="/graphics/stamps/stocking.png" />
+                <img src="/graphics/stamps/laikascomet_mars3.png" />
+                <img src="/graphics/stamps/laikascomet_mars2.png" />
+                <img src="/graphics/stamps/laikascomet_mars.png" />
+                <img src="/graphics/stamps/laikascomet_laika.png" />
+                <img src="/graphics/stamps/plasticdeathstamp.png" />
+                <img src="/graphics/stamps/stamp20.gif" />
+                <img src="/graphics/stamps/stamp21.gif" />
+                <img src="/graphics/stamps/stamp22.gif" />
+                <img src="/graphics/stamps/stamp09.png" />
+                <img src="/graphics/stamps/stamp23.gif" />
+                <img src="/graphics/stamps/stamp25.gif" />
+                <img src="/graphics/stamps/stamp28.gif" />
+                <img src="/graphics/stamps/stamp27.gif" />
+                <img src="/graphics/stamps/glass%20beach%20stamp.png" />
+            </div>
         </div>
 
     </main>

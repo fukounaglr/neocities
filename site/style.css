@@ -52,6 +52,9 @@
     font-style: normal;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
 /*THEME*/
 :root {
     --hell-display: none;
@@ -185,19 +188,24 @@
 }
 
 * {
-    scrollbar-color: var(--accent-colour) white;
     scrollbar-width: thin;
     font-size: 100%;
 }
 
+p {
+    line-height: 1Em;
+    margin: auto;
+    margin-top: 5px;
+}
+
 a {
     margin: 0;
-    color: var(--accent-colour);
+    color: var(--acc);
     transition: 0.4s;
     cursor: pointer;
 
     &:hover {
-        color: var(--accent-colour-hover);
+        color: var(--acc-hov);
     }
 }
 
@@ -216,6 +224,10 @@ a:has(h1, h2, h3, h4, h5, img, div, svg)::before,
 .noico::before {
     content: "";
     display: none;
+}
+
+img.border{
+    border: 2px solid gray;
 }
 
 ul {
@@ -239,12 +251,12 @@ summary h5 {
 
 ::selection {
     color: white;
-    background: var(--accent-colour);
+    background: var(--acc);
 }
 
 ::-moz-selection {
     color: white;
-    background: var(--accent-colour);
+    background: var(--acc);
 }
 
 .draggable {
@@ -264,10 +276,8 @@ body {
 
 hr {
     border: none;
-    border-top: 3px solid;
-    border-color: var(--colour);
-    width: 40%;
-    margin: 10px auto;
+    border-top: 2px solid;
+    border-color: currentColor;
 }
 
 .vr {
@@ -391,7 +401,7 @@ a {
 .win-subtitle{
     margin: 0 -20px;
    margin-top: -30px;
-    border: solid 2px gray;
+    border-bottom: solid 2px gray;
     padding: 5px 10px;
 }
 
@@ -399,6 +409,8 @@ a {
     padding: 2px 5px;
     margin: 3px;
     border: 2px solid gray;
+    height: calc(100% - 50px);
+    overflow: auto;
 }
 .win-raise {
     margin-top: -6px;
@@ -422,6 +434,26 @@ a {
     }
 }
 
+
+
+
+        .button {
+            all: unset;
+            border-radius: 20px;
+            padding: 5px 20px;
+            background-image: linear-gradient(to top, var(--pri), var(--sec));
+            color: var(--bg-col);
+            font-family: "Audiowide", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 0.8Em;
+            cursor: var(--cur-hov);
+            margin: 5px;
+
+            &:hover {
+                font-style: italic;
+            }
+        }
 
 
 
@@ -549,3 +581,145 @@ a {
         height: initial;
     }
 }
+
+
+
+
+        @-webkit-keyframes snowflakes-fall {
+            0% {
+                top: -10%
+            }
+
+            100% {
+                top: 100%
+            }
+        }
+
+        @-webkit-keyframes snowflakes-shake {
+
+            0%,
+            100% {
+                -webkit-transform: translateX(0);
+                transform: translateX(0)
+            }
+
+            50% {
+                -webkit-transform: translateX(80px);
+                transform: translateX(80px)
+            }
+        }
+
+        @keyframes snowflakes-fall {
+            0% {
+                top: -10%
+            }
+
+            100% {
+                top: 100%
+            }
+        }
+
+        @keyframes snowflakes-shake {
+
+            0%,
+            100% {
+                transform: translateX(0)
+            }
+
+            50% {
+                transform: translateX(80px)
+            }
+        }
+
+        .snowflake {
+            position: fixed;
+            top: -10%;
+            z-index: 9999;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            cursor: default;
+            -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+            -webkit-animation-duration: 10s, 3s;
+            -webkit-animation-timing-function: linear, ease-in-out;
+            -webkit-animation-iteration-count: infinite, infinite;
+            -webkit-animation-play-state: running, running;
+            animation-name: snowflakes-fall, snowflakes-shake;
+            animation-duration: 10s, 3s;
+            animation-timing-function: linear, ease-in-out;
+            animation-iteration-count: infinite, infinite;
+            animation-play-state: running, running
+        }
+
+        .snowflake:nth-of-type(0) {
+            left: 1%;
+            -webkit-animation-delay: 0s, 0s;
+            animation-delay: 0s, 0s
+        }
+
+        .snowflake:nth-of-type(1) {
+            left: 10%;
+            -webkit-animation-delay: 1s, 1s;
+            animation-delay: 1s, 1s
+        }
+
+        .snowflake:nth-of-type(2) {
+            left: 20%;
+            -webkit-animation-delay: 6s, .5s;
+            animation-delay: 6s, .5s
+        }
+
+        .snowflake:nth-of-type(3) {
+            left: 30%;
+            -webkit-animation-delay: 4s, 2s;
+            animation-delay: 4s, 2s
+        }
+
+        .snowflake:nth-of-type(4) {
+            left: 40%;
+            -webkit-animation-delay: 2s, 2s;
+            animation-delay: 2s, 2s
+        }
+
+        .snowflake:nth-of-type(5) {
+            left: 50%;
+            -webkit-animation-delay: 8s, 3s;
+            animation-delay: 8s, 3s
+        }
+
+        .snowflake:nth-of-type(6) {
+            left: 60%;
+            -webkit-animation-delay: 6s, 2s;
+            animation-delay: 6s, 2s
+        }
+
+        .snowflake:nth-of-type(7) {
+            left: 70%;
+            -webkit-animation-delay: 2.5s, 1s;
+            animation-delay: 2.5s, 1s
+        }
+
+        .snowflake:nth-of-type(8) {
+            left: 80%;
+            -webkit-animation-delay: 1s, 0s;
+            animation-delay: 1s, 0s
+        }
+
+        .snowflake:nth-of-type(9) {
+            left: 90%;
+            -webkit-animation-delay: 3s, 1.5s;
+            animation-delay: 3s, 1.5s
+        }
+
+        .snowflake:nth-of-type(10) {
+            left: 25%;
+            -webkit-animation-delay: 2s, 0s;
+            animation-delay: 2s, 0s
+        }
+
+        .snowflake:nth-of-type(11) {
+            left: 65%;
+            -webkit-animation-delay: 4s, 2.5s;
+            animation-delay: 4s, 2.5s
+        }
