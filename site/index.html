@@ -123,11 +123,12 @@
         }
 
         #news {
-            max-width: 300px;
+            max-width: 340px;
+            height: calc(100vh - 20px);
+            overflow: auto;
             position: absolute;
             top: 20px;
             right: 20px;
-            pointer-events: none;
             z-index: 20;
 
             & img {
@@ -209,7 +210,7 @@
 
 
 
-        <div class="win-content" style="position: relative; height: calc(100% - 13px)">
+        <div class="win-content" style="position: relative; height: calc(100% - 13px); overflow-x: hidden;">
             <header>
                 <marquee style="margin-top: 5px">FUKOUNA GIRL! FUKOUNA GIRL! IF YOU WANNA FLAY ME, LETS SEE WHATS INSIDE!</marquee>
                 <p>
@@ -287,44 +288,64 @@
             </div>
         </div>
 
-            <div class="window" style="width: 300px; margin-top: 20px">
-                <div class="win-title"><img src="/graphics/pixels/cat34.gif"> log</div>
-                <div class="win-content">
-                    <iframe title="update log" style="width: 100%; height: 200px; overflow: scroll" src="/update-log.html"></iframe>
-                </div>
+        <div class="window" style="width: 300px">
+            <div class="win-title"><img src="/graphics/pixels/cat34.gif"> links</div>
+            <div class="win-content">
+                <details>
+                    <summary>Click here to view my socials!</summary>
+                    <div class="win-content">
+                    <a href="https://fukounaglr.straw.page/" target="_blank">Strawpage</a>
+                    <a href="https://bsky.app/profile/fukounaglr.bsky.social" target="_blank">BlueSky</a>
+                    <a href="https://youtube.com/@fukounaglr" target="_blank">Youtube</a>
+                    <a href="https://pinterest.com/fukounaglr/" target="_blank">Pinterest</a>
+                    <a href="https://www.tiktok.com/@fukounaglr" target="_blank">Tiktok</a>
+                        <p>and other stuff</p>
+                    <a href="https://toyhou.se/fukouna" target="_blank">Toyhouse</a>
+                    <a href="https://casketkid.bandcamp.com/" target="_blank">Bandcamp</a>
+                    <a href="https://discord.gg/XxKaGgukz" target="_blank">Discord server</a>
+                    </div>
+                </details>
             </div>
         </div>
 
+        <div class="window" style="width: 300px;">
+            <div class="win-title"><img src="/graphics/pixels/cat34.gif"> log</div>
+            <div class="win-content">
+                <iframe title="update log" style="width: 100%; height: 200px; overflow: scroll" src="/update-log.html"></iframe>
+            </div>
+        </div>
+    </div>
 
 
-        <script src="/js/views-update.js"> </script>
-        <script type="text/javascript">
-            const enter = document.getElementById("phone-enter");
-            const splash = document.getElementById("phone-splash");
-            document.documentElement.setAttribute('mobile-warning', localStorage.getItem("mobwarn"));
 
-            function hide() {
-                splash.style.display = "none";
-            }
+    <script src="/js/views-update.js"> </script>
+    <script type="text/javascript">
+        const enter = document.getElementById("phone-enter");
+        const splash = document.getElementById("phone-splash");
+        document.documentElement.setAttribute('mobile-warning', localStorage.getItem("mobwarn"));
 
-            function dontask() {
-                splash.style.display = "none";
-                localStorage.setItem('mobwarn', 'false');
-            }
-            if (localStorage.getItem("mobwarn") == "false") {
-                splash.style.display = "none";
-            } else if (window.matchMedia("(max-width: 600px)").matches) {
-                splash.style.display = "block";
-            }
-        </script>
+        function hide() {
+            splash.style.display = "none";
+        }
 
-        <script>
-            if (/headless/i.test(window.navigator.userAgent) || window.navigator.webdriver) {
-                window.location.replace("/thumb.html");
-            }
-        </script>
+        function dontask() {
+            splash.style.display = "none";
+            localStorage.setItem('mobwarn', 'false');
+        }
+        if (localStorage.getItem("mobwarn") == "false") {
+            splash.style.display = "none";
+        } else if (window.matchMedia("(max-width: 600px)").matches) {
+            splash.style.display = "block";
+        }
+    </script>
 
-        <script src="/js/theme-switcher.js"></script>
+    <script>
+        if (/headless/i.test(window.navigator.userAgent) || window.navigator.webdriver) {
+            window.location.replace("/thumb.html");
+        }
+    </script>
+
+    <script src="/js/theme-switcher.js"></script>
 
 </body>
 

@@ -49,9 +49,9 @@
                 margin-top: 40px;
                 writing-mode: tb-rl;
 
-            font-family: "Rampart One", sans-serif;
-            font-weight: 400;
-            font-style: normal;
+                font-family: "Rampart One", sans-serif;
+                font-weight: 400;
+                font-style: normal;
             }
         }
 
@@ -61,6 +61,16 @@
 
             & img {
                 width: 88px;
+            }
+        }
+
+        #sites {
+            grid-area: 1/2/span 1/span 2;
+            display: grid;
+            grid-template-columns: 108px auto;
+
+            & div {
+                height: calc(100% - 13px);
             }
         }
 
@@ -95,6 +105,10 @@
                 }
             }
 
+            #sites {
+                display: block;
+            }
+
             .window {
                 margin-bottom: 20px;
                 height: auto;
@@ -109,14 +123,14 @@
         <h1>cool sites!</h1>
     </div>
 
-    <div class="window" id="sites" style="grid-area: 1/2/span 1/span 2; display: grid; grid-template-columns: 108px auto;">
+    <div class="window" id="sites">
         <div class="win-title" style="grid-area: 1/1/span 1/span 2"><img src="/graphics/pixels/butterfly.gif"> cool sites &amp; friends!</div>
-        <div class="win-content" style="height: calc(100% - 13px)">
+        <div class="win-content">
             <p>link m3!</p>
             <img src="/fukounaglr-alt.gif">
             <img src="/fukounaglr.png">
         </div>
-        <div class="win-content"  style="height: calc(100% - 13px)">
+        <div class="win-content">
             <!--<a target="_blank" href=""><img src="/graphics/sites/"></a>-->
             <a href="https://olliveen.neocities.org/" target="_blank"><img src="https://olliveen.neocities.org/img/button.gif"></a>
             <a target="_blank" href="https://hekate.neocities.org/"><img src="/graphics/sites/hekate.png"></a>
@@ -233,23 +247,23 @@
     <div class="window">
         <div class="win-title"><img src="/graphics/pixels/pc.gif"> WEB</div>
         <div class="win-content">
-        <ul>
-            <li><a href="https://neocities.org/dashboard" target="_blank">neocities</a></li>
-            <li><a href="https://juneish.neocities.org/written/resources/?page=neocities-git" target="_blank">deploy your neocities with github</a></li>
-            <li><a href="https://dannarchy.com/tut/tut_002" target="_blank">Native Neocities Hit-Counter</a></li>
-            <li><a href="https://wrender.neocities.org/designsins" target="_blank">The 7 Deadly Neocities Sins</a></li>
-            <li><a href="https://www.cbox.ws/" target="_blank">chat box for your site</a></li>
-            <li><a href="https://www.free-website-hit-counter.com/" target="_blank">hit counter</a></li>
-            <li><a href="https://brisray.com/web/webring-list.htm" target="_blank">webrings list</a></li>
-            <li><a href="https://rss.bloople.net/" target="_blank">RSS to HTML</a></li>
-            <li><a href="https://www.w3schools.com/" target="_blank">w3schools</a></li>
-            <li><a target="_blank" href="https://www.fontsquirrel.com/tools/webfont-generator">webfont generator</a></li>
-            <li><a target="_blank" href="https://codepen.io/sadness97/pen/KKobMWx">[Javascript + InteractJS] Easy Drag &amp; Drop</a></li>
-            <li><a target="_blank" href="https://www.w3schools.com/howto/howto_js_tabs.asp">How TO - Tabs</a></li>
-            <li><a target="_blank" href="https://codepen.io/stamfette/pen/WNwzoQr">pinterest style gallery</a></li>
-            <li><a target="_blank" href="https://codepen.io/troy-sucks/pen/abxBXMJ">theme system</a></li>
-            <li><a target="_blank" href="https://simplestepscode.com/javascript-quiz-tutorial/">JS quiz tutorial</a></li>
-        </ul>
+            <ul>
+                <li><a href="https://neocities.org/dashboard" target="_blank">neocities</a></li>
+                <li><a href="https://juneish.neocities.org/written/resources/?page=neocities-git" target="_blank">deploy your neocities with github</a></li>
+                <li><a href="https://dannarchy.com/tut/tut_002" target="_blank">Native Neocities Hit-Counter</a></li>
+                <li><a href="https://wrender.neocities.org/designsins" target="_blank">The 7 Deadly Neocities Sins</a></li>
+                <li><a href="https://www.cbox.ws/" target="_blank">chat box for your site</a></li>
+                <li><a href="https://www.free-website-hit-counter.com/" target="_blank">hit counter</a></li>
+                <li><a href="https://brisray.com/web/webring-list.htm" target="_blank">webrings list</a></li>
+                <li><a href="https://rss.bloople.net/" target="_blank">RSS to HTML</a></li>
+                <li><a href="https://www.w3schools.com/" target="_blank">w3schools</a></li>
+                <li><a target="_blank" href="https://www.fontsquirrel.com/tools/webfont-generator">webfont generator</a></li>
+                <li><a target="_blank" href="https://codepen.io/sadness97/pen/KKobMWx">[Javascript + InteractJS] Easy Drag &amp; Drop</a></li>
+                <li><a target="_blank" href="https://www.w3schools.com/howto/howto_js_tabs.asp">How TO - Tabs</a></li>
+                <li><a target="_blank" href="https://codepen.io/stamfette/pen/WNwzoQr">pinterest style gallery</a></li>
+                <li><a target="_blank" href="https://codepen.io/troy-sucks/pen/abxBXMJ">theme system</a></li>
+                <li><a target="_blank" href="https://simplestepscode.com/javascript-quiz-tutorial/">JS quiz tutorial</a></li>
+            </ul>
         </div>
     </div>
 
@@ -258,19 +272,20 @@
     <div class="window">
         <div class="win-title"><img src="/graphics/pixels/kittyy.gif"> other stuff</div>
         <div class="win-content">
-        <ul>
-            <li><a href="https://archive.org/" target="_blank"><img src="/graphics/sites/internetarchive.gif"></a></li>
-            <li><a href="https://gifypet.neocities.org/" target="_blank"><img src="/graphics/sites/gifypet.gif"></a></li>
-            <li><a href="https://tamanotchi.world/" target="_blank"><img src="/graphics/sites/tamanotchi.gif"></a></li>
-            <li><a href="https://vb-audio.com/Cable/" target="_blank">virtual cable</a></li>
-            <li><a href="https://ttsvoicewizard.com/" target="_blank">TTSwizard</a></li>
-            <li><a href="https://www.freejapanesefont.com/" target="_blank">JAPANESE FONTS</a></li>
-            <li><a href="https://8bitworkshop.com/dithertron/" target="_blank">Ditheron (game system filters)</a></li>
-            <li><a href="https://onlinesequencer.net/" target="_blank">Online sequencer</a></li>
-            <li><a href="https://shroom.ink/decay/adopt-a-shroom/" target="_blank">Adopt a shroom</a></li>
-            <li><a href="https://www.mabsland.com/Adoption.html" target="_blank">Adopt a panda [web ratings]</a></li>
-        </ul>
-        </div></div>
+            <ul>
+                <li><a href="https://archive.org/" target="_blank"><img src="/graphics/sites/internetarchive.gif"></a></li>
+                <li><a href="https://gifypet.neocities.org/" target="_blank"><img src="/graphics/sites/gifypet.gif"></a></li>
+                <li><a href="https://tamanotchi.world/" target="_blank"><img src="/graphics/sites/tamanotchi.gif"></a></li>
+                <li><a href="https://vb-audio.com/Cable/" target="_blank">virtual cable</a></li>
+                <li><a href="https://ttsvoicewizard.com/" target="_blank">TTSwizard</a></li>
+                <li><a href="https://www.freejapanesefont.com/" target="_blank">JAPANESE FONTS</a></li>
+                <li><a href="https://8bitworkshop.com/dithertron/" target="_blank">Ditheron (game system filters)</a></li>
+                <li><a href="https://onlinesequencer.net/" target="_blank">Online sequencer</a></li>
+                <li><a href="https://shroom.ink/decay/adopt-a-shroom/" target="_blank">Adopt a shroom</a></li>
+                <li><a href="https://www.mabsland.com/Adoption.html" target="_blank">Adopt a panda [web ratings]</a></li>
+            </ul>
+        </div>
+    </div>
 
 </body>
 

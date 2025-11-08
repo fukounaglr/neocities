@@ -377,13 +377,12 @@ a {
 .window {
     background-color: lightgrey;
     width: fit-content;
-    border: 5px outset gray;
-    box-shadow: 5px 5px black;
+    border: 5px outset slateblue;
+    box-shadow: 5px 5px CornflowerBlue;
     color: black;
 }
-
 .win-title {
-    background-image: linear-gradient(to right, darkblue, lightcyan);
+    background-image: linear-gradient(to right, deeppink, lightpink, seashell, PaleTurquoise, deepskyblue);
     padding: 5px 15px;
     margin: 3px;
     position: relative;
@@ -394,7 +393,8 @@ a {
         content: "- ◻ x";
         position: absolute;
         right: 5px;
-        color: black;
+        top: 0;
+        color: white;
 
     }
 }

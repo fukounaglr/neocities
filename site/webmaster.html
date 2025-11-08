@@ -13,10 +13,13 @@
         @import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
 
         * {
-            --bg: url(/images/waves.jpg);
             --acc: #44caca;
             --acc-hov: #01769c;
             --fav: url(/graphics/pixels/agua.gif);
+        }
+
+        a {
+            color: var(--col)
         }
 
         body {
@@ -34,7 +37,10 @@
             height: 100%;
             position: relative;
             display: grid;
-            grid-template-areas: side img links;
+            grid-template-areas:
+                "stamps me me img"
+                "stamps me me img"
+                "stamps music games tv";
         }
 
         #textbox {
@@ -60,12 +66,15 @@
 
         .col-3 {
             width: 100%;
-            height: 100%;
+            height: 300px;
+            margin: 5px 0;
             display: grid;
+            grid-gap: 2px;
             grid-template-areas:
                 "likes profile"
                 "about profile";
             grid-template-columns: 2fr 1fr;
+            grid-template-rows: 2fr 1fr;
         }
 
         .collumn {
@@ -82,18 +91,60 @@
             margin: 2px;
         }
 
-        #win-links a {
-            color: var(--col);
-            margin-left: 5px;
+        #speech-bubble {
+            position: relative;
+            position: absolute;
+            right: -200px;
+            top: 50px;
+            background-color: paleturquoise;
+            border: 3px solid deepskyblue;
+            color: slateblue;
+            border-radius: 10px;
+            padding: 2px;
+            width: 200px;
+
+            &::before {
+                content: "";
+
+                z-index: 10;
+                position: absolute;
+                left: -30px;
+                bottom: 20px;
+                height: 30px;
+                aspect-ratio: cos(0deg);
+                clip-path: polygon(100% 0, 0 50%, 100% 100%);
+                background-color: paleturquoise;
+            }
+
+            &::after {
+                content: "";
+                z-index: 1;
+                position: absolute;
+                left: -34px;
+                bottom: 17px;
+                height: 36px;
+                aspect-ratio: cos(20deg);
+                clip-path: polygon(100% 0, 0 50%, 100% 100%);
+                background-color: deepskyblue;
+            }
+        }
+
+        & #statuscafe-username,
+        a {
+            color: deeppink;
 
             &::before {
                 display: none;
-                content: "";
             }
+        }
+
+
+        #lyric-marq {
+            color: deeppink;
+            margin-left: 5px;
 
             &:hover {
                 font-style: italic;
-                text-decoration: underline;
             }
         }
 
@@ -101,7 +152,7 @@
             padding: 2px 5px;
             margin: 5px;
             border: 2px solid gray;
-            height: calc(100% - 5em - 7px);
+            height: calc(100% - 3em - 7px);
         }
 
         .tab {
@@ -169,280 +220,187 @@
             <div class="snowflake"><img src="/graphics/pixels/agua.gif" /></div>
         </div>
 
-        <div>
-            <div class="window">
+            <div class="window" style="grid-area: links">
                 <div class="win-title">Links</div>
-                <div class="win-content" id="links">
-                    <a class="button noico" href="https://fukounaglr.straw.page/">strawpage</a>
-                    <a class="button noico" href="https://bsky.app/profile/fukounaglr.bsky.social">bsky</a>
-                    <a class="button noico" href="https://youtube.com/@fukounaglr">youtube</a>
-                    <a class="button noico" href="https://toyhou.se/fukouna">toyhouse</a>
-                    <a class="button noico" href="https://casketkid.bandcamp.com/">bandcamp</a>
-                    <a class="button noico" href="https://discord.gg/XxKaGgukz">discord</a>
+                <div class="win-content">
+                    <p>Here are my socials</p>
+                    <a href="https://fukounaglr.straw.page/" target="_blank">Strawpage</a>
+                    <a href="https://bsky.app/profile/fukounaglr.bsky.social" target="_blank">BlueSky</a>
+                    <a href="https://youtube.com/@fukounaglr" target="_blank">Youtube</a>
+                    <a href="https://pinterest.com/fukounaglr/" target="_blank">Pinterest</a>
+                    <a href="https://www.tiktok.com/@fukounaglr" target="_blank">Tiktok</a>
+                    <p>and other stuff</p>
+                    <a href="https://toyhou.se/fukouna" target="_blank">Toyhouse</a>
+                    <a href="https://casketkid.bandcamp.com/" target="_blank">Bandcamp</a>
+                    <a href="https://discord.gg/XxKaGgukz" target="_blank">Discord server</a>
                 </div>
             </div>
-        </div>
 
-        <div>
-            <div class="window" style="width: 500px">
-                <div class="win-title">
-                    <img src="/graphics/badges/webmaster.gif" />
-                </div>
-                <div class="win-content" style="border: none">
-                    <div id="win-links">
-                        <a onclick="switchPage('misc')">misc</a>
-                        <a onclick="switchPage('music')">music</a>
-                        <a onclick="switchPage('tv')">tv</a>
-                        <a onclick="switchPage('games')">games</a>
-                        <a onclick="switchPage('quizzes')">quizzes</a>
+        <div class="window" style="width: 500px; position: relative; grid-area: me">
+            <div class="win-title">
+                <p><img src="/graphics/pixels/cat32.gif"> Hi there !</p>
+            </div>
+            <div class="win-content" style="border: none">
+                <marquee id="lyric-marq"> </marquee>
+                <div class="col-3">
+                    <div class="collumn" id="likes" style="grid-area: likes; height: 100%">
+                        <img src="/graphics/badges/badge-autistic.png" />
+                        <img src="/graphics/badges/badge-disabled.png" />
+                        <img src="/graphics/badges/badge-aroace.png" />
+                        <img src="/graphics/badges/badge-intergender.png" />
+                        <img src="/graphics/badges/aphantasia.png" />
+                        <img src="/graphics/badges/badge-selectivemutism.png" />
+                        <br />
+                        <img src="/graphics/buttons/trans2.png" />
+                        <img src="/graphics/buttons/fuckingwebmaster.gif" />
+                        <img src="/graphics/buttons/autistic.png" />
+                        <img src="/graphics/buttons/comic%20sans.jpg" />
+                        <img src="/graphics/buttons/hemp.gif" />
+                        <img src="/graphics/buttons/css.png" />
+                        <br />
+                        <div class="stamps">
+                            <img src="/graphics/stamps/headpats.png" />
+                            <img src="/graphics/stamps/whenidie.png" />
+                            <img src="/graphics/stamps/gender.png" />
+                            <img src="/graphics/stamps/069.gif" />
+                            <img src="/graphics/stamps/imfine.gif" />
+                            <img src="/graphics/stamps/Db7KQYp.gif" />
+                            <img src="/graphics/stamps/st.png" />
+                            <img src="/graphics/stamps/fslur.png" />
+                            <img src="/graphics/stamps/vio.gif" />
+                        </div>
                     </div>
-                    <div class="col-3">
-                        <div class="collumn" id="likes" style="grid-area: likes; height: 200px">
-                            <div id="misc" class="tab">
-                                <img src="/graphics/badges/badge-autistic.png" />
-                                <img src="/graphics/badges/badge-disabled.png" />
-                                <img src="/graphics/badges/badge-aroace.png" />
-                                <img src="/graphics/badges/badge-intergender.png" />
-                                <img src="/graphics/badges/aphantasia.png" />
-                                <img src="/graphics/badges/badge-selectivemutism.png" />
-                                <!--<img src="/graphics/badges/badge-system.png">-->
-                                <br />
-                                <img src="/graphics/buttons/trans2.png" />
-                                <img src="/graphics/buttons/fuckingwebmaster.gif" />
-                                <img src="/graphics/buttons/autistic.png" />
-                                <img src="/graphics/buttons/comic%20sans.jpg" />
-                                <img src="/graphics/buttons/hemp.gif" />
-                                <img src="/graphics/buttons/css.png" />
-                                <br />
-                                <div class="stamps">
-                                    <img src="/graphics/stamps/headpats.png" />
-                                    <img src="/graphics/stamps/whenidie.png" />
-                                    <img src="/graphics/stamps/gender.png" />
-                                    <img src="/graphics/stamps/069.gif" />
-                                    <img src="/graphics/stamps/imfine.gif" />
-                                    <img src="/graphics/stamps/Db7KQYp.gif" />
-                                    <img src="/graphics/stamps/st.png" />
-                                    <img src="/graphics/stamps/fslur.png" />
-                                    <img src="/graphics/stamps/vio.gif" />
-                                </div>
-                            </div>
-                            <div id="music" class="tab">
-                                <p>
-                                    I like glass beach, jhariah, femtanyl, STOMACH BOOK, Ghost and pals, diet tea
-                                    other cola, gezebelle gaburgably &amp; more
-                                </p>
-                                <p>My favourite song is cul-de-sac from plastic death by glass beach</p>
-                                <audio controls src="https://file.garden/ZjOP8Ik9OUXT6YVm/glass%20beach%20-%20cul-de-sac.mp3"></audio>
-                                <div class="stamps">
-                                    <img src="/graphics/stamps/gameoflife.png" />
-                                    <img src="/graphics/stamps/teto.gif" />
-                                    <img src="/graphics/stamps/mikumiku%20playlist.gif" />
-                                    <img src="/graphics/stamps/stomach%20book%202.jpg" />
-                                    <img src="/graphics/stamps/femtanyl.jpg" />
-                                    <img src="/graphics/stamps/plasticdeathstamp.png" />
-                                    <img src="/graphics/stamps/stamp06.png" />
-                                    <img src="/graphics/stamps/jhariah%20teeth.png" />
-                                    <img src="/graphics/stamps/stamp11.gif" />
-                                    <img src="/graphics/stamps/gumi.gif" />
-                                </div>
-                            </div>
-                            <div id="tv" class="tab">
-                                Stranger things, The owl house, Ghost and Molly McGee, Hazbin &amp; helluva, Murder
-                                drones, Amazing Digital Circus, Panty &amp; Stocking, Brooklyn Nine-Nine, Moral
-                                Orel, Madoka Magica, Ena
-                                <div class="stamps">
-                                    <img src="/graphics/stamps/lacey.png" />
-                                    <img src="/graphics/stamps/panty%20y%20stocking.gif" />
-                                    <img src="/graphics/stamps/madoka.gif" />
-                                    <img src="/graphics/stamps/alastor.png" />
-                                    <img src="/graphics/stamps/fizz.png" />
-                                    <img src="/graphics/stamps/bee%20and%20puppycat.png" />
-                                    <img src="/graphics/stamps/young%20neil.png" />
-                                    <img src="/graphics/stamps/stamp23.gif" />
-                                    <img src="/graphics/stamps/stamp25.gif" />
-                                    <img src="/graphics/stamps/stamp26.gif" />
-                                    <img src="/graphics/stamps/stamp20.gif" />
-                                    <img src="/graphics/stamps/stamp22.gif" />
-                                </div>
-                            </div>
-                            <div id="games" class="tab">
-                                <p>
-                                    <i>Pressure</i>, Deltarune, Minecraft, Aconite RPG, Pokemon, FNaF,
-                                    <i>Sky COTL</i>, Clinical trial, ENA dream BBQ
-                                </p>
-                                <div class="stamps">
-                                    <img src="/graphics/stamps/stamp27.gif" />
-                                    <img src="/graphics/stamps/stamp28.gif" />
-                                    <img src="/graphics/stamps/eeveelutions.png" />
-                                    <img src="/graphics/stamps/mangle.gif" />
-                                    <img src="/graphics/stamps/mc.gif" />
-                                    <img src="/graphics/stamps/roblox.png" />
-                                    <img src="/graphics/stamps/ame.png" />
-                                    <img src="/graphics/stamps/sebastian_solace.png" />
-                                </div>
-                            </div>
-                            <div id="quizzes" class="tab">
-                                <p>i took one of those online tests and it said i have connectivity problems!</p>
-                                <a href="https://swiftyshq.neocities.org/fun/quiz/eon"><img src="https://swiftyshq.neocities.org/img/quiz/eon/vee6.png" alt="leafeon" title="relaxed and introverted, you are a very sleepy person who doesn't care for drama" /></a>
-                                <a href="http://www.dragonflycave.com/quizzes/what-pokemon-are-you"><img src="http://www.dragonflycave.com/wpay/ninetales.gif" alt="I am a Ninetales!" title="Find out what Pokémon you are at The Cave of Dragonflies" /></a>
-                                <a href="https://www.theotaku.com/quizzes/view/2704/what_sonic_character_are_you%3F"><img border="0" src="http://www.theotaku.com/guru_results/2704_Shadow.jpg" alt="What Sonic Character Are You?" /><br /></a>
-                                <a href="https://www.theotaku.com/quizzes/view/1946/what_is_your_level_of_sanity%3F"><img border="0" src="http://www.theotaku.com/guru_results/1946_6.jpg" alt="What Is Your Level Of Sanity?" /><br /></a>
-                                <a href="https://swiftyshq.neocities.org/fun/quiz/creature"><img src="https://swiftyshq.neocities.org/img/quiz/creature/res3.png" alt="m4lw4r3 m0nst3r" title="http creature not found. you are maybe toxic but in a funny way. gods little meow meow" /></a>
-                            </div>
-                            <!--<div id="" class="tab"></div>-->
-                        </div>
-                        <div class="collumn" style="grid-area: about; height: 100px">
-                            <p>
-                                queer and disabled digital artist, animator, gamer, (possible musician?), webmaster,
-                                monster from the backrooms, self-proclaimed edgelord and a professional slug
-                            </p>
-                        </div>
-                        <div class="collumn" style="grid-area: profile">
-                            <img class="pfp" src="https://i.pinimg.com/736x/04/9a/4b/049a4b7aef43df0aa0982ddfc5c75572.jpg" />
-                            <p>Ash - they/it</p>
-                            <p style="color: dimgray; font-style: italic">
-                                "Hi, my name is Two Time and my pronouns are they/them"
-                            </p>
-                            <p>
-                                <img src="https://file.garden/ZT2StWKGxCOellbN/Pride%20Pixels/autism.png" class="fr-fic fr-fil fr-dii" width="30" height="20" alt="autism flag"><img src="https://file.garden/ZT2StWKGxCOellbN/Pride%20Pixels/bpd.png" class="fr-fic fr-dii fr-fil" width="30" height="20" alt="bpd [borderline personality disorder] flag"><img src="https://file.garden/ZT2StWKGxCOellbN/Pride%20Pixels/aroace.png" class="fr-fic fr-fil fr-dii" width="30" height="20" alt="aroace flag"><img src="https://file.garden/ZT2StWKGxCOellbN/Pride%20Pixels/androgyne.png" class="fr-fic fr-dii fr-fil" width="30" height="20" alt="androgyne flag">
-                            </p>
-                        </div>
+                    <div class="collumn" style="grid-area: about; height: 100%">
+                        <p>
+                            queer and disabled digital artist, animator, gamer, (possible musician?), webmaster,
+                            monster from the backrooms, self-proclaimed edgelord and a professional slug
+                        </p>
+                    </div>
+                    <div class="collumn" style="grid-area: profile; height: 100%">
+                        <img class="pfp" src="/images/robloc.png" />
+                        <p>Ash "Totie"</p>
+                        <p style="color: dimgray; font-style: italic">
+                            "Hi, my name is Two Time and my pronouns are they/them"
+                        </p>
+                        <p>
+                            <img src="https://file.garden/ZT2StWKGxCOellbN/Pride%20Pixels/autism.png" class="fr-fic fr-fil fr-dii" width="30" height="20" title="autism flag"><img src="https://file.garden/ZT2StWKGxCOellbN/Pride%20Pixels/bpd.png" class="fr-fic fr-dii fr-fil" width="30" height="20" title="bpd [borderline personality disorder] flag"><img src="https://file.garden/ZT2StWKGxCOellbN/Pride%20Pixels/aroace.png" class="fr-fic fr-fil fr-dii" width="30" height="20" title="aroace flag"><img src="https://file.garden/ZT2StWKGxCOellbN/Pride%20Pixels/androgyne.png" class="fr-fic fr-dii fr-fil" width="30" height="20" title="androgyne flag">
+                        </p>
                     </div>
                 </div>
             </div>
+            <div id="speech-bubble">
+
+                <div id="statuscafe">
+                    <div id="statuscafe-username"></div>
+                    <div id="statuscafe-content"></div>
+                </div>
+                <script src="https://status.cafe/current-status.js?name=whosthecat" defer></script>
+            </div>
         </div>
 
-        <div id="speech-bubble"></div>
 
-        <img src="/images/bodybodybody.png" id="body" />
-
-        <!--
-        <div id="textbox" class="window">
-            <div class="win-title"><img src="/graphics/pixels/bun.gif"> Webmaster</div>
-            <marquee id="lyric-marq">this is a marquee</marquee>
-            <hr>
+        <div class="window" style="width: 300px; height: 300px; grid-area: music">
+            <div class="win-title">Music</div>
             <div class="win-content">
-            <p>OBJECT: NULL <img src="/graphics/pixels/nukoAbandonnedCat.gif" /></p>
+                <p>I love music!!!! Music is so cool!!!!</p>
 
-
-            <div style="padding: 5px; border: 2px white dotted;">
-                <img src="/graphics/badges/badge-autistic.png">
-                <img src="/graphics/badges/badge-disabled.png">
-                <img src="/graphics/badges/badge-aroace.png">
-                <img src="/graphics/badges/badge-intergender.png">
-                <img src="/graphics/badges/aphantasia.png">
-                <img src="/graphics/badges/badge-selectivemutism.png">
-                <img src="/graphics/badges/badge-system.png">
-                <br>
-                <img src="/graphics/buttons/trans2.png">
-                <img src="/graphics/buttons/fuckingwebmaster.gif">
-                <img src="/graphics/buttons/autistic.png">
-                <img src="/graphics/buttons/comic%20sans.jpg">
-                <br>
-                <img src="/graphics/stamps/headpats.png">
-                <img src="/graphics/stamps/whenidie.png">
-                <img src="/graphics/stamps/gender.png">
-                <img src="/graphics/stamps/069.gif">
-                <img src="/graphics/stamps/imfine.gif">
-            </div>
-            </div>
-
-            <h6>SITE? <img src="/graphics/pixels/cat34.gif" /></h6>
-            <p>
-                i created my neocities site on 24th of October 2023, after watching
-                <a href="https://youtu.be/00qwzmMrtok?si=ToGR-R3WoK3GHi8h" target="_blank">this episode of loveweb</a>. made with <a href="https://phcode.dev/" target="_blank">phoenix code</a> &amp; hosted on <a href="https://neocities.org/" target="_blank">neocities</a>
-            </p>
-            <p>The reason for me to make site was 'cuz its cool'. That's it. I also like design. And i took a web design course back in my baby kitteh years. Then we were learning basics of html in compsci.</p>
-
-            <h6>MUSIC? <img src="/graphics/pixels/cat32.gif" /></h6>
-
-
-            <h6>SHOWS? <img src="/graphics/pixels/nukoSwing.gif" /></h6>
-            <p>
-
-            </p>
-
-            <h6>GAMES? <img src="/graphics/pixels/cat285.gif" /></h6>
-
-
-            <h6>OTHER? <img src="/graphics/pixels/cat137.gif" /></h6>
-            <p>
-                <b>&hearts;</b> <span style="color: red">red</span>, fish, cooking, coding, video essays, lore, stream vods/highlights, sleeping, plushies, music, gore
-            </p>
-            <p>
-                <b>&chi;</b> <span style="color: purple">purple</span>, people, school, stupid internet drama, people
-            </p>
-
-            <div style="text-align: center;">
-                <h6>queezes?<img src="/graphics/pixels/nukoSoba2.gif"></h6>
+                <p>
+                    I like glass beach, jhariah, femtanyl, STOMACH BOOK, Ghost and pals, diet tea
+                    other cola, gezebelle gaburgably &amp; more
+                </p>
             </div>
         </div>
 
-        <div id="vh"></div>
 
-        <div id="picbox">
-            <img src="/images/dolphin.jpg">
-            <img src="/images/catmusictrain.jpg">
-            <img src="/images/catexplode.jpg">
+        <div class="window" style="width: 300px; grid-area: games">
+            <div class="win-title">Games</div>
+            <div class="win-content">
+                <p>Most of my free time i play roblox with my friends.</p>
+                <p>Some games I like:</p>
+                <p>
+                    Forsaken, Pressure, Deltarune, Minecraft, Aconite RPG, Pokemon, FNaF,
+                    <i>Sky COTL</i>, Clinical trial, ENA dream BBQ
+                </p>
+            </div>
         </div>
-    -->
+
+
+        <div class="window" style="width: 300px; grid-area: tv">
+            <div class="win-title">TV</div>
+            <div class="win-content">
+                <p>I struggle with finishing shows...</p>
+
+                <p>Stranger things, The owl house, Ghost and Molly McGee, Murder drones, Amazing Digital Circus, Panty & Stocking, Brooklyn Nine-Nine, Moral Orel, Madoka Magica, Ena, Code Lyoko </p>
+            </div>
+        </div>
+
+
+        <div class="window" style="width: 300px; grid-area: stamps">
+            <div class="win-title">Cool!</div>
+            <div class="win-content">
+                <div class="stamps">
+
+                    <img src="/graphics/stamps/gameoflife.png" />
+                    <img src="/graphics/stamps/teto.gif" />
+                    <img src="/graphics/stamps/mikumiku%20playlist.gif" />
+                    <img src="/graphics/stamps/stomach%20book%202.jpg" />
+                    <img src="/graphics/stamps/femtanyl.jpg" />
+                    <img src="/graphics/stamps/plasticdeathstamp.png" />
+                    <img src="/graphics/stamps/stamp06.png" />
+                    <img src="/graphics/stamps/jhariah%20teeth.png" />
+                    <img src="/graphics/stamps/stamp11.gif" />
+                    <img src="/graphics/stamps/gumi.gif" />
+
+                    <img src="/graphics/stamps/lacey.png">
+                    <img src="/graphics/stamps/panty%20y%20stocking.gif">
+                    <img src="/graphics/stamps/madoka.gif">
+                    <img src="/graphics/stamps/bee%20and%20puppycat.png">
+                    <img src="/graphics/stamps/young%20neil.png">
+                    <img src="/graphics/stamps/stamp23.gif">
+                    <img src="/graphics/stamps/stamp25.gif">
+                    <img src="/graphics/stamps/stamp26.gif">
+                    <img src="/graphics/stamps/stamp20.gif">
+                    <img src="/graphics/stamps/stamp22.gif">
+
+                    <img src="/graphics/stamps/stamp27.gif" />
+                    <img src="/graphics/stamps/stamp28.gif" />
+                    <img src="/graphics/stamps/eeveelutions.png" />
+                    <img src="/graphics/stamps/mangle.gif" />
+                    <img src="/graphics/stamps/mc.gif" />
+                    <img src="/graphics/stamps/roblox.png" />
+                    <img src="/graphics/stamps/ame.png" />
+                    <img src="/graphics/stamps/sebastian_solace.png" />
+                </div>
+            </div>
+        </div>
+
+
+        <div class="window" style="grid-area: img">
+            <div class="win-title">FAGGOT!</div>
+            <div class="win-content">
+                <img src="/images/faggots.png" width="200">
+            </div>
+        </div>
+
+
     </main>
 
     <script>
-        var currentPage = "misc";
-        const pages = ["misc", "music", "tv", "games", "quizzes"];
-
-        function switchPage(a) {
-            document.getElementById(currentPage).style.display = "none";
-            currentPage = a;
-            document.getElementById(a).style.display = "block";
-        }
-    </script>
-
-    <script>
         const elements = [
-            "Is the body a property?        Razor wire anatomy",
-            "Born inside a test tube, I broke the glass and ran away",
-            "Don’t you get bored just staring through the crack in the door?",
-            "Even when I scream aloud Everyone dances to the sound",
-            "I'd care about the future again if i knew i could last long enough",
-            "Even through the pain, animals cannot change",
-            "The carpet floor is so damn comfortable, what's the point of sleeping in bed?",
-            "Only love me when I'm stuck in your head; Only bite me when I'm dead",
-            "Baby, please, adore me, adore me! I am living for your decease!",
-            "Swallow the pill and give it a little bit, baby, I feel like I'm killin' it",
-            "And here I wait for something to twist the plot dramatically again",
-            "If i had common sense, i'd cut myself or curl up and die!",
-            "不幸な girl, 不幸な girl;        If you wanna flay me let's see what's inside",
-            "Lately I've been wishing I was FIVE-FOOT-FIVE, weighting NINE-NINE, wearing THIGH HIGHS!",
-            "my instinct tells me i smell like fresh meat and i gotta be ready to defend myself if i need to",
-            "The screams of a tiny girl are of no concern to the whole wide world, no matter how loud",
-            "well, this decease is defined by its treatment; you people make me sick!",
-            "But what's the price of perfection? I won't know until it's paid in full",
-            "I think I might fuck around and get shot in the head, Cuz maybe people like us are all better off dead",
-            "They'll put you in your place, they'll put you in your place, They'll put you in a casket!",
-            "Once, we were friends, Now we'll never meet again. So adieu, so adieu, I still love you",
-            "Everybody tends to diagree on just how evil a single human being should be",
-            "And at the trial, there'll be no jury; and all the dead are gonna play witness; It's not too late to say you're sorry; But it's too late to truly mean it",
-            "I wanna contribute to the chaos, I don't wanna watch and then complain",
-            "Everything must come to an end; You've already died twice, you can still be replaced",
-            "We need a new god; We need a saviour; Maybe a new start isn't the worst idea?",
-            "But I admit it would be easier to be relieved of all this shame and not have to have to wear it on my sleeve",
-            "I imagine it's quite nice for you to have so many changes of so many ways to be redeemed, but as for me...",
-            "I'm staying home 'cuz i cant stand another heartbeat in the room",
-            "goodbye to those who cannot join us;  their voices are still heard in every word that we say",
-            "Did I stare at you? Am I scaring you? Go against me, double dog daring you",
+            "Born inside a test tube / I broke the glass and ran away",
+            "The carpet floor is so damn comfortable / what's the point of sleeping in bed?",
+            "Baby, please, adore me, adore me! / I am living for your decease!",
+            "I wanna contribute to the chaos / I don't wanna watch and then complain",
+            "goodbye to those who cannot join us / their voices are still heard in every word that we say",
+            "Did I stare at you? Am I scaring you? / Go against me, double dog daring you",
             "Does it even seem like I care to you?",
             "Hoes mad 'cause I'm a mentally retarded player",
-            "The ones like me weren't build to last, and I'm leaving it up for debate",
-            "And if my day keeps going this way, I might break something tonight",
-            "It's no big surprise you turned out this way. When they close their eyes and prayed you would change",
-            "She hopes I’m cursed forever to Sleep on a twin-sized mattress In somebody’s attic or basement my whole life",
-            "And I'm gonna get on my knees / Would you kick me in the face, please? / It'll make whatever I say sound like poetry / And as the gums begin to bleed, The words will fall like teeth",
             "Make sure you kiss your knuckles before you punch me in the face!",
-            "is my ignorance just manufactured dread?",
-            "when i take my life i will take it slow",
-            "Hear those bells ring deep in the soul Chiming away for a moment Feel your breath course frankly below And see life as a worthy opponent"
+            "I know the flies will come and lay their ugly eggs / In the sockets of my eyes, eat the meat out of my head / But you'll lie and tell me i look beautiful in death / Do you like the way my practiced poetry feels on your neck?",
+            "I laugh so hard it's hurting me / And while you're at it, can you suck it while you're jerking me / Off, cause I'm barely legal, baby / And it’s so easy to get turned on",
+            "If you hate me, not my fault / Sucking dick is not assault",
+            "Wanna say I think it's so gay that we really both feel the same way",
+            "Can we forget about the places that we should be? / We don't have to go home today / I'll sleep on a million couches / If we have to, to keep us both safe"
         ];
 
         const Marquee = document.getElementById("lyric-marq");
