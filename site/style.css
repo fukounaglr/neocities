@@ -85,11 +85,11 @@
 
 :root {
 
-    --col: #1F1F1F;
-    --acc: #E35469;
+    --col: black;
+    --acc: deeppink;
     --acc-hov: lightpink;
-    --pri: #BAFFFF;
-    --sec: #55A9C9;
+    --pri: PaleTurquoise;
+    --sec: deepskyblue;
     --bg-col: seashell;
     --bg: url(/images/glasscubes.png);
     --fav: url(/graphics/pixels/vapo2.gif);
