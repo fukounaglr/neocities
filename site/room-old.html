@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fuko's room</title>
+    <link rel="icon" type="image/png" href="/ico.png" />
+    <link rel="stylesheet" href="/style.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/interact.js/1.10.17/interact.min.js"></script>
+    <script src="/js/drag.js"></script>
+
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            background: linear-gradient(rgba(0, 0, 0, 0.8),
+                    rgba(0, 0, 0, 0.9)),
+                var(--bg);
+            background: cross-fade();
+            background-size: 100%;
+        }
+
+        .done {
+            text-decoration: line-through;
+        }
+
+        img.filter,
+        #player-bubble {
+            filter: var(--theme-filter);
+        }
+
+        .mimage {
+            width: 30%;
+            /*height: 100px;*/
+            aspect-ratio: 1/1;
+        }
+
+        #rpgbox {
+            position: absolute;
+            /*top: calc(80% - 50px);*/
+            bottom: 50px;
+            left: 50px;
+            background-color: black;
+            text-align: left;
+            width: 600px;
+            max-width: 60%;
+            min-height: 100px;
+            display: grid;
+            grid-template-columns: 120px auto;
+            grid-gap: 10px;
+            padding: 10px 30px;
+            border: double white 4px;
+            color: white;
+            border-radius: 10px;
+
+            & #options {
+                grid-area: 2/2/span 1/span 1;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                width: 100%;
+                grid-gap: 20px;
+            }
+
+            & span {
+                padding: 5px 20px;
+                border: white solid 2px;
+                cursor: help;
+                text-align: center;
+
+                &:hover {
+                    color: black;
+                    background-color: white;
+                }
+            }
+
+            & #rpgimgidle {
+                float: left;
+            }
+
+            & #rpgimgtalk {
+                display: none;
+                float: left;
+            }
+
+            & #rpgtext {
+                min-height: 50px;
+            }
+        }
+
+        #fuko-pixel {
+            height: 75%;
+            position: relative;
+            position: absolute;
+            right: 10px;
+            bottom: 0;
+            overflow: clip;
+            z-index: -10;
+            pointer-events: all;
+
+            & img {
+                height: 100%;
+            }
+        }
+
+        #thebox {
+            /*margin: auto;*/
+            background-color: var(--acc);
+            z-index: 20;
+            width: 70%;
+            max-width: 140px;
+            text-align: center;
+        }
+
+        & #daytoday {
+            width: 80%;
+            margin: auto;
+        }
+
+
+        #desktop {
+            position: relative;
+            max-width: 600px;
+            min-height: 350px;
+            margin: 30px 50px;
+            background-color: black;
+            padding: 10px 30px;
+            padding-bottom: 50px;
+            border: double white 4px;
+            color: white;
+            border-radius: 10px;
+
+            & #desktop-grid {
+                & a {
+                    color: white;
+                    text-align: center;
+                    text-decoration: none;
+                    width: 100px;
+                    margin: 5px;
+                    text-align: center;
+                    display: inline-block;
+
+                    &:hover {
+                        color: var(--accent-colour);
+                        text-decoration: underline;
+                        background-color: #3b3b3b;
+                    }
+
+                    & img {
+                        display: block;
+                        margin: auto;
+                        aspect-ratio: 1/1;
+                        object-fit: contain;
+                    }
+                }
+            }
+        }
+
+
+
+        #taskbar {
+            background-color: var(--primary-colour);
+            color: var(--colour);
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            align-content: center;
+            padding: 0 10px;
+
+            & img {
+                height: 30px;
+                margin: 5px 0;
+            }
+
+            & a {
+                all: unset;
+                cursor: pointer;
+                margin: auto 0;
+                padding: 0;
+            }
+
+            & a::before {
+                all: unset;
+            }
+        }
+
+        .folder {
+            display: none;
+            font-size: 0.8Em;
+            position: absolute;
+            width: 300px;
+            background-color: var(--accent-colour);
+            border: solid 3px var(--colour);
+            padding: 5px;
+            overflow: hidden;
+
+            & .folder-title {
+                display: flex;
+                justify-content: space-between;
+                margin: auto;
+                cursor: grab;
+                height: 20px;
+
+                & .close {
+                    cursor: pointer;
+                }
+            }
+
+            & .folder-content {
+                background-color: black;
+                padding: 10px;
+                margin: auto;
+                height: calc(100% - 40px);
+                overflow: auto;
+
+                & p {
+                    margin: 5px auto;
+                }
+            }
+
+            & .folder-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 10px;
+
+                & a {
+                    display: block;
+                    text-align: center;
+                    color: inherit;
+                    font-size: 0.6Em;
+                    text-decoration: none;
+
+                    & img {
+                        width: 80%;
+                        aspect-ratio: 1/1;
+                    }
+                }
+            }
+        }
+
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        #audio-player {
+            position: relative;
+            background-color: var(--acc);
+            border-radius: 50px;
+            width: 300px;
+            align-content: center;
+            text-align: left;
+            z-index: 10;
+            display: flex;
+            align-content: center;
+            border: double 6px var(--col);
+
+            & .paused {
+                animation-play-state: paused;
+            }
+
+            & .spin {
+                animation-play-state: running;
+            }
+
+            & #player-bubble {
+                padding: 5px;
+                width: 80px;
+                aspect-ratio: 1/1;
+                top: 0;
+                z-index: 0;
+                animation-name: spin;
+                animation-duration: 60s;
+                animation-iteration-count: infinite;
+            }
+
+            & #player-select-wrapper {
+                width: 90%;
+                overflow: hidden;
+                position: relative;
+            }
+
+            & #player-select {
+                all: unset;
+                font-family: "syne mono";
+                text-overflow: clip;
+                border: none;
+                height: auto;
+                color: black;
+                padding: 5 15;
+                user-select: none;
+            }
+
+            & button {
+                border: none;
+                border-radius: 10px;
+                padding: 5px;
+                margin: 10 auto;
+                background-color: transparent;
+                color: var(--col);
+                cursor: pointer;
+                position: relative;
+            }
+        }
+
+        #player-slider {
+            position: relative;
+            align-self: stretch;
+            flex: 1;
+            width: 65%;
+            margin-bottom: 15px;
+
+            & div {
+                transform: translateY(-50%);
+                position: absolute;
+                left: 0;
+                top: 50%;
+                pointer-events: none;
+
+                &:first-of-type {
+                    background-color: var(--pri);
+                    height: 5px;
+                    right: 0;
+                }
+
+                &:last-of-type {
+                    content: var(--fav);
+                }
+            }
+        }
+
+        #music {
+            display: none;
+        }
+
+        #music-title {
+            background-color: var(--acc);
+            width: auto;
+            position: absolute;
+            top: -15px;
+            right: 50px;
+            z-index: 20;
+            padding: 5px;
+            border-radius: 10px 10px 0 0;
+            border: solid 2px var(--col);
+            border-bottom: none;
+        }
+
+        #sotw {
+            color: white;
+            position: absolute;
+            bottom: 5px;
+            right: 50px;
+            font-size: x-small;
+            text-decoration: none;
+
+            &::before {
+                display: none;
+            }
+        }
+
+
+        /*STATUS CAFE*/
+        #side-bar {
+            position: absolute;
+            left: 750px;
+            top: 50px;
+        }
+
+        #themeSwitcher {
+            all: unset;
+            border: none;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px;
+            cursor: pointer;
+            transition: 0.4s;
+            color: var(--accent-colour);
+
+            & option {
+                padding: 5px 0;
+                background-color: var(--colour);
+                border: 2px;
+            }
+        }
+
+        #theme {
+            width: 100%;
+        }
+
+        #links img {
+            width: 24px;
+        }
+
+        #statuscafe {
+            width: 300px;
+            padding: .5em;
+            background-color: black;
+            border: 5px double var(--accent-colour);
+            color: white;
+            border-radius: 10px;
+            margin: 10px auto;
+        }
+
+        #statuscafe-username {
+            margin-bottom: .5em;
+        }
+
+        #statuscafe-content {
+            margin: 0 1em 0.5em 1em;
+        }
+
+        @media only screen and (max-width: 700px) {
+            #side-bar {
+                position: relative;
+                top: 0;
+                left: 0;
+                text-align: center;
+            }
+            #thebox{
+                margin: auto;
+            }
+
+            #desktop {
+                padding: 30px 10px;
+            }
+
+            #desktop-grid {
+                display: grid;
+                grid-template-columns: 50% 50%;
+                padding: 30px 0;
+
+                & a {
+                    width: 80%;
+                    display: block;
+
+                    & img {
+                        display: block;
+                        margin: auto;
+                    }
+                }
+            }
+
+            .folder,
+            #music {
+                left: 5% !important;
+                max-width: 90% !important;
+            }
+
+            #rpgbox {
+                width: auto;
+                left: 0;
+                top: 0;
+                height: auto;
+                position: relative;
+                margin: 20px auto;
+
+                & #options {
+                    grid-area: 1/2/span 1/ span 1;
+                    grid-template-columns: 1fr;
+                    grid-gap: 10px;
+
+                    & span {
+                        margin: auto;
+                    }
+                }
+
+                & #rpgimg {
+                    grid-area: 1/1/span 1/span 1;
+                    width: 70%;
+                    text-align: center;
+                }
+
+                & #rpgtext {
+                    grid-area: 2/1/span 1/span 2;
+                }
+            }
+
+            #fuko-pixel {
+                position: relative;
+                width: 100%;
+                height: 500px;
+                right: 0;
+                text-align: right;
+            }
+
+            #thebox {
+                /*display: none*/
+            }
+        }
+    </style>
+</head>
+
+<body onload="speech(quote)">
+    <main>
+        <div class="box" id="desktop">
+            <a href="/index.html" title="Log out?"><img src="/graphics/pixels/pc.gif"> Logged in as User</a>
+            <div id="desktop-grid">
+                <a onclick="openFolder('map')" title="site map"><img class="filter" src="/images/icon_map.png"><span>Site map</span></a>
+                <a onclick="openFolder('webmaster')" title="webmaster"><img class="filter" src="/images/icon_me.png"><span>Who Am I</span></a>
+                <a onclick="openFolder('music')" title="music player"><img class="filter" src="/images/icon_music.png"><span>Music</span></a>
+                <a onclick="openFolder('blog')"><img class="filter" src="/images/icon_blog.png"><span>Blog</span></a>
+                <a onclick="openFolder('journal')" title="blog"><img class="filter" src="/images/icon_journal.png"><span>Journal</span></a>
+                <a onclick="openFolder('create')" title="create"><img class="filter" src="/images/icon_art.png"><span>Create</span></a>
+                <a onclick="openFolder('sites')" title="cool sites"><img class="filter" src="/images/icon_sites.png"><span>Cool sites</span></a>
+                <a onclick="openFolder('graphics')" title="graphics"><img class="filter" src="/images/icon_graphic.png"><span>Graphics</span></a>
+                <a onclick="openFolder('notepad')" title="notepad"><img class="filter" src="/images/icon_notepad.png"><span>notepad</span></a>
+                <a onclick="openFolder('stuff')" title="stuff"><img class="filter" src="/images/icon_folder.png"><span>Stuff</span></a>
+                <a onclick="openFolder('album')" title="photo album"><img class="filter" src="/images/icon_album.png" width="60%;"><span>Photo album</span></a>
+                <a href="/create/art.html#comms" target="art" onclick="openFolder('art')" title="comms">
+                    <!--<img title="comms are closed" src="/graphics/stamps/stamp001.png"  width="60%">-->
+                    <img title="comms are open" src="/graphics/stamps/stamp0.png" width="60%"><span>Comms Open!</span>
+                </a>
+                <a onclick="openFolder('trans')" title="trans rights"><img class="" src="/images/trans.png" width="60%;"><span>Trans!!</span></a>
+
+            </div>
+
+            <div id="taskbar">
+                <img class="filter" src="/ico.png" title="Powered by Meowclawsoft">
+                <marquee style="margin: auto">
+                    <a href="https://neocities.org/site/fukounaglr" target="_blank"><img src="/graphics/buttons/neocities_button.gif" title="neocities page"></a>
+                    <img src="/graphics/buttons/piracy.gif">
+                    <img src="/graphics/buttons/hemp.gif">
+                    <img src="/graphics/buttons/killmenow.gif">
+                    <img src="/graphics/buttons/transrights.gif">
+                    <img src="/graphics/buttons/trans2.png">
+                    <img src="/graphics/buttons/vap.png">
+                    <img src="/graphics/buttons/youre_telling_me.png">
+                    <img src="/graphics/buttons/paws.png">
+                    <img src="/graphics/buttons/kris_where_tf_are_we.png">
+                    <img src="/graphics/buttons/teto.gif">
+
+                    <img src="/graphics/blinkies/characterdesign.gif">
+                    <img src="/graphics/blinkies/DEER.gif">
+                    <img src="/graphics/blinkies/comicsans.gif">
+                    <img src="/graphics/blinkies/never%20judge.gif">
+                    <img src="/graphics/blinkies/BornToDie.gif">
+                    <img src="/graphics/blinkies/dontlike.gif">
+                    <img src="/graphics/blinkies/asshurt.gif">
+                    <img src="/graphics/blinkies/trans%20furious.gif">
+                    <img src="/graphics/blinkies/tft.gif">
+                    <img src="/graphics/blinkies/535c0ba5.gif">
+                    <img src="/graphics/blinkies/femtanyl_1.gif">
+                    <img src="/graphics/blinkies/95fa12b0.gif">
+                    <img src="/graphics/blinkies/watercooler.gif">
+                    <img src="/graphics/blinkies/sylveon-trans-rights.gif">
+                    <img src="/graphics/blinkies/gleach_slipunderthedoor.gif">
+                </marquee>
+            </div>
+        </div>
+
+        <div class="draggable" id="music" style="top: 340px; left: 160px;">
+            <div id="music-title">
+                <span>Media Player</span>
+                <span class="close" onclick="closeFolder('music')">- x</span>
+            </div>
+            <img src="/images/miku-yay.gif" style="position: absolute; pointer-events: none; z-index: 20; right: 15px; top: 30px;">
+            <div id="audio-player">
+                <img id="player-bubble" src="/images/disk.png" class="paused" />
+
+                <div style="margin-left: 10px">
+                    <div id="player-body">
+                        <h6 style="text-align: left"> <button id="player-button"></button><button id="skip-button"></button>Now playing:</h6>
+                        <div id="player-slider">
+                            <div aria-hidden="true"></div>
+                            <div aria-hidden="true"></div>
+                        </div>
+                        <div id="player-select-wrapper">
+                            <marquee style="width: 70%"><select id="player-select"></select></marquee>
+                        </div>
+                    </div>
+                </div>
+                <a href="/song-of-the-week.html" id="sotw">&gt; Song of the week</a>
+            </div>
+        </div>
+
+        <div class="draggable folder" id="stuff" style="top: 140px; left: 10px; height: 300px; width: 350px">
+            <div class="folder-title"><span>.../Desktop/Stuff</span><span class="close" onclick="closeFolder('stuff')">- x close</span></div>
+            <div class="folder-content">
+                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/58/d5/f9/58d5f9af007855fd635c395fbe124a33.jpg">
+                <!--<img loading="lazy"  class="mimage" src="">-->
+                <!--<img loading="lazy"  class="mimage" src="">-->
+                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/d1/db/23/d1db23353a3db96ea8e9d51f6b7014fc.jpg">
+                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/e8/da/73/e8da734ea26278718de42455b15060e3.jpg">
+                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/9f/2e/d0/9f2ed05cc466345a572c4762ee9f369c.jpg">
+                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/a6/f3/14/a6f31432426f7fed100d7074bea16d7d.jpg">
+                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/67/9d/85/679d851071931f95873040b4fbcf5295.jpg">
+                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/22/33/61/223361c71c74a18ddd86c0983460c454.jpg">
+                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/c3/0c/8a/c30c8a634358bd699d9fae116116b4d5.jpg">
+                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/0c/1e/46/0c1e4648b51f3fe6a923604a4e6ef935.jpg">
+                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/63/c9/1e/63c91eb851a5cab0e38b7d7ed9ce6f75.jpg">
+                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/66/0b/7a/660b7a6ebb2ec8a128fccef7aee324b9.jpg">
+                <img loading="lazy"  class="mimage" src="https://i.pinimg.com/736x/24/84/2c/24842c37baa085bb544d444f3ea12943.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/15/5c/22/155c22b21cdb521c2d9a46e1c46f5efb.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/f6/ae/ac/f6aeac162b0cacc46e9f5295da452cfb.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/84/87/b5/8487b5c250af6dbf5d330f1063e33199.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/13/b2/27/13b227061b333314a44d6db5a4889544.jpg">
+                <img loading="lazy" class="mimage" src="/images/stupid.jpg">
+                <img loading="lazy" class="mimage" src="/images/catpc2.jpg">
+                <img loading="lazy" class="mimage" src="/images/breaking%20trans.png">
+                <img loading="lazy" class="mimage" src="/images/Weezer_Blue_Album.jpg">
+                <img loading="lazy" class="mimage" src="/images/new.jpg">
+                <img loading="lazy" class="mimage" src="/images/sleep.jpg">
+                <img loading="lazy" class="mimage" src="/images/lick.gif">
+                <img loading="lazy" class="mimage" src="/images/gleach-bubble.png">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/05/2a/70/052a702f41464b1adff10c2ab93bbe82.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/f8/3e/5e/f83e5e976c4ef2b25d77bf572529ccd0.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/2a/ee/ad/2aeead341e735f4f5940727a3ae43b8e.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/6d/02/70/6d02701b4f039aec273eb2d5524415d1.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/f4/82/52/f48252f49a7abaa3cc160003100a6bb9.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/97/4b/e1/974be1c18c55d7c31f8ac83118410dd5.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/7e/db/85/7edb85b63e7233bd4cf5c65cbec657ea.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/42/4c/3a/424c3ad1118df0ffb6f55892aec4df6e.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/b4/68/16/b468168b83081ec42a1b4a050a9d5c7d.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/3c/0c/32/3c0c32e62f2c16418fe4de6aef9b9b21.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/50/ec/27/50ec27fae79c27dc346a83f5dbb7a930.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/f2/96/54/f29654e4c0b952b49c773131f9d9b24a.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/a5/fb/4e/a5fb4edce74102187571e6ac9588f783.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/50/21/58/502158eae68c993290dccbd3ce9b0c63.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/1a/e0/b7/1ae0b7a2df31b2397ab7086f48b9ba4a.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/65/ad/cc/65adccd79c34a950b3b4f66480021e05.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/474x/73/9e/ff/739efff667c6c204788707e7d96333c5.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/2e/48/fc/2e48fc544776b617c91055dcf43468a6.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/474x/e5/e6/dd/e5e6dd523ce5ec623c582e83e9db7ff7.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/ac/1f/1d/ac1f1d5cce26b83c6efeb910664d6209.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/1d/3e/a6/1d3ea69374ec0e9155ac6efdff6b9353.jpg">
+                <img loading="lazy" class="mimage" src="https://i.pinimg.com/736x/18/43/11/184311ddbb9c92436e89fb1d56d7c779.jpg">
+                <!--<img loading="lazy"  class="mimage" src="/images/">-->
+            </div>
+        </div>
+
+        <div class="draggable folder" id="map" style="top: 120px; left: 550px; width: 300px; height: 500px;">
+            <div class="folder-title"><span>.../Site_map</span><span class="close" onclick="closeFolder('map')">- x close</span></div>
+            <div class="folder-content">
+                <iframe title="map" src="/site-map.html" width="100%" height="90%"></iframe>
+                <a href="/site-map.html">open full page</a>
+            </div>
+        </div>
+
+        <div class="draggable folder" id="webmaster" style="top: 120px; left: 250px; width: 500px; height: 400px;">
+            <div class="folder-title"><span>.../Webmaster</span><span class="close" onclick="closeFolder('webmaster')">- x close</span></div>
+            <div class="folder-content">
+                <iframe loading="lazy" title="webmaster" src="/webmaster.html" width="100%" height="90%"></iframe>
+                <a href="/webmaster.html">open full page</a>
+            </div>
+        </div>
+
+        <div class="draggable folder" id="journal" style="top: 200px; right: 250px; width: 500px; height: 450px;">
+            <div class="folder-title"><span>.../journal</span><span class="close" onclick="closeFolder('journal')">- x close</span></div>
+            <div class="folder-content">
+                <iframe loading="lazy" title="journal" src="/journal.html" width="100%" height="90%"></iframe>
+                <a href="/journal.html">open full page</a>
+            </div>
+        </div>
+
+        <div class="draggable folder" id="trans" style="top: 210px; right: 200px; width: 500px; height: 450px;">
+            <div class="folder-title"><span>.../trans rights!!!</span><span class="close" onclick="closeFolder('trans')">- x close</span></div>
+            <div class="folder-content">
+                <iframe loading="lazy" title="trans rights" src="/trans-rights.html" width="100%" height="90%"></iframe>
+                <a href="/trans-rights.html">open full page</a>
+            </div>
+        </div>
+
+        <div class="draggable folder" id="blog" style="top: 100px; left: 300px; width: 300px; height: 300px;">
+            <div class="folder-title"><span>.../Blog</span><span class="close" onclick="closeFolder('blog')">- x close</span></div>
+            <div class="folder-content">
+                <img src="/images/my%20space.png" width="200px">
+                <a href="/blog.html">proceed</a>
+            </div>
+        </div>
+
+        <div class="draggable folder" id="create" style="top: 200px; right: 100px; width: 350px; height: 400px;">
+            <div class="folder-title"><span>.../Create</span><span class="close" onclick="closeFolder('create')">- x close</span></div>
+            <div class="folder-content">
+                <iframe loading="lazy" title="create" src="/create/index.html" width="100%" height="90%"></iframe>
+            </div>
+        </div>
+
+        <div class="draggable folder" id="art" style="top: 200px; right: 100px; width: 350px; height: 400px;">
+            <div class="folder-title"><span>.../Comms</span><span class="close" onclick="closeFolder('art')">- x close</span></div>
+            <div class="folder-content">
+                <iframe loading="lazy" title="art" name="art" src="/create/art.html" width="100%" height="90%"></iframe>
+            </div>
+        </div>
+
+        <div class="draggable folder" id="graphics" style="top: 100px; right: 200px; width: 400px; height: 300px;">
+            <div class="folder-title"><span>.../Graphics</span><span class="close" onclick="closeFolder('graphics')">- x close</span></div>
+            <div class="folder-content">
+                <iframe loading="lazy" title="graphics" src="/graphics.html" width="100%" height="90%"></iframe>
+                <a href="/graphics.html">open full page</a>
+            </div>
+        </div>
+
+        <div class="draggable folder" id="album" style="top: 120px; right: 140px; width: 450px; height: 600px;">
+            <div class="folder-title"><span>.../Photo album</span><span class="close" onclick="closeFolder('album')">- x close</span></div>
+            <div class="folder-content">
+                <iframe loading="lazy" title="photo album" src="/photo-album.html" width="100%" height="90%"></iframe>
+                <a href="/photo-album.html">open full page</a>
+            </div>
+        </div>
+
+        <div class="draggable folder" id="sites" style="top: 50px; right: 250px; width: 400px; height: 500px;">
+            <div class="folder-title"><span>.../Cool Sites</span><span class="close" onclick="closeFolder('sites')">- x close</span></div>
+            <div class="folder-content">
+                <iframe loading="lazy" title="sites" src="/sites.html" width="100%" height="90%"></iframe>
+                <a href="/sites.html">open full page</a>
+            </div>
+        </div>
+
+
+        <div id="side-bar">
+            <div id="statuscafe">
+                <div id="statuscafe-username"></div>
+                <div id="statuscafe-content"></div>
+            </div>
+            <script src="https://status.cafe/current-status.js?name=whosthecat" defer></script>
+            <a href="https://fukouna.atabook.org/" target="_blank" style="color: white; display: block; margin: 10px;text-decoration: none;"><img src="/graphics/pixels/stella%20octangula%20pixel.gif"> Sign my guestbook!</a>
+            <button id="fontSwitcher" onclick="changeFont()">
+                OpenDyslexic: <span id="font-stat">false</span>
+                 <span style="position: absolute; right: -20px; color: rgba(255, 255, 255, 0.5)" title="Changes all fonts to Open Dyslexic font; also removes background images from buttons.">?</span>
+            </button>
+            <div id="theme">
+                <a href="https://bsky.app/profile/fukounaglr.neocities.org"><img width="32px" style="transform: translate(0, 10px)" title="Strawpage" src="/images/strawpage.png"></a>
+                <span>theme:</span>
+                <select id="themeSwitcher" onchange="changeTheme()">
+                    <option value="">cats</option>
+                    <option value="hell">hell</option>
+                    <option value="underwater">underwater</option>
+                    <option value="neon">neon</option>
+                    <option value="green">green</option>
+                    <option value="depths">depths</option>
+                </select>
+            </div>
+
+            <div id="thebox">
+                <h6>Today is:</h6>
+                <img id="daytoday" title="" src="">
+                <p style="margin: auto 0; text-align: end;" id="time"></p>
+            </div>
+        </div>
+    </main>
+
+
+    <div id="fuko-pixel" title="click me and i'll show you something cool">
+        <img class="filter" src="/images/fuko%20pixel.png">
+        <div id="confetti-area"></div>
+    </div>
+
+    <div id="rpgbox">
+        <img class="filter" src="/images/fuko_idle.gif" id="rpgimgidle">
+        <img class="filter" src="/images/fuko_talk.gif" id="rpgimgtalk">
+        <p id="rpgtext">* I can talk. Please enable javascript // wait for the page to complete loading . . .</p>
+        <div id="options">
+            <span onclick="speech(talk)">talk</span>
+            <span onclick="speech(about)">about</span>
+            <span onclick="speech(joke)">joke</span>
+        </div>
+    </div>
+
+
+
+
+    <script src="/js/confetti.js"></script>
+    <script src="/js/talkingfuko.js"></script>
+    <script src="/js/theme-switcher.js"></script>
+    <script src="/js/audio-player.js"></script>
+    <script src="/js/clock.js"></script>
+    <script>
+        const weekday = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+        const d = new Date();
+        let day = weekday[d.getDay()];
+        document.getElementById("daytoday").src = "/images/" + day + ".jpg";
+        document.getElementById("daytoday").title = day;
+    </script>
+    <script>
+        function openFolder(a) {
+            document.getElementById(a).style.display = "block";
+        }
+
+        function closeFolder(a) {
+            document.getElementById(a).style.display = "none";
+        }
+    </script>
+    <script>
+        const select = document.getElementById("player-select");
+        AudioPlayer.create(
+            [
+                "FUKOUNA GIRL - STOMACH BOOK",
+                "Circuit Bent - STOMACH BOOK",
+                "anarchy!!! - STOMACH BOOK",
+                "all you can hope for now are the scars to show for it!!! - STOMACH BOOK",
+                "Casket Kids - STOMACH BOOK",
+                "greetings from oblivion! we hope to see you soon! - STOMACH BOOK",
+                "unfathomable pain - gezebelle gaburgably",
+                "Quarter Pounder - gezebelle gaburgably",
+                "running - glass beach",
+                "cul-de-sac - glass beach",
+                "1015 - glass beach",
+                "SPLIT! (Live From The Bad Luck Tour) - Jhariah",
+                "GIRL HELL 1999 - femtanyl",
+                "KATAMARI - femtanyl",
+                "P3T - femtanyl",
+                "MIX. 02 - BOTHERED! - femtanyl",
+                "A Close, Trusted, Friend or Gas Station - Diet Tea Other Cola",
+                "I Need To Be Reprogrammed - Diet Tea Other Cola",
+                "Blood Soup - Diet Tea Other Cola",
+                "Break Stuff - Limp Bizkit",
+                "Sure You Will - OSI",
+                "New God - Moon Walker",
+                "BITE ME Nightcore - AJ DiSpirito",
+                "Forget Me - Whomst?",
+                "CULPABILITY AND THE PANOPTICON - Ghost and Pals",
+                "Rotary Park - Joe Hawley",
+                "things to do - alex g",
+                "Beautiful Princess Disorder - Milkypossum",
+                "Splitter Girl  - weevildoing",
+                "DesktopBuddy - NANORAY",
+                "Im Sorry Im a Monster - Trickle"
+            ], {
+                playButton: document.getElementById("player-button"),
+                skipButton: document.getElementById("skip-button"),
+                insertIcons: true,
+                slider: document.getElementById("player-slider"),
+                sliderThumb: document.getElementById("player-slider").querySelector("div:last-of-type"),
+                shuffle: true,
+                fileGarden: "ZjOP8Ik9OUXT6YVm",
+                onended: () => (select.value = AudioPlayer.idx)
+            }
+        );
+        for (let i = 0; i < AudioPlayer.list.length; i++) {
+            let option = select.appendChild(document.createElement("option"));
+            (option.label = AudioPlayer.list[i].title), (option.value = i);
+        }
+        select.onchange = () => {
+            AudioPlayer.idx = Number(select.value) - 1;
+            AudioPlayer.next();
+        };
+    </script>
+</body>
+
+</html>
