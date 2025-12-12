@@ -30,6 +30,7 @@ const talk = [
     "stereo sound makes my head hurt...",
     "Is [Creator] ever gonna come back?",
     "I hope that red haired kid burns in hell...",
+    "we are the universe observing itself"
         ];
 const about = [
     "My name is Fuko Una!",

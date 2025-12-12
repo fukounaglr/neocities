@@ -292,7 +292,7 @@
         <div class="window" id="fuko">
             <div class="win-title"><img src="/graphics/pixels/pc.gif"> Logged in as User</div>
             <div class="win-content">
-                <img src="/images/fuko%203d.png" style=" float: inline-start; height: 100%">
+                <img src="/images/fuko%203d.png" style=" float: inline-start; height: 100%; cursor: help;" onclick="playAudio('https://file.garden/ZjOP8Ik9OUXT6YVm/UNTITLED.wav')">
 
                 <p id="rpgtext" class="win-content" style="height: 120px">* I can talk. Please enable javascript // wait for the page to complete loading . . .</p>
                 <div id="options">
@@ -390,7 +390,9 @@
             </div>
         </div>
 
-        <img class="img" src="/images/fatass.png" width="150px" style=" top: 50px; left: 1100px">
+        <img class="img" src="/images/fatass.png" width="150px" style=" top: 50px; left: 1100px; cursor: help;" onclick="playAudio('https://www.myinstants.com/media/sounds/teddy-bear-squeek.mp3')">
+        <img class="img" src="/images/guestnoob.png" width="180px" style=" top: 470px; left: 190px; cursor: help;" onclick="playAudio('https://www.myinstants.com/media/sounds/mmm-cheezburger.mp3')">
+        <img class="img" src="/images/kibbies.png" width="210px" style=" top: 20px; left: 190px; cursor: help;" onclick="playAudio('https://www.myinstants.com/media/sounds/holy-final.mp3')">
 
     </main>
 
@@ -507,6 +509,13 @@
             AudioPlayer.idx = Number(select.value) - 1;
             AudioPlayer.next();
         };
+    </script>
+
+
+    <script>
+        function playAudio(url) {
+            new Audio(url).play();
+        }
     </script>
 </body>
 

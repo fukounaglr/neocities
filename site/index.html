@@ -320,8 +320,8 @@
         <footer>
             <p>Made in Phoenix code, tested in Firefox, hosted on <a href="https://neocities.org/site/fukounaglr" class="noico">Neocities</a></p>
         </footer>
-
-        <p><a href="/room.html" id="enter" class="win-button">&gt;&gt;&gt; enter!!! </a></p>
+<audio><source src="https://www.myinstants.com/media/sounds/parry-ultrakill.mp3"></audio>
+        <p><a href="/room.html" id="enter" class="win-button" onclick="playAudio('https://www.myinstants.com/media/sounds/parry-ultrakill.mp3')">&gt;&gt;&gt; enter!!! </a></p>
     </div>
 
     <div id="news">
@@ -387,6 +387,12 @@
     </script>
 
     <script src="/js/theme-switcher.js"></script>
+
+    <script>
+        function playAudio(url) {
+            new Audio(url).play();
+        }
+    </script>
 
 </body>
 
