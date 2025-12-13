@@ -28,12 +28,13 @@
             overflow: hidden;
         }
 
-        .done{
+        .done {
             text-decoration: line-through;
             color: gray;
         }
 
-        .filter, #player-bubble {
+        .filter,
+        #player-bubble {
             filter: hue-rotate(-30deg) saturate(140%);
         }
 
@@ -60,8 +61,7 @@
             font-size: 0.7Em !important;
 
             &.active {
-                background-color: var(--pri)
-            font-size: 1Em;
+                background-color: var(--pri) font-size: 1Em;
             }
         }
 
@@ -157,8 +157,7 @@
             }
 
             & #player-select {
-                all: unset;/
-                font-family: "syne mono";
+                all: unset;/ font-family: "syne mono";
                 text-overflow: clip;
                 border: none;
                 height: auto;
@@ -204,6 +203,7 @@
                 }
             }
         }
+
         #music-title {
             background-color: var(--acc);
             width: auto;
@@ -216,6 +216,7 @@
             border: solid 2px var(--col);
             border-bottom: none;
         }
+
         #sotw {
             color: white;
             position: absolute;
@@ -247,6 +248,7 @@
             left: 250px;
             top: 150px;
         }
+
         #todolist {
             width: 300px;
             height: 170px;
@@ -254,11 +256,13 @@
             top: 230px;
             left: 830px;
         }
+
         #day {
             position: absolute;
             top: 430px;
             left: 740px;
         }
+
         #info {
             width: 300px;
             height: 170px;
@@ -266,10 +270,18 @@
             top: 500px;
             left: 380px;
         }
+
         #pics {
             position: absolute;
             top: 430px;
             left: 950px;
+        }
+
+        #fukoinfo {
+            position: absolute;
+            bottom: 5px;
+            right: 10px;
+            color: gray;
         }
     </style>
 </head>
@@ -291,7 +303,13 @@
 
         <div class="window" id="fuko">
             <div class="win-title"><img src="/graphics/pixels/pc.gif"> Logged in as User</div>
+
+            <audio autoplay loop muted id="tlk">
+                <source src="https://www.myinstants.com/media/sounds/asriel.mp3">
+            </audio>
+
             <div class="win-content">
+                <span id="fukoinfo" title="Fuko ">?</span>
                 <img src="/images/fuko%203d.png" style=" float: inline-start; height: 100%; cursor: help;" onclick="playAudio('https://file.garden/ZjOP8Ik9OUXT6YVm/UNTITLED.wav')">
 
                 <p id="rpgtext" class="win-content" style="height: 120px">* I can talk. Please enable javascript // wait for the page to complete loading . . .</p>
@@ -393,6 +411,7 @@
         <img class="img" src="/images/fatass.png" width="150px" style=" top: 50px; left: 1100px; cursor: help;" onclick="playAudio('https://www.myinstants.com/media/sounds/teddy-bear-squeek.mp3')">
         <img class="img" src="/images/guestnoob.png" width="180px" style=" top: 470px; left: 190px; cursor: help;" onclick="playAudio('https://www.myinstants.com/media/sounds/mmm-cheezburger.mp3')">
         <img class="img" src="/images/kibbies.png" width="210px" style=" top: 20px; left: 190px; cursor: help;" onclick="playAudio('https://www.myinstants.com/media/sounds/holy-final.mp3')">
+        <img class="img" src="/images/starcatcher.gif" width="210px" style=" top: 20px; left: 490px; cursor: help;" onclick="playAudio('https://www.myinstants.com/media/sounds/piano-sparkles.mp3')">
 
     </main>
 
@@ -419,7 +438,9 @@
             "https://img1.picmix.com/output/pic/normal/6/7/0/9/12789076_7b56d.gif",
             "https://img1.picmix.com/output/pic/normal/8/2/8/6/12706828_63b46.gif",
             "https://img1.picmix.com/output/pic/normal/8/4/7/1/12671748_d07a4.gif",
-            "https://img1.picmix.com/output/pic/normal/7/7/9/9/13139977_ee83b.gif"
+            "https://img1.picmix.com/output/pic/normal/7/7/9/9/13139977_ee83b.gif",
+            "https://img1.picmix.com/output/pic/normal/6/4/5/0/13040546_e2173.gif",
+            "https://img1.picmix.com/output/pic/normal/2/0/3/9/13049302_b058e.gif"
         ]
 
         const Image = document.getElementById("img-rand");

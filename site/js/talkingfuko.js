@@ -1,8 +1,4 @@
-var speed = 50;
-const box = document.getElementById("rpgtext");
-//const imgIdle = document.getElementById("rpgimgidle");
-//const imgTalk = document.getElementById("rpgimgtalk");
-let typingId = 0;
+
 
 const lyric = [
             "Dimly lit, the room emits a hollow, muffled sound.     It houses a single sorry soul,      no other to be found",
@@ -37,7 +33,7 @@ const about = [
     "Beep boop, i'm  a robot!",
     "I'm a prototype. The software never got to release. But that means I'm special! One of a kind!",
     "Your personal digital assistant! I will help you with tasks and keep you company!",
-    "You don't need anyone elsse when you've got a friend like me!",
+    "You don't need anyone else when you've got a friend like me!",
     "I can think, I can feel. Isn't that what makes you real?",
     "Powered by meowclawsoft :3",
     "I live in your cat-puter!",
@@ -69,31 +65,36 @@ const joke = [
 function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
 }
+speed = 50;
+const box = document.getElementById("rpgtext");
+const talkaudio = document.getElementById("tlk");
+let typingId = 0;
+    //talkaudio.muted = true;
+    //talkaudio.valume = 1.0;
 
-box.innerHTML = "* ";
-txt = "Hi! I'm Fuko Una -- mascot of this site! You can click on buttons below for me to talk. Click a second time to skip!";
-typeWriter(0);
+const start = [
+    "Greeting! My name is Fuko Una and i am the neticen living on this site! Use buttons below to hear me talk. You can skip by clicking on something else!",
+    "Hi! I'm Fuko Una -- mascot of this site! You can click on buttons below for me to talk. Click on another button to skip!"
+];
+
+speech(start);
 
 async function speech(a) {
     typingId++;
     const randomIndex = Math.floor(Math.random() * a.length);
     txt = a[randomIndex];
     box.innerHTML = "* ";
-
     typeWriter(typingId);
 
-    //await sleep(speed * txt.length * 1.2);
-    //imgIdle.style.display = "block";
-    //imgTalk.style.display = "none";
 }
 
 async function typeWriter(myId) {
+    talkaudio.muted = false;
     for (let i = 0; i < txt.length; i++) {
-        //imgIdle.style.display = "none";
-        //imgTalk.style.display = "block";
         if (myId !== typingId) return;
         console.log(i);
         box.innerHTML += txt.charAt(i);
         await sleep(speed);
     }
+    talkaudio.muted = true;
 }
