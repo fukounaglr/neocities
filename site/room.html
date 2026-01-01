@@ -264,17 +264,30 @@
         }
 
         #info {
-            width: 300px;
+            width: 250px;
             height: 170px;
             position: absolute;
             top: 500px;
-            left: 380px;
+            left: 420px;
         }
 
         #pics {
             position: absolute;
             top: 430px;
             left: 950px;
+        }
+
+        #sitemap {
+            position: absolute;
+            top: 480px;
+            left: 180px;
+            width: 200px;
+            height: 200px;
+
+            & ul {
+                list-style: none;
+                padding: 0;
+            }
         }
 
         #fukoinfo {
@@ -292,7 +305,7 @@
 
         <div id="desktop-grid">
 
-            <a title="site map" href="/site-map.html"><img class="filter" src="/images/icon_map.png"><span>Site map</span></a>
+            <!--<a title="shrines" href="/shrines/index.html"><img class="filter" src="/images/icon_map.png"><span>Shrines</span></a>-->
             <a title="webmaster" href="webmaster.html"><img class="filter" src="/images/icon_me.png"><span>Webmaster</span></a>
             <a title="song of the week" href="song-of-the-week.html"><img class="filter" src="/images/icon_music.png"><span>Music</span></a>
             <a title="create" href="/create/index.html"><img class="filter" src="/images/icon_art.png"><span>Create</span></a>
@@ -360,7 +373,6 @@
             <div class="win-content">
                 <ul>
                     <li>make photo album paged</li>
-                    <li>make custom cursor</li>
                     <li>draw sprite for guestbook</li>
                     <li>make Oleander page</li>
                     <li>make Ghost Memory page</li>
@@ -368,6 +380,7 @@
                     <!--<li></li>-->
                 </ul>
                 <ul class="done">
+                    <li>make an imbed pages for news and links</li>
                     <li>make second click jump forward [fuko]</li>
                     <li>make photo album page</li>
                     <li>make shimejis page</li>
@@ -407,9 +420,57 @@
                 <img id="img-rand" width="200px" src="https://img1.picmix.com/output/pic/normal/9/2/9/5/12755929_85455.gif" class="slide">
             </div>
         </div>
+        <div id="sitemap" class="window">
+            <div class="win-title">Site map!</div>
+            <div class="win-content">
+                <ul>
+                    <li>
+                        <p>main</p>
+                        <ul>
+                            <li><a target="_parent" href="/index.html">index</a></li>
+                            <li><a target="_parent" href="/room.html">room</a></li>
+                            <!--<li><a target="_parent" href="/song-of-the-week.html">song of the week</a></li>-->
+                            <li><a target="_parent" href="/webmaster.html">webmaster</a></li>
+                            <!--<li><a target="_parent" href="/blog.html">blog</a></li>-->
+                            <!--<li><a target="_parent" href="/journal.html">journal</a></li>-->
+                            <li><a target="_parent" href="/sites.html">cool sites</a></li>
+                            <li><a target="_parent" href="/graphics.html">graphics</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>shrines</p>
+                        <ul>
+                            <li><a target="_parent" href="/shrines/sky-cotl/index.html">Sky COTL</a></li>
+                            <li><a target="_parent" href="/shrines/cooking.html">Cooking / Recipes</a></li>
+                            <li><a target="_parent" href="/shrines/photo-album.html">photo album</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>create</p>
+                        <ul>
+                            <li><a target="_parent" href="/create/toybox/index.html">Toybox</a>
+                            <li><a target="_parent" href="/create/papercraft.html">papercraft</a></li>
+                            <li><a target="_parent" href="/create/shimejis.html">shimejis</a></li>
+                            <li><a target="_parent" href="/create/art.html">art</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>misc</p>
+                        <ul>
+                            <li><a target="_parent" href="/dance.html">dance party</a></li>
+                            <!--<li><a target="_parent" href="/end.html">backrooms</a></li>-->
+                            <li><a target="_parent" href="/update-log.html">updates log</a></li>
+                            <!--<li><a target="_parent" href="/archive.html">archive</a></li>-->
+                            <!--<li><a target="_parent" href="/trans-rights.html">trans rights</a></li>-->
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
 
         <img class="img" src="/images/fatass.png" width="150px" style=" top: 50px; left: 1100px; cursor: help;" onclick="playAudio('https://www.myinstants.com/media/sounds/teddy-bear-squeek.mp3')">
-        <img class="img" src="/images/guestnoob.png" width="180px" style=" top: 470px; left: 190px; cursor: help;" onclick="playAudio('https://www.myinstants.com/media/sounds/mmm-cheezburger.mp3')">
+        <img class="img" src="/images/guestnoob.png" width="180px" style=" top: 260px; left: 680px; cursor: help;" onclick="playAudio('https://www.myinstants.com/media/sounds/mmm-cheezburger.mp3')">
         <img class="img" src="/images/kibbies.png" width="210px" style=" top: 20px; left: 190px; cursor: help;" onclick="playAudio('https://www.myinstants.com/media/sounds/holy-final.mp3')">
         <img class="img" src="/images/starcatcher.gif" width="210px" style=" top: 20px; left: 490px; cursor: help;" onclick="playAudio('https://www.myinstants.com/media/sounds/piano-sparkles.mp3')">
 
@@ -440,7 +501,8 @@
             "https://img1.picmix.com/output/pic/normal/8/4/7/1/12671748_d07a4.gif",
             "https://img1.picmix.com/output/pic/normal/7/7/9/9/13139977_ee83b.gif",
             "https://img1.picmix.com/output/pic/normal/6/4/5/0/13040546_e2173.gif",
-            "https://img1.picmix.com/output/pic/normal/2/0/3/9/13049302_b058e.gif"
+            "https://img1.picmix.com/output/pic/normal/2/0/3/9/13049302_b058e.gif",
+            "https://i.pinimg.com/736x/9b/03/4e/9b034e34bf62151afd0ee288b5266947.jpg"
         ]
 
         const Image = document.getElementById("img-rand");
