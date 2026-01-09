@@ -394,8 +394,9 @@ a {
     padding: 5px 15px;
     margin: 3px;
     position: relative;
-    color: white;
+    color: slateblue;
     z-index: 1;
+    text-align: left;
 
     &::after {
         content: "- ◻ x";
