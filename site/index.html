@@ -179,11 +179,21 @@
         }
 
         #rating {
-            position: absolute;
-            top: 2px;
-            right: 2px;
+            & img {
+                float: right;
+            }
+
             z-index: 10;
+            position: relative;
+            top: -36px;
+            left: -44px;
         }
+
+        #enter-title {
+            grid-area: 1/1/span 1/span 2;
+            height: calc(100% - 56px);
+        }
+
 
         #enter {
             margin-left: 15px;
@@ -201,7 +211,6 @@
                 font-style: italic;
             }
         }
-
 
         @media only screen and (max-width: 700px) {
 
@@ -242,6 +251,16 @@
             #Tranarchy {
                 transform: translateX(-12px);
             }
+
+            #rating {
+                position: relative;
+                top: 0;
+                left: 0;
+            }
+
+        #enter-title {
+            height: auto;
+        }
         }
     </style>
 </head>
@@ -264,10 +283,13 @@
 
     <div style="float: inline-start">
         <main class="window">
-            <div class="win-title" style="grid-area: 1/1/span 1/span 2"><img src="/graphics/pixels/agua.gif"> Enter!!</div>
-            <div id="rating">
-                <a href="https://fukounaglr.neocities.org/" target="_blank"><img src="https://file.garden/ZjOP8Ik9OUXT6YVm/fukounaglr.gif"></a>
-                <a href="https://www.mabsland.com/Adoption.html" target="_blank"><img height="33" src="/images/Censor_Mc.gif" title="For mature audiences.  Contains high risk of violence, nudity, and adult situations.  Viewer should be at least 17 or with parental guidance."></a>
+            <div class="win-title" id="enter-title"><img src="/graphics/pixels/agua.gif"> Enter!!
+
+                <div id="rating">
+                    <a href="https://fukounaglr.neocities.org/" target="_blank"><img src="https://file.garden/ZjOP8Ik9OUXT6YVm/fukounaglr.gif"></a>
+                    <a href="https://fukouna.atabook.org/" target="_blank" style="color: white; display: block; margin: 10px;text-decoration: none;" title=" Sign my guestbook!"><img src="/graphics/buttons/guestbook.jpg"></a>
+                    <a href="https://www.mabsland.com/Adoption.html" target="_blank"><img height="33" src="/images/Censor_Mc.gif" title="For mature audiences.  Contains high risk of violence, nudity, and adult situations.  Viewer should be at least 17 or with parental guidance."></a>
+                </div>
             </div>
             <div class="win-content" style="position: relative; height: calc(100% - 13px); overflow-x: hidden;">
                 <header>
