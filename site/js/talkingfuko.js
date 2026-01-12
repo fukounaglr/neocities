@@ -67,7 +67,7 @@ function sleep(ms) {
 }
 speed = 50;
 const box = document.getElementById("rpgtext");
-const talkaudio = document.getElementById("tlk");
+//const talkaudio = document.getElementById("tlk");
 let typingId = 0;
     //talkaudio.muted = true;
     //talkaudio.valume = 1.0;
@@ -89,12 +89,12 @@ async function speech(a) {
 }
 
 async function typeWriter(myId) {
-    talkaudio.muted = false;
+    //talkaudio.muted = false;
     for (let i = 0; i < txt.length; i++) {
         if (myId !== typingId) return;
         console.log(i);
         box.innerHTML += txt.charAt(i);
         await sleep(speed);
     }
-    talkaudio.muted = true;
+    //talkaudio.muted = true;
 }

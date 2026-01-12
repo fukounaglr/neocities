@@ -99,6 +99,13 @@
             }
         }
 
+        #marq{
+            margin: 20px;
+            & img{
+                height: 30px;
+            }
+        }
+
 
 
         /*PLAYER*/
@@ -283,11 +290,6 @@
             left: 180px;
             width: 200px;
             height: 200px;
-
-            & ul {
-                list-style: none;
-                padding: 0;
-            }
         }
 
         #fukoinfo {
@@ -352,20 +354,35 @@
                     OpenDyslexic: <span id="font-stat">false</span>
                     <span style="position: absolute; right: -20px; color: rgba(255, 255, 255, 0.5)" title="Changes all fonts to Open Dyslexic font; also removes background images from buttons.">?</span>
                 </button>
+                <!--<a href="https://fukounaglr.straw.page/"><img width="32px" style="transform: translate(0, 10px)" title="Strawpage" src="/images/strawpage.png"> strawpage</a>-->
+                <!--
                 <div id="theme">
-                    <a href="https://fukounaglr.straw.page/"><img width="32px" style="transform: translate(0, 10px)" title="Strawpage" src="/images/strawpage.png"> strawpage</a>
-                    <!--
-                <span>theme:</span>
-                <select id="themeSwitcher" onchange="changeTheme()">
-                    <option value="">cats</option>
-                    <option value="hell">hell</option>
-                    <option value="underwater">underwater</option>
-                    <option value="neon">neon</option>
-                    <option value="green">green</option>
-                    <option value="depths">depths</option>
-                </select>
-                -->
+                    <span>theme:</span>
+                    <select id="themeSwitcher" onchange="changeTheme()">
+                        <option value="">cats</option>
+                        <option value="hell">hell</option>
+                        <option value="underwater">underwater</option>
+                        <option value="neon">neon</option>
+                        <option value="green">green</option>
+                        <option value="depths">depths</option>
+                    </select>
                 </div>
+                -->
+                <marquee height="40px" id="marq">
+                    <img src="/fukounaglr.gif">
+                    <img src="/graphics/buttons/kris_where_tf_are_we.png">
+                    <img src="/graphics/buttons/neocities.png">
+                    <img src="/graphics/buttons/youre_telling_me.png">
+                    <img src="/graphics/blinkies/tft.gif">
+                    <img src="/graphics/blinkies/comicsans.gif">
+                    <img src="/graphics/blinkies/2063488df6ab87c63943325d03731552856553e0.gif">
+                    <img src="/graphics/blinkies/tti_blink.gif">
+                    <img src="/graphics/blinkies/0205-pluralsystem.gif">
+                    <img src="/graphics/blinkies/gender-isnt-real.gif">
+                    <img src="/graphics/blinkies/sylveon-trans-rights.gif">
+                    <!--<img src="/graphics/blinkies/">-->
+                    <!--<img src="/graphics/">-->
+                </marquee>
             </div>
         </div>
 
@@ -374,13 +391,13 @@
             <div class="win-content">
                 <ul>
                     <li>make photo album paged</li>
-                    <li>draw sprite for guestbook</li>
                     <li>make Oleander page</li>
                     <li>make Ghost Memory page</li>
                     <li>make Roblox games shrine</li>
                     <!--<li></li>-->
                 </ul>
                 <ul class="done">
+                    <li>guestbook page</li>
                     <li>new site button</li>
                     <li>make an imbed pages for news and links</li>
                     <li>make second click jump forward [fuko]</li>
@@ -424,50 +441,9 @@
         </div>
         <div id="sitemap" class="window">
             <div class="win-title">Site map!</div>
-            <div class="win-content">
-                <ul>
-                    <li>
-                        <p>main</p>
-                        <ul>
-                            <li><a target="_parent" href="/index.html">index</a></li>
-                            <li><a target="_parent" href="/room.html">room</a></li>
-                            <!--<li><a target="_parent" href="/song-of-the-week.html">song of the week</a></li>-->
-                            <li><a target="_parent" href="/webmaster.html">webmaster</a></li>
-                            <!--<li><a target="_parent" href="/blog.html">blog</a></li>-->
-                            <!--<li><a target="_parent" href="/journal.html">journal</a></li>-->
-                            <li><a target="_parent" href="/sites.html">cool sites</a></li>
-                            <li><a target="_parent" href="/graphics.html">graphics</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <p>shrines</p>
-                        <ul>
-                            <li><a target="_parent" href="/shrines/sky-cotl/index.html">Sky COTL</a></li>
-                            <li><a target="_parent" href="/shrines/cooking.html">Cooking / Recipes</a></li>
-                            <li><a target="_parent" href="/shrines/photo-album.html">photo album</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <p>create</p>
-                        <ul>
-                            <li><a target="_parent" href="/create/toybox/index.html">Toybox</a>
-                            <li><a target="_parent" href="/create/papercraft.html">papercraft</a></li>
-                            <li><a target="_parent" href="/create/shimejis.html">shimejis</a></li>
-                            <li><a target="_parent" href="/create/art.html">art</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <p>misc</p>
-                        <ul>
-                            <li><a target="_parent" href="/dance.html">dance party</a></li>
-                            <!--<li><a target="_parent" href="/end.html">backrooms</a></li>-->
-                            <li><a target="_parent" href="/update-log.html">updates log</a></li>
-                            <!--<li><a target="_parent" href="/archive.html">archive</a></li>-->
-                            <!--<li><a target="_parent" href="/trans-rights.html">trans rights</a></li>-->
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+            <iframe src="/map.html" title="map" style="width: 90%" class="win-content">
+
+            </iframe>
         </div>
 
 
@@ -504,7 +480,9 @@
             "https://img1.picmix.com/output/pic/normal/7/7/9/9/13139977_ee83b.gif",
             "https://img1.picmix.com/output/pic/normal/6/4/5/0/13040546_e2173.gif",
             "https://img1.picmix.com/output/pic/normal/2/0/3/9/13049302_b058e.gif",
-            "https://i.pinimg.com/736x/9b/03/4e/9b034e34bf62151afd0ee288b5266947.jpg"
+            "https://i.pinimg.com/736x/9b/03/4e/9b034e34bf62151afd0ee288b5266947.jpg",
+            "https://img1.picmix.com/output/pic/normal/7/5/2/8/13148257_18c1c.gif",
+            "https://img1.picmix.com/output/pic/normal/1/1/1/7/12577111_4cb52.gif"
         ]
 
         const Image = document.getElementById("img-rand");

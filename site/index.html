@@ -65,7 +65,12 @@
             grid-template-columns: 1.5fr 1fr;
         }
 
-
+        hr {
+            border-top: 1px solid;
+            width: 140%;
+            position: relative;
+            left: -10px;
+        }
 
         #hitcount {
             color: var(--acc);
@@ -184,14 +189,22 @@
             }
 
             z-index: 10;
-            position: relative;
-            top: -36px;
-            left: -44px;
+            position: absolute;
+            top: 2px;
+            right: 60px;
         }
 
         #enter-title {
             grid-area: 1/1/span 1/span 2;
             height: calc(100% - 56px);
+        }
+
+        #buttons {
+            display: flex;
+
+            & a {
+                margin: auto;
+            }
         }
 
 
@@ -252,15 +265,9 @@
                 transform: translateX(-12px);
             }
 
-            #rating {
-                position: relative;
-                top: 0;
-                left: 0;
+            #enter-title {
+                height: auto;
             }
-
-        #enter-title {
-            height: auto;
-        }
         }
     </style>
 </head>
@@ -286,12 +293,19 @@
             <div class="win-title" id="enter-title"><img src="/graphics/pixels/agua.gif"> Enter!!
 
                 <div id="rating">
-                    <a href="https://fukounaglr.neocities.org/" target="_blank"><img src="https://file.garden/ZjOP8Ik9OUXT6YVm/fukounaglr.gif"></a>
-                    <a href="https://fukouna.atabook.org/" target="_blank" style="color: white; display: block; margin: 10px;text-decoration: none;" title=" Sign my guestbook!"><img src="/graphics/buttons/guestbook.jpg"></a>
-                    <a href="https://www.mabsland.com/Adoption.html" target="_blank"><img height="33" src="/images/Censor_Mc.gif" title="For mature audiences.  Contains high risk of violence, nudity, and adult situations.  Viewer should be at least 17 or with parental guidance."></a>
+                    <a href="https://www.mabsland.com/Adoption.html" target="_blank"><img height="30" src="/images/Censor_Mc.gif" title="For mature audiences.  Contains high risk of violence, nudity, and adult situations.  Viewer should be at least 17 or with parental guidance."></a>
                 </div>
             </div>
+
             <div class="win-content" style="position: relative; height: calc(100% - 13px); overflow-x: hidden;">
+                <div id="buttons">
+                    <a href="https://fukounaglr.neocities.org/" target="_blank"><img src="https://file.garden/ZjOP8Ik9OUXT6YVm/fukounaglr.gif"></a>
+                    <a href="/guestbook.html" target="_blank" style="color: white; display: block; margin: 10px;text-decoration: none;" title=" Sign my guestbook!"><img src="/graphics/buttons/guestbook.jpg"></a>
+                    <a href="https://github.com/fukounaglr/neocities" target="_blank" style="color: white; display: block; margin: 10px;text-decoration: none;" title="Site's code"><img src="/graphics/buttons/got-html.gif"></a>
+                </div>
+
+                <hr>
+
                 <header>
                     <marquee style="margin-top: 5px">FUKOUNA GIRL! FUKOUNA GIRL! IF YOU WANNA FLAY ME, LETS SEE WHATS INSIDE!</marquee>
                     <p>
@@ -303,9 +317,9 @@
                     <a href="/update-log.html" id="updd" class="head-info"> Last updated: <span id="lastupdate"></span></a><br>
                     <span class="head-info"><img src="/graphics/pixels/gleach_allen_pixel.gif"> Visitors: <span id="hitcount"></span></span>
                 </header>
-                <div style="height: 20px;">
-                    <hr style="border: 1px solid; width: 100%; position: absolute; left: 0;">
-                </div>
+
+                <hr>
+
                 <details onclick="playAudio('https://www.myinstants.com/media/sounds/parry-ultrakill.mp3')">
                     <summary>heads up!</summary>
                     <div class="win-content">this site uses a lot of javascript, autoplay, is image-heavy and may contain some triggering content: <span class="spoiler">slurs, drug use, cartoon gore, topics of suicide and mental illness</span>. Proceed only if you are OK with all of these and are over 16.<br>

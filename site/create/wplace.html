@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link rel="icon" type="image/png" href="/ico.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/create/style.css" />
+
+    <style>
+        body{
+            display: grid;
+            grid-template-columns:
+                1fr 1.5fr;
+        }
+        #wplace{
+            width: 100%;
+            height: 70vh;
+        }
+
+        #title{
+           grid-area: 1/1/span2/span1
+        }
+
+
+        @media only screen and (max-width: 700px) {
+            body{
+                display: block;
+            }
+            #wplace{
+                width: calc(100vw - 10px);
+                height: 50vh;
+            }
+            ul{
+                height: 30vh;
+            }
+            #title{
+                height: 12vh;
+            }
+    }
+    </style>
+</head>
+
+<body>
+    <div id="title">
+        <h2>Wplace</h2>
+    <a href="/create/index.html">go back</a>
+    </div>
+    <ul>
+        <!--<li><a target="wplace" href=""></a></li>-->
+        <li><a target="wplace" href="https://wplace.live/?lat=52.68991572140989&lng=4.371064121777344&zoom=15">my site button somewhere in the water</a></li>
+        <li><a target="wplace" href="https://wplace.live/?lat=52.11325263814511&lng=4.397079746777319&zoom=15">casket :DD</a></li>
+        <li><a target="wplace" href="https://wplace.live/?lat=52.04940987178813&lng=4.294950840527321&zoom=15">two and gaty</a></li>
+        <li><a target="wplace" href="https://wplace.live/?lat=51.948761649955074&lng=4.354364903027317&zoom=15">gray from TWF and gaty</a></li>
+        <li><a target="wplace" href="https://wplace.live/?lat=51.95569523060695&lng=4.360693028027336&zoom=15">bad things ivan and andrew</a></li>
+        <li><a target="wplace" href="https://wplace.live/?lat=46.986068715915124&lng=40.40217740302734&zoom=15">[unfinished] v2</a></li>
+        <li><a target="wplace" href="https://wplace.live/?lat=46.89161326108976&lng=40.26243130927733&zoom=15">the first glass beach album</a></li>
+        <li><a target="wplace" href="https://wplace.live/?lat=-33.612349986258465&lng=151.3619820905273&zoom=15">[my first wplace art!] tiny sebastian</a></li>
+    </ul>
+    <iframe src="https://wplace.live/?lat=52.68991572140989&lng=4.371064121777344&zoom=14.423080734898447" title="wplace" name="wplace" id="wplace" class="window"></iframe>
+</body>
+
+</html>
