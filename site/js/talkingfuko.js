@@ -59,6 +59,7 @@ const joke = [
     "ppl in stone age going to sleep be like: ah yes, bed rock",
     "how do you call a sleeping male cow? a bulldozer.",
     "fungi? what's so fun about him?",
+    "what will you get if you put together an angry sheep and angry cow? two animals in ba-a-a-ad moo-oo-ood",
     "gay bloodcells be carrying homoglobin"
         ];
 

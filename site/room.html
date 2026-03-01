@@ -484,11 +484,13 @@
             "https://img1.picmix.com/output/pic/normal/7/5/2/8/13148257_18c1c.gif",
             "https://img1.picmix.com/output/pic/normal/1/1/1/7/12577111_4cb52.gif",
             "https://img1.picmix.com/output/pic/normal/9/8/2/1/12821289_b0590.gif",
-            "https://img1.picmix.com/output/pic/normal/3/0/2/4/12074203_250cf.gif"
+            "https://img1.picmix.com/output/pic/normal/3/0/2/4/12074203_250cf.gif",
+            'https://img1.picmix.com/output/pic/normal/9/7/9/1/13501979_bebfb.gif'
         ]
 
         const Image = document.getElementById("img-rand");
-        const randomImg = Math.floor(Math.random() * images.length);
+        //const randomImg = Math.floor(Math.random() * images.length);
+        const randomImg = images.length ;
         Image.src = images[randomImg];
 
         function randomImage() {
