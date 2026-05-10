@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>enter; fuko's room</title>
+
+    <link rel="icon" type="image/png" href="/ico.png" />
+    <link rel="stylesheet" href="/style.css" />
+
+
+    <style>
+        body {
+            background:
+                /*url(/images/title.png),*/
+                linear-gradient(rgba(0, 0, 0, 0),
+                    rgba(0, 0, 0, 0.3)),
+                var(--bg);
+            background: cross-fade();
+            background-size: auto 100vh;
+            width: 100%;
+            min-height: 100vh;
+            background-position: top;
+            padding: 0;
+            align-content: center;
+            align-items: center;
+        }
+
+        footer {
+            font-size: small;
+            text-align: left;
+            margin: 25px;
+            color: seashell
+        }
+
+        header {
+            position: absolute;
+            position: relative;
+            top: 0;
+            width: 100%;
+            text-align: left;
+
+            & h4 {
+                margin: auto;
+            }
+
+            & a::before {
+                filter: none;
+            }
+
+            & .head-info {
+                margin-top: 5px;
+            }
+        }
+
+        main {
+            position: relative;
+            max-width: 550px;
+            margin: 20px;
+            overflow: hidden;
+            align-content: center;
+            aspect-ratio: 3/2;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+        }
+
+        hr {
+            border-top: 1px solid;
+            width: 140%;
+            position: relative;
+            left: -10px;
+        }
+
+        #hitcount {
+            color: var(--acc);
+        }
+
+
+        #splash {
+            z-index: 100;
+            /*position: fixed;*/
+            width: calc(100% - 20px);
+            top: 0;
+            height: calc(100vh - 100px);
+            padding: 50px 10px;
+            text-align: center;
+            vertical-align: middle;
+            align-content: center;
+            display: block;
+            color: white;
+            background:
+                url(/images/title.png),
+                linear-gradient(deeppink, lightpink, seashell, PaleTurquoise, deepskyblue);
+            background: cross-fade();
+            background-size: 100% 100%;
+
+            & img {
+                height: 100%;
+                width: 80%;
+                margin: auto;
+                object-fit: cover;
+            }
+        }
+
+        #phone-splash {
+            z-index: 100;
+            position: fixed;
+            width: calc(100% - 20px);
+            top: 0;
+            height: 100%;
+            padding: 50px 10px;
+            text-align: center;
+            vertical-align: middle;
+            display: none;
+
+            & div {
+                position: relative;
+                align-content: center;
+                height: 100%
+            }
+
+            #phone-enter,
+            #phone-dontask {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+
+        .infobox {
+            position: relative;
+            height: 100%;
+            width: calc(100% - 38px);
+            overflow: auto;
+            padding: 0 15px;
+            align-content: center;
+            overflow-x: hidden;
+        }
+
+        #box-3 {
+            color: var(--col);
+            grid-area: 2/2;
+            padding: 30px 15px;
+            height: calc(100% - 60px);
+            border: 2px solid gray;
+            margin-left: 2px;
+
+            & a::before {
+                display: none;
+                content: "";
+            }
+        }
+
+        #autiring table {
+            margin: auto;
+        }
+
+        #news {
+            max-width: 340px;
+            height: calc(100vh - 20px);
+            overflow: auto;
+            /*position: absolute;*/
+            float: inline-end;
+            top: 20px;
+            right: 20px;
+            z-index: 20;
+
+            & img {
+                max-width: 150px;
+            }
+        }
+
+        #Tranarchy {
+            scale: .7;
+            margin: auto;
+            width: min-content;
+            transform: translateX(-15%);
+
+            & span {
+                margin: auto;
+                left: 0;
+                width: 100%
+            }
+        }
+
+        #rating {
+            & img {
+                float: right;
+            }
+
+            z-index: 10;
+            position: absolute;
+            top: 2px;
+            right: 60px;
+        }
+
+        #enter-title {
+            grid-area: 1/1/span 1/span 2;
+            height: calc(100% - 56px);
+        }
+
+        #buttons {
+            display: flex;
+
+            & a {
+                margin: auto;
+            }
+        }
+
+
+        #enter {
+            margin-left: 15px;
+            font-size: xx-large;
+            /*background-color: var(--acc)*/
+            background-image:
+                linear-gradient(to right, deeppink, lightpink, seashell);
+            border-color: deeppink;
+
+            &:hover {
+                background-image:
+                    linear-gradient(to right, seashell, PaleTurquoise, deepskyblue);
+                border-color: deepskyblue;
+                color: var(--col);
+                font-style: italic;
+            }
+        }
+
+        @media only screen and (max-width: 700px) {
+
+            main {
+                width: 80%;
+                font-size: 0.9Em;
+                overflow: hidden;
+                aspect-ratio: auto;
+                grid-template-columns: 1fr;
+            }
+
+            #news {
+                position: relative;
+                width: calc(80% - 10px);
+                margin: 50px;
+                height: auto;
+            }
+
+            #splash img {
+                width: 100%;
+                height: 100%
+            }
+
+            .infobox {
+                height: auto;
+                width: auto;
+            }
+
+            #box-3 {
+                grid-area: 3/1;
+                margin-left: 3px;
+            }
+
+            #footer {
+                text-align: center;
+            }
+
+            #Tranarchy {
+                transform: translateX(-12px);
+            }
+
+            #enter-title {
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="phone-splash" class="window">
+        <div>
+            <h6>WARNING! PHONE DETECTED!</h6>
+            <p>not all pages are mobile friendly! please consider switching to PC or a PC mode for best viewing!!</p>
+            <span id="phone-enter" onclick="hide() playAudio('https://www.myinstants.com/media/sounds/parry-ultrakill.mp3')"> enter</span>
+            <span>|</span>
+            <span id="phone-dontask" onclick="dontask() playAudio('https://www.myinstants.com/media/sounds/parry-ultrakill.mp3')"> don't ask again</span>
+        </div>
+    </div>
+
+
+    <div id="splash">
+        <img src="/images/burger.png" onclick="playAudio('https://www.myinstants.com/media/sounds/parry-ultrakill.mp3')">
+    </div>
+
+    <div style="float: inline-start">
+        <main class="window">
+            <div class="win-title" id="enter-title"><img src="/graphics/pixels/agua.gif"> Enter!!
+
+                <div id="rating">
+                    <a href="https://www.mabsland.com/Adoption.html" target="_blank"><img height="30" src="/images/Censor_Mc.gif" title="For mature audiences.  Contains high risk of violence, nudity, and adult situations.  Viewer should be at least 17 or with parental guidance."></a>
+                </div>
+            </div>
+
+            <div class="win-content" style="position: relative; height: calc(100% - 13px); overflow-x: hidden;">
+                <div id="buttons">
+                    <a href="https://fukounaglr.neocities.org/" target="_blank"><img src="https://file.garden/ZjOP8Ik9OUXT6YVm/fukounaglr.gif"></a>
+                    <a href="/guestbook.html" target="_blank" style="color: white; display: block; margin: 10px;text-decoration: none;" title=" Sign my guestbook!"><img src="/graphics/buttons/guestbook.jpg"></a>
+                    <a href="https://github.com/fukounaglr/neocities" target="_blank" style="color: white; display: block; margin: 10px;text-decoration: none;" title="Site's code"><img src="/graphics/buttons/got-html.gif"></a>
+                </div>
+
+                <hr>
+
+                <header>
+                    <marquee style="margin-top: 5px">FUKOUNA GIRL! FUKOUNA GIRL! IF YOU WANNA FLAY ME, LETS SEE WHATS INSIDE!</marquee>
+                    <p>
+                        <img src="/graphics/blinkies/danger-to-society.gif" width="45%">
+                        <img src="/graphics/blinkies/a%20life.gif" width="45%">
+                    </p>
+                    <span class="head-info"><img src="/graphics/pixels/cat30.gif">
+                        I'm a god's little meow meow!</span><br>
+                    <a href="/update-log.html" id="updd" class="head-info"> Last updated: <span id="lastupdate"></span></a><br>
+                    <span class="head-info"><img src="/graphics/pixels/gleach_allen_pixel.gif"> Visitors: <span id="hitcount"></span></span>
+                </header>
+
+                <hr>
+
+                <details onclick="playAudio('https://www.myinstants.com/media/sounds/parry-ultrakill.mp3')">
+                    <summary>heads up!</summary>
+                    <div class="win-content">this site uses a lot of javascript, autoplay, is image-heavy and may contain some triggering content: <span class="spoiler">slurs, drug use, cartoon gore, topics of suicide and mental illness</span>. Proceed only if you are OK with all of these and are over 16.<br>
+                        also this website is owned by a queer so if youre a bigot GTFO!!!!</div>
+                </details>
+                <button id="fontSwitcher" onclick="changeFont()">
+                    OpenDyslexic: <span id="font-stat">false</span>
+                    <span style="position: absolute; right: -20px; color: rgba(255, 255, 255, 0.5)" title="Changes all fonts to Open Dyslexic font; also removes background images from buttons.">?</span>
+                </button>
+
+                <p>please leave your shoes at the door!</p>
+            </div>
+
+            <div class="infobox win-raise win-content " id="box-3">
+                <div class="win-subtitle">
+                    <img src="/graphics/pixels/pc.gif">
+                    Webrings
+                </div>
+                <div style="font-size: 0.6Em; text-align: center;">
+                    <div id="gleach">
+                        <a target="_blank" href="https://alliedalmond.nekoweb.org/glassbeachwebring.html"><img src="https://i.postimg.cc/xdnhHGrG/gfghfh.png" width="100px"></a><br>
+                        <a target="_blank" href="https://alliedalmond.nekoweb.org/glassbeachwebring.html?action=previous"><img src="https://i.postimg.cc/SRcRf93H/ezgif-5e4a5db51cc007.gif" width="17px"></a>
+                        <a target="_blank" href="https://alliedalmond.nekoweb.org/glassbeachwebring.html?action=random"><img src="https://i.postimg.cc/fbPGWrym/ezgif-52dfd8e62f0be0.png" width="100px"></a>
+                        <a target="_blank" href="https://alliedalmond.nekoweb.org/glassbeachwebring.html?action=next"><img src="https://i.postimg.cc/hvVv1m6H/ezgif-5e088f85c67260.gif" width="17px"></a>
+                    </div>
+
+
+                        <div id="Tranarchy">
+                            <script src="https://tranarchy-webring.neocities.org/SCRIPTS/tranarchy.js"></script>
+                        </div>
+
+                        <div id="autiring">
+                            <script type="text/javascript" src="https://ballonlea.neocities.org/autiring/onionring-variables.js"></script>
+                            <script type="text/javascript" src="https://ballonlea.neocities.org/autiring/onionring-widget.js"></script>
+                        </div>
+
+                        <div>
+                            <script src="https://nuthead.neocities.org/ring/ring.js"></script>
+                        </div>
+
+                        <script src="https://transring.neocities.org/ring.js" data-widget="cloud"></script>
+
+                        <script src="https://snewberry.neocities.org/catfolk/webstring.js"></script>
+
+                        <div>
+                            <map name="noaimini5">
+                                <area href="https://baccyflap.com/noai" shape="rect" coords="25,16,61,29" target="_blank" alt="no ai webring" title="no ai webring">
+                                <area href="https://baccyflap.com/noai/?prv&s=fkn" target="_top" shape="rect" coords="2,2,19,17" alt="previous" title="previous">
+                                <area href="https://baccyflap.com/noai/?rnd" target="_top" shape="rect" coords="66,22,70,28" alt="random" title="random">
+                                <area href="https://baccyflap.com/noai/?nxt&s=fkn" target="_top" shape="rect" coords="69,2,85,17" alt="next" title="next">
+                            </map>
+                            <img usemap="#noaimini5" src="https://baccyflap.com/noai/miniwidget5.gif" alt="the top of a fuzzy, black sphere with two arrows rising from it, one curving to the left, one to the right. across the bulk of the sphere it reads NO AI / WEBRING in squiggly, uneven letters and next to those words is a small question mark">
+                        </div>
+
+                        <a href="https://fanimated.net/mylittlepony/" target="_blank"><img src="/graphics/sites/mlpring.gif"></a>
+
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Made in Phoenix code, tested in Firefox, hosted on <a href="https://neocities.org/site/fukounaglr" class="noico">Neocities</a>. Bryce3D backgrounds by Vapor</p>
+        </footer>
+        <audio>
+            <source src="https://www.myinstants.com/media/sounds/parry-ultrakill.mp3">
+        </audio>
+        <p><a href="/room.html" id="enter" class="win-button">&gt;&gt;&gt; enter!!! </a></p>
+    </div>
+
+    <div id="news">
+        <div class="window" style="width: 300px; height: 330px">
+            <div class="win-title"><img src="/graphics/pixels/cat34.gif"> news</div>
+
+            <iframe class="win-content" src="/news.html" title="news" style="width: calc(100% - 22px); height: calc(100% - 60px); overflow: auto; border: "></iframe>
+        </div>
+
+        <div class="window" style="width: 300px">
+            <div class="win-title"><img src="/graphics/pixels/cat34.gif"> links</div>
+
+            <div class="win-content">
+                <details onclick="playAudio('https://www.myinstants.com/media/sounds/parry-ultrakill.mp3')">
+                    <summary>Click here to view my socials!</summary>
+
+                    <iframe class="win-content" src="/links.html" title="links" style="width: calc(100% - 22px); height: calc(100% - 60px); overflow: auto; border: "></iframe>
+                </details>
+            </div>
+        </div>
+
+        <div class="window" style="width: 300px;">
+            <div class="win-title"><img src="/graphics/pixels/cat34.gif"> log</div>
+            <div class="win-content">
+                <iframe title="update log" style="width: 100%; height: 200px; overflow: scroll" src="/update-log.html"></iframe>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="/js/views-update.js"> </script>
+    <script type="text/javascript">
+        const enter = document.getElementById("phone-enter");
+        const phonesplash = document.getElementById("phone-splash");
+        document.documentElement.setAttribute('mobile-warning', localStorage.getItem("mobwarn"));
+
+        function hide() {
+            phonesplash.style.display = "none";
+        }
+
+
+        function dontask() {
+            phonesplash.style.display = "none";
+            localStorage.setItem('mobwarn', 'false');
+        }
+        if (localStorage.getItem("mobwarn") == "false") {
+            phonesplash.style.display = "none";
+        } else if (window.matchMedia("(max-width: 600px)").matches) {
+            phonesplash.style.display = "block";
+        }
+    </script>
+
+    <script src="/js/theme-switcher.js"></script>
+
+    <script>
+        function playAudio(url) {
+            new Audio(url).play();
+        }
+    </script>
+
+</body>
+
+</html>
