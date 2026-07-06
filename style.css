@@ -1,0 +1,736 @@
+@font-face {
+    font-family: "syne mono";
+    src:
+        url("/fonts/synemono-regular-webfont.woff2") format("woff2"),
+        url("/fonts/synemono-regular-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "staypuft";
+    src:
+        url("/fonts/staypuft-webfont.woff2") format("woff2"),
+        url("/fonts/staypuft-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "kirieji04";
+    src:
+        url("/fonts/kirieji04.woff2") format("woff2"),
+        url("/fonts/kirieji04.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Mikiyu Font Mokomori-kuro";
+    src:
+        url("/fonts/Mikiyu-Font-Mokomor-kuro.woff2") format("woff2"),
+        url("/fonts/Mikiyu-Font-Mokomor-kuro.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "OpenDyslexic";
+    src:
+        url("/fonts/OpenDyslexic-Regular.woff2") format("woff2"),
+        url("/fonts/OpenDyslexic-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "OpenDyslexic";
+    src:
+        url("/fonts/OpenDyslexic-Bold.woff2") format("woff2"),
+        url("/fonts/OpenDyslexic-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+/*THEME*/
+:root {
+    --hell-display: none;
+    --green-display: none;
+    --neon-display: none;
+    --water-display: none;
+    --depths-display: none;
+    scrollbar-color: var(--accent-colour) white;
+    scrollbar-width: thin;
+    image-rendering: pixelated;
+}
+
+:root[dyslexic="true"] {
+    * {
+        font-family: OpenDyslexic !important;
+        font-size: small;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: bold;
+    }
+}
+
+:root {
+
+    --col: black;
+    --acc: deeppink;
+    --acc-hov: lightpink;
+    --pri: PaleTurquoise;
+    --sec: deepskyblue;
+    --bg-col: seashell;
+    --bg: url(/images/glasscubes.png);
+    --fav: url(/graphics/pixels/vapo2.gif);
+    --blink: url(/graphics/blinkies/pirate_blank.gif);
+}
+
+:root[theme="green"] {
+    --colour: #181818;
+    --primary-colour: #ceea62;
+    --accent-colour: #2c9790;
+    --accent-colour-hover: #325b95;
+    --green-display: block;
+    --cats-display: none;
+    --bg: url(/images/green-snes.png);
+    --fav: url(/graphics/pixels/bun.gif);
+    --blink: url(/graphics/blinkies/frog_blank.gif);
+    --theme-filter: hue-rotate(170deg) brightness(100%) contrast(100%) sepia(40%) saturate(120%);
+}
+
+:root[theme="hell"] {
+    --primary-colour: #D3D2CE;
+    --colour: black;
+    --accent-colour: #c70d0d;
+    --accent-colour-hover: darkred;
+    --hell-display: block;
+    --cats-display: none;
+    --bg: url(/images/hell-snes.png);
+    --fav: url(/graphics/pixels/ribbon.gif);
+    --blink: url(/graphics/blinkies/cursed%20cat%20alastor%20blank.gif);
+    --theme-filter: hue-rotate(0deg) brightness(80%) contrast(100%) sepia(20%) saturate(150%);
+}
+
+:root[theme="neon"] {
+    --primary-colour: #E8FF7D;
+    --colour: #EB05BD;
+    --accent-colour: #5DE1CA;
+    --accent-colour-hover: #63E4CE;
+    --neon-display: block;
+    --cats-display: none;
+    --bg: url(/images/neon-snes.png);
+    --fav: url(/graphics/pixels/deltarune-banana.gif);
+    --blink: url(/graphics/blinkies/y2k_blank.gif);
+    --theme-filter: hue-rotate(260deg) brightness(90%) contrast(200%) saturate(170%);
+}
+
+:root[theme="depths"] {
+    --primary-colour: #04132f;
+    --colour: #c2c7d0;
+    --accent-colour: #15b3bc;
+    --accent-colour-hover: #01769c;
+    --depths-display: block;
+    --cats-display: none;
+    --bg: url(/images/depths-snes.png);
+    --fav: url(/graphics/pixels/gleach_allen_pixel.gif);
+    --blink: url(/graphics/blinkies/gleach_blank.gif);
+    --theme-filter: hue-rotate(200deg) brightness(70%) contrast(150%) saturate(100%);
+}
+
+:root[theme="static"] {
+    --primary-colour: white;
+    --colour: black;
+    --accent-colour: gray;
+    --accent-colour-hover: dimgray;
+    --whiteroom-display: block;
+    --cats-display: none;
+    --bg: url(/images/static-snes.png);
+    --fav: url(/graphics/pixels/moth.gif);
+    --blink: url(/graphics/blinkies/static_blank.gif);
+    --theme-filter: hue-rotate(0) brightness(100%) contrast(150%) saturate(0%);
+}
+
+:root[theme="space"] {
+    --primary-colour: #1a0037;
+    --colour: #9d39f6;
+    --accent-colour: #f0dd44;
+    --accent-colour-hover: #feffcc;
+    --space-display: block;
+    --cats-display: none;
+    --bg: url(/images/space-snes.png);
+    --fav: url(/graphics/pixels/sparkle.gif);
+    --blink: url(/graphics/blinkies/space.gif);
+    --theme-filter: hue-rotate(200deg) brightness(70%) contrast(150%) saturate(100%);
+}
+
+:root[theme="rainbow"] {
+    --primary-colour: #e3043a;
+    --colour: #2309bf;
+    --accent-colour: #f0dd44;
+    --accent-colour-hover: #09cf10;
+    --space-display: block;
+    --cats-display: none;
+    --bg: url(/images/rainbow-snes.png);
+    --fav: url(/graphics/pixels/party-kirby.gif);
+    --blink: url(/graphics/blinkies/gya-blank.gif);
+    --theme-filter: hue-rotate(320deg) brightness(80%) contrast(150%) saturate(140%);
+}
+
+* {
+    scrollbar-width: thin;
+    font-size: 100%;
+}
+
+p {
+    line-height: 1Em;
+    margin: auto;
+    margin-top: 5px;
+}
+
+a {
+    margin: 0;
+    color: var(--acc);
+    transition: 0.4s;
+    cursor: pointer;
+
+    &:hover {
+        color: var(--acc-hov);
+    }
+}
+
+a::before {
+    content: var(--fav);
+    height: 100%;
+    filter: opacity(0);
+    margin-right: 5px;
+}
+
+a:hover::before {
+    filter: opacity(100)
+}
+
+a:has(h1, h2, h3, h4, h5, img, div, svg)::before,
+.noico::before {
+    content: "";
+    display: none;
+}
+
+img.border {
+    border: 2px solid gray;
+}
+
+ul {
+    list-style: disc;
+}
+
+
+
+.img {
+    position: absolute;
+    z-index: 100;
+}
+
+iframe {
+    border: none;
+}
+
+summary h1,
+summary h2,
+summary h3,
+summary h4,
+summary h5 {
+    margin: auto;
+    text-align: left;
+    display: inline;
+    cursor: pointer;
+}
+
+::selection {
+    color: white;
+    background: var(--acc);
+}
+
+::-moz-selection {
+    color: white;
+    background: var(--acc);
+}
+
+.draggable {
+    position: absolute;
+    padding: 10px;
+    z-index: 10;
+}
+
+body {
+    padding: 0;
+    margin: 0 auto;
+    text-align: left;
+    background: #1c1c1c;
+    background-position: center;
+    background-size: cover;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid;
+    border-color: currentColor;
+}
+
+.vr {
+    border: none;
+    border-left: 3px solid white;
+    height: 50%;
+    margin: auto;
+}
+
+mark {
+    padding: 1;
+}
+
+/*FONTS*/
+
+html {
+    font-family: "syne mono", "kirieji04";
+    font-weight: 100;
+    font-style: normal;
+    text-wrap: normal;
+    color: var(--colour);
+    font-size: 1Em;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "staypuft", "Mikiyu Font Mokomori-kuro";
+    font-style: normal;
+    text-align: center;
+    font-weight: 300;
+    margin: 10px 0 10px 0;
+}
+
+
+h6 {
+    font-size: 100%;
+}
+
+h5 {
+    font-size: 150%;
+}
+
+h4 {
+    font-size: 200%;
+}
+
+h3 {
+    font-size: 250%;
+}
+
+h2 {
+    font-size: 300%;
+}
+
+h1 {
+    font-size: 350%;
+}
+
+p,
+li,
+a {
+    margin: 10 0;
+}
+
+.spoiler {
+    background-color: black;
+    filter: brightness(0);
+    border: 1px dotted white;
+    color: black;
+
+    &:hover {
+        filter: opacity(1) brightness(1);
+        color: white;
+    }
+}
+
+.confetti-area {
+    width: 100%;
+    height: 100%;
+}
+
+.confetti {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
+}
+
+
+
+
+.window {
+    background-color: lightgrey;
+    width: fit-content;
+    border: 5px outset slateblue;
+    box-shadow: 5px 5px CornflowerBlue;
+    color: black;
+}
+
+.win-title {
+    background-image: linear-gradient(to right, deeppink, lightpink, seashell, PaleTurquoise, deepskyblue);
+    padding: 5px 15px;
+    margin: 3px;
+    position: relative;
+    color: slateblue;
+    z-index: 1;
+    text-align: left;
+
+    &::after {
+        content: "- ◻ x";
+        position: absolute;
+        right: 5px;
+        top: 0;
+        color: white;
+
+    }
+}
+
+.win-subtitle {
+    margin: 0 -20px;
+    margin-top: -30px;
+    border-bottom: solid 2px gray;
+    padding: 5px 10px;
+}
+
+.win-content {
+    padding: 2px 5px;
+    margin: 3px;
+    border: 2px solid gray;
+    height: calc(100% - 50px);
+    overflow: auto;
+}
+
+.win-raise {
+    margin-top: -6px;
+}
+
+.win-button {
+    all: unset;
+    color: black;
+    border: 2px gray solid;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+
+    &::before {
+        content: "";
+        display: none;
+    }
+
+    &:hover {
+        color: dimgray;
+    }
+}
+
+
+
+
+.button {
+    all: unset;
+    border-radius: 20px;
+    padding: 5px 20px;
+    background-image: linear-gradient(to top, var(--pri), var(--sec));
+    color: var(--bg-col);
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.8Em;
+    cursor: var(--cur-hov);
+    margin: 5px;
+
+    &:hover {
+        font-style: italic;
+    }
+}
+
+
+
+.slides-container {
+
+    width: auto;
+    max-width: 600px;
+    margin: auto;
+    height: auto;
+    position: relative;
+    aspect-ratio: 3/2;
+
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        animation: fade 10s ease-in-out;
+    }
+
+    & a {
+        position: absolute;
+        height: 100%;
+        width: 5%;
+        top: 0;
+        align-content: center;
+        color: transparent;
+    }
+
+    & .back {
+        left: -10px;
+        color: white;
+    }
+
+    & .forward {
+        right: 0;
+        color: white;
+    }
+
+    & .dots {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        bottom: 0;
+
+        & .dot {
+            cursor: pointer;
+            background-color: rgba(30, 18, 118, 0.32);
+            border-radius: 50%;
+            width: 15px;
+            height: 15px;
+            display: inline-block;
+            margin: auto;
+            border: 1px solid white;
+            transition: 1s;
+
+            &:hover {
+                background-color: #001145;
+            }
+
+            &.active {
+                background-color: white;
+            }
+        }
+    }
+}
+
+.gallery-container img {
+    cursor: zoom-in;
+}
+
+.popup {
+    position: relative;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.83);
+    align-content: center;
+    text-align: center;
+    padding: 20px 0;
+    display: none;
+    animation: fade 5s ease-in;
+    cursor: zoom-out;
+
+    & img {
+        width: 90%;
+        max-width: 600px;
+        max-height: 80vh;
+        object-fit: contain;
+        border: none;
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0
+    }
+
+    5% {
+        opacity: 100
+    }
+
+    95% {
+        opacity: 100
+    }
+
+    100% {
+        opacity: 0
+    }
+}
+
+@keyframes openfolder {
+    0% {
+        width: 0;
+        height: 0;
+    }
+
+    50% {
+        width: initial;
+    }
+
+    100% {
+        height: initial;
+    }
+}
+
+
+
+
+@-webkit-keyframes snowflakes-fall {
+    0% {
+        top: -10%
+    }
+
+    100% {
+        top: 100%
+    }
+}
+
+@-webkit-keyframes snowflakes-shake {
+
+    0%,
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+
+    50% {
+        -webkit-transform: translateX(80px);
+        transform: translateX(80px)
+    }
+}
+
+@keyframes snowflakes-fall {
+    0% {
+        top: -10%
+    }
+
+    100% {
+        top: 100%
+    }
+}
+
+@keyframes snowflakes-shake {
+
+    0%,
+    100% {
+        transform: translateX(0)
+    }
+
+    50% {
+        transform: translateX(80px)
+    }
+}
+
+.snowflake {
+    position: fixed;
+    top: -10%;
+    z-index: 9999;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+    -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+    -webkit-animation-duration: 10s, 3s;
+    -webkit-animation-timing-function: linear, ease-in-out;
+    -webkit-animation-iteration-count: infinite, infinite;
+    -webkit-animation-play-state: running, running;
+    animation-name: snowflakes-fall, snowflakes-shake;
+    animation-duration: 10s, 3s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-play-state: running, running
+}
+
+.snowflake:nth-of-type(0) {
+    left: 1%;
+    -webkit-animation-delay: 0s, 0s;
+    animation-delay: 0s, 0s
+}
+
+.snowflake:nth-of-type(1) {
+    left: 10%;
+    -webkit-animation-delay: 1s, 1s;
+    animation-delay: 1s, 1s
+}
+
+.snowflake:nth-of-type(2) {
+    left: 20%;
+    -webkit-animation-delay: 6s, .5s;
+    animation-delay: 6s, .5s
+}
+
+.snowflake:nth-of-type(3) {
+    left: 30%;
+    -webkit-animation-delay: 4s, 2s;
+    animation-delay: 4s, 2s
+}
+
+.snowflake:nth-of-type(4) {
+    left: 40%;
+    -webkit-animation-delay: 2s, 2s;
+    animation-delay: 2s, 2s
+}
+
+.snowflake:nth-of-type(5) {
+    left: 50%;
+    -webkit-animation-delay: 8s, 3s;
+    animation-delay: 8s, 3s
+}
+
+.snowflake:nth-of-type(6) {
+    left: 60%;
+    -webkit-animation-delay: 6s, 2s;
+    animation-delay: 6s, 2s
+}
+
+.snowflake:nth-of-type(7) {
+    left: 70%;
+    -webkit-animation-delay: 2.5s, 1s;
+    animation-delay: 2.5s, 1s
+}
+
+.snowflake:nth-of-type(8) {
+    left: 80%;
+    -webkit-animation-delay: 1s, 0s;
+    animation-delay: 1s, 0s
+}
+
+.snowflake:nth-of-type(9) {
+    left: 90%;
+    -webkit-animation-delay: 3s, 1.5s;
+    animation-delay: 3s, 1.5s
+}
+
+.snowflake:nth-of-type(10) {
+    left: 25%;
+    -webkit-animation-delay: 2s, 0s;
+    animation-delay: 2s, 0s
+}
+
+.snowflake:nth-of-type(11) {
+    left: 65%;
+    -webkit-animation-delay: 4s, 2.5s;
+    animation-delay: 4s, 2.5s
+}

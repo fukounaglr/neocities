@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>toybox</title>
+
+    <link rel="icon" type="image/png" href="/ico.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/create/style.css" />
+
+
+    <style>
+        header,
+        #side-col {
+            align-content: center;
+            display: grid;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-width: 800px;
+            height: calc(100vh - 160px);
+        }
+
+        .create-link {
+            background-color: dimgray;
+            text-align: left;
+            padding-left: 20px;
+
+            &:hover {
+                color: lightgray;
+
+                & h5::before {
+                    letter-spacing: 0;
+                }
+            }
+
+            & h5::before {
+                content: ">>> ";
+                letter-spacing: -8px;
+                margin: auto 10px;
+                transition: .5s;
+            }
+        }
+
+        @media only screen and (max-width: 700px) {
+            main {
+                display: block;
+                margin-bottom: 50px;
+            }
+            header{
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <main>
+        <header>
+            <img src="/images/art/new%20god.webp">
+        </header>
+        <div id="side-col">
+            <a href="/characters-interactions.html" class="blue-bg create-link">
+                <h5>OC interactions</h5>
+                <p>Just some funny interactions of my characters.</p>
+            </a>
+            <a href="https://toyhou.se/fukouna" class="pink-bg create-link">
+                <h5>Toyhouse</h5>
+                <p>My toyhouse page with all of my OC's</p>
+            </a>
+            <!--
+            <a href="/create/oleander/index.html" class="green-bg create-link">
+                <h5>Oleander</h5>
+                <p>[wip] My current main OC universe</p>
+            </a>
+            <a href="/create/toybox/ghost-memory.html" class="yellow-bg create-link">
+                <h5>Ghost memory</h5>
+                <p>[wip] a little side project I'm working on</p>
+            </a>
+            -->
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>webmaster</title>
+
+    <link rel="icon" type="image/png" href="ico.png" />
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+
+        * {
+            --acc: #44caca;
+            --acc-hov: #01769c;
+            --fav: url(/graphics/pixels/agua.gif);
+        }
+
+        a {
+            color: var(--col)
+        }
+
+        body {
+            height: calc(100vh - 60px);
+            background-image: var(--bg);
+            background-size: auto;
+            background-position: top;
+            margin: auto;
+            align-items: center;
+        }
+
+
+
+        main {
+            max-width: 1200px;
+            margin: 30px auto;
+            height: 100%;
+            position: relative;
+        }
+
+        #stamps {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 300px;
+            height: 400px;
+        }
+
+        #me {
+            position: absolute;
+            left: 350px;
+            top: 100px;
+            width: 500px;
+        }
+
+        #music {
+            position: absolute;
+            left: 350px;
+            top: 520px;
+            width: 250px;
+            height: 170px;
+        }
+
+        #tv {
+            position: absolute;
+            left: 620px;
+            top: 520px;
+            width: 250px;
+            height: 170px;
+        }
+
+        #games {
+            position: absolute;
+            left: 890px;
+            top: 520px;
+            width: 250px;
+            height: 170px;
+
+        }
+
+        #links {
+            position: absolute;
+            left: 900px;
+            top: 330px;
+            width: 200px;
+            height: 140px;
+        }
+
+        #pic {
+            position: absolute;
+            top: 0;
+            left: 940px;
+            z-index: -10;
+        }
+
+        #pic2 {
+            position: absolute;
+            top: 250px;
+            left: 880px;
+            z-index: -10;
+        }
+
+        #pic3 {
+            position: absolute;
+            top: 450px;
+            left: 0px;
+            z-index: -10;
+        }
+
+
+
+
+        #textbox {
+            padding: 15px;
+            height: calc(100% - 34px);
+            overflow: auto;
+        }
+
+        #quizzes img {
+            max-width: 90%;
+            max-height: 140px;
+        }
+
+        #body {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 60%;
+            object-fit: contain;
+            transform: translate(120%, 0);
+        }
+
+        .col-3 {
+            width: 100%;
+            height: 300px;
+            margin: 5px 0;
+            display: grid;
+            grid-gap: 2px;
+            grid-template-areas:
+                "likes profile"
+                "about profile";
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: 2fr 1fr;
+        }
+
+        .collumn {
+            border: 2px solid darkgray;
+            margin: 1px;
+            overflow: auto;
+        }
+
+        .pfp {
+            width: calc(100% - 8px);
+            aspect-ratio: 1/1;
+            margin: auto;
+            border: solid 2px gray;
+            margin: 2px;
+        }
+
+        #speech-bubble {
+            position: relative;
+            position: absolute;
+            right: -200px;
+            top: 50px;
+            background-color: paleturquoise;
+            border: 3px solid deepskyblue;
+            color: slateblue;
+            border-radius: 10px;
+            padding: 2px;
+            width: 200px;
+
+            &::before {
+                content: "";
+
+                z-index: 10;
+                position: absolute;
+                left: -29px;
+                bottom: 20px;
+                height: 30px;
+                aspect-ratio: cos(0deg);
+                clip-path: polygon(100% 0, 0 50%, 100% 100%);
+                background-color: paleturquoise;
+            }
+
+            &::after {
+                content: "";
+                z-index: 1;
+                position: absolute;
+                left: -34px;
+                bottom: 17px;
+                height: 36px;
+                aspect-ratio: cos(20deg);
+                clip-path: polygon(100% 0, 0 50%, 100% 100%);
+                background-color: deepskyblue;
+            }
+        }
+
+        & #statuscafe-username,
+        a {
+            color: deeppink;
+
+            &::before {
+                display: none;
+            }
+        }
+
+
+        #lyric-marq {
+            color: deeppink;
+            margin-left: 5px;
+
+            &:hover {
+                font-style: italic;
+            }
+        }
+
+        .win-content {
+            padding: 2px 5px;
+            margin: 5px;
+            border: 2px solid gray;
+            height: calc(100% - 3em - 7px);
+        }
+
+        .tab {
+            display: none;
+            overflow: auto;
+            max-height: 100%;
+        }
+
+        #misc {
+            display: block;
+        }
+
+        .stamps img {
+            margin: auto;
+            width: 30%;
+        }
+
+        @media only screen and (max-width: 700px) {
+
+            #body,
+            #picbox,
+            #title {
+                position: relative;
+                top: 0;
+                left: 0;
+                transform: translate(0, 0);
+            }
+
+            #picbox {
+                height: auto;
+                margin: 20px;
+
+                & img {
+                    margin: 5px auto;
+                }
+            }
+
+            #body {
+                width: 50%;
+                top: 20px;
+                left: 25%;
+                height: auto;
+            }
+
+            #textbox {
+                height: auto;
+            }
+
+            #vh {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="snowflakes">
+            <div class="snowflake"><img src="/graphics/pixels/agua.gif" /></div>
+            <div class="snowflake"><img src="/graphics/pixels/agua.gif" /></div>
+            <div class="snowflake"><img src="/graphics/pixels/agua.gif" /></div>
+            <div class="snowflake"><img src="/graphics/pixels/agua.gif" /></div>
+            <div class="snowflake"><img src="/graphics/pixels/agua.gif" /></div>
+            <div class="snowflake"><img src="/graphics/pixels/agua.gif" /></div>
+            <div class="snowflake"><img src="/graphics/pixels/agua.gif" /></div>
+        </div>
+
+        <div id="me" class="window" style="position: relative;">
+            <div class="win-title">
+                <p><img src="/graphics/pixels/cat510.gif"> Hi there !</p>
+            </div>
+            <div class="win-content" style="border: none">
+                <marquee id="lyric-marq"> </marquee>
+                <div class="col-3">
+                    <div class="collumn" id="likes" style="grid-area: likes; height: 100%; width: 320px">
+                        <img src="/graphics/blinkies/makeasite.gif">
+                        <img src="/graphics/blinkies/comicsans.gif">
+                        <img src="/graphics/blinkies/tft.gif">
+                        <img src="/graphics/blinkies/stomachbook-fukouna-blank.gif">
+                        <img src="/graphics/blinkies/dont%20like%20it.gif">
+                        <img src="/graphics/blinkies/femtanyl_1.gif" width="150">
+                        <img src="/graphics/blinkies/gleach_slipunderthedoor.gif">
+                        <img src="/graphics/blinkies/blinkie-sandwiches.gif">
+                        <img src="/graphics/blinkies/GetSilly.gif">
+                        <img src="/graphics/blinkies/gender-isnt-real.gif">
+                        <br>
+                        <img src="/graphics/badges/badge-autistic.png" />
+                        <img src="/graphics/badges/badge-disabled.png" />
+                        <img src="/graphics/badges/badge-aroace.png" />
+                        <img src="/graphics/badges/badge-intergender.png" />
+                        <img src="/graphics/badges/aphantasia.png" />
+                        <img src="/graphics/badges/badge-selectivemutism.png" />
+                        <br />
+                        <img src="/graphics/buttons/trans2.png" />
+                        <img src="/graphics/buttons/horsedenier.png" />
+                        <img src="/graphics/buttons/autistic.png" />
+                        <img src="/graphics/buttons/comic%20sans.jpg" />
+                        <img src="/graphics/buttons/hemp.gif" />
+                        <img src="/graphics/buttons/css.png" />
+                        <br />
+                        <div class="stamps">
+                            <img src="/graphics/stamps/headpats.png" />
+                            <img src="/graphics/stamps/whenidie.png" />
+                            <img src="/graphics/stamps/gender.png" />
+                            <img src="/graphics/stamps/069.gif" />
+                            <img src="/graphics/stamps/imfine.gif" />
+                            <img src="/graphics/stamps/Db7KQYp.gif" />
+                            <img src="/graphics/stamps/st.png" />
+                            <img src="/graphics/stamps/fslur.png" />
+                            <img src="/graphics/stamps/vio.gif" />
+                        </div>
+                    </div>
+                    <div class="collumn" style="grid-area: about; height: 100%">
+                        <p>
+                            queer and disabled digital artist, animator, gamer, (possible musician?), webmaster,
+                            monster from the backrooms, self-proclaimed edgelord and a professional slug
+                        </p>
+                    </div>
+                    <div class="collumn" style="grid-area: profile; height: 100%">
+                        <img class="pfp" src="/images/pfp.png" />
+                        <p>Casio / Marbles</p>
+                        <p style="color: dimgray; font-style: italic">
+                            they/them
+                        </p>
+                        <p style="color: dimgray; font-size: x-small">
+                            currently listening to:
+                        </p>
+                        <a href="https://youtu.be/qM39_hDY-rI" target="_blank"><marquee  style="color: deeppink; font-size: x-small">
+                            skipped1091 - obssessedwithyou.dll
+                            </marquee></a>
+                        <p>
+                            <img src="https://file.garden/ZT2StWKGxCOellbN/Pride%20Pixels/autism.png" class="fr-fic fr-fil fr-dii" width="30" height="20" title="autism flag"><img src="https://file.garden/ZT2StWKGxCOellbN/Pride%20Pixels/bpd.png" class="fr-fic fr-dii fr-fil" width="30" height="20" title="bpd [borderline personality disorder] flag"><img src="https://file.garden/ZT2StWKGxCOellbN/Pride%20Pixels/aroace.png" class="fr-fic fr-fil fr-dii" width="30" height="20" title="aroace flag"><img src="https://file.garden/ZT2StWKGxCOellbN/Pride%20Pixels/androgyne.png" class="fr-fic fr-dii fr-fil" width="30" height="20" title="androgyne flag">
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="speech-bubble">
+
+                <div id="statuscafe">
+                    <div id="statuscafe-username"></div>
+                    <div id="statuscafe-content"></div>
+                </div>
+                <script src="https://status.cafe/current-status.js?name=whosthecat" defer></script>
+            </div>
+        </div>
+
+
+        <div id="music" class="window">
+            <div class="win-title"><img src="/graphics/pixels/cat32.gif"> Music</div>
+            <div class="win-content">
+                <p>I love music!!!! Music is so cool!!!!</p>
+                <iframe title="it's okay to dream" style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=581553480/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless><a href="https://awawawaworld.bandcamp.com/album/its-fine-to-dream">it&#39;s fine to dream by you are an angel</a></iframe>
+                <iframe title="murder pop ringtone imporium" style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=2199129682/size=small/bgcol=ffffff/linkcol=2ebd35/transparent=true/" seamless><a href="https://dietteaothercola.bandcamp.com/album/murder-pop-ringtone-emporium">Murder Pop Ringtone Emporium by DietTeaOtherCola</a></iframe>
+                <iframe title="gaburger" style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=1058955769/size=small/bgcol=ffffff/linkcol=7137dc/transparent=true/" seamless><a href="https://gezebellegaburgably.bandcamp.com/album/gaburger">Gaburger by GEZEBELLE GABURGABLY</a></iframe>
+                <iframe title="chaser" style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=3436192485/size=small/bgcol=ffffff/linkcol=63b2cc/transparent=true/" seamless><a href="https://femtanyl.bandcamp.com/album/chaser">CHASER by Femtanyl</a></iframe>
+                <iframe title="a beginners guide to faking your death" style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=2763869298/size=small/bgcol=ffffff/linkcol=de270f/transparent=true/" seamless><a href="https://jhariah.bandcamp.com/album/a-beginners-guide-to-faking-your-death">A BEGINNER&#39;S GUIDE TO FAKING YOUR DEATH by Jhariah</a></iframe>
+                <iframe title="plastic death" style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=2281523559/size=small/bgcol=ffffff/linkcol=e99708/transparent=true/" seamless><a href="https://glassbeach.bandcamp.com/album/plastic-death">plastic death by glass beach</a></iframe>
+                <iframe title="goodnight hypnopomp" style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=664076388/size=small/bgcol=ffffff/linkcol=f171a2/transparent=true/" seamless><a href="https://stomachbook.bandcamp.com/album/goodnight-hypnopomp">GOODNIGHT HYPNOPOMP by STOMACH BOOK</a></iframe>
+                <img src="/images/miku-headbang.gif">
+            </div>
+        </div>
+
+
+        <div id="games" class="window">
+            <div class="win-title"><img src="/graphics/pixels/nukoSwing.gif"> Games</div>
+            <div class="win-content">
+                <p>Most of my free time i play roblox with my friends.</p>
+                <p>Some games I like:</p>
+                <p>
+                    Dandy's World, Fisch, A Block's Journey, Abyss, Bad Things, Regrativator, Pressure, Deltarune, Minecraft, Aconite RPG, Pokemon Rumble, FNaF,
+                    Sky COTL, Clinical trial, ENA dream BBQ
+                </p>
+            </div>
+        </div>
+
+
+        <div id="tv" class="window">
+            <div class="win-title"><img src="/graphics/pixels/cat34.gif"> Socials</div>
+            <iframe class="win-content" src="/links.html" title="links" style="width: calc(100% - 22px); height: calc(100% - 60px); overflow: auto; border: ">
+            </iframe>
+        </div>
+
+
+        <div id="stamps" class="window">
+            <div class="win-title"><img src="/graphics/pixels/kittyy.gif"> Cool!</div>
+            <div class="win-content">
+                <div class="stamps">
+
+                    <img src="/graphics/stamps/twotime.png" />
+                    <img src="/graphics/stamps/noli.png" />
+                    <img src="/graphics/stamps/stamp27.gif" />
+                    <img src="/graphics/stamps/stamp28.gif" />
+                    <img src="/graphics/stamps/eeveelutions.png" />
+                    <img src="/graphics/stamps/mangle.gif" />
+                    <img src="/graphics/stamps/mc.gif" />
+                    <img src="/graphics/stamps/roblox.png" />
+                    <img src="/graphics/stamps/ame.png" />
+                    <img src="/graphics/stamps/sebastian_solace.png" />
+
+                    <img src="/graphics/stamps/gameoflife.png" />
+                    <img src="/graphics/stamps/teto.gif" />
+                    <img src="/graphics/stamps/mikumiku%20playlist.gif" />
+                    <img src="/graphics/stamps/stomach%20book%202.jpg" />
+                    <img src="/graphics/stamps/femtanyl.jpg" />
+                    <img src="/graphics/stamps/plasticdeathstamp.png" />
+                    <img src="/graphics/stamps/stamp06.png" />
+                    <img src="/graphics/stamps/jhariah%20teeth.png" />
+                    <img src="/graphics/stamps/stamp11.gif" />
+                    <img src="/graphics/stamps/gumi.gif" />
+
+                    <img src="/graphics/stamps/lacey.png">
+                    <img src="/graphics/stamps/panty%20y%20stocking.gif">
+                    <img src="/graphics/stamps/madoka.gif">
+                    <img src="/graphics/stamps/bee%20and%20puppycat.png">
+                    <img src="/graphics/stamps/young%20neil.png">
+                    <img src="/graphics/stamps/stamp23.gif">
+                    <img src="/graphics/stamps/stamp25.gif">
+                    <img src="/graphics/stamps/stamp26.gif">
+                    <img src="/graphics/stamps/stamp20.gif">
+                    <img src="/graphics/stamps/stamp22.gif">
+                </div>
+            </div>
+        </div>
+
+
+        <div id="pic" class="window">
+            <div class="win-content">
+                <img src="/images/fags.png" width="200">
+            </div>
+        </div>
+
+        <div id="pic2" class="window">
+            <div class="win-content">
+                <img src="/images/criminal.jpg" width="250">
+            </div>
+        </div>
+
+        <div id="pic3" class="window">
+            <div class="win-content">
+                <img id="img-rand" width="250px" src="/images/fishy.jpg" class="slide">
+            </div>
+        </div>
+
+        <img class="img" src="/images/nogender.jpg" height="80px" style="top: 0; left: 800px">
+        <img class="img" src="/images/breaking%20trans.png" height="80px" style="top: 0; left: 660px">
+        <img class="img" src="/images/mangle-looking.jpg" height="80px" style="top: 0; left: 576px">
+        <img class="img" src="/images/kitte.png" height="80px" style="top: 0; left: 492px">
+        <img class="img" src="/images/lokke.jpg" height="80px" style="top: 0; left: 406px">
+        <img class="img" src="/images/oleander.webp" height="80px" style="top: 0; left: 322px">
+
+        <img class="img" src="/images/shark.png" width="160px" style="top: 220px; left: 1060px">
+        <img class="img" src="/images/mametchiel.png" width="160px" style="top: 490px; left: 210px">
+        <img class="img" src="/images/inv.png" width="100px" style="top: 350px; left: 0px">
+        <img class="img" src="/images/emoji_hat.png" width="100px" style="top: 420px; left: 640px">
+        <img class="img" src="/images/minec.png" width="100px" style="top: 300px; left: 270px">
+        <img class="img" src="/images/protag.png" width="160px" style="top: 450px; left: 810px">
+        <img class="img" src="/images/melanie.png" width="150px" style="top: 400px; left: 1090px">
+
+    </main>
+    <script>
+
+    <script>
+        const elements = [
+            "Born inside a test tube; I broke the glass and ran away",
+            "The carpet floor is so damn comfortable, what's the point of sleeping in bed?",
+            "Baby, please, adore me, adore me! I am living for your decease!",
+            "I wanna contribute to the chaos, I don't wanna watch and then complain",
+            "goodbye to those who cannot join us, their voices are still heard in every word that we say",
+            "Did I stare at you? Am I scaring you? Go against me, double dog daring you",
+            "Does it even seem like I care to you?",
+            "Hoes mad 'cause I'm a mentally retarded player",
+            "Make sure you kiss your knuckles before you punch me in the face!",
+            "I know the flies will come and lay their ugly eggs in the sockets of my eyes, eat the meat out of my head. But you'll lie and tell me i look beautiful in death. Do you like the way my practiced poetry feels on your neck?",
+            "I laugh so hard it's hurting me. And while you're at it, can you suck it while you're jerking me off, cause I'm barely legal, baby and it’s so easy to get turned on",
+            "If you hate me, not my fault - Sucking dick is not assault",
+            "Wanna say I think it's so gay that we really both feel the same way",
+            "Can we forget about the places that we should be? We don't have to go home today.  I'll sleep on a million couches if we have to, to keep us both safe",
+            "I don't ever have to leave your apartment, I'll sleep face down on the carpet! And if I'm still crying when i wake up in the morning, will you kick me 'til i stop?'",
+            "'are you living in a lie?' they said they loved you til you stepped out of line; wanted to see in your head 'do you wish you were dead?'",
+            "Lying on the carpet singing 'this is not my house lalalalalala'",
+            "my ears are always ringing for you; dissolve to spring, it’s fine to dream (i walk asleep) it’s fine to dream"
+        ];
+
+        const Marquee = document.getElementById("lyric-marq");
+        const randomIndex = Math.floor(Math.random() * elements.length);
+        Marquee.innerHTML = elements[randomIndex];
+
+        function randomMarquee() {
+            const randomIndex = Math.floor(Math.random() * elements.length);
+            Marquee.innerHTML = elements[randomIndex];
+        }
+    </script>
+    <script src="/js/theme-switcher.js"></script>
+</body>
+
+</html>

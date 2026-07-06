@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky Shrine</title>
+
+    <link rel="icon" type="image/png" href="/ico.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/shrines/sky-cotl/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+        nav {
+            display: inline-flex;
+            width: auto;
+
+            & a {
+                margin: auto;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <section>
+        <div id="stars" data-speed="1" class="img"></div>
+    </section>
+
+    <header><img src="/shrines/images/Sky_Logo.png"> Sky: Children of the light</header>
+    <!--<p class="construction"></p>-->
+
+    <main>
+        <div class="collumn-container">
+
+            <div class="col">
+                <h4>What is Sky?</h4>
+                <hr>
+                <img src="/shrines/images/sky-ss-7.jpg" class="side-img at-end">
+                <p><b>Sky: Children of the light (COTL)</b> is a social MMO from creators of Journey. It's a cozy, open-world game, where you explore the kingdom of Sky, collect light and candles, solve puzzles, help spirits and make friends.</p>
+                <blockquote>Welsome home, child.<br>Regain your child-like sense of wonder in this social adventure game.</blockquote>
+                <p>This game is very cozy and has beautiful visuals. Playing this game, you find yourself on a journey, helping ansestor spirits and completing quests. Playing is better with company! Make friends, unlock expressions and relax.</p>
+            </div>
+
+            <p class="sparkles"></p>
+
+            <div class="col" style="text-align: center">
+                <h5>Check out these pages:</h5>
+                <nav>
+                    <a href="/shrines/sky-cotl/guide.html">A beginner's guide</a>
+                    <a href="/shrines/sky-cotl/locations.html">Locations</a>
+                </nav>
+
+                <div class="slides-container">
+                    <img src="/shrines/images/sky-ss-16.jpg" class="slide">
+                    <img src="/shrines/images/sky-ss-4.jpg" class="slide">
+                    <img src="/shrines/images/sky-ss-19.jpg" class="slide">
+                    <img src="/shrines/images/sky-ss-12.jpg" class="slide">
+                    <img src="/shrines/images/sky-ss-11.jpg" class="slide">
+                    <img src="/shrines/images/sky-ss-20.jpg" class="slide">
+                    <img src="/shrines/images/sky-ss-14.jpg" class="slide">
+                    <img src="/shrines/images/sky-ss-17.jpg" class="slide">
+
+                    <div class="dots">
+                        <span class="dot active" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <span class="dot" onclick="currentSlide(4)"></span>
+                        <span class="dot" onclick="currentSlide(5)"></span>
+                        <span class="dot" onclick="currentSlide(6)"></span>
+                        <span class="dot" onclick="currentSlide(7)"></span>
+                        <span class="dot" onclick="currentSlide(8)"></span>
+                    </div>
+
+                    <a onclick="switchSlides(-1)" class="back">←</a>
+                    <a onclick="switchSlides(1)" class="forward">→</a>
+                </div>
+            </div>
+
+            <div class="sparkles"></div>
+
+            <div class="col">
+                <img src="/shrines/images/sky-ss-13.jpg" class="side-img at-end">
+                <h5>My current progress</h5>
+                <p>I am currently mainly candle running every day, but also completing seasonal quests and collecting travelling spirits.</p>
+            </div>
+
+            <div class="sparkles"></div>
+        </div>
+
+        <div class="col collumn-container">
+            <h5>Resources</h5>
+            <p>Sites I use to help with quests</p>
+            <div>
+                <a class="res-link" href="https://sky-planner.com/" target="_blank">
+                    <img src="/shrines/images/skyplanner.ico" alt="map shrine icon">
+                    <p>Sky planner</p>
+                </a>
+                <a class="res-link" href="https://sky-children-of-the-light.fandom.com/wiki/Sky:_Children_of_the_Light_Wiki" target="_blank">
+                    <img src="/shrines/images/Site-logo.png" alt="Sky wiki logo">
+                    <p>Sky: COTL Fandom Wiki</p>
+                </a>
+                <a class="res-link" href="https://main--sky-clock.netlify.app/" target="_blank">
+                    <img src="/shrines/images/time.ico" alt="Clock icon">
+                    <p>Sky clock</p>
+                </a>
+                <a class="res-link" href="https://sky-shards.pages.dev/en" target="_blank">
+                    <img src="/shrines/images/Red-shard-map-icon-Ray.png" alt="Shard icon">
+                    <p>Daily shards</p>
+                </a>
+                <a class="res-link" href="https://sky-children-of-the-light.fandom.com/wiki/Interactive_Maps" target="_blank">
+                    <img src="/shrines/images/Icon_follow.png" alt="follow icon">
+                    <p>Interactive maps</p>
+                </a>
+            </div>
+        </div>
+
+
+    </main>
+
+
+    <footer>
+        <p>Main page</p>
+        <img src="/graphics/pixels/sparkle.gif" style="margin: 0 10px">
+        <a href="/room.html">Go back</a>
+    </footer>
+
+
+    <img src="/shrines/images/hope.png" height="300px" style="position: fixed; bottom: 0; right: 10px;" title="Hope!!!" class="over-img">
+
+
+    <script src="/js/parallax.js"></script>
+    <script src="/js/gallery-slides.js"></script>
+</body>
+
+</html>

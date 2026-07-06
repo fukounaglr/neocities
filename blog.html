@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+
+    <link rel="icon" type="image/png" href="/ico.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 20% 35% 35%;
+            grid-gap: 5%;
+            height: 100vh;
+            --fav: url(/graphics/pixels/agua.gif);
+            /*font-size: 0.7em;*/
+            /*background-image: url(/images/fire-snes.png);*/
+            background-image: url(/images/bubbles.jpg);
+            background-color: deepskyblue;
+            background-repeat: repeat;
+            background-size: initial;
+        }
+
+        #sidebar {
+            background-color: black;
+            background-image: url(/images/fis.jpg);
+            background-repeat: repeat;
+            background-size: 100%;
+            color: steelblue;
+            height: 100%;
+            align-content: center;
+            text-align: center;
+            padding: 0 20px;
+
+            & img {
+                width: 200px;
+            }
+
+            & h6 {
+                margin-top: 0;
+                color: #6cbec1;
+            }
+
+            & p {
+                text-align: left;
+                color: steelblue;
+            }
+
+            & a,
+            a:hover {
+                color: #6cbec1;
+            }
+        }
+
+        #sidebar-2 {
+            background-color: skyblue;
+            background-image: url(/images/crazyfreaky.jpg);
+            background-repeat: repeat-x;
+            position: relative;
+        }
+
+        main {
+            height: auto;
+            overflow-x: auto;
+
+            & h4 {
+                /*-webkit-text-stroke: 2px white;*/
+            }
+        }
+
+        .blog {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #d8d8d8;
+            border: double 6px #6cbec1;
+            border-radius: 10px;
+            color: steelblue;
+
+            & p {
+                margin: 10px;
+            }
+        }
+
+        summary {
+            font-family: "staypuft";
+            font-size: large;
+            background-color: #6cbec1;
+            margin: auto;
+            padding: 5px;
+            text-align: left;
+            cursor: pointer;
+
+            &:after {
+                content: url(/graphics/pixels/fish.gif);
+                margin-left: 10px;
+            }
+        }
+
+        #myspace {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 100%;
+            height: 100%;
+            z-index: 10;
+            object-fit: contain;
+        }
+
+        @media only screen and (max-width: 700px) {
+            body {
+                display: block;
+            }
+
+            #sidebar-2 {
+                height: 100%;
+            }
+
+            main {
+                padding: 20px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="sidebar">
+        <h4>Deleted User</h4>
+        <h6>@deleted_user_57</h6>
+        <img src="/images/lokke.jpg">
+        <p>"Well, this dicease is defined by its treatment, you people make me sick"</p>
+        <p>they/them • 9teen</p>
+        <p style="text-align: center"><a href="/site-map.html">site map</a> <a href="/room.html">home</a> <a href="https://fukounaglr.straw.page/">inbox</a></p>
+    </div>
+
+    <main>
+        <h4>BLOG</h4>
+
+        <!--
+        <details class="blog">
+            <summary></summary>
+            <p></p>
+        </details>
+        -->
+
+        <details class="blog">
+            <summary>19/03/2026 • hello again</summary>
+            <p>It's me again, yeah. Since i moved to this place and things finally started going better for me i didn't feel the need to update my blog.</p>
+            <p>I've got a job, I've got friends, I've got an awesome partner, what else can i wish for?</p>
+            <p>But I still overthink everything. I say things I don't mean. I am forced to take responsibility I cannot handle. I feel like people ask of me more than i am capable of. And that's frustraiting. I keep pushing myself to do things because i feel like i need.</p>
+            <p>But the i get so tired i spend all my free time looking at the screen all day.</p>
+            <p>I just wanna be happy. For the love of my life, and for myself. I want us both to have a better future.</p>
+            <p>i dont wanna keep messing things up</p>
+        </details>
+
+        <details class="blog">
+            <summary>19/08/2025 • catching up</summary>
+            <p>heyyy.. haven't updated in a bit, huh?... I've been busy.</p>
+            <p>Moved to some place temporally, and it suckssss... the room is really hot, there's no AC or windows and no internet, and bugs.... trying to find a new place, but it's hard. The place i was looking to rent with a friend is still occupied by our manager. We struggle to find a new cassier so she has to take that place instead. </p>
+            <p>I also got sick shortly after moving in there. Got diagnosed with gastritis and anemia. Started visiting my family lately because of that and also because of the aprtment being anything but comfortable to live in.</p>
+            <p>Mobile internet doesn't work at all. Hate this. My roommates suggested to get wifi in the apt, and i'm all for it tbh. I've just been hanging out at work or computer club for wifi. the latter of which i got kicked out from.</p>
+            <p>On good things, i have a new hyperfixation. Friend introduced me to pressure on roblox and i've been playing it for like a week straight hen i was seek. Introduced my 8yo brother to it and we played together as well.</p>
+            <p>It's hard to realize that... I have a job. I have at least some place to stay. I have good relationships ith people i ork with. I am an adult now. I didn't think I'd ever be able to... do any of this.</p>
+            <p>Is it good?</p>
+            <p>Well, it's been worse.</p>
+        </details>
+
+        <details class="blog">
+            <summary>28/06/2025 • it sucks in different ways now</summary>
+            <p>a lot of stuff has happened in the past month, i didn't have time to write a post about it.</p>
+            <p>firstly, after telling mother about the gap year we had an argument and i ended up "running away" the same day (move to a different place so she doesnt know where to find  me). and then i started a traineeship at a sushi place the next day. i did feel awfully anxious so kris said i should apologize to mother. i don't know what for. being honest? but i did. things are back to normal now... she hasn't mentioned it after that.</p>
+            <p>so yeah, i started working and new place kinda suck.. landlord was overly controlling and accussed me of doing things i didnt do and then waising the pay with no heads up and kicking me out with like 4 days to find a new place. so i ended up moving out a few days ago to the one ive been at for the past half a year. i think i decided on which apt i'll be moving in, but it's availabale since august. so i'll stay here for now, getting money. manager moved me to the full pay so i should be capable of that.</p>
+            <p>also we're geting mobile internet blocked from time to time, which fucking SUCKS. this country sucks. </p>
+            <p>on a lighter note, a lot of cool shit happened too -- deltarune chapter 3 and 4, digital circus episode 5, fnaf secret of the mimic. it's a nice balance to all the shit lmao! also there was artfight team reveal which i missed bcs i was at work but i'm team fossils now! already changed page theming. might add more stuff</p>
+            <p></p>
+        </details>
+
+        <details class="blog">
+            <summary>2/06/2025 • can we talk about this later?</summary>
+            <p>Well. The school year ended, and i even passed all the exams, not even studying. znot bragging about it, I just don't have energy to study and i don't really care anymore.</p>
+            <p>I was planning on taking a gap year after summer camp, but shit went down last friday and i decided not to go. I wanted to drop out honestly, but head teacher said i can only take a 2 year gap. But everyone else said i can pretty much leave when on the gap year. And everybody knows I'm not coming back. If they want what's best for me, it's this.</p>
+            <p>My mother texts me once a month or two. I don't feel like talking to her about it all. She's asking. I'm not ready. I just wanna be left alone right now.</p>
+            <p>So I've opened comms and will be looking for a job in the meantime...</p>
+        </details>
+
+        <details class="blog">
+            <summary>17/05/2025 • living in-between</summary>
+            <p>Sometimes i feel like i'm a personification of Schrödinger's cat. A being in superpositing.</p>
+            <p>Existing in duality. Alive and dead. Strong but weak. Grown up but a child.</p>
+            <p>All about me is in-between. Even more mundane things like being a boy or a girl. And it only feels weird because people expect me to be one or the other. So when they assume they can just ask me "are you a boy or a girl", I have no idea what to ask. And both children and adults ask that. People look at me when i walk into the bathroom to wash my hands at work. I don't bring things with me there so i don't have to go to the dressing room. And luckily i didnt have anpther creep trying to spot if i had an appam's apple "as a joke".</p>
+            <p>I felt like i've been dead for years. And it's only gotten worse near january, when my delusions reached the peak of what theyve ever been. Thanks to all the people around me and online.</p>
+            <p>even this site- this online persona, "fukouna", - id an in-between stage. From what's been- all the things that happened; and what's to come- something new, or the end of all.</p>
+            <p>I've just been going through the motions my whole life, because i don't have the power to protest.</p>
+            <p>I think of taking a gap year to just... Take a break from it all. I don't like this college, i hate this major, i didn't wanna be here. I just needed a place to run away to. And now i am running away from it too.</p>
+            <p>I never stop running.</p>
+        </details>
+
+        <details class="blog">
+            <summary>23/04/2025 • busy-ness and twitches</summary>
+            <p>Had an exam today. teacher said i'd get an A if i did better in the class itself, but i passed so thats whatever. I dont care for good grades anymore. 10 year old me did. 15 year old me did. but i dont.</p>
+            <p>Also I've started getting twitches again... I have grounds to believe that it's because of talking to people. I don't like people very much. Is something wrong with me if I don't want to be a part of a society? It sucks anyway.</p>
+            <p>I'm also not really feeling like drawing much. I still doodle at least something every day, but nothing of value. Yesterday i just let myself wander mindlessly in art form. No idea, no concept, just going with the flow. I don't particually like that piece, because I like to do much more interesting things, but I think it means something. And so it's worth being made just for that.</p>
+        </details>
+
+        <details class="blog">
+            <summary>20/04/2025 • easter? i barely know her</summary>
+            <p>Good news! I went to work on tuesday and got my watch back!!</p>
+            <p>Bad news: I'm still in negative paycheck bcs of the uniform and ticket :(</p>
+            <p>On school news, i gave a second lesson on thursday (arts) and it went better than any lessons i've given so far.  I have 2 more lessons this week (crafts and science) and then we'll have a 2 week of normal classes and then 1 more week when i have 3 lessons... a bit scary but if i've made it this far it shouldn't be that hard.</p>
+            <p>I dont know what bit me but i decided to revive my old OC whom i've been torturing for many years by re-writing their story over and over. I've completely changed design and made a little short story from scratch. Wanna make a small RPG maker game.</p>
+            <p>Oh... It's also easter here today. I don't celebrate any holidays, especially religious, but i bought myself a paska. It was so sweet i didn't like it. When i woke up there was water filled in the bathtub and bowls, that was scary</p>
+        </details>
+
+        <details class="blog">
+            <summary>14/04/2025 • too tired</summary>
+            <p>I missed a day in sky on saturday and i need you to understand what it means to me. I log in <i>every day</i>. No exeption. If i work and come home at 10pm tired af, i still log in to sky and do dailies. If i leave the town, i make sure that i am able to do the dailies when i come back. So just skipping a day even though i spent all that day home is something.</p>
+            <p>I just spent all day bedrotting, yeah. Don't remember what happened yesterday tbh.</p>
+            <p>I'm trying not to drop "i wanna fucking kill myself" in conversations... not that i have many. Trying not to break down when talking to people. I don't wanna do anyhting. I don't have the energy. I don't wanna do this.</p>
+            <p>Was thinking of taking a gap year... i know there's only 1 year left but I'm this close to jumping off a bringe or smth. Maybe take  abreak from classes, work, find a better job? I wish... I don't know if i can do any of that.</p>
+            <p>Were these 3 years worth it? I entered college bcs i was sure i'd kms if i had to stay in that house for any longer. And look where i am now. I'm only getting worse. I hate this. Everyone hate me. I know people who wish i would actually kill myself when i tried. </p>
+            <p>It's gonna happen sooner or later. I know it. I'm not wanted by this world.</p>
+        </details>
+
+        <details class="blog">
+            <summary>11/04/2025</summary>
+            <p>oh man. the time passes by so fast.</p>
+            <p>sooo... yeah. anothe practice in school started. i gave 1 lesson so far and it went much worse than last time. i don't care. i just want to leave this place. one more year left. i just gotta survive it. but i'm seriously considering just dropping out at this point. this degree will give me nothing. i don't wanna work in school. i only haven't done so yet bcs i couldn't find a job and bcs dad paid for the side course i was taking and i didnt want it to go to waste.</p>
+            <p>I've been feeling very weak past few days, having hard time to fins energy to even just walk to college. I feel a little better now, but still not ideal. I'd go to work, since i have mostly free days of practice, but i cannot due to my physical (and mental) state. I've been also starting to spiral again lately. Feeling like i low-key wanna blow my brains out or slit my wrist. If anything else happens, I'm gonna lose it again istg.</p>
+            <p>Anyway... On good side, I've been consuming new stuff. Firstly, i finished The ghost and molly mcgee and started watching moon girl. I also started reading dropout, on 100 page rn. And also i played Ena dream bbq! unlocked all achievements. Parkour isn't even that hard. Also watched a playthrough of clinical trial (bcs i aint reading allat, i want someone else to read for me lol). I like it. I honestly find stalking more eh than murder. You can kill people, i guess. I'm a god and i shall allow that.</p>
+            <p>my head hurts... </p>
+            <p>working on new and improved (tm) fuko! my site will soon get 100k views so i ping post that then.</p>
+        </details>
+
+        <details class="blog">
+            <summary>16/03/2025</summary>
+            <p>Heeey!!! Sooooo.....</p>
+            <p>I've been doing pretty good, i think. I got a job at the amazon-like warehouse, which turned out to be easier than i imagined. I've only had one shift so far last week, and wasn't able to do this week cuz college. My body was aching after i came home, but i didn't even think i would manage at all.</p>
+            <p>College has been... ehh fine i guess? I started <i>trying</i> to do my assignments at least. I do struggle but at least that's something.</p>
+            <p>Have been trying to socialize a bit too. I'm not doing very good at it as well. But yesterday i even talked to a girl from the extra class (that we are forced to go though this year) and we walked home together. Well, almost. We walked til the store together and then she left alone. I don't know if she just wanted to go the rest alone or thought i was creepy... Guess I'll never know! (because i will never try talking to her ever again ^^)</p>
+            <p>It's been a couple of weeks since i got my new glasses. I got used to them pretty quickly. Whihc is good. Cuz now i can actually wear them all the time, as i'm supposed to. And i also got a haircut last week.</p>
+            <p>I am working on a 40~ second animation right now. It's work time right now is over 25 hours, and i'm on the clean-up + inbetween + colouring stage. Yeah, I'm doing it all in one, cuz i need a break from clean-up. It's looking very good so far!! so excited for it, and I'm trying to work on it instead of doing nothing while i still have the motivation.</p>
+            <p>I wanted to add something else but i forgot....</p>
+            <p>I've also been getting into the owl house again lately, i spent my entire mobile data pack last month on cartoons. <a href="https://fukounaglr.straw.page/" target="_blank">I kin Hunter btw.</a> </p>
+            <p>One thing i said to my sibling recently was, "You start to see the world differently after a phychotic episode".</p>
+            <p>My mental wellbeing has been improving since i quit discord and deleted my old channels. I'm not sure what's the reason and what's the consequence here, but oh well. I seem to be getting by just fine without talking to people other than my sibling. I've also had comments disabled on both my art on BSky and youtube, for the same reason. I think these lyrics said it quite nice:</p>
+            <blockquote>"Well, this dicease is defined by it's treatment, -<br>You people make me sick."</blockquote>
+            <p>Maybe I'm better off alone?</p>
+        </details>
+
+        <details class="blog">
+            <summary>5/02/2025</summary>
+            <p>sometimes distractions work too good.</p>
+            <p>i completely forgot i don't hav e afriend anymore.</p>
+            <p>we should've seen it coming. it wasn't meant to last from the start.</p>
+            <p>but i still wonder, why does everyone i get close to leaves? maybe i deserve it.</p>
+            <p>i am so weak.</p>
+            <p>i try so hard to get any willpower to study and work but i still cannot. i still get knocked over by the lightest wind.</p>
+            <p>i can't do much on my own. maybe my mother was right. maybe i'll never be independent.</p>
+            <p>maybe i'm just not meant to be happy.</p>
+            <p>maybe my purpose in life is to suffer.</p>
+            <p>maybe i'm the modern jesus.</p>
+            <p>i hate everything and everyone.</p>
+            <p>the world is cruel and not fair and i don't wanna be a part of it.</p>
+        </details>
+
+        <details class="blog">
+            <summary>19/01/2025</summary>
+            <p>Me when i feel left out after not particiapating in any group activities</p>
+        </details>
+
+        <details class="blog">
+            <summary>14/01/2025</summary>
+            <p>Welp, that's embarrassing.</p>
+            <p>So i moved on the weekends. Was very veryyyy dissociated. Nothing felt real. I mean it is pretty usual, but it was much worse. I spent the rest of the day playing minecraft... My roommate glanced over at me a couple of times when she was going to her room. I thought she wasn't happy to see me there... But the next day she came up to me and actually introduced herself. She'd also an artist and she plays genshin.</p>
+            <p>Also another girl was supposed to live with me in the room but she left immedeately bcs she "doesn't wanna live with strangers". And i SO understand her. That's one of main reasons i didn't wanna move in here.</p>
+            <p>There's no WI-FI here, so i have to use my mobile data. I'm a little conserned about how fast i'm gonna use it up, but my roommate said she can turn on her hotspot if i need to since she's got unlimited data. I need to look into different plans though too...</p>
+            <p>Yesterday was very boring in college cuz i dont do anything in 2 of 3 classes we had. I picked up my friend's laptop and had to carry it all the way from college cuz i wanted to go to the store on the way back... Wish i took a taxi tbh. I dropped the bag with groceries and the milk bag popped ToT. And my arms still hurt.</p>
+            <p>Today i slept in and missed college... Couldn't care less. I wasn't feeling good yesterday anyway.</p>
+            <p>Also i made a song. <a href="https://youtu.be/wWUr4qF_X4Q?si=4KquOBib6Pvdhn5t">heres the link...</a> and this is the <a href="https://tinyurl.com/yn6ypek2">beepbox</a></p>
+            <p>Anddd i'm finally working on characters' refs. Yeah.</p>
+        </details>
+
+        <details class="blog">
+            <summary>08/01/2025</summary>
+            <p>Was forced to visit family twice and the year JUST started. Now i'm being forced to move to a different apartment. I hate it. I don't wanna live with someone else. I don't want my guardian to control my life. If I cannot do what i want in my life, then i don't want it at all.</p>
+            <p>I knew I was gonna kill myself sooner or later, and was planning on this month... Guess it's time. I'm gonna pack all my stuff... And clean up. And then I'm gonna stream on that day.</p>
+            <p>People laugh at my struggles. It's entertaining. Then I'll give them a show.</p>
+            <p>Though planning it more makes me second guess it, so I shouldn't do it. Don't overthink it. This day would come either way.</p>
+            <p>In a little while, I'll be gone.</p>
+        </details>
+
+        <details class="blog">
+            <summary>30/12/2024</summary>
+            <p>i can never feel at ease when things are good... i know it's not gonna last.</p>
+            <p>i'm enjoying playing minecraft and sky a lot. I helped Simon finish building WTC today and also fell from it 4 times...</p>
+            <p>also cleaned the apartment. just wiping dust off every surface. it's it ironic how dusty everying gets, knowing i'm allergic? I mean... i know it's probably the depression. But at least once a week i pick up the trash and clothes from the floor of my room!</p>
+        </details>
+
+        <details class="blog">
+            <summary>28/12/2024</summary>
+            <p>the senester ended and i closed my last assignment yesterday. i also had a scheduled minecraft gaming sesh with two people. we were building houses, and simon was building a WTC. i played for the longest out of all cuz i wanted to finish my house. played for 6 hours straight. </p>
+            <p>[redacted]</p>
+        </details>
+
+        <details class="blog">
+            <summary>26/12/2024</summary>
+            <p>we finally got money for food that we're supposed to get monthly so i went to the store yesterday and bought some stuff. pomelo.</p>
+            <p>thinking of starting streaming on twitch... i play and draw more regurarly now so i can stream sky, minecraft and art. don't know if i will though. Might try on the break.</p>
+            <p>also i just realized it is NOT, in fact, friday yet. i got confused when the person i planned to play MC on friday said "can't wait for the friday" orz</p>
+        </details>
+
+        <details class="blog">
+            <summary>23/12/2024</summary>
+            <p>AAGHHHH!!!!! i'm so busy with college work i don't wanna do this!!! I wanna play minecraft!!! I played with a guy yesterday and we made a base and it's super cool and shit... I will most likely not be able to play for the next 2 days</p>
+            <p>Also turns out i'm gonna be alone for the new years... I don't care for celebrating that much, i hate the noise, that's why i don't wanna visit family. Nan said she won't be able to come bcs of reinstallation. My friend visits her bf for the holidays... So i'm alone. At least i have games am i right?</p>
+            <p>also i got new markers!!! as a xmas gift!!! so cool so awesome... i messed around with them a bit, but i don't rlly have time rn T-T</p>
+        </details>
+
+        <details class="blog">
+            <summary>21/12/2024</summary>
+            <p>a while ago, our teacher gave us a task to write instruction to a lego robot. As in, we were supposed to write out every step in words, based on the picture instructions. i spent multiple hours on it, staying up late.</p>
+            <p>then she forgot about it. so a couple of classes lates, i reminded her, and then she asked us to send her those in.</p>
+            <p>then a few more classes passed, she didn't mention it. i came up to her, asking about it. she said that work would not be graded.</p>
+            <p>i felt berayed. like in first class of math in high school, when the teacher gave us the task to write an essay about how math affects our panebts' jobs, just to say it was a joke the next class.</p>
+            <p>i don't need a grade, dammit, i don't make half the graded work (at least in time), i just want at least asknowlage the work that went into it. I have a really hard time focusing on college tasks, cuz i'm not interested in them, and i often feel like i don't understand how to do anythiing, despite my classmates dealing with everything just fine.</p>
+            <p>i just want someone to notice when i'm trying.</p>
+        </details>
+
+        <details class="blog">
+            <summary>20/12/2024</summary>
+            <p>Im sitting in the computer science class rn waiting for the teacher to be free to check my project. The sun shines so fucking bright and I'm trying to cover my screen with my shadow to reduce the reflecting lights. My spine is warm. It's very quiet, the classes are ongoing. It's weird, but it feels like spring. This sleepy, lazy atmosphere, like we're about to leave for summer break. And it's warm outside, despite it snowing a few days ago. I am of the opinion that weather here changes more often than my mood. Can weather be BPD-coded? I guess anything can. It's not like it's a real thing anyway, just a label.</p>
+            <p>I feel weird when the weather is like this... All i can say is that it feels like spring. I have a dedicated playlist for this feeling. Glass beach's cul-de-sac, neon glow, 1015, bone skull and more, cuckoo song, record player song, pretty much all the he's not with us anymore album by casio dad, kyu-kurarin. Usually i listen to different music.</p>
+        </details>
+
+        <details class="blog">
+            <summary>19/12/2024</summary>
+            <p>everyone can go fuck themselves. i have no desire to be a part of this society.</p>
+        </details>
+
+        <details class="blog">
+            <summary>17/12/2024</summary>
+            <p>honestly, i like jax. not in tumblr sexyman way, but in the way that i like him as character, i like seeing him torturing others. but i like seeing him suffer too, it's funny. and with the new episode, gangle felt very unusual and honestly? creepy. fucking hate those over-positive people/characters. they are at best just annoying, and at worst unsettlng. so when he said "i liked you better when you were sad" i think the same. at that point i wouldn't just having fun athcing him torment angle as per usual, i would support that... </p>
+            <p>ANYWAY traumatized jax s????? i love it haha</p>
+            <p>i think people who fan over characters like jax and alastor often mischaracterize them by giving them redeeming qualities. by making them "soften" or open up to someone. and what i have to say? that's stupid. no, jax would not have a "emberassing crush" on you/your oc/canon char! jax is a sadist. and i think if anyone like him was put in a one room, they'd start fighting immedeately. maybe i'm projecting?</p>
+            <p>anyway it's 2:30 in the morning i should hit the hay</p>
+            <p>fuckign wish i wasn't sober rn. i'm gonna need something to keep me alive just for long enough</p>
+        </details>
+
+        <details class="blog">
+            <summary>12/dec/2024</summary>
+            <p>we're doing pizza today. i'm using the same recipe and modifying it every time, but i think i have a perfect one for <b>fluffy pizza dough</b>:</p>
+            <ul>
+                <li>500mg flour</li>
+                <li>2 tbsp sugar</li>
+                <li>1 tsp salt</li>
+                <li>1 dsp yeast</li>
+                <li>2 tbsp veg. oil</li>
+                <li>200ml <b>warm</b> water</li>
+            </ul>
+        </details>
+
+        <details class="blog">
+            <summary>10/dec/2024</summary>
+            <p>i might post stuff here. not sure tho. i don't like talking about myself, so i might just post general work and maybe life updates, as well as stuff i'll get in inbox.</p>
+        </details>
+    </main>
+
+    <div id="sidebar-2">
+        <img src="/images/vapor.png" width="300px" style="margin: auto; bottom: 20px; left: 10%; position: absolute; max-width: 90%;">
+        <img src="/images/stamp1.jpg" width="120px" style="margin: auto; top: 30px; right: 20px; position: absolute;">
+        <img src="/images/stamp2.jpg" width="120px" style="margin: auto; top: 130px; right: 20px; position: absolute;">
+        <img src="/images/stamp3.png" width="120px" style="margin: auto; top: 230px; right: 20px; position: absolute;">
+        <img src="/images/stamp4.png" width="100px" style="margin: auto; top: 330px; right: 20px; position: absolute;">
+    </div>
+
+    <script type="text/javascript">
+        function hide() {
+            document.getElementById("myspace").style.display = "none";
+        }
+    </script>
+    <script src="/js/theme-switcher.js"></script>
+</body>
+
+</html>

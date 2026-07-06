@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>journal</title>
+
+    <link rel="icon" type="image/png" href="/ico.png" />
+    <link rel="stylesheet" href="/style.css" />
+
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 20% 70%;
+            padding-left: 20%;
+            height: 100vh;
+            background-image: url(https://i.pinimg.com/736x/6f/09/df/6f09df6f44a4f0a1d76d3b9ba2e35a86.jpg)
+        }
+
+        main {
+            width: 600px;
+            border: double 10px var(--colour);
+            margin: auto 30px;
+            text-align: center;
+            height: 500px;
+            overflow: auto;
+
+            & img {
+                width: 90%;
+            }
+        }
+
+        .page {
+            overflow: auto;
+            display: none;
+            background-attachment: scroll;
+            background-size: auto;
+            padding: 10px;
+        }
+
+        #main {
+            display: block;
+            background-image: url(/images/bg1.jpg);
+        }
+
+        #pics {
+            background-image: url(/images/bg2.jpg)
+        }
+
+        #mood {
+            background-image: url(/images/bg3.jpg)
+        }
+
+        #quotes {
+            background-image: url(/images/bg4.jpg);
+
+            & p {
+                background-color: #d3ebff;
+                padding: 5px 0;
+            }
+
+            & p:nth-of-type(odd) {
+                background-color: #ffc0d4;
+            }
+        }
+
+        nav {
+            display: block;
+            margin: auto 0;
+            text-align: center;
+
+            & a {
+                background-color: beige;
+                padding: 15px 0;
+                display: block;
+                margin: 10px;
+                text-decoration: none;
+                font-size: 1.5em;
+                color: brown;
+                border: outset 4px #60b522;
+            }
+
+            & a:hover{
+                background-color: #eed9bb
+            }
+
+            & a::before {
+                content: "";
+            }
+        }
+
+        header {
+            background-image: url(/images/consolebg.jpg);
+            height: 100px;
+            align-content: center;
+            color: red;
+            font-family: staypuft;
+            font-size: 3em;
+            text-align: left;
+            padding: 20px;
+            -webkit-text-stroke: 2px black;
+        }
+
+        #float-imgs{
+             z-index: -10;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            & img{
+                position: absolute;
+                border: dotted 3px var(--colour);
+
+            }
+        }
+
+            #crossword-lan{
+                display: block;
+            }
+            #crossword-por{
+                display: none;
+            }
+
+        @media only screen and (max-width: 700px) {
+            body {
+                display: block;
+                padding: 30px 0;
+                margin-bottom: 50px;
+            }
+
+            main {
+                width: 90%;
+                margin: auto;
+                max-height: 90vh;
+            }
+
+            .flow-img{
+                display: none;
+            }
+            #crossword-lan{
+                display: none;
+            }
+            #crossword-por{
+                display: block;
+            }
+            #float-imgs{
+                display: none
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+<div id="float-imgs">
+    <img src="/images/catfishing.jpg" width="180px" style="left: 200px; top: 50px;">
+    <img src="/images/seaside.jpg" width="200px" style="left: 50px; bottom: 300px;">
+    <img src="/images/uglycat.jpg" width="250px" style="left: 150px; bottom: 50px;">
+    <img src="/images/vissen.jpg" width="250px" style="right: 50px; bottom: 200px;">
+    <img src="/images/catbugcathing.jpg" width="180px" style="right: 30px; bottom: 50px;">
+    <img src="/images/catboat.jpg" width="250px" style="right: 20px; top: 20px;">
+</div>
+
+
+    <nav>
+        <a href="#main" onclick="switchPage('main')">main</a>
+        <a href="#pics" onclick="switchPage('pics')">pics</a>
+        <a href="#mood" onclick="switchPage('mood')">mood</a>
+        <a href="#quotes" onclick="switchPage('quotes')">quotes</a>
+        <a href="/room.html" style="background: none; border: none"><img src="/images/knife.gif" width="100px" /></a>
+
+    </nav>
+
+    <main>
+        <header>
+            JoUrNaL
+        </header>
+
+        <div class="page" id="main">
+            <img src="/images/vaporeon-spin.gif">
+            <p>hello this is my journal hii :p just some stuff here</p>
+
+            <img src="/images/%D0%BA%D0%BE%D1%82%D0%B8%D0%BA-playing-guitar.gif" style="width: 50%; float: left">
+            <img src="/images/blunt.gif" style="width: 45%;">
+
+            <h5 style="display: block">GAMEZ</h5>
+
+            <iframe title="sudoku" src="//widget.websudoku.com/?level=1" width="250" height="260" scrolling="no" frameborder="0" style="margin: auto"></iframe>
+
+            <div id="crossword-por">
+                <script type="text/javascript">
+                    boatload_puzzles_format = 'CompactPortrait';
+                </script>
+                <p>Loading <a href="https://www.boatloadpuzzles.com/playcrossword">
+                        crossword puzzle</a>. One moment please.</p>
+                <script type="text/javascript" src="//www.boatloadpuzzles.com/Crossword.js"></script>
+            </div>
+            <div id="crossword-lan">
+                <script type="text/javascript">
+                    boatload_puzzles_format = 'CompactLandscape';
+                </script>
+                <p>Loading <a href="https://www.boatloadpuzzles.com/playcrossword">
+                        crossword puzzle</a>. One moment please.</p>
+                <script type="text/javascript" src="//www.boatloadpuzzles.com/Crossword.js"></script>
+            </div>
+
+            <a href="https://liouh.com/picross/">picross <img src="/images/picross.png" width="120px"></a>
+            <a href="https://www.nytimes.com/games/wordle/index.html">wordle <img src="/images/wordle.png" width="120px"></a>
+            <a href="https://minecraftle.zachmanson.com/">minecraftle <img src="/images/minecraftle.png" width="120px"></a>
+
+        </div>
+
+        <div class="page" id="pics">
+            <h5>pics</h5>
+            <!--<img loading="lazy" src="">-->
+            <img loading="lazy" src="https://i.pinimg.com/736x/56/b6/d7/56b6d7993a50f1b62d5657f7edaa1481.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/f6/ae/ac/f6aeac162b0cacc46e9f5295da452cfb.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/ca/6f/fc/ca6ffcf5634506343b97a3de511875fd.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/90/58/8b/90588bb68b0245c5c0b974a5ed2ad231.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/ff/8d/3e/ff8d3e94a682e1f94ae3b54c4a7ac962.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/0a/9a/7f/0a9a7feffb91687b915da1b4694eae63.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/59/b9/67/59b9676f82e867621e8e2cc7ef997f8c.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/0a/42/a3/0a42a36bf0c340cc9918fd5cbd63767c.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/1a/19/59/1a1959d5e2fa93bc39508b9d7254a110.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/f1/b1/7b/f1b17b4892dabfe1a5a1d74b496cfe16.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/76/6a/c1/766ac1127504b4a2781edcd29029c583.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/3f/67/bf/3f67bfbeb7162dd81691937f55596d5a.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/50/20/4d/50204d87de1e396db92d1be3206cd88b.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/b2/54/67/b254673b3f5906c32f40ab678b33bfe3.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/f1/b5/e3/f1b5e3985a8bf729a6fee9c6b8de0235.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/ea/03/09/ea0309d1f6cb028cfb2d32e5b46333c1.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/3b/55/3f/3b553fe87b0e8130e7aa9a8c20f117f6.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/36/a0/89/36a08981c9fcf27405220c17b1ab3b20.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/47/fa/2d/47fa2d24343edbd477ec27aa70ac50c0.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/04/33/f6/0433f68238fa448b00bd31816b765e94.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/1d/65/c7/1d65c70981d8a189eb54c4575bdee8fb.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/e7/37/ec/e737ecab01a64440a8f46d8384bc5c9d.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/19/4b/83/194b83599230d0fe0687d65fd5e71f57.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/b8/a6/9f/b8a69fd5b356b34a324db54513ad41be.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/df/06/ce/df06ce6c127876c946d49fea81ea8492.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/aa/db/ef/aadbefe305ec10b3f275cc0cffc9d043.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/b3/dd/ba/b3ddba0b588e36989ebaf8572000ce85.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/77/4b/d0/774bd07830d1457f9e9e41dbf5916db5.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/57/af/b5/57afb5bc67d4b9033d35823322d24a79.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/2b/df/ed/2bdfed6ee8d55ff3a6cafde67a026914.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/fd/fb/51/fdfb5174c846b94b0bea655d2957c531.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/0c/f3/f6/0cf3f6d5a67517f0f2c51c787761e151.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/3a/a1/6c/3aa16c92fc6352aefea50b179b7aa8e1.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/0f/19/57/0f1957d5fda546897975e4c66d64a49e.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/54/4a/de/544ade0d45a283f19a3731df03629a49.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/77/ce/eb/77ceeb27c8e1440e7f50ddfe4f7cddb0.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/ed/58/21/ed5821c94ca5ce72a878d48f2aa44ec1.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/2d/b8/be/2db8be00d92d77f5f5dceb3c7d20af1b.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/7e/62/2e/7e622e257ae85e8ea8d72714dea469bb.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/16/9c/7a/169c7a898952aa2171ec815d3c038ae6.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/12/b3/23/12b3239b5d691acbc43ff09bd92dd3be.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/ac/d9/0d/acd90da7a4bf76348168f81d26fd9e79.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/7a/34/91/7a34914532ebd11e520a254d69561a71.jpg">
+        </div>
+
+        <div class="page" id="mood">
+            <h5>mood</h5>
+            <!--<img loading="lazy" src="">-->
+            <!--<img loading="lazy" src="">-->
+            <!--<img loading="lazy" src="">-->
+            <img loading="lazy" src="https://i.pinimg.com/736x/f1/2a/d9/f12ad9af56f6390bb9161e1c66ddfe3a.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/6d/68/70/6d6870c3a878148fb080a2e65efdfafe.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/ea/51/23/ea512371b9b7a4ccc7777ea70bd5bf0e.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/a5/f5/f6/a5f5f613798293e53b58fa9eb50057e5.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/37/95/66/379566a7fc819ef305f80e0a09796a08.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/18/19/da/1819da376f962a4e415a0f05059e2007.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/38/a1/5f/38a15ffcd13af807a99886e320f4d5dc.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/b7/be/72/b7be724545a071c164203c65c10453f8.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/da/9c/0c/da9c0cee8f8442925d8c4e499fcf4c81.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/1b/c1/d3/1bc1d3f6e226ea36309b378c3c0a8659.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/08/a2/8b/08a28bd0cbf778b91b963a4266b6804b.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/96/4d/c9/964dc9eb82d5e516d7f013bff85f4802.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/d6/ea/10/d6ea10dc4f8aaf267924ef663245d743.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/1b/0c/5e/1b0c5ef4fe3211c419b7d1b43eb14066.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/68/84/ee/6884eef71e7cbdd9ae8808017658e12d.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/f6/69/47/f6694750bf901b836d4e285ce01e1e90.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/9c/fa/6b/9cfa6bbb167f2a7c88c57bc9a46bf8a2.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/68/4a/67/684a67a98380444fbf93548cc110c020.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/83/2a/ad/832aadad99c4bd3f67ce172da8437954.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/52/7b/8e/527b8eb3d0545a69d4800631a31cd8c8.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/72/23/ad/7223adbd04e677e15f5aa3873c00daa1.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/52/8e/08/528e08ec6bb95b52bde686166f9e0c90.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/49/6c/28/496c28ca5b5cf1a4fd77181b40e7826d.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/97/a8/1b/97a81bca119ac362763bfd5d3b387219.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/fc/a2/0d/fca20dc698418d1c1040e24020cc4f34.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/7d/a3/80/7da380a67d6adf750b6e9173bc95a3a4.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/93/44/a4/9344a47b0ae41ed1d6637ce4234c59f2.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/09/bb/05/09bb05f047e8ef7f42eaa19413f5ee85.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/d7/4d/3a/d74d3ac1b3b2b701a5655e2d516df203.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/9b/6a/47/9b6a47d7dddcd65dc128c686e96a0805.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/42/4c/3a/424c3ad1118df0ffb6f55892aec4df6e.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/99/7b/d9/997bd958a14da567ca1eb85202da7176.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/f1/0e/1c/f10e1cee9eaacc3fc06e3ea0c5f8aa40.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/be/7f/c9/be7fc92ecdf46f22bfb95c1d893aa6ea.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/df/22/5d/df225d5eaf3f0b03eb112b2950274a13.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/85/68/78/856878dae5db5a853a32be688a0dd351.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/a7/4f/57/a74f57d0092eb85eae47f0d9e91e168b.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/83/a5/1e/83a51e56517e4f1bba9a9d34ed4dc962.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/58/87/78/588778b5d2a982b773f7130356d5dcbd.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/79/80/20/79802026cc6f2b61ff68ad5e4925342e.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/3c/0c/32/3c0c32e62f2c16418fe4de6aef9b9b21.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/b4/68/16/b468168b83081ec42a1b4a050a9d5c7d.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/71/de/78/71de788d455eb6f8e6fd46ac982fe1c4.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/8a/11/76/8a11763ba757cb173921c70a5b419a47.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/40/e7/c7/40e7c73cf2e456beab76ff722748d636.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/ec/9a/f7/ec9af7a55e44a4db3ba0e1c8c9d99fd9.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/79/28/e8/7928e8a8ce4d833a209e589920f830be.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/1a/3f/29/1a3f29fd5a4120e1dfc905c1ddebba2d.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/5f/cb/76/5fcb7646865a9d4f3f58f2d8951d0694.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/4d/dd/68/4ddd68b2d2977b2be38593195cce727f.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/d9/4c/c0/d94cc03ad94f017aac9a5dbed9eca50e.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/31/54/43/315443523937d912bcf29f36ce090c18.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/ea/f1/df/eaf1dfbe6c6f86b149ea312e5a34a76f.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/d8/bd/1b/d8bd1b8942832cdc2dc21bec3fd1af44.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/3b/75/98/3b7598cc45eba7f33c3e891baa76f271.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/fc/09/a5/fc09a5f3f9c3b1ac7a79cd4f9849351e.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/29/e7/4c/29e74c02132cd1840a7ba6b2b6a64373.jpg">
+            <img loading="lazy" src="https://i.pinimg.com/736x/b3/4b/55/b34b558d22ceb8f84737d0384f4b0937.jpg">
+                    </div>
+
+        <div class="page" id="quotes">
+            <h5>quotes</h5>
+            <!--<p></p>-->
+            <!--<p></p>-->
+            <!--<p></p>-->
+            <!--<p></p>-->
+            <p>One of the reasons I like this story is because it's just a book I would enjoy reading on its own, but then at the end Freddy Fazbear comes, hits you over the head and drags you into a suit</p>
+            <p>When life gives you lemons, aqueeze them into people's eyes</p>
+            <p>Choose your gender: are you a maiden, a gentleman or mysterious?</p>
+            <p>Legally, i should be dead. But instead, Im illegally handsome and dominate the world with every single move i make.</p>
+            <p>There are 2 sexes: one i'm having with your mother, and one i'm having with your father.</p>
+            <p>please, where do you think you are? trans rights AND trans wrongs; i support trans people and i will help bury the body</p>
+            <p>its very hard to perform in front of an audience when you are a jpeg bear</p>
+            <p>of course when you're at the crossroads, you make a choise: you can either go this way, or that way. some people of course go both ways-</p>
+            <p>when somebody is pointing a gun at you, you don't give them your good side. you duck under the cover.</p>
+            <p>there are 3 genders: male, female and "what are you, a cop?"</p>
+            <p>well i'm not the most manliest man, but i am a man, and i'm proud that i am</p>
+            <p>turtles flying in the sky; magestic.</p>
+            <p>due to inflation the funny numbers are now 71.41 and 434.7</p>
+            <p>it seems theres no fill left to tool but maybe with what power you have left you can fill something else</p>
+            <p>trauma shapes every person differently, but this is definetly the weirdest shape i've seen</p>
+            <p>waiwaiwait- hold the phone guy for a second</p>
+            <p>hey, thanks for telling me, even though you just killed yourself</p>
+            <p>2D plant... that's a bad sign. that means we're gonna die soon.</p>
+            <p>"oh yeah it only gets better on this hole, actually" -AstralSpiff playing golf in SB</p>
+            <p>"my family tree looks more like a ladder"</p>
+            <p>"did you know you can dupe dragon eggs on java?"  - "can you make scrumbled eggs out of them?" - "they're better be fucking delicious scrambled eggs because there's only 2 of them"</p>
+            <p>ah yeah, this is a great moment and all, yeah the day is saved, uh, but i'd like to object the fact that THEY'RE STILL KISSING</p>
+            <p>you want a crossover event? take a bath with a toaster. <sub>- GTLive, Giggleland episode</sub></p>
+            <p>maybe one day they will find out that they have a black grandma when they're older, maybe one day they'll get hit by a bus and will need a wheelchair, and maybe one day they'll wanna kiss boys, it's not that deep</p>
+            <p>being stupid is like being dead: it's only difficult for the people around you</p>
+            <p>i <i>could</i> just walk there, but hear me out... <i>cheating.</i></p>
+            <p>if i wanna learn about life of a sheep, i'm not gonna ask a wolf about it</p>
+            <p>you sound like you're gonna end up being a statistic in a couple of years</p>
+            <p>killing pigs is brutal, just <i>happening</i> to be in a situation where the pig dies to the end of your arrow or a bucket of lava? that's entirely okay, trust me.</p>
+            <p>you can have fun without alcohol; you can have a boring evening even if you're drunk</p>
+            <p>if you get punished for something you didn't do, might as well do it. might as well enjoy the crime if you're going to jail</p>
+            <p>youtube is the main reason people don't go outside in the first place; tiktok is literally designed to entertain you when you're alone; linkedin is a dystopian simuation; facebook only has people twice your age; snapchat messages are from people you don't know; discord messages are from people you don't wanna know; instagram is where you send a messages that no one replies to; and tinder is where you schedule a date that no one shows up to</p>
+            <p>hello. tell me about yourself. do you have any weakneasses? does your house have any weaknesses?</p>
+            <p>i don't like the way my skin feels on my body. do you like the way your skin feels on your body? you don't? then why don't you pull it off? pull off your skin.</p>
+            <p>i quit using meth for good, now i use it for evil</p>
+            <p>made with all the love... i'm lrgslly sllowed to give</p>
+            <p>Genesis 6:6 'The Lord regretted that he had made human beings on the earth, and his heart was deeply troubled.</p>
+            <p>appetti of a peplep pealse</p>
+            <p>Damn, this song doesn't just have metaphors for disordered eating, the disordered eating is the metaphor</p>
+            <p>if someone says like "hello there, sweet stuff, do you want me to eat you tonight?", it can mean either somethign naughty and unchristian or it might be cannibalism</p>
+            <p>of course you didn't think of anything, you just decided to strap a neurton bomb on us first</p>
+            <p>with a wave of my finger and a flick of my dick one zap from me will kill you quick, so get on your knees to suck and blow, but not right now, i've got to go</p>
+            <p>i dont care about the satan, but im pretty sure he's proud of me</p>
+            <p>mom, im scared. the girl with the grid hair is dissociating again</p>
+            <p>christians, mormans, clown, ykow, all the common religions</p>
+            <p>[...] alleging the existence of a curse episode of mickey mouse which causes anyone who views it to... <i>mick their mouse</i>- <a href="https://youtu.be/1Tept1Z4XnE?si=03K7fuHT0jt1VJw2">source</a></p>
+            <p>presumably since the abort of '83... - <a href="https://youtu.be/gOzr_E7JJYI?si=-g4H4ClsO1f2mQ1g">source</a></p>
+            <p>I'm a godly figure that rarely shows up, I'm not supposed to make any sense - parkour civilization</p>
+            <p>when i go in my spooky basement to do wash william afton will get me the shit that made him purple</p>
+            <p>Do you ever wonder why my dad doesn't invite you to thanksgiving anymore?</p>
+            <p>but for the purposes of this video we'll be using the term [twitter artist] as a derogatory slur.</p>
+            <p>well, i guess the future <i>is </i> bright, if you pay for the headlights</p>
+            <p>If you're a millenial or zoomer that suffers from social anxiety, and, well, look at you-</p>
+            <p>But who prays for Satan? Who, in eighteen centuries, has had the common humanity to pray for the one sinner that needed it most?</p>
+            <p>every month is a spooky month if you have anxiety</p>
+            <p>what can be funnier than 24? - 25.</p>
+            <p>cargo? yeah i hope it does</p>
+            <p>that concludes our research purposes, i will now kill myself</p>
+            <p>i gave up on trying to be okay and now im doing many drugs</p>
+            <p>i'm definitely a slightly different mix of guys than i was in the last filming session</p>
+            <p>programmer socks and comic sans seperate the casuals from the masters</p>
+            <p>Don't commit su1c1de that shi kills people</p>
+            <p>her eyes were the sickly green of the sky before a tornado, and to his horror he discovered she could throw cows around just as easily</p>
+            <p>when I imagine myself I am always leaving I couldn't draw my own face if god asked</p>
+            <p>turns out that i'm just as easy to fool as the common deer. i am destiened to be hunted down and made into a little cutlets of venison bacon.<br><sub>- kwite</sub></p>
+            <p>such a ruthless world... such a cruel world... such a world... shouldn't exist at all!</p>
+            <p>quick! pretend like we weren't having a therapy session!</p>
+            <p>here in parkour civilization no one jumps for the beef; it's too risky</p>
+            <p>orchids are green, but nobody cares. waxed slightly withered cut copper stairs.</p>
+            <p>moooom the dog ate all proof of my mental disorders and spiraling habits</p>
+            <p>you are not mentally stable enough to go to a grocery store by yourself nevermind a relationship</p>
+            <p>They're not found family, they tripped into a hole and started huddling together for warmth</p>
+            <p>don't try to know or interpret me in any way</p>
+            <p>Flying on crutches is not easy, but he learned</p>
+            <p>please take care of your mental health. i didn't once and i got three lore arcs out of it</p>
+            <p>undignified, i digress. remove his kneecaps</p>
+            <p>I may be a whore, but at least I have manners, unlike you</p>
+            <p>is autism your favorite season? autism is my favorite season.</p>
+            <p>I am not racist, sexist or homophobic, i hate everyone equally</p>
+            <p>we're all just animals walking around the rock</p>
+            <p>we have sex; then pearl harbor; then more sex</p>
+            <p>the only limit is your imagination, but your imagination is limited</p>
+            <p>If you don't remember anything <i>too</i> bad, the system is probably doing its job.</p>
+            <p>A room that's warm, and nice, and filled with little ideas for games.</p>
+            <p>but for legal reasons let's go with the crack</p>
+            <p>guys i'm so sorry i was toxic that won't happen again *turns into a biblically accurate angel* - me, allegedly</p>
+            <p>probably alludes to the sexual action of "giving head". this shows how the singer would do anything for their love interest</p>
+            <p>my hate club is so small that i am the one who has to do the hating - me</p>
+            <p>Ah... so you have gotten the estonia dream... one of us</p>
+            <p>It looks intimidating. What if there's a death wish... ? His face is still so calm.</p>
+            <p>call me back when you finish with the flashback</p>
+            <p>a true sign that you befriended a system: ocassionally you see a message that just says \</p>
+            <p>I'm one top hat away from becoming a triangle</p>
+            <p>love is a chemically induced hypnosis the human body uses to trick people into not eating each other just for long enough to procreate</p>
+            <p>they call them phychiatrist but it's just a fancy word for a drug dealer - kwite</p>
+        </div>
+    </main>
+
+
+    <img src="/images/cat%20guitar.png" class="flow-img" width="150px" style="position: absolute; bottom: 30px; left: 500px">
+
+
+
+
+    <script>
+        var currentPage = "main";
+        const pages = [
+            "pics",
+            "mood",
+            "quotes",
+            "main"
+        ]
+
+        if (window.location.hash && pages.includes(window.location.hash.substring(1))) {
+            var hash = window.location.hash.substring(1);
+            switchPage(hash);
+        }
+
+        function switchPage(a) {
+            document.getElementById(currentPage).style.display = "none";
+            currentPage = a;
+            document.getElementById(a).style.display = "block";
+        }
+    </script>
+    <script src="/js/theme-switcher.js"></script>
+</body>
+
+</html>

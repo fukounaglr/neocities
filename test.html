@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>test</title>
+    <link rel="icon" type="image/png" href="/ico.png" />
+    <link rel="stylesheet" href="/style.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/interact.js/1.10.17/interact.min.js"></script>
+    <script src="/js/drag.js"></script>
+
+    <style>
+        body {
+            color: aliceblue
+        }
+
+
+            #rpgbox {
+                background-color: black;
+                text-align: left;
+                width: 600px;
+                max-width: 60%;
+                min-height: 100px;
+                display: grid;
+                grid-template-columns: 120px auto;
+                grid-gap: 10px;
+                padding: 10px 30px;
+                border: double white 4px;
+                color: white;
+                border-radius: 10px;
+
+                & #options {
+                    grid-area: 2/2/span 1/span 1;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    width: 100%;
+                    grid-gap: 20px;
+                }
+
+                & span {
+                    padding: 5px 20px;
+                    border: white solid 2px;
+                    cursor: help;
+                    text-align: center;
+
+                    &:hover {
+                        color: black;
+                        background-color: white;
+                    }
+                }
+
+                & #rpgimgidle {
+                    float: left;
+                    filter: var(--theme-filter);
+                }
+
+                & #rpgimgtalk {
+                    display: none;
+                    float: left;
+                    filter: var(--theme-filter);
+                }
+
+                & #rpgtext {
+                    min-height: 50px;
+                }
+            }
+
+        :root[dyslexic="true"] {
+
+            & nav a,
+            #links a {
+                background-image: none !important;
+                color: var(--acc) !important;
+            }
+        }
+
+        body {
+            /*background: darkred;*/
+        }
+
+        nav,
+        #links {
+            margin: 10px;
+
+            & a {
+                background-image: var(--blink);
+                background-size: cover;
+                display: block;
+                margin: 10px auto;
+                text-decoration: none;
+                padding: 20px;
+                background-color: var(--col);
+                width: 200px;
+                text-align-last: end;
+                box-shadow: -7px 5px var(--acc);
+                transform: translate(0, 0);
+                transition: .2;
+                color: var(--col);
+
+                &:hover {
+                    color: white;
+                    box-shadow: -7px 8px white;
+                    transform: translate(0, -3px);
+                }
+
+                &::before {
+                    display: none;
+                }
+            }
+    </style>
+</head>
+
+<body>
+
+    <h1>This is a header</h1>
+    <h1>これはヘッダーです</h1>
+    <!--<h1>Это заголовок</h1>-->
+    <p>this is a regular text</p>
+    <p>これは通常のテキストです</p>
+    <p>Это нормальный текст</p>
+    <div style="background-color: var(--pri); color: var(--col); padding: 20px;">
+        <p>This is a text in a box</p>
+        <a>This is a link</a>
+    </div>
+    <div style="background-image: var(--bg); height: 100px;">
+    </div>
+    <div>
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff"><path d="M 233 -120 l 65 -281 L 80 -590 l 288 -25 l 112 -265 l 112 265 l 288 25 l -218 189 l 65 281 l -247 -149 l -247 149 Z"/></svg>
+    </div>
+
+    <nav>
+        <a>this is a button</a>
+    </nav>
+
+
+    <div id="theme">
+        <span>theme:</span>
+        <select id="themeSwitcher" onchange="changeTheme()">
+            <option value="">cats</option>
+            <option value="hell">hell</option>
+            <option value="underwater">underwater</option>
+            <option value="neon">neon</option>
+            <option value="green">green</option>
+            <option value="depths">depths</option>
+            <option value="whiteroom">whiteroom</option>
+            <option value="space">space</option>
+            <option value="rainbow">rainbow</option>
+        </select>
+    </div>
+    <button id="fontSwitcher" onclick="changeFont()" style="position: relative;">
+        OpenDyslexic: <span id="font-stat">false</span>
+        <span style="position: absolute; right: -20px; color: rgba(255, 255, 255, 0.5)" title="Changes all fonts to Open Dyslexic font; also removes background images from buttons.">?</span>
+    </button>
+
+
+
+    <div id="rpgbox">
+        <img class="filter" src="/images/fuko_idle.gif" id="rpgimgidle">
+        <img class="filter" src="/images/fuko_talk.gif" id="rpgimgtalk">
+        <p id="rpgtext">* I can talk. Please enable javascript // wait for the page to complete loading . . .</p>
+        <div id="options">
+            <span onclick="speech(talk)">talk</span>
+            <span onclick="speech(about)">about</span>
+            <span onclick="speech(joke)">joke</span>
+        </div>
+    </div>
+
+
+    <script src="/js/theme-switcher.js"></script>
+    <script src="/js/talkingfuko.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>archive</title>
+
+    <link rel="icon" type="image/png" href="ico.png">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            height: calc(100vh - 140px);
+            padding: 0;
+            color: var(--pri);
+        }
+
+        .archived {
+            height: 100%;
+            overflow: auto;
+
+            & img {
+                width: 100%;
+            }
+        }
+
+        header {
+            display: flex;
+            text-align: left;
+            justify-content: start;
+            align-items: flex-end;
+            height: 100px;
+
+            & h3 {
+                margin: 20px;
+                color: var(--acc)
+            }
+
+            & p {
+                margin: 20px;
+                padding: 5px;
+            }
+        }
+
+        footer {
+            height: 40px;
+            align-content: center;
+            padding: 0 20px;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 20% 80%;
+            padding: 20px;
+            height: calc(100% - 40px);
+            overflow: hidden;
+        }
+
+        nav {
+            margin: auto;
+
+            & a {
+                display: block;
+            }
+        }
+
+        @media only screen and (max-width: 700px) {
+            main {
+                display: block;
+            }
+
+            header {
+                display: block;
+
+                & h3 {
+                    margin: auto 20px;
+                    text-align: left;
+                }
+
+                & p {
+                    margin: auto;
+                }
+            }
+
+            nav {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h3>archive</h3>
+        <p>old pages that have been remade or removed. not all pages are archived. choose one to view it. mobile versions are not archived.</p>
+    </header>
+    <main>
+        <nav>
+            <h6 style="color: var(--primary-colour)">site version - page name - dd-mm-yy</h6>
+            <a href="#" onclick="switchImg('home-11-03-24')">#2 - home 11-03-24</a>
+            <a href="#" onclick="switchImg('journal-22-03-24')">#2 - journal 22-03-24</a>
+            <a href="#" onclick="switchImg('webmaster-09-04-24')">#3 - webmaster 09-04-24</a>
+            <a href="#" onclick="switchImg('home-19-05-24')">#3 - home 19-05-24</a>
+            <a href="#" onclick="switchImg('journal-13-09-24')">#4 - journal 13-09-24 (concept)</a>
+            <a href="#" onclick="switchImg('room-07-12-24')">#4 - room 07-12-24</a>
+            <a href="#" onclick="switchImg('home-08-12-24')">#4 - home 08-12-24</a>
+            <a href="#" onclick="switchImg('webmaster-24-10-24')">#4 - webmaster 12-12-24</a>
+            <a href="#" onclick="switchImg('splash-6-02-25')">#4 - splash 20-12-24</a>
+            <a href="#" onclick="switchImg('room-14-04-25')">#4.5 - room-14-04-25</a>
+            <!--<a href="#" onclick="switchImg('')"></a>-->
+        </nav>
+
+        <div class="archived">
+            <img src="/images/vaporeon.gif">
+        </div>
+    </main>
+
+    <footer>
+        <a href="/room.html">go back</a>
+    </footer>
+
+    <script>
+        function switchImg(a) {
+            document.querySelector('.archived img').src = '/images/archive/' + a + '.png';
+        }
+    </script>
+    <script src="/js/theme-switcher.js"></script>
+</body>
+
+</html>

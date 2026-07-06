@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fuko's room</title>
+    <link rel="icon" type="image/png" href="/ico.png" />
+    <link rel="stylesheet" href="/style.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/interact.js/1.10.17/interact.min.js"></script>
+    <script src="/js/drag.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+
+        body {
+            color: white;
+            background-image: var(--bg);
+            background-size: 100% 100%;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+
+        main {
+            padding-top: 50px;
+            overflow: hidden;
+        }
+
+        .done {
+            text-decoration: line-through;
+            color: gray;
+        }
+
+        .filter,
+        #player-bubble {
+            filter: hue-rotate(-30deg) saturate(140%);
+        }
+
+        #jp-title {
+            font-family: "Rampart One", sans-serif !important;
+            font-weight: 400;
+            font-style: normal;
+            color: var(--acc);
+            font-size: 18Em;
+            position: absolute;
+            top: -50px;
+            z-index: -10;
+            pointer-events: none;
+        }
+
+
+
+        #fontSwitcher {
+            border: none;
+            position: relative;
+            border-radius: 0;
+            background-color: var(--acc);
+            font-family: "OpenDyslexic";
+            font-size: 0.7Em !important;
+
+            &.active {
+                background-color: var(--pri) font-size: 1Em;
+            }
+        }
+
+        #desktop-grid {
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-auto-flow: column;
+            width: 0;
+
+            & a {
+                color: var(--col);
+                text-align: center;
+                text-decoration: none;
+                width: 100px;
+                margin: 5px;
+                text-align: center;
+                display: inline-block;
+
+                &:hover {
+                    /*color: var(--accent-colour);*/
+                    text-decoration: underline;
+                    background-color: rgba(255, 255, 255, 0.45);
+
+                    & .filter {
+                        filter: hue-rotate(-170deg) saturate(170%) brightness(130%);
+                    }
+                }
+
+                & img {
+                    display: block;
+                    margin: auto;
+                    aspect-ratio: 1/1;
+                    object-fit: contain;
+                }
+            }
+        }
+
+        #marq{
+            margin: 20px;
+            & img{
+                height: 30px;
+            }
+        }
+
+
+
+        /*PLAYER*/
+        #player {
+            position: relative;
+            position: absolute;
+            top: 100px;
+            left: 760px;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        #audio-player {
+            position: relative;
+            background-color: var(--acc);
+            border-radius: 50px;
+            width: 340px;
+            align-content: center;
+            text-align: left;
+            z-index: 10;
+            display: flex;
+            align-content: center;
+            border: double 6px var(--col);
+
+            & .paused {
+                animation-play-state: paused;
+            }
+
+            & .spin {
+                animation-play-state: running;
+            }
+
+            & #player-bubble {
+                padding: 5px;
+                width: 80px;
+                aspect-ratio: 1/1;
+                top: 0;
+                z-index: 0;
+                animation-name: spin;
+                animation-duration: 60s;
+                animation-iteration-count: infinite;
+            }
+
+            & #player-select-wrapper {
+                width: 90%;
+                overflow: hidden;
+                position: relative;
+            }
+
+            & #player-select {
+                all: unset;/ font-family: "syne mono";
+                text-overflow: clip;
+                border: none;
+                height: auto;
+                color: black;
+                padding: 5 15;
+                user-select: none;
+            }
+
+            & button {
+                border: none;
+                border-radius: 10px;
+                padding: 5px;
+                margin: 10 auto;
+                background-color: transparent;
+                color: var(--col);
+                cursor: pointer;
+                position: relative;
+            }
+        }
+
+        #player-slider {
+            position: relative;
+            align-self: stretch;
+            flex: 1;
+            width: 170px;
+            margin-bottom: 15px;
+
+            & div {
+                transform: translateY(-50%);
+                position: absolute;
+                left: 0;
+                top: 50%;
+                pointer-events: none;
+
+                &:first-of-type {
+                    background-color: var(--pri);
+                    height: 5px;
+                    right: 0;
+                }
+
+                &:last-of-type {
+                    content: var(--fav);
+                }
+            }
+        }
+
+        #music-title {
+            background-color: var(--acc);
+            width: auto;
+            position: absolute;
+            top: -15px;
+            right: 50px;
+            z-index: 20;
+            padding: 0 5px;
+            border-radius: 10px 10px 0 0;
+            border: solid 2px var(--col);
+            border-bottom: none;
+        }
+
+        #sotw {
+            color: white;
+            position: absolute;
+            bottom: 5px;
+            right: 50px;
+            font-size: x-small;
+            text-decoration: none;
+
+            &::before {
+                display: none;
+            }
+        }
+
+        #options span {
+            display: block;
+            margin: 5px;
+
+            &:hover {
+                font-style: italic;
+                text-decoration: underline wavy;
+                cursor: pointer;
+            }
+        }
+
+        #fuko {
+            width: 460px;
+            height: 300px;
+            position: absolute;
+            left: 250px;
+            top: 150px;
+        }
+
+        #todolist {
+            width: 300px;
+            height: 170px;
+            position: absolute;
+            top: 230px;
+            left: 830px;
+        }
+
+        #day {
+            position: absolute;
+            top: 430px;
+            left: 740px;
+        }
+
+        #info {
+            width: 250px;
+            height: 170px;
+            position: absolute;
+            top: 500px;
+            left: 420px;
+        }
+
+        #pics {
+            position: absolute;
+            top: 430px;
+            left: 950px;
+        }
+
+        #sitemap {
+            position: absolute;
+            top: 480px;
+            left: 180px;
+            width: 200px;
+            height: 200px;
+        }
+
+        #fukoinfo {
+            position: absolute;
+            bottom: 5px;
+            right: 10px;
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div id="jp-title">不幸な-GLR</div>
+
+        <div id="desktop-grid">
+
+            <!--<a title="shrines" href="/shrines/index.html"><img class="filter" src="/images/icon_map.png"><span>Shrines</span></a>-->
+            <a title="webmaster" href="webmaster.html"><img class="filter" src="/images/icon_me.png"><span>Webmaster</span></a>
+            <a title="song of the week" href="song-of-the-week.html"><img class="filter" src="/images/icon_music.png"><span>Music</span></a>
+            <a title="create" href="/create/index.html"><img class="filter" src="/images/icon_art.png"><span>Create</span></a>
+            <a title="cool sites" href="sites.html"><img class="filter" src="/images/icon_sites.png"><span>Sites</span></a>
+            <a title="graphics" href="graphics.html"><img class="filter" src="/images/icon_graphic.png"><span>Graphics</span></a>
+            <a title="photo album" href="photo-album.html"><img class="filter" src="/images/icon_album.png"><span>Photos</span></a>
+        </div>
+
+        <div class="window" id="fuko">
+            <div class="win-title"><img src="/graphics/pixels/pc.gif"> Logged in as User</div>
+
+            <!--
+            <audio autoplay loop muted id="tlk">
+                <source src="https://www.myinstants.com/media/sounds/asriel.mp3">
+            </audio>
+            -->
+
+            <div class="win-content">
+                <span id="fukoinfo" title="Fuko ">?</span>
+                <img src="/images/fuko%203d.png" style=" float: inline-start; height: 100%; cursor: help;" onclick="playAudio('https://file.garden/ZjOP8Ik9OUXT6YVm/UNTITLED.wav')">
+
+                <p id="rpgtext" class="win-content" style="height: 120px">* I can talk. Please enable javascript // wait for the page to complete loading . . .</p>
+                <div id="options">
+                    <span onclick="speech(talk)">&gt; talk</span>
+                    <span onclick="speech(about)">&gt; about</span>
+                    <span onclick="speech(joke)">&gt; joke</span>
+                    <span onclick="speech(lyric)">&gt; lyric</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="window" id="day">
+            <div class="win-title">Today is</div>
+            <div class="win-content">
+                <img width="150px" id="daytoday" title="" src="">
+                <p style="margin: auto 0; text-align: end;" id="time"></p>
+            </div>
+        </div>
+
+        <div class="window" id="info">
+            <div class="win-title">Settings</div>
+            <div class="win-content">
+                <button id="fontSwitcher" onclick="changeFont()">
+                    OpenDyslexic: <span id="font-stat">false</span>
+                    <span style="position: absolute; right: -20px; color: rgba(255, 255, 255, 0.5)" title="Changes all fonts to Open Dyslexic font; also removes background images from buttons.">?</span>
+                </button>
+                <!--<a href="https://fukounaglr.straw.page/"><img width="32px" style="transform: translate(0, 10px)" title="Strawpage" src="/images/strawpage.png"> strawpage</a>-->
+                <!--
+                <div id="theme">
+                    <span>theme:</span>
+                    <select id="themeSwitcher" onchange="changeTheme()">
+                        <option value="">cats</option>
+                        <option value="hell">hell</option>
+                        <option value="underwater">underwater</option>
+                        <option value="neon">neon</option>
+                        <option value="green">green</option>
+                        <option value="depths">depths</option>
+                    </select>
+                </div>
+                -->
+                <marquee height="40px" id="marq">
+                    <img src="/fukounaglr.gif">
+                    <img src="/graphics/buttons/kris_where_tf_are_we.png">
+                    <img src="/graphics/buttons/neocities.png">
+                    <img src="/graphics/buttons/youre_telling_me.png">
+                    <img src="/graphics/blinkies/tft.gif">
+                    <img src="/graphics/blinkies/comicsans.gif">
+                    <img src="/graphics/blinkies/2063488df6ab87c63943325d03731552856553e0.gif">
+                    <img src="/graphics/blinkies/tti_blink.gif">
+                    <img src="/graphics/blinkies/0205-pluralsystem.gif">
+                    <img src="/graphics/blinkies/gender-isnt-real.gif">
+                    <img src="/graphics/blinkies/sylveon-trans-rights.gif">
+                    <!--<img src="/graphics/blinkies/">-->
+                    <!--<img src="/graphics/">-->
+                </marquee>
+            </div>
+        </div>
+
+        <div class="window" id="todolist">
+            <div class="win-title"><img src="/graphics/pixels/cat285.gif"> To do</div>
+            <div class="win-content">
+                <ul>
+                    <li>make photo album paged</li>
+                    <li>make Oleander page</li>
+                    <li>make Ghost Memory page</li>
+                    <li>make Roblox games shrine</li>
+                    <!--<li></li>-->
+                </ul>
+                <ul class="done">
+                    <li>guestbook page</li>
+                    <li>new site button</li>
+                    <li>make an imbed pages for news and links</li>
+                    <li>make second click jump forward [fuko]</li>
+                    <li>make photo album page</li>
+                    <li>make shimejis page</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="player">
+            <div id="music-title">
+                <span>Media Player</span>
+                <span class="close" onclick="closeFolder('music')">- x</span>
+            </div>
+            <img src="/images/miku-yay.gif" style="position: absolute; pointer-events: none; z-index: 20; right: 15px; top: 10px;">
+            <div id="audio-player">
+                <img id="player-bubble" src="/images/disk.png" class="paused" />
+
+                <div style="margin-left: 10px">
+                    <div id="player-body">
+                        <h6 style="text-align: left"> <button id="player-button"></button><button id="skip-button"></button>Now playing:</h6>
+                        <div id="player-slider">
+                            <div aria-hidden="true"></div>
+                            <div aria-hidden="true"></div>
+                        </div>
+                        <div id="player-select-wrapper">
+                            <marquee style="width: 70%"><select id="player-select"></select></marquee>
+                        </div>
+                    </div>
+                </div>
+                <a href="/song-of-the-week.html" id="sotw">&gt; Song of the week</a>
+            </div>
+        </div>
+
+
+
+        <div id="pics" class="window" onclick="randomImage()">
+            <div class="win-content">
+                <img id="img-rand" width="200px" src="https://img1.picmix.com/output/pic/normal/9/2/9/5/12755929_85455.gif" class="slide">
+            </div>
+        </div>
+        <div id="sitemap" class="window">
+            <div class="win-title">Site map!</div>
+            <iframe src="/map.html" title="map" style="width: 90%" class="win-content">
+
+            </iframe>
+        </div>
+
+
+        <img class="img" src="/images/fatass.png" width="150px" style=" top: 50px; left: 1100px; cursor: help;" onclick="playAudio('https://www.myinstants.com/media/sounds/teddy-bear-squeek.mp3')">
+        <img class="img" src="/images/guestnoob.png" width="180px" style=" top: 260px; left: 680px; cursor: help;" onclick="playAudio('https://www.myinstants.com/media/sounds/mmm-cheezburger.mp3')">
+        <img class="img" src="/images/kibbies.png" width="210px" style=" top: 20px; left: 190px; cursor: help;" onclick="playAudio('https://www.myinstants.com/media/sounds/holy-final.mp3')">
+        <img class="img" src="/images/starcatcher.gif" width="210px" style=" top: 20px; left: 490px; cursor: help;" onclick="playAudio('https://www.myinstants.com/media/sounds/piano-sparkles.mp3')">
+
+    </main>
+
+
+    <script src="/js/talkingfuko.js"></script>
+    <script src="/js/theme-switcher.js"></script>
+    <script src="/js/audio-player.js"></script>
+    <script src="/js/clock.js"></script>
+
+    <script>
+        const images = [
+            "https://i.pinimg.com/736x/66/37/fb/6637fba8a0ee5c44dc21ff3d47dffeca.jpg",
+            "https://img1.picmix.com/output/pic/normal/9/2/9/5/12755929_85455.gif",
+            "https://i.pinimg.com/736x/46/1b/f4/461bf40443c35aab80bc0782554833f1.jpg",
+            "https://img1.picmix.com/output/pic/normal/6/2/7/2/12202726_9e293.gif",
+            "https://i.pinimg.com/originals/7e/6a/22/7e6a22ceb59c89cc7b11ecd052febd31.gif",
+            "https://i.pinimg.com/originals/7e/6a/22/7e6a22ceb59c89cc7b11ecd052febd31.gif",
+            "https://i.pinimg.com/originals/e4/2d/5c/e42d5cbb441aa9cf560c5ae9eb50cfac.gif",
+            "https://i.pinimg.com/736x/36/b8/f5/36b8f56e9abf0242f6a9e41f35bd9cc7.jpg",
+            "https://i.pinimg.com/originals/3e/9b/a2/3e9ba25561d065d3065a1eb759e1fe0d.gif",
+            "https://i.pinimg.com/736x/f2/97/42/f2974278dd50eb98a4db83b0ff32b830.jpg",
+            "https://i.pinimg.com/originals/44/fd/74/44fd74f8f3c742325b5d3ee476b26940.gif",
+            "https://i.pinimg.com/736x/0d/44/28/0d4428e0b14e5a39c96f5332dbbad265.jpg",
+            "https://img1.picmix.com/output/pic/normal/6/7/0/9/12789076_7b56d.gif",
+            "https://img1.picmix.com/output/pic/normal/8/2/8/6/12706828_63b46.gif",
+            "https://img1.picmix.com/output/pic/normal/8/4/7/1/12671748_d07a4.gif",
+            "https://img1.picmix.com/output/pic/normal/7/7/9/9/13139977_ee83b.gif",
+            "https://img1.picmix.com/output/pic/normal/6/4/5/0/13040546_e2173.gif",
+            "https://img1.picmix.com/output/pic/normal/2/0/3/9/13049302_b058e.gif",
+            "https://i.pinimg.com/736x/9b/03/4e/9b034e34bf62151afd0ee288b5266947.jpg",
+            "https://img1.picmix.com/output/pic/normal/7/5/2/8/13148257_18c1c.gif",
+            "https://img1.picmix.com/output/pic/normal/1/1/1/7/12577111_4cb52.gif",
+            "https://img1.picmix.com/output/pic/normal/9/8/2/1/12821289_b0590.gif",
+            "https://img1.picmix.com/output/pic/normal/3/0/2/4/12074203_250cf.gif",
+            'https://img1.picmix.com/output/pic/normal/9/7/9/1/13501979_bebfb.gif'
+        ]
+
+        const Image = document.getElementById("img-rand");
+        //const randomImg = Math.floor(Math.random() * images.length);
+        const randomImg = images.length ;
+        Image.src = images[randomImg];
+
+        function randomImage() {
+            const randomImg = Math.floor(Math.random() * images.length);
+            Image.src = images[randomImg];
+        }
+
+        setInterval(function() {
+            randomImage(1);
+        }, 10000);
+    </script>
+    <script>
+        const weekday = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+        const d = new Date();
+        let day = weekday[d.getDay()];
+        document.getElementById("daytoday").src = "/images/" + day + ".jpg";
+        document.getElementById("daytoday").title = day;
+    </script>
+    <script>
+        const select = document.getElementById("player-select");
+        AudioPlayer.create(
+            [
+                "FUKOUNA GIRL - STOMACH BOOK",
+                "anarchy!!! - STOMACH BOOK",
+                "Nothing Special - Stomach Book",
+                "Our Story - Stomach Book",
+                "My Diorama - Stomach Book",
+                "SICK SICK SICK - Stomach Book",
+                "Its Magic! - Stomach Book",
+                "cul-de-sac - glass beach",
+                "SPLIT! (Live From The Bad Luck Tour) - Jhariah",
+                "GIRL HELL 1999 - femtanyl",
+                "KATAMARI - femtanyl",
+                "femtanyl - VIDEO NASTY",
+                "P3T - femtanyl",
+                "MIX. 02 - BOTHERED! - femtanyl",
+                "Toxic Droplet - diet tea other cola",
+                "Alone (IDGAF) - Diet Tea Other Cola (Prod. KFCMC)",
+                "Heads Up - Gezebelle Gaburgably",
+                "Pizza Rolls Royce - Gezebelle Gaburgably",
+                "BITE ME Nightcore - AJ DiSpirito",
+                "Forget Me - Whomst?",
+                "いますぐ輪廻 - shuu sakurai",
+                "4K CARPET - passengerprincess",
+                "THE FLIES (Remix) - Operation Sodasteal",
+                "I Want Things to Be Beautiful - Devi Mccallion",
+                "Love Zombie - Fem&M",
+                "SICK SICK SICK - Brooks, Stomach Book",
+                "Stupid(Crftu) - underscores",
+                "Through Patches of Violet - Mili",
+                "Dance of the Corpses - Kikuo",
+                "↑Jinsei Game↓- Nyamai",
+                "SICK OF IT! - Milkypossum",
+                "Selfstarter A.E. - Jhariah, Telephone",
+                "Lost In Bonerland - NeroBrock",
+                "you are an angel - sure",
+                "you are an angel - you are an angel",
+                "you are an angel - the same",
+                "Gezebelle Gaburgably - Afterparty",
+                "femtanyl & astrid - WAR GIRL",
+                "glitter Nightcore",
+                "Gezebelle Gaburgably - I Can Fix Him",
+                "muship - 色彩電気"
+            ], {
+                playButton: document.getElementById("player-button"),
+                skipButton: document.getElementById("skip-button"),
+                insertIcons: true,
+                slider: document.getElementById("player-slider"),
+                sliderThumb: document.getElementById("player-slider").querySelector("div:last-of-type"),
+                shuffle: true,
+                fileGarden: "ZjOP8Ik9OUXT6YVm",
+                onended: () => (select.value = AudioPlayer.idx)
+            }
+        );
+        for (let i = 0; i < AudioPlayer.list.length; i++) {
+            let option = select.appendChild(document.createElement("option"));
+            (option.label = AudioPlayer.list[i].title), (option.value = i);
+        }
+        select.onchange = () => {
+            AudioPlayer.idx = Number(select.value) - 1;
+            AudioPlayer.next();
+        };
+    </script>
+
+
+    <script>
+        function playAudio(url) {
+            new Audio(url).play();
+        }
+    </script>
+</body>
+
+</html>
