@@ -11,17 +11,17 @@
     <script src="/js/theme-switcher.js"></script>
 
     <style>
-        
+
         body{
             background-image: var(--bg)
         }
-        
+
         main{
             height: 100vh;
             display: grid;
             grid-template-columns: auto auto;
         }
-        
+
         .side-img {
             width: 200px;
             aspect-ratio: 1/1;
@@ -34,23 +34,23 @@
             border: dotted;
             overflow: hidden;
             background-color: var(--primary-colour);
-            
+
             & h6{
                 color: var(--accent-colour)
             }
         }
-        
+
         .right-side{
             height: 100%;
             overflow: auto;
         }
-        
+
         .side-col{
             width: 90%;
             height: 100%;
             align-content: center;
             margin: auto;
-            
+
             & img{
                 width: 100%;
                 height: 70%;
@@ -58,21 +58,21 @@
                 margin: auto;
             }
         }
-        
+
         @media only screen and (max-width: 700px) {
             main{
                 display: block;
                 height: auto;
                 grid-template-columns: 1fr;
             }
-            
+
             .side-img{
                 float: none;
                 margin: 10px auto;
                 display: block;
                 width: 90%
             }
-        
+
         .right-side{
             height: auto;
         }

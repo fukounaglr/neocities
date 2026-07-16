@@ -74,7 +74,7 @@ AudioPlayer.create = function (list, opts) {
 	this.idx = -1;
 	this.list = list;
 //    const bubble = ;
-	
+
 	this.addEventListener("ended", () => {
 		this.idx = (this.idx + 1) % this.list.length;
 		this.src = this.list[this.idx].src;
@@ -109,7 +109,7 @@ AudioPlayer.create = function (list, opts) {
 			});
 
 		}
-        
+
         this.addEventListener("play", () => {
                 document.getElementById("player-bubble").className = "spin";
 			});
@@ -194,7 +194,7 @@ AudioPlayer.create = function (list, opts) {
 
 	// ended
 	if (opts.onended) this.addEventListener("ended", opts.onended);
-	
+
 	this.next();
 	this.addEventListener("ended", this.play);
 }

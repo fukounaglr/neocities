@@ -1,5 +1,5 @@
 let applyParallax = section => {
-  
+
   section.addEventListener('mousemove', e => {
 
     let { width, height } = section.getBoundingClientRect();
@@ -14,8 +14,8 @@ let applyParallax = section => {
     }
 
   });
-  
-  
+
+
   //section.addEventListener('mouseleave', e => {
 //
   //  for (let layer of document.querySelectorAll('.img')) {
@@ -23,6 +23,6 @@ let applyParallax = section => {
   //  }
 //
   //});
-  
+
 };
 applyParallax(document.querySelector('body'));

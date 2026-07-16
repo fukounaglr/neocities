@@ -63,7 +63,7 @@ function pops() {
 		       	confetti_element[i].style.top  = posY + 'px';
 
 		       	confetti_element[i].style.opacity  = transparency;
-		            
+
 
 		       	confetti_elements[i][0] = posX;
 		       	confetti_elements[i][1] = posY;
@@ -73,7 +73,7 @@ function pops() {
 		}
 	}
 
-	clearInterval(pop_interval); 
+	clearInterval(pop_interval);
     pop_interval = setInterval(pop_movement, 10);
 }
 
