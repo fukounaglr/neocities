@@ -99,9 +99,10 @@
             }
         }
 
-        #marq{
+        #marq {
             margin: 20px;
-            & img{
+
+            & img {
                 height: 30px;
             }
         }
@@ -112,8 +113,8 @@
         #player {
             position: relative;
             position: absolute;
-            top: 100px;
-            left: 760px;
+            top: 560px;
+            left: 810px;
         }
 
         @keyframes spin {
@@ -260,14 +261,17 @@
             width: 300px;
             height: 170px;
             position: absolute;
-            top: 230px;
+            top: 310px;
             left: 830px;
         }
 
         #day {
             position: absolute;
-            top: 430px;
-            left: 740px;
+            top: 500px;
+            left: 420px;
+            width: 320px;
+            height: 200px;
+            & img{width: 88px}
         }
 
         #info {
@@ -276,12 +280,13 @@
             position: absolute;
             top: 500px;
             left: 420px;
+            display: none
         }
 
         #pics {
             position: absolute;
-            top: 430px;
-            left: 950px;
+            top: 40px;
+            left: 800px;
         }
 
         #sitemap {
@@ -292,7 +297,7 @@
             height: 200px;
         }
 
-        #fukoinfo {
+        #time {
             position: absolute;
             bottom: 5px;
             right: 10px;
@@ -307,26 +312,26 @@
 
         <div id="desktop-grid">
 
-            <!--<a title="shrines" href="/shrines/index.html"><img class="filter" src="/images/icon_map.png"><span>Shrines</span></a>-->
-            <a title="webmaster" href="webmaster.html"><img class="filter" src="/images/icon_me.png"><span>Webmaster</span></a>
-            <a title="song of the week" href="song-of-the-week.html"><img class="filter" src="/images/icon_music.png"><span>Music</span></a>
-            <a title="create" href="/create/index.html"><img class="filter" src="/images/icon_art.png"><span>Create</span></a>
-            <a title="cool sites" href="sites.html"><img class="filter" src="/images/icon_sites.png"><span>Sites</span></a>
-            <a title="graphics" href="graphics.html"><img class="filter" src="/images/icon_graphic.png"><span>Graphics</span></a>
-            <a title="photo album" href="photo-album.html"><img class="filter" src="/images/icon_album.png"><span>Photos</span></a>
+            <a title="Home" href="/index.html"><img src="/images/icons/icon_map.png"><span>Shrines</span></a>
+            <a title="webmaster" href="/webmaster.html"><img src="/images/icons/icon_me.png"><span>Webmaster</span></a>
+            <a title="song of the week" href="/song-of-the-week.html"><img src="/images/icons/icon_music.png"><span>Music</span></a>
+            <a title="arm" href="/art.html"><img src="/images/icons/icon_art.png"><span>Art</span></a>
+            <a title="resouces" href="/resouces.html"><img src="/images/icons/icon_sites.png"><span>Resources</span></a>
+            <a title="graphics" href="/graphics.html"><img src="/images/icons/icon_graphic.png"><span>Graphics</span></a>
+            <a title="photo album" href="/photo-album.html"><img src="/images/icons/icon_album.png"><span>Photos</span></a>
+            <!--<a title="photo album" href=""><img  src="/images/icons/icon_notepad.png"><span>?</span></a>-->
+            <a title="guestbook" href="/guestbook.html"><img src="/images/icons/icon_blog.png"><span>Guestbook</span></a>
+            <!--<a title="photo album" href=""><img  src="/images/icons/icon_cook.png"><span>?</span></a>-->
+            <a title="creations" href="/create/index.html"><img src="/images/icons/icon_folder.png"><span>Creations</span></a>
+            <a title="shrines" href="/shrines/index.html"><img src="/images/icons/icon_journal.png"><span>Shrines</span></a>
         </div>
 
         <div class="window" id="fuko">
             <div class="win-title"><img src="/graphics/pixels/pc.gif"> Logged in as User</div>
 
-            <!--
-            <audio autoplay loop muted id="tlk">
-                <source src="https://www.myinstants.com/media/sounds/asriel.mp3">
-            </audio>
-            -->
 
             <div class="win-content">
-                <span id="fukoinfo" title="Fuko ">?</span>
+                <span style="margin: auto 0; text-align: end;" id="time"></span>
                 <img src="/images/fuko%203d.png" style=" float: inline-start; height: 100%; cursor: help;" onclick="playAudio('https://file.garden/ZjOP8Ik9OUXT6YVm/UNTITLED.wav')">
 
                 <p id="rpgtext" class="win-content" style="height: 120px">* I can talk. Please enable javascript // wait for the page to complete loading . . .</p>
@@ -340,16 +345,73 @@
         </div>
 
         <div class="window" id="day">
-            <div class="win-title">Today is</div>
+            <div class="win-title">Sites</div>
             <div class="win-content">
-                <img width="150px" id="daytoday" title="" src="">
-                <p style="margin: auto 0; text-align: end;" id="time"></p>
+                <p>link m3!</p>
+                <!--<img src="/fukounaglr.png">-->
+                <!--<img src="/fukounaglr-alt.gif">-->
+                <!--<img src="/fukounaglr-old.png">-->
+                <a href="https://fukounaglr.neocities.org/" target="_blank"><img src="https://file.garden/ZjOP8Ik9OUXT6YVm/fukounaglr.gif"></a>
+                <textarea style="width: 88px; height: 31px; padding: 0; margin: auto" spellcheck="false" data-gramm="false">&lt;a href="https://fukounaglr.neocities.org/" target="_blank"&gt;&lt;img src="https://file.garden/ZjOP8Ik9OUXT6YVm/fukounaglr.gif"&gt;&lt;/a&gt;</textarea>
+                <a href="https://fukounaglr.neocities.org/" target="_blank"><img src="https://file.garden/ZjOP8Ik9OUXT6YVm/fukounaglr-alt.gif"></a>
+                <textarea style="width: 88px; height: 31px; padding: 0; margin: auto;" spellcheck="false" data-gramm="false">&lt;a href="https://fukounaglr.neocities.org/" target="_blank"&gt;&lt;img src="https://file.garden/ZjOP8Ik9OUXT6YVm/fukounaglr-alt.gif"&gt;&lt;/a&gt;</textarea>
+                <hr>
+                <!--<a target="_blank" href=""><img src="/graphics/sites/"></a>-->
+                <a target="_blank" href="https://lambchapel.neocities.org/"><img src="/graphics/sites/lambchapel.png"></a>
+                <a href="https://olliveen.neocities.org/" target="_blank"><img src="https://olliveen.neocities.org/img/button.gif"></a>
+                <a target="_blank" href="https://hekate.neocities.org/"><img src="/graphics/sites/hekate.png"></a>
+                <a target="_blank" href="https://ephesusmoon.neocities.org/"><img src="/graphics/sites/ephesusmoon.png"></a>
+                <a target="_blank" href="https://thewhiteflareon.straw.page/"><img src="/graphics/sites/thewhiteflareon.gif"></a>
+                <a target="_blank" href="https://korumeow.dev/"><img src="/graphics/sites/korumeow.png"></a>
+                <a target="_blank" href="https://swiftyshq.neocities.org/"><img src="/graphics/sites/swiftyhq.png"></a>
+                <a target="_blank" href="https://www.hyonktea.xyz/"><img src="/graphics/sites/hyonktea.gif"></a>
+                <a target="_blank" href="https://jnkyrd.neocities.org/"><img src="/graphics/sites/jnkyrd.gif"></a>
+                <a target="_blank" href="https://icosahedr.online/"><img src="/graphics/sites/icosahedr.gif"></a>
+                <a href="https://darlingfawn.neocities.org/" target="_blank"><img src="/graphics/sites/darlingfawn.png"></a>
+                <a target="_blank" href="https://computerguts.neocities.org/"><img src="/graphics/sites/computerguts.png"></a>
+                <a target="_blank" href="https://quaggos.neocities.org/"><img src="/graphics/sites/quaggos.png"></a>
+                <a target="_blank" href="https://sillygirlclub.neocities.org/homepage"><img src="/graphics/sites/sillygirlclub.png"></a>
+                <a target="_blank" href="https://poetofu.neocities.org/"><img src="/graphics/sites/poetofun.png"></a>
+                <a target="_blank" href="https://feelingmachine.moe/"><img src="/graphics/sites/feelingmachine.gif"></a>
+                <a target="_blank" href="https://ray0fsunsh1ne.neocities.org/"><img src="/graphics/sites/ray0fsunsh1ne.png"></a>
+                <a target="_blank" href="https://spiderlily.neocities.org/"><img src="/graphics/sites/spiderlily.png"></a>
+                <a href="https://bundleofstyx.neocities.org/" target="_blank"><img src="/graphics/sites/bundleofstyxalt.gif" alt="Bundleostyx button"></a>
+                <a target="_blank" href="https://cresentri.neocities.org/">
+                    <img src="https://cresentri.neocities.org/buttons!!!/dynamic.gif" style="width: 88px; height: 31px; image-rendering: optimizeSpeed; -moz-image-rendering: crisp-edges; -o-image-rendering: crisp-edges; -webkit-image-rendering: optimize-contrast; image-rendering: pixelated; image-rendering: optimize-contrast; -ms-interpolation-mode: nearest-neighbor;">
+                </a>
+                <a href="https://asmodeusvulcan.neocities.org/"><img src="/graphics/sites/asmodeusvulcan.jpg"></a>
+                <a href="https://themightyloser.nekoweb.org/" target="_blank"><img src="/graphics/sites/jelliagain.png"></a>
+                <a target="_blank" href="https://troy-sucks.neocities.org/"><img src="https://troy-sucks.neocities.org/images/troysuckwiggly.gif" /></a>
+                <a href="https://swiftyshq.neocities.org/"><img src="https://swiftyshq.neocities.org/img/res/aff/threadbare.gif" alt="Swifty's HQ!" /></a>
+                <a href="https://virtualobserver.moe/"><img src="https://virtualobserver.moe/images/sitebutton.png"></a>
+                <a href="https://leyy.neocities.org/"><img src="https://leyy.neocities.org/leyy.png"></a>
+                <a href="https://chocolaterevel.neocities.org/" target="_blank"><img src="/graphics/sites/0kqXUCD.gif" class="freezeframe"></a>
+                <a href=https://dulcesilly.neocities.org/ target="_blank"><img src="/graphics/sites/buttonsilly.gif" class="freezeframe"></a>
+                <a href="https://wrender.neocities.org/" target="_blank"><img src="/graphics/sites/site%20button.gif" class="freezeframe"></a>
+                <a href="https://shinyexe.neocities.org/" target="_blank"><img src="/graphics/sites/shinyexe.gif" class="freezeframe"></a>
+                <a href="https://ballonlea.neocities.org/" target="_blank"><img src="/graphics/sites/ballonlea.gif" alt="Ballonlea's site button"></a>
+                <a href="https://klomfel.neocities.org/" target="_blank"><img src="/graphics/sites/klomfelv1.png" width="88px"></a>
+                <a href="https://grlrot.neocities.org/" target="_blank"><img src="/graphics/sites/grlbutton.gif" class="freezeframe"></a>
+                <a href="https://sugarforbrains.neocities.org/" target="_blank"><img src="/graphics/sites/sugarNEW.gif" class="freezeframe"></a>
+                <a href="https://davemiller.neocities.org/" target="_blank"><img src="/graphics/sites/davemiller_button.gif" class="freezeframe"></a>
+                <a href="https://iwasarob0t.neocities.org/"><img src="/graphics/sites/iwasarob0tbutton.gif" class="freezeframe"></a>
+                <a href="https://dashweb.neocities.org/" target="_blank"><img src="/graphics/sites/dashbutton.gif" class="freezeframe"></a>
+                <a href="https://possum1827.neocities.org/" target="_blank"><img src="/graphics/sites/simonsfunzone.gif" class="freezeframe"></a>
+                <a target="_blank" href="https://aiston.scungled.gay/"><img src="/graphics/sites/ashton.gif" class="freezeframe"></a>
+                <a target="_blank" href="https://shadok.neocities.org/"><img src="/graphics/sites/shadok.gif" class="freezeframe"></a>
+                <a href="https://mordecaialba.com"><img src="/graphics/sites/mordecaialba.png" width="82px" alt="A pixel art button of a brown rabbit with glasses that says 'Mordecai Alba' in green letters."> </a>
+                <a href="https://odditycommoddity.neocities.org/" target="_blank"><img src="/graphics/sites/odditycommoddity.gif" class="freezeframe"></a>
+                <a href="https://octosquigglez.neocities.org" target="_blank"><img src="/graphics/sites/octosquigglez.gif" class="freezeframe"></a>
+                <a href="https://revived.neocities.org" target="_blank"><img src="/graphics/sites/revivded.png"></a>
+                <a href="https://dimden.dev/"><img src="https://dimden.dev/images/88x31.gif" class="freezeframe"></a>
+                <a href="https://classicj.neocities.org/" target="_blank"><img src="/graphics/sites/classicj.png" title="button by me"></a>
             </div>
         </div>
 
         <div class="window" id="info">
             <div class="win-title">Settings</div>
             <div class="win-content">
+                <!--<img width="150px" id="daytoday" title="" src="">-->
                 <button id="fontSwitcher" onclick="changeFont()">
                     OpenDyslexic: <span id="font-stat">false</span>
                     <span style="position: absolute; right: -20px; color: rgba(255, 255, 255, 0.5)" title="Changes all fonts to Open Dyslexic font; also removes background images from buttons.">?</span>
@@ -392,6 +454,7 @@
                 <ul>
                     <li>make photo album &amp; art gallery paged</li>
                     <li>make Oleander page</li>
+                    <li>Ghost Memory page</li>
                     <!--<li></li>-->
                 </ul>
                 <ul class="done">
@@ -434,7 +497,7 @@
 
         <div id="pics" class="window" onclick="randomImage()">
             <div class="win-content">
-                <img id="img-rand" width="200px" src="https://img1.picmix.com/output/pic/normal/9/2/9/5/12755929_85455.gif" class="slide">
+                <img id="img-rand" width="200px" src="https://img1.picmix.com/output/pic/normal/9/7/9/1/13501979_bebfb.gif" class="slide">
             </div>
         </div>
         <div id="sitemap" class="window">
@@ -446,9 +509,8 @@
 
 
         <img class="img" src="/images/fatass.png" width="150px" style=" top: 50px; left: 1100px; cursor: help;" onclick="playAudio('https://www.myinstants.com/media/sounds/teddy-bear-squeek.mp3')">
-        <img class="img" src="/images/guestnoob.png" width="180px" style=" top: 260px; left: 680px; cursor: help;" onclick="playAudio('https://www.myinstants.com/media/sounds/mmm-cheezburger.mp3')">
-        <img class="img" src="/images/kibbies.png" width="210px" style=" top: 20px; left: 190px; cursor: help;" onclick="playAudio('https://www.myinstants.com/media/sounds/holy-final.mp3')">
-        <img class="img" src="/images/starcatcher.gif" width="210px" style=" top: 20px; left: 490px; cursor: help;" onclick="playAudio('https://www.myinstants.com/media/sounds/piano-sparkles.mp3')">
+        <img class="img" src="/images/kibbies.png" width="210px" style=" top: 20px; left: 330px; cursor: help;">
+        <!--<img class="img" src="/images/starcatcher.gif" width="210px" style=" top: 20px; left: 490px; cursor: help;">-->
 
     </main>
 
@@ -465,7 +527,6 @@
             "https://i.pinimg.com/736x/46/1b/f4/461bf40443c35aab80bc0782554833f1.jpg",
             "https://img1.picmix.com/output/pic/normal/6/2/7/2/12202726_9e293.gif",
             "https://i.pinimg.com/originals/7e/6a/22/7e6a22ceb59c89cc7b11ecd052febd31.gif",
-            "https://i.pinimg.com/originals/7e/6a/22/7e6a22ceb59c89cc7b11ecd052febd31.gif",
             "https://i.pinimg.com/originals/e4/2d/5c/e42d5cbb441aa9cf560c5ae9eb50cfac.gif",
             "https://i.pinimg.com/736x/36/b8/f5/36b8f56e9abf0242f6a9e41f35bd9cc7.jpg",
             "https://i.pinimg.com/originals/3e/9b/a2/3e9ba25561d065d3065a1eb759e1fe0d.gif",
@@ -473,7 +534,6 @@
             "https://i.pinimg.com/originals/44/fd/74/44fd74f8f3c742325b5d3ee476b26940.gif",
             "https://i.pinimg.com/736x/0d/44/28/0d4428e0b14e5a39c96f5332dbbad265.jpg",
             "https://img1.picmix.com/output/pic/normal/6/7/0/9/12789076_7b56d.gif",
-            "https://img1.picmix.com/output/pic/normal/8/2/8/6/12706828_63b46.gif",
             "https://img1.picmix.com/output/pic/normal/8/4/7/1/12671748_d07a4.gif",
             "https://img1.picmix.com/output/pic/normal/7/7/9/9/13139977_ee83b.gif",
             "https://img1.picmix.com/output/pic/normal/6/4/5/0/13040546_e2173.gif",
@@ -482,14 +542,13 @@
             "https://img1.picmix.com/output/pic/normal/7/5/2/8/13148257_18c1c.gif",
             "https://img1.picmix.com/output/pic/normal/1/1/1/7/12577111_4cb52.gif",
             "https://img1.picmix.com/output/pic/normal/9/8/2/1/12821289_b0590.gif",
-            "https://img1.picmix.com/output/pic/normal/3/0/2/4/12074203_250cf.gif",
-            'https://img1.picmix.com/output/pic/normal/9/7/9/1/13501979_bebfb.gif'
+            "https://img1.picmix.com/output/pic/normal/3/0/2/4/12074203_250cf.gif"
         ]
 
         const Image = document.getElementById("img-rand");
         //const randomImg = Math.floor(Math.random() * images.length);
-        const randomImg = images.length ;
-        Image.src = images[randomImg];
+        const randomImg = images.length;
+        //Image.src = images[randomImg];
 
         function randomImage() {
             const randomImg = Math.floor(Math.random() * images.length);
@@ -511,47 +570,29 @@
         const select = document.getElementById("player-select");
         AudioPlayer.create(
             [
-                "FUKOUNA GIRL - STOMACH BOOK",
-                "anarchy!!! - STOMACH BOOK",
-                "Nothing Special - Stomach Book",
-                "Our Story - Stomach Book",
-                "My Diorama - Stomach Book",
-                "SICK SICK SICK - Stomach Book",
-                "Its Magic! - Stomach Book",
-                "cul-de-sac - glass beach",
-                "SPLIT! (Live From The Bad Luck Tour) - Jhariah",
-                "GIRL HELL 1999 - femtanyl",
-                "KATAMARI - femtanyl",
+                "Stomach Book - Fukouna Girl",
+                "Stomach Book - Its Magic!",
+                "Stomach Book - Running Away",
+                "glass beach - cul-de-sac",
+                "femtanyl - GIRL HELL 1999",
                 "femtanyl - VIDEO NASTY",
-                "P3T - femtanyl",
-                "MIX. 02 - BOTHERED! - femtanyl",
-                "Toxic Droplet - diet tea other cola",
-                "Alone (IDGAF) - Diet Tea Other Cola (Prod. KFCMC)",
-                "Heads Up - Gezebelle Gaburgably",
-                "Pizza Rolls Royce - Gezebelle Gaburgably",
-                "BITE ME Nightcore - AJ DiSpirito",
-                "Forget Me - Whomst?",
-                "いますぐ輪廻 - shuu sakurai",
-                "4K CARPET - passengerprincess",
-                "THE FLIES (Remix) - Operation Sodasteal",
-                "I Want Things to Be Beautiful - Devi Mccallion",
-                "Love Zombie - Fem&M",
-                "SICK SICK SICK - Brooks, Stomach Book",
-                "Stupid(Crftu) - underscores",
-                "Through Patches of Violet - Mili",
-                "Dance of the Corpses - Kikuo",
-                "↑Jinsei Game↓- Nyamai",
-                "SICK OF IT! - Milkypossum",
-                "Selfstarter A.E. - Jhariah, Telephone",
-                "Lost In Bonerland - NeroBrock",
+                "diet tea other cola - Toxic Droplet",
+                "Gezebelle Gaburgably - Pizza Rolls Royce",
+                "Operation Sodasteal - THE FLIES (Remix)",
+                "Brooks, Stomach Book - SICK SICK SICK",
+                "Nyamai - ↑Jinsei Game↓",
+                "Jhariah, Telephone - Selfstarter A.E.",
                 "you are an angel - sure",
                 "you are an angel - you are an angel",
                 "you are an angel - the same",
                 "Gezebelle Gaburgably - Afterparty",
                 "femtanyl & astrid - WAR GIRL",
-                "glitter Nightcore",
                 "Gezebelle Gaburgably - I Can Fix Him",
-                "muship - 色彩電気"
+                "muship - 色彩電気",
+                "of Montreal - We Will Commit Wolf Murder",
+                "Fem&M - Lost Signal",
+                "yeule - Anthems For A Seventeen Year-Old Girl",
+                "astrid - needy girl overdose"
             ], {
                 playButton: document.getElementById("player-button"),
                 skipButton: document.getElementById("skip-button"),

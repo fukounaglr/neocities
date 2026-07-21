@@ -126,57 +126,6 @@
             list-style-image: var(--fav);
         }
 
-        table {
-            margin: auto;
-
-            & td {
-                border: 3px dotted var(--accent-colour);
-            }
-
-            & tr:first-child {
-                background-color: var(--accent-colour);
-                border: none;
-            }
-        }
-
-        #prices {
-            grid-template-columns: 1fr 1fr;
-            background-color: var(--accent-colour);
-            text-align: center;
-            padding-top: 10px;
-            border: double 6px var(--primary-colour);
-
-            & img {
-                width: 90%;
-                object-fit: cover;
-                border: double 5px var(--primary-colour);
-            }
-        }
-
-        #comms {
-            padding: 0;
-            flex-direction: column;
-            justify-content: space-between;
-            overflow-y: auto;
-            height: 100%;
-            align-items: center;
-            margin: 0;
-            padding: 0;
-            background-color: var(--primary-colour);
-            border: double 6px var(--colour);
-        }
-
-        .work {
-            border: double 5px var(--accent-colour);
-            width: 90%;
-            margin: 10px auto;
-            padding: 10px;
-
-            & h6 {
-                text-align: left;
-            }
-        }
-
         header,
         footer {
             background-color: var(--colour);
@@ -206,24 +155,17 @@
             margin: 10px;
 
             & a {
-                background-image: var(--blink);
-                background-size: cover;
-                display: block;
+                background-color: transparent;
+                display: flexbox;
                 margin: 10px auto;
                 text-decoration: none;
-                padding: 20px;
-                background-color: var(--col);
+                padding: 10px;
                 width: 200px;
-                text-align-last: end;
-                box-shadow: -7px 5px var(--acc);
-                transform: translate(0, 0);
-                transition: .2;
+                text-align: center;
                 color: var(--col);
-
+                border: solid 2px gray;
                 &:hover {
-                    color: white;
-                    box-shadow: -7px 8px white;
-                    transform: translate(0, -3px);
+                    background-color: #bbb;
                 }
             }
 
@@ -247,6 +189,8 @@
             overflow: hidden;
             margin: auto;
             padding: 10px;
+            align-content: center;
+            text-align: center;
 
             & img {
                 width: 300px;
@@ -255,10 +199,19 @@
                 margin: 10px;
             }
         }
+        #links{
+            display: block;
+        }
+        
 
         #m-nav::before {
             content: url(/graphics/pixels/kit.gif);
             filter: opacity(100);
+        }
+        .iframecont{
+            width: calc(100% - 22px);
+            height: 400px;
+            /*overflow: hidden;*/
         }
 
         @media only screen and (max-width: 800px) {
@@ -292,23 +245,40 @@
 <body>
     <main id="top" class="window">
         <header>
-            <h5 style="text-align: left; color: var(--acc)">&gt; <a href="#main" onclick="switchPage('main')" style="all: unset; cursor: pointer; text-decoration: underline">Art</a> <span id="pagename">- main</span></h5>
-        </header>
+            <h5 style="text-align: left; color: var(--acc)">&gt; Art <span id="pagename">- main</span></h5>
+        
 
 
-        <div id="main" class="tab win-content">
+        <div id="main" class=" win-content">
             <nav>
                 <a href="#tos" onclick="switchPage('tos')">ToS</a>
-                <a href="#tools" onclick="switchPage('tools')">tools</a>
+                <a href="#tos" onclick="switchPage('comms')">Comms</a>
                 <a href="#gallery" onclick="switchPage('gallery')">gallery</a>
-                <a href="#links" onclick="switchPage('links')">my links</a>
+                <a href="#links" onclick="switchPage('links')">links</a>
             </nav>
+
+        </div></header>
+
+        <div id="links" class="tab  win-content">
+            <p>Hello I'm a digital artist and animator fukounaglr!</p>
+            <p>Here you can find some info about my arts!</p>
+            <img src="/images/pfp.png">
+            <p>here are my links!!!</p>
+                    <iframe class="win-content" src="/links.html" title="links" style="width: calc(100% - 22px); height: 50px; overflow: auto; border: "></iframe>
+            
+            <h5>tools i use</h5>
+            <ul>
+                <li>tablet: Gaomon M1220</li>
+                <li>drawing program: Clip Studio Paint EX v5</li>
+                <li>workspace: 2159847</li>
+            </ul>
 
         </div>
 
-        <div id="links" class="tab  win-content">
-            <h4>here's where you can find me</h4>
-                    <iframe class="win-content" src="/links.html" title="links" style="width: calc(100% - 22px); height: calc(100% - 60px); overflow: auto; border: "></iframe>
+        <div id="comms" class="tab  win-content">
+            <div class="win-content iframecont">
+                    <iframe src="https://fukounaglr.straw.page/comms" title="comms" style="width: 100%; height: 1500px; overflow: scroll; border: none"></iframe>
+                </div>
 
         </div>
 
@@ -327,15 +297,6 @@
                 <li>claim my art as your own</li>
                 <li>use my art for AI &amp; NFT</li>
                 <li>use my art for commercial purposes</li>
-            </ul>
-        </div>
-
-        <div id="tools" class="tab  win-content">
-            <h4>tools i use</h4>
-            <ul>
-                <li>tablet: Gaomon M1220</li>
-                <li>drawing program: Clip Studio Paint EX v5</li>
-                <li>workspace: 2159847</li>
             </ul>
         </div>
 
@@ -444,10 +405,7 @@
                 <img src="/images/art/rot.webp" loading="lazy">
                 <img src="/images/art/track%2007.webp" loading="lazy">
                 <img src="/images/art/gore%20festival.webp" loading="lazy">
-            </div>
-
             <h5 class="year">2024</h5>
-            <div class="gallery-grid">
                 <img src="/images/art/and%20im%20gone.webp" loading="lazy">
                 <img src="/images/art/mangyy.webp" loading="lazy">
                 <img src="/images/art/all%20hail%20cannibalism.webp" loading="lazy">
@@ -464,8 +422,6 @@
                     <area href="https://baccyflap.com/noai/?nxt&s=fkn" target="_top" shape="rect" coords="69,2,85,17" alt="next" title="next">
                 </map>
                 <img usemap="#noaimini5" src="https://baccyflap.com/noai/miniwidget5.gif" alt="the top of a fuzzy, black sphere with two arrows rising from it, one curving to the left, one to the right. across the bulk of the sphere it reads NO AI / WEBRING in squiggly, uneven letters and next to those words is a small question mark"> </span>
-            <img title="delete TikTok" src="/graphics/buttons/stamp%20antiTT.jpg">
-            <img title="make the web accessible" src="/graphics/buttons/accessibility_button.png">
 <p><a href="/room.html">go back</a></p>
 
         </footer>
@@ -478,9 +434,9 @@
     </main>
 
     <script>
-        var currentPage = "main";
+        var currentPage = "links";
         const pages = [
-            "tools",
+            "links",
             "comms",
             "tos",
             "gallery"
@@ -503,7 +459,6 @@
             document.getElementById("gallery").className = "tab " + a;
         }
     </script>
-    <script src="/js/theme-switcher.js"></script>
 </body>
 
 </html>

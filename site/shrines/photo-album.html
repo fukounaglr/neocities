@@ -27,6 +27,17 @@
             border: solid 1px;
             margin: 5px;
         }
+        .tab {display: none;}
+        #tab-12{
+            display: block;
+        }
+        nav a{
+            text-decoration: none;
+            padding: 5px;
+            margin: 10px 0;
+        &::before{
+            content: ""
+            }}
     </style>
 
 
@@ -37,6 +48,22 @@
     <p>wanted to make this for a long time. trying to sort them from newest to oldest, but they are in wrong order in my cloud so might be wrong a bit</p>
     <p>click on the image to view in full; click anywhere to close</p>
     <main class="gallery-container">
+        <nav>
+        <a href="#" onclick="switchPage('tab-1')">1</a>
+        <a href="#" onclick="switchPage('tab-2')">2</a>
+        <a href="#" onclick="switchPage('tab-3')">3</a>
+        <a href="#" onclick="switchPage('tab-4')">4</a>
+        <a href="#" onclick="switchPage('tab-5')">5</a>
+        <a href="#" onclick="switchPage('tab-6')">6</a>
+        <a href="#" onclick="switchPage('tab-7')">7</a>
+        <a href="#" onclick="switchPage('tab-8')">8</a>
+        <a href="#" onclick="switchPage('tab-9')">9</a>
+        <a href="#" onclick="switchPage('tab-10')">10</a>
+        <a href="#" onclick="switchPage('tab-11')">11</a>
+        <a href="#" onclick="switchPage('tab-12')">12</a>
+        <!--<a href="" onclick="switchPage('tab-1')">1</a>-->
+        </nav>
+        <div class="tab" id="tab-12">
         <h5>2025</h5>
         <!--<img src="" loading="lazy">-->
         <img src="https://i.ibb.co/q32QwT7V/5256186766916973489-121.jpg" loading="lazy">
@@ -44,6 +71,9 @@
         <img src="https://i.ibb.co/v4H1STks/5452137331172698637-121.jpg" loading="lazy">
         <img src="https://i.ibb.co/pjN2M9sT/5456564080950242573-121.jpg" loading="lazy">
         <img src="https://i.ibb.co/9kHgzsWh/5456564080950242588-121.jpg" loading="lazy">
+        </div>
+        
+        <div class="tab" id="tab-11">
         <p>walking in a different part of the town. it's very cozy and pretty there</p>
         <img src="https://i.ibb.co/qMkkzT1j/5456564080950242582-121.jpg" loading="lazy">
         <img src="https://i.ibb.co/93g5ks9c/5456564080950242592-121.jpg" loading="lazy">
@@ -67,6 +97,9 @@
         <img src="https://i.ibb.co/ch373hW/1716420005757.jpg" loading="lazy">
         <img src="https://i.ibb.co/nkrfndn/1716420005747.jpg" loading="lazy">
         <img src="https://i.ibb.co/xsYZ0pL/1716420005726.jpg" loading="lazy">
+        </div>
+            
+        <div class="tab" id="tab-10">
         <img src="https://i.ibb.co/nLM0CQs/1716420005715.jpg" loading="lazy">
         <img src="https://i.ibb.co/BTbxZd7/1716420005650.jpg" loading="lazy">
         <img src="https://i.ibb.co/SR6Pvgm/1716420005636.jpg" loading="lazy">
@@ -88,6 +121,9 @@
         <img src="https://i.ibb.co/VDtz7Vf/1716420005307.jpg" loading="lazy">
         <img src="https://i.ibb.co/TgY6wG4/1716420005289.jpg" loading="lazy">
         <img src="https://i.ibb.co/2nwXpv1/1716420005268.jpg" loading="lazy">
+        </div>
+            
+        <div class="tab" id="tab-9">
         <img src="https://i.ibb.co/xjTpPC4/1716420005256.jpg" loading="lazy">
         <img src="https://i.ibb.co/RP0ykJr/1716420005247.jpg" loading="lazy">
         <img src="https://i.ibb.co/1TBQ7HG/1716420005227.jpg" loading="lazy">
@@ -108,6 +144,9 @@
         <img src="https://i.ibb.co/1MXZM3c/1716420004873.jpg" loading="lazy">
         <img src="https://i.ibb.co/4Y4XKQx/1716420004864.jpg" loading="lazy">
         <img src="https://i.ibb.co/jgf2VxW/1716420004833.jpg" loading="lazy">
+        </div>
+            
+        <div class="tab" id="tab-8">
         <img src="https://i.ibb.co/SKpZtHT/1716420004822.jpg" loading="lazy">
         <img src="https://i.ibb.co/Ny8qPFH/1716420004800.jpg" loading="lazy">
         <img src="https://i.ibb.co/jGQYNNM/1716420004781.jpg" loading="lazy">
@@ -124,6 +163,9 @@
         <img src="https://i.ibb.co/NK6XrH5/1716420003354.jpg" loading="lazy">
         <img src="https://i.ibb.co/HDWJJLB/1716420003342.jpg" loading="lazy">
         <img src="https://i.ibb.co/bQnmB8b/1716420003331.jpg" loading="lazy">
+        </div>
+            
+        <div class="tab" id="tab-7">
         <img src="https://i.ibb.co/kykSWb6/1716420003320.jpg" loading="lazy">
         <p>college trip. don't remember much, just that i was tired and depressed</p>
         <img src="https://i.ibb.co/sqKt57G/1716420003240.jpg" loading="lazy">
@@ -147,6 +189,9 @@
         <img src="https://i.ibb.co/kSGhwH1/1716420004179.jpg" loading="lazy">
         <img src="https://i.ibb.co/P9Srrjh/1716420004168.jpg" loading="lazy">
         <img src="https://i.ibb.co/wJk7yV6/1716420004155.jpg" loading="lazy">
+        </div>
+        
+        <div class="tab" id="tab-6">
         <img src="https://i.ibb.co/pJbpBbb/1716420004145.jpg" loading="lazy">
         <img src="https://i.ibb.co/7SW0x1J/1716420004134.jpg" loading="lazy">
         <img src="https://i.ibb.co/Q6QQFMs/1716420004114.jpg" loading="lazy">
@@ -168,6 +213,9 @@
         <img src="https://i.ibb.co/QfKTd2G/1716420003904.jpg" loading="lazy">
         <img src="https://i.ibb.co/7CgpZcM/1716420003895.jpg" loading="lazy">
         <img src="https://i.ibb.co/27GVHcY/1716420003884.jpg" loading="lazy">
+        </div>
+        
+        <div class="tab" id="tab-5">
         <img src="https://i.ibb.co/Zd5p3fZ/1716420003875.jpg" loading="lazy">
         <p>visiting placed i used to hang around</p>
         <img src="https://i.ibb.co/RbBh40z/1716420003865.jpg" loading="lazy">
@@ -187,6 +235,9 @@
         <p>---</p>
         <img src="https://i.ibb.co/rv9RVRg/1716420003588.jpg" loading="lazy">
         <img src="https://i.ibb.co/TK4t1qp/1716420003570.jpg" loading="lazy">
+        </div>
+        
+        <div class="tab" id="tab-4">
         <img src="https://i.ibb.co/9rT0DYd/1716420003547.jpg" loading="lazy">
         <p>we saw an owl during class</p>
         <img src="https://i.ibb.co/4PWL475/1716420003537.jpg" loading="lazy">
@@ -211,6 +262,9 @@
         <img src="https://i.ibb.co/ZMCxnSx/1716420002941.jpg" loading="lazy">
         <p>what i like about the town i live in atm is the greenery</p>
         <img src="https://i.ibb.co/t4Ch67n/1716420003101.jpg" loading="lazy">
+        </div>
+        
+        <div class="tab" id="tab-3">
         <img src="https://i.ibb.co/y6XrCnp/1716420002929.jpg" loading="lazy">
         <img src="https://i.ibb.co/Kw2d8Ck/1716420002918.jpg" loading="lazy">
         <img src="https://i.ibb.co/g9pSWpK/1716420002876.jpg" loading="lazy">
@@ -235,6 +289,9 @@
         <img src="https://i.ibb.co/vs5ScL5/1716416972794.jpg" loading="lazy">
         <img src="https://i.ibb.co/cksyS3Z/1716416972787.jpg" loading="lazy">
         <img src="https://i.ibb.co/F7b07gb/1716416972767.jpg" loading="lazy">
+        </div>
+            
+        <div class="tab" id="tab-2">
         <img src="https://i.ibb.co/9NLM6qv/1716416972760.jpg" loading="lazy">
         <img src="https://i.ibb.co/sVdm34n/1716416972754.jpg" loading="lazy">
         <img src="https://i.ibb.co/YdLFFRx/1716416972741.jpg" loading="lazy">
@@ -257,6 +314,9 @@
         <img src="https://i.ibb.co/5nF4Bpc/1716416972714.jpg" loading="lazy">
         <img src="https://i.ibb.co/DWBMpdt/1716416972709.jpg" loading="lazy">
         <img src="https://i.ibb.co/FYpMYhM/1716416972641.jpg" loading="lazy">
+        </div>
+        
+        <div class="tab" id="tab-1">
         <img src="https://i.ibb.co/4PRhstX/1716416972649.jpg" loading="lazy">
         <p>empty school halls in summer</p>
         <img src="https://i.ibb.co/WthDXWk/1716416972990.jpg" loading="lazy">
@@ -279,12 +339,38 @@
         <img src="https://i.ibb.co/Nrr4BX8/1716416972875.jpg" loading="lazy">
         <img src="https://i.ibb.co/r2F1Qmz/1716416972869.jpg" loading="lazy">
         <p>you've reached the end...</p>
+        </div>
     </main>
     <div class="popup">
         <img src="/images/seaside.jpg">
         <p>click anywhere to close</p>
     </div>
     <script src="/js/lightbox.js"></script>
+   
+    
+    <script>
+        var currentPage = "tab-12";
+        //const pages = [
+        //    "1",
+        //    "2",
+        //    "3",
+        //    "4",
+        //    "5",
+        //    "6"
+        //]
+
+        if (window.location.hash && pages.includes(window.location.hash.substring(1))) {
+            var hash = window.location.hash.substring(1);
+            //switchPage(hash);
+        }
+
+        function switchPage(a) {
+            document.getElementById(currentPage).style.display = "none";
+            currentPage = a;
+            document.getElementById(a).style.display = "block";
+            //document.getElementById("pagename").innerHTML = " - " + a;/
+        }
+    </script>
 </body>
 
 </html>
