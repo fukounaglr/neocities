@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>song of the week</title>
+    <title>song of the day</title>
 
     <link rel="icon" type="image/png" href="/ico.png" />
     <link rel="stylesheet" href="/style.css" />
@@ -15,7 +15,7 @@
             /*background-image: var(--bg);*/
             background-color: var(--primary-colour);
             display: grid;
-            grid-template-columns: 30% 40% 30%;
+            grid-template-columns: 1fr 1fr;
             overflow: hidden
         }
 
@@ -34,7 +34,6 @@
             position: relative;
             padding: 10px;
             color: var(--primary-colour);
-            margin: 20px;
             background-color: var(--colour);
         }
 
@@ -65,6 +64,8 @@
         #song-archive-inside {
             height: calc(100% - 50px);
             overflow-y: scroll;
+            width: 50%;
+            margin: auto;
         }
 
         .ytlink {
@@ -76,38 +77,33 @@
             body {
                 display: block;
                 overflow-y: auto;
+                height: auto;
+                margin-top: 50px;
+            }
+        #song-archive-inside {
+            width: 80%;
+            height: 80vh;
             }
 
-            #teto {
-                height: auto;
-            }
-
-            #sotw-current {
-                height: auto;
-
+        #song-archive {
+            height: auto;
             }
         }
     </style>
 </head>
 
 <body>
-    <img src="/images/teto-vocaloid.gif" class="sideimg">
-    <a href="/room.html" style="color: inherit; position: absolute; left: 10px">
-        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--colour)">
-            <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z" />
-        </svg>
-        go back</a>
 
 
 
     <div id="song-archive">
-        <h4 style="text-transform: uppercase;">song of the week</h4>
-        <p>AKA Casket loves music very much</p>
         <div id="song-archive-inside">
+        <h4>song of the days</h4>
+        <p>Updated once in a sometimes</p>
 
             <!--
                 <div class="sotw-archive-box">
-                    <p>DATE
+                    <p class="name">DATE
                         <a href="YTLINK" target="_blank"><img  class="ytlink" src="/images/youtube-icon.png" alt="youtube link" /></a>
                         TITLE
                     </p>
@@ -117,7 +113,16 @@
                 -->
 
                 <div class="sotw-archive-box">
-                    <p>19/08/2025
+                    <p class="name">21/07/2026
+                        <a href="https://youtu.be/nDjQlk9YUPQ" target="_blank"><img  class="ytlink" src="/images/youtube-icon.png" alt="youtube link" /></a>
+                        We Will Commit Wolf Murder · of Montreal
+                    </p>
+                    <hr />
+                    <p>rlly cool i like  the vibe</p>
+                </div>
+
+                <div class="sotw-archive-box">
+                    <p class="name">19/08/2025
                         <a href="https://youtu.be/1EpPKpOb78I" target="_blank"><img  class="ytlink" src="/images/youtube-icon.png" alt="youtube link" /></a>
                         GOSSIP - MANESKIN
                     </p>
@@ -129,7 +134,7 @@
                 </div>
 
                 <div class="sotw-archive-box">
-                    <p>11/06/2025
+                    <p class="name">11/06/2025
                         <a href="https://youtu.be/MuDWuZ9f30M" target="_blank"><img  class="ytlink" src="/images/youtube-icon.png" alt="youtube link" /></a>
                         Raise Up Your Bat - Ranipla [vocal cover]
                     </p>
@@ -139,7 +144,7 @@
                 </div>
 
                 <div class="sotw-archive-box">
-                    <p>2/06/2025
+                    <p class="name">2/06/2025
                         <a href="https://youtu.be/fPRmnIzMr94" target="_blank"><img  class="ytlink" src="/images/youtube-icon.png" alt="youtube link" /></a>
                         Lipstick Covered Magnet - The Front Bottoms
                     </p>
@@ -148,7 +153,7 @@
                 </div>
 
                 <div class="sotw-archive-box">
-                    <p>25/05/2025
+                    <p class="name">25/05/2025
                         <a href="https://youtu.be/NnPYP7ZFiU4" target="_blank"><img  class="ytlink" src="/images/youtube-icon.png" alt="youtube link" /></a>
                         Jackie's Box but it's a sad lament
                     </p>
@@ -159,7 +164,7 @@
                 </div>
 
             <div class="sotw-archive-box">
-                <p>20/04/2025
+                <p class="name">20/04/2025
                     <a href="https://youtu.be/rrwT3bhRz8M" target="_blank"><img class="ytlink" src="/images/youtube-icon.png" alt="youtube link" /></a>
                     Me and Mr Wolf - The Real Tuesday Weld
                 </p>
@@ -170,7 +175,7 @@
             </div>
 
             <div class="sotw-archive-box">
-                <p>27/03/2025 • unfathomable pain - GEZEBELLE GABURGABLY</p>
+                <p class="name">27/03/2025 • unfathomable pain - GEZEBELLE GABURGABLY</p>
                 <a href="https://youtu.be/2e37NI6wpsE" target="_blank"><img src="/images/youtube-icon.png" width="40" alt="youtube link" /></a>
                 <hr />
                 <p>if i misspelled artist's name i'm so sorry but it's not my fault</p>
@@ -186,7 +191,7 @@
             </div>
 
             <div class="sotw-archive-box">
-                <p>19/03/2025 • New God - Moon Walker</p>
+                <p class="name">19/03/2025 • New God - Moon Walker</p>
                 <a href="https://youtu.be/7_IPwh4eTPQ" target="_blank"><img src="/images/youtube-icon.png" width="40" alt="youtube link" /></a>
                 <hr />
                 <p>another song from another hunter playlist.</p>
@@ -205,7 +210,7 @@
             </div>
 
             <div class="sotw-archive-box">
-                <p>13/03/2025 • Don't Stop Me Now - Queen</p>
+                <p class="name">13/03/2025 • Don't Stop Me Now - Queen</p>
                 <a href="https://youtu.be/HgzGwKwLmgM" target="_blank"><img src="/images/youtube-icon.png" width="40" alt="youtube link" /></a>
                 <hr />
                 <p>i found a cool Hunter (TOH) playlist and have been listening to it for a few days, but then my spotify died. sad.</p>
@@ -213,7 +218,7 @@
             </div>
 
             <div class="sotw-archive-box">
-                <p>16/02/2025 • Sleep Well - CG5</p>
+                <p class="name">16/02/2025 • Sleep Well - CG5</p>
                 <a href="https://youtu.be/lLEL3vgvP3g" target="_blank"><img src="/images/youtube-icon.png" width="40" alt="youtube link" /></a>
                 <hr />
                 <p>I really like this song... i just found it but it's so wonderful.</p>
@@ -228,7 +233,7 @@
             </div>
 
             <div class="sotw-archive-box">
-                <p>8/02/2025 • This In Not A Special Time - aiuralu</p>
+                <p class="name">8/02/2025 • This In Not A Special Time - aiuralu</p>
 
                 <a href="https://youtu.be/JPtOXkY_eh0" target="_blank"><img src="/images/youtube-icon.png" width="40" alt="youtube link" /></a>
                 <hr />
@@ -244,7 +249,7 @@
             </div>
 
             <div class="sotw-archive-box">
-                <p>04/02/2025 • Long Time Friends - The Living Tombstone</p>
+                <p class="name">04/02/2025 • Long Time Friends - The Living Tombstone</p>
                 <a href="https://youtu.be/XDpgcuaS-ok" target="_blank"><img src="/images/youtube-icon.png" width="40" alt="youtube link" /></a>
                 <hr />
                 <blockquote>
@@ -255,7 +260,7 @@
             </div>
 
             <div class="sotw-archive-box">
-                <p>14/01/2025 • Neuron Explosion SHow - 0TS</p>
+                <p class="name">14/01/2025 • Neuron Explosion SHow - 0TS</p>
                 <a href="YTLINK" target="_blank"><img src="/images/youtube-icon.png" width="40" alt="youtube link" /></a>
                 <hr />
                 <p>ah. isn't that relatable?</p>
@@ -266,7 +271,7 @@
             </div>
 
             <div class="sotw-archive-box">
-                <p>10/02/2025 • DEVIL NOBODY - STOMACH BOOK ft. zombAe</p>
+                <p class="name">10/02/2025 • DEVIL NOBODY - STOMACH BOOK ft. zombAe</p>
                 <a href="YTLINK" target="_blank"><img src="/images/youtube-icon.png" width="40" alt="youtube link" /></a>
                 <hr />
                 <p>i love stomach book!!!</p>
@@ -277,7 +282,7 @@
             </div>
 
             <div class="sotw-archive-box">
-                <p>30/12/2024 • Casket Kids - STOMACH BOOK</p>
+                <p class="name">30/12/2024 • Casket Kids - STOMACH BOOK</p>
                 <a href="https://youtu.be/gXkRj20M8ys" target="_blank"><img src="/images/youtube-icon.png" width="40" alt="youtube link" /></a>
                 <hr />
                 <blockquote>THEY'LL PUT YOU IN YOUR PLACE!<br>THEY'LL PUT YOU IN YOUR PLACE!<br>THEY'LL PUT YOU IN A CASKET!!!</blockquote>
@@ -285,7 +290,7 @@
             </div>
 
             <div class="sotw-archive-box">
-                <p>26/12/2024 • HOW TO DRESS AS HUMAN - TAMAGOCHI MASSACRE</p>
+                <p class="name">26/12/2024 • HOW TO DRESS AS HUMAN - TAMAGOCHI MASSACRE</p>
                 <a href="https://open.spotify.com/track/6yAbKw7pVBfLNUd2vhaM3e"><img src="/images/spotify-icon.png" width="40" alt="spotify link" /></a>
                 <hr />
                 <p>ralatable. what is being a human anyway?</p>
@@ -293,7 +298,7 @@
             </div>
 
             <div class="sotw-archive-box">
-                <p>18/dec/2024 • Family man. - kian</p>
+                <p class="name">18/dec/2024 • Family man. - kian</p>
                 <a href="https://youtu.be/LFAyVsbG2P0" target="_blank"><img src="/images/youtube-icon.png" width="40" alt="youtube link" /></a>
                 <hr />
                 <p>was listening to vocaloid (actually just teto) covers a couple of days ago with CJ "the fnaf guy" and the next day saw this song :D</p>
@@ -301,21 +306,21 @@
                 <p>1. fire line. 2. tally hall</p>
             </div>
             <div class="sotw-archive-box">
-                <p>1/dec/2024 • After Me, The Flood - Bear Ghost</p>
+                <p class="name">1/dec/2024 • After Me, The Flood - Bear Ghost</p>
                 <a href="https://youtu.be/sccFwujYOWQ" target="_blank"><img src="/images/youtube-icon.png" width="40" alt="youtube link" /></a>
                 <hr />
 
             </div>
 
             <div class="sotw-archive-box">
-                <p>21/nov/2024 • Selfstarter A. E. - Telethone ft. Jhariah</p>
+                <p class="name">21/nov/2024 • Selfstarter A. E. - Telethone ft. Jhariah</p>
                 <a href="https://youtu.be/gmJwdUA3nbo" target="_blank"><img src="/images/youtube-icon.png" width="40" alt="youtube link" /></a>
                 <hr />
                 <p>awesome song. made me feel like it's spring which is good i love spring</p>
             </div>
 
             <div class="sotw-archive-box">
-                <p>10/nov/2024 • BAMBI - STOMACH BOOK ft. zombAe</p>
+                <p class="name">10/nov/2024 • BAMBI - STOMACH BOOK ft. zombAe</p>
                 <a href="https://www.youtube.com/watch?v=9cn5LcNgy6Y" target="_blank"><img src="/images/youtube-icon.png" width="40" alt="youtube link" /></a>
                 <hr />
 
@@ -334,7 +339,7 @@
 
 
             <div class="sotw-archive-box">
-                <p>20/oct/2024 • These 4 Walls - Jhariah</p>
+                <p class="name">20/oct/2024 • These 4 Walls - Jhariah</p>
                 <a href="https://www.youtube.com/watch?v=BmiJ7SDWg_c" target="_blank"><img src="/images/youtube-icon.png" width="40" alt="youtube link" /></a>
                 <hr />
 
@@ -352,7 +357,7 @@
             </div>
 
             <div class="sotw-archive-box">
-                <p>16/oct/2024 • 5Alive - Self</p>
+                <p class="name">16/oct/2024 • 5Alive - Self</p>
                 <a href="https://youtu.be/HNprX6qRJB0?" target="_blank"><img src="/images/youtube-icon.png" width="40" alt="youtube link" /></a>
                 <hr />
 
@@ -365,7 +370,7 @@
             </div>
 
             <div class="sotw-archive-box">
-                <p>09/oct/2024 • FUKOUNA GIRL - STOMACH BOOK</p>
+                <p class="name">09/oct/2024 • FUKOUNA GIRL - STOMACH BOOK</p>
                 <a href="https://youtu.be/07OTCXiKEsw" target="_blank"><img src="/images/youtube-icon.png" width="40" alt="youtube link" /></a>
                 <hr />
                 <p>my new username...</p>
@@ -377,7 +382,7 @@
             </div>
 
             <div class="sotw-archive-box">
-                <p>28/sep/2024 • We All Fall Down - STOMACH BOOK</p>
+                <p class="name">28/sep/2024 • We All Fall Down - STOMACH BOOK</p>
                 <a href="https://youtu.be/vJSE3ZOS7fc" target="_blank"><img src="/images/youtube-icon.png" width="40" alt="youtube link" /></a>
                 <hr />
                 <blockquote>
@@ -393,7 +398,8 @@
         </div>
     </div>
 
-    <div style="position: relative; height: 100vh">
+
+    <div style="position: relative; height: 100vh;">
         <img class="sideimg" src="/images/catsmusic.jpg">
         <a href="/dance.html" style="position: absolute; top: 0px; right: 50px;">
             <h5>join the dance party!</h5>

@@ -8,6 +8,24 @@
 }
 
 @font-face {
+    font-family: "dandelion";
+    src:
+        url("/fonts/dandelion-webfont.woff2") format("woff2"),
+        url("/fonts/dandelion-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "junipy";
+    src:
+        url("/fonts/junipy-webfont.woff2") format("woff2"),
+        url("/fonts/junipy-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: "staypuft";
     src:
         url("/fonts/staypuft-webfont.woff2") format("woff2"),
@@ -301,7 +319,7 @@ mark {
 /*FONTS*/
 
 html {
-    font-family: "syne mono", "kirieji04";
+    font-family: "junipy", "syne mono", "kirieji04";
     font-weight: 100;
     font-style: normal;
     text-wrap: normal;
@@ -316,7 +334,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "staypuft", "Mikiyu Font Mokomori-kuro";
+    font-family: "dandelion", "staypuft", "Mikiyu Font Mokomori-kuro";
     font-style: normal;
     text-align: center;
     font-weight: 300;

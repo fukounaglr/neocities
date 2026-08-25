@@ -1,8 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Title</title>
-    </head>
-    <body></body>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Create</title>
+
+    <link rel="icon" type="image/png" href="/ico.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <!--<link rel="stylesheet" href="/create/style.css" />-->
+
+    <style>
+        html {
+            color: white;
+        }
+
+        #main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .create-link {
+            background-color: palegoldenrod;
+            text-align: center;
+            padding: 5px;
+            margin: 7px;
+            box-shadow: 0 5px black;
+            transform: translate(0, 0);
+            transition: .2s;
+            color: black;
+
+            &:hover {
+                box-shadow: 0 10px black;
+                transform: translate(0, -5px);
+                color: darkslategray
+            }
+
+            & img {
+                width: calc(100% - 10px);
+                margin: auto;
+                aspect-ratio: 1/1;
+                object-fit: cover;
+            }
+
+            & p {
+                margin: 2px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h5>&gt; Shrines</h5>
+        <div id="main">
+            <a class="create-link" title="sky cotl" href="/shrines/sky-cotl/index.html">
+                <img src="/shrines/images/sky-ss-17.jpg">
+                <p>Sky: Children of The Light</p>
+            </a>
+            <a class="create-link" title="cooking" href="/shrines/cooking.html">
+                <img src="/images/picnic.png">
+                <p>Cooking</p>
+            </a>
+            <a class="create-link" title="photos" href="/shrines/photo-album.html">
+                <img src="/images/seaside.jpg">
+                <p>Photo Ablum</p>
+            </a>
+            <a class="create-link" title="song of the day" href="/shrines/song-of-the-day.html">
+                <img src="/images/musiccar.jpg">
+                <p>Song Of The Day</p>
+            </a>
+        </div>
+
+    </main>
+</body>
+
 </html>
