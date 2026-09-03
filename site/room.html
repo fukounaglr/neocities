@@ -26,6 +26,7 @@
         main {
             padding-top: 50px;
             overflow: hidden;
+            
         }
 
         .done {
@@ -50,7 +51,15 @@
             pointer-events: none;
         }
 
-
+        .win-title span{
+            float: inline-end;
+            cursor: pointer;
+            padding: 5px 15px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 10
+        }
 
         #fontSwitcher {
             border: none;
@@ -70,6 +79,7 @@
             grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
             grid-auto-flow: column;
             width: 0;
+            margin: 0;
 
             & a {
                 color: var(--col);
@@ -114,7 +124,7 @@
             position: relative;
             position: absolute;
             top: 560px;
-            left: 810px;
+            left: 400px;
         }
 
         @keyframes spin {
@@ -254,7 +264,7 @@
             height: 300px;
             position: absolute;
             left: 250px;
-            top: 150px;
+            top: 100px;
         }
 
         #todolist {
@@ -267,34 +277,17 @@
 
         #day {
             position: absolute;
-            top: 500px;
-            left: 420px;
+            top: 100px;
+            left: 790px;
             width: 320px;
-            height: 200px;
+            height: 500px;
             & img{width: 88px}
-        }
-
-        #info {
-            width: 250px;
-            height: 170px;
-            position: absolute;
-            top: 500px;
-            left: 420px;
-            display: none
         }
 
         #pics {
             position: absolute;
-            top: 40px;
-            left: 800px;
-        }
-
-        #sitemap {
-            position: absolute;
-            top: 480px;
-            left: 180px;
-            width: 200px;
-            height: 200px;
+            top: 440px;
+            left: 140px;
         }
 
         #time {
@@ -312,26 +305,28 @@
 
         <div id="desktop-grid">
 
-            <a title="Home" href="/index.html"><img src="/images/icons/icon_map.png"><span>Shrines</span></a>
-            <a title="webmaster" href="/webmaster.html"><img src="/images/icons/icon_me.png"><span>Webmaster</span></a>
-            <a title="song of the week" href="/song-of-the-week.html"><img src="/images/icons/icon_music.png"><span>Music</span></a>
-            <a title="arm" href="/art.html"><img src="/images/icons/icon_art.png"><span>Art</span></a>
-            <a title="resouces" href="/resouces.html"><img src="/images/icons/icon_sites.png"><span>Resources</span></a>
-            <a title="graphics" href="/graphics.html"><img src="/images/icons/icon_graphic.png"><span>Graphics</span></a>
-            <a title="photo album" href="/photo-album.html"><img src="/images/icons/icon_album.png"><span>Photos</span></a>
+            <a title="Cool Sites" href="#" onclick="OpenWindow('day')"><img src="/images/icons/icon_map.png"><span>Cool Sites</span></a>
+            <a title="Fuko Una" href="#" onclick="OpenWindow('fuko')"><img src="/images/icons/icon_me.png"><span>Fuko Una.exe</span></a>
+            <a title="Music Player" href="#" onclick="OpenWindow('player')"><img src="/images/icons/icon_music.png"><span>Music Player</span></a>
+            <!--<a title="arm" href="/art.html"><img src="/images/icons/icon_art.png"><span>Art</span></a>-->
+            <a title="resouces" href="#" onclick="OpenWindow('resources')"><img src="/images/icons/icon_sites.png"><span>Resources</span></a>
+            <!--<a title="graphics" href="/graphics.html"><img src="/images/icons/icon_graphic.png"><span>Graphics</span></a>-->
+            <!--<a title="photo album" href="/photo-album.html"><img src="/images/icons/icon_album.png"><span>Photos</span></a>-->
             <!--<a title="photo album" href=""><img  src="/images/icons/icon_notepad.png"><span>?</span></a>-->
-            <a title="guestbook" href="/guestbook.html"><img src="/images/icons/icon_blog.png"><span>Guestbook</span></a>
+            <a title="guestbook" href="#" onclick="OpenWindow('guestbook')"><img src="/images/icons/icon_blog.png"><span>Guestbook</span></a>
             <!--<a title="photo album" href=""><img  src="/images/icons/icon_cook.png"><span>?</span></a>-->
-            <a title="creations" href="/create/index.html"><img src="/images/icons/icon_folder.png"><span>Creations</span></a>
-            <a title="shrines" href="/shrines/index.html"><img src="/images/icons/icon_journal.png"><span>Shrines</span></a>
+            <a title="creations" href="#" onclick="OpenWindow('create')"><img src="/images/icons/icon_folder.png"><span>Creations</span></a>
+            <a title="shrines" href="/webmaster.html" ><img src="/images/icons/icon_journal.png"><span>Webmaster</span></a>
         </div>
 
-        <div class="window" id="fuko">
-            <div class="win-title"><img src="/graphics/pixels/pc.gif"> Logged in as User</div>
+        <div class="draggable window " id="fuko">
+            <div class="win-title"><img src="/graphics/pixels/pc.gif"> Logged in as User 
+                <span onclick="CloseWindow('fuko')">x</span></div>
+           
 
 
             <div class="win-content">
-                <span style="margin: auto 0; text-align: end;" id="time"></span>
+                <div style="margin: auto 0; text-align: end;" id="time"></div>
                 <img src="/images/fuko%203d.png" style=" float: inline-start; height: 100%; cursor: help;" onclick="playAudio('https://file.garden/ZjOP8Ik9OUXT6YVm/UNTITLED.wav')">
 
                 <p id="rpgtext" class="win-content" style="height: 120px">* I can talk. Please enable javascript // wait for the page to complete loading . . .</p>
@@ -344,8 +339,9 @@
             </div>
         </div>
 
-        <div class="window" id="day">
-            <div class="win-title">Sites</div>
+        <div class="draggable window " id="day">
+            <div class="win-title">Sites
+            <span onclick="CloseWindow('day')">x</span></div>
             <div class="win-content">
                 <p>link m3!</p>
                 <!--<img src="/fukounaglr.png">-->
@@ -357,6 +353,7 @@
                 <textarea style="width: 88px; height: 31px; padding: 0; margin: auto;" spellcheck="false" data-gramm="false">&lt;a href="https://fukounaglr.neocities.org/" target="_blank"&gt;&lt;img src="https://file.garden/ZjOP8Ik9OUXT6YVm/fukounaglr-alt.gif"&gt;&lt;/a&gt;</textarea>
                 <hr>
                 <!--<a target="_blank" href=""><img src="/graphics/sites/"></a>-->
+                <a target="_blank" href="https://peetledoodle.net/"><img src="/graphics/sites/peetledoodle.gif"></a>
                 <a target="_blank" href="https://lambchapel.neocities.org/"><img src="/graphics/sites/lambchapel.png"></a>
                 <a href="https://olliveen.neocities.org/" target="_blank"><img src="https://olliveen.neocities.org/img/button.gif"></a>
                 <a target="_blank" href="https://hekate.neocities.org/"><img src="/graphics/sites/hekate.png"></a>
@@ -408,70 +405,10 @@
             </div>
         </div>
 
-        <div class="window" id="info">
-            <div class="win-title">Settings</div>
-            <div class="win-content">
-                <!--<img width="150px" id="daytoday" title="" src="">-->
-                <button id="fontSwitcher" onclick="changeFont()">
-                    OpenDyslexic: <span id="font-stat">false</span>
-                    <span style="position: absolute; right: -20px; color: rgba(255, 255, 255, 0.5)" title="Changes all fonts to Open Dyslexic font; also removes background images from buttons.">?</span>
-                </button>
-                <!--<a href="https://fukounaglr.straw.page/"><img width="32px" style="transform: translate(0, 10px)" title="Strawpage" src="/images/strawpage.png"> strawpage</a>-->
-                <!--
-                <div id="theme">
-                    <span>theme:</span>
-                    <select id="themeSwitcher" onchange="changeTheme()">
-                        <option value="">cats</option>
-                        <option value="hell">hell</option>
-                        <option value="underwater">underwater</option>
-                        <option value="neon">neon</option>
-                        <option value="green">green</option>
-                        <option value="depths">depths</option>
-                    </select>
-                </div>
-                -->
-                <marquee height="40px" id="marq">
-                    <img src="/fukounaglr.gif">
-                    <img src="/graphics/buttons/kris_where_tf_are_we.png">
-                    <img src="/graphics/buttons/neocities.png">
-                    <img src="/graphics/buttons/youre_telling_me.png">
-                    <img src="/graphics/blinkies/tft.gif">
-                    <img src="/graphics/blinkies/comicsans.gif">
-                    <img src="/graphics/blinkies/2063488df6ab87c63943325d03731552856553e0.gif">
-                    <img src="/graphics/blinkies/tti_blink.gif">
-                    <img src="/graphics/blinkies/0205-pluralsystem.gif">
-                    <img src="/graphics/blinkies/gender-isnt-real.gif">
-                    <img src="/graphics/blinkies/sylveon-trans-rights.gif">
-                    <!--<img src="/graphics/blinkies/">-->
-                    <!--<img src="/graphics/">-->
-                </marquee>
-            </div>
-        </div>
-
-        <div class="window" id="todolist">
-            <div class="win-title"><img src="/graphics/pixels/cat285.gif"> To do</div>
-            <div class="win-content">
-                <ul>
-                    <li>make photo album &amp; art gallery paged</li>
-                    <li>make Oleander page</li>
-                    <li>Ghost Memory page</li>
-                    <!--<li></li>-->
-                </ul>
-                <ul class="done">
-                    <li>guestbook page</li>
-                    <li>new site button</li>
-                    <li>make an imbed pages for news and links</li>
-                    <li>make second click jump forward [fuko]</li>
-                    <li>make photo album page</li>
-                    <li>make shimejis page</li>
-                </ul>
-            </div>
-        </div>
-
-        <div id="player">
+        <div id="player" class="draggable">
             <div id="music-title">
                 <span>Media Player</span>
-                <span class="close" onclick="closeFolder('music')">- x</span>
+                <span class="close" onclick="CloseWindow('player')">- x</span>
             </div>
             <img src="/images/miku-yay.gif" style="position: absolute; pointer-events: none; z-index: 20; right: 15px; top: 10px;">
             <div id="audio-player">
@@ -495,22 +432,86 @@
 
 
 
-        <div id="pics" class="window" onclick="randomImage()">
+        <div id="pics" class="window draggable" onclick="randomImage()">
+            <div class="win-title">Pics
+            <span onclick="CloseWindow('pics')">x</span></div>
             <div class="win-content">
                 <img id="img-rand" width="200px" src="https://img1.picmix.com/output/pic/normal/9/7/9/1/13501979_bebfb.gif" class="slide">
             </div>
         </div>
-        <div id="sitemap" class="window">
-            <div class="win-title">Site map!</div>
-            <iframe src="/map.html" title="map" style="width: 90%" class="win-content">
+        
+        <div id="create" style="display: none; width: 800px; height: 500px; top: 120px; left: 150px;" class="window draggable">
+            <div class="win-title"> Creations
+            <span onclick="CloseWindow('create')">x</span></div>
+            <div style="display: grid;
+                        grid-template-columns: 1fr 1.5fr; height: 100%">
+            <div title="map" style="width: 90%; height: 100%; border: none" class="win-content">
+                <ul>
+                    <li><a target="create-frame" href="/create/papercraft/index.html">papercraft</a>
+                        <ul>
+                            <li><a target="create-frame" href="/create/papercraft/caroline.html">Caroline</a></li>
+                            <li><a target="create-frame" href="/create/papercraft/painter.html">Painter</a></li>
+                            <li><a target="create-frame" href="/create/papercraft/token.html">Token</a></li>
+                        </ul>
+                    </li>
 
-            </iframe>
-        </div>
+                    <li><a target="create-frame" href="/create/art/index.html">art</a>
+                        <ul>
+                            <li><a target="create-frame" href="/create/art/tos.html">ToS</a></li>
+                            <li><a target="create-frame" href="/create/art/comms.html">Comms</a></li>
+                            <li><a target="create-frame" href="/create/art/gallery.html">Gallery</a></li>
+                        </ul>
+                    </li>
 
-
-        <img class="img" src="/images/fatass.png" width="150px" style=" top: 50px; left: 1100px; cursor: help;" onclick="playAudio('https://www.myinstants.com/media/sounds/teddy-bear-squeek.mp3')">
-        <img class="img" src="/images/kibbies.png" width="210px" style=" top: 20px; left: 330px; cursor: help;">
-        <!--<img class="img" src="/images/starcatcher.gif" width="210px" style=" top: 20px; left: 490px; cursor: help;">-->
+                    <li><a target="create-frame" href="/create/shimejis/index.html">Shimejis</a>
+                        <ul>
+                            <li><a target="create-frame" href="/create/shimejis/angel.html">Angel</a></li>
+                            <li><a target="create-frame" href="/create/shimejis/token.html">Token</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                </div>
+                <iframe src="" name="create-frame" title="create-frame" style="width: 90%;  height: 90%; border: none" class="win-content"></iframe>
+            </div></div>
+        
+        <div id="resources" style="display: none; width: 800px; height: 500px; top: 120px; left: 150px;" class="window draggable">
+            <div class="win-title"> Resources
+                <span onclick="CloseWindow('resources')">x</span></div>
+            <div style="display: grid;
+                        grid-template-columns: 1fr 1.5fr; height: 100%">
+            <div title="map" style="width: 90%; height: 100%; border: none" class="win-content">
+                <ul>
+                    <li><span>Resources</span>
+                        <ul>
+                            <li><a target="resources-frame" href="/resources/graphics.html">Graphics</a></li>
+                            <li><a target="resources-frame" href="/resources/tools.html">Tools &amp; Plugins</a></li>
+                            <li><a target="resources-frame" href="/resources/web.html">Web &amp; Tutorials</a></li>
+                            <li><a target="resources-frame" href="/resources/fonts.html">Fonts</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li><span>Graphics</span>
+                        <ul>
+                            <li><a target="resources-frame" href="/graphics/blinkies.html">Blinkies</a></li>
+                            <li><a target="resources-frame" href="/resources/badges.html">Badges</a></li>
+                            <li><a target="resources-frame" href="/resources/stamps.html">Stamps</a></li>
+                            <li><a target="resources-frame" href="/resources/pixels.html">Pixels</a></li>
+                            <li><a target="resources-frame" href="/resources/dividors.html">Dividors</a></li>
+                            <li><a target="resources-frame" href="/resources/by-me.html">By me</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                </div>
+                <iframe src="" name="recources-frame" title="recources-frame" style="width: 90%;  height: 90%; border: none" class="win-content"></iframe>
+            </div></div>
+        
+        <div id="guestbook" style="display: none; width: 400px; height: 500px; top: 120px; left:500px;" class="window draggable">
+            <div class="win-title"> guestbook
+            <span onclick="CloseWindow('guestbook')">x</span></div>
+            
+            <iframe src="https://fukouna.atabook.org/" name="guestbook" title="create-frame" style="width: 95%;  height: 90%; border: none" class="win-content"></iframe>
+            </div>
 
     </main>
 
@@ -519,6 +520,18 @@
     <script src="/js/theme-switcher.js"></script>
     <script src="/js/audio-player.js"></script>
     <script src="/js/clock.js"></script>
+    
+    <script>
+        function OpenWindow(a) {
+            document.getElementById(a).style.display = 'block';
+
+        }
+
+        function CloseWindow(a) {
+            document.getElementById(a).style.display = 'none';
+        }
+    
+    </script>
 
     <script>
         const images = [

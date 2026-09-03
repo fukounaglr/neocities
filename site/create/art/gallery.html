@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>art</title>
+        <link rel="icon" type="image/png" href="/ico.png">
+        <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="/create/style.css">
+
+        <style>
+
+            .gallery-grid {
+                display: none;
+            }
+
+            #gallery.grid {
+                & .gallery-grid {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-gap: 5px;
+                    text-align: center;
+                    padding: 10px;
+
+                    & img {
+                        width: 100%;
+                        aspect-ratio: 1/1;
+                        object-fit: cover;
+                        margin: auto;
+                    }
+                }
+            }
+
+            #gallery.full {
+                & .gallery-grid {
+                    display: block;
+                    text-align: center;
+                    padding: 10px;
+                    background-color: var(--colour);
+
+                    & img {
+                        width: 100%;
+                        object-fit: cover;
+                        margin: auto;
+                    }
+                }
+            }
+
+
+            #view-toggle {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                margin: auto;
+                height: 60px;
+
+                & button {
+                    all: unset;
+                    width: 90%;
+                    text-align: center;
+                    background-color: var(--acc);
+                    padding: 10px 0;
+                    margin: auto;
+                    cursor: pointer;
+                    color: black;
+                }
+            }
+
+            @media only screen and (max-width: 800px) {
+                
+
+                .gallery-grid {
+                    grid-template-columns: 1fr 1fr;
+                }
+
+            }
+        </style>
+    </head>
+
+    <body>
+        <main id="gallery">
+               
+                <h4 id="top">Gallery</h4>
+                <div id="view-toggle">
+                    <button onclick="display('grid')">grid view</button>
+                    <button onclick="display('full')">full view</button>
+                </div>
+                <a href="#gallery" class="gototop">Go to top</a>
+
+                <p>click on the image to view in full screen; click anywhere to close</p>
+                <p>CW: some images comtain cartoon gore</p>
+                <div class="gallery-grid gallery-container">
+
+                    <h1 class="year">2026</h1>
+                    <!--<img src="/images/art/" loading="lazy">-->
+                    <img src="/images/art/goodbye.png" loading="lazy">
+                    <img src="/images/art/retry%20now.png" loading="lazy">
+                    <img src="/images/art/oleander%20poster%20mars.png" loading="lazy">
+                    <img src="/images/art/OLEANDER%20POSTER.png" loading="lazy">
+                    <img src="/images/art/spinnintg.png" loading="lazy">
+                    <img src="/images/art/i%20wanna%20be%20your%20tv%20girl.png" loading="lazy">
+                    <img src="/images/art/comm shapeguy.png" loading="lazy">
+                    <img src="/images/art/verity2.png" loading="lazy">
+                    <img src="/images/art/bee.png" loading="lazy">
+                    <img src="/images/art/mars.png" loading="lazy">
+                    <img src="/images/art/ragebait.png" loading="lazy">
+                    <img src="/images/art/angle.png" loading="lazy">
+                    <img src="/images/art/dinner.png" loading="lazy">
+                    <img src="/images/art/nova old style.png" loading="lazy">
+                    <!--<img src="/images/art/gleach%20yuri%20alt.png" loading="lazy">-->
+                    <img src="/images/art/carolOTNW.png" loading="lazy">
+                    <img src="/images/art/new%20yers.webp" loading="lazy">
+
+                    <h1 class="year">2025</h1>
+                    <img src="/images/art/secretsanta.webp" loading="lazy">
+                    <img src="/images/art/guestslug.webp" loading="lazy">
+                    <img src="/images/art/melanie.webp" loading="lazy">
+                    <img src="/images/art/KAT%20mitt%20comm%20atermarked.webp" loading="lazy">
+                    <img src="/images/art/side%20b%20killer.webp" loading="lazy">
+                    <img src="/images/art/HEADS%20UP.webp" loading="lazy">
+                    <img src="/images/art/i%20must%20be%20the%20reason%20why.webp" loading="lazy">
+                    <img src="/images/art/side%20A%20lover.webp" loading="lazy">
+                    <img src="/images/art/treak%20or%20treat.webp" loading="lazy">
+                    <img src="/images/art/gys.webp" loading="lazy">
+                    <img src="/images/art/ghoul%20vs%20diva.webp" loading="lazy">
+                    <img src="/images/art/pain%20n%20nova%20halloween.webp" loading="lazy">
+                    <img src="/images/art/aching.webp" loading="lazy">
+                    <img src="/images/art/long%20fish.webp" loading="lazy">
+                    <img src="/images/art/say%20fish.webp" loading="lazy">
+                    <img src="/images/art/sebs.webp" loading="lazy">
+                    <img src="/images/art/canon%20fuko.webp" loading="lazy">
+                    <img src="/images/art/mars%20slay.webp" loading="lazy">
+                    <img src="/images/art/18.webp" loading="lazy">
+                    <img src="/images/art/12.webp" loading="lazy">
+                    <img src="/images/art/9.webp" loading="lazy">
+                    <img src="/images/art/8.webp" loading="lazy">
+                    <img src="/images/art/7.webp" loading="lazy">
+                    <img src="/images/art/3.webp" loading="lazy">
+                    <img src="/images/art/disgusting.webp" loading="lazy">
+                    <img src="/images/art/gochimusic.webp" loading="lazy">
+                    <img src="/images/art/hungry.webp" loading="lazy">
+                    <img src="/images/art/pyromaniac%20DS.webp" loading="lazy">
+                    <img src="/images/art/dresses.webp" loading="lazy">
+                    <img src="/images/art/MnL%20room.webp" loading="lazy">
+                    <img src="/images/art/killkill.webp" loading="lazy">
+                    <img src="/images/art/tailtttail.gif" loading="lazy">
+                    <img src="/images/art/sam%20hhh.webp" loading="lazy">
+                    <img src="/images/art/control%20baby.webp" loading="lazy">
+                    <img src="/images/art/TVmadesamdoit.webp" loading="lazy">
+                    <img src="/images/art/skyb%20posters.webp" loading="lazy">
+                    <img src="/images/art/bloddyvcat.webp" loading="lazy">
+                    <img src="/images/art/skinning.webp" loading="lazy">
+                    <img src="/images/art/fukouna%20girl%20tomac.webp" loading="lazy">
+                    <img src="/images/art/brooks%20dies%20bottom%20text.webp" loading="lazy">
+                    <img src="/images/art/angel%20drawing.webp" loading="lazy">
+                    <img src="/images/art/angle.webp" loading="lazy">
+                    <img src="/images/art/you%20think%20youre%20cooler%20than%20me.webp" loading="lazy">
+                    <img src="/images/art/mars%20gazing.webp" loading="lazy">
+                    <img src="/images/art/fukofuko.webp" loading="lazy">
+                    <img src="/images/art/new%20god.webp" loading="lazy">
+                    <img src="/images/art/cute%20and%20murderous.webp" loading="lazy">
+                    <img src="/images/art/deerling.webp" loading="lazy">
+                    <img src="/images/art/funy%20sketches.webp" loading="lazy">
+                    <img src="/images/art/mirror.webp" loading="lazy">
+                    <img src="/images/art/basement.webp" loading="lazy">
+                    <img src="/images/art/spring%20egg.webp" loading="lazy">
+                    <img src="/images/art/blasthem%20you.webp" loading="lazy">
+                    <img src="/images/art/HINTERRRR.webp" loading="lazy">
+                    <img src="/images/art/splittrr.webp" loading="lazy">
+                    <img src="/images/art/mafd%20hatter.webp" loading="lazy">
+                    <img src="/images/art/PETT.webp" loading="lazy">
+                    <img src="/images/art/whole%20madoka.webp" loading="lazy">
+                    <img src="/images/art/idk.webp" loading="lazy">
+                    <img src="/images/art/mars%20sketches.webp" loading="lazy">
+                    <img src="/images/art/splitter%20mars.webp" loading="lazy">
+                    <img src="/images/art/rot.webp" loading="lazy">
+                    <img src="/images/art/track%2007.webp" loading="lazy">
+                    <img src="/images/art/gore%20festival.webp" loading="lazy">
+                    <h5 class="year">2024</h5>
+                    <img src="/images/art/and%20im%20gone.webp" loading="lazy">
+                    <img src="/images/art/mangyy.webp" loading="lazy">
+                    <img src="/images/art/all%20hail%20cannibalism.webp" loading="lazy">
+                </div>
+            
+
+            <div class="popup">
+                <img src="/images/seaside.jpg">
+                <p>click anywhere to close</p>
+            </div>
+            <script src="/js/lightbox.js"></script>
+        </main>
+        
+        <script>
+            function display(a) {
+                document.getElementById("gallery").className = "tab " + a;
+            }
+        </script>
+    </body>
+
+</html>

@@ -10,41 +10,49 @@
     <link rel="stylesheet" href="/create/style.css" />
 
     <style>
-        .create-link{
-            color: var(--acc);
-            &:hover{
-                color: var(--col)
-            }
+
+
+        li:first-child:before {
+            /*top: 23px;*/
+        }
+
+        li:last-child:before {
+            /*height: 10px; */
+            /*width: 20px;*/
+            /*height: 2px;*/
         }
     </style>
 </head>
 
 <body>
     <main>
-        <h5>&gt; Created by me</h5>
-        <div class="tab" id="main">
-            <a class="create-link" title="papercraft" target="_top" href="/create/papercraft.html" style="background-color: palegreen">
-                <img src="/create/images/femtanyl.png">
-                <p>Papercraft</p>
-            </a>
-            <a class="create-link" title="art & comms" target="_top" href="/art.html" style="background-color: lightpink">
-                <img src="/images/art/you%20think%20youre%20cooler%20than%20me.webp">
-                <p>Art &amp; Comms</p>
-            </a>
-            <a class="create-link" title="shimejis" target="_top" href="/create/shimejis.html" style="background-color: palegoldenrod">
-                <img src="/create/images/shime-angel.png">
-                <p>Shimejis</p>
-            </a>
-            <a class="create-link" title="wplace" target="_top" href="/create/wplace.html" style="background-color: lightblue">
-                <img src="/images/art/andre.png">
-                <p>wplace</p>
-            </a>
-            <a class="create-link" title="goat game" target="_top" href="https://fukounaglr.itch.io/goat-game" style="background-color: lightgray">
-                <img src="/create/images/goat.png">
-                <p>Goat Game</p>
-            </a>
-        </div>
+        Creations
+        <ul>
+            <li><a target="#create-frame" href="/create/papercraft/index.html">papercraft</a>
+                <ul>
+                    <li><a href="/create/papercraft/caroline.html">Caroline</a></li>
+                    <li><a href="/create/papercraft/painter.html">Painter</a></li>
+                    <li><a href="/create/papercraft/token.html">Token</a></li>
+                </ul>
+            </li>
+
+            <li><a href="/create/art/index.html">art</a>
+                <ul>
+                    <li><a href="/create/art/tos.html">ToS</a></li>
+                    <li><a href="/create/art/comms.html">Comms</a></li>
+                    <li><a href="/create/art/gallery.html">Gallery</a></li>
+                </ul>
+            </li>
+
+            <li><a href="/create/shimejis/index.html">Shimejis</a>
+                <ul>
+                    <li><a href="/create/shimejis/angel.html">Angel</a></li>
+                    <li><a href="/create/shimejis/token.html">Token</a></li>
+                </ul>
+            </li>
+        </ul>
 
     </main>
 </body>
+
 </html>

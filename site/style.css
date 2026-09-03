@@ -114,96 +114,6 @@
     --blink: url(/graphics/blinkies/pirate_blank.gif);
 }
 
-:root[theme="green"] {
-    --colour: #181818;
-    --primary-colour: #ceea62;
-    --accent-colour: #2c9790;
-    --accent-colour-hover: #325b95;
-    --green-display: block;
-    --cats-display: none;
-    --bg: url(/images/green-snes.png);
-    --fav: url(/graphics/pixels/bun.gif);
-    --blink: url(/graphics/blinkies/frog_blank.gif);
-    --theme-filter: hue-rotate(170deg) brightness(100%) contrast(100%) sepia(40%) saturate(120%);
-}
-
-:root[theme="hell"] {
-    --primary-colour: #D3D2CE;
-    --colour: black;
-    --accent-colour: #c70d0d;
-    --accent-colour-hover: darkred;
-    --hell-display: block;
-    --cats-display: none;
-    --bg: url(/images/hell-snes.png);
-    --fav: url(/graphics/pixels/ribbon.gif);
-    --blink: url(/graphics/blinkies/cursed%20cat%20alastor%20blank.gif);
-    --theme-filter: hue-rotate(0deg) brightness(80%) contrast(100%) sepia(20%) saturate(150%);
-}
-
-:root[theme="neon"] {
-    --primary-colour: #E8FF7D;
-    --colour: #EB05BD;
-    --accent-colour: #5DE1CA;
-    --accent-colour-hover: #63E4CE;
-    --neon-display: block;
-    --cats-display: none;
-    --bg: url(/images/neon-snes.png);
-    --fav: url(/graphics/pixels/deltarune-banana.gif);
-    --blink: url(/graphics/blinkies/y2k_blank.gif);
-    --theme-filter: hue-rotate(260deg) brightness(90%) contrast(200%) saturate(170%);
-}
-
-:root[theme="depths"] {
-    --primary-colour: #04132f;
-    --colour: #c2c7d0;
-    --accent-colour: #15b3bc;
-    --accent-colour-hover: #01769c;
-    --depths-display: block;
-    --cats-display: none;
-    --bg: url(/images/depths-snes.png);
-    --fav: url(/graphics/pixels/gleach_allen_pixel.gif);
-    --blink: url(/graphics/blinkies/gleach_blank.gif);
-    --theme-filter: hue-rotate(200deg) brightness(70%) contrast(150%) saturate(100%);
-}
-
-:root[theme="static"] {
-    --primary-colour: white;
-    --colour: black;
-    --accent-colour: gray;
-    --accent-colour-hover: dimgray;
-    --whiteroom-display: block;
-    --cats-display: none;
-    --bg: url(/images/static-snes.png);
-    --fav: url(/graphics/pixels/moth.gif);
-    --blink: url(/graphics/blinkies/static_blank.gif);
-    --theme-filter: hue-rotate(0) brightness(100%) contrast(150%) saturate(0%);
-}
-
-:root[theme="space"] {
-    --primary-colour: #1a0037;
-    --colour: #9d39f6;
-    --accent-colour: #f0dd44;
-    --accent-colour-hover: #feffcc;
-    --space-display: block;
-    --cats-display: none;
-    --bg: url(/images/space-snes.png);
-    --fav: url(/graphics/pixels/sparkle.gif);
-    --blink: url(/graphics/blinkies/space.gif);
-    --theme-filter: hue-rotate(200deg) brightness(70%) contrast(150%) saturate(100%);
-}
-
-:root[theme="rainbow"] {
-    --primary-colour: #e3043a;
-    --colour: #2309bf;
-    --accent-colour: #f0dd44;
-    --accent-colour-hover: #09cf10;
-    --space-display: block;
-    --cats-display: none;
-    --bg: url(/images/rainbow-snes.png);
-    --fav: url(/graphics/pixels/party-kirby.gif);
-    --blink: url(/graphics/blinkies/gya-blank.gif);
-    --theme-filter: hue-rotate(320deg) brightness(80%) contrast(150%) saturate(140%);
-}
 
 * {
     scrollbar-width: thin;
@@ -226,6 +136,7 @@ a {
         color: var(--acc-hov);
     }
 }
+/*
 
 a::before {
     content: var(--fav);
@@ -243,6 +154,7 @@ a:has(h1, h2, h3, h4, h5, img, div, svg)::before,
     content: "";
     display: none;
 }
+*/
 
 img.border {
     border: 2px solid gray;
@@ -286,7 +198,6 @@ summary h5 {
 
 .draggable {
     position: absolute;
-    padding: 10px;
     z-index: 10;
 }
 
@@ -417,7 +328,7 @@ a {
     text-align: left;
 
     &::after {
-        content: "- ◻ x";
+        /*content: "- ◻ x";*/
         position: absolute;
         right: 5px;
         top: 0;
@@ -576,6 +487,56 @@ a {
         object-fit: contain;
         border: none;
     }
+}
+
+
+a{
+    color: black;
+    text-decoration: none;
+    &:hover{
+        color: dimgray;
+        cursor: pointer;
+    }
+}
+
+details{
+    margin-top: 50px;
+}
+
+
+ul,
+lli {
+    list-style: none;
+}
+
+li {
+    position: relative;
+    margin: 0;
+    padding-bottom: 1em;
+    padding-left: 20px;
+}
+
+li::before {
+    background-color: dimgray;
+    width: 1px;
+    content: '';
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: -25px;
+    height: 15px
+}
+li a::before, li span::before {
+    background-color: dimgray;
+    /*width: 2px;*/
+    content: '';
+    position: absolute;
+    display: block;
+    top: 14px;
+    bottom: 0px;
+    left: -25px;
+    width: 40px;
+    height: 1px;
 }
 
 @keyframes fade {
