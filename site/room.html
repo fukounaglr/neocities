@@ -310,11 +310,11 @@
             <a title="Music Player" href="#" onclick="OpenWindow('player')"><img src="/images/icons/icon_music.png"><span>Music Player</span></a>
             <!--<a title="arm" href="/art.html"><img src="/images/icons/icon_art.png"><span>Art</span></a>-->
             <a title="resouces" href="#" onclick="OpenWindow('resources')"><img src="/images/icons/icon_sites.png"><span>Resources</span></a>
-            <!--<a title="graphics" href="/graphics.html"><img src="/images/icons/icon_graphic.png"><span>Graphics</span></a>-->
+            <a title="graphics" href="#" onclick="OpenWindow('pics')"><img src="/images/icons/icon_graphic.png"><span>Pics</span></a>
             <!--<a title="photo album" href="/photo-album.html"><img src="/images/icons/icon_album.png"><span>Photos</span></a>-->
             <!--<a title="photo album" href=""><img  src="/images/icons/icon_notepad.png"><span>?</span></a>-->
             <a title="guestbook" href="#" onclick="OpenWindow('guestbook')"><img src="/images/icons/icon_blog.png"><span>Guestbook</span></a>
-            <!--<a title="photo album" href=""><img  src="/images/icons/icon_cook.png"><span>?</span></a>-->
+            <a title="photo album" href="#" onclick="OpenWindow('other')"><img  src="/images/icons/icon_cook.png"><span>Misc pages</span></a>
             <a title="creations" href="#" onclick="OpenWindow('create')"><img src="/images/icons/icon_folder.png"><span>Creations</span></a>
             <a title="shrines" href="/webmaster.html" ><img src="/images/icons/icon_journal.png"><span>Webmaster</span></a>
         </div>
@@ -474,7 +474,7 @@
                 <iframe src="" name="create-frame" title="create-frame" style="width: 90%;  height: 90%; border: none" class="win-content"></iframe>
             </div></div>
         
-        <div id="resources" style="display: none; width: 800px; height: 500px; top: 120px; left: 150px;" class="window draggable">
+        <div id="resources" style="display: none; width: 800px; height: 500px; top: 140px; left: 170px;" class="window draggable">
             <div class="win-title"> Resources
                 <span onclick="CloseWindow('resources')">x</span></div>
             <div style="display: grid;
@@ -503,7 +503,29 @@
                     </li>
                 </ul>
                 </div>
-                <iframe src="" name="recources-frame" title="recources-frame" style="width: 90%;  height: 90%; border: none" class="win-content"></iframe>
+                <iframe src="" name="resources-frame" title="resources-frame" style="width: 90%;  height: 90%; border: none" class="win-content"></iframe>
+            </div></div>
+        
+        <div id="other" style="display: none; width: 800px; height: 500px; top: 160px; left: 190px;" class="window draggable">
+            <div class="win-title"> Misc pages
+                <span onclick="CloseWindow('other')">x</span></div>
+            <div style="display: grid;
+                        grid-template-columns: 1fr 1.5fr; height: 100%">
+            <div title="map" style="width: 90%; height: 100%; border: none" class="win-content">
+                <ul>
+                    <li><span>Misc</span>
+                        <ul>
+                            <li><a target="misc-frame" href="/song-of-the-week.html">Song of the week</a></li>
+                            <li><a target="misc-frame" href="/trans-rights.html">Trans Rights</a></li>
+                            <li><a target="misc-frame" href="/archive.html">Archive</a></li>
+                            <li><a target="_blank" href="/dance.html">Dance party</a></li>
+                            <li><a target="_blank" href="/end.html">The End</a></li>
+                            <!--<li><a target="misc-frame" href="/"></a></li>-->
+                        </ul>
+                    </li>
+                </ul>
+                </div>
+                <iframe src="" name="misc-frame" title="misc-frame" style="width: 90%;  height: 90%; border: none" class="win-content"></iframe>
             </div></div>
         
         <div id="guestbook" style="display: none; width: 400px; height: 500px; top: 120px; left:500px;" class="window draggable">
