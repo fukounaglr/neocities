@@ -119,6 +119,22 @@
     scrollbar-width: thin;
     font-size: 100%;
 }
+a{position: relative}
+a[target="_blank"]::after {
+    content: "";
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    /*right: 0px;*/
+    /*bottom: 0px;*/
+    background-image: url("/images/icons/share.svg");
+}
+
+
+.noico a::after, a.noico::after {
+    content: "";
+    display: none;
+}
 
 p {
     line-height: 1Em;
