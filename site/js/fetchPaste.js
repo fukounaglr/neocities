@@ -26,9 +26,12 @@ Element.prototype.fetchPaste = function(url){
 
 function Paste(a) {
   document.querySelector("#middle-box").fetchPaste(a);
-     //localStorage.setItem('OpenPage', a);
-  //$location.url.search(a);
 }
-
+function PasteNav(a) {
+  document.querySelector("#nav-box").fetchPaste(a);
+}
+if (window.location.hash.substring(1) != ""){
+Paste(window.location.hash.substring(1));
+}
 //Paste(localStorage.getItem("OpenPage"));
 //Paste(url.searchParams.toString());

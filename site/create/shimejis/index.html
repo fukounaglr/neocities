@@ -1,94 +1,100 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Shimejis</title>
 
-<head>
-    <meta charset="UTF-8" />
-    <title>Shimejis</title>
+        <link rel="icon" type="image/png" href="/ico.png" />
+        <link rel="stylesheet" href="/style.css" />
 
-    <link rel="icon" type="image/png" href="/ico.png" />
-    <link rel="stylesheet" href="/style.css" />
-
-
-    <style>
-        header,
-        #side-col {
-            align-content: center;
-            display: grid;
-        }
-
-        .create-link {
-            background-color: dimgray;
-            text-align: left;
-            width: 90%;
-            max-width: 400px;
-            margin: 20px auto;
-            padding: 20px;
-
-            & img {
-                width: 200px;
-                display: block;
+        <style>
+            header,
+            #side-col {
+                align-content: center;
+                display: grid;
             }
 
-            &:hover {
-                color: lightgray;
-
-                & h5::before {
-                    letter-spacing: 0;
-                }
-            }
-
-            & h5::before {
-                content: ">>> ";
-                letter-spacing: -8px;
-                margin: auto 10px;
-                transition: .5s;
-            }
-
-            & a {
-                color: white;
+            .create-link {
+                background-color: dimgray;
+                text-align: left;
+                width: 90%;
+                max-width: 400px;
+                margin: 20px auto;
+                padding: 20px;
 
                 & img {
-                    width: 16px;
-                    display: inline
+                    width: 200px;
+                    display: block;
+                }
+
+                &:hover {
+                    color: lightgray;
+
+                    & h5::before {
+                        letter-spacing: 0;
+                    }
+                }
+
+                & h5::before {
+                    content: ">>> ";
+                    letter-spacing: -8px;
+                    margin: auto 10px;
+                    transition: 0.5s;
+                }
+
+                & a {
+                    color: white;
+
+                    & img {
+                        width: 16px;
+                        display: inline;
+                    }
                 }
             }
-        }
-    </style>
-</head>
+        </style>
+    </head>
 
-<body>
+    <body>
+        <div class="col-title">
+            <h6>Shimejis</h6>
+        </div>
 
-
-        <div>
-            <a href="/create/index.html" style="position: absolute; top: 0; left: 0;">go back</a>
-            <h3>Shimejis</h3>
+        <div class="col-inside">
             <p>Shimejis are little desktop pets that wander around your screen and interact with your windows.</p>
-            <a href="https://kilkakon.com/shimeji/" ><p>Shimeji base [kilkakon.com]</p></a>
-            <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/ASYM_shimejiee.zip" download><p>Assymetrical shimejji [mod by me]</p></a>
+            <a href="https://kilkakon.com/shimeji/"><p>Shimeji base [kilkakon.com]</p></a>
+            <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/ASYM_shimejiee.zip" download
+                ><p>Assymetrical shimejji [mod by me]</p></a
+            >
             <details>
-                <summary><h5>How to install</h5></summary>
+                <summary>How to install</summary>
                 <h6>Desktop</h6>
                 <p><b>step 1.</b> install Java</p>
-                <p><b>step 2.</b> download Zip by clicking on the link <br>(the download will start automatically)</p>
+                <p><b>step 2.</b> download Zip by clicking on the link <br />(the download will start automatically)</p>
                 <p><b>step 3.</b> Unpack the Zip file in location of choice</p>
-                <p><b>done!</b> now you can start the software by double-clicking the [shimeji name]<b>.jar</b> file!</p>
-                <hr>
+                <p>
+                    <b>done!</b> now you can start the software by double-clicking the [shimeji name]<b>.jar</b> file!
+                </p>
+                <hr />
                 <h6>Mobile</h6>
-                <p>to install shimeji on mobile, you need to unpack the Zip file and pick the files of "img" folder, following this tutorial:</p>
+                <p>
+                    to install shimeji on mobile, you need to unpack the Zip file and pick the files of "img" folder,
+                    following this tutorial:
+                </p>
                 <a href="https://www.shimejimascot.com/p/mobile-tutorial.html">how to install SHimeji on mobile</a>
             </details>
             <details>
-                <summary><h5>How to enable / disable clones</h5></summary>
+                <summary>How to enable / disable clones</summary>
                 <p><b>step 1.</b> go to "conf" folder</p>
                 <p><b>step 2.</b> open file "settings.properties" in notepad</p>
-                <p><b>step 3.</b> in line 6, set "Breeding=true" or "Breeding=false" to enable or disable duptication of shimejis</p>
+                <p>
+                    <b>step 3.</b> in line 6, set "Breeding=true" or "Breeding=false" to enable or disable duptication
+                    of shimejis
+                </p>
             </details>
-            
         </div>
-    <div>
-    <a href="#" onclick='Paste("/create/shimejis/angel.html")'>Angel</a>
-    <a href="#" onclick='Paste("/create/shimejis/token.html")'>Token</a>
-    </div>
-</body>
-
+        <div>
+            <a href="#create/shimejis/angel.html" onclick='Paste("/create/shimejis/angel.html")'>Angel</a>
+            <a href="#create/shimejis/token.html" onclick='Paste("/create/shimejis/token.html")'>Token</a>
+        </div>
+    </body>
 </html>

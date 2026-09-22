@@ -7,6 +7,9 @@
         <link rel="icon" type="image/png" href="/ico.png" />
         <link rel="stylesheet" href="/style.css" />
         <style>
+            body{
+                padding: 30px 0;
+            }
             header {
                 text-align: center;
                 margin: 20px auto;
@@ -34,10 +37,16 @@
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
                 margin: 10px 0;
+                & img{
+                    width: 100%;
+                }
             }
             #left,
             #right {
                 width: calc(25% - 14px);
+            }
+            nav{
+                text-align: left;
             }
             #middle {
                 width: 50%;
@@ -101,16 +110,99 @@
             #links img {
                 width: 30px;
             }
+            #nav-box{
+                /*padding: 10px;*/
+                & a{
+                    background-color: var(--acc);
+                    line-height: 1.5em;
+                    padding: 2px;
+                    color: var(--pri);
+                    &:hover{
+                        background-color: var(--acc-hov);
+                    }
+                }
+            }
+            header{
+                position: relative;
+                & #welcome-pic{
+                    position: absolute;
+                    right: -80px;
+                    top: 0;
+                    width: 170px;
+                    & img{
+                        width: 100%;
+                    }
+                }
+                & h1{
+                    font-family: Mikiyu Font Mokomori-kuro;
+                }
+                & marquee{
+                    color: var(--sec);
+                    text-transform: uppercase;
+                    font-style: italic;
+                    text-decoration: underline wavy;
+                    padding: 3px;
+                }
+                & #pixel_1{
+                    position: absolute;
+                    & img{
+                        width: 60px;
+                    }
+                }
+                & #pixel_2{
+                    position: absolute;
+                    top: 130px;
+                    right: -70px;
+                    & img{
+                        width: 45px;
+                    }
+                }
+                & #pixel_3{
+                    position: absolute;
+                    top: 50px;
+                    left: 10px;
+                    & img{
+                        width: 45px;
+                    }
+                }
+            }
+            footer{
+                margin: 20px auto;
+                /*display: */
+            }
         </style>
     </head>
     <body>
         <header>
             <a href="https://file.garden/ZjOP8Ik9OUXT6YVm/Neocities_Twitter.mp4">
-                <!--<img src="/images/welcome.gif" width="100%"/>-->
-                <h1>WELCOME ! ! !</h1>
+                <h1>WELCOME</h1>
             </a>
-            <!--<marquee>FUKOUNA GIRL! FUKOUNA GIRL! IF YOU WANNA FLAY ME, LETS SEE WHATS INSIDE! FUKOUNA GIRL! FUKOUNA GIRL! 'CUZ PRETTY GIRLS CAN NEVER DIE!</marquee>-->
+            <marquee id="lyric-marq">FUKOUNA GIRL! FUKOUNA GIRL! IF YOU WANNA FLAY ME, LETS SEE WHATS INSIDE! FUKOUNA GIRL! FUKOUNA GIRL! 'CUZ PRETTY GIRLS CAN NEVER DIE!</marquee>
 
+                <div id="welcome-pic">
+                    <img src="/images/welcome_slug.png" class="theme_base">
+                    <img src="/images/welcome_nove.png" class="theme_clover">
+                    <img src="/images/welcome_fuko.png" class="theme_xp">
+                    <img src="/images/welcome_cassie.png" class="theme_sky">
+                </div>
+                <div id="pixel_1">
+                    <img src="/graphics/pixels/agua.gif" class="theme_base">
+                    <img src="/graphics/pixels/79e08725.gif" class="theme_clover">
+                    <img src="/graphics/pixels/cat30.gif" class="theme_xp">
+                    <img src="/graphics/pixels/70a8a859.gif" class="theme_sky">
+                </div>
+                <div id="pixel_2">
+                    <img src="/graphics/pixels/fish.gif" class="theme_base">
+                    <img src="/graphics/pixels/0bf32423.gif" class="theme_clover">
+                    <img src="/graphics/pixels/pc.gif" class="theme_xp">
+                    <img src="/graphics/pixels/bun.gif" class="theme_sky">
+                </div>
+                <div id="pixel_3">
+                    <img src="/graphics/pixels/torltol.gif" class="theme_base">
+                    <img src="/graphics/pixels/c5de9d4e.gif" class="theme_clover">
+                    <img src="/graphics/pixels/vapo.gif" class="theme_xp">
+                    <img src="/graphics/pixels/fb8555af.gif" class="theme_sky">
+                </div>
             <p>please leave your shoes at the door!</p>
             <p>PC is recomended for viewing</p>
         </header>
@@ -120,15 +212,16 @@
                 <div class="col-title"><h6>NAVIGATION</h6></div>
                 <ul>
                     <li><a href="/webmaster.html" target="_blank">webmaster</a></li>
-                    <li><a href="#" onclick='Paste("/resources/index.html")'>resources</a></li>
-                    <li><a class="crossed">graphics</a></li>
-                    <li><a href="#" onclick='Paste("/create/papercraft/index.html")'>papercraft</a></li>
-                    <li><a href="#" onclick='Paste("/create/shimejis/index.html")'>shimejis</a></li>
-                    <li><a href="#" onclick='Paste("/create/art/index.html")'>art</a></li>
+                    <li><a href="#neighbours.html" onclick='PasteNav("/neighbours.html")'>neightbours</a></li>
+                    <li><a href="#resources/index.html" onclick='PasteNav("/resources/index.html")'>resources &amp; graphics</a></li>
+                    <li><a href="#create/papercraft/index.html" onclick='PasteNav("/create/papercraft/index.html")'>papercraft</a></li>
+                    <li><a href="#create/shimejis/index.html" onclick='PasteNav("/create/shimejis/index.html")'>shimejis</a></li>
+                    <li><a href="#create/art/index.html" onclick='Paste("/create/art/index.html")'>art</a></li>
                     <li><a class="crossed">oleander</a></li>
                     <li><a class="crossed">ghost memory</a></li>
-                    <li><a href="#" onclick='Paste("/comms.html")'>comms</a></li>
-                    <li><a href="#" onclick='Paste("/song-of-the-week.html")'>song of the week</a></li>
+                    <li><a href="#comms.html" onclick='Paste("/comms.html")'>comms</a></li>
+                    <li><a href="#song-of-the-week.html" onclick='Paste("/song-of-the-week.html")'>song of the week</a></li>
+                    <li><a href="#update-log.html" onclick='Paste("/update-log.html")'>update log</a></li>
                 </ul>
             </nav>
 
@@ -155,29 +248,16 @@
                     </div>
                 </div>
 
-                <div class="collumn noico col-inside" id="links" style="text-align: center">
-                    <a href="https://fukounaglr.straw.page/" target="_blank" classs="noico" style="font-size: 30px"
-                        ><img src="/graphics/strawpage.png"
-                    /></a>
-                    <!--<a href="https://bsky.app/profile/fukounaglr.bsky.social" target="_blank">BlueSky</a>-->
-                    <a href="https://youtube.com/@fukounaglr" target="_blank"
-                        ><img src="/graphics/YouTube_full-color_icon_(2024).svg"
-                    /></a>
-                    <a href="https://pinterest.com/fukounaglr/" target="_blank"
-                        ><img src="/graphics/Pinterest.svg.png"
-                    /></a>
-                    <a href="https://www.tiktok.com/@fukounaglr" target="_blank"
-                        ><img src="/graphics/Tiktok_icon.png"
-                    /></a>
-                    <a href="https://toyhou.se/fukouna" target="_blank"><img src="/graphics/Toyhouse.svg.png" /></a>
-                    <a href="https://casketkid.bandcamp.com/" target="_blank"
-                        ><img src="/graphics/bandcamp-button-bc-circle-black-32.png"
-                    /></a>
-                    <a href="https://discord.gg/zxv7j2TuH" target="_blank"><img src="/graphics/discord-icon.webp" /></a>
-                    <a href="https://hipolink.net/fukouna" target="_blank"><img src="/graphics/hipolink.png" /></a>
-                    <a href="https://neocities.org/site/fukounaglr"><img src="/graphics/Neocities_Logo.png" /></a>
+                <div class="collumn" id="nav-box">
+                    <div class="col-inside">
+                        <div class="theme_base"><img src="/graphics/pixels/deltarune-banana.gif"> due to inflation the funny numbers are now 71.41 and 434.7</div>
+                        <div class="theme_xp"><img src="/graphics/pixels/nukoAbandonnedCat.gif"> please, where do you think you are? trans rights AND trans wrongs; i support trans people and i will help bury the body</div>
+                        <div class="theme_clover"><img src="/graphics/pixels/d538715d.gif"> if you get punished for something you didn't do, might as well do it. might as well enjoy the crime if you're going to jail</div>
+                        <div class="theme_sky"><img src="/graphics/pixels/69731bc3.gif"> Are you out of your mind??? I don't wanna be bludgeoned again!!!</div>
+                        
+                    </div>
                 </div>
-
+                
                 <div class="collumn" style="width: 100%">
                     <div id="middle-box">
                         <div class="col-title"><h6>HEADS UP !</h6></div>
@@ -195,14 +275,13 @@
                             <div class="col-4 noico">
                                 <a href="https://www.mabsland.com/Adoption.html" target="_blank"
                                     ><img
-                                        height="30"
                                         src="/images/Censor_Mc.gif"
                                         title="For mature audiences.  Contains high risk of violence, nudity, and adult situations.  Viewer should be at least 17 or with parental guidance."
                                 /></a>
                                 <a href="https://fukounaglr.neocities.org/" target="_blank" style="display: inline"
                                     ><img src="https://file.garden/ZjOP8Ik9OUXT6YVm/fukounaglr.gif"
                                 /></a>
-                                <a href="/guestbook.html" target="_blank" title=" Sign my guestbook!"
+                                <a href="https://fukouna.atabook.org/" target="_blank" title=" Sign my guestbook!"
                                     ><img src="/graphics/buttons/guestbook.jpg"
                                 /></a>
                                 <a href="https://github.com/fukounaglr/neocities" target="_blank" title="Site's code"
@@ -211,9 +290,10 @@
                             </div>
                         </div>
                     </div>
-                    <!--<iframe  title="middle-box" name="middle-box" id="middle-box" src="/headsup.html" style="width: 100%" ></iframe>-->
-                </div>
             </div>
+
+                <div class="collumn noico col-inside" id="links" style="text-align: center"></div>
+                </div>
 
             <div id="right" class="collumn noico">
                 <div class="col-title"><h6>WEBRINGS</h6></div>
@@ -306,5 +386,36 @@
 
         <script src="/js/theme-switcher.js"></script>
         <script src="/js/fetchPaste.js"></script>
+        <script>
+        document.querySelector("#links").fetchPaste("/links.html")
+        </script>
+        
+        <script>
+            const elements = [
+                "Did I stare at you? Am I scaring you? Go against me, double dog daring you Javier, it's you, can't compare to you Does it even seem like I care to you?",
+                "I know the flies will come and lay their ugly eggs in the sockets of my eyes, eat the meat out of my head. But you'll lie and tell me i look beautiful in death. Do you like the way my practiced poetry feels on your neck?",
+                "You love to gurgle me, all my exes still trying to murder me I lost 'em, but I can take ten times the pain I caused 'em I couldn't fix him honestly, 'cause I'm the fucking problem Oh God, that's a hyperbole, you got some nerve like I laugh so hard it's hurting me",
+                "I don't ever have to leave your apartment, I'll sleep face down on the carpet! And if I'm still crying when i wake up in the morning, will you kick me 'til i stop?'",
+                "'are you living in a lie?' they said they loved you til you stepped out of line; wanted to see in your head 'do you wish you were dead?'",
+                "my ears are always ringing for you; dissolve to spring, it’s fine to dream (i walk asleep) it’s fine to dream",
+                "Mother, can you hear my call? One by one, we're bound to fall Mother, we've nowhere to run Staring down the barrel of a gun",
+                "Take back the past tell the world That your business here ain't done God bless that pretty pink son of a gun",
+                "i wish that i could fall and see the sky clearly i wish that i could fall, not miss the ground completely i wish that i could fall somewhere close to you but i don't land at all, drifting out of view",
+                "To speak (I wanna dance along the knife) Until the levels peak (come and remind me I'm alive) Until my voice is cracking at the seams To cherish all the cuts And fall into this reckless love",
+                "Are you hiding there? Dragging on, still upon the downbeat? Are you sleeping there? Don’t you know? You know it's not that deep",
+                "A voice cries out in despair Is this death or a nightmare? In the end, who even cares!",
+                "I've always known, I'd die alone They'd cut up my stomach and fill it with stones I've always known, I'd die alone They'd cut up my stomach and-",
+                "Now, we come apart at the seams We'll forget who we used to be Let's make our own story Oh, this world is so confusing While it senselessly keeps turning We'll make our meaning"
+            ];
+
+            const Marquee = document.getElementById("lyric-marq");
+            const randomIndex = Math.floor(Math.random() * elements.length);
+            Marquee.innerHTML = elements[randomIndex];
+
+            function randomMarquee() {
+                const randomIndex = Math.floor(Math.random() * elements.length);
+                Marquee.innerHTML = elements[randomIndex];
+            }
+        </script>
     </body>
 </html>

@@ -112,7 +112,7 @@
     --sec-hov: aquamarine;
     --bg: url(/images/glasscubes.png);
     --fav: url(/graphics/pixels/fish.gif);
-    & .theme_base{display: block;}
+    & .theme_base{display: inline;}
     & .theme_clover{display: none;}
     & .theme_xp{display: none;}
     & .theme_sky{display: none;}
@@ -129,7 +129,7 @@
     --bg: url(/images/274xyv07gcrxg.jpg);
     --fav: url(/graphics/pixels/11e1dfb2.gif);
     & .theme_base{display: none;}
-    & .theme_clover{display: block;}
+    & .theme_clover{display: inline;}
     & .theme_xp{display: none;}
     & .theme_sky{display: none;}
     & body{background-size: 100px;}
@@ -146,7 +146,7 @@
     --fav: url(/graphics/pixels/d19c7043.gif);
     & .theme_base{display: none;}
     & .theme_clover{display: none;}
-    & .theme_xp{display: block;}
+    & .theme_xp{display: inline;}
     & .theme_sky{display: none;}
     & body{background-size: cover;}
 }
@@ -163,7 +163,7 @@
     & .theme_base{display: none;}
     & .theme_clover{display: none;}
     & .theme_xp{display: none;}
-    & .theme_sky{display: block;}
+    & .theme_sky{display: inline;}
     & body{background-size: 300px;}
 }
 
@@ -205,6 +205,8 @@ a {
         color: var(--acc-hov);
     }
 }
+
+details{margin: 10px auto}
 /*
 
 a::before {
@@ -279,7 +281,7 @@ body {
 hr {
     border: none;
     border-top: 2px solid;
-    border-color: currentColor;
+    border-color: var(--sec);
 }
 
 .vr {
@@ -381,7 +383,7 @@ a {
     background-color: var(--pri);
     border: 2px solid var(--sec);
     height: min-content;
-    margin: 5px 0;
+    margin: 15px 0;
     box-shadow: 5px 5px var(--acc-hov);
 }
 .col-inside{padding: 15px;}
