@@ -7,72 +7,10 @@
 
     <link rel="icon" type="image/png" href="/ico.png" />
     <link rel="stylesheet" href="/style.css" />
-    <link rel="stylesheet" href="/create/style.css" />
-
-
-    <style>
-        header,
-        #side-col {
-            align-content: center;
-            display: grid;
-        }
-
-        b {
-            color: white;
-        }
-
-        main {
-            display: grid;
-            grid-template-columns: 1fr;
-            text-align: center;
-            max-width: 800px;
-        }
-
-        .create-link {
-            background-color: dimgray;
-            text-align: left;
-            width: 90%;
-            max-width: 400px;
-            margin: 20px auto;
-            padding: 20px;
-
-            & img {
-                width: 200px;
-                display: block;
-            }
-
-            &:hover {
-                color: lightgray;
-
-                & h5::before {
-                    letter-spacing: 0;
-                }
-            }
-
-            & h5::before {
-                content: ">>> ";
-                letter-spacing: -8px;
-                margin: auto 10px;
-                transition: .5s;
-            }
-
-            & a {
-                color: white;
-
-                & img {
-                    width: 16px;
-                    display: inline
-                }
-            }
-        }
-    </style>
 </head>
 
 <body>
-
-
-    <main>
-        <header>
+        <div>
             <h3>Papercraft</h3>
             <p>Made with <a href="https://www.blender.org/">Blender</a> and <a href="https://papercraft-maker.com/">papercraft maker</a></p>
             <details>
@@ -82,9 +20,14 @@
                 <p><b>3. glue</b> the parts with the same number/letter</p>
                 <p><b>done!</b> now you have paper model :&#41;</p>
             </details>
-        </header>
+        </div>
         <hr>
-    </main>
+    <ul>
+
+    <li href="#" onclick='Paste("/create/papercraft/token.html")'>Token</li>
+    <li href="#" onclick='Paste("/create/papercraft/caroline.html")'>Caroline</li>
+    <li href="#" onclick='Paste("/create/papercraft/painter.html")'>Painter</li>
+    </ul>
 </body>
 
 </html>

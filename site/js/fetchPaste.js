@@ -1,4 +1,5 @@
-//script by https://xobyte.neocities.org/
+//script by https://xobyte.neocities.org/ edited by https://fukounaglr.neocities.org/
+// <a href="#page"  onclick='Paste("/page.html")'>page</a></li>
 
 Element.prototype.fetchPaste = function(url){
   var elem = this;
@@ -22,3 +23,12 @@ Element.prototype.fetchPaste = function(url){
   };
   ping.send();
 };
+
+function Paste(a) {
+  document.querySelector("#middle-box").fetchPaste(a);
+     //localStorage.setItem('OpenPage', a);
+  //$location.url.search(a);
+}
+
+//Paste(localStorage.getItem("OpenPage"));
+//Paste(url.searchParams.toString());

@@ -105,13 +105,18 @@
 :root {
 
     --col: MidnightBlue;
-    --acc: Salmon;
-    --acc-hov: lightpink;
+    --acc: deeppink;
+    --acc-hov: hotpink;
     --pri: seashell;
     --sec: Turquoise;
     --sec-hov: aquamarine;
     --bg: url(/images/glasscubes.png);
-    --fav: url(/graphics/pixels/vapo2.gif);
+    --fav: url(/graphics/pixels/fish.gif);
+    & .theme_base{display: block;}
+    & .theme_clover{display: none;}
+    & .theme_xp{display: none;}
+    & .theme_sky{display: none;}
+    & body{background-size: cover;}
 }
 
 :root[theme="clover"]{
@@ -128,6 +133,38 @@
     & .theme_xp{display: none;}
     & .theme_sky{display: none;}
     & body{background-size: 100px;}
+}
+
+:root[theme="xp"]{
+    --col: black;
+    --acc: blue;
+    --acc-hov: MediumBlue;
+    --pri: white;
+    --sec: DarkGray;
+    --sec-hov: gray;
+    --bg: url(/images/field.jpg);
+    --fav: url(/graphics/pixels/d19c7043.gif);
+    & .theme_base{display: none;}
+    & .theme_clover{display: none;}
+    & .theme_xp{display: block;}
+    & .theme_sky{display: none;}
+    & body{background-size: cover;}
+}
+
+:root[theme="sky"]{
+    --col: SteelBlue;
+    --acc: #8deadd;
+    --acc-hov: PaleTurquoise;
+    --pri: white;
+    --sec: SkyBlue;
+    --sec-hov: LightBlue;
+    --bg: url(/images/bg-clouds.jpg);
+    --fav: url(/graphics/pixels/8411098b.gif);
+    & .theme_base{display: none;}
+    & .theme_clover{display: none;}
+    & .theme_xp{display: none;}
+    & .theme_sky{display: block;}
+    & body{background-size: 300px;}
 }
 
 
@@ -190,10 +227,6 @@ a:has(h1, h2, h3, h4, h5, img, div, svg)::before,
 
 img.border {
     border: 2px solid gray;
-}
-
-ul {
-    list-style: disc;
 }
 
 
@@ -545,16 +578,19 @@ details{
 }
 
 
-ul,
-lli {
+/*ul,*/
+li {
+    list-style-image: var(--fav);
+}
+li:has(ul){
     list-style: none;
 }
-
 li {
     position: relative;
     margin: 0;
     padding-bottom: 1em;
-    padding-left: 20px;
+    /*padding-left: 20px;*/
+    margin-left: 40px
 }
 
 /*
@@ -588,8 +624,6 @@ body {
     background: linear-gradient(rgb(255, 255, 255, 0.8),
         rgba(225, 225, 225, 0)), var(--bg);
     background: cross-fade();
-    /*background: url("/images/cloud.jpg");*/
-    background-size: 500px;
     height: auto;
     min-height: 100vh;
     position: relative;
@@ -598,11 +632,6 @@ body {
 .gradient {
     background: linear-gradient(rgb(255, 255, 255) 30%,
         rgba(225, 225, 225, 0));
-}
-
-main{
-    min-width: 300px;
-    width: 40%;
 }
 
 
