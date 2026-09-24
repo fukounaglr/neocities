@@ -30,8 +30,25 @@ function Paste(a) {
 function PasteNav(a) {
   document.querySelector("#nav-box").fetchPaste(a);
 }
+//if (window.location.hash.substring(1) != ""){
+//Paste(window.location.hash.substring(1));
+//}
+
+
+
+const hash = window.location.hash.substring(1);
+const ListNav = [
+  "create/shimejis/index.html",
+  "create/papercraft/index.html",
+  "resources/index.html"
+];
+
 if (window.location.hash.substring(1) != ""){
-Paste(window.location.hash.substring(1));
+  if (ListNav.includes(window.location.hash.substring(1))) {
+    PasteNav(window.location.hash.substring(1));
+  } else {
+    Paste(window.location.hash.substring(1));
+  }
 }
 //Paste(localStorage.getItem("OpenPage"));
 //Paste(url.searchParams.toString());
