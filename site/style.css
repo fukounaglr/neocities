@@ -711,13 +711,15 @@ body {
     }
 
     & #player-bubble {
-        padding: 5px;
-        height: 80px;
         aspect-ratio: 1/1;
         z-index: 0;
         animation-name: spin;
         animation-duration: 60s;
         animation-iteration-count: infinite;
+        & img{
+        padding: 5px;
+        height: 80px;
+        }
     }
 
     & #player-select-wrapper {
